@@ -1,0 +1,995 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Appendix B: AI Glossary | AI 101</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-brand">
+        <span class="nav-badge">AI 101</span>
+        <span class="nav-title">A Self-Paced Guide to AI in Medicine</span>
+      </a>
+      <button class="nav-toggle" aria-label="Toggle menu">
+        <i data-lucide="menu"></i>
+      </button>
+      <div class="nav-links">
+        <a href="index.html" class="nav-link">Modules</a>
+        <!-- <a href="resources.html" class="nav-link">Resources</a> -->
+        <a href="about.html" class="nav-link">About</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="main">
+    <article class="content content-wide">
+
+      <header class="unit-header">
+        <span class="unit-label appendix">APPENDIX B</span>
+        <h1 class="unit-title">AI Glossary</h1>
+        <p class="unit-subtitle">
+          The acronyms you'll actually encounter—organized from foundational
+          concepts to specialized terms, with explanations of why each matters.
+        </p>
+        <div class="unit-meta">
+          <span class="unit-meta-item">
+            <i data-lucide="book-open"></i>
+            Reference guide
+          </span>
+        </div>
+      </header>
+
+      <p>
+        This glossary covers the terminology you'll see in product documentation,
+        news articles, and conversations about AI. Each entry explains not just
+        <em>what</em> something is, but <em>why it matters</em> for practical use.
+      </p>
+
+      <!-- Quick Navigation -->
+      <div class="glossary-nav">
+        <strong>Jump to:</strong>
+        <a href="#foundational">Foundational Concepts</a> ·
+        <a href="#language-models">Language Models</a> ·
+        <a href="#interaction">How You Interact</a> ·
+        <a href="#prompting">Prompting Techniques</a> ·
+        <a href="#training">Training & Customization</a> ·
+        <a href="#applications">Applications & Agents</a> ·
+        <a href="#evaluation">Evaluation & Safety</a> ·
+        <a href="#companies">Companies & Models</a> ·
+        <a href="#infrastructure">Infrastructure</a> ·
+        <a href="#emerging">Emerging Terms</a> ·
+        <a href="#resources">Learning Resources</a>
+      </div>
+
+      <hr>
+
+      <!-- Foundational Concepts -->
+      <h2 id="foundational">Foundational Concepts</h2>
+
+      <dl class="glossary-list">
+        <div class="glossary-item">
+          <dt>AI (Artificial Intelligence)</dt>
+          <dd>
+            The broad field of creating systems that can perform tasks typically
+            requiring human intelligence—learning, reasoning, problem-solving,
+            perception. When people say "AI" in 2024-2025, they usually mean
+            generative AI or LLMs specifically, but the term encompasses everything
+            from chess engines to self-driving cars.
+          </dd>
+        </div>
+
+        <div class="glossary-item">
+          <dt>ML (Machine Learning)</dt>
+          <dd>
+            A subset of AI where systems learn patterns from data rather than
+            following explicit programming rules. Instead of telling a computer
+            "if X, then Y," you show it thousands of examples and let it figure
+            out the patterns. Most modern AI is built on ML techniques.
+          </dd>
+        </div>
+
+        <div class="glossary-item">
+          <dt>DL (Deep Learning)</dt>
+          <dd>
+            A subset of machine learning using neural networks with multiple
+            layers (hence "deep"). These architectures excel at finding complex
+            patterns in large datasets—the breakthrough that enabled modern AI
+            capabilities like image recognition and natural language understanding.
+          </dd>
+        </div>
+
+        <div class="glossary-item">
+          <dt>GenAI (Generative AI)</dt>
+          <dd>
+            AI systems that create new content—text, images, audio, video, code—rather
+            than just analyzing or classifying existing data. ChatGPT, Claude,
+            Midjourney, and DALL-E are all generative AI tools. This is the category
+            driving most current AI adoption.
+          </dd>
+        </div>
+
+        <div class="glossary-item">
+          <dt>AGI (Artificial General Intelligence)</dt>
+          <dd>
+            A hypothetical AI system with human-level reasoning across all domains—not
+            just narrow expertise in specific tasks. Current AI systems are "narrow AI"
+            (excellent at specific things, unable to generalize). AGI remains a research
+            goal, not a current reality. Claims about AGI timelines vary wildly and
+            should be viewed skeptically.
+          </dd>
+        </div>
+      </dl>
+
+      <hr>
+
+      <!-- Language Models and Architecture -->
+      <h2 id="language-models">Language Models and Architecture</h2>
+
+      <dl class="glossary-list">
+        <div class="glossary-item">
+          <dt>LLM (Large Language Model)</dt>
+          <dd>
+            Neural networks trained on massive text datasets to understand and
+            generate human language. "Large" refers to billions of parameters
+            (adjustable values the model learned during training). GPT-4, Claude,
+            Gemini, and Llama are all LLMs. These models power most text-based
+            AI tools you'll encounter.
+          </dd>
+        </div>
+
+        <div class="glossary-item">
+          <dt>SLM (Small Language Model)</dt>
+          <dd>
+            Smaller, more efficient language models designed to run on limited
+            hardware or for specific tasks. Typically millions rather than billions
+            of parameters. Useful when you need speed, privacy (local processing),
+            or can't afford cloud API costs.
+          </dd>
+        </div>
+
+        <div class="glossary-item">
+          <dt>VLM (Vision Language Model)</dt>
+          <dd>
+            Models that process both images and text, understanding relationships
+            between visual and linguistic information. GPT-4 with vision, Claude's
+            image analysis, and Gemini are VLMs. Enable features like describing
+            images, analyzing charts, or discussing visual content.
+          </dd>
+        </div>
+
+        <div class="glossary-item">
+          <dt>Transformer</dt>
+          <dd>
+            The neural network architecture underlying virtually all modern LLMs.
+            Introduced in 2017, it uses "self-attention" to process relationships
+            between all parts of input text simultaneously rather than sequentially.
+            The "T" in GPT, BERT, and many other model names stands for Transformer.
+          </dd>
+        </div>
+
+        <div class="glossary-item">
+          <dt>GPT (Generative Pre-trained Transformer)</dt>
+          <dd>
+            OpenAI's family of language models—GPT-3, GPT-4, etc. The name describes
+            the architecture: generative (creates text), pre-trained (learned from
+            massive data before fine-tuning), transformer (the underlying architecture).
+            Often used generically to mean any LLM, though technically it's OpenAI's
+            product line.
+          </dd>
+        </div>
+
+        <div class="glossary-item">
+          <dt>BERT (Bidirectional Encoder Representations from Transformers)</dt>
+          <dd>
+            A Google model architecture that reads text in both directions
+            simultaneously—understanding context from what comes before <em>and</em>
+            after each word. Primarily used for understanding tasks (classification,
+            search) rather than generation. The architecture behind much of Google
+            Search's language understanding.
+          </dd>
+        </div>
+
+        <div class="glossary-item">
+          <dt>Parameters</dt>
+          <dd>
+            The adjustable numerical values within a neural network that the model
+            learns during training. More parameters generally mean more capacity to
+            learn patterns, but also more computational cost. GPT-4 reportedly has
+            over a trillion parameters; Claude and other frontier models are similar scale.
+          </dd>
+        </div>
+
+        <div class="glossary-item">
+          <dt>Weights</dt>
+          <dd>
+            Essentially synonymous with parameters in common usage—the numerical
+            values that define how a model processes information. "Model weights"
+            refers to the complete set of learned parameters that make up a trained model.
+          </dd>
+        </div>
+      </dl>
+
+      <hr>
+
+      <!-- How You Interact with AI -->
+      <h2 id="interaction">How You Interact with AI</h2>
+
+      <dl class="glossary-list">
+        <div class="glossary-item">
+          <dt>Prompt</dt>
+          <dd>
+            Any input you give to an AI model—a question, instruction, document,
+            or combination. The quality and structure of your prompt significantly
+            affects output quality. "Prompting" has become a skill category unto itself.
+          </dd>
+        </div>
+
+        <div class="glossary-item">
+          <dt>System Prompt</dt>
+          <dd>
+            Instructions set by developers that establish an AI's baseline behavior,
+            persona, or constraints—typically invisible to end users. When you use
+            ChatGPT, a system prompt tells it to be helpful and follow safety guidelines.
+            System prompts shape the AI's "personality" and capabilities within a
+            given application.
+          </dd>
+        </div>
+
+        <div class="glossary-item">
+          <dt>Context Window</dt>
+          <dd>
+            The maximum amount of text an LLM can process at once—both your input
+            and its output combined. Measured in tokens (roughly 3/4 of a word).
+            GPT-4 Turbo has a 128K context window (~100,000 words); Claude can
+            handle up to 200K tokens. Larger context windows enable working with
+            longer documents and conversations.
+          </dd>
+        </div>
+
+        <div class="glossary-item">
+          <dt>Token</dt>
+          <dd>
+            The basic unit LLMs use to process text—typically word fragments rather
+            than whole words. "Tokenization" converts text into these chunks.
+            Understanding tokens matters for: context window limits, API pricing
+            (often per-token), and why character counts sometimes behave strangely
+            (the model doesn't "see" individual characters).
+          </dd>
+        </div>
+
+        <div class="glossary-item">
+          <dt>Temperature</dt>
+          <dd>
+            A setting controlling how "creative" or "random" model outputs are.
+            Low temperature (0-0.3) produces more predictable, conservative responses;
+            high temperature (0.7-1.0) produces more varied, creative outputs. Useful
+            for different tasks—low for factual retrieval, higher for creative writing.
+          </dd>
+        </div>
+
+        <div class="glossary-item">
+          <dt>Hallucination</dt>
+          <dd>
+            When an AI generates plausible-sounding but factually incorrect information
+            with apparent confidence. Named because the model "sees" patterns that
+            aren't there. A fundamental limitation of current LLMs—they optimize for
+            coherent language, not truth. <strong>Always verify important facts.</strong>
+          </dd>
+        </div>
+      </dl>
+
+      <hr>
+
+      <!-- Prompting Techniques -->
+      <h2 id="prompting">Prompting Techniques</h2>
+
+      <dl class="glossary-list">
+        <div class="glossary-item">
+          <dt>Zero-shot Prompting</dt>
+          <dd>
+            Asking an AI to perform a task without providing examples—just instructions.
+            "Translate this to French: Hello, how are you?" The model applies its
+            training directly without additional context.
+          </dd>
+        </div>
+
+        <div class="glossary-item">
+          <dt>Few-shot Prompting (In-Context Learning)</dt>
+          <dd>
+            Providing several examples of the desired input/output format before
+            your actual request. The model learns the pattern from your examples
+            and applies it. Often dramatically improves performance on structured tasks.
+          </dd>
+        </div>
+
+        <div class="glossary-item">
+          <dt>Chain-of-Thought (CoT) Prompting</dt>
+          <dd>
+            Asking the model to show its reasoning step-by-step rather than jumping
+            to conclusions. Adding "Let's think through this step by step" can
+            significantly improve performance on complex reasoning tasks. The model's
+            explicit reasoning also makes errors easier to catch.
+          </dd>
+        </div>
+
+        <div class="glossary-item">
+          <dt>Prompt Engineering</dt>
+          <dd>
+            The practice of systematically designing and refining prompts to get
+            better AI outputs. Involves understanding how models interpret instructions,
+            what context helps, and how to structure requests for optimal results.
+            More art than science, but with learnable patterns.
+          </dd>
+        </div>
+
+        <div class="glossary-item">
+          <dt>Prompt Chaining</dt>
+          <dd>
+            Breaking complex tasks into sequential steps, where each prompt builds
+            on previous outputs. Instead of one massive prompt, you guide the model
+            through a workflow. Reduces errors and gives you checkpoints to verify quality.
+          </dd>
+        </div>
+      </dl>
+
+      <hr>
+
+      <!-- Model Training and Customization -->
+      <h2 id="training">Model Training and Customization</h2>
+
+      <dl class="glossary-list">
+        <div class="glossary-item">
+          <dt>Pre-training</dt>
+          <dd>
+            The initial, massive training phase where a model learns general language
+            patterns from vast text datasets. Pre-training gives models their foundational
+            capabilities. OpenAI, Anthropic, Google, and others invest millions in
+            pre-training runs that take months on thousands of GPUs.
+          </dd>
+        </div>
+
+        <div class="glossary-item">
+          <dt>Fine-tuning</dt>
+          <dd>
+            Additional training on a smaller, task-specific dataset to adapt a
+            pre-trained model for particular uses. A hospital might fine-tune a
+            model on medical records; a company might fine-tune on their internal
+            documentation. Less expensive than pre-training from scratch.
+          </dd>
+        </div>
+
+        <div class="glossary-item">
+          <dt>RLHF (Reinforcement Learning from Human Feedback)</dt>
+          <dd>
+            A training technique where humans rate model outputs, and these ratings
+            guide further learning. Used to align models with human preferences—making
+            them more helpful, less harmful, and more honest. A key technique that
+            made ChatGPT dramatically more usable than its predecessors.
+          </dd>
+        </div>
+
+        <div class="glossary-item">
+          <dt>Alignment</dt>
+          <dd>
+            The goal of making AI systems behave according to human values and
+            intentions. "Misaligned" AI might technically follow instructions while
+            violating their spirit, or optimize for metrics that don't match what
+            humans actually want. Central concern in AI safety research.
+          </dd>
+        </div>
+
+        <div class="glossary-item">
+          <dt>LoRA (Low-Rank Adaptation)</dt>
+          <dd>
+            A technique for fine-tuning large models efficiently by training a
+            small set of adapter weights rather than modifying the entire model.
+            Makes customization feasible for organizations without massive computing budgets.
+          </dd>
+        </div>
+
+        <div class="glossary-item">
+          <dt>RAG (Retrieval-Augmented Generation)</dt>
+          <dd>
+            A technique where the model retrieves relevant information from a
+            knowledge base before generating responses. Rather than relying solely
+            on what the model "memorized" during training, RAG lets it access current,
+            specific data. Powers many enterprise AI applications and reduces hallucinations.
+          </dd>
+        </div>
+
+        <div class="glossary-item">
+          <dt>Embeddings</dt>
+          <dd>
+            Numerical representations of text that capture semantic meaning—similar
+            concepts have similar embeddings. Enables semantic search (finding relevant
+            content by meaning, not just keywords) and are fundamental to RAG systems.
+          </dd>
+        </div>
+
+        <div class="glossary-item">
+          <dt>Vector Database</dt>
+          <dd>
+            Databases optimized for storing and searching embeddings. When you ask
+            an AI about your company's documents, a vector database helps find relevant
+            passages quickly. Pinecone, Weaviate, and Chroma are common examples.
+          </dd>
+        </div>
+      </dl>
+
+      <hr>
+
+      <!-- AI Applications and Agents -->
+      <h2 id="applications">AI Applications and Agents</h2>
+
+      <dl class="glossary-list">
+        <div class="glossary-item">
+          <dt>NLP (Natural Language Processing)</dt>
+          <dd>
+            The field of AI focused on enabling computers to understand, interpret,
+            and generate human language. LLMs represent the current state-of-the-art
+            in NLP. Encompasses tasks like translation, summarization, sentiment
+            analysis, and question-answering.
+          </dd>
+        </div>
+
+        <div class="glossary-item">
+          <dt>NLU (Natural Language Understanding)</dt>
+          <dd>
+            A subset of NLP specifically focused on comprehension—extracting meaning,
+            intent, and entities from text. Distinguished from generation; NLU is
+            about understanding what someone means.
+          </dd>
+        </div>
+
+        <div class="glossary-item">
+          <dt>Chatbot</dt>
+          <dd>
+            An AI system designed for conversational interaction. Modern chatbots
+            (ChatGPT, Claude, Gemini) use LLMs for open-ended conversation; older
+            chatbots used simpler rules or intent-matching. The interface through
+            which most people experience AI.
+          </dd>
+        </div>
+
+        <div class="glossary-item">
+          <dt>AI Agent</dt>
+          <dd>
+            An AI system that can take actions autonomously—browsing the web,
+            executing code, calling APIs, managing files—rather than just generating
+            text. The frontier of current AI development. Agents chain together
+            planning, tool use, and execution to accomplish complex goals.
+          </dd>
+        </div>
+
+        <div class="glossary-item">
+          <dt>Agentic AI</dt>
+          <dd>
+            AI systems designed for autonomous, multi-step task completion with
+            minimal human intervention. More proactive than traditional assistants—they
+            break down goals, plan approaches, and adapt to obstacles. Claude's computer
+            use feature and similar capabilities represent early agentic AI.
+          </dd>
+        </div>
+
+        <div class="glossary-item">
+          <dt>MoE (Mixture of Experts)</dt>
+          <dd>
+            An architecture where multiple specialized "expert" sub-networks activate
+            selectively based on the input. Allows models to be larger and more capable
+            while keeping computation costs manageable—not every expert activates for
+            every query.
+          </dd>
+        </div>
+
+        <div class="glossary-item">
+          <dt>Multimodal</dt>
+          <dd>
+            AI systems that process multiple types of input—text, images, audio, video.
+            GPT-4V, Claude's image understanding, and Gemini are multimodal. The trend
+            is toward models that understand the world through multiple "senses" like
+            humans do.
+          </dd>
+        </div>
+      </dl>
+
+      <hr>
+
+      <!-- Evaluation and Safety -->
+      <h2 id="evaluation">Evaluation and Safety</h2>
+
+      <dl class="glossary-list">
+        <div class="glossary-item">
+          <dt>Eval (Evaluation)</dt>
+          <dd>
+            Systematic testing of AI model performance on defined benchmarks or tasks.
+            Evals help compare models, track improvements, and identify weaknesses.
+            "Running evals" is standard practice in AI development.
+          </dd>
+        </div>
+
+        <div class="glossary-item">
+          <dt>Benchmark</dt>
+          <dd>
+            Standardized tests for comparing AI model capabilities—MMLU (general
+            knowledge), HumanEval (coding), HellaSwag (common sense reasoning).
+            Useful for rough comparisons but can be gamed and don't always reflect
+            real-world performance.
+          </dd>
+        </div>
+
+        <div class="glossary-item">
+          <dt>Guardrails</dt>
+          <dd>
+            Technical controls that prevent AI systems from generating harmful,
+            inappropriate, or off-topic content. Can include content filters,
+            output validation, and behavioral constraints embedded in system prompts.
+          </dd>
+        </div>
+
+        <div class="glossary-item">
+          <dt>Red Teaming</dt>
+          <dd>
+            Deliberately trying to break AI systems to find vulnerabilities before
+            malicious actors do. Includes prompt injection attacks, jailbreaking
+            attempts, and stress-testing safety measures. Important for responsible
+            AI deployment.
+          </dd>
+        </div>
+
+        <div class="glossary-item">
+          <dt>Prompt Injection</dt>
+          <dd>
+            Attacks where malicious instructions hidden in input data attempt to
+            override an AI's intended behavior. A security concern for AI applications—an
+            email might contain hidden instructions that manipulate an AI email assistant.
+          </dd>
+        </div>
+      </dl>
+
+      <hr>
+
+      <!-- Companies and Models -->
+      <h2 id="companies">Companies and Models You'll Encounter</h2>
+
+      <div class="company-grid">
+        <div class="company-card">
+          <h4>OpenAI</h4>
+          <p>Created GPT-4, ChatGPT, DALL-E. The company most associated with the
+          current AI boom. Now partially owned by Microsoft.</p>
+        </div>
+        <div class="company-card">
+          <h4>Anthropic</h4>
+          <p>Created Claude. Founded by former OpenAI researchers focused on AI safety.
+          Notable for "constitutional AI" alignment approach.</p>
+        </div>
+        <div class="company-card">
+          <h4>Google/DeepMind</h4>
+          <p>Created Gemini (formerly Bard), PaLM, BERT. Deep research heritage.
+          DeepMind created AlphaFold and AlphaGo.</p>
+        </div>
+        <div class="company-card">
+          <h4>Meta</h4>
+          <p>Created Llama (open-source LLMs). Major contributor to open AI research
+          and model releases.</p>
+        </div>
+        <div class="company-card">
+          <h4>Mistral</h4>
+          <p>French AI company with strong open-source models competing with
+          proprietary offerings.</p>
+        </div>
+        <div class="company-card">
+          <h4>Stability AI</h4>
+          <p>Created Stable Diffusion image generation models.</p>
+        </div>
+      </div>
+
+      <hr>
+
+      <!-- Infrastructure and Operations -->
+      <h2 id="infrastructure">Infrastructure and Operations</h2>
+
+      <dl class="glossary-list">
+        <div class="glossary-item">
+          <dt>API (Application Programming Interface)</dt>
+          <dd>
+            How developers integrate AI models into their applications. OpenAI,
+            Anthropic, and others offer APIs where you send prompts and receive
+            completions programmatically. API access is usually priced per token.
+          </dd>
+        </div>
+
+        <div class="glossary-item">
+          <dt>GPU (Graphics Processing Unit)</dt>
+          <dd>
+            The specialized processors that power AI training and inference.
+            Originally designed for graphics rendering, their parallel processing
+            architecture is ideal for neural networks. NVIDIA dominates the AI GPU market.
+          </dd>
+        </div>
+
+        <div class="glossary-item">
+          <dt>Inference</dt>
+          <dd>
+            Running a trained model to generate outputs—what happens when you chat
+            with an AI. Distinguished from training. Inference is much cheaper than
+            training but still computationally intensive at scale.
+          </dd>
+        </div>
+
+        <div class="glossary-item">
+          <dt>Latency</dt>
+          <dd>
+            The delay between sending a request and receiving a response. Lower
+            latency means faster, more responsive AI applications. Measured in milliseconds.
+          </dd>
+        </div>
+
+        <div class="glossary-item">
+          <dt>Knowledge Cutoff</dt>
+          <dd>
+            The date beyond which a model has no training data. If a model's knowledge
+            cutoff is January 2024, it doesn't "know" about events after that date.
+            Web search and RAG help address this limitation.
+          </dd>
+        </div>
+      </dl>
+
+      <hr>
+
+      <!-- Emerging Terms -->
+      <h2 id="emerging">Emerging Terms Worth Knowing</h2>
+
+      <dl class="glossary-list">
+        <div class="glossary-item">
+          <dt>Foundation Model</dt>
+          <dd>
+            Large models trained on broad data that can be adapted for many downstream
+            tasks. GPT-4 and Claude are foundation models.
+          </dd>
+        </div>
+
+        <div class="glossary-item">
+          <dt>Synthetic Data</dt>
+          <dd>
+            AI-generated data used to train other AI systems. Increasingly used when
+            real data is scarce, expensive, or privacy-sensitive.
+          </dd>
+        </div>
+
+        <div class="glossary-item">
+          <dt>Model Collapse</dt>
+          <dd>
+            A theoretical concern where models trained on AI-generated data progressively
+            degrade in quality. An argument for maintaining human-generated training data.
+          </dd>
+        </div>
+
+        <div class="glossary-item">
+          <dt>Constitutional AI</dt>
+          <dd>
+            Anthropic's approach to alignment where models are trained with explicit
+            principles rather than just human ratings.
+          </dd>
+        </div>
+
+        <div class="glossary-item">
+          <dt>Context Engineering</dt>
+          <dd>
+            The emerging practice of systematically managing everything that goes
+            into a model's context window—prompts, examples, retrieved documents,
+            conversation history.
+          </dd>
+        </div>
+      </dl>
+
+      <hr>
+
+      <!-- Learning Resources -->
+      <h2 id="resources">Multi-Modal Learning Resources</h2>
+
+      <h3>Online Courses</h3>
+
+      <div class="resource-list">
+        <div class="resource-item">
+          <h4>DeepLearning.AI: ChatGPT Prompt Engineering for Developers</h4>
+          <span class="resource-badge free">Free</span>
+          <p>
+            Taught by Andrew Ng and OpenAI's Isa Fulford. The gold-standard
+            introduction—1.5 hours covering LLM fundamentals, prompting best
+            practices, and practical applications. Hands-on Jupyter notebooks
+            included. Appropriate for anyone with basic Python familiarity,
+            but useful insights for non-coders too.
+          </p>
+          <a href="https://www.deeplearning.ai/short-courses/chatgpt-prompt-engineering-for-developers/" target="_blank" rel="noopener">
+            deeplearning.ai/short-courses/chatgpt-prompt-engineering-for-developers
+          </a>
+        </div>
+
+        <div class="resource-item">
+          <h4>Google Prompting Essentials</h4>
+          <span class="resource-badge free">Free</span>
+          <p>
+            Google's structured 5-step prompting framework. Covers multimodal
+            prompting, prompt chaining, and building reusable prompt libraries.
+            Under 6 hours. No technical background required—designed for practical
+            workplace application.
+          </p>
+          <a href="https://grow.google/prompting-essentials/" target="_blank" rel="noopener">
+            grow.google/prompting-essentials
+          </a>
+        </div>
+
+        <div class="resource-item">
+          <h4>IBM: Generative AI - Prompt Engineering Basics</h4>
+          <span class="resource-badge free">Audit Free (Coursera)</span>
+          <p>
+            Solid overview from IBM covering zero-shot, few-shot, and chain-of-thought
+            techniques. Includes hands-on labs and graded assessments. Good for those
+            wanting a certificate to demonstrate competency.
+          </p>
+          <a href="https://www.coursera.org/learn/generative-ai-prompt-engineering-for-everyone" target="_blank" rel="noopener">
+            coursera.org/learn/generative-ai-prompt-engineering-for-everyone
+          </a>
+        </div>
+
+        <div class="resource-item">
+          <h4>Learn Prompting: ChatGPT for Everyone</h4>
+          <span class="resource-badge free">Free</span>
+          <p>
+            Open-source guide created in collaboration with OpenAI. Comprehensive
+            and research-backed. Covers basics through advanced techniques. Over
+            3 million learners. The written documentation is excellent for reference.
+          </p>
+          <a href="https://learnprompting.org/" target="_blank" rel="noopener">
+            learnprompting.org
+          </a>
+        </div>
+
+        <div class="resource-item">
+          <h4>Udemy: Complete Prompt Engineering for AI Bootcamp</h4>
+          <span class="resource-badge paid">Paid</span>
+          <p>
+            More comprehensive paid option covering GPT models, image generation
+            (Midjourney, DALL-E), and coding assistants. Regularly updated. Good
+            if you want one exhaustive resource.
+          </p>
+        </div>
+      </div>
+
+      <h3>Podcasts</h3>
+
+      <div class="resource-list">
+        <div class="resource-item">
+          <h4>Practical AI (Changelog)</h4>
+          <p>
+            Weekly discussions on AI applications in the real world. Hosted by
+            Daniel Whitenack and Chris Benson. Balances technical depth with
+            accessibility. Good for staying current on practical developments.
+          </p>
+        </div>
+
+        <div class="resource-item">
+          <h4>TWIML AI Podcast (This Week in Machine Learning & AI)</h4>
+          <p>
+            Hosted by Sam Charrington. In-depth interviews with AI researchers
+            and practitioners. More technical but explained well. Strong back
+            catalog for topic-specific deep dives.
+          </p>
+        </div>
+
+        <div class="resource-item">
+          <h4>The AI Podcast (NVIDIA)</h4>
+          <p>
+            Bi-weekly episodes featuring AI innovators across industries—healthcare,
+            climate, entertainment. Production quality is high. Good for understanding
+            AI applications beyond pure tech.
+          </p>
+        </div>
+
+        <div class="resource-item">
+          <h4>Latent Space</h4>
+          <p>
+            Aimed at AI engineers and builders. Hosts Alessio Fanelli and Swyx
+            cover latest developments, new research, and practical implementation.
+            More technical but current and well-informed.
+          </p>
+        </div>
+
+        <div class="resource-item">
+          <h4>Cognitive Revolution</h4>
+          <p>
+            Hosted by Nathan Labenz. Focus on transformative potential of AI—interviews
+            with researchers, founders, and investors. Good for understanding where
+            the field is heading.
+          </p>
+        </div>
+
+        <div class="resource-item">
+          <h4>Hard Fork (New York Times)</h4>
+          <p>
+            Not AI-specific but covers AI developments extensively. Kevin Roose
+            and Casey Newton offer accessible, journalist-perspective coverage
+            of tech and AI news. Good for staying broadly informed.
+          </p>
+        </div>
+
+        <div class="resource-item">
+          <h4>DeepMind: The Podcast</h4>
+          <p>
+            Hosted by mathematician Hannah Fry. Explores AI research and its
+            implications. Award-winning production. Less frequent but high quality.
+            Good for deeper conceptual understanding.
+          </p>
+        </div>
+      </div>
+
+      <h3>YouTube Channels and Videos</h3>
+
+      <div class="resource-list">
+        <div class="resource-item">
+          <h4>freeCodeCamp: Learn Prompt Engineering – Full Course</h4>
+          <p>
+            Ania Kubow's comprehensive crash course covering fundamentals through
+            advanced techniques. Free, thorough, beginner-friendly. Good for visual
+            learners who want structured progression.
+          </p>
+        </div>
+
+        <div class="resource-item">
+          <h4>DeepLearning.AI YouTube Channel</h4>
+          <p>
+            Andrew Ng's organization posts short course previews and standalone
+            AI education content. Authoritative and well-produced.
+          </p>
+        </div>
+
+        <div class="resource-item">
+          <h4>AI Explained</h4>
+          <p>
+            Thoughtful analysis of AI developments, model comparisons, and capability
+            assessments. Good for understanding what new releases actually mean
+            rather than hype cycles.
+          </p>
+        </div>
+
+        <div class="resource-item">
+          <h4>Two Minute Papers</h4>
+          <p>
+            Karoly Zsolnai-Feher summarizes AI research papers in accessible,
+            engaging videos. Good for keeping up with research developments
+            without reading papers directly.
+          </p>
+        </div>
+      </div>
+
+      <h3>Reading and Reference</h3>
+
+      <div class="resource-list">
+        <div class="resource-item">
+          <h4>Prompt Engineering Guide (DAIR.AI)</h4>
+          <p>
+            Open-source comprehensive guide with 3+ million users. Covers techniques,
+            applications, and research papers. Constantly updated. The definitive
+            written reference.
+          </p>
+          <a href="https://www.promptingguide.ai/" target="_blank" rel="noopener">
+            promptingguide.ai
+          </a>
+        </div>
+
+        <div class="resource-item">
+          <h4>OpenAI's Prompt Engineering Guide</h4>
+          <p>
+            Direct from OpenAI—best practices for their models specifically.
+            Authoritative for GPT usage patterns.
+          </p>
+        </div>
+
+        <div class="resource-item">
+          <h4>Anthropic's Prompt Engineering Documentation</h4>
+          <p>
+            Claude-specific guidance from Anthropic. Detailed best practices
+            for Claude's particular strengths and patterns.
+          </p>
+          <a href="https://docs.anthropic.com/" target="_blank" rel="noopener">
+            docs.anthropic.com
+          </a>
+        </div>
+
+        <div class="resource-item">
+          <h4>IBM Think: The 2025 Guide to Prompt Engineering</h4>
+          <p>
+            Comprehensive enterprise-oriented guide with practical frameworks
+            and examples.
+          </p>
+          <a href="https://www.ibm.com/think/prompt-engineering" target="_blank" rel="noopener">
+            ibm.com/think/prompt-engineering
+          </a>
+        </div>
+      </div>
+
+      <h3>Practice Environments</h3>
+
+      <div class="concepts-grid">
+        <div class="concept-card">
+          <div class="concept-name">ChatGPT (OpenAI)</div>
+          <div class="concept-desc">Most widely used interface. Free tier available.</div>
+        </div>
+        <div class="concept-card">
+          <div class="concept-name">Claude (Anthropic)</div>
+          <div class="concept-desc">Strong for long documents, analysis, and coding.</div>
+        </div>
+        <div class="concept-card">
+          <div class="concept-name">Google AI Studio</div>
+          <div class="concept-desc">Access to Gemini models with generous free tier.</div>
+        </div>
+        <div class="concept-card">
+          <div class="concept-name">Hugging Face</div>
+          <div class="concept-desc">Open-source model library with free inference API.</div>
+        </div>
+      </div>
+
+      <h3>How to Use These Resources</h3>
+
+      <div class="callout callout-info">
+        <div class="callout-title">Time-Based Recommendations</div>
+        <ul class="mb-0">
+          <li><strong>15 minutes:</strong> Read the foundational sections of Learn Prompting or scan OpenAI's prompt engineering guide.</li>
+          <li><strong>2 hours:</strong> Complete DeepLearning.AI's ChatGPT Prompt Engineering course.</li>
+          <li><strong>A week:</strong> Work through Google Prompting Essentials, supplement with podcast episodes during commutes.</li>
+          <li><strong>Building AI applications:</strong> DAIR.AI's Prompt Engineering Guide plus the technical documentation from your chosen model provider.</li>
+          <li><strong>Ongoing learning:</strong> Subscribe to 2-3 podcasts and follow AI Explained on YouTube. The field moves fast—regular touchpoints prevent knowledge decay.</li>
+        </ul>
+      </div>
+
+      <p class="text-muted text-small">
+        <em>Last updated: November 2025. AI terminology evolves rapidly—new terms
+        emerge and meanings shift. When in doubt, check primary sources from model providers.</em>
+      </p>
+
+      <!-- Page Navigation -->
+      <nav class="page-nav">
+        <a href="appendix-1.html" class="page-nav-link prev">
+          <span class="page-nav-arrow"><i data-lucide="arrow-left"></i></span>
+          <div>
+            <span class="page-nav-label">Previous</span>
+            <span class="page-nav-title">Appendix A: AI's Environmental Footprint</span>
+          </div>
+        </a>
+        <a href="index.html" class="page-nav-link next">
+          <span class="page-nav-arrow"><i data-lucide="arrow-right"></i></span>
+          <div>
+            <span class="page-nav-label">Return to</span>
+            <span class="page-nav-title">All Modules</span>
+          </div>
+        </a>
+      </nav>
+
+    </article>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div><strong>AI 101</strong> · A Self-Paced Guide to AI in Medicine</div>
+      <div>v1.0 · 2025</div>
+    </div>
+  </footer>
+
+  <script>
+    lucide.createIcons();
+    const navToggle = document.querySelector('.nav-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    if (navToggle) {
+      navToggle.addEventListener('click', () => {
+        navLinks.classList.toggle('nav-open');
+      });
+    }
+  </script>
+
+</body>
+</html>

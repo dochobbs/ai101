@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Week 2: Module 6: Predictive AI in the Clinic | AI 101</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-brand">
+        <span class="nav-badge">AI 101</span>
+        <span class="nav-title">A Self-Paced Guide to AI in Medicine</span>
+      </a>
+      <button class="nav-toggle" aria-label="Toggle menu">
+        <i data-lucide="menu"></i>
+      </button>
+      <div class="nav-links">
+        <a href="index.html" class="nav-link">Modules</a>
+        <!-- <a href="resources.html" class="nav-link">Resources</a> -->
+        <a href="about.html" class="nav-link">About</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="main">
+    <article class="content">
+
+      <header class="unit-header">
+        <span class="unit-label phase-1">PHASE I · MODULE 6</span>
+        <h1 class="unit-title">Predictive AI in the Clinic</h1>
+        <p class="unit-subtitle">
+          Sepsis prediction as case study: why some algorithms succeed in deployment
+          while others fail, and what that teaches about validation.
+        </p>
+        <div class="unit-meta">
+          <span class="unit-meta-item">
+            <i data-lucide="book-open"></i>
+            5 readings
+          </span>
+        </div>
+      </header>
+
+      <div class="callout callout-question">
+        <div class="callout-title">Core Question</div>
+        <p class="mb-0">
+          Why do some AI prediction tools improve patient outcomes while others 
+          generate alert fatigue with no clinical benefit?
+        </p>
+      </div>
+
+      <h2>Overview</h2>
+      <p>
+        Sepsis prediction is the canonical use case for clinical AI—and also the 
+        most instructive failure. This week examines two contrasting examples: 
+        <strong>TREWS</strong> (Targeted Real-time Early Warning System), which 
+        demonstrated mortality reduction at Johns Hopkins, and the <strong>Epic 
+        Sepsis Model</strong>, which independent validation found performed far 
+        worse than advertised.
+      </p>
+      <p>
+        The contrast illuminates everything that matters in predictive AI: how 
+        algorithms are validated, how they're integrated into workflow, and how 
+        alert fatigue can negate even accurate predictions.
+      </p>
+
+      <h2>Key Concepts</h2>
+
+      <h3>The Validation Gap</h3>
+      <p>
+        An algorithm can perform well in retrospective analysis—predicting outcomes 
+        when you already know what happened—yet fail prospectively when deployed 
+        in real clinical conditions. This "validation gap" is one of the most 
+        important concepts in clinical AI evaluation.
+      </p>
+      <p>
+        Key factors: <em>temporal validation</em> (testing on time periods not used 
+        for training), <em>external validation</em> (testing at different sites), 
+        and <em>prospective validation</em> (testing in real-time deployment).
+      </p>
+
+      <h3>Alert Fatigue and Workflow Integration</h3>
+      <p>
+        Even a well-performing algorithm fails if clinicians ignore its alerts. 
+        The Epic Sepsis Model generated thousands of alerts, but studies found 
+        clinicians frequently dismissed them—and when they investigated, they 
+        often found no actionable finding.
+      </p>
+      <p>
+        TREWS took a different approach: rather than simply alerting, it presented 
+        the evidence underlying the prediction, allowing clinicians to quickly 
+        assess its relevance. Workflow integration is not a nice-to-have—it 
+        determines whether an algorithm has any real-world impact.
+      </p>
+
+      <h3>Sensitivity, Specificity, and the Trade-off</h3>
+      <p>
+        Every predictive algorithm involves a trade-off between sensitivity 
+        (catching all true cases) and specificity (avoiding false alarms). 
+        Setting the threshold determines where you land on this curve—and the 
+        right threshold depends on clinical context, not just algorithm performance.
+      </p>
+
+      <div class="callout callout-info">
+        <div class="callout-title">Activity: Alert Fatigue Thought Experiment</div>
+        <p class="mb-0">
+          Consider a gamified ER scenario: You receive 50 sepsis alerts per shift,
+          but only 3 represent true sepsis. How does this affect your response to
+          alert #47? This thought experiment demonstrates automation bias—how high
+          alert volumes lead clinicians to dismiss valid warnings along with false positives.
+        </p>
+      </div>
+
+      <h2>Readings</h2>
+      <div class="reading-list">
+        <div class="reading-item">
+          <div class="reading-type">📄</div>
+          <div class="reading-content">
+            <div class="reading-title">
+              Wong, A. et al. "External Validation of a Widely Implemented Proprietary Sepsis Prediction Model"
+
+            </div>
+            <div class="reading-meta">JAMA Internal Medicine, 2021 · Epic Sepsis Model validation study</div>
+          </div>
+        </div>
+        <div class="reading-item">
+          <div class="reading-type">📄</div>
+          <div class="reading-content">
+            <div class="reading-title">
+              Adams, R. et al. "Prospective, multi-site study of patient outcomes after implementation of the TREWS machine learning-based early warning system"
+
+            </div>
+            <div class="reading-meta">Nature Medicine, 2022 · TREWS outcomes study</div>
+          </div>
+        </div>
+        <div class="reading-item">
+          <div class="reading-type">📄</div>
+          <div class="reading-content">
+            <div class="reading-title">
+              Sendak, M. et al. "A Path for Translation of Machine Learning Products into Healthcare Delivery"
+
+            </div>
+            <div class="reading-meta">EMJ Innovations, 2020 · Implementation framework</div>
+          </div>
+        </div>
+        <div class="reading-item">
+          <div class="reading-type">📄</div>
+          <div class="reading-content">
+            <div class="reading-title">
+              Ginestra, J. et al. "Clinician Perception of a Machine Learning-Based Early Warning System"
+
+            </div>
+            <div class="reading-meta">Critical Care Medicine, 2019</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="discussion-questions">
+        <h4>Discussion Questions</h4>
+        <ol>
+          <li>
+            The Epic Sepsis Model was FDA-cleared and deployed at hundreds of hospitals. 
+            How should we interpret FDA clearance in light of the validation study findings?
+          </li>
+          <li>
+            TREWS showed mortality benefit in a randomized trial. What elements of its 
+            design—beyond algorithm accuracy—might explain this success?
+          </li>
+          <li>
+            If you were a CMO evaluating a sepsis prediction tool for your hospital, 
+            what questions would you ask the vendor?
+          </li>
+        </ol>
+      </div>
+
+      <div class="objectives">
+        <h4 class="objectives-title">Learning Objectives</h4>
+        <ul class="objectives-list">
+          <li>Distinguish between retrospective, temporal, external, and prospective validation</li>
+          <li>Explain how alert fatigue undermines even accurate prediction algorithms</li>
+          <li>Identify workflow integration factors that determine real-world algorithm impact</li>
+          <li>Analyze the sensitivity-specificity trade-off in clinical prediction contexts</li>
+        </ul>
+      </div>
+
+      <nav class="page-nav">
+        <a href="week-1.html" class="page-nav-link prev">
+          <span class="page-nav-arrow"><i data-lucide="arrow-left"></i></span>
+          <div>
+            <span class="page-nav-label">Previous</span>
+            <span class="page-nav-title">Module 5: The AI Triad</span>
+          </div>
+        </a>
+        <a href="week-3.html" class="page-nav-link next">
+          <span class="page-nav-arrow"><i data-lucide="arrow-right"></i></span>
+          <div>
+            <span class="page-nav-label">Next</span>
+            <span class="page-nav-title">Module 7: Algorithmic Bias</span>
+          </div>
+        </a>
+      </nav>
+
+    </article>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div><strong>AI 101</strong> · A Self-Paced Guide to AI in Medicine</div>
+      <div>v1.0 · 2025</div>
+    </div>
+  </footer>
+
+  <script>
+    lucide.createIcons();
+    const navToggle = document.querySelector('.nav-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    if (navToggle) {
+      navToggle.addEventListener('click', () => {
+        navLinks.classList.toggle('nav-open');
+      });
+    }
+  </script>
+
+</body>
+</html>

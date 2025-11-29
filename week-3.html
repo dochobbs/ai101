@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Week 3: Module 7: Algorithmic Bias | AI 101</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-brand">
+        <span class="nav-badge">AI 101</span>
+        <span class="nav-title">A Self-Paced Guide to AI in Medicine</span>
+      </a>
+      <button class="nav-toggle" aria-label="Toggle menu">
+        <i data-lucide="menu"></i>
+      </button>
+      <div class="nav-links">
+        <a href="index.html" class="nav-link">Modules</a>
+        <!-- <a href="resources.html" class="nav-link">Resources</a> -->
+        <a href="about.html" class="nav-link">About</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="main">
+    <article class="content">
+
+      <header class="unit-header">
+        <span class="unit-label phase-1">PHASE I · MODULE 7</span>
+        <h1 class="unit-title">Algorithmic Bias</h1>
+        <p class="unit-subtitle">
+          Obermeyer's landmark Science paper and the structural roots of
+          healthcare algorithm discrimination.
+        </p>
+        <div class="unit-meta">
+          <span class="unit-meta-item">
+            <i data-lucide="book-open"></i>
+            4 readings
+          </span>
+        </div>
+      </header>
+
+      <div class="callout callout-question">
+        <div class="callout-title">Core Question</div>
+        <p class="mb-0">
+          How do healthcare algorithms systematically disadvantage certain patient 
+          populations—even when designers have no discriminatory intent?
+        </p>
+      </div>
+
+      <h2>Overview</h2>
+      <p>
+        In 2019, Obermeyer and colleagues published a landmark paper in <em>Science</em> 
+        demonstrating that a widely-used algorithm for identifying high-risk patients 
+        systematically underestimated the health needs of Black patients. The algorithm 
+        wasn't designed to discriminate—it simply used healthcare costs as a proxy for 
+        health needs. But because Black patients historically face barriers to accessing 
+        care, their costs were lower even at equivalent illness severity.
+      </p>
+      <p>
+        This case illustrates a crucial principle: <strong>algorithms inherit the biases 
+        embedded in their training data</strong>. Bias isn't (usually) a bug in the code; 
+        it's a feature of the data the code learned from.
+      </p>
+
+      <h2>Key Concepts</h2>
+
+      <h3>Proxy Variables and Hidden Discrimination</h3>
+      <p>
+        A proxy variable is something you measure as a stand-in for something you 
+        can't directly measure. Using healthcare costs as a proxy for health needs 
+        seems reasonable—sicker people should cost more. But when access to care 
+        varies systematically across groups, the proxy encodes discrimination.
+      </p>
+      <p>
+        Other dangerous proxies: ZIP code (encodes race, income), insurance type 
+        (encodes employment status), medication adherence (encodes access to pharmacy, 
+        transportation).
+      </p>
+
+      <h3>Label Bias vs. Feature Bias</h3>
+      <p>
+        Bias can enter algorithms through the outcome you're predicting (label bias) 
+        or the inputs you use (feature bias). Obermeyer's case was label bias—the 
+        wrong outcome was being predicted. But feature bias is equally pernicious: 
+        if Black patients' symptoms are documented differently, or if imaging equipment 
+        performs differently on darker skin, the inputs themselves are biased.
+      </p>
+
+      <h3>Fairness Definitions and Trade-offs</h3>
+      <p>
+        There are multiple mathematical definitions of algorithmic fairness, and they 
+        can't all be satisfied simultaneously. Equal accuracy across groups? Equal 
+        positive predictive value? Equal false negative rates? Choosing a fairness 
+        criterion is a values decision, not a technical one.
+      </p>
+
+      <div class="callout callout-info">
+        <div class="callout-title">Activity: Proxy Variable Trap</div>
+        <p class="mb-0">
+          Imagine designing a kidney transplant allocation algorithm. As you consider
+          which variables to include—ZIP code, insurance type, medication adherence
+          history—notice how each seemingly neutral choice can encode socioeconomic
+          and racial disparities.
+        </p>
+      </div>
+
+      <h2>Readings</h2>
+      <div class="reading-list">
+        <div class="reading-item">
+          <div class="reading-type">📄</div>
+          <div class="reading-content">
+            <div class="reading-title">
+              Obermeyer, Z. et al. "Dissecting racial bias in an algorithm used to manage the health of populations"
+
+            </div>
+            <div class="reading-meta">Science, 2019 · The landmark paper</div>
+          </div>
+        </div>
+        <div class="reading-item">
+          <div class="reading-type">📄</div>
+          <div class="reading-content">
+            <div class="reading-title">
+              Vyas, D. et al. "Hidden in Plain Sight — Reconsidering the Use of Race Correction in Clinical Algorithms"
+
+            </div>
+            <div class="reading-meta">NEJM, 2020 · Race correction in eGFR, pulmonary function</div>
+          </div>
+        </div>
+        <div class="reading-item">
+          <div class="reading-type">📄</div>
+          <div class="reading-content">
+            <div class="reading-title">
+              Adamson, A. & Smith, A. "Machine Learning and Health Care Disparities in Dermatology"
+
+            </div>
+            <div class="reading-meta">JAMA Dermatology, 2018 · Skin tone bias in imaging</div>
+          </div>
+        </div>
+        <div class="reading-item">
+          <div class="reading-type">📄</div>
+          <div class="reading-content">
+            <div class="reading-title">
+              Benjamin, R. "Race After Technology" (Chapter 1)
+
+            </div>
+            <div class="reading-meta">Book excerpt · Broader context on technology and discrimination</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="discussion-questions">
+        <h4>Discussion Questions</h4>
+        <ol>
+          <li>
+            Should algorithms ever include race as an input variable? What are 
+            arguments for and against?
+          </li>
+          <li>
+            How would you audit an algorithm you're already using in your institution 
+            for potential bias? What data would you need?
+          </li>
+          <li>
+            Obermeyer's team worked with the algorithm vendor to reduce bias by 80%. 
+            What does the collaborative fix—rather than removal—suggest about how 
+            we should respond to biased algorithms?
+          </li>
+        </ol>
+      </div>
+
+      <div class="objectives">
+        <h4 class="objectives-title">Learning Objectives</h4>
+        <ul class="objectives-list">
+          <li>Explain how proxy variables can encode discrimination without explicit demographic inputs</li>
+          <li>Distinguish between label bias and feature bias</li>
+          <li>Identify common healthcare proxy variables that may perpetuate disparities</li>
+          <li>Evaluate trade-offs between different mathematical definitions of fairness</li>
+        </ul>
+      </div>
+
+      <nav class="page-nav">
+        <a href="week-2.html" class="page-nav-link prev">
+          <span class="page-nav-arrow"><i data-lucide="arrow-left"></i></span>
+          <div>
+            <span class="page-nav-label">Previous</span>
+            <span class="page-nav-title">Module 6: Predictive AI in the Clinic</span>
+          </div>
+        </a>
+        <a href="week-4.html" class="page-nav-link next">
+          <span class="page-nav-arrow"><i data-lucide="arrow-right"></i></span>
+          <div>
+            <span class="page-nav-label">Next</span>
+            <span class="page-nav-title">Module 8: Computer Vision in Medicine</span>
+          </div>
+        </a>
+      </nav>
+
+    </article>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div><strong>AI 101</strong> · A Self-Paced Guide to AI in Medicine</div>
+      <div>v1.0 · 2025</div>
+    </div>
+  </footer>
+
+  <script>
+    lucide.createIcons();
+    const navToggle = document.querySelector('.nav-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    if (navToggle) {
+      navToggle.addEventListener('click', () => {
+        navLinks.classList.toggle('nav-open');
+      });
+    }
+  </script>
+
+</body>
+</html>

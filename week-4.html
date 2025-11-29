@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Week 4: Module 8: Computer Vision in Medicine | AI 101</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-brand">
+        <span class="nav-badge">AI 101</span>
+        <span class="nav-title">A Self-Paced Guide to AI in Medicine</span>
+      </a>
+      <button class="nav-toggle" aria-label="Toggle menu">
+        <i data-lucide="menu"></i>
+      </button>
+      <div class="nav-links">
+        <a href="index.html" class="nav-link">Modules</a>
+        <!-- <a href="resources.html" class="nav-link">Resources</a> -->
+        <a href="about.html" class="nav-link">About</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="main">
+    <article class="content">
+
+      <header class="unit-header">
+        <span class="unit-label phase-1">PHASE I · MODULE 8</span>
+        <h1 class="unit-title">Computer Vision in Medicine</h1>
+        <p class="unit-subtitle">
+          Radiology and pathology AI, the CLAIM Checklist, and how to
+          critically evaluate imaging AI papers.
+        </p>
+        <div class="unit-meta">
+          <span class="unit-meta-item">
+            <i data-lucide="book-open"></i>
+            5 readings
+          </span>
+        </div>
+      </header>
+
+      <div class="callout callout-question">
+        <div class="callout-title">Core Question</div>
+        <p class="mb-0">
+          How do you evaluate whether an AI imaging study represents genuine 
+          clinical progress or overhyped research theater?
+        </p>
+      </div>
+
+      <h2>Overview</h2>
+      <p>
+        Medical imaging was among the first clinical domains to see AI deployment, 
+        with claims of "superhuman" performance in detecting diabetic retinopathy, 
+        lung nodules, and skin cancer. Some of these claims have held up in 
+        real-world testing; many have not.
+      </p>
+      <p>
+        This week develops your critical appraisal skills for imaging AI research. 
+        The <strong>CLAIM Checklist</strong> (Checklist for Artificial Intelligence 
+        in Medical Imaging) provides a 42-item framework for evaluating study quality—
+        analogous to how you might use CONSORT for RCTs or PRISMA for systematic reviews.
+      </p>
+
+      <h2>Key Concepts</h2>
+
+      <h3>The Data Quality Problem</h3>
+      <p>
+        Imaging AI performance depends heavily on image quality, equipment standardization, 
+        and labeling accuracy. An algorithm trained on images from high-end equipment 
+        at academic medical centers may fail on lower-resolution images from community 
+        hospitals. "Ground truth" labels often come from single radiologist reads—but 
+        radiologists disagree with each other at non-trivial rates.
+      </p>
+
+      <h3>Shortcuts and Spurious Correlations</h3>
+      <p>
+        Deep learning models sometimes learn "shortcuts" that work in training data 
+        but fail in deployment. Famous examples include algorithms that learned to 
+        identify the presence of rulers in dermoscopy images (indicating clinician 
+        concern about a lesion) rather than features of the lesion itself, or that 
+        identified hospital-specific scanner artifacts rather than pathology.
+      </p>
+
+      <h3>Human Comparator Studies</h3>
+      <p>
+        Many imaging AI papers compare algorithm performance to "expert radiologists." 
+        But who are these experts? How many? What information did they have access 
+        to? In real practice, radiologists integrate clinical history, prior imaging, 
+        and other context that may not be available to the algorithm.
+      </p>
+
+      <div class="callout callout-info">
+        <div class="callout-title">Activity: CLAIM Audit</div>
+        <p class="mb-0">
+          You'll apply the CLAIM Checklist to a real published imaging AI paper, 
+          identifying methodological weaknesses that weren't apparent from the 
+          abstract. This skill transfers directly to evaluating vendor claims.
+        </p>
+      </div>
+
+      <h2>Readings</h2>
+      <div class="reading-list">
+        <div class="reading-item">
+          <div class="reading-type">📄</div>
+          <div class="reading-content">
+            <div class="reading-title">
+              Mongan, J. et al. "Checklist for Artificial Intelligence in Medical Imaging (CLAIM)"
+
+            </div>
+            <div class="reading-meta">Radiology: AI, 2020 · The full checklist with explanations</div>
+          </div>
+        </div>
+        <div class="reading-item">
+          <div class="reading-type">📄</div>
+          <div class="reading-content">
+            <div class="reading-title">
+              Liu, X. et al. "A comparison of deep learning performance against health-care professionals"
+
+            </div>
+            <div class="reading-meta">Lancet Digital Health, 2019 · Systematic review of imaging AI claims</div>
+          </div>
+        </div>
+        <div class="reading-item">
+          <div class="reading-type">📄</div>
+          <div class="reading-content">
+            <div class="reading-title">
+              Nagendran, M. et al. "Artificial intelligence versus clinicians: systematic review"
+
+            </div>
+            <div class="reading-meta">BMJ, 2020 · Methodological quality of AI vs. clinician studies</div>
+          </div>
+        </div>
+        <div class="reading-item">
+          <div class="reading-type">📄</div>
+          <div class="reading-content">
+            <div class="reading-title">
+              Winkler, J. et al. "Association Between Surgical Skin Markings in Dermoscopic Images and Diagnostic Performance"
+
+            </div>
+            <div class="reading-meta">JAMA Dermatology, 2019 · The ruler/shortcut problem</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="discussion-questions">
+        <h4>Discussion Questions</h4>
+        <ol>
+          <li>
+            A vendor shows you a paper claiming 95% sensitivity for detecting 
+            pulmonary nodules. What CLAIM items would you check first?
+          </li>
+          <li>
+            How should we think about "superhuman" performance claims? Under what 
+            conditions might an algorithm outperform radiologists but still not 
+            be clinically useful?
+          </li>
+          <li>
+            If an algorithm was trained and validated only on Caucasian skin 
+            images, what steps would be needed before deploying it in a diverse 
+            patient population?
+          </li>
+        </ol>
+      </div>
+
+      <div class="objectives">
+        <h4 class="objectives-title">Learning Objectives</h4>
+        <ul class="objectives-list">
+          <li>Apply the CLAIM Checklist to evaluate an imaging AI paper</li>
+          <li>Identify common methodological weaknesses in imaging AI research</li>
+          <li>Explain how shortcut learning can cause deployment failures</li>
+          <li>Evaluate the validity of human comparator study designs</li>
+        </ul>
+      </div>
+
+      <nav class="page-nav">
+        <a href="week-3.html" class="page-nav-link prev">
+          <span class="page-nav-arrow"><i data-lucide="arrow-left"></i></span>
+          <div>
+            <span class="page-nav-label">Previous</span>
+            <span class="page-nav-title">Module 7: Algorithmic Bias</span>
+          </div>
+        </a>
+        <a href="module-9.html" class="page-nav-link next">
+          <span class="page-nav-arrow"><i data-lucide="arrow-right"></i></span>
+          <div>
+            <span class="page-nav-label">Next</span>
+            <span class="page-nav-title">Module 9: Clinical Decision Support Tools</span>
+          </div>
+        </a>
+      </nav>
+
+    </article>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div><strong>AI 101</strong> · A Self-Paced Guide to AI in Medicine</div>
+      <div>v1.0 · 2025</div>
+    </div>
+  </footer>
+
+  <script>
+    lucide.createIcons();
+    const navToggle = document.querySelector('.nav-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    if (navToggle) {
+      navToggle.addEventListener('click', () => {
+        navLinks.classList.toggle('nav-open');
+      });
+    }
+  </script>
+
+</body>
+</html>

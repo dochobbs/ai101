@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Start Here | AI 101</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-brand">
+        <span class="nav-badge">AI 101</span>
+        <span class="nav-title">A Self-Paced Guide to AI in Medicine</span>
+      </a>
+      <button class="nav-toggle" aria-label="Toggle menu">
+        <i data-lucide="menu"></i>
+      </button>
+      <div class="nav-links">
+        <a href="index.html" class="nav-link">Modules</a>
+        <!-- <a href="resources.html" class="nav-link">Resources</a> -->
+        <a href="about.html" class="nav-link">About</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <main class="main">
+    <article class="content">
+
+      <!-- Unit Header -->
+      <header class="unit-header">
+        <span class="unit-label intro">START HERE</span>
+        <h1 class="unit-title">Not with Theory—with Practice</h1>
+        <p class="unit-subtitle">
+          Before you understand how AI works, learn to make it work for you.
+          A practical on-ramp using tools you can apply today.
+        </p>
+        <div class="unit-meta">
+          <span class="unit-meta-item">
+            <i data-lucide="play-circle"></i>
+            Hands-on activity
+          </span>
+        </div>
+      </header>
+
+      <!-- Core Question -->
+      <div class="callout callout-question">
+        <div class="callout-title">Core Question</div>
+        <p class="mb-0">
+          How can I use AI to make learning materials work for me—before I understand how AI works?
+        </p>
+      </div>
+
+      <!-- Introduction -->
+      <p>
+        Most courses on clinical AI start with definitions: machine learning, neural networks,
+        training data. There's a place for that—and we'll get there in Module 1. But if you're
+        a busy clinician, you probably want to know: <strong>what can I actually do with this,
+        right now?</strong>
+      </p>
+      <p>
+        This module inverts the usual sequence. Instead of learning theory first and applying it
+        later, you'll start by using an AI tool to solve a real problem you already have:
+        keeping up with medical literature. Along the way, you'll develop intuitions about
+        how these systems behave—intuitions that will make the theory easier to absorb.
+      </p>
+
+      <!-- Tool Introduction -->
+      <div class="callout callout-tool">
+        <div class="callout-title">Tool: NotebookLM</div>
+        <p>
+          <a href="https://notebooklm.google.com" target="_blank">NotebookLM</a> is a
+          document-grounded AI assistant from Google. You upload your own sources—PDFs,
+          articles, guidelines—and it answers questions based only on that material.
+        </p>
+        <p class="mb-0">
+          <strong>Why start here:</strong> Unlike general-purpose chatbots, NotebookLM is
+          constrained to your uploaded content. This makes it safer for clinical learning:
+          it can't invent facts from the open internet, only synthesize what you've given it.
+        </p>
+      </div>
+
+      <h2>Two High-Yield Use Cases</h2>
+
+      <p>
+        Before we complicate things with five examples and edge cases, let's nail two
+        workflows that will immediately save you time.
+      </p>
+
+      <!-- Example 1 -->
+      <div class="example-card">
+        <div class="example-header">
+          <span class="example-number">1</span>
+          <h3 class="example-title">Guideline → Decision Aid</h3>
+        </div>
+        <p>
+          Clinical guidelines are essential but dense. The AAP bronchiolitis guideline,
+          for instance, runs dozens of pages. What you need at 2 AM is a one-page summary
+          organized by decision points.
+        </p>
+        <div class="prompt-label">Sample Prompt</div>
+        <div class="prompt-box">Summarize this guideline as a one-page clinical decision aid.
+Organize by key decision points (when to admit, when to
+discharge, when to use supplemental O2). Flag anything
+that changed from the previous version.</div>
+        <div class="outcome-box">
+          <strong>What you get:</strong> A structured summary that maps to your actual
+          workflow, with change flags that highlight what's new. Trade-off: you'll still
+          need to verify critical thresholds against the source.
+        </div>
+      </div>
+
+      <!-- Example 2 -->
+      <div class="example-card">
+        <div class="example-header">
+          <span class="example-number">2</span>
+          <h3 class="example-title">Papers → Audio Overview</h3>
+        </div>
+        <p>
+          NotebookLM's "Audio Overview" feature generates a podcast-style conversation
+          between two AI hosts discussing your uploaded sources. It's remarkably good
+          for commute-time learning.
+        </p>
+        <div class="prompt-label">How to Use</div>
+        <div class="prompt-box">1. Upload 2-3 related papers (e.g., recent GLP-1
+   agonist trials, or AI sepsis alert studies)
+2. Click "Generate Audio Overview"
+3. Listen during commute, workout, or dishes</div>
+        <div class="outcome-box">
+          <strong>What you get:</strong> A ~10-15 minute audio summary that captures
+          main findings and puts them in conversation. Trade-off: the hosts will
+          occasionally oversimplify or miss nuance—treat it as a first pass, not a
+          final read.
+        </div>
+      </div>
+
+      <!-- Underlying Principle -->
+      <div class="callout callout-principle">
+        <div class="callout-title">The Underlying Principle</div>
+        <p class="mb-0">
+          AI literacy for clinicians is not about understanding how the models work.
+          It's about learning to <strong>direct them toward useful ends</strong> while
+          <strong>recognizing their limits</strong>. You are the supervisor. The AI is
+          the tool.
+        </p>
+      </div>
+
+      <!-- Warning -->
+      <div class="callout callout-warning">
+        <div class="callout-title">Critical Limitation</div>
+        <p>
+          NotebookLM will hallucinate. It will miss nuance. It will confidently summarize
+          things it doesn't fully understand.
+        </p>
+        <p class="mb-0">
+          Every output requires your verification. But starting with a tool where you
+          control the sources—rather than asking ChatGPT to diagnose patients—is a
+          safer sandbox for building intuition.
+        </p>
+      </div>
+
+      <!-- Activity -->
+      <section class="activity-section">
+        <h3 class="activity-title">Hands-On Activity</h3>
+
+        <ol class="activity-steps">
+          <li class="activity-step">
+            <span class="step-number">1</span>
+            <div class="step-content">
+              <p>
+                <strong>Create a notebook</strong> at
+                <a href="https://notebooklm.google.com" target="_blank">notebooklm.google.com</a>
+                (requires Google account).
+              </p>
+            </div>
+          </li>
+          <li class="activity-step">
+            <span class="step-number">2</span>
+            <div class="step-content">
+              <p>
+                <strong>Upload 2-3 sources</strong> relevant to your practice: a clinical
+                guideline, a review article, a lecture PDF. Pick something you've been
+                meaning to read.
+              </p>
+            </div>
+          </li>
+          <li class="activity-step">
+            <span class="step-number">3</span>
+            <div class="step-content">
+              <p>
+                <strong>Ask three different types of questions:</strong>
+              </p>
+              <ul>
+                <li>A summary request ("Summarize the key recommendations")</li>
+                <li>A comparison ("How does source A differ from source B on X?")</li>
+                <li>An evidence query ("What evidence supports recommendation Y?")</li>
+              </ul>
+            </div>
+          </li>
+          <li class="activity-step">
+            <span class="step-number">4</span>
+            <div class="step-content">
+              <p>
+                <strong>Generate an Audio Overview</strong> and listen to at least 5 minutes.
+                Note one thing it got right and one thing it oversimplified.
+              </p>
+            </div>
+          </li>
+          <li class="activity-step">
+            <span class="step-number">5</span>
+            <div class="step-content">
+              <p>
+                <strong>Reflect:</strong> Which output format (text summary vs. audio)
+                worked better for you? What would you prompt differently next time?
+              </p>
+            </div>
+          </li>
+        </ol>
+      </section>
+
+      <!-- Learning Objectives -->
+      <div class="objectives">
+        <h4 class="objectives-title">By the End of This Module, You Can...</h4>
+        <ul class="objectives-list">
+          <li>Create a NotebookLM notebook and upload clinical sources</li>
+          <li>Write prompts that extract summaries, comparisons, and decision aids</li>
+          <li>Identify at least one output that requires verification or contains oversimplification</li>
+          <li>Articulate the core loop: prompt → evaluate → refine</li>
+        </ul>
+      </div>
+
+      <!-- What's Next -->
+      <h2>What's Next</h2>
+      <p>
+        Now that you've seen what AI can do in a constrained, document-grounded setting,
+        Module 1 will give you the conceptual vocabulary to understand <em>why</em> it
+        works—and why it sometimes doesn't. We'll introduce the AI Triad (Data, Algorithms,
+        Compute) and map it to infrastructure you already know: EHRs, imaging systems,
+        clinical decision support.
+      </p>
+      <p>
+        The goal isn't to make you a machine learning engineer. It's to give you the
+        mental models to be a sophisticated consumer and supervisor of these systems.
+      </p>
+
+      <!-- Page Navigation -->
+      <nav class="page-nav">
+        <a href="index.html" class="page-nav-link prev">
+          <span class="page-nav-arrow"><i data-lucide="arrow-left"></i></span>
+          <div>
+            <span class="page-nav-label">Back to</span>
+            <span class="page-nav-title">All Modules</span>
+          </div>
+        </a>
+        <a href="module-1.html" class="page-nav-link next">
+          <span class="page-nav-arrow"><i data-lucide="arrow-right"></i></span>
+          <div>
+            <span class="page-nav-label">Next</span>
+            <span class="page-nav-title">Module 1: How LLMs Think Like Clinicians</span>
+          </div>
+        </a>
+      </nav>
+
+    </article>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div>
+        <strong>AI 101</strong> · A Self-Paced Guide to AI in Medicine
+      </div>
+      <div>
+        v1.0 · 2025
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    lucide.createIcons();
+    const navToggle = document.querySelector('.nav-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    if (navToggle) {
+      navToggle.addEventListener('click', () => {
+        navLinks.classList.toggle('nav-open');
+      });
+    }
+  </script>
+
+</body>
+</html>

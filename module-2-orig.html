@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Module 2: PHI, HIPAA, and AI | AI 101</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-brand">
+        <span class="nav-badge">AI 101</span>
+        <span class="nav-title">A Self-Paced Guide to AI in Medicine</span>
+      </a>
+      <button class="nav-toggle" aria-label="Toggle menu">
+        <i data-lucide="menu"></i>
+      </button>
+      <div class="nav-links">
+        <a href="index.html" class="nav-link">Modules</a>
+        <!-- <a href="resources.html" class="nav-link">Resources</a> -->
+        <a href="about.html" class="nav-link">About</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="main">
+    <article class="content">
+
+      <header class="unit-header">
+        <span class="unit-label phase-1">PHASE I · MODULE 2</span>
+        <h1 class="unit-title">The Data You Think Is Protected Isn't</h1>
+        <p class="unit-subtitle">
+          Understanding PHI, HIPAA, and AI—what makes this different from every
+          previous healthcare technology.
+        </p>
+        <div class="unit-meta">
+          <span class="unit-meta-item">
+            <i data-lucide="book-open"></i>
+            7 readings
+          </span>
+        </div>
+      </header>
+
+      <div class="callout callout-question">
+        <div class="callout-title">Core Question</div>
+        <p class="mb-0">
+          Why does AI create genuinely new privacy challenges—not just faster
+          versions of old problems—and how do you recognize the exposures that
+          matter in clinical workflows?
+        </p>
+      </div>
+
+      <!-- Case Study Introduction -->
+      <div class="callout callout-warning">
+        <div class="callout-title">The Ontario Hospital Breach</div>
+        <p>
+          In September 2024, a physician at an Ontario hospital installed Otter.ai—an
+          AI transcription tool—on his personal device. He'd left the hospital over a
+          year earlier but was still on the invite list for weekly hepatology rounds.
+          When the next meeting started, the Otter bot joined automatically, recorded
+          physicians discussing seven patients by name, and emailed a transcript to 65
+          people—including 12 who no longer worked at the hospital.
+        </p>
+        <p class="mb-0">
+          No one in the meeting knew the bot was there. Patient names, diagnoses, and
+          treatment details were now sitting in inboxes of people who had no business
+          seeing them—and on Otter's servers, where the company's privacy policy allows
+          use of recordings to train their AI models.
+        </p>
+      </div>
+
+      <p>
+        This incident captures why AI is genuinely different from previous healthcare
+        technology. It's not just a faster fax machine or a better database. AI tools
+        can act autonomously, join meetings without invitation, record without visible
+        indication, and transmit data to external servers in ways that bypass every
+        traditional safeguard. The regulatory framework—HIPAA, designed in 1996 for
+        paper charts and fax machines—wasn't built for software that learns from every
+        input and can take actions on its own.
+      </p>
+
+      <p>
+        This module will help you understand where the real risks are. We'll cover the
+        basics of HIPAA and PHI, but the goal isn't comprehensive compliance training—it's
+        developing intuition for the edge cases that matter when AI enters clinical
+        workflows. You'll learn to recognize three categories of PHI exposure that
+        escalate in subtlety: <strong>direct PHI</strong> (the obvious identifiers),
+        <strong>indirect PHI</strong> (data that becomes identifying when combined), and
+        <strong>shadow AI</strong> (the untracked tools that create compliance blind
+        spots—like that Otter bot).
+      </p>
+
+      <h2>What Makes AI Different</h2>
+
+      <p>
+        Traditional healthcare IT systems—EHRs, billing systems, scheduling software—are
+        essentially sophisticated databases. They store what you put in, retrieve what
+        you ask for, and follow deterministic rules. If patient data leaks, it's usually
+        because of a configuration error, a hack, or human mistake. The system itself
+        doesn't learn, doesn't act autonomously, and doesn't transmit data unless
+        explicitly programmed to.
+      </p>
+
+      <p>AI systems are fundamentally different in several ways that matter for privacy:</p>
+
+      <div class="concepts-grid">
+        <div class="concept-card">
+          <div class="concept-icon"><i data-lucide="brain"></i></div>
+          <div class="concept-name">They Learn From Data</div>
+          <div class="concept-desc">Your input may become training data—embedded in model weights, difficult to audit, impossible to fully "delete"</div>
+        </div>
+        <div class="concept-card">
+          <div class="concept-icon"><i data-lucide="bot"></i></div>
+          <div class="concept-name">They Act Autonomously</div>
+          <div class="concept-desc">AI tools can take actions based on triggers, without human initiation—like that Otter bot joining a meeting</div>
+        </div>
+        <div class="concept-card">
+          <div class="concept-icon"><i data-lucide="cloud"></i></div>
+          <div class="concept-name">External Transmission</div>
+          <div class="concept-desc">Most AI processes data on external servers. The moment data leaves your network, you've lost direct control</div>
+        </div>
+        <div class="concept-card">
+          <div class="concept-icon"><i data-lucide="eye-off"></i></div>
+          <div class="concept-name">Opaque Data Flows</div>
+          <div class="concept-desc">AI integrates with calendars, email, and other systems in ways that make data flows surprisingly complex</div>
+        </div>
+      </div>
+
+      <h3>The Velocity Problem</h3>
+      <p>
+        New AI tools appear weekly. Employees adopt them because they genuinely help—who
+        wouldn't want to cut documentation time in half? But each tool potentially creates
+        a new data flow, a new vendor relationship, and a new compliance gap. Traditional
+        IT governance, with its months-long procurement cycles, can't keep pace. By the
+        time a tool is formally evaluated, half the staff may already be using it.
+      </p>
+
+      <h2>HIPAA Fundamentals for AI</h2>
+
+      <h3>Who HIPAA Actually Covers (and Who It Doesn't)</h3>
+      <p>
+        HIPAA is an <strong>entity-based framework</strong>, not a data-based one. This
+        distinction is critical. The law doesn't protect "health data"—it protects health
+        data held by specific types of organizations.
+      </p>
+
+      <div class="table-responsive">
+        <table class="reference-table">
+          <thead>
+            <tr>
+              <th>Category</th>
+              <th>Examples</th>
+              <th>HIPAA Coverage</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Covered Entities</td>
+              <td>Health plans, clearinghouses, providers who transmit electronically</td>
+              <td>Yes</td>
+            </tr>
+            <tr>
+              <td>Business Associates</td>
+              <td>AI vendors with signed BAA</td>
+              <td>Yes (via BAA)</td>
+            </tr>
+            <tr>
+              <td>Consumer Apps</td>
+              <td>Health apps, fitness trackers, wearables</td>
+              <td>No</td>
+            </tr>
+            <tr>
+              <td>AI Without BAA</td>
+              <td>ChatGPT (consumer), most free AI tools</td>
+              <td>No</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>
+        <strong>The gap this creates:</strong> When a patient enters symptoms into a
+        consumer health app, or a clinician pastes notes into ChatGPT without a BAA,
+        that data isn't protected by HIPAA. The FTC has stepped into some of this gap
+        with the Health Breach Notification Rule, but enforcement is inconsistent and
+        the protections are narrower.
+      </p>
+
+      <h3>The Three HIPAA Rules That Matter for AI</h3>
+
+      <p><strong>Privacy Rule:</strong> Governs how PHI can be used and disclosed. PHI
+      can generally only be used for treatment, payment, and healthcare operations
+      without explicit patient authorization. Using PHI to train commercial AI models
+      typically requires either authorization or de-identification.</p>
+
+      <p><strong>Security Rule:</strong> Requires administrative, physical, and
+      technical safeguards for electronic PHI. In January 2025, HHS proposed the first
+      major update in 20 years, mandating encryption, multi-factor authentication, and
+      72-hour disaster recovery. AI systems processing ePHI will face these enhanced
+      standards.</p>
+
+      <p><strong>Breach Notification Rule:</strong> Requires notification within 60
+      days of discovering a breach of unsecured PHI. From 2018-2023, large breaches
+      increased 102% and affected individuals increased 1,002%. An AI system that
+      inadvertently exposes PHI triggers these requirements.</p>
+
+      <h2>Direct PHI in AI Systems</h2>
+
+      <p>
+        Direct PHI includes the 18 categories of identifiers that HIPAA's Safe Harbor
+        de-identification method requires you to remove. These are the obvious markers
+        that link data to individuals.
+      </p>
+
+      <h3>The 18 Safe Harbor Identifiers</h3>
+
+      <div class="table-responsive">
+        <table class="reference-table">
+          <thead>
+            <tr>
+              <th>Identifier Category</th>
+              <th>AI-Specific Considerations</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Names</td>
+              <td>May appear in transcription, NLP outputs, training data</td>
+            </tr>
+            <tr>
+              <td>Geographic data smaller than state</td>
+              <td>ZIP codes in combined datasets; geolocation in app data</td>
+            </tr>
+            <tr>
+              <td>Dates (except year) related to individual</td>
+              <td>Visit timestamps, DOB, admission/discharge dates</td>
+            </tr>
+            <tr>
+              <td>Phone/fax numbers, email addresses</td>
+              <td>Contact info in scheduling data, patient portals</td>
+            </tr>
+            <tr>
+              <td>SSN, medical record numbers</td>
+              <td>Often embedded in EHR exports used for training</td>
+            </tr>
+            <tr>
+              <td>Device identifiers, IP addresses</td>
+              <td>Logged by AI systems, app analytics, telehealth platforms</td>
+            </tr>
+            <tr>
+              <td>URLs, biometric identifiers, photos</td>
+              <td>CT/MRI reconstructions, voice prints, facial images</td>
+            </tr>
+            <tr>
+              <td>Any unique identifying number/code</td>
+              <td>Patient IDs, encounter numbers, prescription IDs</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>Where Direct PHI Enters AI Systems</h3>
+
+      <p><strong>Training Data:</strong> When AI models are trained on clinical data,
+      PHI may be embedded in the model weights themselves. This creates a form of data
+      persistence that's difficult to audit and impossible to fully "delete." Model
+      inversion attacks have demonstrated the ability to extract training data from
+      some models.</p>
+
+      <p><strong>Inference-Time Inputs:</strong> When clinicians paste patient notes
+      into AI tools, that data is transmitted to external servers. Even if the vendor
+      promises not to use it for training, it may be logged, cached, or retained for
+      abuse monitoring. Most consumer AI tools retain data for 30+ days.</p>
+
+      <p><strong>Generated Outputs:</strong> AI-generated clinical notes, summaries,
+      and recommendations become PHI themselves. If an ambient scribe generates a SOAP
+      note, that output requires the same protections as a manually-written note.</p>
+
+      <h3>The BAA Requirement</h3>
+
+      <p>
+        Before using any AI tool with PHI, a <strong>Business Associate Agreement</strong>
+        must be in place. The BAA establishes the vendor as a business associate, binding
+        them to HIPAA requirements including safeguards, use restrictions, and breach
+        notification.
+      </p>
+
+      <div class="callout callout-principle">
+        <div class="callout-title">Critical Point</div>
+        <p class="mb-0">
+          A vendor claiming to be "HIPAA compliant" means nothing without a signed BAA.
+          The FTC has taken enforcement actions against companies making false HIPAA
+          compliance claims (GoodRx, BetterHelp). Always verify with documentation.
+        </p>
+      </div>
+
+      <h3>Current BAA Availability by Platform</h3>
+      <ul>
+        <li><strong>OpenAI API:</strong> BAA available for zero-retention endpoints (contact baa@openai.com)</li>
+        <li><strong>ChatGPT (consumer):</strong> No BAA available. Cannot be used with PHI.</li>
+        <li><strong>ChatGPT Enterprise/Edu:</strong> BAA available through sales-managed accounts</li>
+        <li><strong>Azure OpenAI:</strong> BAA included in Microsoft Product Terms by default</li>
+        <li><strong>Google Vertex AI:</strong> BAA available for healthcare customers</li>
+        <li><strong>AWS HealthScribe:</strong> HIPAA-eligible service with BAA coverage</li>
+        <li><strong>Purpose-built scribes (Freed, Suki, etc.):</strong> Generally offer BAAs; verify before deployment</li>
+      </ul>
+
+      <h2>Indirect PHI and Re-identification Risk</h2>
+
+      <p>
+        This is where the regulatory framework shows its age. HIPAA's Safe Harbor method
+        was designed before modern machine learning, before data brokers, before the
+        explosion of auxiliary datasets that make re-identification increasingly feasible.
+      </p>
+
+      <h3>The Mosaic Effect</h3>
+      <p>
+        The mosaic effect describes how individually benign data points become identifying
+        when combined. In 1997, researcher Latanya Sweeney demonstrated that 87% of
+        Americans could be uniquely identified using just three data points: ZIP code,
+        birth date, and gender. She famously re-identified Massachusetts Governor William
+        Weld's medical records from "anonymized" hospital data by linking it to publicly
+        available voter rolls.
+      </p>
+
+      <p>
+        For AI systems, this creates a fundamental tension. Machine learning thrives on
+        rich, detailed data. De-identification that's sufficient to prevent
+        re-identification often strips the clinical utility that makes the data valuable
+        for training or analysis.
+      </p>
+
+      <h3>How Many Data Points Does It Take?</h3>
+
+      <p>
+        The research on re-identification is sobering. Multiple studies have consistently
+        shown that <strong>3-5 indirect identifiers are typically sufficient to re-identify
+        individuals</strong> from medical records, especially when combined with publicly
+        available datasets.
+      </p>
+
+      <div class="callout callout-warning">
+        <div class="callout-title">The Research Evidence</div>
+        <ul>
+          <li>
+            <strong>Sweeney (1997, 2000):</strong> Demonstrated that 87% of the U.S. population
+            can be uniquely identified by just 3 variables—ZIP code, birth date, and gender.
+            Using only publicly available voter registration data, she re-identified the
+            Massachusetts Governor's medical records.
+          </li>
+          <li>
+            <strong>Golle (2006):</strong> Found that combining gender, ZIP code, and birth
+            date uniquely identifies 63% of the U.S. population. Adding a fourth variable
+            (like race or marital status) increases this substantially.
+          </li>
+          <li>
+            <strong>Narayanan & Shmatikov (2008):</strong> Re-identified Netflix users by
+            combining just 2-8 movie ratings with timestamps against public IMDB reviews.
+            The same technique applies to healthcare—sparse data points combined with
+            auxiliary information.
+          </li>
+          <li>
+            <strong>El Emam et al. (2011):</strong> Systematic review of re-identification
+            attacks found that records with as few as 3 quasi-identifiers were vulnerable,
+            with success rates ranging from 10-35% depending on the external dataset used.
+          </li>
+          <li>
+            <strong>Rocher et al. (2019):</strong> Using machine learning on a dataset with
+            just 15 demographic attributes, correctly re-identified 99.98% of Americans.
+            Even incomplete datasets with fewer attributes achieved 83% accuracy with only
+            3-4 data points.
+          </li>
+        </ul>
+      </div>
+
+      <div class="callout callout-principle">
+        <div class="callout-title">The Bottom Line</div>
+        <p>
+          The data consistently shows that 3-5 indirect identifiers are typically sufficient
+          to re-identify individuals from medical records, especially when combined with
+          publicly available datasets. This is why HIPAA's Safe Harbor method requires
+          removing <strong>all 18 direct identifiers AND</strong> ensuring no actual
+          knowledge exists that remaining information could identify individuals.
+        </p>
+        <p class="mb-0">
+          The implication for AI is clear: when you paste a clinical scenario into ChatGPT
+          or any consumer AI tool, the combination of age, gender, diagnosis, medications,
+          and timeline may be sufficient to identify your patient—even if you've removed
+          their name.
+        </p>
+      </div>
+
+      <h3>Quasi-Identifiers in Healthcare Data</h3>
+      <p>
+        Even after removing the 18 Safe Harbor identifiers, healthcare data contains
+        numerous quasi-identifiers that can enable re-identification when combined with
+        external data sources:
+      </p>
+      <ul>
+        <li><strong>Rare diagnoses:</strong> A unique combination of conditions may identify a patient within a population</li>
+        <li><strong>Treatment patterns:</strong> Specific medication sequences or surgical combinations</li>
+        <li><strong>Temporal patterns:</strong> Visit frequency, hospitalization duration, time between events</li>
+        <li><strong>Provider relationships:</strong> Combination of specialists seen</li>
+        <li><strong>Demographic combinations:</strong> Age range + gender + ethnicity + approximate location</li>
+        <li><strong>Free-text narratives:</strong> Clinical notes often contain identifying details even after NER-based scrubbing</li>
+      </ul>
+
+      <h3>AI-Specific Re-identification Risks</h3>
+
+      <p><strong>Image Reconstruction:</strong> CT and MRI scans contain sufficient
+      geometric information to reconstruct facial features. A "de-identified" head CT
+      can potentially be matched to a photograph using 3D reconstruction techniques.
+      AI dramatically improves the feasibility of such attacks.</p>
+
+      <p><strong>Voice Prints:</strong> Voice recordings—including those captured by
+      ambient scribes—are explicitly listed as biometric identifiers under HIPAA.
+      Speaker identification models can match voices across recordings, potentially
+      linking "anonymized" research data to identified individuals.</p>
+
+      <p><strong>Training Data Extraction:</strong> Model inversion and membership
+      inference attacks can potentially extract or verify the presence of specific
+      records in training data. This transforms the model itself into a form of data
+      storage that may be subject to HIPAA requirements.</p>
+
+      <h3>The Safe Harbor List Is Outdated</h3>
+      <p>
+        The 18 Safe Harbor identifiers were defined in 1996 and haven't been updated
+        since. They don't account for:
+      </p>
+      <ul>
+        <li><strong>Social media:</strong> Platforms that didn't exist and now contain vast amounts of personally identifying information</li>
+        <li><strong>Commercial data brokers:</strong> Companies that aggregate consumer data from thousands of sources</li>
+        <li><strong>Genetic data:</strong> DNA sequences that are uniquely identifying and increasingly available through consumer testing</li>
+        <li><strong>Location history:</strong> Smartphone data that can uniquely identify individuals through movement patterns</li>
+        <li><strong>Wearable data:</strong> Health metrics from fitness trackers that create unique biometric signatures</li>
+        <li><strong>AI capabilities:</strong> Machine learning tools that can find patterns across datasets at scale impossible in 1996</li>
+      </ul>
+
+      <h2>Shadow AI and Stealth PHI Exposure</h2>
+
+      <p>
+        Shadow AI is the healthcare equivalent of shadow IT: employees using AI tools
+        without organizational approval, oversight, or integration into compliance
+        frameworks. It's the fastest-growing and least-controlled category of PHI exposure.
+      </p>
+
+      <h3>The Scale of the Problem</h3>
+      <p>
+        Research indicates that nearly 95% of healthcare organizations believe their
+        staff are already using generative AI in email or content workflows. 62% of
+        leaders have directly observed employees using unsanctioned tools. Yet a quarter
+        of organizations have not formally approved any AI use—meaning staff are acting
+        without oversight, outside compliance frameworks, and without BAAs in place.
+      </p>
+      <p>
+        Shadow AI incidents account for 20% of AI-related security breaches—7 percentage
+        points higher than incidents involving sanctioned AI.
+      </p>
+
+      <h3>Anatomy of the Ontario Hospital Breach</h3>
+      <p>Let's return to the Otter.ai incident, because it illustrates almost every shadow AI failure mode:</p>
+
+      <div class="table-responsive">
+        <table class="reference-table">
+          <thead>
+            <tr>
+              <th>Failure</th>
+              <th>What Happened</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Personal device, work data</td>
+              <td>Physician installed Otter on personal device using personal email still on meeting invite list</td>
+            </tr>
+            <tr>
+              <td>No offboarding process</td>
+              <td>Physician left in June 2023 but remained on meeting invites until breach in September 2024—over 15 months</td>
+            </tr>
+            <tr>
+              <td>Autonomous AI action</td>
+              <td>Otter's "notetaker bot" joined the meeting automatically based on calendar invite. No one clicked anything.</td>
+            </tr>
+            <tr>
+              <td>No visibility</td>
+              <td>Participants didn't notice the bot until emails went out. PHI already transmitted to Otter's servers.</td>
+            </tr>
+            <tr>
+              <td>Incomplete remediation</td>
+              <td>Of 65 recipients, only 53 confirmed deletion. Data remained on Otter's servers for potential model training.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>Common Shadow AI Scenarios</h3>
+
+      <p><strong>Clinical Documentation:</strong> A physician pastes patient notes into
+      ChatGPT to generate a summary or draft a letter. They've just transmitted PHI to
+      a platform without a BAA, potentially violating HIPAA.</p>
+
+      <p><strong>Administrative Tasks:</strong> A clinic manager uploads patient
+      scheduling data to an AI tool for analysis. A billing specialist uses AI to help
+      with denial appeals. Each creates an untracked data flow to unvetted platforms.</p>
+
+      <p><strong>The Productivity Trap:</strong> A physician discovers ChatGPT can
+      generate patient summaries in seconds. They start with de-identified summaries,
+      then gradually include more context, then patient names "just this once" when
+      running late. By the time anyone notices, months of PHI has been transmitted.</p>
+
+      <h3>Why Shadow AI Happens</h3>
+      <ol>
+        <li><strong>Productivity pressure:</strong> Clinicians are drowning in documentation. AI tools offer genuine time savings.</li>
+        <li><strong>Approval friction:</strong> Sanctioned AI tools require lengthy procurement. Free tools are available immediately.</li>
+        <li><strong>Awareness gaps:</strong> Many users don't understand that pasting text into an AI tool constitutes data transmission to an external server.</li>
+        <li><strong>Tool limitations:</strong> Approved tools may not meet user needs, pushing staff to seek alternatives.</li>
+        <li><strong>Embedded AI:</strong> AI features are increasingly embedded in approved tools (CRM systems, email clients) without separate vetting.</li>
+      </ol>
+
+      <h3>Governance Approaches</h3>
+      <p>Industry experts advise against blanket bans—they don't work and push usage further underground. Instead:</p>
+      <ol>
+        <li><strong>Provide alternatives:</strong> Deploy enterprise AI tools with BAAs, security controls, and logging. Make the approved path as convenient as the shadow path.</li>
+        <li><strong>Create fast-track approval:</strong> Establish a streamlined process for evaluating new AI tools. Reduce the friction that drives shadow usage.</li>
+        <li><strong>Educate continuously:</strong> Help staff understand why the restrictions exist and what's at stake. Focus on the "why" rather than just the "don't."</li>
+        <li><strong>Monitor adaptively:</strong> Use tools that can detect AI usage. Treat detections as opportunities for guidance, not punishment.</li>
+        <li><strong>Listen to shadow users:</strong> Shadow AI reveals unmet needs. Use it as free market research—what are people trying to accomplish?</li>
+      </ol>
+
+      <h2>What You Should Actually Do</h2>
+
+      <h3>Before Deploying Any AI System</h3>
+      <ol>
+        <li><strong>Map the data flows:</strong> Where does PHI enter the system? Where is it stored? Where does it go? Who has access?</li>
+        <li><strong>Verify BAA status:</strong> Is a Business Associate Agreement in place? What does it actually cover? Does it address AI-specific risks?</li>
+        <li><strong>Assess minimum necessary:</strong> Does the AI need all the data being provided? Can inputs be limited to what's actually required?</li>
+        <li><strong>Evaluate de-identification:</strong> If using de-identified data, which method was used? Has re-identification risk been assessed in light of AI capabilities?</li>
+        <li><strong>Review data retention:</strong> How long does the vendor retain inputs? Are they used for model training? What happens to audit logs?</li>
+        <li><strong>Plan for breach:</strong> If PHI is exposed through this system, what's the notification plan? Who's responsible for detection?</li>
+        <li><strong>Document everything:</strong> Risk assessments, vendor evaluations, configuration decisions, training records. The documentation is your defense.</li>
+      </ol>
+
+      <h3>Vendor Evaluation Questions</h3>
+      <p>When evaluating AI vendors for healthcare use, ask:</p>
+      <ul>
+        <li>Will you sign our BAA (or provide your standard BAA for review)?</li>
+        <li>Where is data processed and stored? Which jurisdictions?</li>
+        <li>Is any data used to train or improve your models? How can we opt out?</li>
+        <li>What encryption is used in transit and at rest?</li>
+        <li>How long is data retained? Can we specify retention limits?</li>
+        <li>What audit logging is available? Who can access logs?</li>
+        <li>What's your incident response process? What's the notification timeline?</li>
+        <li>Have you completed SOC 2 Type II? Can we review the report?</li>
+      </ul>
+
+      <div class="callout callout-principle">
+        <div class="callout-title">The Bottom Line</div>
+        <p class="mb-0">
+          We're operating in a gap between what AI can do and what regulators have
+          addressed. HIPAA wasn't written for neural networks that learn from every
+          input. The safest approach is conservative: treat AI systems that touch
+          patient data as high-risk by default, require BAAs and security verification
+          before deployment, and build governance structures that can adapt as both
+          capabilities and regulations evolve.
+        </p>
+      </div>
+
+      <!-- NotebookLM Reminder -->
+      <div class="callout callout-tool">
+        <div class="callout-title">Try This with NotebookLM</div>
+        <p>
+          Upload this module's readings to a NotebookLM notebook and explore:
+        </p>
+        <ul>
+          <li>Ask it to summarize the key differences between Safe Harbor and Expert Determination de-identification</li>
+          <li>Generate a checklist for evaluating AI vendor compliance</li>
+          <li>Create an Audio Overview comparing the Ontario breach to other shadow AI scenarios</li>
+        </ul>
+        <p class="mb-0">
+          Remember: NotebookLM itself is grounded to your uploaded sources—a practical
+          example of how constrained AI tools can be safer for sensitive content.
+        </p>
+      </div>
+
+      <h2>Readings</h2>
+      <div class="reading-list">
+        <div class="reading-item">
+          <div class="reading-type"><i data-lucide="file-text"></i></div>
+          <div class="reading-content">
+            <div class="reading-title">
+              <a href="https://www.hhs.gov/hipaa/for-professionals/special-topics/de-identification/index.html" target="_blank">HHS Guidance on De-identification of PHI</a>
+            </div>
+            <div class="reading-meta">HHS.gov · Official Safe Harbor and Expert Determination guidance</div>
+          </div>
+        </div>
+        <div class="reading-item">
+          <div class="reading-type"><i data-lucide="file-text"></i></div>
+          <div class="reading-content">
+            <div class="reading-title">
+              <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10937180/" target="_blank">AI Chatbots and HIPAA Compliance</a>
+            </div>
+            <div class="reading-meta">PMC · Analysis of chatbot compliance requirements</div>
+          </div>
+        </div>
+        <div class="reading-item">
+          <div class="reading-type"><i data-lucide="file-text"></i></div>
+          <div class="reading-content">
+            <div class="reading-title">
+              <a href="https://www.ftc.gov/business-guidance/resources/complying-ftcs-health-breach-notification-rule" target="_blank">FTC Health Breach Notification Rule</a>
+            </div>
+            <div class="reading-meta">FTC · Guidance for non-HIPAA covered entities</div>
+          </div>
+        </div>
+        <div class="reading-item">
+          <div class="reading-type"><i data-lucide="file-text"></i></div>
+          <div class="reading-content">
+            <div class="reading-title">
+              <a href="https://www.nist.gov/itl/ai-risk-management-framework" target="_blank">NIST AI Risk Management Framework</a>
+            </div>
+            <div class="reading-meta">NIST · Voluntary framework for AI governance</div>
+          </div>
+        </div>
+        <div class="reading-item">
+          <div class="reading-type"><i data-lucide="file-text"></i></div>
+          <div class="reading-content">
+            <div class="reading-title">
+              <a href="https://www.hhs.gov/hipaa/for-professionals/special-topics/hipaa-ftc-act/index.html" target="_blank">HHS/FTC Joint Guidance on Health Data</a>
+            </div>
+            <div class="reading-meta">HHS · Understanding overlapping regulatory frameworks</div>
+          </div>
+        </div>
+        <div class="reading-item">
+          <div class="reading-type"><i data-lucide="file-text"></i></div>
+          <div class="reading-content">
+            <div class="reading-title">
+              Ontario Privacy Commissioner Report on Otter.ai Breach
+            </div>
+            <div class="reading-meta">IPC Ontario · Case study in shadow AI incident response</div>
+          </div>
+        </div>
+        <div class="reading-item">
+          <div class="reading-type"><i data-lucide="file-text"></i></div>
+          <div class="reading-content">
+            <div class="reading-title">
+              Sweeney, L. "Simple Demographics Often Identify People Uniquely"
+            </div>
+            <div class="reading-meta">Carnegie Mellon · Foundational re-identification research</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="discussion-questions">
+        <h4>Reflection Questions</h4>
+        <ol>
+          <li>
+            Think about AI tools you or your colleagues currently use. Do any of them
+            involve patient data? Is there a BAA in place?
+          </li>
+          <li>
+            If you discovered a colleague was using ChatGPT with patient notes to save
+            time on documentation, how would you approach that conversation?
+          </li>
+          <li>
+            Consider the mosaic effect: what combinations of data in your organization
+            might allow re-identification even after Safe Harbor de-identification?
+          </li>
+          <li>
+            How would you design an AI governance process that reduces shadow AI while
+            supporting clinician productivity?
+          </li>
+        </ol>
+      </div>
+
+      <div class="objectives phase-1">
+        <h4 class="objectives-title">Learning Objectives</h4>
+        <ul class="objectives-list">
+          <li>Explain why AI creates genuinely new privacy challenges compared to traditional healthcare IT</li>
+          <li>Identify who HIPAA covers and recognize the coverage gaps that affect AI tools</li>
+          <li>List the 18 Safe Harbor identifiers and explain their limitations in the AI era</li>
+          <li>Describe the mosaic effect and quasi-identifiers that enable re-identification</li>
+          <li>Recognize shadow AI patterns and explain why blanket bans are ineffective</li>
+          <li>Apply a practical checklist for evaluating AI vendors before PHI exposure</li>
+        </ul>
+      </div>
+
+      <nav class="page-nav">
+        <a href="module-1.html" class="page-nav-link prev">
+          <span class="page-nav-arrow"><i data-lucide="arrow-left"></i></span>
+          <div>
+            <span class="page-nav-label">Previous</span>
+            <span class="page-nav-title">Module 1: How LLMs Think Like Clinicians</span>
+          </div>
+        </a>
+        <a href="module-3.html" class="page-nav-link next">
+          <span class="page-nav-arrow"><i data-lucide="arrow-right"></i></span>
+          <div>
+            <span class="page-nav-label">Next</span>
+            <span class="page-nav-title">Module 3: The Art of the Ask</span>
+          </div>
+        </a>
+      </nav>
+
+    </article>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div><strong>AI 101</strong> · A Self-Paced Guide to AI in Medicine</div>
+      <div>v1.0 · 2025</div>
+    </div>
+  </footer>
+
+  <script>
+    lucide.createIcons();
+    const navToggle = document.querySelector('.nav-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    if (navToggle) {
+      navToggle.addEventListener('click', () => {
+        navLinks.classList.toggle('nav-open');
+      });
+    }
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,1351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Module 9: Clinical Decision Support Tools in Daily Practice | AI 101</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-brand">
+        <span class="nav-badge">AI 101</span>
+        <span class="nav-title">A Self-Paced Guide to AI in Medicine</span>
+      </a>
+      <button class="nav-toggle" aria-label="Toggle menu">
+        <i data-lucide="menu"></i>
+      </button>
+      <div class="nav-links">
+        <a href="index.html" class="nav-link">Modules</a>
+        <!-- <a href="resources.html" class="nav-link">Resources</a> -->
+        <a href="about.html" class="nav-link">About</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="main">
+    <article class="content content-wide">
+
+      <header class="unit-header">
+        <span class="unit-label phase-2">PHASE II · MODULE 9</span>
+        <h1 class="unit-title">Clinical Decision Support Tools in Daily Practice</h1>
+        <p class="unit-subtitle">
+          From UpToDate to OpenEvidence: how to access, evaluate, and integrate
+          AI-powered clinical decision support into your workflow.
+        </p>
+        <div class="unit-meta">
+          <span class="unit-meta-item">
+            <i data-lucide="clock"></i>
+            ~30 min read
+          </span>
+          <span class="unit-meta-item">
+            <i data-lucide="zap"></i>
+            Practical guide
+          </span>
+        </div>
+      </header>
+
+      <div class="callout callout-question">
+        <div class="callout-title">Core Question</div>
+        <p class="mb-0">
+          How can AI-powered clinical decision support tools augment your clinical
+          reasoning without replacing the judgment that makes you a physician?
+        </p>
+      </div>
+
+      <!-- Introduction -->
+      <h2>Introduction: From Textbooks to the Exam Room</h2>
+
+      <p>
+        Every clinician knows this moment: a patient presents with an unusual constellation
+        of findings, and you need answers. Not tomorrow, not after a literature review—now,
+        while they're sitting in front of you waiting for your expertise.
+      </p>
+
+      <p>
+        For decades, the options were limited. Flip through a reference text. Call a colleague.
+        Rely on memory. The knowledge existed somewhere, but accessing it at the point of care
+        meant either slowing down or proceeding with uncertainty.
+      </p>
+
+      <p>
+        Clinical Decision Support (CDS) tools emerged to solve exactly this problem. They
+        represent healthcare's attempt to put the right information in the right hands at
+        the right moment. What started as simple drug interaction alerts in the 1970s has
+        evolved into sophisticated AI-powered systems that can synthesize millions of
+        peer-reviewed papers into actionable guidance.
+      </p>
+
+      <div class="callout callout-info">
+        <div class="callout-title">Building on Earlier Modules</div>
+        <p>
+          This module builds on everything we've covered so far. You understand how language
+          models work (Module 1), you know how to prompt them effectively (Module 3), and
+          you've learned to evaluate their outputs critically (Module 4). You've explored the
+          major platforms (Module 4) and understand the privacy considerations around PHI
+          (Module 2).
+        </p>
+        <p class="mb-0">
+          Now we're putting it all together—learning how to use CDS tools to practice better
+          medicine. The goal isn't to replace your clinical judgment. It's to augment it with
+          the best available evidence, delivered when and where you need it.
+        </p>
+      </div>
+
+      <hr>
+
+      <!-- Part 1: History -->
+      <h2>Part 1: A Brief History of Clinical Decision Support</h2>
+
+      <p>
+        Understanding where CDS came from helps explain both its current capabilities and
+        its limitations. The history is one of ambition, partial success, and continuous
+        reinvention.
+      </p>
+
+      <h3>The Expert System Era (1970s–1990s)</h3>
+
+      <p>
+        The roots of clinical decision support trace to the earliest days of medical computing.
+        In 1959, researchers Ledley and Lusted published a landmark paper, "Reasoning Foundations
+        of Medical Diagnosis," proposing that computers could assist with diagnostic reasoning.
+        It took another decade for this vision to become reality.
+      </p>
+
+      <p>
+        <strong>MYCIN</strong>, developed at Stanford University in the early 1970s, became the
+        most famous of the early medical expert systems. Created as Edward Shortliffe's doctoral
+        work, MYCIN was designed to diagnose bacterial infections and recommend antibiotic
+        therapy. It worked through "backward chaining"—starting with a hypothesis (suspected
+        infection), then systematically gathering evidence to prove or disprove it through a
+        series of yes/no questions.
+      </p>
+
+      <p>
+        MYCIN contained roughly 600 rules, each encoding a piece of expert knowledge in if-then
+        format: <em>"If the organism stains gram-negative, and the morphology is rod-shaped, and
+        the patient has been hospitalized, then there is suggestive evidence that the organism
+        is Pseudomonas aeruginosa."</em> The system could explain its reasoning at each step—a
+        feature that increased physician trust and that modern AI developers are still trying
+        to replicate with "explainable AI."
+      </p>
+
+      <p>
+        In rigorous evaluations, MYCIN performed comparably to infectious disease specialists
+        in diagnosing difficult infections like meningitis and selecting appropriate antibiotics.
+        It outperformed general practitioners. Yet it was never deployed in real clinical
+        practice. Doctors remained reluctant to trust computer reasoning. Liability concerns
+        proved intractable. And the knowledge base was brittle—it couldn't handle situations
+        outside its narrow domain.
+      </p>
+
+      <p>
+        Around the same time, researchers at the University of Pittsburgh developed
+        <strong>INTERNIST-1</strong>, a more ambitious system covering all of internal medicine
+        rather than just infectious disease. Built on years of interviews with legendary
+        diagnostician Dr. Jack Myers, INTERNIST-1 could evaluate hundreds of diseases. It
+        evolved into CADUCEUS, which by the mid-1980s could diagnose nearly 1,000 conditions
+        and was described as the "most knowledge-intensive expert system in existence."
+      </p>
+
+      <p>
+        But INTERNIST-1 revealed the fundamental limitations of rule-based reasoning. Real
+        patients have comorbidities. Real data is incomplete. Real medicine involves messy
+        ambiguity that neat hierarchies of if-then rules couldn't capture. The system
+        struggled with complex cases—exactly the situations where help was most needed.
+      </p>
+
+      <h3>The Knowledge Acquisition Bottleneck</h3>
+
+      <p>
+        The 1980s brought a proliferation of expert systems across medical specialties.
+        CASNET diagnosed glaucoma. DXplain generated differential diagnoses. Monitoring
+        systems were developed for ICUs. But all of these systems hit the same wall:
+        the <strong>knowledge acquisition bottleneck</strong>.
+      </p>
+
+      <p>
+        Converting human expertise into computer-readable rules proved enormously difficult.
+        Physicians couldn't always articulate their tacit knowledge. Medical science kept
+        advancing, making rule bases obsolete. Maintaining these systems required constant
+        effort from both medical experts and computer scientists—effort that couldn't scale.
+      </p>
+
+      <p>
+        The late 1980s marked the beginning of what historians call the "AI winter." Funding
+        dried up. Enthusiasm faded. Expert systems that had seemed revolutionary began
+        gathering dust.
+      </p>
+
+      <h3>The Evidence-Based Medicine Revolution (1990s–2000s)</h3>
+
+      <p>
+        While AI struggled, a parallel movement transformed how physicians accessed knowledge.
+        Evidence-based medicine (EBM) emerged as a formal discipline, emphasizing that clinical
+        decisions should rest on the best available research rather than tradition or authority.
+      </p>
+
+      <p>
+        The challenge was practical: how could busy clinicians access relevant evidence at
+        the point of care? Medical knowledge was doubling every few years. Keeping current
+        with the literature was impossible. Reading a 50-page systematic review between
+        patients wasn't realistic.
+      </p>
+
+      <p>
+        The solution came from a Harvard-trained internist named Dr. Burton "Bud" Rose, who
+        in 1992 founded what would become the most influential clinical reference tool of
+        the next three decades: <strong>UpToDate</strong>. The concept was simple but powerful:
+        synthesize the medical literature into practical, continuously updated recommendations
+        that clinicians could access quickly.
+      </p>
+
+      <p>
+        UpToDate wasn't AI in the technical sense. It relied on human physician-editors reading
+        the literature and distilling it into actionable guidance. But it solved the same
+        problem that expert systems had tried to solve—getting the right information to
+        clinicians when they needed it—through a different approach.
+      </p>
+
+      <p>
+        The timing was perfect. The internet made distribution feasible. Personal computers
+        arrived in clinics and hospitals. By the mid-2000s, UpToDate had become ubiquitous
+        in American medical training. Today, clinicians turn to it approximately 1.6 million
+        times daily. Research suggests that about a third of these lookups change clinical
+        practice.
+      </p>
+
+      <h3>The Modern Era: AI Returns (2020s)</h3>
+
+      <p>
+        Two developments converged to bring AI back to clinical decision support.
+      </p>
+
+      <p>
+        First, <strong>machine learning techniques matured dramatically</strong>. Neural
+        networks could now learn patterns from vast datasets rather than requiring rules
+        to be hand-coded. Systems could improve with experience rather than requiring
+        manual updates.
+      </p>
+
+      <p>
+        Second, <strong>large language models emerged</strong>. When ChatGPT launched in
+        November 2022, physicians immediately began experimenting. Within months, studies
+        showed that LLMs could pass medical licensing exams and generate plausible clinical
+        plans. The potential for AI-powered CDS was suddenly obvious.
+      </p>
+
+      <p>
+        The current generation of CDS tools combines the best of both traditions. They
+        incorporate curated medical knowledge bases (the UpToDate approach) with sophisticated
+        AI that can understand natural language queries and synthesize information across
+        sources (the expert system vision, finally realized through modern techniques).
+      </p>
+
+      <p>
+        OpenEvidence, Glass Health, and a new wave of competitors now offer what MYCIN's
+        creators could only dream of: AI assistants that can engage in genuine clinical
+        reasoning, draw from millions of peer-reviewed papers, and provide answers in seconds.
+      </p>
+
+      <p>
+        We're in the early innings of this transformation. The tools are imperfect, the
+        appropriate use cases are still being defined, and the integration with clinical
+        workflows remains clunky. But the trajectory is clear: AI-powered clinical decision
+        support is becoming part of the standard of care.
+      </p>
+
+      <hr>
+
+      <!-- Part 2: Current Landscape -->
+      <h2>Part 2: The Current Landscape of CDS Tools</h2>
+
+      <p>
+        Today's clinicians can choose from three broad categories of clinical decision support:
+        traditional knowledge bases, AI-powered clinical assistants, and general-purpose AI
+        models applied to medicine.
+      </p>
+
+      <h3>Traditional Knowledge Bases</h3>
+
+      <div class="cds-tool-card">
+        <h4>UpToDate</h4>
+        <p>
+          Remains the gold standard for evidence synthesis. Physician-editors continually
+          review the literature and translate it into practical recommendations graded by
+          evidence quality. The content covers over 25 medical specialties with more than
+          12,000 topics. In 2025, UpToDate introduced "Expert AI"—a conversational interface
+          that layers generative AI on top of its curated content, allowing clinicians to
+          ask questions and receive answers grounded in UpToDate's recommendations.
+        </p>
+      </div>
+
+      <div class="cds-tool-card">
+        <h4>DynaMed (now DynaMedex)</h4>
+        <p>
+          Offers a similar approach with some philosophical differences. It emphasizes
+          systematic evidence grading and updates content multiple times daily rather than
+          waiting for scheduled reviews. Some studies suggest DynaMed provides stronger
+          formal grading of recommendation strength. For clinicians who want maximum
+          transparency about evidence levels, it's worth considering.
+        </p>
+      </div>
+
+      <div class="cds-tool-card">
+        <h4>Clinical Key</h4>
+        <p>
+          From Elsevier, combines textbook content with procedure videos, drug information,
+          and clinical trial results. It's particularly strong for procedural specialties.
+        </p>
+      </div>
+
+      <p>
+        The strength of traditional knowledge bases is <strong>quality control</strong>.
+        Human experts curate the content. Recommendations are vetted. Sources are clear.
+        The limitation is flexibility—you can search for topics, but you can't have a
+        conversation. And synthesis across topics requires jumping between articles and
+        doing the integration yourself.
+      </p>
+
+      <h3>AI-Powered Clinical Assistants</h3>
+
+      <div class="cds-tool-card highlight">
+        <h4>OpenEvidence</h4>
+        <p>
+          Has emerged as the fastest-growing clinical AI application in history. As of
+          late 2025, it's used by more than 40% of U.S. physicians, with over 65,000 new
+          verified clinicians registering monthly. The platform draws from more than 35
+          million peer-reviewed publications and has content partnerships with the
+          <em>New England Journal of Medicine</em>, <em>JAMA</em>, and NCCN.
+        </p>
+        <p>
+          OpenEvidence made headlines in 2025 when it became the first AI to score a
+          perfect 100% on the USMLE. More practically, clinicians appreciate its ability
+          to provide sourced, cited answers to point-of-care questions—essentially a
+          "curbside consult" with instant access to the literature.
+        </p>
+        <p class="mb-0">
+          The platform is <strong>free for physicians with an NPI number</strong> and
+          has recently expanded access to medical students.
+        </p>
+      </div>
+
+      <div class="cds-tool-card">
+        <h4>Glass Health</h4>
+        <p>
+          Takes a slightly different approach, focusing specifically on differential
+          diagnosis and clinical plan generation. You enter a patient summary—age, sex,
+          history, presenting symptoms—and Glass suggests potential diagnoses ranked by
+          probability, along with evidence-based workup and treatment recommendations.
+          It's designed to enhance diagnostic reasoning rather than answer reference
+          questions.
+        </p>
+      </div>
+
+      <div class="cds-tool-card">
+        <h4>Doximity GPT</h4>
+        <p>
+          Represents the "network effect" approach. Doximity, the LinkedIn of medicine,
+          acquired Pathway Medical and integrated AI clinical decision support into its
+          existing platform. Since over 80% of U.S. physicians already have Doximity
+          accounts, the tool is available at no additional cost to this built-in user base.
+        </p>
+      </div>
+
+      <h3>General-Purpose AI Models</h3>
+
+      <p>
+        You've already explored ChatGPT, Claude, and Gemini in Module 4. These can certainly
+        be used for clinical questions—and many physicians already do so. The advantages
+        include flexibility (they can handle any query format), availability (no healthcare-specific
+        registration required), and broader capabilities (they can help with documentation,
+        communication, and non-clinical tasks too).
+      </p>
+
+      <p>
+        The disadvantage is that they're <strong>not optimized for medicine</strong>. They
+        lack the curated knowledge bases and citation infrastructure of purpose-built clinical
+        tools. They're more likely to hallucinate on specialized clinical questions. And as
+        you learned in the PHI module, using them with patient data requires careful attention
+        to privacy and compliance.
+      </p>
+
+      <p>
+        For students without NPI numbers or clinicians who want a Swiss army knife rather
+        than a specialized scalpel, general-purpose models remain valuable. Just remember
+        Module 4's lessons on verification—these tools require more active quality control
+        than medical-specific platforms.
+      </p>
+
+      <hr>
+
+      <!-- Part 3: Getting Access -->
+      <h2>Part 3: Getting Access — A Practical Guide</h2>
+
+      <p>
+        The path to CDS tool access differs significantly depending on whether you're a
+        practicing clinician, a trainee, or a student.
+      </p>
+
+      <h3>For Practicing Clinicians with NPI Numbers</h3>
+
+      <p>If you have an NPI, access to medical-specific CDS tools is straightforward:</p>
+
+      <div class="access-grid">
+        <div class="access-card">
+          <h4><i data-lucide="external-link"></i> OpenEvidence</h4>
+          <p>
+            Go to <strong>openevidence.com</strong> and register with your NPI number.
+            The platform will verify your credentials automatically. Once verified, you
+            have unlimited access to the full platform at no cost. CME credits are also
+            available for verified NPI users.
+          </p>
+        </div>
+
+        <div class="access-card">
+          <h4><i data-lucide="external-link"></i> Glass Health</h4>
+          <p>
+            Visit <strong>glass.health</strong> and sign up for a free account. Glass
+            verifies healthcare professional status but has a somewhat broader eligibility
+            than OpenEvidence.
+          </p>
+        </div>
+
+        <div class="access-card">
+          <h4><i data-lucide="building-2"></i> UpToDate</h4>
+          <p>
+            If your hospital or health system has an institutional subscription, access
+            is typically free but requires verification every 90 days while connected to
+            your institution's network. Individual subscriptions are available but expensive.
+          </p>
+        </div>
+
+        <div class="access-card">
+          <h4><i data-lucide="building-2"></i> DynaMedex</h4>
+          <p>
+            Institutional access is common through hospital systems and medical schools.
+            Individual subscriptions start at different price points depending on your role.
+          </p>
+        </div>
+      </div>
+
+      <h3>For Residents and Fellows</h3>
+
+      <p>
+        Most training programs provide institutional access to UpToDate and/or DynaMed.
+        Check with your program coordinator or medical library.
+      </p>
+
+      <p>
+        For OpenEvidence, your NPI number—which you receive when you start residency—gives
+        you full access.
+      </p>
+
+      <div class="callout callout-tip">
+        <div class="callout-title">A Note on CME</div>
+        <p class="mb-0">
+          OpenEvidence now offers free AMA PRA Category 1 Credits for verified NPI users.
+          This represents genuine value—many CDS tools charge for CME. If you're going to
+          look things up anyway, you might as well earn credit for it.
+        </p>
+      </div>
+
+      <h3>For Medical Students</h3>
+
+      <p>
+        Here's where access gets more complicated. You don't have an NPI number yet, which
+        excludes you from some platforms designed for practicing clinicians.
+      </p>
+
+      <ol>
+        <li>
+          <strong>Institutional resources first:</strong> Check what your medical school
+          provides. Most institutions have subscriptions to either UpToDate or DynaMed
+          (some have both). Library websites typically list available databases. To maintain
+          remote access, you usually need to verify your account periodically while on the
+          institutional network—set a calendar reminder every 90 days.
+        </li>
+        <li>
+          <strong>OpenEvidence for students:</strong> OpenEvidence has expanded access to
+          U.S. medical students, NP students, and PA students. To register, you'll need to
+          enter your school name and expected graduation date, then upload proof of student
+          status—a photo of your student ID, a current transcript, or a signed letter
+          confirming your enrollment.
+        </li>
+        <li>
+          <strong>Glass Health:</strong> Students can create accounts and use the platform.
+          The focus on differential diagnosis makes it particularly valuable for clinical
+          rotations.
+        </li>
+        <li>
+          <strong>Consumer AI tools:</strong> ChatGPT, Claude, and Gemini require no medical
+          verification. They're immediately available to anyone. This makes them the most
+          accessible option for students wanting to experiment with AI-assisted learning
+          and clinical reasoning.
+        </li>
+      </ol>
+
+      <h3>A Critical Reminder About PHI</h3>
+
+      <div class="callout callout-warning">
+        <div class="callout-title">PHI Rules Apply</div>
+        <p>Whatever tools you use, the PHI principles from Module 2 apply:</p>
+        <ul>
+          <li>
+            <strong>Never enter identifiable patient information into consumer AI platforms.</strong>
+            This includes ChatGPT, Claude (web interface), and Gemini consumer versions.
+            None of these have BAAs that would make them HIPAA-compliant for PHI.
+          </li>
+          <li>
+            <strong>OpenEvidence is HIPAA-compliant</strong> for clinical queries, but you
+            should still follow minimum necessary principles—include only the clinical
+            details needed to answer your question, not full patient identifiers.
+          </li>
+          <li>
+            <strong>De-identification works.</strong> You can safely ask about "a 4-year-old
+            male with 3 days of fever, cough, and reduced oral intake" without violating
+            privacy. You cannot safely enter "Johnny Smith, DOB 01/15/2021, MRN 123456."
+          </li>
+          <li>
+            <strong>Your institution may have additional policies.</strong> Check with your
+            compliance office before using any AI tool with patient information.
+          </li>
+        </ul>
+        <p class="mb-0">
+          Students face a particular temptation: you're learning, you want to explore, and
+          you encounter fascinating cases. Remember that real patients are attached to those
+          details. Build good habits now.
+        </p>
+      </div>
+
+      <h3>What About BAAs?</h3>
+
+      <p>
+        A Business Associate Agreement is the legal contract that makes an AI tool
+        HIPAA-compliant for use with PHI. Without a BAA, any PHI you enter into that
+        tool represents a potential HIPAA violation.
+      </p>
+
+      <p>Here's the current landscape as of late 2025:</p>
+
+      <div class="comparison-table-wrapper">
+        <table class="comparison-table">
+          <thead>
+            <tr>
+              <th>Platform</th>
+              <th>BAA Available?</th>
+              <th>Notes</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>OpenAI (ChatGPT)</strong></td>
+              <td>API & Enterprise only</td>
+              <td>Not for Plus, Pro, or Team plans. Consumer ChatGPT is not HIPAA-compliant.</td>
+            </tr>
+            <tr>
+              <td><strong>Anthropic (Claude)</strong></td>
+              <td>API customers only</td>
+              <td>With zero data retention agreements. Not for Claude.ai consumer plans.</td>
+            </tr>
+            <tr>
+              <td><strong>Google (Gemini)</strong></td>
+              <td>Workspace Business Plus+</td>
+              <td>Through Google's covered services. Gemini-in-Chrome explicitly excluded.</td>
+            </tr>
+            <tr>
+              <td><strong>Cloud providers</strong></td>
+              <td>Yes</td>
+              <td>AWS Bedrock, Azure OpenAI, and Google Vertex AI offer faster BAA approval.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>
+        For most individual clinicians and students, the practical implication is simple:
+        use the consumer tools for learning and de-identified queries, use purpose-built
+        clinical tools like OpenEvidence for point-of-care questions, and save the BAA
+        complexity for organizational deployments.
+      </p>
+
+      <hr>
+
+      <!-- Part 4: Using CDS Effectively -->
+      <h2>Part 4: Using CDS Tools Effectively</h2>
+
+      <p>
+        Getting access is the easy part. Using these tools effectively requires all the
+        skills you've developed in earlier modules—especially prompting and critical evaluation.
+      </p>
+
+      <h3>The Prompting Principles Apply</h3>
+
+      <p>
+        Remember Module 3's core lesson: the quality of your input determines the quality
+        of your output. This applies to CDS tools as much as general AI.
+      </p>
+
+      <div class="prompt-example bad">
+        <div class="prompt-label">Bad Prompt</div>
+        <div class="prompt-text">"dose of amoxicillin"</div>
+        <p class="prompt-explanation">
+          <strong>Why it fails:</strong> The AI has no idea what you're treating, how old
+          the patient is, what formulation you want, whether there are any contraindications,
+          or what level of detail you need.
+        </p>
+      </div>
+
+      <div class="prompt-example good">
+        <div class="prompt-label">Better Prompt</div>
+        <div class="prompt-text">
+          "I'm treating a 3-year-old, 15 kg child with acute otitis media. No drug allergies.
+          What's the appropriate amoxicillin dosing, including concentration and frequency?"
+        </div>
+        <p class="prompt-explanation">
+          <strong>Why it works:</strong> The AI knows the indication (AOM), the patient
+          parameters (age, weight), the relevant safety information (no allergies), and
+          what you need (full dosing details).
+        </p>
+      </div>
+
+      <div class="prompt-example best">
+        <div class="prompt-label">Best Prompt</div>
+        <div class="prompt-text">
+          "3-year-old, 15 kg, with acute otitis media, no prior antibiotic exposure in the
+          past 30 days, no drug allergies, no daycare attendance. Based on current AAP
+          guidelines, what's the appropriate amoxicillin dosing for non-severe AOM? Please
+          include high-dose versus standard-dose considerations."
+        </div>
+        <p class="prompt-explanation">
+          <strong>Why it's best:</strong> You've included the clinical details that affect
+          the recommendation (recent antibiotics, daycare exposure), specified the evidence
+          source you want (AAP guidelines), and asked about the clinical decision point
+          (dose escalation criteria).
+        </p>
+      </div>
+
+      <h3>Context Is Your Superpower</h3>
+
+      <p>
+        The patient history analogy from Module 3 extends directly to CDS queries. Just
+        as a good history leads to better diagnoses, a good query leads to better AI-assisted
+        answers.
+      </p>
+
+      <p>
+        Consider what information actually affects the clinical decision you're asking about.
+        For medication dosing, that's usually age, weight, renal/hepatic function, allergies,
+        and indication. For diagnostic workups, it's presenting symptoms, timeline, risk
+        factors, and pretest probability. For treatment selection, it's prior treatments,
+        contraindications, patient preferences, and resource constraints.
+      </p>
+
+      <p><strong>Include this information in your query. The AI can't read your mind or your chart.</strong></p>
+
+      <h3>Ask Follow-Up Questions</h3>
+
+      <p>Unlike a textbook, CDS tools can engage in dialogue. Use this.</p>
+
+      <ul>
+        <li>If the initial answer is too general, ask for specifics: <em>"What about patients with penicillin allergy?"</em></li>
+        <li>If you want the primary evidence, request it: <em>"Can you cite the specific trial supporting that recommendation?"</em></li>
+        <li>If you're uncertain whether the guidance applies, probe the edges: <em>"Would this recommendation change if the patient were immunocompromised?"</em></li>
+        <li>If the AI gave you a list, ask for prioritization: <em>"Of those six possibilities, which are most likely given the timeline I described?"</em></li>
+        <li>If you're teaching, ask for the teaching point: <em>"Explain why this presentation suggests viral rather than bacterial etiology."</em></li>
+      </ul>
+
+      <p>
+        This iterative approach mirrors how you'd use a human consultant. You wouldn't ask
+        a colleague one question and walk away—you'd have a conversation until you had
+        what you needed.
+      </p>
+
+      <h3>Request Explicit Uncertainty</h3>
+
+      <p>
+        One of the most powerful prompting techniques for clinical AI is asking it to tell
+        you what it doesn't know.
+      </p>
+
+      <ul>
+        <li>"What's your confidence level on this recommendation?"</li>
+        <li>"Are there areas of clinical controversy I should be aware of?"</li>
+        <li>"What factors would make you less certain about this guidance?"</li>
+      </ul>
+
+      <p>
+        AI systems—especially those grounded in evidence bases—can often identify when the
+        literature is sparse, when guidelines conflict, or when your specific clinical
+        scenario falls outside the well-studied population. But they won't volunteer this
+        information unless you ask.
+      </p>
+
+      <hr>
+
+      <!-- Part 5: Practical Workflows -->
+      <h2>Part 5: Practical Workflows — What CDS Does Well</h2>
+
+      <p>Let's get concrete. How might CDS tools actually fit into your clinical day?</p>
+
+      <h3>Differential Diagnosis Enhancement</h3>
+
+      <p>
+        You've seen a patient with an unusual presentation. You have a differential in mind,
+        but you want to make sure you're not missing something.
+      </p>
+
+      <p>
+        <strong>Workflow:</strong> Summarize the case in a structured format (age, sex, key
+        symptoms, timeline, relevant history), then ask the CDS tool to generate a differential
+        diagnosis. Compare its suggestions to your own list. Pay particular attention to
+        diagnoses in its "can't miss" category that weren't on your radar.
+      </p>
+
+      <div class="workflow-example">
+        <div class="workflow-label">Example Query to Glass Health or OpenEvidence</div>
+        <p>
+          "67-year-old male, 2-week history of progressive dyspnea, dry cough, low-grade
+          fevers, and 10-pound unintentional weight loss. Ex-smoker (40 pack-years, quit
+          5 years ago). Recent travel to Arizona. No chest pain. Mild hypoxia on room air.
+          CXR shows bilateral interstitial infiltrates. Please generate a ranked differential
+          diagnosis."
+        </p>
+        <p class="mb-0">
+          The AI might remind you of <strong>coccidioidomycosis</strong> (that Arizona travel),
+          which deserves specific testing.
+        </p>
+      </div>
+
+      <p>
+        <strong>Why this works better than a simple query:</strong> Notice how much more
+        useful this is than asking "causes of bilateral infiltrates." The clinical context—smoking
+        history, weight loss, travel, timeline—changes the differential entirely. The AI
+        can't apply the right clinical reasoning if you don't give it the clinical data.
+      </p>
+
+      <div class="callout callout-warning">
+        <div class="callout-title">A Common Mistake</div>
+        <p class="mb-0">
+          Learners sometimes ask CDS tools to confirm their suspected diagnosis rather than
+          genuinely entertaining alternatives. If you ask "Could this be coccidioidomycosis?"
+          you'll get a discussion of cocci. If you ask for a ranked differential with the
+          relevant context, you might discover that lymphoma or cryptogenic organizing
+          pneumonia should also be on your list.
+        </p>
+      </div>
+
+      <h3>Therapeutic Decision Support</h3>
+
+      <p>
+        You've made a diagnosis. Now you're choosing between treatment options—and you want
+        to know what the evidence says about your specific clinical scenario.
+      </p>
+
+      <div class="workflow-example">
+        <div class="workflow-label">Example Query</div>
+        <p class="mb-0">
+          "I'm treating an 8-year-old with newly diagnosed ADHD. Parents are considering
+          medication. The child has a history of anxiety (currently well-controlled without
+          medication) and a family history of cardiac arrhythmia in a first-degree relative.
+          What's the evidence comparing methylphenidate versus amphetamine formulations in
+          terms of efficacy and side effect profiles, and what cardiac screening would you
+          recommend given the family history?"
+        </p>
+      </div>
+
+      <p>
+        This gives the AI enough context to address both your primary question (which stimulant)
+        and the safety consideration (cardiac workup).
+      </p>
+
+      <h3>Quick Reference Questions</h3>
+
+      <p>
+        Sometimes you just need a fact—a dosing range, a diagnostic criterion, a guideline
+        recommendation. CDS tools excel at these quick lookups.
+      </p>
+
+      <ul>
+        <li>"What are the Jones criteria for rheumatic fever?"</li>
+        <li>"What's the recommended PEP regimen for HIV after needlestick in 2025?"</li>
+        <li>"At what gestational age is betamethasone no longer indicated for fetal lung maturity?"</li>
+      </ul>
+
+      <p>
+        The key is specificity. Include enough context that the answer will be relevant to
+        your patient, and request the current guideline source when recommendations change
+        frequently.
+      </p>
+
+      <h3>Literature Synthesis</h3>
+
+      <p>
+        You've encountered a clinical question where you suspect the evidence has evolved.
+        Rather than reading 15 papers, you want a synthesis.
+      </p>
+
+      <div class="workflow-example">
+        <div class="workflow-label">Example Query</div>
+        <p class="mb-0">
+          "Summarize the current evidence on SGLT-2 inhibitors in HFpEF. Has the evidence
+          base changed since the DELIVER trial? What's the current strength of recommendation?"
+        </p>
+      </div>
+
+      <p>
+        OpenEvidence, with its access to recent NEJM and JAMA content, is particularly
+        strong for this use case.
+      </p>
+
+      <h3>Patient Communication</h3>
+
+      <p>You need to explain a diagnosis or treatment to a patient in accessible language.</p>
+
+      <div class="workflow-example">
+        <div class="workflow-label">Example Query</div>
+        <p class="mb-0">
+          "Please explain diabetic retinopathy to a patient at a 6th-grade reading level,
+          including why regular eye exams matter and what they can do to reduce risk of
+          progression."
+        </p>
+      </div>
+
+      <p>
+        You'll still want to personalize the output, but this gives you a foundation to
+        work from.
+      </p>
+
+      <h3>Pre-Rounding and Preparation</h3>
+
+      <p>
+        You're about to see a patient you haven't encountered before—a new admission, a
+        transfer from another service, or a complex follow-up. CDS can help you prepare.
+      </p>
+
+      <div class="workflow-example">
+        <div class="workflow-label">Example Query</div>
+        <p class="mb-0">
+          "I'm about to see a patient with newly diagnosed systemic lupus erythematosus
+          with lupus nephritis class IV on initial biopsy. What are the key things I should
+          assess clinically? What are the common early treatment complications I should
+          monitor for? What questions are patients typically most concerned about?"
+        </p>
+      </div>
+
+      <p>This turns CDS into a preparation tool rather than just a reference resource.</p>
+
+      <h3>Complex Case Brainstorming</h3>
+
+      <p>
+        Sometimes you're genuinely stuck. The patient doesn't fit a pattern. The workup
+        hasn't revealed an answer. You need a thought partner.
+      </p>
+
+      <div class="workflow-example">
+        <div class="workflow-label">Example Query</div>
+        <p class="mb-0">
+          "I'm struggling with this case: 52-year-old woman with 6 months of progressive
+          fatigue, intermittent low-grade fevers, and now new-onset bilateral ankle swelling.
+          Labs show normocytic anemia, mildly elevated ESR, and unexplained hypercalcemia.
+          ANA negative. CT chest/abdomen/pelvis unremarkable. I'm stuck between sarcoidosis
+          (despite no pulmonary findings), occult malignancy, and an atypical connective
+          tissue disease. What diagnoses am I not considering? What additional testing might
+          help differentiate? Any historical elements I should go back and explore?"
+        </p>
+      </div>
+
+      <p>
+        The AI becomes a sounding board—surfacing possibilities you might have missed and
+        suggesting ways to move forward.
+      </p>
+
+      <h3>Specialty-Specific Applications</h3>
+
+      <p>Different specialties lean on CDS tools differently:</p>
+
+      <ul>
+        <li><strong>Primary care:</strong> Preventive screening schedules, medication reconciliation for polypharmacy, guidelines for referral timing</li>
+        <li><strong>Emergency medicine:</strong> Risk stratification tools (HEART score, Wells criteria), disposition decision support, toxicology references</li>
+        <li><strong>Pediatrics:</strong> Weight-based dosing calculations, developmental milestone verification, age-specific normal values</li>
+        <li><strong>Hospitalist medicine:</strong> Antibiotic stewardship guidance, VTE prophylaxis algorithms, discharge planning</li>
+        <li><strong>Psychiatry:</strong> Drug interaction checking, medication selection based on side effect profiles, screening tool interpretation</li>
+      </ul>
+
+      <p>
+        The best applications are those where you're already mentally reaching for a
+        reference—CDS just makes the reference faster and more tailored to your specific question.
+      </p>
+
+      <hr>
+
+      <!-- Part 6: Limitations -->
+      <h2>Part 6: What CDS Doesn't Do Well</h2>
+
+      <p>
+        No tool is perfect. Knowing the limitations of CDS helps you use it appropriately.
+      </p>
+
+      <h3>Rare Conditions and Edge Cases</h3>
+
+      <p>
+        AI models perform best on common conditions where training data is abundant. When
+        you encounter a rare disease or an atypical presentation, the AI may give you generic
+        guidance that doesn't address your specific situation—or it may hallucinate
+        plausible-sounding recommendations that aren't grounded in evidence.
+      </p>
+
+      <p>
+        <strong>Mitigation:</strong> When dealing with rare conditions, use CDS as a starting
+        point, then verify recommendations against specialty resources or human experts. Ask
+        the AI directly: "How common is this condition, and how confident are you in these
+        recommendations?"
+      </p>
+
+      <h3>Rapidly Evolving Evidence</h3>
+
+      <p>
+        CDS tools have knowledge cutoffs. OpenEvidence and similar platforms update continuously,
+        but there's always a lag between a practice-changing trial and its incorporation into
+        recommendations. For questions where the evidence might have changed in the past few
+        months, search for the primary literature or check society guideline updates.
+      </p>
+
+      <h3>Complex Multi-System Disease</h3>
+
+      <p>
+        Patients with multiple comorbidities often fall between guideline recommendations.
+        The COPD guidelines and the heart failure guidelines might give conflicting medication
+        recommendations. CDS tools generally present each condition's guidance without
+        reconciling conflicts.
+      </p>
+
+      <p>
+        <strong>Mitigation:</strong> Ask specifically about interactions: "How should I
+        balance beta-blocker therapy in a patient with both COPD and HFrEF? Are there
+        evidence-based approaches to this common clinical tension?"
+      </p>
+
+      <h3>Clinical Judgment and Context</h3>
+
+      <p>
+        CDS tools can tell you what the evidence says. They can't weigh that evidence
+        against everything else you know about this patient—their values, their living
+        situation, their support system, their priorities. That integration remains your job.
+      </p>
+
+      <p>
+        A tool might correctly recommend a medication, but if the patient can't afford it,
+        if they've tried it before with intolerable side effects, or if they have cognitive
+        impairment that makes complex regimens inadvisable, the recommendation doesn't help.
+      </p>
+
+      <h3>False Confidence</h3>
+
+      <p>
+        Perhaps the most dangerous failure mode is the AI that sounds certain when it shouldn't
+        be. You learned this in Module 1: language models are trained to produce fluent,
+        confident-sounding text regardless of whether the underlying content is correct.
+      </p>
+
+      <p>
+        <strong>Mitigation:</strong> Build the habit of verification. Check key recommendations
+        against primary sources. Ask the AI about its confidence level and the quality of
+        underlying evidence. Maintain your own clinical reasoning rather than outsourcing
+        it entirely.
+      </p>
+
+      <h3>Verification in Practice</h3>
+
+      <p>What does verification actually look like in a busy clinical day?</p>
+
+      <ul>
+        <li>
+          <strong>For medication dosing:</strong> Cross-reference with a pharmacopeial source
+          (Lexicomp, Micromedex) or your institution's formulary. Dosing errors are consequential,
+          and a 30-second check is worthwhile.
+        </li>
+        <li>
+          <strong>For diagnostic criteria:</strong> If the AI gives you a diagnostic framework
+          (like Jones criteria or Wells score), verify it matches current guidelines—criteria
+          do get updated.
+        </li>
+        <li>
+          <strong>For treatment recommendations:</strong> Ask the AI for its source. If it
+          cites a guideline, verify that guideline exists and says what the AI claims.
+        </li>
+        <li>
+          <strong>For anything that surprises you:</strong> If the recommendation contradicts
+          your training or experience, that's a signal to investigate further. You might learn
+          something new—or you might catch an error.
+        </li>
+      </ul>
+
+      <div class="callout callout-principle">
+        <div class="callout-title">A Practical Heuristic</div>
+        <p class="mb-0">
+          The stakes of the decision should match the rigor of your verification. A suggestion
+          for a handout to give patients needs less scrutiny than a recommendation for an
+          off-label medication in a high-risk population.
+        </p>
+      </div>
+
+      <hr>
+
+      <!-- Part 7: Building Good Habits -->
+      <h2>Part 7: Building Good Habits</h2>
+
+      <p>The clinicians who get the most value from CDS tools share certain practices.</p>
+
+      <h3>Use CDS Before You're Stuck</h3>
+
+      <p>
+        The natural tendency is to reach for decision support only when you're uncertain.
+        But CDS tools can also confirm that you're on the right track, remind you of steps
+        you might forget under time pressure, and surface considerations you hadn't thought of.
+      </p>
+
+      <p>
+        Using CDS routinely—not just when you're lost—helps you catch errors before they
+        happen and exposes you to the current literature even on familiar topics.
+      </p>
+
+      <h3>Document Your Reasoning</h3>
+
+      <p>
+        If a CDS tool influenced your clinical decision, consider documenting that in your
+        note. <em>"Plan reviewed with OpenEvidence; recommendations consistent with AAP
+        guidelines for acute otitis media."</em> This creates a record of your reasoning,
+        demonstrates that you sought evidence, and helps future clinicians understand your
+        thought process.
+      </p>
+
+      <h3>Stay Current on Tool Capabilities</h3>
+
+      <p>
+        These tools are evolving rapidly. OpenEvidence's capabilities in late 2025 are
+        dramatically different from its capabilities even a year earlier. What you learned
+        in training may be outdated by the time you're practicing independently.
+      </p>
+
+      <p>
+        Check for new features periodically. Read the release notes or announcement pages.
+        Try the same query on different platforms to see which works best for your specialty.
+      </p>
+
+      <h3>Develop Your Own Prompting Templates</h3>
+
+      <p>
+        Over time, you'll notice that certain query structures work well for your common
+        use cases. Save these as templates—whether in a notes app, your phone, or your
+        own memory.
+      </p>
+
+      <p>
+        A pediatrician might have a template for "fever without source" workups. An internist
+        might have one for polypharmacy reconciliation. An emergency physician might have
+        templates for each of the common chief complaints.
+      </p>
+
+      <h3>Maintain Your Own Knowledge</h3>
+
+      <p>
+        CDS is a complement, not a replacement, for your own expertise. The clinician who
+        knows nothing and relies entirely on AI will miss nuances, fail to ask the right
+        questions, and struggle when the technology fails.
+      </p>
+
+      <p>
+        Continue reading primary literature in your specialty. Attend conferences. Discuss
+        cases with colleagues. Build your pattern recognition. The goal is a synthesis:
+        human expertise augmented by AI capability, each making the other stronger.
+      </p>
+
+      <hr>
+
+      <!-- Part 8: Future -->
+      <h2>Part 8: The Future of CDS</h2>
+
+      <p>Where is this headed? Several trends seem likely:</p>
+
+      <h3>Deeper EHR Integration</h3>
+
+      <p>
+        The current experience—switching from your EHR to a separate app or browser tab—is
+        clunky. The future likely involves CDS embedded directly in documentation workflows.
+        You're writing a note, and the AI proactively surfaces relevant guidelines. You're
+        ordering a medication, and the AI suggests dose adjustments based on the patient's
+        renal function already in the chart.
+      </p>
+
+      <p>
+        Some health systems are already piloting these integrations. The challenge is ensuring
+        that "helpful" doesn't become "intrusive"—alert fatigue is already a major problem
+        with current CDSS implementations.
+      </p>
+
+      <h3>Ambient Intelligence</h3>
+
+      <p>
+        The next generation of CDS may not require you to type anything. Ambient listening
+        technology can capture the patient encounter and generate CDS prompts automatically.
+        <em>"Based on the symptoms discussed, consider the following differential..."</em>
+        This is already emerging in documentation tools like Nuance DAX and AWS HealthScribe;
+        extending it to decision support is a natural progression.
+      </p>
+
+      <h3>Patient-Facing AI</h3>
+
+      <p>
+        Today's CDS is designed for clinicians. But patients are already using general-purpose
+        AI for health questions. Purpose-built patient-facing AI—with appropriate guardrails—could
+        help patients prepare for visits, understand their diagnoses, and follow treatment plans.
+      </p>
+
+      <p>
+        This raises important questions about the role of physicians when patients arrive
+        having already consulted an AI. The optimistic view: informed patients lead to
+        better shared decision-making. The concerning view: miscalibrated AI advice could
+        lead patients astray or damage trust. Likely both are true, depending on implementation.
+      </p>
+
+      <h3>Continuous Learning</h3>
+
+      <p>
+        Current CDS tools learn from the literature but not from clinical outcomes. Future
+        systems may close this loop: tracking whether recommendations led to good patient
+        outcomes and adjusting accordingly. This raises challenges around data governance
+        and algorithmic transparency, but it could dramatically accelerate evidence synthesis.
+      </p>
+
+      <hr>
+
+      <!-- Resources -->
+      <h2>Resources for Continued Learning</h2>
+
+      <h3>Getting Started</h3>
+
+      <div class="resource-grid">
+        <div class="resource-card">
+          <h4>OpenEvidence</h4>
+          <p>
+            <strong>Website:</strong> openevidence.com<br>
+            <strong>Access:</strong> Free for NPI holders; student registration available<br>
+            <strong>Mobile:</strong> iOS and Android apps<br>
+            <strong>Strength:</strong> Evidence synthesis with NEJM/JAMA partnerships
+          </p>
+        </div>
+
+        <div class="resource-card">
+          <h4>Glass Health</h4>
+          <p>
+            <strong>Website:</strong> glass.health<br>
+            <strong>Access:</strong> Free account registration<br>
+            <strong>Strength:</strong> Differential diagnosis and clinical plan generation
+          </p>
+        </div>
+
+        <div class="resource-card">
+          <h4>UpToDate</h4>
+          <p>
+            <strong>Website:</strong> uptodate.com<br>
+            <strong>Access:</strong> Institutional subscriptions; individual available<br>
+            <strong>New:</strong> Expert AI conversational interface<br>
+            <strong>Strength:</strong> Curated, authoritative content
+          </p>
+        </div>
+
+        <div class="resource-card">
+          <h4>DynaMedex</h4>
+          <p>
+            <strong>Website:</strong> dynamedex.com<br>
+            <strong>Access:</strong> Institutional or individual ($149/year students)<br>
+            <strong>Strength:</strong> Systematic evidence grading, multiple daily updates
+          </p>
+        </div>
+      </div>
+
+      <h3>Articles and Research</h3>
+
+      <div class="reading-list">
+        <div class="reading-item">
+          <div class="reading-type"><i data-lucide="file-text"></i></div>
+          <div class="reading-content">
+            <div class="reading-title">
+              "An overview of clinical decision support systems: benefits, risks, and strategies for success"
+            </div>
+            <div class="reading-meta">npj Digital Medicine, 2020 · Comprehensive review of CDSS implementation</div>
+          </div>
+        </div>
+        <div class="reading-item">
+          <div class="reading-type"><i data-lucide="file-text"></i></div>
+          <div class="reading-content">
+            <div class="reading-title">
+              "The Use of an Artificial Intelligence Platform OpenEvidence to Augment Clinical Decision-Making"
+            </div>
+            <div class="reading-meta">SAGE Open Medicine, 2025 · Recent study evaluating OpenEvidence in primary care</div>
+          </div>
+        </div>
+        <div class="reading-item">
+          <div class="reading-type"><i data-lucide="file-text"></i></div>
+          <div class="reading-content">
+            <div class="reading-title">
+              "Toward a responsible future: recommendations for AI-enabled clinical decision support"
+            </div>
+            <div class="reading-meta">JAMIA, 2024 · AMIA consensus recommendations on trustworthy AI-CDS</div>
+          </div>
+        </div>
+      </div>
+
+      <hr>
+
+      <!-- Quick Reference -->
+      <h2>Quick Reference: Key Points</h2>
+
+      <div class="key-points-grid">
+        <div class="key-point-card">
+          <h4>What CDS Tools Are</h4>
+          <ul>
+            <li>Technology that delivers evidence-based guidance at the point of care</li>
+            <li>Range from curated knowledge bases (UpToDate) to AI-powered assistants (OpenEvidence, Glass)</li>
+            <li>Designed to augment, not replace, clinical judgment</li>
+          </ul>
+        </div>
+
+        <div class="key-point-card">
+          <h4>How to Get Access</h4>
+          <ul>
+            <li>NPI holders: OpenEvidence free; Glass free; UpToDate requires subscription</li>
+            <li>Students: Check institutional access first; OpenEvidence allows student registration</li>
+            <li>Remember: No consumer AI tool is HIPAA-compliant for PHI</li>
+          </ul>
+        </div>
+
+        <div class="key-point-card">
+          <h4>How to Use Effectively</h4>
+          <ul>
+            <li>Apply prompting principles: context, specificity, explicit uncertainty requests</li>
+            <li>Include relevant clinical details in queries</li>
+            <li>Ask follow-up questions; engage in dialogue</li>
+            <li>Verify key recommendations against primary sources</li>
+          </ul>
+        </div>
+
+        <div class="key-point-card">
+          <h4>What CDS Does Well</h4>
+          <ul>
+            <li>Differential diagnosis enhancement</li>
+            <li>Therapeutic decision support</li>
+            <li>Quick reference lookups</li>
+            <li>Literature synthesis</li>
+            <li>Patient communication drafting</li>
+          </ul>
+        </div>
+
+        <div class="key-point-card">
+          <h4>What CDS Doesn't Do Well</h4>
+          <ul>
+            <li>Rare conditions and edge cases</li>
+            <li>Rapidly evolving evidence</li>
+            <li>Complex multi-system disease reconciliation</li>
+            <li>Clinical judgment and contextual factors</li>
+            <li>Flagging its own uncertainty</li>
+          </ul>
+        </div>
+
+        <div class="key-point-card">
+          <h4>Building Good Habits</h4>
+          <ul>
+            <li>Use CDS proactively, not just when stuck</li>
+            <li>Document AI-assisted reasoning when appropriate</li>
+            <li>Stay current on tool capabilities</li>
+            <li>Develop personal prompting templates</li>
+            <li>Maintain your own clinical expertise</li>
+          </ul>
+        </div>
+      </div>
+
+      <hr>
+
+      <!-- Summary -->
+      <div class="callout callout-principle">
+        <div class="callout-title">Summary</div>
+        <p>
+          Clinical decision support has evolved from ambitious but brittle expert systems of
+          the 1970s to today's AI-powered tools that can synthesize millions of papers into
+          actionable guidance. The tools aren't perfect—they struggle with rare conditions,
+          can't replace clinical judgment, and sometimes project false confidence. But used
+          well, they can make you a better clinician.
+        </p>
+        <p>
+          The key is integration. CDS tools are most valuable when they augment your existing
+          expertise rather than replacing your thinking. Good prompting matters—the clinical
+          communication skills you've spent years developing transfer directly to AI interaction.
+          And critical evaluation remains essential—trust the tools enough to learn from them,
+          but verify enough to catch their errors.
+        </p>
+        <p class="mb-0">
+          The clinicians who thrive in the AI era won't be those who resist the technology
+          or those who surrender their judgment to it. They'll be the ones who learn to
+          collaborate with it—bringing human expertise to questions that require judgment
+          while leveraging AI capabilities for evidence synthesis and pattern recognition.
+        </p>
+      </div>
+
+      <!-- Learning Objectives -->
+      <div class="objectives phase-2">
+        <h4 class="objectives-title">Learning Objectives</h4>
+        <ul class="objectives-list">
+          <li>Trace the evolution of clinical decision support from expert systems to AI-powered tools</li>
+          <li>Compare traditional knowledge bases, AI clinical assistants, and general-purpose models</li>
+          <li>Navigate access pathways for CDS tools as a clinician, trainee, or student</li>
+          <li>Apply effective prompting strategies to clinical queries</li>
+          <li>Identify appropriate use cases and limitations of CDS tools</li>
+          <li>Develop habits for integrating CDS into clinical workflow responsibly</li>
+        </ul>
+      </div>
+
+      <!-- Page Navigation -->
+      <nav class="page-nav">
+        <a href="week-4.html" class="page-nav-link prev">
+          <span class="page-nav-arrow"><i data-lucide="arrow-left"></i></span>
+          <div>
+            <span class="page-nav-label">Previous</span>
+            <span class="page-nav-title">Module 8: Computer Vision in Medicine</span>
+          </div>
+        </a>
+        <a href="module-10.html" class="page-nav-link next">
+          <span class="page-nav-arrow"><i data-lucide="arrow-right"></i></span>
+          <div>
+            <span class="page-nav-label">Next</span>
+            <span class="page-nav-title">Module 10: Ambient AI Tools</span>
+          </div>
+        </a>
+      </nav>
+
+    </article>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div><strong>AI 101</strong> · A Self-Paced Guide to AI in Medicine</div>
+      <div>v1.0 · 2025</div>
+    </div>
+  </footer>
+
+  <script>
+    lucide.createIcons();
+    const navToggle = document.querySelector('.nav-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    if (navToggle) {
+      navToggle.addEventListener('click', () => {
+        navLinks.classList.toggle('nav-open');
+      });
+    }
+  </script>
+
+</body>
+</html>

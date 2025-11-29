@@ -1,0 +1,859 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Module 11: AI Image and Video Creation | AI 101</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-brand">
+        <span class="nav-badge">AI 101</span>
+        <span class="nav-title">A Self-Paced Guide to AI in Medicine</span>
+      </a>
+      <button class="nav-toggle" aria-label="Toggle menu">
+        <i data-lucide="menu"></i>
+      </button>
+      <div class="nav-links">
+        <a href="index.html" class="nav-link">Modules</a>
+        <!-- <a href="resources.html" class="nav-link">Resources</a> -->
+        <a href="about.html" class="nav-link">About</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="main">
+    <article class="content content-wide">
+
+      <header class="unit-header">
+        <span class="unit-label phase-2">PHASE II · MODULE 11</span>
+        <h1 class="unit-title">AI Image and Video Creation</h1>
+        <p class="unit-subtitle">
+          From patient education to practice marketing—visual AI tools that work,
+          how to use them effectively, and the limitations you need to understand.
+        </p>
+        <div class="unit-meta">
+          <span class="unit-meta-item">
+            <i data-lucide="clock"></i>
+            ~30 min read
+          </span>
+          <span class="unit-meta-item">
+            <i data-lucide="image"></i>
+            Practical guide
+          </span>
+        </div>
+      </header>
+
+      <div class="callout callout-question">
+        <div class="callout-title">Core Question</div>
+        <p class="mb-0">
+          How can AI-generated images and videos enhance patient education,
+          practice communication, and medical teaching—while avoiding the
+          pitfalls unique to visual content?
+        </p>
+      </div>
+
+      <!-- Introduction -->
+      <h2>Introduction: Why Visual AI Matters in Healthcare</h2>
+
+      <p>
+        In our previous modules, we explored how large language models process text, the
+        importance of effective prompting, and how clinical decision support tools augment
+        your practice. Now we turn to something that might feel more surprising: the ability
+        to create images and videos from simple text descriptions.
+      </p>
+
+      <p>
+        You might reasonably ask, "Why would a physician need to generate images?" The answer
+        spans more territory than you might expect:
+      </p>
+
+      <ul>
+        <li>Patient education materials explaining conditions and procedures</li>
+        <li>Practice marketing assets—logos, social media graphics, presentation visuals</li>
+        <li>Educational content for learners</li>
+        <li>Conceptual illustrations for research presentations</li>
+        <li>Visual aids during patient conversations</li>
+      </ul>
+
+      <p>
+        The technology has matured remarkably over the past year. What once produced uncanny,
+        obviously artificial images now generates visuals that can be genuinely useful—sometimes
+        indistinguishable from professional photography or illustration. And video generation,
+        which seemed like science fiction just two years ago, now produces clips that can convey
+        motion, demonstrate concepts, and tell visual stories.
+      </p>
+
+      <p>
+        This module covers the leading tools available today, how to use them effectively,
+        and—critically—the limitations and ethical considerations that should guide your use.
+        We'll focus on practical applications relevant to clinical practice and medical education,
+        with hands-on prompt examples you can try immediately.
+      </p>
+
+      <hr>
+
+      <!-- Building on What We've Learned -->
+      <h2>Building on What We've Learned</h2>
+
+      <p>
+        Before diving into visual AI, let's connect this to the concepts we've established
+        throughout this course.
+      </p>
+
+      <h3>The Prompting Principles Still Apply</h3>
+
+      <p>
+        Remember our analogy between AI prompting and taking a patient history? The same
+        principles transfer directly to visual generation. A vague prompt yields vague results.
+        Specificity and context matter enormously.
+      </p>
+
+      <p>Consider the parallel:</p>
+
+      <div class="prompt-examples">
+        <div class="prompt-example bad">
+          <div class="prompt-label"><i data-lucide="x-circle"></i> Poor History</div>
+          <p>"The patient has chest pain."</p>
+        </div>
+        <div class="prompt-example bad">
+          <div class="prompt-label"><i data-lucide="x-circle"></i> Poor Image Prompt</div>
+          <p>"Make a picture of a heart."</p>
+        </div>
+      </div>
+
+      <div class="prompt-examples">
+        <div class="prompt-example good">
+          <div class="prompt-label"><i data-lucide="check-circle"></i> Rich History</div>
+          <p>"67-year-old male with sudden-onset substernal chest pressure radiating to left arm, associated diaphoresis, onset 2 hours ago while at rest, history of hypertension and hyperlipidemia, currently on lisinopril and atorvastatin."</p>
+        </div>
+        <div class="prompt-example good">
+          <div class="prompt-label"><i data-lucide="check-circle"></i> Rich Image Prompt</div>
+          <p>"A detailed anatomical cross-section illustration of a human heart showing the coronary arteries, educational medical illustration style, clean white background, labeled structures, suitable for patient education materials, professional medical textbook quality."</p>
+        </div>
+      </div>
+
+      <p>The specificity you bring to a prompt directly shapes the quality and usefulness of the output.</p>
+
+      <h3>Models Are Not Artists—They're Pattern Synthesizers</h3>
+
+      <p>
+        Just as language models don't "understand" in the human sense, image generators don't
+        "see" or "imagine." They've learned statistical patterns from vast image-text datasets.
+        When you describe something, the model generates pixels that match the patterns associated
+        with your description.
+      </p>
+
+      <p>
+        This has practical implications. The models excel at generating images that resemble
+        their training data. They struggle with novel combinations, unusual perspectives, or
+        highly specific technical accuracy. A request for a "cross-section of the brachial plexus"
+        will produce something anatomically plausible but potentially inaccurate in details—much
+        like how a language model might generate confident-sounding but subtly wrong medical
+        information.
+      </p>
+
+      <h3>Verification Remains Essential</h3>
+
+      <div class="callout callout-warning">
+        <div class="callout-title">Critical Reminder</div>
+        <p class="mb-0">
+          We've emphasized throughout this course that AI outputs require human verification.
+          This applies <strong>doubly</strong> to visual content, especially anything medical
+          or scientific. An AI-generated anatomical diagram might look convincing while containing
+          errors that could mislead patients or learners. Always review generated visuals with
+          your clinical knowledge, and never use AI-generated medical images as authoritative
+          references for clinical decisions.
+        </p>
+      </div>
+
+      <hr>
+
+      <!-- The Current Landscape -->
+      <h2>The Current Landscape: Major Tools and Their Capabilities</h2>
+
+      <p>
+        The AI image and video generation space has evolved rapidly. Let's survey the major
+        tools available today, organized by their primary modality.
+      </p>
+
+      <h2>Image Generation Tools</h2>
+
+      <h3>Google's Imagen 3 (via Gemini)</h3>
+
+      <p>
+        Google's latest image generation model represents a significant leap in quality.
+        It's particularly notable for healthcare applications because of its superior text
+        rendering—a critical feature when creating educational materials, infographics, or
+        labeled diagrams.
+      </p>
+
+      <div class="tool-card">
+        <h4>Key Capabilities</h4>
+        <ul>
+          <li><strong>Accurate text in images:</strong> Unlike earlier models that mangled text, Imagen 3 can generate legible text in multiple languages within images—essential for creating labeled diagrams or infographics.</li>
+          <li><strong>High-fidelity output:</strong> Supports up to 4K resolution for professional-quality outputs.</li>
+          <li><strong>Image editing:</strong> Not just generation—you can upload existing images and modify them with text prompts, change backgrounds, adjust lighting, or add elements.</li>
+          <li><strong>Multi-image context:</strong> Can reference multiple images and maintain consistency across generations.</li>
+        </ul>
+        <p><strong>Access:</strong> Available through the Gemini app. Free users receive limited daily generations. Google One AI Premium subscribers receive higher limits. Also available through Google AI Studio for developers.</p>
+      </div>
+
+      <h3>ChatGPT's GPT-4o Image Generation</h3>
+
+      <p>
+        OpenAI's image generation is now natively integrated into GPT-4o, making it available
+        directly in ChatGPT. This replaced DALL-E 3 as the default in March 2025.
+      </p>
+
+      <div class="tool-card">
+        <h4>Key Capabilities</h4>
+        <ul>
+          <li><strong>Native multimodal integration:</strong> Because image generation is built into the conversation model, ChatGPT can analyze uploaded images, understand context from your conversation, and generate images that reference that context.</li>
+          <li><strong>Precise prompt following:</strong> Excels at following detailed instructions including specific colors (via hex codes), aspect ratios, and transparent backgrounds.</li>
+          <li><strong>Text rendering:</strong> Improved text accuracy compared to earlier DALL-E versions, though still occasionally struggles with longer passages.</li>
+          <li><strong>Editing capabilities:</strong> You can upload images and request modifications, or use the built-in selection tool to edit specific areas.</li>
+        </ul>
+        <p><strong>Access:</strong> Available to all ChatGPT users, including free tier. Plus subscribers ($20/month) get higher usage limits. Pro subscribers ($200/month) get the highest access.</p>
+      </div>
+
+      <h3>Midjourney</h3>
+
+      <p>
+        Midjourney has long been the gold standard for artistic, aesthetically striking images.
+        Version 7, released in 2025, represents their most capable model yet.
+      </p>
+
+      <div class="tool-card">
+        <h4>Key Capabilities</h4>
+        <ul>
+          <li><strong>Superior aesthetic quality:</strong> Known for generating images with exceptional composition, lighting, and artistic depth. Often produces the most visually striking results.</li>
+          <li><strong>Style and character references:</strong> Can use reference images to maintain consistency across multiple generations—useful for creating a series of related visuals.</li>
+          <li><strong>Draft mode:</strong> Generates images 10x faster at half the cost for quick iterations, then allows enhancement of promising results.</li>
+          <li><strong>Video generation:</strong> Also offers image-to-video capabilities, animating still images into short clips.</li>
+        </ul>
+        <p><strong>Access:</strong> Subscription required, starting at $10/month (Basic plan with ~200 images). Available through Discord and their web interface at midjourney.com. No free tier currently available.</p>
+      </div>
+
+      <h2>Video Generation Tools</h2>
+
+      <h3>Google Veo 2</h3>
+
+      <p>
+        Google's video generation model is particularly notable for its native audio
+        generation—videos come with synchronized sound effects, ambient audio, and even
+        dialogue with accurate lip-sync.
+      </p>
+
+      <div class="tool-card">
+        <h4>Key Capabilities</h4>
+        <ul>
+          <li><strong>Native audio:</strong> Generates synchronized sound effects, ambient noise, and natural dialogue—a major differentiator from competitors.</li>
+          <li><strong>High resolution:</strong> Outputs at 1080p HD, with support for both landscape and portrait formats.</li>
+          <li><strong>Extended duration:</strong> Base generations of 4-8 seconds, with "Extend" functionality allowing longer sequences through chained clips.</li>
+          <li><strong>Creative controls:</strong> Specify characters, objects, and style through reference images. Generate motion between starting and ending frames.</li>
+        </ul>
+        <p><strong>Access:</strong> Available through the Gemini app and Google AI Studio. Subscription tiers determine monthly generation limits.</p>
+      </div>
+
+      <h3>OpenAI Sora</h3>
+
+      <p>
+        OpenAI's Sora aims to be "physically accurate" and focuses on realistic motion and
+        physics simulation.
+      </p>
+
+      <div class="tool-card">
+        <h4>Key Capabilities</h4>
+        <ul>
+          <li><strong>Realistic physics:</strong> Notably better at physical simulation—water, cloth motion, object interactions—than competitors.</li>
+          <li><strong>Synchronized audio:</strong> Includes dialogue, sound effects, and ambient audio.</li>
+          <li><strong>Extended duration:</strong> Up to 20+ seconds for Pro users.</li>
+          <li><strong>Integration:</strong> Works within ChatGPT for conversational video creation.</li>
+        </ul>
+        <p><strong>Access:</strong> Integrated with ChatGPT subscriptions. Plus includes limited generations; Pro includes higher limits and resolution.</p>
+      </div>
+
+      <h2>Canva: The Accessible Middle Ground</h2>
+
+      <p>
+        For healthcare professionals who need practical visual design without becoming AI experts,
+        Canva deserves special attention. While Midjourney, ChatGPT, and Veo are primarily AI
+        generation tools, Canva is a comprehensive design platform that has integrated AI features
+        thoughtfully—making it ideal for everyday practice needs.
+      </p>
+
+      <h3>Magic Studio: Canva's AI Suite</h3>
+
+      <p>Canva's "Magic Studio" bundles multiple AI capabilities into their familiar drag-and-drop interface:</p>
+
+      <div class="feature-grid">
+        <div class="feature-card">
+          <h4><i data-lucide="wand-2"></i> Magic Design</h4>
+          <p>Describe what you want to create—"a patient education handout about diabetes management"—and Canva generates multiple complete design layouts to choose from.</p>
+        </div>
+        <div class="feature-card">
+          <h4><i data-lucide="image-plus"></i> Magic Media</h4>
+          <p>Text-to-image and text-to-video generation directly within Canva. Generated assets drop right into your design workspace.</p>
+        </div>
+        <div class="feature-card">
+          <h4><i data-lucide="edit-3"></i> Magic Edit</h4>
+          <p>Select any part of an image and describe changes—add objects, change colors, swap backgrounds.</p>
+        </div>
+        <div class="feature-card">
+          <h4><i data-lucide="eraser"></i> Magic Eraser</h4>
+          <p>Remove unwanted objects from photos with a simple brush selection.</p>
+        </div>
+        <div class="feature-card">
+          <h4><i data-lucide="scissors"></i> Background Remover</h4>
+          <p>Instantly isolate subjects from backgrounds—useful for creating professional photos or headshots.</p>
+        </div>
+        <div class="feature-card">
+          <h4><i data-lucide="languages"></i> Magic Switch</h4>
+          <p>Instantly resize any design for different platforms or translate into different languages.</p>
+        </div>
+      </div>
+
+      <h3>Why Canva Works for Healthcare</h3>
+
+      <p>
+        The advantage of Canva over pure AI generation tools is integration with practical workflow.
+        You're not just generating images—you're creating finished materials. Need a vaccination
+        reminder postcard? A waiting room poster about preventive screenings? An Instagram post
+        announcing flu shot availability? Canva provides templates specifically designed for these
+        use cases, and AI features enhance rather than replace this template-based approach.
+      </p>
+
+      <div class="callout callout-info">
+        <div class="callout-title">Access and Pricing</div>
+        <ul class="mb-0">
+          <li><strong>Free tier:</strong> Basic design tools, 2+ million templates, limited AI features, 5 GB storage.</li>
+          <li><strong>Canva Pro:</strong> $14.99/month or $120/year. Full Magic Studio access, premium templates, Brand Kit for maintaining consistent visual identity.</li>
+          <li><strong>Canva for Teams:</strong> $29.99/month for the first 5 users. Collaboration features, shared brand assets, role-based permissions.</li>
+        </ul>
+      </div>
+
+      <hr>
+
+      <!-- Practical Applications -->
+      <h2>Practical Applications for Healthcare</h2>
+
+      <p>
+        Let's move from tool descriptions to practical applications. Here are specific use
+        cases where visual AI can enhance your practice, with example prompts you can adapt.
+      </p>
+
+      <h3>Patient Education Materials</h3>
+
+      <p>
+        Creating clear visual explanations of conditions, procedures, and treatments is perhaps
+        the highest-value application for clinical practice.
+      </p>
+
+      <div class="example-card">
+        <div class="example-header">
+          <span class="example-number">1</span>
+          <h4 class="example-title">Explaining Asthma to Parents</h4>
+        </div>
+        <div class="prompt-examples">
+          <div class="prompt-example bad">
+            <div class="prompt-label"><i data-lucide="x-circle"></i> Poor Prompt</div>
+            <p>"Picture of lungs with asthma"</p>
+          </div>
+          <div class="prompt-example best">
+            <div class="prompt-label"><i data-lucide="star"></i> Better Prompt</div>
+            <p>"A side-by-side educational illustration comparing normal and asthmatic airways. Left side shows a healthy bronchiole with open airway and thin smooth muscle. Right side shows an asthmatic bronchiole with constricted smooth muscle, thickened airway walls, and excess mucus partially blocking the passage. Clean, simple medical illustration style suitable for patient education. Light blue and coral color palette. Labels pointing to key structures: 'Normal airway,' 'Inflamed airway,' 'Mucus,' 'Constricted muscle.' White background."</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="example-card">
+        <div class="example-header">
+          <span class="example-number">2</span>
+          <h4 class="example-title">Demonstrating Proper Inhaler Technique (Video)</h4>
+        </div>
+        <div class="prompt-example good">
+          <div class="prompt-label"><i data-lucide="video"></i> Video Prompt (Veo or Sora)</div>
+          <p>"An educational video showing proper metered-dose inhaler technique. A person shakes the inhaler, exhales fully, places the inhaler at their lips, begins slow inhalation while pressing the canister, continues inhaling for 3-5 seconds, then holds breath with closed mouth. Clean clinical setting, well-lit, shot from the side to show technique clearly. No audio commentary, just ambient sound."</p>
+        </div>
+      </div>
+
+      <h3>Practice Branding and Logos</h3>
+
+      <p>
+        Creating a professional visual identity for your practice used to require expensive
+        design agencies. AI tools can generate solid starting points.
+      </p>
+
+      <div class="example-card">
+        <div class="example-header">
+          <span class="example-number">3</span>
+          <h4 class="example-title">Pediatric Practice Logo</h4>
+        </div>
+        <div class="prompt-example good">
+          <div class="prompt-label"><i data-lucide="palette"></i> Logo Prompt</div>
+          <p>"A modern, friendly logo for 'Riverside Pediatrics.' Incorporate a subtle river wave element and a simple, warm representation of a child or family. Color palette: soft teal, coral, and white. Clean vector style, minimalist, would work at small sizes. No text—just the icon/symbol portion of the logo."</p>
+        </div>
+        <p class="mt-md"><em>Note: Generate the symbol separately from text. AI tools are improving at text, but logos require precise typography—often better handled in Canva or a dedicated design tool where you have exact control over fonts and spacing.</em></p>
+      </div>
+
+      <h3>Social Media and Marketing Content</h3>
+
+      <div class="example-card">
+        <div class="example-header">
+          <span class="example-number">4</span>
+          <h4 class="example-title">Flu Season Awareness Post</h4>
+        </div>
+        <div class="prompt-example good">
+          <div class="prompt-label"><i data-lucide="image"></i> Social Media Prompt</div>
+          <p>"A warm, inviting image for a social media post promoting flu vaccinations. Show a friendly, diverse family (parents and two children of different ages) in cozy autumn clothing, looking healthy and happy. Soft fall colors in background—golden leaves, warm lighting. Photorealistic style. Leave clear space at top for text overlay. 1080x1080 square format."</p>
+        </div>
+      </div>
+
+      <div class="example-card">
+        <div class="example-header">
+          <span class="example-number">5</span>
+          <h4 class="example-title">Practice Open House Announcement (Video)</h4>
+        </div>
+        <div class="prompt-example good">
+          <div class="prompt-label"><i data-lucide="video"></i> Video Prompt</div>
+          <p>"A short welcoming video showing the exterior of a modern medical office building, then transitioning through the front door into a bright, clean waiting room with comfortable seating and friendly natural lighting. Camera moves smoothly in a walking motion. Warm, inviting atmosphere. Morning light. 5 seconds."</p>
+        </div>
+      </div>
+
+      <h3>Presentation Visuals</h3>
+
+      <div class="example-card">
+        <div class="example-header">
+          <span class="example-number">6</span>
+          <h4 class="example-title">Conference Presentation on Childhood Obesity</h4>
+        </div>
+        <div class="prompt-example good">
+          <div class="prompt-label"><i data-lucide="presentation"></i> Presentation Prompt</div>
+          <p>"An abstract conceptual illustration representing the multifactorial nature of childhood obesity. Interconnected circular elements suggesting: physical activity (motion/movement shapes), nutrition (simple food icons), genetics (DNA helix), environment (home/school building silhouettes), and mental health (brain outline). Professional infographic style, purple and teal gradient color scheme, suitable for a medical presentation slide. Clean white background."</p>
+        </div>
+      </div>
+
+      <h3>Medical Education Content</h3>
+
+      <div class="example-card">
+        <div class="example-header">
+          <span class="example-number">7</span>
+          <h4 class="example-title">Case-Based Learning Scenario Image</h4>
+        </div>
+        <div class="prompt-example good">
+          <div class="prompt-label"><i data-lucide="graduation-cap"></i> Education Prompt</div>
+          <p>"A middle-aged woman sitting in a doctor's office examination room, appearing fatigued and concerned. She's dressed casually, seated on an exam table. Her body language suggests she's describing symptoms—hand gesturing toward her chest area. The physician (visible from behind, wearing white coat) is seated and listening attentively. Professional medical setting, warm but clinical lighting. Realistic style, suitable for a medical education case vignette."</p>
+        </div>
+      </div>
+
+      <hr>
+
+      <!-- Prompting Strategies -->
+      <h2>Prompting Strategies for Visual AI</h2>
+
+      <p>
+        Drawing on our prompting module, here are specific strategies optimized for image
+        and video generation.
+      </p>
+
+      <h3>The Anatomy of an Effective Image Prompt</h3>
+
+      <p>Effective prompts typically include several elements:</p>
+
+      <div class="key-points-grid">
+        <div class="key-point-card">
+          <h4>1. Subject</h4>
+          <p>What is the main focus? Be specific about who or what appears.</p>
+        </div>
+        <div class="key-point-card">
+          <h4>2. Action/State</h4>
+          <p>What is happening? Is the subject doing something or in a particular state?</p>
+        </div>
+        <div class="key-point-card">
+          <h4>3. Setting/Context</h4>
+          <p>Where is this taking place? What's the environment?</p>
+        </div>
+        <div class="key-point-card">
+          <h4>4. Style</h4>
+          <p>What aesthetic are you going for? Photorealistic, illustration, diagram, infographic?</p>
+        </div>
+        <div class="key-point-card">
+          <h4>5. Technical Specs</h4>
+          <p>Aspect ratio, resolution, color palette, lighting.</p>
+        </div>
+        <div class="key-point-card">
+          <h4>6. Purpose Qualifier</h4>
+          <p>What will this be used for? "Suitable for patient education," "social media post format."</p>
+        </div>
+      </div>
+
+      <h3>Style Keywords That Work</h3>
+
+      <p>Certain keywords reliably influence output style:</p>
+
+      <ul>
+        <li><strong>"Medical illustration style"</strong> or <strong>"medical textbook quality"</strong> — Clean, educational aesthetic</li>
+        <li><strong>"Photorealistic"</strong> — Aims for photography-like output</li>
+        <li><strong>"Infographic style"</strong> — Data visualization, clean graphics</li>
+        <li><strong>"Vector illustration"</strong> — Clean lines, scalable, logo-appropriate</li>
+        <li><strong>"Warm and friendly"</strong> — Patient-facing, approachable</li>
+        <li><strong>"Professional"</strong> or <strong>"clinical"</strong> — Appropriate for healthcare context</li>
+        <li><strong>"Clean white background"</strong> — Useful for materials you'll composite later</li>
+      </ul>
+
+      <h3>Iteration and Refinement</h3>
+
+      <p>Rarely will your first generation be exactly what you need. Build in time for iteration:</p>
+
+      <ol>
+        <li><strong>Start broad, then narrow:</strong> Your first prompt establishes the general direction. Subsequent prompts refine.</li>
+        <li><strong>Identify what's working:</strong> When you get a result, note which elements you like before requesting changes.</li>
+        <li><strong>Be specific about changes:</strong> "Make the background lighter" is better than "I don't like the background."</li>
+        <li><strong>Use built-in editing:</strong> Most tools now allow selective editing—often faster than regenerating entirely.</li>
+      </ol>
+
+      <h3>Video-Specific Prompting</h3>
+
+      <p>Video prompts need additional considerations:</p>
+
+      <ul>
+        <li><strong>Describe motion explicitly:</strong> "Camera slowly pans left," "subject walks toward camera," "gentle zoom in."</li>
+        <li><strong>Specify pacing:</strong> "Slow, contemplative motion" vs. "quick, dynamic movement."</li>
+        <li><strong>Consider audio:</strong> If using Veo or Sora with audio, describe the soundscape: "ambient office sounds," "no dialogue, just environmental audio."</li>
+        <li><strong>Keep it simple:</strong> Current video AI handles single continuous actions better than complex multi-step sequences.</li>
+      </ul>
+
+      <hr>
+
+      <!-- Limitations and Critical Considerations -->
+      <h2>Limitations and Critical Considerations</h2>
+
+      <h3>What These Tools Cannot Reliably Do</h3>
+
+      <p>Being clear about limitations helps you use these tools appropriately:</p>
+
+      <ul>
+        <li><strong>Anatomical accuracy:</strong> AI-generated anatomical images may contain errors. Never use them as clinical references or for diagnostic education without expert review.</li>
+        <li><strong>Consistent characters:</strong> Maintaining the exact same person across multiple images remains challenging. Reference image features help but don't guarantee consistency.</li>
+        <li><strong>Complex text:</strong> While newer models have improved dramatically, long passages of text still risk errors. Always verify any text in generated images.</li>
+        <li><strong>Specific real people:</strong> Most tools restrict generation of identifiable real individuals. This is a safety feature, not a bug.</li>
+        <li><strong>Complex hands and poses:</strong> Though improved, hands remain a weak point. Check carefully when hands are prominent.</li>
+        <li><strong>Video complexity:</strong> Video AI currently handles simple scenes well but struggles with complex multi-person interactions or rapid action sequences.</li>
+      </ul>
+
+      <h3>Ethical Considerations</h3>
+
+      <div class="callout callout-principle">
+        <div class="callout-title">Representation and Bias</div>
+        <p class="mb-0">
+          AI models reflect biases in their training data. When generating images of people,
+          be intentional about diversity and representation. Don't default to narrow demographics
+          in your prompts.
+        </p>
+      </div>
+
+      <p><strong>Transparency about AI origin:</strong> Patients and colleagues should know when images are AI-generated, particularly for educational or clinical materials. All major tools now add invisible watermarks, but visible disclosure is also appropriate.</p>
+
+      <p><strong>Copyright and commercial use:</strong> AI-generated images raise unresolved copyright questions. Most tools grant commercial use rights for images you generate through their platforms. However, the underlying legal framework remains unsettled—multiple lawsuits are ongoing. For high-stakes commercial use, consider consulting with legal counsel.</p>
+
+      <div class="callout callout-warning">
+        <div class="callout-title">Patient Privacy Reminder</div>
+        <p class="mb-0">
+          <strong>Never upload patient photos or identifiable information to AI image tools.</strong>
+          These platforms are not HIPAA-compliant for patient data processing. Never upload
+          patient-identifiable information—photos, names, medical record numbers, or any
+          combination of information that could identify a patient—to consumer AI tools.
+          If you need to describe a clinical scenario for educational content, use fictional
+          composite cases, not real patients.
+        </p>
+      </div>
+
+      <p><strong>Deepfakes and misuse:</strong> These same tools that create useful content can generate misinformation. As a healthcare professional, you have particular credibility—be thoughtful about how AI-generated content from your practice could be misused if shared out of context.</p>
+
+      <hr>
+
+      <!-- Getting Started -->
+      <h2>Getting Started: Your First Projects</h2>
+
+      <p>
+        The best way to learn these tools is to use them. Here are concrete starting projects
+        appropriate for different experience levels.
+      </p>
+
+      <h3>Beginner: Practice Logo Concept</h3>
+
+      <p><strong>Goal:</strong> Generate 3-5 logo concepts for a hypothetical (or your real) practice.</p>
+
+      <p><strong>Tool:</strong> ChatGPT (free), Gemini, or Midjourney</p>
+
+      <p><strong>Steps:</strong></p>
+      <ol>
+        <li>Write down 3 words that describe the feeling you want your practice to convey (e.g., "warm," "professional," "modern")</li>
+        <li>Identify any visual elements relevant to your specialty or location</li>
+        <li>Choose 2-3 colors that feel appropriate</li>
+        <li>Generate initial concepts using a prompt incorporating these elements</li>
+        <li>Iterate on the most promising result with refinement prompts</li>
+      </ol>
+
+      <div class="prompt-example good">
+        <div class="prompt-label"><i data-lucide="lightbulb"></i> Starter Prompt Template</div>
+        <p>"A modern, [adjective] logo icon for a [specialty] medical practice. The design should suggest [concept/feeling]. Color palette: [colors]. Clean vector style, minimalist, professional, works at small sizes. No text—icon only."</p>
+      </div>
+
+      <h3>Intermediate: Patient Education Handout</h3>
+
+      <p><strong>Goal:</strong> Create a one-page patient education handout on a common condition including AI-generated illustrations.</p>
+
+      <p><strong>Tools:</strong> Image generator of choice + Canva for layout</p>
+
+      <p><strong>Steps:</strong></p>
+      <ol>
+        <li>Choose a condition you frequently explain to patients</li>
+        <li>Outline 3-4 key points patients need to understand</li>
+        <li>Identify 1-2 concepts that would benefit from visual explanation</li>
+        <li>Generate illustrations for those concepts</li>
+        <li>Use Canva to combine text and images into a polished handout</li>
+        <li>Have a colleague review for clarity and accuracy</li>
+      </ol>
+
+      <h3>Advanced: Short Educational Video</h3>
+
+      <p><strong>Goal:</strong> Create a 15-30 second educational video demonstrating a patient self-care technique.</p>
+
+      <p><strong>Tools:</strong> Veo or Sora</p>
+
+      <p><strong>Steps:</strong></p>
+      <ol>
+        <li>Choose a simple technique (e.g., nasal saline irrigation, proper splint application, wound care)</li>
+        <li>Break the technique into 3-4 distinct steps</li>
+        <li>Generate a short clip for each step</li>
+        <li>Use a video editor (or Canva) to combine clips and add text overlays</li>
+        <li>Review for accuracy—AI may generate incorrect technique</li>
+      </ol>
+
+      <hr>
+
+      <!-- Choosing the Right Tool -->
+      <h2>Choosing the Right Tool</h2>
+
+      <p>With multiple capable options, here's practical guidance on tool selection:</p>
+
+      <div class="comparison-table-wrapper">
+        <table class="comparison-table">
+          <thead>
+            <tr>
+              <th>Use Case</th>
+              <th>Recommended Tool</th>
+              <th>Why</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Images with text/labels</td>
+              <td>Gemini (Imagen 3)</td>
+              <td>Best text accuracy for infographics and labeled diagrams</td>
+            </tr>
+            <tr>
+              <td>Conversational iteration</td>
+              <td>ChatGPT</td>
+              <td>Natural conversation to refine when you're exploring</td>
+            </tr>
+            <tr>
+              <td>Aesthetic quality</td>
+              <td>Midjourney</td>
+              <td>Most visually striking results for presentations and marketing</td>
+            </tr>
+            <tr>
+              <td>Complete design projects</td>
+              <td>Canva</td>
+              <td>AI + templates + design tools for finished materials</td>
+            </tr>
+            <tr>
+              <td>Video with audio</td>
+              <td>Google Veo</td>
+              <td>Best native audio integration</td>
+            </tr>
+            <tr>
+              <td>Realistic video physics</td>
+              <td>OpenAI Sora</td>
+              <td>Best for motion, liquids, object interactions</td>
+            </tr>
+            <tr>
+              <td>Budget-conscious</td>
+              <td>ChatGPT or Canva Free</td>
+              <td>Free tiers cover basic needs</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <hr>
+
+      <!-- Resources -->
+      <h2>Resources for Further Learning</h2>
+
+      <h3>Official Documentation</h3>
+
+      <div class="reading-list">
+        <div class="reading-item">
+          <div class="reading-type"><i data-lucide="book-open"></i></div>
+          <div class="reading-content">
+            <div class="reading-title">
+              <a href="https://deepmind.google/models/veo/" target="_blank">Google DeepMind Veo Model Page</a>
+            </div>
+            <div class="reading-meta">Technical overview and capabilities</div>
+          </div>
+        </div>
+        <div class="reading-item">
+          <div class="reading-type"><i data-lucide="book-open"></i></div>
+          <div class="reading-content">
+            <div class="reading-title">
+              <a href="https://help.openai.com/en/articles/8932459-creating-images-in-chatgpt" target="_blank">OpenAI: Creating Images in ChatGPT</a>
+            </div>
+            <div class="reading-meta">Official guide to GPT-4o image generation</div>
+          </div>
+        </div>
+        <div class="reading-item">
+          <div class="reading-type"><i data-lucide="book-open"></i></div>
+          <div class="reading-content">
+            <div class="reading-title">
+              <a href="https://docs.midjourney.com/" target="_blank">Midjourney Documentation</a>
+            </div>
+            <div class="reading-meta">Comprehensive guide to Midjourney features</div>
+          </div>
+        </div>
+        <div class="reading-item">
+          <div class="reading-type"><i data-lucide="book-open"></i></div>
+          <div class="reading-content">
+            <div class="reading-title">
+              <a href="https://www.canva.com/magic/" target="_blank">Canva Magic Studio</a>
+            </div>
+            <div class="reading-meta">AI features overview and tutorials</div>
+          </div>
+        </div>
+      </div>
+
+      <h3>Communities and Prompt Libraries</h3>
+
+      <div class="reading-list">
+        <div class="reading-item">
+          <div class="reading-type"><i data-lucide="users"></i></div>
+          <div class="reading-content">
+            <div class="reading-title">Midjourney Discord Community</div>
+            <div class="reading-meta">Thousands of examples and prompt inspiration</div>
+          </div>
+        </div>
+        <div class="reading-item">
+          <div class="reading-type"><i data-lucide="search"></i></div>
+          <div class="reading-content">
+            <div class="reading-title">
+              <a href="https://prompthero.com" target="_blank">PromptHero</a>
+            </div>
+            <div class="reading-meta">Searchable database of prompts and results</div>
+          </div>
+        </div>
+      </div>
+
+      <hr>
+
+      <!-- Key Takeaways -->
+      <h2>Key Takeaways</h2>
+
+      <div class="key-points-grid">
+        <div class="key-point-card">
+          <h4>Visual AI Has Matured</h4>
+          <p>The tools available today can genuinely enhance patient education, practice marketing, and educational content creation.</p>
+        </div>
+        <div class="key-point-card">
+          <h4>Prompting Principles Transfer</h4>
+          <p>Specificity, context, and clear communication produce better results—just like patient histories.</p>
+        </div>
+        <div class="key-point-card">
+          <h4>Each Tool Has Strengths</h4>
+          <p>Imagen for text, Midjourney for aesthetics, ChatGPT for conversation, Canva for finished projects, Veo for video with audio.</p>
+        </div>
+        <div class="key-point-card">
+          <h4>Verification Is Essential</h4>
+          <p>AI-generated medical content requires expert review before use—especially anatomical or clinical images.</p>
+        </div>
+        <div class="key-point-card">
+          <h4>Ethics Matter</h4>
+          <p>Be intentional about representation, transparent about AI origin, and vigilant about patient privacy.</p>
+        </div>
+        <div class="key-point-card">
+          <h4>Learn By Doing</h4>
+          <p>Start with a small project and iterate. The technology rewards experimentation.</p>
+        </div>
+      </div>
+
+      <div class="callout callout-principle">
+        <div class="callout-title">The Bottom Line</div>
+        <p class="mb-0">
+          Visual AI represents another dimension of how artificial intelligence can augment
+          healthcare practice. Like the language models we've discussed throughout this course,
+          these tools work best when humans bring clinical judgment, creativity, and ethical
+          awareness to the collaboration. The images and videos these tools generate are starting
+          points—raw material that you refine, verify, and deploy in service of better patient
+          care and communication.
+        </p>
+      </div>
+
+      <!-- Learning Objectives -->
+      <div class="objectives phase-2">
+        <h4 class="objectives-title">Learning Objectives</h4>
+        <ul class="objectives-list">
+          <li>Identify appropriate use cases for AI image and video generation in healthcare settings</li>
+          <li>Construct effective prompts for visual AI tools using specificity and context</li>
+          <li>Evaluate the capabilities and limitations of major image and video generation platforms</li>
+          <li>Apply verification practices to AI-generated visual content before clinical or educational use</li>
+          <li>Navigate ethical considerations including representation, transparency, and patient privacy</li>
+          <li>Create practical visual content for patient education, practice marketing, and presentations</li>
+        </ul>
+      </div>
+
+      <!-- Page Navigation -->
+      <nav class="page-nav">
+        <a href="module-10.html" class="page-nav-link prev">
+          <span class="page-nav-arrow"><i data-lucide="arrow-left"></i></span>
+          <div>
+            <span class="page-nav-label">Previous</span>
+            <span class="page-nav-title">Module 10: Ambient AI Tools</span>
+          </div>
+        </a>
+        <a href="module-12.html" class="page-nav-link next">
+          <span class="page-nav-arrow"><i data-lucide="arrow-right"></i></span>
+          <div>
+            <span class="page-nav-label">Next</span>
+            <span class="page-nav-title">Module 12: Everyday Ways to Use AI</span>
+          </div>
+        </a>
+      </nav>
+
+    </article>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div><strong>AI 101</strong> · A Self-Paced Guide to AI in Medicine</div>
+      <div>v1.0 · 2025</div>
+    </div>
+  </footer>
+
+  <script>
+    lucide.createIcons();
+    const navToggle = document.querySelector('.nav-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    if (navToggle) {
+      navToggle.addEventListener('click', () => {
+        navLinks.classList.toggle('nav-open');
+      });
+    }
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Start Here | AI 101</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-brand">
+        <span class="nav-badge">AI 101</span>
+        <span class="nav-title">A Self-Paced Guide to AI in Medicine</span>
+      </a>
+      <button class="nav-toggle" aria-label="Toggle menu">
+        <i data-lucide="menu"></i>
+      </button>
+      <div class="nav-links">
+        <a href="index.html" class="nav-link">Modules</a>
+        <!-- <a href="resources.html" class="nav-link">Resources</a> -->
+        <a href="about.html" class="nav-link">About</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="main">
+    <article class="content">
+
+      <header class="unit-header">
+        <span class="unit-label intro">START HERE</span>
+        <h1 class="unit-title">Not with Theory—with Practice</h1>
+        <p class="unit-subtitle">
+          Before you understand how AI works, learn to make it work for you.
+          A practical on-ramp using the safest tool available for medical learners.
+        </p>
+        <div class="unit-meta">
+          <span class="unit-meta-item">
+            <i data-lucide="play-circle"></i>
+            Hands-on activity
+          </span>
+          <span class="unit-meta-item">
+            <i data-lucide="clock"></i>
+            20 mins
+          </span>
+        </div>
+      </header>
+
+      <div class="callout callout-question">
+        <div class="callout-title">Core Question</div>
+        <p class="mb-0">
+          How can I use AI to make learning materials work for you—before I understand how AI works?
+        </p>
+      </div>
+
+      <p>
+        Most courses on clinical AI start with definitions: machine learning, neural networks,
+        training data. There's a place for that—and we'll get there in Module 1. But if you're
+        a busy clinician, you probably want to know: <strong>what can I actually do with this,
+        right now?</strong>
+      </p>
+      <p>
+        This module inverts the usual sequence. Instead of learning theory first and applying it
+        later, you'll start by using <a href="https://notebooklm.google.com" target="_blank">NotebookLM</a>
+        to solve a real problem you already have: managing the firehose of medical information.
+      </p>
+
+      <div class="callout callout-principle" style="border-left-color: #3b82f6; background: #eff6ff;">
+        <div class="callout-title" style="color: #1e40af;">Why NotebookLM is Different</div>
+        <p class="mb-0">It breaks the "Black Box."</p>
+        
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-top: 1.5rem;">
+          
+          <div style="text-align: center; opacity: 0.6;">
+            <div style="font-weight: 700; font-size: 0.9rem; margin-bottom: 0.5rem;">Standard AI (ChatGPT)</div>
+            <div style="border: 2px dashed #94a3b8; padding: 1rem; border-radius: 8px;">
+              Your Question <br>↓<br> 
+              <strong>The Entire Internet</strong><br>
+              (Training Data)<br>
+              ↓<br>
+              Answer (Hard to Verify)
+            </div>
+          </div>
+
+          <div style="text-align: center;">
+            <div style="font-weight: 700; font-size: 0.9rem; margin-bottom: 0.5rem; color: #1e40af;">NotebookLM (RAG)</div>
+            <div style="border: 2px solid #3b82f6; padding: 1rem; border-radius: 8px; background: white;">
+              Your Question <br>↓<br> 
+              <strong>YOUR Uploaded Sources</strong><br>
+              (PDFs, Guidelines, Videos)<br>
+              ↓<br>
+              Answer + <span style="background: #e2e8f0; padding: 0 4px; border-radius: 4px; font-size: 0.8rem;">[Citation 1]</span>
+            </div>
+          </div>
+
+        </div>
+        <p style="font-size: 0.85rem; color: #64748b; margin-top: 1rem; text-align: center;">
+          This architecture is called <strong>Retrieval-Augmented Generation (RAG)</strong>. It is the gold standard for safety in medical AI.
+        </p>
+      </div>
+
+      <h2>Level 1: The Basics</h2>
+
+      <div class="example-card">
+        <div class="example-header">
+          <span class="example-number">1</span>
+          <h3 class="example-title">The "Grand Rounds" Filter</h3>
+        </div>
+        <p>
+          You missed Grand Rounds. The recording is on YouTube, but it's 58 minutes long.
+          NotebookLM now supports YouTube URLs directly.
+        </p>
+        <div class="prompt-label">The Workflow</div>
+        <div class="prompt-box">
+          1. Copy the YouTube URL of the medical lecture.<br>
+          2. Paste it into NotebookLM as a source.<br>
+          3. Ask: "Extract the 3 key practice changes mentioned in this lecture and the timestamp where they are discussed."
+        </div>
+        <div class="outcome-box">
+          <strong>Result:</strong> You get the actionable pearls immediately. If a point seems controversial, you click the timestamp to watch just that 2-minute segment.
+        </div>
+      </div>
+
+      <div class="example-card">
+        <div class="example-header">
+          <span class="example-number">2</span>
+          <h3 class="example-title">The "Customized" Audio Overview</h3>
+        </div>
+        <p>
+          NotebookLM's famous "Audio Overview" creates a podcast from your documents. 
+          <strong>New feature:</strong> You can now direct the hosts.
+        </p>
+        <div class="prompt-label">The Workflow</div>
+        <div class="prompt-box">
+          1. Upload a dense clinical guideline (e.g., AAP Bronchiolitis).<br>
+          2. Click "Customize" in the Audio section.<br>
+          3. Type: "Focus specifically on the controversy regarding albuterol trials. Debate the evidence for and against."
+        </div>
+        <div class="outcome-box">
+          <strong>Result:</strong> Instead of a generic summary, you get a deep-dive conversation tailored to your specific learning gap. Perfect for commutes.
+        </div>
+      </div>
+
+      <h2>Level 2: Power User Workflows</h2>
+      <p>Once you're comfortable with the basics, try these advanced moves that use the tool for critical thinking, not just summary.</p>
+
+      <div class="example-card" style="border-left: 4px solid #8b5cf6;">
+        <div class="example-header">
+          <span class="example-number" style="background: #8b5cf6;">3</span>
+          <h3 class="example-title">The "Gap Analysis" (Marketing vs. Data)</h3>
+        </div>
+        <p>
+          Pharma reps often present slides that highlight the best data. The "Gap Analysis"
+          uses AI to find what they <em>aren't</em> showing you.
+        </p>
+        <div class="prompt-label">The Workflow</div>
+        <div class="prompt-box">
+          1. Upload the <strong>Slide Deck</strong> (or screenshot it).<br>
+          2. Upload the full <strong>Clinical Trial PDF</strong>.<br>
+          3. Prompt: "Compare the claims in the slide deck against the data in the full paper. What adverse events or secondary outcomes in the paper are omitted or minimized in the slides?"
+        </div>
+      </div>
+
+      <div class="example-card" style="border-left: 4px solid #8b5cf6;">
+        <div class="example-header">
+          <span class="example-number" style="background: #8b5cf6;">4</span>
+          <h3 class="example-title">The "Socratic Study Partner"</h3>
+        </div>
+        <p>
+          Don't just read the summary—force yourself to recall it. This prompts the AI to stop
+          giving answers and start checking yours.
+        </p>
+        <div class="prompt-label">The Workflow</div>
+        <div class="prompt-box">
+          1. Upload your study materials (lecture notes, guidelines).<br>
+          2. Prompt: "Quiz me on this material. Ask one question at a time. Do not give me the answer until I respond. If I am wrong, explain why using the source text."
+        </div>
+      </div>
+
+      <div class="callout callout-principle">
+        <div class="callout-title">The Underlying Principle</div>
+        <p class="mb-0">
+          AI literacy for clinicians is not about coding. It's about <strong>supervision</strong>. 
+          NotebookLM is the perfect training ground because it makes supervision easy: 
+          if you can't verify the source (via the citation click), you don't trust the output.
+        </p>
+      </div>
+
+      <section class="activity-section">
+        <h3 class="activity-title">Hands-On Activity</h3>
+
+        <ol class="activity-steps">
+          <li class="activity-step">
+            <span class="step-number">1</span>
+            <div class="step-content">
+              <p>
+                <strong>Initialize:</strong> Go to
+                <a href="https://notebooklm.google.com" target="_blank">notebooklm.google.com</a>
+                and create a "New Notebook."
+              </p>
+            </div>
+          </li>
+          <li class="activity-step">
+            <span class="step-number">2</span>
+            <div class="step-content">
+              <p>
+                <strong>Upload Multimodal Sources:</strong> Don't just use one PDF. Try to upload:
+              </p>
+              <ul>
+                <li>A PDF guideline (e.g., from a medical society)</li>
+                <li>A YouTube URL (search for a relevant medical lecture)</li>
+                <li>A website URL (a hospital protocol page)</li>
+              </ul>
+            </div>
+          </li>
+          <li class="activity-step">
+            <span class="step-number">3</span>
+            <div class="step-content">
+              <p>
+                <strong>The "Find the Error" Game:</strong> Ask a specific question. 
+                Check the citation number <span style="background: #e2e8f0; padding: 0 4px; border-radius: 4px; font-size: 0.8rem;">[1]</span>. 
+                Does it highlight the correct text? Getting used to this "click-to-verify" loop is your most important AI safety habit.
+              </p>
+            </div>
+          </li>
+          <li class="activity-step">
+            <span class="step-number">4</span>
+            <div class="step-content">
+              <p>
+                <strong>Direct the Podcast:</strong> Generate an Audio Overview, but use the 
+                "Customize" button. Tell the hosts to "Explain this like I'm a medical student" 
+                or "Focus only on the treatment side effects."
+              </p>
+            </div>
+          </li>
+        </ol>
+      </section>
+
+      <h2>Resources for This Module</h2>
+      <div class="reading-list">
+        <div class="reading-item">
+          <div class="reading-type"><i data-lucide="file-text"></i></div>
+          <div class="reading-content">
+            <div class="reading-title">
+              <a href="https://blog.google/technology/ai/notebooklm-audio-overviews-update-october-2024/" target="_blank">NotebookLM Update: Directing the Audio</a>
+            </div>
+            <div class="reading-meta">Google Blog · Official guide to the customization features.</div>
+          </div>
+        </div>
+        <div class="reading-item">
+          <div class="reading-type"><i data-lucide="youtube"></i></div>
+          <div class="reading-content">
+            <div class="reading-title">
+              <a href="https://www.youtube.com/watch?v=0k93Kj1jV2w" target="_blank">NotebookLM Deep Dive for Researchers</a>
+            </div>
+            <div class="reading-meta">Google Labs · High-quality tutorial on source grounding and citations.</div>
+          </div>
+        </div>
+        <div class="reading-item">
+          <div class="reading-type"><i data-lucide="book-open"></i></div>
+          <div class="reading-content">
+            <div class="reading-title">
+              <a href="https://stevenberlinjohnson.substack.com/p/notebooklm-the-active-listening-tool" target="_blank">The Active Listening Tool for the AI Age</a>
+            </div>
+            <div class="reading-meta">Steven Johnson · Why this tool changes the cognitive nature of research.</div>
+          </div>
+        </div>
+      </div>
+
+      <h2>What's Next</h2>
+      <p>
+        Now that you've used a <strong>RAG (Retrieval-Augmented Generation)</strong> tool, 
+        you have a mental model for "safe" AI. In Module 1, we'll pull back the curtain to 
+        see how the underlying brain (the Large Language Model) actually works—and why 
+        even with these safety rails, it still thinks probabilistically, not logically.
+      </p>
+
+      <nav class="page-nav">
+        <a href="index.html" class="page-nav-link prev">
+          <span class="page-nav-arrow"><i data-lucide="arrow-left"></i></span>
+          <div>
+            <span class="page-nav-label">Back to</span>
+            <span class="page-nav-title">All Modules</span>
+          </div>
+        </a>
+        <a href="module-1.html" class="page-nav-link next">
+          <span class="page-nav-arrow"><i data-lucide="arrow-right"></i></span>
+          <div>
+            <span class="page-nav-label">Next</span>
+            <span class="page-nav-title">Module 1: How LLMs Think Like Clinicians</span>
+          </div>
+        </a>
+      </nav>
+
+    </article>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div>
+        <strong>AI 101</strong> · A Self-Paced Guide to AI in Medicine
+      </div>
+      <div>
+        v1.0 · 2025
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    lucide.createIcons();
+    const navToggle = document.querySelector('.nav-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    if (navToggle) {
+      navToggle.addEventListener('click', () => {
+        navLinks.classList.toggle('nav-open');
+      });
+    }
+  </script>
+
+</body>
+</html>

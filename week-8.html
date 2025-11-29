@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Week 8: Module 15: Prompt Engineering for Clinicians | AI 101</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-brand">
+        <span class="nav-badge">AI 101</span>
+        <span class="nav-title">A Self-Paced Guide to AI in Medicine</span>
+      </a>
+      <button class="nav-toggle" aria-label="Toggle menu">
+        <i data-lucide="menu"></i>
+      </button>
+      <div class="nav-links">
+        <a href="index.html" class="nav-link">Modules</a>
+        <!-- <a href="resources.html" class="nav-link">Resources</a> -->
+        <a href="about.html" class="nav-link">About</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="main">
+    <article class="content">
+
+      <header class="unit-header">
+        <span class="unit-label phase-2">PHASE II · MODULE 15</span>
+        <h1 class="unit-title">Prompt Engineering for Clinicians</h1>
+        <p class="unit-subtitle">
+          Zero-shot, few-shot, and chain-of-thought techniques.
+          Practical prompt design for clinical workflows.
+        </p>
+        <div class="unit-meta">
+          <span class="unit-meta-item">
+            <i data-lucide="book-open"></i>
+            3 readings
+          </span>
+        </div>
+      </header>
+
+      <div class="callout callout-question">
+        <div class="callout-title">Core Question</div>
+        <p class="mb-0">
+          How do you communicate with AI systems to get useful, accurate, 
+          and appropriately-scoped clinical outputs?
+        </p>
+      </div>
+
+      <h2>Overview</h2>
+      <p>
+        "Prompt engineering" sounds technical, but it's fundamentally about 
+        clear communication. The way you frame a request to an LLM dramatically 
+        affects the quality of its response. This week develops practical 
+        prompting skills for clinical contexts—not to make you a prompt 
+        "expert," but to help you get more reliable outputs from AI tools 
+        you're already encountering.
+      </p>
+
+      <h2>Key Concepts</h2>
+
+      <h3>Zero-Shot, Few-Shot, and Chain-of-Thought</h3>
+      <p>
+        These terms describe different prompting strategies:
+      </p>
+      <ul>
+        <li><strong>Zero-shot:</strong> Ask the model to perform a task with no examples ("Summarize this patient history")</li>
+        <li><strong>Few-shot:</strong> Provide examples of the desired input-output format before your actual request</li>
+        <li><strong>Chain-of-thought:</strong> Ask the model to reason step-by-step before giving a final answer</li>
+      </ul>
+      <p>
+        Chain-of-thought is particularly valuable in clinical contexts—it makes 
+        the model's reasoning visible, allowing you to spot logical errors before 
+        accepting conclusions.
+      </p>
+
+      <h3>Structured Output Requests</h3>
+      <p>
+        Vague prompts produce vague outputs. Specifying the desired format, 
+        length, and structure dramatically improves utility. Compare:
+      </p>
+      <ul>
+        <li><em>Weak:</em> "Tell me about metformin."</li>
+        <li><em>Better:</em> "Provide a 3-paragraph summary of metformin covering: mechanism of action, common side effects, and key contraindications. Use language appropriate for a patient with high health literacy."</li>
+      </ul>
+
+      <h3>Role Assignment and Constraints</h3>
+      <p>
+        Assigning a role ("You are a clinical pharmacist reviewing medication 
+        interactions") and explicit constraints ("Do not recommend any off-label 
+        uses") can improve output quality. But be cautious: role assignment 
+        doesn't make the model actually become an expert—it just shifts the 
+        statistical distribution of likely outputs.
+      </p>
+
+      <div class="callout callout-info">
+        <div class="callout-title">Activity: Prompt Golf</div>
+        <p class="mb-0">
+          You'll compete to diagnose a rare disease presentation using the 
+          fewest prompt iterations. This game develops intuitions about what 
+          information AI needs to produce useful differential diagnoses.
+        </p>
+      </div>
+
+      <h2>Readings</h2>
+      <div class="reading-list">
+        <div class="reading-item">
+          <div class="reading-type">📄</div>
+          <div class="reading-content">
+            <div class="reading-title">
+              Wei, J. et al. "Chain-of-Thought Prompting Elicits Reasoning in Large Language Models"
+
+            </div>
+            <div class="reading-meta">NeurIPS, 2022 · Foundational CoT paper</div>
+          </div>
+        </div>
+        <div class="reading-item">
+          <div class="reading-type">📄</div>
+          <div class="reading-content">
+            <div class="reading-title">
+              Anthropic. "Prompt Engineering Guide" (clinical excerpts)
+
+            </div>
+            <div class="reading-meta">Practical techniques with examples</div>
+          </div>
+        </div>
+        <div class="reading-item">
+          <div class="reading-type">📄</div>
+          <div class="reading-content">
+            <div class="reading-title">
+              Meskó, B. "Prompt Engineering in Healthcare"
+
+            </div>
+            <div class="reading-meta">The Medical Futurist, 2023</div>
+          </div>
+        </div>
+      </div>
+
+      <h2>Practical Prompt Patterns</h2>
+      
+      <h3>Pattern 1: The Structured Clinical Query</h3>
+      <div class="prompt-box">Patient: 67-year-old male with Type 2 diabetes
+Current medications: [list]
+Question: What are the key drug interactions I should monitor?
+
+Format your response as:
+1. High-priority interactions (require action)
+2. Moderate interactions (monitor)
+3. Theoretical interactions (low clinical significance)
+
+For each, explain the mechanism briefly.</div>
+
+      <h3>Pattern 2: The Differential Generator</h3>
+      <div class="prompt-box">Presentation: [symptoms, history, exam findings]
+
+Generate a differential diagnosis considering:
+- Most likely diagnoses (>10% probability)
+- Important not-to-miss diagnoses (dangerous if missed)
+- Atypical presentations of common conditions
+
+For each diagnosis, note one finding that would increase 
+or decrease its likelihood.</div>
+
+      <h3>Pattern 3: The Patient Education Translator</h3>
+      <div class="prompt-box">Medical concept: [condition/procedure/medication]
+Target audience: [literacy level, age, cultural considerations]
+
+Create patient education content that:
+- Uses analogies to everyday experiences
+- Avoids medical jargon (or defines it simply)
+- Includes what to expect and when to seek help
+- Is no longer than [length]</div>
+
+      <div class="discussion-questions">
+        <h4>Discussion Questions</h4>
+        <ol>
+          <li>
+            You're using an LLM to draft a prior authorization letter. What 
+            information should you include in the prompt? What constraints?
+          </li>
+          <li>
+            A colleague shares a "magic prompt" they claim always produces 
+            accurate medical information. What's your response?
+          </li>
+          <li>
+            How might prompting strategies differ between using AI for yourself 
+            vs. for patient-facing content?
+          </li>
+        </ol>
+      </div>
+
+      <div class="objectives phase-2">
+        <h4 class="objectives-title">Learning Objectives</h4>
+        <ul class="objectives-list">
+          <li>Apply zero-shot, few-shot, and chain-of-thought prompting strategies</li>
+          <li>Design structured prompts that specify format, constraints, and audience</li>
+          <li>Iterate on prompts based on output quality</li>
+          <li>Recognize the limitations of prompt engineering as a reliability strategy</li>
+        </ul>
+      </div>
+
+      <nav class="page-nav">
+        <a href="week-7.html" class="page-nav-link prev">
+          <span class="page-nav-arrow"><i data-lucide="arrow-left"></i></span>
+          <div>
+            <span class="page-nav-label">Previous</span>
+            <span class="page-nav-title">Module 14: Centaurs and Cyborgs</span>
+          </div>
+        </a>
+        <a href="bonus-vibe-coding.html" class="page-nav-link next">
+          <span class="page-nav-arrow"><i data-lucide="arrow-right"></i></span>
+          <div>
+            <span class="page-nav-label">Next</span>
+            <span class="page-nav-title">Bonus Module: Vibe Coding</span>
+          </div>
+        </a>
+      </nav>
+
+    </article>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div><strong>AI 101</strong> · A Self-Paced Guide to AI in Medicine</div>
+      <div>v1.0 · 2025</div>
+    </div>
+  </footer>
+
+  <script>
+    lucide.createIcons();
+    const navToggle = document.querySelector('.nav-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    if (navToggle) {
+      navToggle.addEventListener('click', () => {
+        navLinks.classList.toggle('nav-open');
+      });
+    }
+  </script>
+
+</body>
+</html>

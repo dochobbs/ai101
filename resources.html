@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resources | AI 101</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-brand">
+        <span class="nav-badge">AI 101</span>
+        <span class="nav-title">A Self-Paced Guide to AI in Medicine</span>
+      </a>
+      <button class="nav-toggle" aria-label="Toggle menu">
+        <i data-lucide="menu"></i>
+      </button>
+      <div class="nav-links">
+        <a href="index.html" class="nav-link">Modules</a>
+        <a href="resources.html" class="nav-link active">Resources</a>
+        <a href="about.html" class="nav-link">About</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="main">
+    <article class="content-wide">
+
+      <header class="unit-header">
+        <h1 class="unit-title">Resources</h1>
+        <p class="unit-subtitle">
+  Tools, frameworks, reading lists, and reference materials for
+          working with AI in clinical practice.
+        </p>
+      </header>
+
+      <h2>Key Frameworks</h2>
+      <p>
+        These frameworks are referenced throughout the course and serve as 
+        practical tools for evaluating and governing clinical AI.
+      </p>
+
+      <div class="reading-list">
+        <div class="reading-item">
+          <div class="reading-type required"><i data-lucide="clipboard-list"></i></div>
+          <div class="reading-content">
+            <div class="reading-title">CLAIM Checklist</div>
+            <div class="reading-meta">
+              42-item checklist for evaluating AI imaging papers. Covers study design,
+              data quality, model development, validation, and reproducibility.
+              <br><a href="#">Download PDF →</a>
+            </div>
+          </div>
+        </div>
+        <div class="reading-item">
+          <div class="reading-type required"><i data-lucide="clipboard-list"></i></div>
+          <div class="reading-content">
+            <div class="reading-title">CONSORT-AI Extension</div>
+            <div class="reading-meta">
+              Reporting guidelines for clinical trial reports involving AI interventions.
+              Essential for evaluating research quality.
+              <br><a href="#">View Guidelines →</a>
+            </div>
+          </div>
+        </div>
+        <div class="reading-item">
+          <div class="reading-type required"><i data-lucide="clipboard-list"></i></div>
+          <div class="reading-content">
+            <div class="reading-title">DEFT-AI Supervision Framework</div>
+            <div class="reading-meta">
+              Diagnosis, Evidence, Feedback, Teaching—structured approach to
+              supervising AI clinical outputs.
+              <br><a href="#">Download Template →</a>
+            </div>
+          </div>
+        </div>
+        <div class="reading-item">
+          <div class="reading-type required"><i data-lucide="clipboard-list"></i></div>
+          <div class="reading-content">
+            <div class="reading-title">Model Card Template</div>
+            <div class="reading-meta">
+              Documentation framework for AI system transparency. Based on
+              Mitchell et al. (2019).
+              <br><a href="#">Download Template →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <h2>AI Tools for Clinicians</h2>
+      <p>
+        These tools are referenced in the course and may be useful for 
+        clinical AI exploration and practice.
+      </p>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Tool</th>
+            <th>Use Case</th>
+            <th>Key Considerations</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>NotebookLM</strong></td>
+            <td>Document-grounded AI assistant for summarizing guidelines, papers</td>
+            <td>Limited to uploaded sources; useful for controlled exploration</td>
+          </tr>
+          <tr>
+            <td><strong>Claude</strong></td>
+            <td>General-purpose AI assistant with strong reasoning</td>
+            <td>Check institutional policies; avoid PHI in consumer version</td>
+          </tr>
+          <tr>
+            <td><strong>GPT-4</strong></td>
+            <td>General-purpose AI with medical knowledge</td>
+            <td>May hallucinate; verify all clinical information</td>
+          </tr>
+          <tr>
+            <td><strong>Perplexity</strong></td>
+            <td>AI search with citations</td>
+            <td>Good for research; citations help verification</td>
+          </tr>
+          <tr>
+            <td><strong>Elicit</strong></td>
+            <td>Research assistant for literature review</td>
+            <td>Helpful for rapid evidence synthesis</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="callout callout-warning">
+        <div class="callout-title">PHI Warning</div>
+        <p class="mb-0">
+          Never enter protected health information (PHI) into consumer AI 
+          tools unless your institution has a BAA in place. This includes 
+          patient names, dates, medical record numbers, and any identifiable 
+          clinical details.
+        </p>
+      </div>
+
+      <h2>Professional Guidelines</h2>
+
+      <div class="reading-list">
+        <div class="reading-item">
+          <div class="reading-type required"><i data-lucide="file-text"></i></div>
+          <div class="reading-content">
+            <div class="reading-title">AMA: Augmented Intelligence in Health Care (H-480.940)</div>
+            <div class="reading-meta">
+              American Medical Association's policy principles for AI in clinical practice.
+              <br><a href="#">View Policy →</a>
+            </div>
+          </div>
+        </div>
+        <div class="reading-item">
+          <div class="reading-type required"><i data-lucide="file-text"></i></div>
+          <div class="reading-content">
+            <div class="reading-title">FDA: Artificial Intelligence and Machine Learning in Software as a Medical Device</div>
+            <div class="reading-meta">
+              Regulatory framework for AI-based medical devices.
+              <br><a href="#">View Guidance →</a>
+            </div>
+          </div>
+        </div>
+        <div class="reading-item">
+          <div class="reading-type required"><i data-lucide="file-text"></i></div>
+          <div class="reading-content">
+            <div class="reading-title">WHO: Ethics and Governance of Artificial Intelligence for Health</div>
+            <div class="reading-meta">
+              World Health Organization guidance on ethical AI deployment in healthcare.
+              <br><a href="#">View Report →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <h2>Complete Reading List</h2>
+      <p>
+        All required and optional readings from the course, organized by topic.
+      </p>
+
+      <h3>Foundations</h3>
+      <ul>
+        <li>Topol, E. "High-performance medicine: the convergence of human and artificial intelligence" <em>Nature Medicine</em>, 2019</li>
+        <li>Rajpurkar, P. et al. "AI in health and medicine" <em>Nature Medicine</em>, 2022</li>
+        <li>Obermeyer, Z. et al. "Dissecting racial bias in an algorithm used to manage the health of populations" <em>Science</em>, 2019</li>
+        <li>Wong, A. et al. "External Validation of a Widely Implemented Proprietary Sepsis Prediction Model" <em>JAMA Internal Medicine</em>, 2021</li>
+        <li>Mongan, J. et al. "Checklist for Artificial Intelligence in Medical Imaging (CLAIM)" <em>Radiology: AI</em>, 2020</li>
+      </ul>
+
+      <h3>Generative AI</h3>
+      <ul>
+        <li>Singhal, K. et al. "Large language models encode clinical knowledge" <em>Nature</em>, 2023</li>
+        <li>Nori, H. et al. "Capabilities of GPT-4 on Medical Challenge Problems" <em>Microsoft Research</em>, 2023</li>
+        <li>Lee, P. et al. "Benefits, Limits, and Risks of GPT-4 as an AI Chatbot for Medicine" <em>NEJM</em>, 2023</li>
+        <li>Wei, J. et al. "Chain-of-Thought Prompting Elicits Reasoning in Large Language Models" <em>NeurIPS</em>, 2022</li>
+      </ul>
+
+      <h3>Governance</h3>
+      <ul>
+        <li>Price, W.N. et al. "Potential Liability for Physicians Using Artificial Intelligence" <em>JAMA</em>, 2019</li>
+        <li>Liu, X. et al. "CONSORT-AI extension" <em>Lancet Digital Health</em>, 2020</li>
+        <li>Cohen, I.G. "Informed Consent and Medical Artificial Intelligence" <em>Georgetown Law Journal</em>, 2020</li>
+        <li>Reddy, S. et al. "A governance model for the application of AI in health care" <em>JAMIA</em>, 2020</li>
+      </ul>
+
+      <h2>Ongoing Learning</h2>
+      <p>
+        Stay current with these resources:
+      </p>
+      <ul>
+        <li><strong>Nature Medicine</strong> — AI and digital health section</li>
+        <li><strong>NEJM AI</strong> — New journal dedicated to AI in medicine</li>
+        <li><strong>The Medical Futurist</strong> — Accessible analysis of healthcare technology</li>
+        <li><strong>STAT News</strong> — Healthcare industry and policy coverage</li>
+        <li><strong>AI in Healthcare Newsletter</strong> (Ronald Gosselin) — Weekly digest</li>
+        <li><strong>This Week in Health IT</strong> — Podcast covering health tech developments</li>
+      </ul>
+
+      <h2>Glossary</h2>
+      
+      <h4>AI Triad</h4>
+      <p>The three fundamental components of any AI system: data (what it learns from), algorithms (how it learns), and compute (the processing power that enables learning).</p>
+
+      <h4>Automation Bias</h4>
+      <p>The tendency to over-rely on automated systems and accept their outputs uncritically, even when contradicted by other information.</p>
+
+      <h4>Centaur</h4>
+      <p>A human-AI collaboration model with clear division of labor—human handles strategy and judgment, AI handles calculation and data processing.</p>
+
+      <h4>Chain-of-Thought Prompting</h4>
+      <p>A prompting technique that asks AI to show its reasoning step-by-step before providing a final answer, making its logic visible for evaluation.</p>
+
+      <h4>Cyborg</h4>
+      <p>A human-AI collaboration model with seamless integration, where the boundary between human and machine cognition is blurred.</p>
+
+      <h4>External Validation</h4>
+      <p>Testing an AI model on data from a different institution or population than where it was developed.</p>
+
+      <h4>Few-Shot Prompting</h4>
+      <p>Providing examples of desired input-output pairs before asking the AI to perform a task.</p>
+
+      <h4>Hallucination</h4>
+      <p>When an AI generates plausible but factually incorrect information.</p>
+
+      <h4>Label Bias</h4>
+      <p>Bias introduced through the outcome variable being predicted—when the "ground truth" itself encodes discrimination.</p>
+
+      <h4>Proxy Variable</h4>
+      <p>A measurable variable used as a stand-in for something difficult to measure directly—can encode hidden biases.</p>
+
+      <h4>Shadow AI</h4>
+      <p>Use of AI tools outside institutional oversight and governance, often consumer products used for clinical work.</p>
+
+      <h4>Temporal Validation</h4>
+      <p>Testing an AI model on data from a different time period than the training data.</p>
+
+      <h4>Zero-Shot Prompting</h4>
+      <p>Asking an AI to perform a task without providing examples—relying on its pre-training.</p>
+
+    </article>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div><strong>AI 101</strong> · A Self-Paced Guide to AI in Medicine</div>
+      <div>v1.0 · 2025</div>
+    </div>
+  </footer>
+
+  <script>
+    lucide.createIcons();
+    const navToggle = document.querySelector('.nav-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    if (navToggle) {
+      navToggle.addEventListener('click', () => {
+        navLinks.classList.toggle('nav-open');
+      });
+    }
+  </script>
+
+</body>
+</html>

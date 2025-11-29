@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Appendix A: AI's Environmental Footprint | AI 101</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-brand">
+        <span class="nav-badge">AI 101</span>
+        <span class="nav-title">A Self-Paced Guide to AI in Medicine</span>
+      </a>
+      <button class="nav-toggle" aria-label="Toggle menu">
+        <i data-lucide="menu"></i>
+      </button>
+      <div class="nav-links">
+        <a href="index.html" class="nav-link">Modules</a>
+        <!-- <a href="resources.html" class="nav-link">Resources</a> -->
+        <a href="about.html" class="nav-link">About</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="main">
+    <article class="content">
+
+      <header class="unit-header">
+        <span class="unit-label appendix">APPENDIX A</span>
+        <h1 class="unit-title">AI's Environmental Footprint</h1>
+        <p class="unit-subtitle">
+          Understanding the energy costs of AI systems and what healthcare
+          organizations should consider when deploying these technologies.
+        </p>
+        <div class="unit-meta">
+          <span class="unit-meta-item">
+            <i data-lucide="book-open"></i>
+            Supplementary reading
+          </span>
+        </div>
+      </header>
+
+      <div class="callout callout-question">
+        <div class="callout-title">Core Question</div>
+        <p class="mb-0">
+          As healthcare increasingly adopts AI, what are the environmental
+          implications—and how should clinicians and institutions factor
+          sustainability into AI deployment decisions?
+        </p>
+      </div>
+
+      <h2>Overview</h2>
+      <p>
+        AI systems require substantial computational resources, which translates to
+        significant energy consumption. For clinicians evaluating AI tools,
+        understanding these environmental costs is part of responsible technology
+        adoption—particularly as healthcare organizations increasingly prioritize
+        sustainability.
+      </p>
+      <p>
+        This appendix provides context on AI's environmental footprint without
+        advocating for or against AI adoption. The goal is informed decision-making.
+      </p>
+
+      <h2>The Scale of AI Energy Use</h2>
+
+      <h3>Training vs. Inference</h3>
+      <p>
+        AI energy costs come in two forms:
+      </p>
+      <ul>
+        <li><strong>Training:</strong> The one-time (or periodic) process of building
+        the model. Training large language models like GPT-4 requires massive
+        computational resources—estimates suggest training runs can consume energy
+        equivalent to hundreds of homes' annual usage.</li>
+        <li><strong>Inference:</strong> The ongoing cost of running the model to
+        generate outputs. Each query to ChatGPT, each image analyzed by a diagnostic
+        AI, consumes energy. At scale, inference often exceeds training costs.</li>
+      </ul>
+
+      <div class="callout callout-principle">
+        <div class="callout-title">Key Insight</div>
+        <p class="mb-0">
+          A single ChatGPT query uses roughly 10x the energy of a Google search.
+          When millions of users make dozens of queries daily, these differences
+          compound significantly.
+        </p>
+      </div>
+
+      <h3>Data Center Impact</h3>
+      <p>
+        AI workloads are driving rapid expansion of data centers, which require:
+      </p>
+      <ul>
+        <li><strong>Electricity:</strong> For computation and cooling systems</li>
+        <li><strong>Water:</strong> Many data centers use evaporative cooling,
+        consuming millions of gallons annually</li>
+        <li><strong>Hardware:</strong> GPUs and specialized AI chips have their own
+        manufacturing footprint</li>
+      </ul>
+      <p>
+        Major tech companies have seen their carbon emissions rise despite
+        renewable energy commitments, largely due to AI infrastructure expansion.
+      </p>
+
+      <h2>Healthcare-Specific Considerations</h2>
+
+      <h3>Imaging AI</h3>
+      <p>
+        Radiology and pathology AI systems process large image files, which is
+        computationally intensive. A hospital running AI analysis on every chest
+        X-ray or CT scan generates continuous inference costs. The benefit
+        (faster diagnosis, reduced workload) must be weighed against resource use.
+      </p>
+
+      <h3>Ambient Documentation</h3>
+      <p>
+        AI scribes that transcribe and summarize clinical encounters require
+        continuous speech-to-text processing plus LLM summarization. For a health
+        system with thousands of daily encounters, this represents substantial
+        ongoing computation.
+      </p>
+
+      <h3>Clinical Decision Support</h3>
+      <p>
+        Real-time CDS tools that query AI models for every patient interaction
+        (alerts, suggestions, risk scores) generate high inference volumes.
+        The clinical value per query varies—some alerts are ignored, others
+        change care.
+      </p>
+
+      <h2>Frameworks for Thinking About This</h2>
+
+      <h3>Net Benefit Analysis</h3>
+      <p>
+        Consider AI's environmental cost in context:
+      </p>
+      <ul>
+        <li>Does the AI reduce other resource use? (e.g., fewer unnecessary tests,
+        shorter hospital stays, reduced travel for telehealth)</li>
+        <li>What's the alternative's footprint? (e.g., flying pathology slides
+        across the country vs. digital analysis)</li>
+        <li>Does improved diagnosis prevent downstream resource-intensive care?</li>
+      </ul>
+
+      <h3>Proportionality</h3>
+      <p>
+        Not all AI use cases are equal:
+      </p>
+      <ul>
+        <li><strong>High value:</strong> AI that catches cancers, prevents sepsis
+        deaths, or enables care access may justify significant resource use</li>
+        <li><strong>Lower value:</strong> AI for convenience features with
+        marginal clinical benefit deserves more scrutiny</li>
+      </ul>
+
+      <h3>Institutional Responsibility</h3>
+      <p>
+        Individual clinicians have limited control over infrastructure choices.
+        But institutions can:
+      </p>
+      <ul>
+        <li>Select vendors with strong sustainability practices</li>
+        <li>Choose cloud providers powered by renewable energy</li>
+        <li>Right-size AI deployments (not everything needs the largest model)</li>
+        <li>Consider on-premise vs. cloud trade-offs</li>
+      </ul>
+
+      <h2>What Clinicians Can Do</h2>
+
+      <h3>Ask Questions</h3>
+      <p>
+        When evaluating AI tools, consider asking vendors:
+      </p>
+      <ul>
+        <li>Where does computation happen? What's the data center's energy source?</li>
+        <li>Is this the right-sized model for the task, or is it using a
+        general-purpose LLM when a smaller specialized model would suffice?</li>
+        <li>What's the per-query resource footprint?</li>
+      </ul>
+
+      <h3>Use Thoughtfully</h3>
+      <p>
+        This isn't about avoiding AI—it's about intentional use:
+      </p>
+      <ul>
+        <li>Use AI when it adds clinical value, not just because it's available</li>
+        <li>Consider whether the task requires the most powerful model or if
+        simpler tools suffice</li>
+        <li>Batch queries when possible rather than multiple small requests</li>
+      </ul>
+
+      <h3>Advocate Institutionally</h3>
+      <p>
+        Push for sustainability to be part of AI procurement criteria. Health
+        systems increasingly have sustainability officers and carbon reduction
+        commitments—AI infrastructure should be part of those conversations.
+      </p>
+
+      <h2>Perspective</h2>
+      <p>
+        Healthcare itself has a substantial environmental footprint—estimated at
+        8-10% of U.S. greenhouse gas emissions. AI is one factor among many,
+        including building operations, supply chains, and pharmaceutical
+        manufacturing.
+      </p>
+      <p>
+        The question isn't whether AI has environmental costs (it does) but
+        whether its benefits justify those costs and whether we're deploying it
+        thoughtfully. The same critical thinking you apply to clinical AI
+        effectiveness should extend to its broader impacts.
+      </p>
+
+      <div class="callout callout-principle">
+        <div class="callout-title">Bottom Line</div>
+        <p class="mb-0">
+          AI's environmental footprint is real and growing. As clinicians,
+          you're not responsible for solving this at the infrastructure level,
+          but being informed allows you to advocate for responsible deployment
+          and make thoughtful choices about the tools you use.
+        </p>
+      </div>
+
+      <h2>Further Reading</h2>
+      <div class="reading-list">
+        <div class="reading-item">
+          <div class="reading-type"><i data-lucide="file-text"></i></div>
+          <div class="reading-content">
+            <div class="reading-title">
+              Strubell, E. et al. "Energy and Policy Considerations for Deep Learning in NLP"
+            </div>
+            <div class="reading-meta">ACL 2019 · Foundational paper on AI energy costs</div>
+          </div>
+        </div>
+        <div class="reading-item">
+          <div class="reading-type"><i data-lucide="file-text"></i></div>
+          <div class="reading-content">
+            <div class="reading-title">
+              Luccioni, A. et al. "Estimating the Carbon Footprint of BLOOM"
+            </div>
+            <div class="reading-meta">2022 · Detailed analysis of LLM training emissions</div>
+          </div>
+        </div>
+        <div class="reading-item">
+          <div class="reading-type"><i data-lucide="globe"></i></div>
+          <div class="reading-content">
+            <div class="reading-title">
+              IEA Report: Data Centres and Data Transmission Networks
+            </div>
+            <div class="reading-meta">International Energy Agency · Ongoing tracking of data center energy use</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="discussion-questions">
+        <h4>Reflection Questions</h4>
+        <ol>
+          <li>
+            How would you weigh environmental costs against clinical benefits
+            when evaluating an AI tool for your practice?
+          </li>
+          <li>
+            Does your institution have sustainability criteria for technology
+            procurement? Should AI be included?
+          </li>
+          <li>
+            Are there AI tools you currently use where a simpler, less
+            resource-intensive alternative might suffice?
+          </li>
+        </ol>
+      </div>
+
+      <nav class="page-nav">
+        <a href="bonus-vibe-coding.html" class="page-nav-link prev">
+          <span class="page-nav-arrow"><i data-lucide="arrow-left"></i></span>
+          <div>
+            <span class="page-nav-label">Previous</span>
+            <span class="page-nav-title">Bonus: Vibe Coding</span>
+          </div>
+        </a>
+        <a href="appendix-2.html" class="page-nav-link next">
+          <span class="page-nav-arrow"><i data-lucide="arrow-right"></i></span>
+          <div>
+            <span class="page-nav-label">Next</span>
+            <span class="page-nav-title">Appendix B: AI Glossary</span>
+          </div>
+        </a>
+      </nav>
+
+    </article>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div><strong>AI 101</strong> · A Self-Paced Guide to AI in Medicine</div>
+      <div>v1.0 · 2025</div>
+    </div>
+  </footer>
+
+  <script>
+    lucide.createIcons();
+    const navToggle = document.querySelector('.nav-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    if (navToggle) {
+      navToggle.addEventListener('click', () => {
+        navLinks.classList.toggle('nav-open');
+      });
+    }
+  </script>
+
+</body>
+</html>

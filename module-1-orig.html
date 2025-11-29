@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Module 1: How LLMs Think Like Clinicians | AI 101</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-brand">
+        <span class="nav-badge">AI 101</span>
+        <span class="nav-title">A Self-Paced Guide to AI in Medicine</span>
+      </a>
+      <button class="nav-toggle" aria-label="Toggle menu">
+        <i data-lucide="menu"></i>
+      </button>
+      <div class="nav-links">
+        <a href="index.html" class="nav-link">Modules</a>
+        <!-- <a href="resources.html" class="nav-link">Resources</a> -->
+        <a href="about.html" class="nav-link">About</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="main">
+    <article class="content">
+
+      <header class="unit-header">
+        <span class="unit-label phase-1">PHASE I · MODULE 1</span>
+        <h1 class="unit-title">How LLMs Think Like Clinicians</h1>
+        <p class="unit-subtitle">
+          Large language models and clinical reasoning share more than metaphor—both
+          are fundamentally probabilistic pattern-completion systems navigating uncertainty.
+        </p>
+        <div class="unit-meta">
+          <span class="unit-meta-item">
+            <i data-lucide="book-open"></i>
+            6 readings
+          </span>
+          <span class="unit-meta-item">
+            <i data-lucide="headphones"></i>
+            4 podcasts
+          </span>
+        </div>
+      </header>
+
+      <div class="callout callout-question">
+        <div class="callout-title">Core Question</div>
+        <p class="mb-0">
+          What do large language models and clinical reasoning have in common—and
+          how does understanding the parallels help you reason better <em>and</em>
+          use AI tools more effectively?
+        </p>
+      </div>
+
+      <h2>The Core Mechanism</h2>
+      <p>
+        An LLM predicts the most probable next word given everything preceding it.
+        Clinical reasoning works identically: given this constellation of inputs—history,
+        exam, demographics, epidemiology—what's the most likely diagnosis? Second-most?
+        The differential diagnosis <em>is</em> a probability distribution, weighted by
+        base rates and updated by evidence. Both systems are Bayesian at their core.
+      </p>
+      <p>
+        This explains why <strong>input quality determines output quality</strong>. A vague
+        prompt yields vague output; "I don't feel good" yields an unfocused differential.
+        The structured HPI—onset, location, duration, character, aggravating/alleviating
+        factors—is prompt engineering for clinical cognition.
+      </p>
+
+      <h3>Worked Example: Vague vs. Structured Input</h3>
+      <p>Compare these two inputs:</p>
+
+      <div class="prompt-box">
+        <strong>Vague:</strong> "Patient has chest pain."
+      </div>
+
+      <p>
+        This generates a broad, unfocused differential: ACS, PE, pneumonia, GERD, MSK,
+        anxiety... The model (or clinician) has no way to weight these possibilities.
+      </p>
+
+      <div class="prompt-box">
+        <strong>Structured:</strong> "58-year-old male, diabetic, smoker, presenting with
+        substernal pressure radiating to left arm, onset 2 hours ago while shoveling snow,
+        associated diaphoresis, relieved partially by rest."
+      </div>
+
+      <p>
+        Now the probability distribution shifts dramatically. ACS moves to the top; MSK
+        and GERD become unlikely. The <em>same underlying mechanism</em>—pattern completion
+        given context—produces radically different outputs based on input quality.
+      </p>
+
+      <p>
+        This is why the structured HPI exists. It's not bureaucratic box-checking; it's
+        <strong>prompt engineering for clinical cognition</strong>, optimizing the input
+        so the pattern-completion system (your brain, or an LLM) can generate the most
+        useful output.
+      </p>
+
+      <h2>Parallel Architectures</h2>
+
+      <h3>Training and Specialization</h3>
+      <p>
+        Base LLMs train broadly before fine-tuning for specific tasks. Medical school
+        provides general training; residency fine-tunes for a specialty. Both trade
+        breadth for depth.
+      </p>
+      <p>
+        <strong>Pre-training</strong> (general knowledge acquisition) parallels medical school:
+        broad exposure to many domains, building foundational patterns. <strong>Fine-tuning</strong>
+        (task-specific optimization) parallels residency: narrowing focus, developing specialized
+        expertise, trading breadth for depth.
+      </p>
+      <p>
+        Just as a cardiologist and a dermatologist start with the same medical school foundation
+        but develop very different pattern libraries, a base LLM can be fine-tuned into a coding
+        assistant, a medical consultant, or a creative writing tool.
+      </p>
+
+      <h3>Tokenization and Chunking</h3>
+      <p>
+        LLMs break text into tokens—subword units that balance vocabulary size against
+        sequence length. Clinicians chunk information similarly: "classic MI presentation"
+        compresses a constellation of findings into a single cognitive unit.
+      </p>
+      <p>
+        Expert chunking is why an attending can hear a case presentation and immediately
+        identify the key pattern while a student is still processing individual symptoms.
+        The expert has compressed thousands of prior cases into efficient chunks that map
+        to diagnostic categories.
+      </p>
+
+      <h3>Few-Shot Learning</h3>
+      <p>
+        Give an LLM a few examples in the prompt, and it adapts its output format and
+        reasoning style accordingly. This is <strong>few-shot learning</strong>—the model
+        infers the task from examples rather than explicit instructions.
+      </p>
+      <p>
+        Clinical teaching works identically. Show a learner three cases of drug-induced
+        lupus, and they'll start recognizing the pattern. The teaching attending who says
+        "Let me show you a few examples of this" is doing few-shot prompting for the
+        human learner's pattern-completion system.
+      </p>
+
+      <h3>Retrieval-Augmented Generation (RAG)</h3>
+      <p>
+        RAG systems retrieve relevant documents before generating a response, grounding
+        output in specific sources rather than relying solely on trained patterns. The
+        clinical equivalent: pulling up UpToDate before answering a question, or checking
+        the formulary before prescribing.
+      </p>
+      <p>
+        This isn't cheating—it's a cognitive architecture that combines pattern recognition
+        (knowing <em>what</em> to look up) with external retrieval (getting accurate details).
+        The expert clinician knows enough to ask the right questions; they don't memorize
+        every dosing table.
+      </p>
+
+      <h3>Context Windows and Working Memory</h3>
+      <p>
+        LLMs have finite context; exceed it and earlier information drops. Clinicians
+        forget medication lists from three screens back. Both compensate with external
+        retrieval—the LLM queries knowledge bases; clinicians use UpToDate.
+      </p>
+      <p>
+        This constraint has practical implications. A patient with a 50-page chart history
+        exceeds working memory; the clinician must decide what's relevant to pull forward.
+        Similarly, an LLM with a 128k token context window still can't process an entire
+        EMR—someone must decide what goes in the prompt.
+      </p>
+
+      <h3>Temperature and Diagnostic Breadth</h3>
+      <p>
+        LLM "temperature" controls randomness—low sticks to high-probability outputs,
+        high explores alternatives. Protocols demand low temperature (follow the algorithm);
+        diagnostic mysteries require high temperature (what else could this be?).
+      </p>
+      <p>
+        A sepsis protocol is low-temperature reasoning: if lactate > 2 and suspected infection,
+        start antibiotics within the hour. A diagnostic zebra hunt is high-temperature reasoning:
+        systematically considering unlikely possibilities because the common ones don't fit.
+      </p>
+      <p>
+        Knowing when to shift between modes is clinical expertise. Running high-temperature
+        reasoning on every straightforward case wastes cognitive resources; running low-temperature
+        reasoning on a diagnostic mystery leads to premature closure.
+      </p>
+
+      <h3>Attention and Clinical Salience</h3>
+      <p>
+        Transformers weight certain inputs based on relevance. Clinicians do the same—"crushing"
+        chest pain demands different attention than "since Tuesday." The <strong>attention mechanism</strong>
+        in transformers learns which parts of the input are most relevant to predicting the next token;
+        clinical expertise involves learning which parts of the history are most relevant to the diagnosis.
+      </p>
+      <p>
+        This is why the same symptom in different contexts triggers different responses. "Headache"
+        in a healthy 25-year-old gets different attention than "headache" in an immunocompromised
+        patient with fever. The input is the same; the attention weighting differs.
+      </p>
+
+      <h3>Chain-of-Thought: An Actionable Parallel</h3>
+      <p>
+        <strong>Chain-of-thought prompting</strong> asks an LLM to "think step by step" before
+        answering. This consistently improves performance on complex reasoning tasks. Why?
+        Because it forces the model to externalize intermediate steps rather than jumping
+        directly to a conclusion.
+      </p>
+      <p>
+        Clinical parallels:
+      </p>
+      <ul>
+        <li><strong>Problem representation:</strong> Articulating the one-liner forces you to identify what's actually important</li>
+        <li><strong>Illness scripts:</strong> Explicitly matching findings to prototypical patterns</li>
+        <li><strong>Diagnostic time-outs:</strong> Pausing to ask "what am I missing?" before committing to a plan</li>
+      </ul>
+      <p>
+        The chain-of-thought insight is directly actionable: when reasoning through a complex
+        case, externalize your thinking. Write out the problem representation. List the illness
+        scripts you're considering. Articulate why you're ruling things in or out. This isn't
+        just documentation—it's a reasoning intervention that catches errors.
+      </p>
+
+      <div class="callout callout-principle">
+        <div class="callout-title">Key Insight</div>
+        <p class="mb-0">
+          Recognizing that clinical reasoning is probabilistic pattern-completion isn't
+          reductive. It's the first step toward doing it better, whether the pattern-matcher
+          runs on neurons or GPUs.
+        </p>
+      </div>
+
+      <h2>How Models and Learners Develop</h2>
+      <p>
+        One striking finding: LLM capabilities don't emerge linearly. Scale up a model,
+        and for a while nothing changes—then discontinuously, new abilities appear.
+        Performance is near-random until a certain critical threshold of scale is reached,
+        after which performance increases substantially above random.
+      </p>
+      <p>
+        Medical learners develop similarly. The intern's progression isn't a smooth upward
+        slope—it's plateaus punctuated by phase transitions when things "click." Pattern
+        recognition that develops over thousands of encounters isn't additive; at some point,
+        experienced clinicians develop gestalt—sensing "sick" versus "not sick" before
+        articulating why.
+      </p>
+
+      <h3>Scaffolding Enables Performance Beyond Current Ability</h3>
+      <p>
+        Prompting techniques like chain-of-thought let models perform tasks they'd otherwise
+        fail. Clinical teaching works identically—the attending who walks through a case
+        step-by-step enables the learner to perform beyond their independent level. Vygotsky
+        called this the "zone of proximal development."
+      </p>
+      <p>
+        This has practical implications for AI tool use: the right scaffolding (prompting
+        strategy) can enable an LLM to perform tasks it would otherwise fail. Similarly,
+        the right clinical scaffolding (structured handoffs, checklists, decision support)
+        can enable clinicians to perform at higher levels than unstructured practice allows.
+      </p>
+
+      <h3>Capability Overhang</h3>
+      <p>
+        Researchers regularly discover models can do things no one anticipated—the capability
+        was latent, waiting for the right prompt. Learners show the same pattern: struggling
+        with standard presentations, then surprising everyone on a complex case. Part of
+        teaching is <em>probing</em>—finding the question that reveals what the learner can
+        actually do.
+      </p>
+
+      <h2>Shared Failure Modes</h2>
+
+      <div class="concepts-grid">
+        <div class="concept-card">
+          <div class="concept-icon"><i data-lucide="alert-triangle"></i></div>
+          <div class="concept-name">Hallucination</div>
+          <div class="concept-desc">LLMs generate confident, plausible content that's simply false</div>
+        </div>
+        <div class="concept-card">
+          <div class="concept-icon"><i data-lucide="lock"></i></div>
+          <div class="concept-name">Premature Closure</div>
+          <div class="concept-desc">Anchoring on early diagnosis, fitting data to that frame</div>
+        </div>
+        <div class="concept-card">
+          <div class="concept-icon"><i data-lucide="message-circle"></i></div>
+          <div class="concept-name">Fluency ≠ Understanding</div>
+          <div class="concept-desc">Well-structured output feels like comprehension but may be surface-level</div>
+        </div>
+        <div class="concept-card">
+          <div class="concept-icon"><i data-lucide="scale"></i></div>
+          <div class="concept-name">Encoded Bias</div>
+          <div class="concept-desc">Both absorb biases from training data/environments without "knowing" it</div>
+        </div>
+      </div>
+
+      <h3>Hallucination and Confabulation</h3>
+      <p>
+        LLMs generate confident, plausible text that's simply false—citations that don't
+        exist, facts that were never true. The model isn't "lying"; it's completing patterns
+        in ways that are statistically plausible but factually wrong.
+      </p>
+      <p>
+        Clinicians confabulate too. The confident diagnosis that turns out to be wrong,
+        the remembered patient detail that was actually from a different case, the
+        reconstruction of a clinical reasoning process that wasn't actually how you arrived
+        at the diagnosis. Memory is reconstructive, not reproductive, and reconstruction
+        introduces errors.
+      </p>
+      <p>
+        <strong>Mitigation:</strong> Verify independently. Don't trust confident output from
+        either system without checking against primary sources. For LLMs, this means checking
+        citations and facts. For yourself, this means building in verification steps and
+        being epistemically humble about your own memory.
+      </p>
+
+      <h3>Overfitting and Representativeness</h3>
+      <p>
+        Models overfit when they learn training data too specifically, failing to generalize.
+        Clinicians overfit to their training environment—the academic medical center resident
+        who sees zebras everywhere, the community hospital attending who misses rare diseases.
+      </p>
+      <p>
+        <strong>Mitigation:</strong> Seek diverse exposure. For LLMs, this means training on
+        diverse data. For clinicians, this means recognizing that your base rates are shaped
+        by your practice environment and adjusting when you're in a different context.
+      </p>
+
+      <h3>Mode Collapse and Anchoring</h3>
+      <p>
+        LLMs can get stuck generating similar outputs regardless of input—a form of mode
+        collapse. Clinical anchoring is analogous: once you have a working diagnosis, you
+        fit new data to that frame rather than updating appropriately.
+      </p>
+      <p>
+        The patient labeled "frequent flyer" or "drug-seeking" gets the same differential
+        regardless of new symptoms. The diagnosis made in the ED follows the patient through
+        the admission even when new data contradicts it.
+      </p>
+      <p>
+        <strong>Mitigation:</strong> Deliberately generate alternatives. For LLMs, this means
+        asking "what else could this be?" or regenerating with different prompts. For clinical
+        reasoning, this means the diagnostic time-out: systematically considering what would
+        change your mind.
+      </p>
+
+      <h3>Prompt Injection and History Contamination</h3>
+      <p>
+        LLMs can be manipulated by adversarial prompts that override intended behavior.
+        Clinical reasoning is vulnerable to "history contamination"—the previous diagnosis
+        or framing that shapes how you interpret new data.
+      </p>
+      <p>
+        The patient transferred with a diagnosis acquires that diagnosis as a cognitive anchor.
+        The triage note that says "anxiety" shapes how the physician interprets chest pain.
+        The chart that says "drug-seeking" determines how pain is managed regardless of
+        current presentation.
+      </p>
+      <p>
+        <strong>Mitigation:</strong> Return to primary data. For LLMs, this means clear
+        system prompts and input validation. For clinical reasoning, this means periodically
+        asking: "What if I'd seen this patient fresh, without the prior framing?"
+      </p>
+
+      <h3>The Eliza Effect and Premature Trust</h3>
+      <p>
+        People anthropomorphize conversational systems, attributing understanding where
+        there's only pattern matching. The same dynamic affects how patients perceive
+        clinicians—fluent communication feels like comprehension.
+      </p>
+      <p>
+        The physician who uses the right words may not understand the patient's situation.
+        The AI that generates grammatically correct output may not "understand" anything.
+        Fluency is a heuristic for competence, but it's a fallible one.
+      </p>
+      <p>
+        <strong>Mitigation:</strong> Probe understanding. Don't assume fluent output reflects
+        deep comprehension. Ask clarifying questions. Check for internal consistency.
+        Evaluate the reasoning, not just the conclusion.
+      </p>
+
+      <h3>Calibration and Confidence</h3>
+      <p>
+        Well-calibrated systems express uncertainty that tracks accuracy—when they say 70%
+        confident, they're right about 70% of the time. Both LLMs and clinicians struggle
+        with calibration, often expressing more confidence than accuracy warrants.
+      </p>
+      <p>
+        The differential diagnosis rarely includes probability estimates, and when it does,
+        those estimates are often poorly calibrated. LLMs similarly express confidence in
+        ways that don't track accuracy—a hallucinated citation is delivered with the same
+        linguistic certainty as a real one.
+      </p>
+      <p>
+        <strong>Mitigation:</strong> Be epistemically humble. Explicitly acknowledge uncertainty.
+        Use calibration training (available for both humans and AI systems). When a system
+        expresses high confidence, ask what would cause it to be wrong.
+      </p>
+
+      <h2>Where the Analogy Breaks Down</h2>
+      <p>
+        No analogy is perfect. Here's where the LLM/clinician parallel has limits:
+      </p>
+      <ul>
+        <li><strong>Embodiment:</strong> Clinicians have bodies that provide intuitions about pain, fatigue, and physical sensation. LLMs process tokens without embodied experience.</li>
+        <li><strong>Stakes and accountability:</strong> A clinician's errors have professional, legal, and moral consequences that shape reasoning. LLMs have no stakes in their outputs.</li>
+        <li><strong>Continuous learning:</strong> Clinicians update in real-time from individual cases. LLMs (mostly) have fixed training and don't learn from individual interactions.</li>
+        <li><strong>Metacognition:</strong> Clinicians can reflect on their own reasoning processes and deliberately change strategies. LLMs lack this recursive self-awareness.</li>
+        <li><strong>Causal reasoning:</strong> Clinicians understand (or try to understand) causal mechanisms. LLMs learn correlations without causal models.</li>
+      </ul>
+      <p>
+        These differences matter. An LLM that mimics clinical reasoning isn't <em>doing</em>
+        clinical reasoning—it's producing outputs that <em>look like</em> clinical reasoning.
+        The patterns are similar; the underlying substrate is different. Understanding both
+        the parallels and the limits is essential for using these tools appropriately.
+      </p>
+
+      <h2>Quick-Reference: LLM Concepts → Clinical Equivalents</h2>
+      <div class="table-responsive">
+        <table class="reference-table">
+          <thead>
+            <tr>
+              <th>LLM Concept</th>
+              <th>Clinical Equivalent</th>
+              <th>Actionable Insight</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Pre-training</td>
+              <td>Medical school</td>
+              <td>Broad foundations enable later specialization</td>
+            </tr>
+            <tr>
+              <td>Fine-tuning</td>
+              <td>Residency/fellowship</td>
+              <td>Depth trades off against breadth</td>
+            </tr>
+            <tr>
+              <td>Prompt</td>
+              <td>HPI/presentation</td>
+              <td>Input quality determines output quality</td>
+            </tr>
+            <tr>
+              <td>Context window</td>
+              <td>Working memory</td>
+              <td>Both need external retrieval for complex cases</td>
+            </tr>
+            <tr>
+              <td>Temperature</td>
+              <td>Diagnostic breadth</td>
+              <td>Match exploration to clinical context</td>
+            </tr>
+            <tr>
+              <td>Attention</td>
+              <td>Clinical salience</td>
+              <td>Not all inputs deserve equal weight</td>
+            </tr>
+            <tr>
+              <td>Chain-of-thought</td>
+              <td>Problem representation</td>
+              <td>Externalizing reasoning improves accuracy</td>
+            </tr>
+            <tr>
+              <td>Hallucination</td>
+              <td>Confabulation</td>
+              <td>Verify independently; don't trust confident output</td>
+            </tr>
+            <tr>
+              <td>RAG</td>
+              <td>Using UpToDate</td>
+              <td>Pattern recognition + retrieval beats either alone</td>
+            </tr>
+            <tr>
+              <td>Few-shot learning</td>
+              <td>Learning from examples</td>
+              <td>Cases teach patterns; examples shape output</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>Practical Implications</h2>
+
+      <h3>For Using AI Tools</h3>
+      <ul>
+        <li>Treat outputs as first drafts from a capable but fallible trainee</li>
+        <li>Provide structured, high-quality input—prompt engineering applies</li>
+        <li>Verify independently at high-stakes decision points</li>
+        <li>Probe for alternatives; confidence doesn't track accuracy</li>
+        <li>Use chain-of-thought prompting for complex reasoning tasks</li>
+        <li>Recognize that fluent output doesn't imply understanding</li>
+      </ul>
+
+      <h3>For Understanding Your Own Reasoning</h3>
+      <ul>
+        <li>You're also a pattern-completion system, subject to the same failure modes</li>
+        <li>Externalize your reasoning—articulating the logic catches errors intuition misses</li>
+        <li>Use external retrieval freely; looking things up is expertise, not weakness</li>
+        <li>Be epistemically humble about your own confidence calibration</li>
+        <li>Recognize when you're overfitting to your training environment</li>
+        <li>Build in verification steps; memory is reconstructive, not reproductive</li>
+      </ul>
+
+      <div class="callout callout-info">
+        <div class="callout-title">The Meta-Point</div>
+        <p class="mb-0">
+          The clinicians who thrive alongside AI understand both systems—their shared
+          architecture, parallel failure modes, and complementary strengths. This module
+          gives you the vocabulary to think clearly about both.
+        </p>
+      </div>
+
+      <h2>Exercises to Try</h2>
+      <ol>
+        <li>
+          <strong>Prompt comparison:</strong> Take a case you're working on. Write two prompts
+          for an LLM—one vague, one structured. Compare the outputs. What did the structured
+          prompt enable?
+        </li>
+        <li>
+          <strong>Temperature mapping:</strong> Think of three recent clinical decisions. Which
+          required "low temperature" (protocol-following) reasoning? Which required "high
+          temperature" (exploratory) reasoning? Did you match your approach to the task?
+        </li>
+        <li>
+          <strong>Chain-of-thought practice:</strong> Next time you're presenting a case, write
+          out your problem representation before speaking. Did externalizing the reasoning
+          change anything?
+        </li>
+        <li>
+          <strong>Failure mode spotting:</strong> Review a recent case where something went wrong
+          (yours or a colleague's). Which failure mode from this module best describes what
+          happened? What mitigation would have helped?
+        </li>
+      </ol>
+
+      <!-- NotebookLM Reminder -->
+      <div class="callout callout-tool">
+        <div class="callout-title">Try This with NotebookLM</div>
+        <p>
+          In <a href="unit-0.html">Start Here</a>, you learned to use NotebookLM for document
+          synthesis. This module's readings are perfect candidates:
+        </p>
+        <ul>
+          <li>Upload the readings to a NotebookLM notebook</li>
+          <li>Ask it to compare how emergent capabilities appear in LLMs vs. medical learners</li>
+          <li>Generate an Audio Overview for commute-time review</li>
+          <li>Use your verification skills—what does it get right? What does it oversimplify?</li>
+        </ul>
+        <p class="mb-0">
+          Practicing AI tool use while learning <em>about</em> AI tools reinforces both skills.
+        </p>
+      </div>
+
+      <h2>Readings</h2>
+      <div class="reading-list">
+        <div class="reading-item">
+          <div class="reading-type"><i data-lucide="file-text"></i></div>
+          <div class="reading-content">
+            <div class="reading-title">
+              <a href="https://hms.harvard.edu/news/open-source-ai-matches-top-proprietary-llm-solving-tough-medical-cases" target="_blank">Open-Source AI Matches Top Proprietary LLM in Solving Tough Medical Cases</a>
+            </div>
+            <div class="reading-meta">Harvard Medical School · Llama vs GPT-4 diagnostic comparison</div>
+          </div>
+        </div>
+        <div class="reading-item">
+          <div class="reading-type"><i data-lucide="file-text"></i></div>
+          <div class="reading-content">
+            <div class="reading-title">
+              <a href="https://www.massgeneralbrigham.org/en/about/newsroom/articles/head-to-head-comparisons-of-generative-artificial-intelligence-and-internal-medicine-physicians" target="_blank">Head-to-Head Comparisons of AI and Physicians</a>
+            </div>
+            <div class="reading-meta">Mass General Brigham · Different paths to same diagnosis</div>
+          </div>
+        </div>
+        <div class="reading-item">
+          <div class="reading-type"><i data-lucide="file-text"></i></div>
+          <div class="reading-content">
+            <div class="reading-title">
+              <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC11316886/" target="_blank">Clinical Reasoning and Artificial Intelligence: Can AI Really Think?</a>
+            </div>
+            <div class="reading-meta">PMC · Cognitive theory underlying physician reasoning vs AI</div>
+          </div>
+        </div>
+        <div class="reading-item">
+          <div class="reading-type"><i data-lucide="file-text"></i></div>
+          <div class="reading-content">
+            <div class="reading-title">
+              <a href="https://cset.georgetown.edu/article/emergent-abilities-in-large-language-models-an-explainer/" target="_blank">Emergent Abilities in Large Language Models: An Explainer</a>
+            </div>
+            <div class="reading-meta">Georgetown CSET · Scaling laws and capability jumps</div>
+          </div>
+        </div>
+        <div class="reading-item">
+          <div class="reading-type"><i data-lucide="file-text"></i></div>
+          <div class="reading-content">
+            <div class="reading-title">
+              <a href="https://www.quantamagazine.org/the-unpredictable-abilities-emerging-from-large-ai-models-20230316/" target="_blank">The Unpredictable Abilities Emerging From Large AI Models</a>
+            </div>
+            <div class="reading-meta">Quanta Magazine · Accessible deep-dive into emergence</div>
+          </div>
+        </div>
+        <div class="reading-item">
+          <div class="reading-type"><i data-lucide="file-text"></i></div>
+          <div class="reading-content">
+            <div class="reading-title">
+              Are Emergent Abilities of Large Language Models a Mirage?
+            </div>
+            <div class="reading-meta">Research paper · Critical examination of capability jumps</div>
+          </div>
+        </div>
+      </div>
+
+      <h2>Podcasts</h2>
+      <div class="reading-list">
+        <div class="reading-item">
+          <div class="reading-type"><i data-lucide="headphones"></i></div>
+          <div class="reading-content">
+            <div class="reading-title">
+              <a href="https://ai-podcast.nejm.org/" target="_blank">NEJM AI Grand Rounds</a>
+            </div>
+            <div class="reading-meta">Hosts Arjun Manrai & Andrew Beam · Episode with Dr. Adam Rodman on clinical reasoning; episode on cognitive biases with Dr. Laura Zwaan</div>
+          </div>
+        </div>
+        <div class="reading-item">
+          <div class="reading-type"><i data-lucide="headphones"></i></div>
+          <div class="reading-content">
+            <div class="reading-title">
+              Bedside Rounds: AAPHELP Episode (Adam Rodman, MD)
+            </div>
+            <div class="reading-meta">Medical history podcast · The 1970s invention of the first clinical decision support system</div>
+          </div>
+        </div>
+        <div class="reading-item">
+          <div class="reading-type"><i data-lucide="headphones"></i></div>
+          <div class="reading-content">
+            <div class="reading-title">
+              <a href="https://thecurbsiders.com/teach-podcast" target="_blank">The Curbsiders Teach Podcast #39</a>
+            </div>
+            <div class="reading-meta">Drs. Dylan Fortman, Adam Rodman, Laurah Turner · Using LLMs to improve problem representation</div>
+          </div>
+        </div>
+        <div class="reading-item">
+          <div class="reading-type"><i data-lucide="headphones"></i></div>
+          <div class="reading-content">
+            <div class="reading-title">
+              <a href="https://clinicalproblemsolving.com/" target="_blank">The Clinical Problem Solvers</a>
+            </div>
+            <div class="reading-meta">Hosts Drs. Rabih Geha, Sharmin Shekarchian, Reza Manesh · Multi-modal clinical reasoning teaching</div>
+          </div>
+        </div>
+      </div>
+
+      <h2>Video</h2>
+      <div class="reading-list">
+        <div class="reading-item">
+          <div class="reading-type"><i data-lucide="video"></i></div>
+          <div class="reading-content">
+            <div class="reading-title">
+              <a href="https://www.3blue1brown.com/topics/neural-networks" target="_blank">3Blue1Brown: Neural Networks / Deep Learning Series</a>
+            </div>
+            <div class="reading-meta">Visual explanations of how LLMs work · Start with "But What Is a Neural Network?"</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="discussion-questions">
+        <h4>Reflection Questions</h4>
+        <ol>
+          <li>
+            Think of a recent diagnostic case. At what points were you doing
+            "pattern completion"? When did you deliberately broaden or narrow
+            your differential?
+          </li>
+          <li>
+            How is premature closure in clinical reasoning similar to an LLM
+            hallucinating with high confidence? What strategies help with both?
+          </li>
+          <li>
+            When is it appropriate to reason with "low temperature" (protocol-driven)
+            versus "high temperature" (exploratory)? Give examples of each.
+          </li>
+          <li>
+            Which failure mode from this module do you think you're most susceptible to?
+            What mitigation strategy will you try?
+          </li>
+        </ol>
+      </div>
+
+      <div class="objectives phase-1">
+        <h4 class="objectives-title">Learning Objectives</h4>
+        <ul class="objectives-list">
+          <li>Explain how both LLMs and clinical reasoning are probabilistic pattern-completion systems</li>
+          <li>Identify parallel architectures: training/specialization, context windows, temperature, attention</li>
+          <li>Describe emergent capabilities in both AI models and medical learners</li>
+          <li>Recognize shared failure modes: hallucination, premature closure, fluency bias, encoded bias</li>
+          <li>Apply chain-of-thought prompting to improve both AI outputs and personal reasoning</li>
+          <li>Use the quick-reference table to map LLM concepts to clinical practice</li>
+        </ul>
+      </div>
+
+      <nav class="page-nav">
+        <a href="unit-0.html" class="page-nav-link prev">
+          <span class="page-nav-arrow"><i data-lucide="arrow-left"></i></span>
+          <div>
+            <span class="page-nav-label">Previous</span>
+            <span class="page-nav-title">Start Here</span>
+          </div>
+        </a>
+        <a href="module-2.html" class="page-nav-link next">
+          <span class="page-nav-arrow"><i data-lucide="arrow-right"></i></span>
+          <div>
+            <span class="page-nav-label">Next</span>
+            <span class="page-nav-title">Module 2: PHI, HIPAA, and AI</span>
+          </div>
+        </a>
+      </nav>
+
+    </article>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div><strong>AI 101</strong> · A Self-Paced Guide to AI in Medicine</div>
+      <div>v1.0 · 2025</div>
+    </div>
+  </footer>
+
+  <script>
+    lucide.createIcons();
+    const navToggle = document.querySelector('.nav-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    if (navToggle) {
+      navToggle.addEventListener('click', () => {
+        navLinks.classList.toggle('nav-open');
+      });
+    }
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,1248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Module 10: Ambient AI Tools—Scribes in Day-to-Day Practice | AI 101</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-brand">
+        <span class="nav-badge">AI 101</span>
+        <span class="nav-title">A Self-Paced Guide to AI in Medicine</span>
+      </a>
+      <button class="nav-toggle" aria-label="Toggle menu">
+        <i data-lucide="menu"></i>
+      </button>
+      <div class="nav-links">
+        <a href="index.html" class="nav-link">Modules</a>
+        <!-- <a href="resources.html" class="nav-link">Resources</a> -->
+        <a href="about.html" class="nav-link">About</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="main">
+    <article class="content content-wide">
+
+      <header class="unit-header">
+        <span class="unit-label phase-2">PHASE II · MODULE 10</span>
+        <h1 class="unit-title">Ambient AI Tools</h1>
+        <p class="unit-subtitle">
+          Scribes in day-to-day practice: how they work, where they fail,
+          and how to use them effectively without compromising patient care.
+        </p>
+        <div class="unit-meta">
+          <span class="unit-meta-item">
+            <i data-lucide="clock"></i>
+            ~35 min read
+          </span>
+          <span class="unit-meta-item">
+            <i data-lucide="zap"></i>
+            Practical guide
+          </span>
+        </div>
+      </header>
+
+      <div class="callout callout-question">
+        <div class="callout-title">Core Question</div>
+        <p class="mb-0">
+          How do you harness the efficiency of AI scribes while maintaining
+          the accuracy and accountability that patient care demands?
+        </p>
+      </div>
+
+      <!-- Introduction -->
+      <h2>Introduction: The Promise and the Responsibility</h2>
+
+      <p>
+        Walk into almost any primary care office in 2025, and you'll notice something
+        different about the encounter: the physician's eyes are on you, not the screen.
+        A small device—sometimes clipped to a lanyard, sometimes resting on the desk—captures
+        the conversation. Within minutes of the visit's end, a draft clinical note appears
+        in the EHR, ready for review.
+      </p>
+
+      <p>
+        This is ambient AI documentation in action. It represents one of the fastest-adopted
+        technologies in the history of medical practice. The Permanente Medical Group deployed
+        ambient AI scribes to 10,000 physicians in late 2023; within ten weeks, over 3,400
+        physicians had used the tool across 303,000 patient encounters. By 2025, projections
+        suggest 60% of healthcare providers will use some form of AI-driven documentation.
+      </p>
+
+      <div class="callout callout-warning">
+        <div class="callout-title">The Uncomfortable Truth</div>
+        <p class="mb-0">
+          The same technology that restores eye contact and saves documentation hours can
+          also fabricate diagnoses, insert medications never mentioned, and introduce errors
+          that propagate through the medical record indefinitely—<strong>if you don't catch
+          them</strong>. Understanding how these tools work, where they fail, and how to use
+          them effectively is no longer optional for practicing clinicians.
+        </p>
+      </div>
+
+      <p>
+        This module builds on our earlier foundations: understanding large language models,
+        recognizing their fundamental architecture (the same transformer-based systems that
+        power chatbots also power scribes), and appreciating both their capabilities and
+        their failure modes. Here, we'll translate that understanding into practical wisdom
+        for one of the most consequential ambient tools you'll encounter in clinical practice.
+      </p>
+
+      <hr>
+
+      <!-- History Section -->
+      <h2>A Brief History: From Dictaphones to AI Scribes</h2>
+
+      <p>To understand where we are, it helps to trace how we got here.</p>
+
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-marker"></div>
+          <div class="timeline-content">
+            <h4>The Pre-Digital Era (1900s–1950s)</h4>
+            <p>
+              Medical documentation as a formal practice began in the early 20th century.
+              Physicians dictated notes to stenographers who transcribed them by hand. The
+              process was labor-intensive, prone to error, and entirely dependent on the
+              transcriptionist's ability to decode medical terminology and, often, illegible
+              handwriting.
+            </p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-marker"></div>
+          <div class="timeline-content">
+            <h4>The Dictation Machine Era (1950s–1990s)</h4>
+            <p>
+              Tape recorders transformed medical transcription. Physicians could dictate notes
+              onto audio tapes, which transcriptionists would later convert to written records.
+              The American Association for Medical Transcription standardized practices in the
+              1970s, professionalizing the field.
+            </p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-marker"></div>
+          <div class="timeline-content">
+            <h4>The Speech Recognition Era (1998–2018)</h4>
+            <p>
+              Nuance's Dragon NaturallySpeaking launched in 1998, introducing real-time
+              speech-to-text conversion to healthcare. Error rates remained significant—typically
+              7–11% for automated dictation—but the efficiency gains were undeniable. Many
+              practicing physicians remember the distinctive frustration of correcting "hypertension"
+              transcribed as "high attention."
+            </p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-marker"></div>
+          <div class="timeline-content">
+            <h4>The LLM Revolution (2020–Present)</h4>
+            <p>
+              The transformer architecture that powers ChatGPT also powers modern ambient scribes.
+              But these systems do something fundamentally different: they don't just transcribe
+              speech—<strong>they interpret it</strong>. They understand that when you say "let's
+              continue the metformin" and "we'll check the A1c in three months," you're managing
+              diabetes, even if you never speak the word.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <p>
+        This interpretive capability is both the breakthrough and the danger. The same flexibility
+        that allows the model to understand context also allows it to generate plausible-sounding
+        content that was never actually spoken—what we call <strong>hallucination</strong>.
+      </p>
+
+      <hr>
+
+      <!-- Evidence Section -->
+      <h2>What the Evidence Shows: Benefits and Limitations</h2>
+
+      <p>Before exploring failure modes, let's acknowledge what the data demonstrate about real-world benefits.</p>
+
+      <h3>Time Savings</h3>
+
+      <p>The Permanente Medical Group's year-long evaluation found that ambient AI scribes:</p>
+
+      <ul>
+        <li>Saved an estimated <strong>15,791 hours</strong> of documentation time across users</li>
+        <li>Equivalent to 1,794 eight-hour workdays</li>
+        <li>Reduced "pajama time" (documentation done after hours) significantly</li>
+        <li>Cut time spent in notes and orders for users versus non-users</li>
+      </ul>
+
+      <p>
+        A quality improvement study of 45 clinicians across 17 specialties found a median reduction
+        of 2.6 minutes per appointment in documentation time, with a 29.3% reduction in after-hours
+        EHR work.
+      </p>
+
+      <h3>Physician Satisfaction</h3>
+
+      <p>Surveys consistently show high satisfaction:</p>
+
+      <ul>
+        <li>83.3% of users in one dermatology study would be "very disappointed" if the scribe was unavailable</li>
+        <li>Users report more personal, meaningful patient interactions</li>
+        <li>Burnout metrics improve in some studies</li>
+      </ul>
+
+      <h3>The Important Caveats</h3>
+
+      <div class="callout callout-info">
+        <div class="callout-title">The Productivity Paradox</div>
+        <p class="mb-0">
+          As one <em>NEJM AI</em> editorial noted, "AI Scribes Are Not Productivity Tools (Yet)"—the
+          promise of recovered time often gets absorbed into other tasks rather than fundamentally
+          changing workload. Adoption patterns vary enormously—the top third of users account for
+          a disproportionate share of total uses.
+        </p>
+      </div>
+
+      <hr>
+
+      <!-- How They Work Section -->
+      <h2>How Ambient AI Scribes Actually Work</h2>
+
+      <p>Think of an ambient scribe as a pipeline with several stages:</p>
+
+      <div class="pipeline-grid">
+        <div class="pipeline-stage">
+          <div class="pipeline-number">1</div>
+          <h4>Audio Capture</h4>
+          <p>
+            The system captures audio through a microphone—smartphone, dedicated device, or
+            room-based pickup. Modern systems use multiple MEMS microphones with AI beamforming
+            to capture clear audio from distances up to 16 feet.
+          </p>
+        </div>
+
+        <div class="pipeline-stage">
+          <div class="pipeline-number">2</div>
+          <h4>Speech-to-Text</h4>
+          <p>
+            Automatic speech recognition (ASR) converts audio to text using specialized models
+            trained on medical speech, terminology, and clinical conversation patterns.
+          </p>
+        </div>
+
+        <div class="pipeline-stage">
+          <div class="pipeline-number">3</div>
+          <h4>Speaker Diarization</h4>
+          <p>
+            The system identifies who said what—distinguishing clinician from patient, family
+            members, interpreters, or other staff. Errors here cascade downstream.
+          </p>
+        </div>
+
+        <div class="pipeline-stage">
+          <div class="pipeline-number">4</div>
+          <h4>Note Generation</h4>
+          <p>
+            The LLM takes the attributed transcript and generates structured clinical
+            documentation—extracting information, inferring diagnoses from context, and
+            structuring the narrative into standard formats.
+          </p>
+        </div>
+
+        <div class="pipeline-stage">
+          <div class="pipeline-number">5</div>
+          <h4>Human Review</h4>
+          <p>
+            The generated note appears as a draft for clinician review. This stage is
+            <strong>non-negotiable</strong>—the note is a proposal that requires clinical
+            judgment to approve, modify, or reject.
+          </p>
+        </div>
+      </div>
+
+      <hr>
+
+      <!-- Template Trap Section -->
+      <h2>The Template Trap: A Critical Failure Mode</h2>
+
+      <p>
+        Here's an insight that separates sophisticated users from naive adopters:
+        <strong>ambient scribes don't write notes from scratch. They fill templates.</strong>
+        And templates create pressure to fill every field—even when the information doesn't exist.
+      </p>
+
+      <h3>How Templates Increase Hallucination Risk</h3>
+
+      <p>
+        Imagine a well-child visit template with 12 sections: Chief Complaint, HPI, Review
+        of Systems (10 organ systems), Past Medical History, Family History, Social History,
+        Developmental Assessment, Physical Exam, Immunizations, Anticipatory Guidance,
+        Assessment, and Plan.
+      </p>
+
+      <p>
+        Now imagine a brief, efficient visit where the parent says the child is doing well,
+        you confirm immunizations are up to date, and you provide anticipatory guidance about
+        sleep and nutrition. The actual clinical content might fill three of those sections.
+      </p>
+
+      <p><strong>What happens?</strong> The AI, trained to generate complete notes, may:</p>
+
+      <ul>
+        <li>Fabricate a review of systems ("denies cough, congestion, fever, vomiting, diarrhea, rash...") that was never actually asked</li>
+        <li>Insert "normal" physical exam findings for systems you didn't examine</li>
+        <li>Add developmental milestones you didn't assess</li>
+        <li>Create immunization details from its general knowledge rather than the actual record</li>
+      </ul>
+
+      <div class="callout callout-warning">
+        <div class="callout-title">The Danger</div>
+        <p class="mb-0">
+          Each fabrication looks clinically appropriate. That's precisely the problem.
+        </p>
+      </div>
+
+      <h3>A Concrete Example</h3>
+
+      <div class="example-comparison">
+        <div class="example-box said">
+          <h4><i data-lucide="mic"></i> What the Physician Said</h4>
+          <p>
+            "Lily's doing great. She's walking well, says about 20 words. Sleep is still a
+            battle—they're doing cry-it-out now. I'm recommending whole milk starting next
+            week and showed mom how to cut grapes lengthwise."
+          </p>
+        </div>
+
+        <div class="example-box generated">
+          <h4><i data-lucide="file-text"></i> What the Scribe Generated</h4>
+          <div class="generated-note">
+            <p><strong>Physical Exam:</strong></p>
+            <p>
+              General: Well-appearing, well-nourished toddler in no distress<br>
+              HEENT: Normocephalic, atraumatic. Pupils equal and reactive. TMs clear bilaterally.
+              Oropharynx without erythema or exudate.<br>
+              Respiratory: Clear to auscultation bilaterally<br>
+              Cardiovascular: Regular rate and rhythm, no murmurs<br>
+              Abdomen: Soft, non-tender, non-distended<br>
+              Extremities: Warm, well-perfused<br>
+              Neurological: Appropriate for age
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <p>
+        <strong>The reality:</strong> You observed the child walk across the room and chat with
+        mom. You may have listened to the heart. You almost certainly didn't examine the ears,
+        throat, or abdomen during a routine well visit where the child was "doing great."
+      </p>
+
+      <p>
+        This note is medicolegally problematic. It's clinically misleading for future providers.
+        And it happened because the template expected a complete physical exam, and the model obliged.
+      </p>
+
+      <hr>
+
+      <!-- Taxonomy of Errors Section -->
+      <h2>The Taxonomy of AI Scribe Errors</h2>
+
+      <p>
+        Research has identified several distinct failure modes. Understanding them helps you
+        know what to look for during review.
+      </p>
+
+      <div class="error-taxonomy">
+        <div class="error-type">
+          <h3><span class="error-number">1</span> Fabrications (Hallucinations)</h3>
+          <p>
+            The system generates content that was never spoken or observed. Examples include:
+          </p>
+          <ul>
+            <li>Documenting examinations never performed</li>
+            <li>Creating diagnoses never discussed</li>
+            <li>Inserting medications never mentioned</li>
+            <li>Adding "patient denies" statements for review of systems not conducted</li>
+          </ul>
+          <div class="error-note">
+            <strong>The "Thank You for Watching" Problem:</strong> Research on OpenAI's Whisper
+            found that during silences—particularly common in patients with aphasia—the model
+            sometimes inserted phrases like "Thank you for watching!" or fabricated website links.
+            Why? The model was trained partly on YouTube videos, where such phrases are common.
+          </div>
+        </div>
+
+        <div class="error-type">
+          <h3><span class="error-number">2</span> Omissions</h3>
+          <p>
+            Critical information discussed during the encounter is absent from the generated note:
+          </p>
+          <ul>
+            <li>Symptoms the patient emphasized</li>
+            <li>Concerns about side effects</li>
+            <li>Social context affecting treatment</li>
+            <li>Red flag symptoms that should have triggered documentation</li>
+          </ul>
+          <div class="error-note">
+            Omissions are particularly insidious because you're reviewing what's present, not
+            what's missing. A note can look complete and well-organized while leaving out the
+            detail that matters most.
+          </div>
+        </div>
+
+        <div class="error-type">
+          <h3><span class="error-number">3</span> Misinterpretations</h3>
+          <p>Context-dependent statements get misconstrued:</p>
+          <ul>
+            <li>"I stopped taking it" (meaning temporarily) → documented as medication discontinuation</li>
+            <li>"The pain is like what my father had before his heart attack" → documented as cardiac history</li>
+            <li>Hypothetical discussions → documented as decisions made</li>
+          </ul>
+          <div class="error-note">
+            <strong>The Hypothetical Made Real:</strong> You discuss adding amlodipine as a
+            possibility but decide to continue current therapy. The scribe, capturing the
+            detailed discussion, generates: "Plan: Add amlodipine 5mg daily." A medication
+            you were considering hypothetically is now documented as a decision made.
+          </div>
+        </div>
+
+        <div class="error-type">
+          <h3><span class="error-number">4</span> Speaker Attribution Errors</h3>
+          <p>The system incorrectly assigns statements:</p>
+          <ul>
+            <li>Patient concerns attributed to the clinician</li>
+            <li>Clinician recommendations attributed to the patient</li>
+            <li>Third-party comments (family, interpreter) misattributed</li>
+          </ul>
+          <div class="error-note">
+            Research shows these errors disproportionately affect patients with certain speech
+            patterns, non-native English speakers, and African American patients—raising
+            significant equity concerns.
+          </div>
+        </div>
+
+        <div class="error-type">
+          <h3><span class="error-number">5</span> Template-Induced Errors</h3>
+          <p>
+            As described above, the pressure to complete structured templates leads to generated
+            content filling gaps that should remain empty.
+          </p>
+        </div>
+      </div>
+
+      <h3>Historical Echoes: We've Been Here Before</h3>
+
+      <p>Earlier speech recognition systems caused documented patient harm:</p>
+
+      <ul>
+        <li><strong>"No vascular flow" instead of "normal vascular flow":</strong> A transcription error led to an unnecessary surgical procedure</li>
+        <li><strong>Tumor location confusion:</strong> Misheard dictation documented the wrong anatomical site, resulting in surgery on the wrong location</li>
+        <li><strong>Medication name confusion:</strong> Similar-sounding drugs transcribed incorrectly, leading to prescribing errors</li>
+      </ul>
+
+      <p>
+        The difference with LLM-based scribes is the <em>nature</em> of the error. Traditional
+        speech-to-text made nonsense errors—obviously wrong transcriptions that looked like
+        errors. LLM-based systems make <strong>plausible errors</strong>—fabrications that look
+        like reasonable clinical documentation. The second type is far harder to catch.
+      </p>
+
+      <hr>
+
+      <!-- Verification Section -->
+      <h2>The Verification Imperative</h2>
+
+      <div class="callout callout-principle">
+        <div class="callout-title">Core Principle</div>
+        <p class="mb-0">
+          <strong>Not reviewing an AI scribe output is equivalent to signing a note you didn't read.</strong>
+          The technology changed. The responsibility didn't.
+        </p>
+      </div>
+
+      <h3>Why Verification Gets Skipped</h3>
+
+      <p>Understanding the pressures that lead to inadequate review helps you resist them:</p>
+
+      <ol>
+        <li><strong>Time pressure:</strong> The whole point was to save time. Detailed review feels like it defeats the purpose.</li>
+        <li><strong>Apparent completeness:</strong> AI-generated notes look polished and professional. They don't have obvious gaps that catch the eye.</li>
+        <li><strong>Confirmation bias:</strong> The note says what you expect to see, so your brain pattern-matches and approves.</li>
+        <li><strong>Automation complacency:</strong> After 50 notes that were fine, the 51st gets cursory attention.</li>
+        <li><strong>Audio deletion:</strong> Many systems delete audio after processing, making true verification against source impossible.</li>
+      </ol>
+
+      <h3>Verification Best Practices</h3>
+
+      <div class="best-practices-grid">
+        <div class="practice-card">
+          <h4>Accept the Limitation</h4>
+          <p>
+            You cannot fully verify a note against audio you no longer have. If your system
+            deletes audio immediately, you're working with the transcript and your memory—both
+            imperfect.
+          </p>
+        </div>
+
+        <div class="practice-card">
+          <h4>Develop a Systematic Scan</h4>
+          <ul>
+            <li>Read the Assessment and Plan first—does it match your clinical reasoning?</li>
+            <li>Check medication lists against what was actually discussed</li>
+            <li>Verify documented exams match exams performed</li>
+            <li>Look for "denies" statements in the ROS and confirm you actually asked</li>
+          </ul>
+        </div>
+
+        <div class="practice-card">
+          <h4>Review Immediately</h4>
+          <p>
+            Use the note immediately after the encounter. Your memory is freshest right after
+            the visit. Batching review to the end of the day invites errors.
+          </p>
+        </div>
+
+        <div class="practice-card">
+          <h4>Know Your Template</h4>
+          <p>
+            If you know which fields your system tries to complete, you can pay special
+            attention to those sections.
+          </p>
+        </div>
+      </div>
+
+      <hr>
+
+      <!-- Legal Section -->
+      <h2>The Legal Landscape: Recording Consent</h2>
+
+      <p>
+        Before an AI scribe can capture your patient conversation, someone has to consent
+        to being recorded. The legal requirements vary dramatically by state.
+      </p>
+
+      <h3>One-Party vs. Two-Party Consent</h3>
+
+      <div class="consent-comparison">
+        <div class="consent-box one-party">
+          <h4>One-Party Consent States (38 + DC)</h4>
+          <p>
+            Only one party to the conversation needs to consent. Since you're a party,
+            you can technically record without the patient's explicit permission.
+          </p>
+          <p class="consent-examples">
+            Includes: New York, Texas, Ohio, and most of the country
+          </p>
+        </div>
+
+        <div class="consent-box two-party">
+          <h4>Two-Party (All-Party) Consent States (11)</h4>
+          <p>
+            Everyone being recorded must consent. Recording without patient consent
+            may be a criminal offense.
+          </p>
+          <p class="consent-examples">
+            <strong>California, Delaware, Florida, Illinois, Maryland, Massachusetts,
+            Montana, Nevada, New Hampshire, Pennsylvania, Washington</strong>
+          </p>
+        </div>
+      </div>
+
+      <div class="callout callout-warning">
+        <div class="callout-title">Interstate Telehealth Complication</div>
+        <p class="mb-0">
+          If you're in a one-party state and your telehealth patient is in a two-party state,
+          which law applies? Courts have generally held that the stricter law governs. The
+          safest practice: <strong>always obtain explicit consent, regardless of state.</strong>
+        </p>
+      </div>
+
+      <h3>Best Practice: Universal Consent Protocol</h3>
+
+      <p>Regardless of legal requirements, ethical practice and patient trust favor transparency:</p>
+
+      <div class="consent-script">
+        <div class="script-label">Suggested Consent Script</div>
+        <p>
+          "Before we begin, I want to let you know I'm using an AI-powered assistant to help
+          with documentation. It will record our conversation and create a draft of your visit
+          notes, which I'll review and edit. The recording is deleted after the notes are
+          generated. This lets me focus more on you instead of typing. Is that okay with you?"
+        </p>
+      </div>
+
+      <hr>
+
+      <!-- HIPAA Section -->
+      <h2>HIPAA Compliance: Hardware and Software</h2>
+
+      <p>
+        Using an AI scribe means patient health information is being captured, processed,
+        and potentially stored by third-party systems. HIPAA compliance is non-negotiable.
+      </p>
+
+      <h3>What HIPAA Requires</h3>
+
+      <ul>
+        <li><strong>Business Associate Agreements (BAAs):</strong> Your scribe vendor must sign a BAA with your organization</li>
+        <li><strong>Encryption in transit and at rest:</strong> Data must be protected during transmission and storage</li>
+        <li><strong>Access controls:</strong> Limited, authenticated access to PHI</li>
+        <li><strong>Audit trails:</strong> Logging of who accessed what and when</li>
+        <li><strong>Breach notification protocols:</strong> Procedures if data is compromised</li>
+      </ul>
+
+      <h3>Evaluating Vendors</h3>
+
+      <p>Key compliance certifications to look for:</p>
+
+      <ul>
+        <li><strong>SOC 2 Type II:</strong> Independent verification of security controls</li>
+        <li><strong>HIPAA certification/attestation:</strong> Third-party verification</li>
+        <li><strong>HITRUST:</strong> Healthcare-specific security framework</li>
+        <li><strong>ISO 27001:</strong> International information security standard</li>
+      </ul>
+
+      <h3>The Market Landscape in 2025</h3>
+
+      <div class="vendor-grid">
+        <div class="vendor-category">
+          <h4>Enterprise-Grade Solutions</h4>
+          <div class="vendor-card">
+            <h5>Nuance DAX Copilot (Microsoft)</h5>
+            <p>Deep Epic integration, enterprise focus. $600-700/month.</p>
+          </div>
+          <div class="vendor-card">
+            <h5>Abridge</h5>
+            <p>2025 Best in KLAS winner. Deployed across 100+ health systems.</p>
+          </div>
+          <div class="vendor-card">
+            <h5>DeepScribe</h5>
+            <p>Specialty focus (oncology, cardiology). Embedded billing codes.</p>
+          </div>
+        </div>
+
+        <div class="vendor-category">
+          <h4>Practice-Level Solutions</h4>
+          <div class="vendor-card">
+            <h5>Freed</h5>
+            <p>Popular among individual practitioners. $99/month.</p>
+          </div>
+          <div class="vendor-card">
+            <h5>Suki</h5>
+            <p>Voice commands for EHR navigation, not just documentation.</p>
+          </div>
+          <div class="vendor-card">
+            <h5>HealOS</h5>
+            <p>$49/month unlimited. 50+ specialty templates.</p>
+          </div>
+        </div>
+
+        <div class="vendor-category">
+          <h4>Hybrid CDS + Documentation</h4>
+          <div class="vendor-card">
+            <h5>OpenEvidence Visits</h5>
+            <p>Documentation with evidence-based clinical decision support.</p>
+          </div>
+          <div class="vendor-card">
+            <h5>Glass Health Ambient CDS</h5>
+            <p>Real-time diagnostic support during encounters.</p>
+          </div>
+        </div>
+      </div>
+
+      <hr>
+
+      <!-- Beyond Clinical Encounters Section -->
+      <h2>Beyond Clinical Encounters: Tools for Meetings and Virtual Visits</h2>
+
+      <p>
+        While the previous sections focused on in-person clinical encounters, physicians spend
+        significant time in meetings, administrative calls, and virtual visits—contexts where
+        traditional clinical AI scribes may not be the best fit. Two tools deserve specific
+        attention for these use cases.
+      </p>
+
+      <h3>Granola.ai: The Meeting Intelligence Layer</h3>
+
+      <p>
+        <strong>Granola</strong> is an AI notepad designed specifically for meetings—not clinical
+        encounters, but the administrative reality of modern medicine: committee meetings, project
+        calls, team huddles, vendor discussions, and the endless coordination that consumes
+        physician time.
+      </p>
+
+      <div class="callout callout-info">
+        <div class="callout-title">How Granola Works</div>
+        <ul class="mb-0">
+          <li><strong>Ambient capture:</strong> Runs quietly in the background during any meeting (Zoom, Teams, Google Meet, or in-person with laptop audio)</li>
+          <li><strong>Intelligent notes:</strong> Creates structured meeting summaries, action items, and key decisions</li>
+          <li><strong>Customizable templates:</strong> Different formats for different meeting types</li>
+          <li><strong>Search and recall:</strong> Find what was discussed across all your meetings</li>
+        </ul>
+      </div>
+
+      <h4>Why Physicians Should Consider It</h4>
+
+      <p>
+        Medical practice involves far more than patient care. Department meetings, quality
+        improvement sessions, research team calls, administrative discussions—these generate
+        action items, commitments, and decisions that too often live only in fallible memory.
+      </p>
+
+      <ul>
+        <li><strong>Committee work:</strong> P&T committees, IRBs, department meetings—capture decisions and your assigned action items</li>
+        <li><strong>Research collaboration:</strong> Track what was agreed upon with collaborators across institutions</li>
+        <li><strong>Administrative calls:</strong> Insurance discussions, credentialing, contract negotiations—have a record</li>
+        <li><strong>Teaching:</strong> Capture mentorship conversations, feedback sessions, curriculum planning</li>
+      </ul>
+
+      <div class="callout callout-warning">
+        <div class="callout-title">Important Boundaries</div>
+        <p class="mb-0">
+          Granola is <strong>not</strong> designed for clinical encounters and is <strong>not</strong>
+          HIPAA-compliant for patient care documentation. Use it for meetings about patients
+          (like case conferences) with appropriate caution, but never as a substitute for clinical
+          documentation tools. For patient encounters, use purpose-built clinical AI scribes with
+          BAAs and HIPAA compliance.
+        </p>
+      </div>
+
+      <h3>Plaud.ai: HIPAA-Compliant Recording for Virtual Visits</h3>
+
+      <p>
+        <strong>Plaud</strong> offers a hardware-software combination that addresses a specific
+        gap: HIPAA-compliant recording and transcription for telehealth and virtual visits,
+        particularly when your institution's standard tools don't include ambient AI capabilities.
+      </p>
+
+      <div class="callout callout-info">
+        <div class="callout-title">How Plaud Works</div>
+        <ul class="mb-0">
+          <li><strong>Physical device:</strong> A credit-card-sized recorder that attaches magnetically to your phone or sits on your desk</li>
+          <li><strong>Desktop mode:</strong> Can record virtual visits on your laptop/desktop via audio capture</li>
+          <li><strong>HIPAA compliance:</strong> Offers a BAA and HIPAA-compliant processing for healthcare users</li>
+          <li><strong>AI transcription and summarization:</strong> Generates transcripts and structured summaries</li>
+          <li><strong>Local-first option:</strong> Audio can be processed without cloud upload for maximum privacy</li>
+        </ul>
+      </div>
+
+      <h4>The Virtual Visit Use Case</h4>
+
+      <p>
+        Telehealth created a documentation challenge: you're conducting a visit via video, but
+        your hands are on keyboard and mouse for the EHR, not available for typing notes. Many
+        telehealth platforms don't include AI scribing, leaving clinicians to document from
+        memory after the call—or to toggle awkwardly between video and EHR.
+      </p>
+
+      <p>Plaud addresses this by:</p>
+
+      <ul>
+        <li><strong>Capturing the entire virtual visit</strong> without requiring platform integration</li>
+        <li><strong>Working across any telehealth platform</strong>—Zoom, Teams, Doximity, platform-specific EHR video</li>
+        <li><strong>Generating documentation</strong> that you can then edit and import into your EHR</li>
+        <li><strong>Maintaining HIPAA compliance</strong> with appropriate BAA coverage</li>
+      </ul>
+
+      <h4>Practical Implementation</h4>
+
+      <div class="workflow-phases">
+        <div class="workflow-phase">
+          <h4><i data-lucide="settings"></i> Setup</h4>
+          <ul>
+            <li>Ensure your institution's BAA covers Plaud or obtain individual coverage</li>
+            <li>Configure the device for desktop audio capture</li>
+            <li>Set up your preferred note template in the Plaud app</li>
+          </ul>
+        </div>
+
+        <div class="workflow-phase">
+          <h4><i data-lucide="video"></i> During Visit</h4>
+          <ul>
+            <li>Obtain verbal consent for recording (same script as in-person visits)</li>
+            <li>Start recording before launching your video call</li>
+            <li>Conduct your visit normally—the device captures both sides of the conversation</li>
+          </ul>
+        </div>
+
+        <div class="workflow-phase">
+          <h4><i data-lucide="file-text"></i> After Visit</h4>
+          <ul>
+            <li>Stop recording and allow AI processing</li>
+            <li>Review and edit the generated summary</li>
+            <li>Copy relevant content to your EHR note</li>
+            <li>Delete the recording per your retention policy</li>
+          </ul>
+        </div>
+      </div>
+
+      <h3>Choosing the Right Tool for the Context</h3>
+
+      <div class="comparison-table-wrapper">
+        <table class="comparison-table">
+          <thead>
+            <tr>
+              <th>Context</th>
+              <th>Recommended Tool</th>
+              <th>Key Consideration</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>In-person clinical encounters</td>
+              <td>Clinical AI scribes (Abridge, Nuance, etc.)</td>
+              <td>EHR integration, clinical templates</td>
+            </tr>
+            <tr>
+              <td>Virtual patient visits</td>
+              <td>Plaud or platform-integrated scribe</td>
+              <td>HIPAA compliance, BAA coverage</td>
+            </tr>
+            <tr>
+              <td>Administrative meetings</td>
+              <td>Granola</td>
+              <td>Not for PHI; meeting-optimized</td>
+            </tr>
+            <tr>
+              <td>Case conferences (de-identified)</td>
+              <td>Granola with caution</td>
+              <td>Ensure no PHI in discussion</td>
+            </tr>
+            <tr>
+              <td>Research team calls</td>
+              <td>Granola</td>
+              <td>Track action items and decisions</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="callout callout-principle">
+        <div class="callout-title">The Broader Point</div>
+        <p class="mb-0">
+          Different contexts require different tools. The clinical AI scribe that works perfectly
+          for a primary care visit may be overkill for a department meeting or unavailable for
+          your telehealth platform. Building a personal toolkit of ambient AI tools—each matched
+          to its appropriate context—maximizes efficiency while maintaining appropriate compliance
+          and privacy boundaries.
+        </p>
+      </div>
+
+      <hr>
+
+      <!-- Beyond Documentation Section -->
+      <h2>Beyond Documentation: Scribes with Clinical Decision Support</h2>
+
+      <p>
+        A significant development in 2024–2025: ambient scribes that don't just transcribe
+        but <strong>think along with you</strong>.
+      </p>
+
+      <h3>OpenEvidence Visits</h3>
+
+      <p>
+        OpenEvidence began as a clinical decision support tool—essentially a physician-facing
+        search engine trained on medical literature. Their "Visits" feature integrates ambient
+        documentation with real-time evidence:
+      </p>
+
+      <ul>
+        <li><strong>Transcription with enrichment:</strong> As you speak, the system transcribes and automatically surfaces relevant guidelines</li>
+        <li><strong>In-context CDS:</strong> Highlight text in the generated note, and OpenEvidence provides guideline-based suggestions</li>
+        <li><strong>Evidence insertion:</strong> Ask the system to insert supporting evidence from the transcript</li>
+      </ul>
+
+      <h3>Glass Health Ambient CDS</h3>
+
+      <p>
+        Glass Health approaches clinical AI differently: ambient clinical decision support
+        that generates diagnostic reasoning in real time during the encounter.
+      </p>
+
+      <ul>
+        <li><strong>Real-time differential diagnosis:</strong> As the patient history unfolds, Glass generates and refines possible diagnoses</li>
+        <li><strong>Suggested questions:</strong> Contextually relevant history questions based on the evolving clinical picture</li>
+        <li><strong>Physical exam recommendations:</strong> Based on presentation, suggests exam maneuvers to consider</li>
+        <li><strong>Workup suggestions:</strong> Testing and management options as the picture emerges</li>
+      </ul>
+
+      <div class="callout callout-info">
+        <div class="callout-title">The Paradigm Shift</div>
+        <p class="mb-0">
+          These tools suggest that the future of ambient AI isn't just reducing documentation
+          burden—it's <strong>augmenting clinical reasoning itself</strong>. The scribe becomes
+          a clinical partner, not just a secretary. But any tool that suggests diagnoses during
+          an encounter carries risk of anchoring bias and over-reliance.
+        </p>
+      </div>
+
+      <hr>
+
+      <!-- Practical Implementation Section -->
+      <h2>Practical Implementation: Making Scribes Work for You</h2>
+
+      <h3>Workflow Integration</h3>
+
+      <div class="workflow-phases">
+        <div class="workflow-phase">
+          <h4><i data-lucide="clipboard-list"></i> Before the Visit</h4>
+          <ul>
+            <li>Review patient context (some advanced scribes can summarize prior visits)</li>
+            <li>Prepare your device and confirm functionality</li>
+            <li>Know what consent language you'll use</li>
+          </ul>
+        </div>
+
+        <div class="workflow-phase">
+          <h4><i data-lucide="mic"></i> During the Visit</h4>
+          <ul>
+            <li>Announce recording and obtain consent</li>
+            <li>Speak naturally, but recognize that clarity helps</li>
+            <li>Verbalize physical exam findings as you perform them</li>
+            <li>Summarize your assessment and plan aloud</li>
+          </ul>
+        </div>
+
+        <div class="workflow-phase">
+          <h4><i data-lucide="check-circle"></i> After the Visit</h4>
+          <ul>
+            <li>Review the generated note promptly</li>
+            <li>Compare against your clinical reasoning</li>
+            <li>Edit for accuracy, not just grammar</li>
+            <li>Sign only when confident in the content</li>
+          </ul>
+        </div>
+      </div>
+
+      <h3>Speaking for the Scribe</h3>
+
+      <p>Some habits improve documentation quality:</p>
+
+      <ul>
+        <li>
+          <strong>Verbalize your physical exam.</strong> The scribe hears your conversation but
+          can't observe your hands. If you listen to the heart and find it normal, say "heart
+          sounds regular, no murmurs." If you don't say it, the scribe must infer—or fabricate.
+        </li>
+        <li>
+          <strong>Narrate transitions.</strong> "Now let's talk about your blood pressure
+          management" helps the scribe organize content into appropriate sections.
+        </li>
+        <li>
+          <strong>Summarize explicitly.</strong> "So our plan is to continue the lisinopril,
+          add amlodipine 5 daily, and recheck labs in two weeks" provides clear material for
+          the Plan section.
+        </li>
+        <li>
+          <strong>Correct misunderstandings immediately.</strong> "Just to clarify, you said
+          you stopped the medication temporarily during your trip, not permanently?"
+        </li>
+      </ul>
+
+      <h3>When NOT to Use the Scribe</h3>
+
+      <p>Some clinical situations warrant pausing or disabling ambient recording:</p>
+
+      <ul>
+        <li><strong>Highly sensitive disclosures:</strong> Patient revealing abuse, trauma, or information they emphasize as confidential</li>
+        <li><strong>Discussions about the AI itself:</strong> If a patient has concerns about the recording</li>
+        <li><strong>Interpreter-mediated visits:</strong> Where attribution becomes complex</li>
+        <li><strong>Patients with significant speech impairments:</strong> Where transcription accuracy degrades</li>
+        <li><strong>Encounters with paranoid or psychotic patients:</strong> Where recording might exacerbate symptoms</li>
+        <li><strong>When your patient says no:</strong> Always respect refusal of consent</li>
+      </ul>
+
+      <hr>
+
+      <!-- Case Studies Section -->
+      <h2>Case-Based Learning: Putting It Together</h2>
+
+      <div class="case-study">
+        <h3>Case 1: The Fabricated Allergy</h3>
+        <p>
+          Dr. Martinez reviews an AI-generated note from a follow-up visit. The Assessment reads:
+          "Type 2 diabetes, well-controlled. Patient reports compliance with metformin.
+          <strong>Documented sulfa allergy noted.</strong>"
+        </p>
+        <p>
+          <strong>The problem:</strong> The patient has no sulfa allergy. During the visit,
+          Dr. Martinez asked about medication tolerability, and the patient mentioned she
+          "used to take sulfonylureas but switched to metformin." The AI, processing "sulfa"
+          in a medication context, generated an allergy documentation.
+        </p>
+        <div class="case-lesson">
+          <strong>Lesson:</strong> Similar-sounding terms (sulfonylurea/sulfa) in different
+          clinical contexts can trigger incorrect associations. Verify allergy documentation
+          especially carefully—errors propagate indefinitely and affect prescribing decisions
+          for years.
+        </div>
+      </div>
+
+      <div class="case-study">
+        <h3>Case 2: The Dangerous Omission</h3>
+        <p>
+          A patient presents with chest pain. The cardiologist conducts a thorough evaluation,
+          ultimately reassuring the patient that the symptoms are musculoskeletal. During the
+          visit, the patient mentioned, "I've also been getting short of breath going up stairs,
+          but I figured that's just because I'm out of shape."
+        </p>
+        <p>
+          The AI-generated note comprehensively documents the chest pain evaluation but
+          <strong>omits the exertional dyspnea entirely</strong>—it was mentioned briefly,
+          not explored, and the AI prioritized the chief complaint. Three months later,
+          the patient returns with decompensated heart failure.
+        </p>
+        <div class="case-lesson">
+          <strong>Lesson:</strong> Omissions are invisible errors. Develop habits of checking
+          for what <em>should</em> be documented based on what you recall discussing, not just
+          verifying what's present.
+        </div>
+      </div>
+
+      <div class="case-study">
+        <h3>Case 3: The Successful Integration</h3>
+        <p>
+          Dr. Chen, an internist, has used an AI scribe effectively for 18 months. Her approach:
+        </p>
+        <ul>
+          <li><strong>Before every visit:</strong> Quick verbal self-note: "Patient here for diabetes follow-up and blood pressure check"</li>
+          <li><strong>During the visit:</strong> She narrates her physical exam aloud: "Blood pressure 142/88, repeat 138/84. Heart regular, no murmurs."</li>
+          <li><strong>During counseling:</strong> She explicitly states plans: "Our plan is to continue the lisinopril but I'm adding amlodipine 5mg daily."</li>
+          <li><strong>After the visit:</strong> She reviews Assessment and Plan first, then scans the physical exam for documented findings she didn't actually elicit</li>
+          <li><strong>Weekly:</strong> She audits 2-3 notes randomly, looking for patterns of error</li>
+        </ul>
+        <p>
+          Her editing rate averages 15% of generated content. She catches approximately one
+          significant error per week. Her documentation time has decreased by 40%.
+        </p>
+        <div class="case-lesson">
+          <strong>Lesson:</strong> Effective use requires systematic habits adapted to your
+          workflow, not just adoption of the technology.
+        </div>
+      </div>
+
+      <hr>
+
+      <!-- Equity Section -->
+      <h2>The Equity Dimension</h2>
+
+      <p>It would be negligent to discuss ambient AI without addressing disparities.</p>
+
+      <p>Research shows speech recognition systems exhibit systematic performance disparities:</p>
+
+      <ul>
+        <li>Higher error rates for African American speakers</li>
+        <li>Reduced accuracy for non-native English speakers</li>
+        <li>Difficulty with regional accents and dialects</li>
+        <li>Degraded performance for patients with speech impairments</li>
+      </ul>
+
+      <p>
+        These aren't just technical limitations—they're <strong>equity issues</strong>. If your
+        AI scribe transcribes some patients less accurately than others, documentation quality
+        varies by patient demographics.
+      </p>
+
+      <div class="callout callout-principle">
+        <div class="callout-title">What You Can Do</div>
+        <ul class="mb-0">
+          <li>Pay extra attention when reviewing notes from encounters where transcription may have struggled</li>
+          <li>Advocate for vendors to report accuracy metrics across demographic groups</li>
+          <li>Report disparities you observe to your vendor and organization</li>
+          <li>Consider human review support for complex cases</li>
+        </ul>
+      </div>
+
+      <hr>
+
+      <!-- Resources Section -->
+      <h2>Resources for Further Learning</h2>
+
+      <h3>Research and Guidelines</h3>
+
+      <div class="reading-list">
+        <div class="reading-item">
+          <div class="reading-type"><i data-lucide="file-text"></i></div>
+          <div class="reading-content">
+            <div class="reading-title">
+              "Ambient Artificial Intelligence Scribes to Alleviate the Burden of Clinical Documentation"
+            </div>
+            <div class="reading-meta">Tierney et al. · NEJM Catalyst, 2024 · The landmark TPMG implementation study</div>
+          </div>
+        </div>
+
+        <div class="reading-item">
+          <div class="reading-type"><i data-lucide="file-text"></i></div>
+          <div class="reading-content">
+            <div class="reading-title">
+              "Beyond human ears: navigating the uncharted risks of AI scribes in clinical practice"
+            </div>
+            <div class="reading-meta">npj Digital Medicine, 2025 · Comprehensive taxonomy of AI scribe errors</div>
+          </div>
+        </div>
+
+        <div class="reading-item">
+          <div class="reading-type"><i data-lucide="file-text"></i></div>
+          <div class="reading-content">
+            <div class="reading-title">
+              "AI Scribes: Answers to Frequently Asked Questions"
+            </div>
+            <div class="reading-meta">Canadian Medical Protective Association · Practical Q&A on liability and best practices</div>
+          </div>
+        </div>
+
+        <div class="reading-item">
+          <div class="reading-type"><i data-lucide="file-text"></i></div>
+          <div class="reading-content">
+            <div class="reading-title">
+              "Careless Whisper: Speech-to-Text Hallucination Harms"
+            </div>
+            <div class="reading-meta">Koenecke et al. · ACM FAccT, 2024 · Critical research on transcription hallucinations</div>
+          </div>
+        </div>
+      </div>
+
+      <hr>
+
+      <!-- Summary Section -->
+      <h2>Summary: Key Takeaways</h2>
+
+      <div class="key-points-grid">
+        <div class="key-point-card">
+          <h4>How They Work</h4>
+          <p>
+            Ambient AI scribes use LLMs to <strong>interpret and document</strong> clinical
+            conversations, not just transcribe them. This interpretive capability creates
+            both value and risk.
+          </p>
+        </div>
+
+        <div class="key-point-card">
+          <h4>The Template Trap</h4>
+          <p>
+            Templates create pressure to fill fields, increasing hallucination risk. The more
+            structured your template, the more likely the AI will fabricate content for empty
+            sections.
+          </p>
+        </div>
+
+        <div class="key-point-card">
+          <h4>Verification Is Mandatory</h4>
+          <p>
+            Not reviewing an AI scribe output is equivalent to signing a note you didn't read.
+            The technology changed; your responsibility didn't.
+          </p>
+        </div>
+
+        <div class="key-point-card">
+          <h4>Consent Varies by State</h4>
+          <p>
+            Eleven states require all-party consent. Best practice is universal consent
+            regardless of legal requirements.
+          </p>
+        </div>
+
+        <div class="key-point-card">
+          <h4>Beyond Documentation</h4>
+          <p>
+            Next-generation scribes integrate clinical decision support. Tools like OpenEvidence
+            and Glass Health offer real-time diagnostic suggestions.
+          </p>
+        </div>
+
+        <div class="key-point-card">
+          <h4>The Human Remains Essential</h4>
+          <p>
+            AI scribes are drafting tools, not documentation systems. Clinical judgment—including
+            judgment about the AI's output—cannot be delegated.
+          </p>
+        </div>
+      </div>
+
+      <hr>
+
+      <!-- Reflection Questions -->
+      <div class="discussion-questions">
+        <h4>Reflection Questions</h4>
+        <ol>
+          <li>
+            What's your current documentation workflow, and where would an ambient scribe
+            integrate? What would you need to change?
+          </li>
+          <li>
+            Recall a recent encounter where you documented a physical exam. How much of what
+            you wrote did you actually perform versus document by template default?
+          </li>
+          <li>
+            If your AI scribe hallucinated a medication allergy into a patient's record,
+            what downstream consequences might occur?
+          </li>
+          <li>
+            How would you explain AI scribe consent to a patient who is anxious about
+            technology and privacy?
+          </li>
+        </ol>
+      </div>
+
+      <!-- Learning Objectives -->
+      <div class="objectives phase-2">
+        <h4 class="objectives-title">Learning Objectives</h4>
+        <ul class="objectives-list">
+          <li>Explain how ambient AI scribes capture, process, and generate clinical documentation</li>
+          <li>Identify the five major categories of AI scribe errors and their clinical implications</li>
+          <li>Apply systematic verification strategies to AI-generated notes</li>
+          <li>Navigate recording consent requirements across different jurisdictions</li>
+          <li>Evaluate ambient scribe vendors for HIPAA compliance and clinical fit</li>
+          <li>Adapt clinical communication habits to optimize scribe performance</li>
+        </ul>
+      </div>
+
+      <!-- Page Navigation -->
+      <nav class="page-nav">
+        <a href="module-9.html" class="page-nav-link prev">
+          <span class="page-nav-arrow"><i data-lucide="arrow-left"></i></span>
+          <div>
+            <span class="page-nav-label">Previous</span>
+            <span class="page-nav-title">Module 9: Clinical Decision Support Tools</span>
+          </div>
+        </a>
+        <a href="module-11.html" class="page-nav-link next">
+          <span class="page-nav-arrow"><i data-lucide="arrow-right"></i></span>
+          <div>
+            <span class="page-nav-label">Next</span>
+            <span class="page-nav-title">Module 11: AI Image and Video Creation</span>
+          </div>
+        </a>
+      </nav>
+
+    </article>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div><strong>AI 101</strong> · A Self-Paced Guide to AI in Medicine</div>
+      <div>v1.0 · 2025</div>
+    </div>
+  </footer>
+
+  <script>
+    lucide.createIcons();
+    const navToggle = document.querySelector('.nav-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    if (navToggle) {
+      navToggle.addEventListener('click', () => {
+        navLinks.classList.toggle('nav-open');
+      });
+    }
+  </script>
+
+</body>
+</html>

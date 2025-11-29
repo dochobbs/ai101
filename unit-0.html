@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Unit 0: Not with Theory—with Practice | AI 101</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    /* Typography for Long-Form Reading */
+    .long-form-text {
+      line-height: 1.8;
+      font-size: 1.15rem;
+      color: #334155;
+      max-width: 70ch;
+      margin-bottom: 2rem;
+    }
+    .long-form-text p {
+      margin-bottom: 1.5rem;
+    }
+    .long-form-text strong {
+      color: #0f172a;
+      font-weight: 700;
+    }
+
+    /* Studio Grid Styles */
+    .studio-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+      margin: 3rem 0;
+    }
+    .studio-card {
+      background: white;
+      border: 1px solid #e2e8f0;
+      border-radius: 16px;
+      padding: 2rem;
+      transition: all 0.2s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    .studio-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+      border-color: #cbd5e1;
+    }
+    .studio-icon-wrapper {
+      display: inline-flex;
+      padding: 12px;
+      border-radius: 12px;
+      margin-bottom: 1.5rem;
+    }
+    .studio-audio { background: #eff6ff; color: #2563eb; }
+    .studio-video { background: #f0fdf4; color: #16a34a; }
+    .studio-flash { background: #fff7ed; color: #ea580c; }
+    .studio-slide { background: #f8fafc; color: #475569; }
+    
+    .feature-title { font-weight: 800; font-size: 1.25rem; margin-bottom: 0.75rem; color: #1e293b; }
+    .feature-desc { font-size: 0.95rem; color: #64748b; line-height: 1.6; margin-bottom: 1.5rem; }
+    .clinical-use-badge {
+      display: inline-block;
+      padding: 6px 12px;
+      border-radius: 20px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      background: #f1f5f9;
+      color: #475569;
+    }
+
+    /* Section Dividers */
+    .section-divider {
+      height: 1px;
+      background: linear-gradient(to right, transparent, #e2e8f0, transparent);
+      margin: 4rem 0;
+    }
+
+    /* Deep Dive Box */
+    .deep-dive {
+      background: #f8fafc;
+      border-left: 4px solid #334155;
+      padding: 2.5rem;
+      margin: 2rem 0;
+      border-radius: 0 12px 12px 0;
+    }
+    .deep-dive h3 { margin-top: 0; color: #1e293b; }
+    
+    /* Quote styling */
+    .pull-quote {
+      font-size: 1.4rem;
+      font-weight: 300;
+      font-style: italic;
+      color: #475569;
+      border-left: 4px solid #3b82f6;
+      padding-left: 2rem;
+      margin: 3rem 0;
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-brand">
+        <span class="nav-badge">AI 101</span>
+        <span class="nav-title">A Self-Paced Guide to AI in Medicine</span>
+      </a>
+      <button class="nav-toggle" aria-label="Toggle menu">
+        <i data-lucide="menu"></i>
+      </button>
+      <div class="nav-links">
+        <a href="index.html" class="nav-link">Modules</a>
+        <!-- <a href="resources.html" class="nav-link">Resources</a> -->
+        <a href="about.html" class="nav-link">About</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="main">
+    <article class="content">
+
+      <header class="unit-header">
+        <span class="unit-label intro">UNIT 0 · FOUNDATIONS</span>
+        <h1 class="unit-title">Not with Theory—with Practice</h1>
+        <p class="unit-subtitle">
+          Before you understand how AI works, learn to make it work for you.
+          A practical on-ramp using tools you can apply today.
+        </p>
+        <div class="unit-meta">
+          <span class="unit-meta-item">
+            <i data-lucide="book-open"></i>
+            Deep Read: 30 mins
+          </span>
+          <span class="unit-meta-item">
+            <i data-lucide="flask-conical"></i>
+            Lab Included
+          </span>
+        </div>
+      </header>
+
+      <section class="long-form-text">
+        <h2>Part 1: The Input Crisis</h2>
+        
+        <p>
+          In 1950, the estimated doubling time of medical knowledge was 50 years. A physician
+          could graduate medical school, purchase a standard set of textbooks (Harrison’s, Gray’s,
+          Osler), and reasonably expect that the core of that knowledge would remain valid for
+          the duration of their career. The task of the clinician was <em>application</em> of
+          a static knowledge base.
+        </p>
+        <p>
+          By 1980, the doubling time had shrunk to 7 years. By 2010, it was 3.5 years.
+          In 2025, estimates suggest that the totality of medical knowledge doubles approximately
+          every 73 days.
+        </p>
+        <p>
+          This exponential curve has broken the cognitive architecture of medical practice.
+          If you feel like you are drowning, it is not because you are inefficient, or lazy,
+          or aging. It is because the human brain—evolved to track small bands of people
+          and local environments—was never designed to ingest, synthesize, and recall the
+          output of a global scientific enterprise producing thousands of papers per day.
+        </p>
+        <p>
+          The result is the <strong>Input Crisis</strong>. We have access to more information than
+          ever before, but our ability to process it has remained biologically fixed. We
+          skim. We read the abstract but miss the methods. We rely on "what we’ve always done"
+          because reviewing the new guideline takes hours we don't have.
+        </p>
+
+        <div class="pull-quote">
+          "The friction of consuming information is the single greatest bottleneck in modern medicine."
+        </div>
+
+        <p>
+          This is why we begin this course with <strong><a href="https://notebooklm.google.com" target="_blank">NotebookLM</a></strong>. Most AI courses
+          start with ChatGPT—a tool designed to <em>write</em> for you (generation). We are
+          starting with a tool designed to <em>read</em> for you (synthesis).
+        </p>
+        <p>
+          NotebookLM is not a chatbot. It is a <strong>Cognitive Lever</strong>. It allows you to
+          dump in the "dead" information that is cluttering your desktop—the 80-page PDF
+          guidelines, the hour-long Grand Rounds videos, the dense clinical trials—and
+          instantly transform them into "live" learning formats that fit into the cracks
+          of your busy day.
+        </p>
+      </section>
+
+      <div class="section-divider"></div>
+
+      <section class="long-form-text">
+        <h2>Part 2: Your Medical Studio</h2>
+        <p>
+          Think of standard medical information as "raw ore." A PDF is a block of text.
+          It is difficult to mine. NotebookLM acts as a refinery. You upload the ore,
+          and it allows you to output refined products depending on what your brain needs
+          at that moment.
+        </p>
+        <p>
+          We call this the <strong>Studio Concept</strong>. You are no longer just a "reader";
+          you are a producer of your own learning materials.
+        </p>
+      </section>
+
+      <div class="studio-grid">
+        
+        <div class="studio-card">
+          <div class="studio-icon-wrapper studio-audio"><i data-lucide="headphones"></i></div>
+          <div class="feature-title">The Audio Overview</div>
+          <div class="feature-desc">
+            NotebookLM’s most famous feature. It uses two AI hosts to analyze your sources
+            and generate a banter-filled, podcast-style conversation. They use analogies,
+            interrupt each other, and debate the evidence.
+          </div>
+          <div class="clinical-use-badge">Best For: The Commute</div>
+          <p style="margin-top: 1rem; font-size: 0.9rem; color: #475569;">
+            <strong>Cognitive Science:</strong> This leverages <em>Dual Coding Theory</em>. 
+            By converting text to audio, you engage a different processing channel, allowing 
+            you to "read" while your eyes are busy driving or washing dishes.
+          </p>
+        </div>
+
+        <div class="studio-card">
+          <div class="studio-icon-wrapper studio-flash"><i data-lucide="brain-circuit"></i></div>
+          <div class="feature-title">Flashcards & Quiz</div>
+          <div class="feature-desc">
+            The system scans your documents for key concepts and generates Q&A pairs.
+            You can engage in a text-based quiz or flip through digital cards.
+          </div>
+          <div class="clinical-use-badge">Best For: Board Prep</div>
+          <p style="margin-top: 1rem; font-size: 0.9rem; color: #475569;">
+            <strong>Cognitive Science:</strong> This utilizes <em>Active Recall</em>. 
+            Passive re-reading of a highlighted PDF is the least effective way to learn. 
+            Testing yourself is the most effective.
+          </p>
+        </div>
+
+        <div class="studio-card">
+          <div class="studio-icon-wrapper studio-slide"><i data-lucide="presentation"></i></div>
+          <div class="feature-title">The Slide Deck</div>
+          <div class="feature-desc">
+            Extracts the main arguments, data points, and conclusions into a structured 
+            presentation outline, complete with bullet points and suggested speaker notes.
+          </div>
+          <div class="clinical-use-badge">Best For: Morning Report</div>
+          <p style="margin-top: 1rem; font-size: 0.9rem; color: #475569;">
+            <strong>Cognitive Science:</strong> This aids in <em>Syntactic Structuring</em>. 
+            It forces the linear text into a hierarchical argument, helping you see the 
+            skeleton of the paper's logic.
+          </p>
+        </div>
+
+        <div class="studio-card">
+          <div class="studio-icon-wrapper studio-video"><i data-lucide="video"></i></div>
+          <div class="feature-title">The Video Overview</div>
+          <div class="feature-desc">
+            A newer feature that creates a visual summary. The AI talks through the key 
+            points while displaying relevant charts, graphs, or pull-quotes from your 
+            sources on screen.
+          </div>
+          <div class="clinical-use-badge">Best For: Visual Learners</div>
+          <p style="margin-top: 1rem; font-size: 0.9rem; color: #475569;">
+            <strong>Cognitive Science:</strong> Facilitates <em>Multimedia Learning</em>, 
+            anchoring abstract concepts to visual representations.
+          </p>
+        </div>
+
+      </div>
+
+      <div class="section-divider"></div>
+
+      <section class="long-form-text">
+        <h2>Part 3: The Architecture of Trust (RAG)</h2>
+        <p>
+          Why are we starting with NotebookLM and not ChatGPT? The answer lies in the 
+          architecture. To understand AI safety in medicine, you must understand the difference 
+          between <strong>Open Generation</strong> and <strong>Grounded Generation</strong>.
+        </p>
+        
+        <h3>The Problem with "Open" AI (ChatGPT)</h3>
+        <p>
+          Standard Large Language Models (LLMs) like ChatGPT are trained on the "open web." 
+          They have read Reddit, Wikipedia, PubMed, Twitter, and billions of other pages. 
+          When you ask a medical question, the model is not "looking up" the answer in a 
+          verified database. It is predicting the next likely word based on a statistical 
+          average of everything it has ever read.
+        </p>
+        <p>
+          This leads to <strong>Hallucination</strong>. If the internet contains misconceptions 
+          about a disease, the model’s "probability distribution" may reflect those misconceptions. 
+          Furthermore, these models have a <strong>Knowledge Cutoff</strong>. If a new sepsis 
+          guideline was published yesterday, the base model does not know it exists. It will 
+          confidently give you the old answer.
+        </p>
+
+        <div class="deep-dive">
+          <h3>The Solution: Retrieval-Augmented Generation (RAG)</h3>
+          <p>
+            NotebookLM uses an architecture called <strong>RAG</strong>. Here is the mechanical 
+            process of what happens when you upload a PDF:
+          </p>
+          <ol style="margin-left: 1.5rem; margin-bottom: 1.5rem;">
+            <li style="margin-bottom: 0.5rem;"><strong>Ingestion:</strong> You upload a medical guideline. The system breaks it into small "chunks" of text.</li>
+            <li style="margin-bottom: 0.5rem;"><strong>Retrieval:</strong> When you ask a question, the system first scans <em>only your uploaded chunks</em> to find the most relevant paragraphs.</li>
+            <li style="margin-bottom: 0.5rem;"><strong>Grounding:</strong> It sends <em>only those specific paragraphs</em> to the AI brain with a strict instruction: "Answer the user's question using ONLY the provided text. Do not use outside knowledge."</li>
+          </ol>
+          <p class="mb-0">
+            <strong>The Result:</strong> If the answer isn't in your documents, the system is 
+            designed to say "I don't know," rather than inventing a fact. This is the 
+            gold standard for safety in medical AI.
+          </p>
+        </div>
+
+        <h3>The "Grey Box" Rule</h3>
+        <p>
+          Even RAG systems can make mistakes. NotebookLM combats this with its most critical 
+          feature: the <strong>Citation Badge</strong>. 
+        </p>
+        <p>
+          Every time NotebookLM makes a claim, it appends a small grey number 
+          <span style="background: #e2e8f0; padding: 0 4px; border-radius: 4px; font-size: 0.8rem; color: #475569;">[1]</span>. 
+          This is not decoration. It is a functional link.
+        </p>
+        <p>
+          <strong>The Rule:</strong> If you cannot click that number and see the exact paragraph 
+          in your source text that supports the claim, <strong>you must assume the AI is hallucinating</strong>. 
+          This "click-to-verify" loop is the primary safety habit you must build.
+        </p>
+      </section>
+
+      <div class="section-divider"></div>
+
+      <section class="long-form-text">
+        <h2>Part 4: Clinical Case Studies</h2>
+        <p>
+          Theory is useful, but practice is essential. Let’s look at three specific ways 
+          clinicians are using this tool today to save time and improve care.
+        </p>
+
+        <div class="example-card" style="margin-bottom: 3rem;">
+          <div class="example-header">
+            <span class="example-number">1</span>
+            <h3 class="example-title">The "Grand Rounds" Filter</h3>
+          </div>
+          <p>
+            <strong>The Context:</strong> Dr. A is a hospitalist. A visiting professor just gave 
+            a lecture on "New Advances in Heart Failure." Dr. A was stuck in a code and missed it. 
+            The recording is on YouTube, but it's 58 minutes long.
+          </p>
+          <p>
+            <strong>The Old Way:</strong> Dr. A never watches it. The knowledge is lost.
+          </p>
+          <p>
+            <strong>The NotebookLM Way:</strong>
+          </p>
+          <ol>
+            <li>Dr. A copies the YouTube URL.</li>
+            <li>She pastes it into NotebookLM as a source. The AI reads the transcript.</li>
+            <li>She prompts: <em>"Extract the 3 key practice changes mentioned in this lecture. For each update, provide the direct timestamp where the speaker discusses the evidence."</em></li>
+          </ol>
+          <div class="outcome-box">
+            <strong>The Outcome:</strong> She gets a list. Item #2 catches her eye: 
+            "SGLT2 Inhibitors should be initiated inpatient (Timestamp 14:02)." 
+            She clicks the timestamp, watches the 3-minute explanation, and closes the tab. 
+            <strong>Total time: 5 minutes.</strong>
+          </div>
+        </div>
+
+        <div class="example-card" style="margin-bottom: 3rem;">
+          <div class="example-header">
+            <span class="example-number">2</span>
+            <h3 class="example-title">The "Gap Analysis" Audit</h3>
+          </div>
+          <p>
+            <strong>The Context:</strong> A pharmaceutical representative visits a clinic with a 
+            glossy slide deck showing incredible efficacy for a new drug. The graphs look perfect. 
+            However, slide decks often exclude secondary endpoints or specific adverse event tables 
+            found in the full paper.
+          </p>
+          <p>
+            <strong>The NotebookLM Way:</strong>
+          </p>
+          <ol>
+            <li>The clinician uploads the <strong>Slide Deck</strong> (PDF).</li>
+            <li>The clinician uploads the full <strong>Clinical Trial Manuscript</strong> (PDF).</li>
+            <li>The clinician prompts: <em>"Compare the safety data presented in the slide deck against the 'Adverse Events' table in the full paper. List any adverse events that appear in the paper at a rate >5% which are NOT mentioned in the slide deck."</em></li>
+          </ol>
+          <div class="outcome-box">
+            <strong>The Outcome:</strong> The AI responds: <em>"The manuscript lists 'nausea' (12%) and 'dizziness' (8%) in Table 3. These terms do not appear in the uploaded slide deck, which focuses only on 'serious adverse events'."</em><br><br>
+            The clinician is now armed with a specific question for the rep.
+          </div>
+        </div>
+
+        <div class="example-card">
+          <div class="example-header">
+            <span class="example-number">3</span>
+            <h3 class="example-title">The "Customized" Commute</h3>
+          </div>
+          <p>
+            <strong>The Context:</strong> A resident has a 30-minute commute and needs to learn 
+            about "hyponatremia workups." Audiobooks are too broad; text-to-speech is too robotic.
+          </p>
+          <p>
+            <strong>The NotebookLM Way:</strong>
+          </p>
+          <ol>
+            <li>The resident uploads the "Hyponatremia" chapter from a standard textbook and a recent review article.</li>
+            <li>She clicks <strong>Audio Overview</strong>.</li>
+            <li>She hits <strong>Customize</strong> and types: <em>"Focus specifically on the diagnostic algorithm. Explain the difference between SIADH and Cerebral Salt Wasting using analogies. Quiz me at the end."</em></li>
+          </ol>
+          <div class="outcome-box">
+            <strong>The Outcome:</strong> A 15-minute, engaging podcast is generated. The hosts say things like: 
+            <em>"Okay, think of the kidney like a bouncer at a club..."</em> The resident arrives at work having conceptually mapped the problem.
+          </div>
+        </div>
+      </section>
+
+      <div class="section-divider"></div>
+
+      <section class="activity-section">
+        <h3 class="activity-title">Lab 0: The Information Triage</h3>
+        <p class="long-form-text">
+          You are now going to perform the "Gap Analysis" workflow yourself. This is the most
+          powerful way to build trust (and healthy skepticism) in the tool.
+        </p>
+
+        <ol class="activity-steps">
+          <li class="activity-step">
+            <span class="step-number">1</span>
+            <div class="step-content">
+              <h4>Setup</h4>
+              <p>
+                Open <a href="https://notebooklm.google.com" target="_blank">notebooklm.google.com</a>.
+                Create a new notebook titled "AI 101 Lab".
+              </p>
+            </div>
+          </li>
+          <li class="activity-step">
+            <span class="step-number">2</span>
+            <div class="step-content">
+              <h4>The "Conflict" Upload</h4>
+              <p>
+                Find two documents that disagree or offer different perspectives. 
+                <br><em>Suggestion:</em> Find a "Patient Education Pamphlet" on a topic (usually simplified) and the "Clinical Guideline" on the same topic (complex).
+                <br>Upload both.
+              </p>
+            </div>
+          </li>
+          <li class="activity-step">
+            <span class="step-number">3</span>
+            <div class="step-content">
+              <h4>The Comparison Prompt</h4>
+              <p>
+                Ask: <em>"Compare the advice given to patients in Source 1 with the clinical requirements in Source 2. What nuance is lost in the patient pamphlet? Identify 3 specific simplifications."</em>
+              </p>
+            </div>
+          </li>
+          <li class="activity-step">
+            <span class="step-number">4</span>
+            <div class="step-content">
+              <h4>The Verification Click</h4>
+              <p>
+                The AI will produce a list. <strong>Hover over the citation numbers.</strong> Watch how the tool highlights the text in the original PDF. 
+                <br><strong>Pass/Fail Criteria:</strong> If you cannot verify the source of the claim in 30 seconds, the tool has failed. Mark it as a hallucination.
+              </p>
+            </div>
+          </li>
+        </ol>
+      </section>
+
+      <h2>Further Reading</h2>
+      <div class="reading-list">
+        <div class="reading-item">
+          <div class="reading-type"><i data-lucide="book-open"></i></div>
+          <div class="reading-content">
+            <div class="reading-title">
+              <a href="https://stevenberlinjohnson.substack.com/p/notebooklm-the-active-listening-tool" target="_blank">The Active Listening Tool for the AI Age</a>
+            </div>
+            <div class="reading-meta">
+              <strong>Steven Johnson (Google Labs)</strong><br>
+              An essential essay on the philosophy of software that "thinks with you." Johnson argues that tools like NotebookLM are not "search engines" but "thought partners."
+            </div>
+          </div>
+        </div>
+        <div class="reading-item">
+          <div class="reading-type"><i data-lucide="youtube"></i></div>
+          <div class="reading-content">
+            <div class="reading-title">
+              <a href="https://www.youtube.com/watch?v=0k93Kj1jV2w" target="_blank">NotebookLM Deep Dive for Researchers</a>
+            </div>
+            <div class="reading-meta">
+              <strong>Google Labs Official</strong><br>
+              A 12-minute technical walkthrough. Skip to 4:30 to see the "Source Guide" feature, which visualizes the citation density of your sources.
+            </div>
+          </div>
+        </div>
+        <div class="reading-item">
+          <div class="reading-type"><i data-lucide="file-text"></i></div>
+          <div class="reading-content">
+            <div class="reading-title">
+              <a href="https://ai.nejm.org/" target="_blank">Retrieval-Augmented Generation for Medicine</a>
+            </div>
+            <div class="reading-meta">
+              <strong>NEJM AI</strong><br>
+              A deeper look into why RAG (the technology behind NotebookLM) is considered the minimum viable safety standard for clinical AI deployment.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <nav class="page-nav">
+        <a href="index.html" class="page-nav-link prev">
+          <span class="page-nav-arrow"><i data-lucide="arrow-left"></i></span>
+          <div>
+            <span class="page-nav-label">Back to</span>
+            <span class="page-nav-title">Curriculum Map</span>
+          </div>
+        </a>
+        <a href="module-1.html" class="page-nav-link next">
+          <span class="page-nav-arrow"><i data-lucide="arrow-right"></i></span>
+          <div>
+            <span class="page-nav-label">Next Module</span>
+            <span class="page-nav-title">Module 1: How LLMs Think Like Clinicians</span>
+          </div>
+        </a>
+      </nav>
+
+    </article>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div><strong>AI 101</strong> · A Self-Paced Guide to AI in Medicine</div>
+      <div>v3.0 · 2025 · Comprehensive Edition</div>
+    </div>
+  </footer>
+
+  <script>
+    lucide.createIcons();
+    const navToggle = document.querySelector('.nav-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    if (navToggle) {
+      navToggle.addEventListener('click', () => {
+        navLinks.classList.toggle('nav-open');
+      });
+    }
+  </script>
+
+</body>
+</html>

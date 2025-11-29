@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Module 12: Everyday Ways to Use AI | AI 101</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-brand">
+        <span class="nav-badge">AI 101</span>
+        <span class="nav-title">A Self-Paced Guide to AI in Medicine</span>
+      </a>
+      <button class="nav-toggle" aria-label="Toggle menu">
+        <i data-lucide="menu"></i>
+      </button>
+      <div class="nav-links">
+        <a href="index.html" class="nav-link">Modules</a>
+        <!-- <a href="resources.html" class="nav-link">Resources</a> -->
+        <a href="about.html" class="nav-link">About</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="main">
+    <article class="content content-wide">
+
+      <header class="unit-header">
+        <span class="unit-label phase-2">PHASE II · MODULE 12</span>
+        <h1 class="unit-title">Everyday Ways to Use AI</h1>
+        <p class="unit-subtitle">
+          AI Beyond the Exam Room—Your New Swiss Army Knife for contracts, spreadsheets,
+          marketing, research, and building custom tools that work exactly the way you want.
+        </p>
+        <div class="unit-meta">
+          <span class="unit-meta-item">
+            <i data-lucide="clock"></i>
+            ~25 min read
+          </span>
+          <span class="unit-meta-item">
+            <i data-lucide="briefcase"></i>
+            Practical guide
+          </span>
+        </div>
+      </header>
+
+      <div class="callout callout-question">
+        <div class="callout-title">Core Question</div>
+        <p class="mb-0">
+          How can AI tools transform your everyday professional and personal tasks—from
+          analyzing business data to helping your kids with homework—while you build the
+          skills to customize these tools for exactly what you need?
+        </p>
+      </div>
+
+      <!-- Introduction -->
+      <h2>Introduction: AI as Your Daily Companion</h2>
+
+      <p>
+        We've covered AI in clinical contexts—decision support, ambient scribes, image
+        generation for patient education. But the same tools that help you practice medicine
+        can transform how you handle everything else: the business side of your practice,
+        your continuing education, your personal projects, even helping your kids learn.
+      </p>
+
+      <p>
+        This module explores the everyday applications of AI that you might not have
+        considered. More importantly, it introduces you to building <em>custom AI tools</em>
+        that work exactly the way you want them to—no coding required.
+      </p>
+
+      <p>
+        Think of this module as expanding your toolkit. You've learned to use AI for
+        clinical questions. Now let's apply those same skills to everything else.
+      </p>
+
+      <hr>
+
+      <!-- Business and Professional Uses -->
+      <h2>Business and Professional Applications</h2>
+
+      <h3>Business Analysis: Finding Patterns in Data</h3>
+
+      <p>
+        Whether you're analyzing your practice's patient volume trends, reviewing quarterly
+        financials, or evaluating a potential investment, AI excels at pattern recognition
+        in business data.
+      </p>
+
+      <div class="example-card">
+        <div class="example-header">
+          <span class="example-number"><i data-lucide="trending-up"></i></span>
+          <h4 class="example-title">Example Use Cases</h4>
+        </div>
+        <ul>
+          <li>Upload your practice's monthly revenue data and ask for trend analysis</li>
+          <li>Compare this quarter's metrics to the same period last year</li>
+          <li>Identify which services are growing vs. declining</li>
+          <li>Analyze payer mix and reimbursement patterns</li>
+          <li>Forecast staffing needs based on historical volume</li>
+        </ul>
+      </div>
+
+      <div class="prompt-examples">
+        <div class="prompt-example good">
+          <div class="prompt-label"><i data-lucide="sparkles"></i> Sample Prompt</div>
+          <p>"I'm uploading 24 months of our practice's visit data. Please analyze: (1) overall volume trends, (2) seasonal patterns, (3) which visit types are growing fastest, and (4) any concerning declines I should investigate. Present findings with specific numbers and percentages."</p>
+        </div>
+      </div>
+
+      <h3>Contract Review: Spotting What Matters</h3>
+
+      <p>
+        Contracts are dense, boring, and full of language designed to protect the other
+        party. AI can help you identify the provisions that actually matter—though you
+        should always have important contracts reviewed by an attorney.
+      </p>
+
+      <div class="example-card">
+        <div class="example-header">
+          <span class="example-number"><i data-lucide="file-text"></i></span>
+          <h4 class="example-title">Contract Analysis Workflow</h4>
+        </div>
+        <ol>
+          <li>Upload the contract (redact sensitive information if needed)</li>
+          <li>Ask for a plain-language summary of key terms</li>
+          <li>Request identification of unusual or potentially problematic clauses</li>
+          <li>Compare terms against industry standards</li>
+          <li>Generate a list of questions to ask before signing</li>
+        </ol>
+      </div>
+
+      <div class="prompt-examples">
+        <div class="prompt-example good">
+          <div class="prompt-label"><i data-lucide="sparkles"></i> Sample Prompt</div>
+          <p>"This is a vendor agreement for our new EHR system. Please: (1) summarize the key terms in plain language, (2) identify any clauses that seem unusually favorable to the vendor, (3) highlight termination conditions and penalties, (4) note any automatic renewal provisions, and (5) list questions I should ask before signing."</p>
+        </div>
+      </div>
+
+      <div class="callout callout-warning">
+        <div class="callout-title">Important Limitation</div>
+        <p class="mb-0">
+          AI can help you understand contracts, but it cannot provide legal advice. For
+          employment agreements, partnership contracts, real estate transactions, or
+          anything with significant financial implications, always consult a qualified attorney.
+        </p>
+      </div>
+
+      <h3>Spreadsheet Creation: From Idea to Working Model</h3>
+
+      <p>
+        Need a budget tracker? A patient callback log? A scheduling template? AI can
+        build spreadsheets from scratch based on your description, complete with formulas.
+      </p>
+
+      <div class="example-card">
+        <div class="example-header">
+          <span class="example-number"><i data-lucide="table"></i></span>
+          <h4 class="example-title">What AI Can Build</h4>
+        </div>
+        <ul>
+          <li>Practice financial tracking with automatic calculations</li>
+          <li>CME credit trackers with expiration alerts</li>
+          <li>On-call schedules with rotation logic</li>
+          <li>Inventory management for supplies</li>
+          <li>Patient satisfaction survey analysis templates</li>
+        </ul>
+      </div>
+
+      <div class="prompt-examples">
+        <div class="prompt-example good">
+          <div class="prompt-label"><i data-lucide="sparkles"></i> Sample Prompt</div>
+          <p>"Create a Google Sheets template for tracking our practice's monthly expenses. Categories should include: rent, utilities, supplies, staffing, marketing, insurance, and miscellaneous. Include monthly totals, year-to-date calculations, and comparison to budget. Make it easy to add new expense entries."</p>
+        </div>
+      </div>
+
+      <h3>Marketing Copy: Finding Your Voice</h3>
+
+      <p>
+        Whether you're writing website copy, social media posts, or patient newsletters,
+        AI can help you draft, refine, and maintain a consistent voice—while ensuring
+        medical accuracy.
+      </p>
+
+      <div class="example-card">
+        <div class="example-header">
+          <span class="example-number"><i data-lucide="megaphone"></i></span>
+          <h4 class="example-title">Marketing Applications</h4>
+        </div>
+        <ul>
+          <li>Practice website "About Us" and service descriptions</li>
+          <li>Social media posts about health topics</li>
+          <li>Patient newsletter content</li>
+          <li>Provider bio updates</li>
+          <li>Community event announcements</li>
+          <li>Job posting descriptions</li>
+        </ul>
+      </div>
+
+      <div class="prompt-examples">
+        <div class="prompt-example good">
+          <div class="prompt-label"><i data-lucide="sparkles"></i> Sample Prompt</div>
+          <p>"Write a warm, professional 'About' section for our pediatric practice website. Key points to include: we've served [City] for 15 years, we prioritize same-day sick visits, we have evening hours twice a week, and we genuinely enjoy working with kids. Tone should be friendly and reassuring to parents, not corporate. About 150 words."</p>
+        </div>
+      </div>
+
+      <h3>Technical Documentation: Making Complex Things Clear</h3>
+
+      <p>
+        Need to document a process, create a training manual, or explain a technical
+        system? AI can transform your rough notes into clear, organized documentation.
+      </p>
+
+      <div class="example-card">
+        <div class="example-header">
+          <span class="example-number"><i data-lucide="book-open"></i></span>
+          <h4 class="example-title">Documentation Uses</h4>
+        </div>
+        <ul>
+          <li>Standard operating procedures for your practice</li>
+          <li>New employee onboarding guides</li>
+          <li>EHR workflow instructions for staff</li>
+          <li>Emergency protocols and decision trees</li>
+          <li>Patient intake process documentation</li>
+        </ul>
+      </div>
+
+      <hr>
+
+      <!-- Research and Learning -->
+      <h2>Research and Learning</h2>
+
+      <h3>Research Synthesis: Cutting Through the Literature</h3>
+
+      <p>
+        You've already learned about AI for clinical questions. The same approach works
+        for any research task—whether you're exploring a new investment, understanding
+        a policy issue, or diving into a personal interest.
+      </p>
+
+      <div class="prompt-examples">
+        <div class="prompt-example good">
+          <div class="prompt-label"><i data-lucide="sparkles"></i> Sample Prompt</div>
+          <p>"I'm considering installing solar panels on my home. Please summarize: (1) the current state of residential solar technology, (2) typical costs and payback periods, (3) available tax incentives, (4) pros and cons of leasing vs. buying, and (5) questions I should ask solar companies. Focus on practical decision-making factors."</p>
+        </div>
+      </div>
+
+      <h3>Email Tone Adjustment: Saying It Right</h3>
+
+      <p>
+        We all draft emails that feel too harsh, too casual, or just not quite right.
+        AI can help you recalibrate tone while preserving your message.
+      </p>
+
+      <div class="example-card">
+        <div class="example-header">
+          <span class="example-number"><i data-lucide="mail"></i></span>
+          <h4 class="example-title">Tone Adjustment Scenarios</h4>
+        </div>
+        <ul>
+          <li>Softening a direct message to a colleague</li>
+          <li>Making a casual draft more professional</li>
+          <li>Adding warmth to a formal communication</li>
+          <li>Being assertive without being aggressive</li>
+          <li>Diplomatic responses to difficult messages</li>
+        </ul>
+      </div>
+
+      <div class="prompt-examples">
+        <div class="prompt-example good">
+          <div class="prompt-label"><i data-lucide="sparkles"></i> Sample Prompt</div>
+          <p>"I need to email a colleague who keeps scheduling meetings during my clinic hours despite multiple requests to check my calendar. My draft feels too aggressive. Please help me rewrite it to be firm but professional, making clear this needs to stop while maintaining a positive working relationship."</p>
+        </div>
+      </div>
+
+      <h3>Brainstorming and Ideation</h3>
+
+      <p>
+        Sometimes you need a thinking partner. AI is surprisingly good at generating
+        ideas, offering alternative perspectives, and helping you think through complex
+        decisions.
+      </p>
+
+      <div class="prompt-examples">
+        <div class="prompt-example good">
+          <div class="prompt-label"><i data-lucide="sparkles"></i> Sample Prompt</div>
+          <p>"I'm planning a team appreciation event for our practice staff (12 people). Budget is $500. We want something memorable but not just another lunch. Our team is diverse in age (25-60) and interests. Generate 10 creative ideas, noting pros and cons of each."</p>
+        </div>
+      </div>
+
+      <hr>
+
+      <!-- Personal and Family Uses -->
+      <h2>Personal and Family Applications</h2>
+
+      <h3>Kids' Tutoring and Homework Help</h3>
+
+      <p>
+        AI makes an excellent tutor for your children—patient, always available, and
+        capable of explaining concepts multiple ways until they click. The key is using
+        it to teach, not just provide answers.
+      </p>
+
+      <div class="example-card">
+        <div class="example-header">
+          <span class="example-number"><i data-lucide="graduation-cap"></i></span>
+          <h4 class="example-title">Tutoring Best Practices</h4>
+        </div>
+        <ul>
+          <li>Ask AI to explain concepts, not just solve problems</li>
+          <li>Have it create practice problems similar to homework</li>
+          <li>Request step-by-step walkthroughs of example problems</li>
+          <li>Use it to check work and explain errors</li>
+          <li>Ask for real-world applications of abstract concepts</li>
+        </ul>
+      </div>
+
+      <div class="prompt-examples">
+        <div class="prompt-example good">
+          <div class="prompt-label"><i data-lucide="sparkles"></i> Sample Prompt</div>
+          <p>"My 10-year-old is struggling with long division. Please explain it step-by-step using simple language and a concrete example like dividing cookies among friends. Then create 5 practice problems at increasing difficulty, and explain how to check the answer."</p>
+        </div>
+      </div>
+
+      <div class="callout callout-info">
+        <div class="callout-title">Pro Tip: The Socratic Method</div>
+        <p class="mb-0">
+          Instead of asking AI to solve your child's homework, try: "My child got this
+          answer [X] for this problem [Y]. Without giving the correct answer, ask
+          guiding questions that will help them find their mistake." This builds
+          problem-solving skills rather than dependence.
+        </p>
+      </div>
+
+      <h3>Game Design and Creative Projects</h3>
+
+      <p>
+        AI can help design board games, card games, scavenger hunts, and other activities
+        for your kids. It's also great for collaborative storytelling and creative projects.
+      </p>
+
+      <div class="example-card">
+        <div class="example-header">
+          <span class="example-number"><i data-lucide="gamepad-2"></i></span>
+          <h4 class="example-title">Creative Project Ideas</h4>
+        </div>
+        <ul>
+          <li>Design a trivia game based on your family's interests</li>
+          <li>Create a scavenger hunt for a birthday party</li>
+          <li>Develop a "choose your own adventure" story together</li>
+          <li>Make educational games that teach while entertaining</li>
+          <li>Design challenges for family game night</li>
+        </ul>
+      </div>
+
+      <div class="prompt-examples">
+        <div class="prompt-example good">
+          <div class="prompt-label"><i data-lucide="sparkles"></i> Sample Prompt</div>
+          <p>"Help me design a simple card game to teach my 8-year-old about US geography. It should be playable in 15-20 minutes, work for 2-4 players, and include some element of strategy beyond pure luck. Provide complete rules and describe the cards I'd need to make."</p>
+        </div>
+      </div>
+
+      <hr>
+
+      <!-- Building Custom AI Tools -->
+      <h2>Building Custom AI Tools: Your Personal Assistants</h2>
+
+      <p>
+        Here's where it gets powerful. Instead of starting from scratch every time you
+        use AI, you can create custom tools pre-loaded with your context, preferences,
+        and expertise. All three major platforms offer this capability—and you don't
+        need to write a single line of code.
+      </p>
+
+      <h3>Claude Projects</h3>
+
+      <p>
+        Claude Projects let you create dedicated workspaces with custom instructions
+        and reference documents that persist across conversations.
+      </p>
+
+      <div class="tool-card">
+        <h4>How It Works</h4>
+        <ul>
+          <li><strong>Custom Instructions:</strong> Write system prompts that define how Claude should behave in this project—its role, expertise, constraints, and output format.</li>
+          <li><strong>Project Knowledge:</strong> Upload documents (up to 200,000 words total) that Claude can reference. These could be your practice protocols, style guides, reference materials, or past work.</li>
+          <li><strong>Persistent Context:</strong> Everything you upload stays with the project, available in every conversation.</li>
+        </ul>
+        <p><strong>Access:</strong> Available to Claude Pro subscribers ($20/month). Find it in the left sidebar under "Projects."</p>
+      </div>
+
+      <div class="example-card">
+        <div class="example-header">
+          <span class="example-number">1</span>
+          <h4 class="example-title">Example: Practice Policy Assistant</h4>
+        </div>
+        <p>Create a project with:</p>
+        <ul>
+          <li><strong>Instructions:</strong> "You are an expert on our practice's policies and procedures. Answer questions accurately based on uploaded documents. If a question isn't covered by the documents, say so clearly."</li>
+          <li><strong>Knowledge:</strong> Upload your employee handbook, clinical protocols, scheduling policies, and compliance documents.</li>
+          <li><strong>Use:</strong> Staff can ask questions like "What's our policy on patient no-shows?" and get accurate answers grounded in your actual policies.</li>
+        </ul>
+      </div>
+
+      <h3>Google Gems</h3>
+
+      <p>
+        Gems are custom AI personas in Gemini that you can create and share. They're
+        simpler than Claude Projects—just custom instructions, no document uploads—but
+        quick to create and easy to use.
+      </p>
+
+      <div class="tool-card">
+        <h4>How It Works</h4>
+        <ul>
+          <li><strong>Custom Instructions:</strong> Define the Gem's personality, expertise, and how it should respond.</li>
+          <li><strong>One-Click Access:</strong> Gems appear in your Gemini sidebar for instant access.</li>
+          <li><strong>Shareable:</strong> You can share Gems with colleagues (though they'll need Gemini access).</li>
+        </ul>
+        <p><strong>Access:</strong> Available to Gemini Advanced subscribers ($20/month). Click "Gem manager" in the sidebar to create.</p>
+      </div>
+
+      <div class="example-card">
+        <div class="example-header">
+          <span class="example-number">2</span>
+          <h4 class="example-title">Example: Writing Style Editor</h4>
+        </div>
+        <p>Create a Gem with instructions like:</p>
+        <p><em>"You are my personal writing editor. Your job is to improve my drafts while maintaining my voice. I write in a conversational but professional style. Make suggestions to improve clarity and flow, but don't make my writing sound generic or corporate. Point out anything unclear and suggest specific improvements."</em></p>
+      </div>
+
+      <h3>OpenAI Custom GPTs</h3>
+
+      <p>
+        Custom GPTs are the most full-featured option, allowing custom instructions,
+        document uploads, and even connections to external tools.
+      </p>
+
+      <div class="tool-card">
+        <h4>How It Works</h4>
+        <ul>
+          <li><strong>Custom Instructions:</strong> Define the GPT's behavior, constraints, and output style.</li>
+          <li><strong>Knowledge Files:</strong> Upload documents the GPT can reference (PDFs, text files, spreadsheets).</li>
+          <li><strong>Capabilities:</strong> Enable or disable web browsing, image generation, and code execution.</li>
+          <li><strong>Actions:</strong> For advanced users, connect to external APIs and services.</li>
+          <li><strong>Publishing:</strong> Keep private, share via link, or publish to the GPT Store.</li>
+        </ul>
+        <p><strong>Access:</strong> Available to ChatGPT Plus subscribers ($20/month). Click "Explore GPTs" then "Create" to build your own.</p>
+      </div>
+
+      <div class="example-card">
+        <div class="example-header">
+          <span class="example-number">3</span>
+          <h4 class="example-title">Example: Patient Education Writer</h4>
+        </div>
+        <p>Create a Custom GPT with:</p>
+        <ul>
+          <li><strong>Instructions:</strong> "You create patient education materials at a 6th-grade reading level. Always include: a clear explanation of the condition, what patients should do, warning signs to watch for, and when to call the office. Use short sentences and bullet points. Avoid medical jargon—if you must use a technical term, define it."</li>
+          <li><strong>Knowledge:</strong> Upload examples of patient education materials you've liked.</li>
+          <li><strong>Use:</strong> Ask "Create a handout about managing Type 2 diabetes at home" and get consistent, appropriately-leveled content every time.</li>
+        </ul>
+      </div>
+
+      <hr>
+
+      <!-- Comparison Table -->
+      <h2>Choosing the Right Platform for Custom Tools</h2>
+
+      <div class="comparison-table-wrapper">
+        <table class="comparison-table">
+          <thead>
+            <tr>
+              <th>Feature</th>
+              <th>Claude Projects</th>
+              <th>Google Gems</th>
+              <th>Custom GPTs</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Custom Instructions</td>
+              <td>Yes</td>
+              <td>Yes</td>
+              <td>Yes</td>
+            </tr>
+            <tr>
+              <td>Document Uploads</td>
+              <td>Yes (200K words)</td>
+              <td>No</td>
+              <td>Yes</td>
+            </tr>
+            <tr>
+              <td>Image Generation</td>
+              <td>No</td>
+              <td>Yes</td>
+              <td>Yes (can enable)</td>
+            </tr>
+            <tr>
+              <td>Web Browsing</td>
+              <td>Yes (in conversation)</td>
+              <td>Yes</td>
+              <td>Yes (can enable)</td>
+            </tr>
+            <tr>
+              <td>Sharing</td>
+              <td>Team features</td>
+              <td>Yes</td>
+              <td>Link or public</td>
+            </tr>
+            <tr>
+              <td>Best For</td>
+              <td>Document-heavy projects</td>
+              <td>Quick custom personas</td>
+              <td>Feature-rich tools</td>
+            </tr>
+            <tr>
+              <td>Cost</td>
+              <td>$20/month (Pro)</td>
+              <td>$20/month (Advanced)</td>
+              <td>$20/month (Plus)</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <hr>
+
+      <!-- Getting Started -->
+      <h2>Getting Started: Your First Custom Tool</h2>
+
+      <p>
+        The best way to learn is to build something useful. Here's a simple project to
+        get you started.
+      </p>
+
+      <h3>Project: Personal Writing Assistant</h3>
+
+      <p>
+        Create a custom tool that edits your writing in your voice. This is useful
+        because the default AI style often sounds generic—a personal assistant learns
+        your preferences.
+      </p>
+
+      <div class="example-card">
+        <div class="example-header">
+          <span class="example-number"><i data-lucide="pen-tool"></i></span>
+          <h4 class="example-title">Step-by-Step Setup</h4>
+        </div>
+        <ol>
+          <li><strong>Choose your platform:</strong> Claude Projects for document-heavy work, Gems for simplicity, Custom GPTs for advanced features.</li>
+          <li><strong>Write your instructions:</strong> Start simple. Describe how you like to write, what you want preserved, and what you want improved.</li>
+          <li><strong>Test with real work:</strong> Paste something you've written and see how the tool responds.</li>
+          <li><strong>Refine based on results:</strong> If the output isn't quite right, adjust your instructions. This is iterative.</li>
+          <li><strong>Add reference materials:</strong> (If using Claude Projects or Custom GPTs) Upload examples of writing you like—yours or others'.</li>
+        </ol>
+      </div>
+
+      <div class="prompt-examples">
+        <div class="prompt-example best">
+          <div class="prompt-label"><i data-lucide="star"></i> Starter Instructions Template</div>
+          <p>"You are my personal writing editor. Help me improve my drafts while keeping my voice intact.<br><br>
+          <strong>My style preferences:</strong><br>
+          - I prefer active voice over passive<br>
+          - I like conversational but professional tone<br>
+          - I use short sentences and short paragraphs<br>
+          - I dislike corporate jargon and buzzwords<br><br>
+          <strong>When editing:</strong><br>
+          - Point out unclear passages and suggest specific improvements<br>
+          - Flag redundant phrases<br>
+          - Suggest stronger verbs when I've used weak ones<br>
+          - Don't make my writing sound generic<br><br>
+          <strong>Output format:</strong><br>
+          - Show the edited version first<br>
+          - Then list the key changes you made and why"</p>
+        </div>
+      </div>
+
+      <hr>
+
+      <!-- Key Takeaways -->
+      <h2>Key Takeaways</h2>
+
+      <div class="key-points-grid">
+        <div class="key-point-card">
+          <h4>AI Applies Everywhere</h4>
+          <p>The skills you've built for clinical AI transfer directly to business, research, and personal tasks.</p>
+        </div>
+        <div class="key-point-card">
+          <h4>Start with Real Problems</h4>
+          <p>The best AI applications solve problems you actually have—contracts you need to review, emails you need to write.</p>
+        </div>
+        <div class="key-point-card">
+          <h4>Custom Tools Are Powerful</h4>
+          <p>Projects, Gems, and Custom GPTs let you build AI assistants tailored to your exact needs—no coding required.</p>
+        </div>
+        <div class="key-point-card">
+          <h4>Teaching Beats Answering</h4>
+          <p>When helping kids, use AI to explain and guide rather than just provide answers. Build skills, not dependence.</p>
+        </div>
+        <div class="key-point-card">
+          <h4>Iterate on Instructions</h4>
+          <p>Custom tools improve with refinement. Start simple, test with real work, and adjust based on results.</p>
+        </div>
+        <div class="key-point-card">
+          <h4>Verify Important Outputs</h4>
+          <p>AI is a starting point, not a final answer—especially for contracts, financial analysis, and anything consequential.</p>
+        </div>
+      </div>
+
+      <div class="callout callout-principle">
+        <div class="callout-title">The Bottom Line</div>
+        <p class="mb-0">
+          AI isn't just for clinical work. The same tools and skills you've developed
+          throughout this course apply to every aspect of your professional and personal
+          life. The real power comes when you stop using generic AI and start building
+          custom tools that know your context, preferences, and needs. That's when AI
+          transforms from an occasional helper into a daily companion.
+        </p>
+      </div>
+
+      <!-- Learning Objectives -->
+      <div class="objectives phase-2">
+        <h4 class="objectives-title">Learning Objectives</h4>
+        <ul class="objectives-list">
+          <li>Apply AI tools to common business tasks including contract review, data analysis, and marketing</li>
+          <li>Use AI effectively for research synthesis, email communication, and brainstorming</li>
+          <li>Leverage AI as a teaching tool for children's education without creating dependence</li>
+          <li>Create custom AI tools using Claude Projects, Google Gems, or Custom GPTs</li>
+          <li>Write effective custom instructions that capture your preferences and expertise</li>
+          <li>Choose the appropriate platform for different types of custom AI tools</li>
+        </ul>
+      </div>
+
+      <!-- Page Navigation -->
+      <nav class="page-nav">
+        <a href="module-11.html" class="page-nav-link prev">
+          <span class="page-nav-arrow"><i data-lucide="arrow-left"></i></span>
+          <div>
+            <span class="page-nav-label">Previous</span>
+            <span class="page-nav-title">Module 11: AI Image and Video Creation</span>
+          </div>
+        </a>
+        <a href="bonus-vibe-coding.html" class="page-nav-link next">
+          <span class="page-nav-arrow"><i data-lucide="arrow-right"></i></span>
+          <div>
+            <span class="page-nav-label">Next</span>
+            <span class="page-nav-title">Bonus: Vibe Coding</span>
+          </div>
+        </a>
+      </nav>
+
+    </article>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div><strong>AI 101</strong> · A Self-Paced Guide to AI in Medicine</div>
+      <div>v1.0 · 2025</div>
+    </div>
+  </footer>
+
+  <script>
+    lucide.createIcons();
+    const navToggle = document.querySelector('.nav-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    if (navToggle) {
+      navToggle.addEventListener('click', () => {
+        navLinks.classList.toggle('nav-open');
+      });
+    }
+  </script>
+
+</body>
+</html>

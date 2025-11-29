@@ -1,0 +1,1273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bonus Module: Vibe Coding—Building Software Without Writing Code | AI 101</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-brand">
+        <span class="nav-badge">AI 101</span>
+        <span class="nav-title">A Self-Paced Guide to AI in Medicine</span>
+      </a>
+      <button class="nav-toggle" aria-label="Toggle menu">
+        <i data-lucide="menu"></i>
+      </button>
+      <div class="nav-links">
+        <a href="index.html" class="nav-link">Modules</a>
+        <!-- <a href="resources.html" class="nav-link">Resources</a> -->
+        <a href="about.html" class="nav-link">About</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="main">
+    <article class="content content-wide">
+
+      <header class="unit-header">
+        <span class="unit-label bonus">PHASE II · BONUS MODULE</span>
+        <h1 class="unit-title">Vibe Coding</h1>
+        <p class="unit-subtitle">
+          Building software without writing code: what it is, how to get started,
+          where it works brilliantly, and where it fails spectacularly.
+        </p>
+        <div class="unit-meta">
+          <span class="unit-meta-item">
+            <i data-lucide="clock"></i>
+            ~30 min read
+          </span>
+          <span class="unit-meta-item">
+            <i data-lucide="sparkles"></i>
+            Experimental
+          </span>
+        </div>
+      </header>
+
+      <div class="callout callout-warning">
+        <div class="callout-title">Fair Warning</div>
+        <p class="mb-0">
+          This module is more speculative than our core curriculum. Vibe coding is
+          evolving weekly. What we describe here will likely look different in six
+          months. But that's precisely why it's worth understanding now—these tools
+          are shaping how software gets built, and they're accessible to you today.
+        </p>
+      </div>
+
+      <!-- Introduction -->
+      <h2>Introduction: When English Became a Programming Language</h2>
+
+      <p>
+        In February 2025, Andrej Karpathy—former AI director at Tesla and co-founder
+        of OpenAI—posted a tweet that would crystallize something happening across
+        the software world:
+      </p>
+
+      <blockquote class="pull-quote">
+        "There's a new kind of coding I call 'vibe coding', where you fully give in
+        to the vibes, embrace exponentials, and forget that the code even exists."
+      </blockquote>
+
+      <p>
+        The post went viral, viewed over 4.5 million times. Within weeks, major
+        publications from the New York Times to Ars Technica were covering it. By
+        March, Merriam-Webster had added the term to their trending vocabulary.
+        A new paradigm had a name.
+      </p>
+
+      <p>
+        But Karpathy wasn't announcing something new—he was naming something that
+        had been emerging for years. Since 2023, he'd been saying "the hottest new
+        programming language is English." Now, tools had finally caught up to the vision.
+      </p>
+
+      <p>
+        This module is about that shift. We'll explore what vibe coding actually is
+        (and isn't), how to get started with tools like Replit and Lovable, where it
+        works brilliantly, where it fails spectacularly, and how to think about it as
+        a tool in your toolkit rather than a magic wand.
+      </p>
+
+      <hr>
+
+      <!-- Part 1 -->
+      <h2>Part 1: What Vibe Coding Actually Is</h2>
+
+      <h3>The Core Idea</h3>
+
+      <p>
+        Traditional programming requires learning specific languages with precise syntax.
+        Python cares about indentation. JavaScript requires semicolons in certain contexts.
+        A misplaced character breaks everything.
+      </p>
+
+      <p>
+        Vibe coding flips this entirely. You describe what you want in plain English.
+        An AI translates your description into working code. You test it, provide feedback,
+        and iterate—all without necessarily reading or understanding the code itself.
+      </p>
+
+      <p>Here's Karpathy's original description of how he worked:</p>
+
+      <blockquote class="pull-quote">
+        "I ask for the dumbest things like 'decrease the padding on the sidebar by half'
+        because I'm too lazy to find it. I 'Accept All' always, I don't read the diffs
+        anymore. When I get error messages I just copy paste them in with no comment,
+        usually that fixes it."
+      </blockquote>
+
+      <p>
+        That's pure vibe coding—directing the AI through conversation, accepting its
+        output wholesale, treating errors as feedback to relay back. The code is an
+        artifact you don't examine, just test.
+      </p>
+
+      <h3>What It Isn't</h3>
+
+      <p>
+        This distinction matters: <strong>vibe coding is not the same as using AI to
+        help you code.</strong>
+      </p>
+
+      <p>
+        Professional developers use AI tools like GitHub Copilot every day. But they
+        review every suggestion. They understand why the code works. They test it
+        rigorously. They consider security, performance, and maintainability.
+      </p>
+
+      <p>
+        If you're reviewing, testing, and understanding the code an AI writes for you,
+        that's AI-assisted development. That's good practice.
+      </p>
+
+      <p>
+        Vibe coding is specifically the "hands-off" approach—building software without
+        deeply engaging with the underlying code. It's what Simon Willison called
+        "forgetting that the code even exists."
+      </p>
+
+      <p>
+        This distinction isn't pedantic. It determines what vibe coding is good for
+        and where it's dangerous.
+      </p>
+
+      <h3>The Spectrum of AI-Assisted Development</h3>
+
+      <p>Think of it as a spectrum:</p>
+
+      <div class="spectrum-grid">
+        <div class="spectrum-item">
+          <h4>Traditional Coding</h4>
+          <p>You write every line manually, perhaps with autocomplete.</p>
+        </div>
+        <div class="spectrum-item">
+          <h4>AI-Assisted Coding</h4>
+          <p>AI suggests code, you review and modify it. GitHub Copilot in "autocomplete" mode.</p>
+        </div>
+        <div class="spectrum-item">
+          <h4>Agent-Assisted Development</h4>
+          <p>AI generates larger code blocks or entire features. You review architecture and implementation. Tools like Cursor or Claude in agent mode.</p>
+        </div>
+        <div class="spectrum-item highlight">
+          <h4>Vibe Coding</h4>
+          <p>AI generates the application. You guide through conversation, test output, and iterate without engaging with code directly. Tools like Replit Agent, Lovable, or Bolt.new.</p>
+        </div>
+      </div>
+
+      <p>
+        None of these is inherently "better"—they serve different purposes. A surgeon
+        and a home cook both use knives; they just need different approaches to safety
+        and precision.
+      </p>
+
+      <hr>
+
+      <!-- Part 2 -->
+      <h2>Part 2: A Brief History of Building Without Code</h2>
+
+      <h3>The Long Dream</h3>
+
+      <p>
+        People have been trying to make programming more accessible since programming
+        began. Every generation has had its "programming will become like writing English"
+        prediction.
+      </p>
+
+      <p>
+        In the 1990s, visual programming tools like Microsoft Access and Visual Basic let
+        people build applications by dragging components around. In the 2000s, tools like
+        Dreamweaver attempted to make web development visual. The 2010s brought platforms
+        like Squarespace and Wix for websites, and Airtable and Notion for database-backed
+        applications.
+      </p>
+
+      <p>
+        These tools succeeded within narrow domains but always hit limits. Want something
+        custom? Learn to code.
+      </p>
+
+      <h3>The AI Inflection</h3>
+
+      <p>
+        Large language models changed the equation. When GPT-3 emerged in 2020, people
+        quickly discovered it could write functional code. Not perfectly—it hallucinated
+        functions that didn't exist and made basic errors—but it <em>worked</em> for
+        simple tasks.
+      </p>
+
+      <p>
+        By 2022, GitHub Copilot was helping millions of developers write code faster.
+        By 2023, tools like ChatGPT could generate entire small programs from descriptions.
+        The code wasn't production-ready, but it was usable.
+      </p>
+
+      <p>
+        Then models got better. Claude, GPT-4, and their successors could handle more
+        complex architectures, maintain context across longer conversations, and produce
+        code that actually ran.
+      </p>
+
+      <h3>The Platform Wave (2024-2025)</h3>
+
+      <p>
+        The tools we'll focus on in this module emerged from recognizing that
+        conversational AI alone wasn't enough. Building real applications requires
+        infrastructure: hosting, databases, authentication, deployment. Asking ChatGPT
+        to generate code is one thing—getting that code running on the internet is another.
+      </p>
+
+      <p>
+        <strong>Replit</strong> had been a browser-based coding environment since 2016.
+        They added AI assistance, then an AI "Agent" that could not only write code but
+        also configure environments, install dependencies, set up databases, and deploy
+        applications. Suddenly, the whole pipeline was AI-assisted. By late 2025, they
+        released "Agent 3" with autonomous testing capabilities—the AI could test its
+        own work and fix issues it discovered.
+      </p>
+
+      <p>
+        <strong>Lovable</strong> (originally called GPT Engineer) took a different approach:
+        start from the assumption that users don't want to see code at all. Describe your
+        app, watch it appear, click to edit elements visually, chat to refine functionality.
+        Their rapid growth—reportedly reaching significant revenue within months of
+        launch—demonstrated demand for this approach.
+      </p>
+
+      <p>
+        Other players entered the space: Bolt.new from the StackBlitz team, Cursor with
+        its agent mode for developers who want more control, v0 from Vercel for frontend
+        components. Each carved different niches based on user technical level and use case.
+      </p>
+
+      <p>
+        These platforms didn't just add AI to coding—they reimagined who the "builder"
+        could be.
+      </p>
+
+      <h3>The Y Combinator Signal</h3>
+
+      <div class="callout callout-info">
+        <div class="callout-title">A Startup Accelerator's Data Point</div>
+        <p class="mb-0">
+          In March 2025, Y Combinator—the legendary startup accelerator—reported that
+          <strong>25% of companies in their Winter 2025 batch had codebases that were
+          95% AI-generated</strong>. This wasn't specifically vibe coding (some used
+          AI-assisted development with heavy review), but it signaled a fundamental
+          shift in how startups approach software development.
+        </p>
+      </div>
+
+      <p>
+        The implications split observers. Optimists saw democratized entrepreneurship:
+        founders could test ideas without hiring expensive engineering teams. Skeptics
+        worried about technical debt, security vulnerabilities, and a generation of
+        companies built on foundations their founders didn't understand.
+      </p>
+
+      <p>Both perspectives contain truth. The experiment is ongoing.</p>
+
+      <hr>
+
+      <!-- Part 3 -->
+      <h2>Part 3: Getting Started with Replit</h2>
+
+      <h3>What Replit Is</h3>
+
+      <p>
+        <a href="https://replit.com" target="_blank">Replit</a> is a browser-based
+        development environment. Think of it as VS Code that runs in your browser,
+        with AI assistance built in, plus hosting, databases, and deployment all
+        included. You can build, run, and publish applications without installing
+        anything locally.
+      </p>
+
+      <p>
+        Their "Replit Agent" is specifically designed for vibe coding: you describe
+        what you want to build, and the Agent creates the project structure, writes
+        the code, configures the database, and deploys it—all through conversation.
+      </p>
+
+      <h3>Setting Up</h3>
+
+      <div class="workflow-phases">
+        <div class="workflow-phase">
+          <h4><i data-lucide="user-plus"></i> Step 1: Create Account</h4>
+          <p>
+            Go to <a href="https://replit.com" target="_blank">replit.com</a> and
+            create an account. You can start with the free tier to explore.
+          </p>
+        </div>
+        <div class="workflow-phase">
+          <h4><i data-lucide="message-square"></i> Step 2: Find the Agent</h4>
+          <p>
+            On the homepage, you'll see a text input that says something like
+            "What do you want to build?" This is the Agent interface.
+          </p>
+        </div>
+        <div class="workflow-phase">
+          <h4><i data-lucide="pen-tool"></i> Step 3: Describe Your Project</h4>
+          <p>Describe your project in plain English. For example:</p>
+          <ul>
+            <li>"Build a simple to-do list app where I can add tasks, mark them complete, and delete them"</li>
+            <li>"Create a personal budget tracker that lets me log expenses by category and shows me spending charts"</li>
+            <li>"Build a guest book for my website where visitors can leave messages"</li>
+          </ul>
+        </div>
+      </div>
+
+      <h3>The Workflow</h3>
+
+      <p>
+        After you submit your description, the Agent proposes a plan. It outlines
+        what it intends to build, which technologies it will use, and what features
+        it will include.
+      </p>
+
+      <p>
+        <strong>Review the plan.</strong> This is your chance to say "Actually, I also
+        want X" or "I don't need Y." The more specific you are upfront, the better
+        your results.
+      </p>
+
+      <p>
+        Once you approve the plan, the Agent starts building. You'll see it creating
+        files, installing dependencies, and writing code. This takes a few minutes
+        for simple applications.
+      </p>
+
+      <p>
+        When it finishes, you get a preview of your running application. Test it.
+        Click around. Try to break it.
+      </p>
+
+      <h3>Iterating Through Conversation</h3>
+
+      <p>Found something you want to change? Just tell the Agent:</p>
+
+      <ul>
+        <li>"Make the buttons blue instead of gray"</li>
+        <li>"Add a way to sort tasks by date"</li>
+        <li>"The delete button doesn't work when I click it"</li>
+      </ul>
+
+      <p>
+        For bugs, you can often just paste error messages. The Agent will attempt
+        to diagnose and fix them.
+      </p>
+
+      <div class="callout callout-tip">
+        <div class="callout-title">Key Insight</div>
+        <p class="mb-0">
+          Treat the Agent like a new employee who's technically skilled but unfamiliar
+          with your preferences. Be specific about what you want. When something doesn't
+          work, describe the <em>behavior</em> you expected versus what happened.
+        </p>
+      </div>
+
+      <h3>Pricing Reality</h3>
+
+      <p>
+        The free Starter plan lets you explore with limited AI usage (a trial of the
+        Agent) and public projects only. For serious building, you'll want Replit Core
+        at $20-25/month, which includes $25 in monthly credits for AI usage, private
+        projects, and deployment capabilities.
+      </p>
+
+      <p>
+        Credits are consumed based on complexity—simple changes cost less than generating
+        entire features. The credit system can feel unpredictable at first, so start
+        with smaller projects to calibrate your expectations.
+      </p>
+
+      <h3>When Replit Works Well</h3>
+
+      <ul>
+        <li><strong>Prototypes:</strong> Test an idea quickly before investing in development</li>
+        <li><strong>Internal tools:</strong> Build simple dashboards or utilities for yourself or your team</li>
+        <li><strong>Learning:</strong> See how applications are structured without writing code</li>
+        <li><strong>Personal projects:</strong> That recipe tracker you've always wanted? Build it.</li>
+      </ul>
+
+      <h3>Practical Tips for Replit Success</h3>
+
+      <div class="best-practices-grid">
+        <div class="practice-card">
+          <h4>Be Iterative, Not Comprehensive</h4>
+          <p>
+            Don't try to describe your entire application upfront. Start with the
+            core feature, get it working, then add complexity.
+          </p>
+        </div>
+        <div class="practice-card">
+          <h4>Use Screenshots and Examples</h4>
+          <p>
+            The Agent understands images. If you have a rough sketch of what you
+            want, upload it. If there's an existing app that does something similar,
+            share a screenshot.
+          </p>
+        </div>
+        <div class="practice-card">
+          <h4>Learn the Rollback Feature</h4>
+          <p>
+            Replit keeps history of changes. When the Agent makes things worse
+            (and it will), you can roll back to a working state.
+          </p>
+        </div>
+        <div class="practice-card">
+          <h4>Check the Deployed Version</h4>
+          <p>
+            Sometimes things work in the development preview but break when deployed.
+            Test both.
+          </p>
+        </div>
+      </div>
+
+      <h3>Where Replit Gets Tricky</h3>
+
+      <ul>
+        <li><strong>Complex applications:</strong> Multiple interconnected features often confuse the Agent</li>
+        <li><strong>Specific requirements:</strong> "Make it look exactly like this design" may take many iterations</li>
+        <li><strong>Production-critical work:</strong> Security and reliability need human verification</li>
+        <li><strong>Third-party integrations:</strong> Connecting to external APIs often requires more manual intervention</li>
+        <li><strong>Custom business logic:</strong> Unusual workflows that the AI hasn't seen in training data</li>
+      </ul>
+
+      <hr>
+
+      <!-- Part 4 -->
+      <h2>Part 4: Getting Started with Lovable</h2>
+
+      <h3>What Lovable Is</h3>
+
+      <p>
+        <a href="https://lovable.dev" target="_blank">Lovable</a> takes a more visual
+        approach to vibe coding. Where Replit gives you a coding environment with AI
+        assistance, Lovable feels more like describing a website to someone who builds
+        it as you speak.
+      </p>
+
+      <p>
+        The core premise: describe your app, watch it appear, click on elements to edit
+        them visually, and chat to refine functionality. It uses React for the frontend
+        and integrates with Supabase for backend services (database, authentication).
+      </p>
+
+      <h3>Setting Up</h3>
+
+      <div class="workflow-phases">
+        <div class="workflow-phase">
+          <h4><i data-lucide="user-plus"></i> Step 1: Create Account</h4>
+          <p>
+            Go to <a href="https://lovable.dev" target="_blank">lovable.dev</a> and
+            create an account. The free tier gives you 5 credits per day—enough to
+            experiment but not enough for sustained building.
+          </p>
+        </div>
+        <div class="workflow-phase">
+          <h4><i data-lucide="pen-tool"></i> Step 2: Describe Your App</h4>
+          <p>You're immediately in the creation interface. Describe what you want:</p>
+          <ul>
+            <li>"Create a recipe tracking app where users can log in and save their own recipes"</li>
+            <li>"Build a landing page for my consulting business with a contact form"</li>
+            <li>"Make a simple flashcard app for studying vocabulary"</li>
+          </ul>
+        </div>
+      </div>
+
+      <h3>The Workflow</h3>
+
+      <p>
+        Lovable generates your application and shows you a live preview. Unlike Replit,
+        you're primarily interacting through the visual preview rather than seeing code.
+      </p>
+
+      <p>
+        Click on any element to select it. A sidebar appears where you can adjust
+        properties visually—colors, text, spacing—without writing CSS.
+      </p>
+
+      <p>
+        For functional changes, use the chat: "Add a search bar that filters recipes
+        by ingredient."
+      </p>
+
+      <h3>The Supabase Connection</h3>
+
+      <p>
+        For applications that need to save data (most useful apps), Lovable integrates
+        with <a href="https://supabase.com" target="_blank">Supabase</a>—a
+        backend-as-a-service platform. This connection handles:
+      </p>
+
+      <ul>
+        <li><strong>Database:</strong> Where your app stores information</li>
+        <li><strong>Authentication:</strong> User login and registration</li>
+        <li><strong>File storage:</strong> Uploading images, documents, etc.</li>
+      </ul>
+
+      <p>
+        Setting this up requires creating a Supabase account (free tier available)
+        and connecting it to your Lovable project. The first time, this feels
+        complicated. The second time, it takes five minutes.
+      </p>
+
+      <h3>Pricing Reality</h3>
+
+      <p>
+        The free tier gives you 5 credits per day (resetting at midnight UTC), public
+        projects only, and a Lovable badge on your apps. This is sufficient for
+        exploration but not for building anything serious.
+      </p>
+
+      <p>
+        The Pro plan at $25/month gives you 100 monthly credits (plus extra daily
+        credits), private projects, custom domains, and the ability to remove Lovable
+        branding. Credits roll over if unused.
+      </p>
+
+      <h3>When Lovable Works Well</h3>
+
+      <ul>
+        <li><strong>Frontend-focused applications:</strong> Lovable excels at visual interfaces</li>
+        <li><strong>Landing pages and marketing sites:</strong> Quick, professional-looking results</li>
+        <li><strong>Prototypes for stakeholder feedback:</strong> "Let me show you what I'm thinking"</li>
+        <li><strong>Simple CRUD apps:</strong> Create, read, update, delete—the bread and butter of web applications</li>
+      </ul>
+
+      <h3>Practical Tips for Lovable Success</h3>
+
+      <div class="best-practices-grid">
+        <div class="practice-card">
+          <h4>Use "Chat Mode" for Planning</h4>
+          <p>
+            Before building, spend some credits in chat mode to discuss your app
+            architecture. This costs less than generating code you'll have to revise.
+          </p>
+        </div>
+        <div class="practice-card">
+          <h4>Connect Supabase Early</h4>
+          <p>
+            If your app needs to save data, set up the Supabase connection before
+            building features. Retrofitting is harder than building with it from the start.
+          </p>
+        </div>
+        <div class="practice-card">
+          <h4>Visual Edit for Small Tweaks</h4>
+          <p>
+            The visual editor is great for colors, spacing, and text. For structural
+            changes, describe them in chat.
+          </p>
+        </div>
+        <div class="practice-card">
+          <h4>Use the Knowledge Base</h4>
+          <p>
+            Document your app's purpose, user types, and key design decisions. This
+            helps the AI maintain consistency.
+          </p>
+        </div>
+      </div>
+
+      <h3>Where Lovable Gets Tricky</h3>
+
+      <ul>
+        <li><strong>Backend-heavy logic:</strong> Complex business rules require more manual work</li>
+        <li><strong>Debugging:</strong> When something breaks, identifying why can be frustrating</li>
+        <li><strong>Scaling up:</strong> Adding features to a large codebase can confuse the AI</li>
+        <li><strong>Credit consumption surprises:</strong> Complex requests can burn through credits quickly</li>
+        <li><strong>Mobile responsiveness:</strong> Sometimes requires extra iterations to get right</li>
+      </ul>
+
+      <hr>
+
+      <!-- Part 5 -->
+      <h2>Part 5: Choosing Between Tools</h2>
+
+      <p>
+        With both Replit and Lovable introduced, a natural question emerges: which
+        should you use?
+      </p>
+
+      <h3>Replit is Better When:</h3>
+
+      <ul>
+        <li><strong>You might want to see the code eventually.</strong> Replit doesn't hide the code—it's right there in the editor. If you're curious about how things work, Replit makes that accessible.</li>
+        <li><strong>Your project needs server-side logic.</strong> Background jobs, scheduled tasks, complex API integrations—Replit handles backend development more naturally.</li>
+        <li><strong>You want an all-in-one environment.</strong> Everything lives in one place: code, preview, database, deployment, version control.</li>
+        <li><strong>You're building something that needs to scale.</strong> Replit's reserved VM options handle growth better for complex applications.</li>
+      </ul>
+
+      <h3>Lovable is Better When:</h3>
+
+      <ul>
+        <li><strong>You genuinely don't want to see code.</strong> If looking at JavaScript makes your eyes glaze over, Lovable's visual-first approach is more comfortable.</li>
+        <li><strong>Your project is primarily frontend.</strong> Landing pages, marketing sites, form-based applications—places where the visual design matters most.</li>
+        <li><strong>You have a clear visual reference.</strong> Lovable excels when you can say "I want something like this screenshot" and iterate visually.</li>
+        <li><strong>Rapid iteration on design is the priority.</strong> Clicking and dragging to adjust layouts is faster than describing changes textually.</li>
+      </ul>
+
+      <h3>The Honest Answer</h3>
+
+      <p>
+        For complete beginners, both work. Try each with a simple project—a to-do list
+        or personal homepage—and see which interaction style fits you better. The best
+        tool is the one you'll actually use.
+      </p>
+
+      <p>
+        For many projects, you might use both: Lovable to rapidly prototype the interface,
+        then rebuild in Replit (or proper development tools) when the concept is validated
+        and you need more robust infrastructure.
+      </p>
+
+      <hr>
+
+      <!-- Part 6 -->
+      <h2>Part 6: The Shared Workflow—Vibe Coding in Practice</h2>
+
+      <p>
+        Whether you use Replit, Lovable, or other tools, vibe coding follows a similar pattern:
+      </p>
+
+      <h3>1. Start with a Clear Description</h3>
+
+      <p>
+        The better you describe what you want, the closer you'll get on the first try.
+        But "better" doesn't mean longer—it means clearer.
+      </p>
+
+      <div class="prompt-examples">
+        <div class="prompt-example bad">
+          <div class="prompt-label"><i data-lucide="x-circle"></i> Weak Prompt</div>
+          <p>"Build me an app"</p>
+        </div>
+        <div class="prompt-example good">
+          <div class="prompt-label"><i data-lucide="check-circle"></i> Better Prompt</div>
+          <p>"Build a task management app where users can create tasks with due dates, mark them complete, and see overdue tasks highlighted in red"</p>
+        </div>
+        <div class="prompt-example best">
+          <div class="prompt-label"><i data-lucide="star"></i> Even Better</div>
+          <p>"Build a task management app with these features: (1) Users can add tasks with a title, description, and due date. (2) Tasks can be marked complete with a checkbox. (3) Overdue tasks show in red. (4) Users can filter to see only incomplete tasks. Use a clean, minimal design with a blue accent color."</p>
+        </div>
+      </div>
+
+      <p>
+        Notice we're being specific about <em>functionality</em> and <em>behavior</em>,
+        not about implementation details. We're not saying "use React with TypeScript
+        and Tailwind CSS." Let the AI make those choices—it's often better at them than we are.
+      </p>
+
+      <h3>2. Test Immediately</h3>
+
+      <p>
+        Don't approve elaborate plans and wait for the big reveal. Test after each
+        significant change. Vibe coding works best in small iterations:
+      </p>
+
+      <ul>
+        <li>Generate the basic structure → test it</li>
+        <li>Add feature A → test it</li>
+        <li>Add feature B → test it</li>
+      </ul>
+
+      <p>Catching problems early is much easier than unraveling a tangled mess.</p>
+
+      <h3>3. Describe Problems, Not Solutions</h3>
+
+      <p>
+        When something's wrong, describe what you <em>observed</em> versus what
+        you <em>expected</em>.
+      </p>
+
+      <div class="prompt-examples">
+        <div class="prompt-example bad">
+          <div class="prompt-label"><i data-lucide="x-circle"></i> Less Effective</div>
+          <p>"Fix the bug in the JavaScript"</p>
+        </div>
+        <div class="prompt-example good">
+          <div class="prompt-label"><i data-lucide="check-circle"></i> More Effective</div>
+          <p>"When I click the submit button, nothing happens. I expected it to save my task and show it in the list."</p>
+        </div>
+      </div>
+
+      <p>
+        The AI can often diagnose problems better than we can—if we give it good information.
+      </p>
+
+      <h3>4. Know When to Start Over</h3>
+
+      <p>
+        Sometimes the AI goes down a path that's hard to recover from. Features are
+        tangled together, changes create new bugs, and progress stalls.
+      </p>
+
+      <p>
+        This is where vibe coders differ from traditional developers. A traditional
+        developer debugs and refactors. A vibe coder might restart with a clearer
+        initial description—which is often faster.
+      </p>
+
+      <p>
+        This isn't failure; it's an intentional pattern. Karpathy mentioned working
+        around bugs or "asking for random changes until it goes away." It's not elegant,
+        but for throwaway projects, it works.
+      </p>
+
+      <h3>5. Export and Own Your Code</h3>
+
+      <p>
+        Both Replit and Lovable integrate with GitHub. Connect your projects to a
+        repository. This gives you:
+      </p>
+
+      <ul>
+        <li><strong>Backup:</strong> Your work isn't locked in a single platform</li>
+        <li><strong>Portability:</strong> You can take your code elsewhere if needed</li>
+        <li><strong>History:</strong> See how the project evolved</li>
+      </ul>
+
+      <p>
+        Even if you never read the code, having it safely stored elsewhere is insurance.
+      </p>
+
+      <hr>
+
+      <!-- Part 7 -->
+      <h2>Part 7: The Pitfalls—Where Vibe Coding Goes Wrong</h2>
+
+      <p>
+        Vibe coding has produced impressive demonstrations. A doctor building dashboards
+        in hours. Founders testing ideas in days instead of months. Kevin Roose, a New
+        York Times journalist with no coding background, built several small applications
+        through conversation.
+      </p>
+
+      <p>
+        But the failures are equally instructive—and often more informative about what
+        these tools actually are.
+      </p>
+
+      <h3>Security Vulnerabilities</h3>
+
+      <p>This is the most serious concern, and it's not theoretical.</p>
+
+      <div class="callout callout-warning">
+        <div class="callout-title">Real-World Example</div>
+        <p>
+          In 2025, a startup called Enrichlead launched a platform that was "100%
+          written by Cursor AI, zero hand-written code." Within days, security
+          researchers found it riddled with basic vulnerabilities—anyone could access
+          paid features or alter data. The project shut down.
+        </p>
+        <p class="mb-0">
+          A Veracode study tested 100 leading LLMs across 80 coding tasks. They
+          produced <strong>insecure code 45% of the time</strong>. No improvement
+          across newer or larger models.
+        </p>
+      </div>
+
+      <p>
+        Why? AI models are trained on internet code, which includes thousands of
+        examples of poor security practices. They optimize for "working" before "secure."
+        Common issues include:
+      </p>
+
+      <ul>
+        <li><strong>Missing input validation:</strong> The app accepts any input without checking it</li>
+        <li><strong>Exposed credentials:</strong> API keys visible in client-side code</li>
+        <li><strong>SQL injection vulnerabilities:</strong> Malicious inputs can access your database</li>
+        <li><strong>Authentication bypasses:</strong> Users can access data they shouldn't</li>
+      </ul>
+
+      <p>
+        For a personal to-do list that only you use? These probably don't matter.
+        For anything handling real user data? They're deal-breakers.
+      </p>
+
+      <h3>The "Black Box" Problem</h3>
+
+      <p>When code works, it feels like magic. When it breaks, you're staring at a black box.</p>
+
+      <p>
+        Traditional debugging involves understanding what the code <em>does</em>,
+        hypothesizing what went <em>wrong</em>, and testing your hypothesis. Vibe-coded
+        applications short-circuit this process—you don't understand what the code does.
+      </p>
+
+      <p>Your options become:</p>
+
+      <ol>
+        <li>Ask the AI to fix it (sometimes works)</li>
+        <li>Describe the problem repeatedly in different ways (frustrating)</li>
+        <li>Start over (sometimes the fastest path)</li>
+        <li>Learn enough to read the code and fix it yourself (at which point you've left "vibe coding")</li>
+      </ol>
+
+      <h3>Technical Debt Accumulation</h3>
+
+      <p>
+        AI-generated code often works but isn't well-organized. Functions do multiple
+        things. Naming is inconsistent. Logic is duplicated instead of shared.
+      </p>
+
+      <p>
+        For a weekend project, this doesn't matter. For anything you'll maintain over
+        time, it compounds. Each new feature adds complexity. Eventually, changes start
+        breaking other things.
+      </p>
+
+      <p>
+        One team described it as "constantly revisiting past work and fixing AI-generated
+        messes." They were running in circles instead of forward.
+      </p>
+
+      <h3>The Hallucination Problem</h3>
+
+      <p>
+        AI models sometimes reference packages and libraries that don't exist. They're
+        not lying—they're pattern-matching from training data and producing
+        plausible-sounding names.
+      </p>
+
+      <p>
+        If the reference doesn't exist, your code breaks (annoying but obvious). The
+        scarier scenario: the package name <em>does</em> exist but is malicious. This
+        is called "typosquatting"—attackers publish packages with names similar to
+        popular ones, hoping developers (or AIs) accidentally include them.
+      </p>
+
+      <p>
+        In 2025, researchers found multiple malicious packages published specifically
+        to target names that AI models commonly hallucinate. The attack surface is new
+        and growing.
+      </p>
+
+      <h3>Platform Lock-in</h3>
+
+      <p>
+        Vibe coding tools are platforms, not utilities. Your project lives in their
+        ecosystem, uses their hosting, and depends on their AI.
+      </p>
+
+      <p>
+        If the platform changes pricing, your costs change. If the platform has an
+        outage, your application is down. If the platform pivots or shuts down, you
+        need to migrate.
+      </p>
+
+      <h3>The Skill Atrophy Question</h3>
+
+      <p>For learners, there's a deeper concern: does vibe coding prevent you from actually learning?</p>
+
+      <p>
+        The analogy to "tutorial hell" is apt. Tutorial hell happens when someone
+        follows coding tutorials but never builds anything independently—they know
+        <em>what</em> to type but not <em>why</em>. Vibe coding hell is similar: you
+        can build things, but you haven't developed a mental model of how software
+        actually works.
+      </p>
+
+      <p>
+        Some educators recommend using vibe coding as a starting point, then "opening
+        the hood" to understand what the AI generated. Others suggest learning
+        fundamentals first, then using AI as an accelerant. The jury is still out
+        on best practices.
+      </p>
+
+      <hr>
+
+      <!-- Part 8 -->
+      <h2>Part 8: When to Vibe Code (And When Not To)</h2>
+
+      <p>Based on the landscape in late 2025, here are reasonable guidelines:</p>
+
+      <h3>Vibe Coding Is Well-Suited For:</h3>
+
+      <div class="key-points-grid">
+        <div class="key-point-card">
+          <h4>Personal Tools</h4>
+          <p>
+            "Software for one," as Kevin Roose called it. Apps that solve your
+            specific problems and won't be used by anyone else. Low stakes, high
+            convenience.
+          </p>
+        </div>
+        <div class="key-point-card">
+          <h4>Prototypes and MVPs</h4>
+          <p>
+            Testing whether an idea is worth pursuing. The goal is learning, not
+            perfection. If the concept fails, you haven't invested much. If it
+            succeeds, you can rebuild properly.
+          </p>
+        </div>
+        <div class="key-point-card">
+          <h4>Internal Tools</h4>
+          <p>
+            Dashboards, trackers, and utilities for yourself or a small team.
+            Where the cost of failure is inconvenience, not disaster.
+          </p>
+        </div>
+        <div class="key-point-card">
+          <h4>Learning Through Exploration</h4>
+          <p>
+            Seeing how applications are structured, what components are needed,
+            how features fit together. A generative alternative to tutorials.
+          </p>
+        </div>
+      </div>
+
+      <h3>Vibe Coding Is Risky For:</h3>
+
+      <div class="callout callout-warning">
+        <div class="callout-title">Proceed with Extreme Caution</div>
+        <ul class="mb-0">
+          <li><strong>Anything handling sensitive data:</strong> Medical records, financial information, personal details. The security risks are too high.</li>
+          <li><strong>Production applications serving real users:</strong> Bugs, downtime, and security issues affect people who trusted you.</li>
+          <li><strong>Anything where reliability matters:</strong> Business-critical workflows, integrations with important systems.</li>
+          <li><strong>Large, complex applications:</strong> The AI struggles with interconnected systems. Complexity compounds into chaos.</li>
+          <li><strong>Long-term maintenance requirements:</strong> What happens in six months when you need to modify something?</li>
+        </ul>
+      </div>
+
+      <h3>The Middle Path</h3>
+
+      <p>
+        Most realistic use lies somewhere between "vibe code everything" and "never
+        vibe code." The thoughtful approach:
+      </p>
+
+      <ol>
+        <li><strong>Start vibe coded</strong> to test concepts quickly</li>
+        <li><strong>Evaluate output</strong> with at least basic security consciousness</li>
+        <li><strong>Rebuild properly</strong> if the concept proves valuable</li>
+        <li><strong>Use AI assistance</strong> (not pure vibe coding) for production work</li>
+      </ol>
+
+      <p>
+        This treats vibe coding as a rapid prototyping tool rather than a production
+        methodology.
+      </p>
+
+      <hr>
+
+      <!-- Part 9 -->
+      <h2>Part 9: Your First Vibe Coding Project</h2>
+
+      <p>
+        If you've made it this far, you might be wondering where to actually start.
+        Here's a concrete suggestion for a first project that's useful but low-stakes:
+      </p>
+
+      <h3>The Personal Bookmark Manager</h3>
+
+      <p>
+        <strong>What it does:</strong> A simple web app where you can save links with
+        notes, organize them into categories, and search through them later.
+      </p>
+
+      <p><strong>Why it's good for learning:</strong></p>
+
+      <ul>
+        <li>It's useful to you (everyone has bookmarks scattered across browsers)</li>
+        <li>It requires basic CRUD operations (create, read, update, delete)</li>
+        <li>It benefits from a search function (teaches you how to request features)</li>
+        <li>It doesn't need authentication for a personal version (simpler)</li>
+        <li>It can be extended (add tags, add sharing, add reading list features)</li>
+      </ul>
+
+      <h3>How to Start</h3>
+
+      <div class="prompt-examples">
+        <div class="prompt-example good">
+          <div class="prompt-label"><i data-lucide="terminal"></i> In Replit</div>
+          <p>
+            "Build a personal bookmark manager web app. I want to save URLs with a
+            title, description, and category. I should be able to see all my bookmarks
+            in a list, search through them by title or description, filter by category,
+            and delete ones I don't need anymore. Keep the design simple and clean."
+          </p>
+        </div>
+        <div class="prompt-example good">
+          <div class="prompt-label"><i data-lucide="layout"></i> In Lovable</div>
+          <p>
+            "Create a bookmark manager where I can save and organize links. Include
+            a form to add new bookmarks (URL, title, description, and category dropdown).
+            Show bookmarks in a card layout with search and category filter. Use a
+            minimal, modern design."
+          </p>
+        </div>
+      </div>
+
+      <h3>What You'll Learn</h3>
+
+      <ul>
+        <li>How to describe features clearly</li>
+        <li>How to iterate when the first result isn't quite right</li>
+        <li>How to debug when something doesn't work</li>
+        <li>How the AI handles requests differently across platforms</li>
+        <li>Whether you prefer Replit's code-visible approach or Lovable's visual approach</li>
+      </ul>
+
+      <h3>Stretch Goals</h3>
+
+      <p>After the basic version works:</p>
+
+      <ul>
+        <li>Add tags for more flexible organization</li>
+        <li>Create a browser extension to add bookmarks with one click</li>
+        <li>Add export/import functionality</li>
+        <li>Share certain bookmarks publicly</li>
+      </ul>
+
+      <p>
+        The goal isn't to build the world's best bookmark manager. It's to go through
+        the complete cycle—describing, testing, iterating, debugging—with something
+        concrete and useful.
+      </p>
+
+      <hr>
+
+      <!-- Part 10 -->
+      <h2>Part 10: Resources for Further Exploration</h2>
+
+      <h3>Getting Started</h3>
+
+      <div class="reading-list">
+        <div class="reading-item">
+          <div class="reading-type"><i data-lucide="graduation-cap"></i></div>
+          <div class="reading-content">
+            <div class="reading-title">
+              <a href="https://www.codecademy.com/learn/intro-to-vibe-coding" target="_blank">Codecademy: Intro to Vibe Coding</a>
+            </div>
+            <div class="reading-meta">A structured course covering the basics—what vibe coding is, how to brainstorm projects, and hands-on practice.</div>
+          </div>
+        </div>
+        <div class="reading-item">
+          <div class="reading-type"><i data-lucide="book-open"></i></div>
+          <div class="reading-content">
+            <div class="reading-title">
+              <a href="https://docs.replit.com/replitai/agent" target="_blank">Replit Documentation: Vibe Coding Guide</a>
+            </div>
+            <div class="reading-meta">Replit's own guide to effective prompting and working with their Agent.</div>
+          </div>
+        </div>
+        <div class="reading-item">
+          <div class="reading-type"><i data-lucide="video"></i></div>
+          <div class="reading-content">
+            <div class="reading-title">
+              <a href="https://lovable.dev/videos/tutorial" target="_blank">Lovable Tutorial Videos</a>
+            </div>
+            <div class="reading-meta">Video tutorials covering everything from basic setup to Supabase integration.</div>
+          </div>
+        </div>
+      </div>
+
+      <h3>Deeper Understanding</h3>
+
+      <div class="reading-list">
+        <div class="reading-item">
+          <div class="reading-type"><i data-lucide="file-text"></i></div>
+          <div class="reading-content">
+            <div class="reading-title">
+              <a href="https://simonwillison.net/2025/Mar/19/vibe-coding/" target="_blank">Simon Willison: "Not all AI-assisted programming is vibe coding"</a>
+            </div>
+            <div class="reading-meta">One of the clearest explanations of what distinguishes vibe coding from responsible AI-assisted development.</div>
+          </div>
+        </div>
+        <div class="reading-item">
+          <div class="reading-type"><i data-lucide="shield"></i></div>
+          <div class="reading-content">
+            <div class="reading-title">
+              <a href="https://www.databricks.com/blog/passing-security-vibe-check-dangers-vibe-coding" target="_blank">Databricks: "Passing the Security Vibe Check"</a>
+            </div>
+            <div class="reading-meta">A technical but readable analysis of security vulnerabilities in vibe-coded applications.</div>
+          </div>
+        </div>
+        <div class="reading-item">
+          <div class="reading-type"><i data-lucide="scale"></i></div>
+          <div class="reading-content">
+            <div class="reading-title">
+              <a href="https://www.lawfaremedia.org/article/when-the-vibe-are-off--the-security-risks-of-ai-generated-code" target="_blank">Lawfare: "When the Vibes Are Off"</a>
+            </div>
+            <div class="reading-meta">A policy-oriented perspective on vibe coding and regulatory implications.</div>
+          </div>
+        </div>
+      </div>
+
+      <h3>Podcasts</h3>
+
+      <div class="reading-list">
+        <div class="reading-item">
+          <div class="reading-type"><i data-lucide="podcast"></i></div>
+          <div class="reading-content">
+            <div class="reading-title">A New Vibe Podcast</div>
+            <div class="reading-meta">Hosted by Riley Brown, focused on building in the AI era without a technical background. Available on Apple Podcasts and Spotify.</div>
+          </div>
+        </div>
+        <div class="reading-item">
+          <div class="reading-type"><i data-lucide="podcast"></i></div>
+          <div class="reading-content">
+            <div class="reading-title">
+              <a href="https://www.news.aakashg.com/p/andy-carroll-podcast" target="_blank">Product Growth Podcast: "Vibe Coding Tutorial in 72 mins"</a>
+            </div>
+            <div class="reading-meta">A practical walkthrough with Andy Carroll, a product manager who builds extensively with vibe coding tools.</div>
+          </div>
+        </div>
+        <div class="reading-item">
+          <div class="reading-type"><i data-lucide="podcast"></i></div>
+          <div class="reading-content">
+            <div class="reading-title">
+              <a href="https://blog.boot.dev" target="_blank">Boot.dev Podcast</a>
+            </div>
+            <div class="reading-meta">Takes a more skeptical view, examining "vibe coding hell" and the learning implications.</div>
+          </div>
+        </div>
+      </div>
+
+      <h3>Staying Current</h3>
+
+      <p>
+        The vibe coding landscape changes weekly. Tools update, new platforms emerge,
+        capabilities expand. Good sources for staying current:
+      </p>
+
+      <ul>
+        <li><strong>Twitter/X:</strong> Follow @karpathy, @swyx, @simonw, and tool accounts like @Replit and @lovaboreau</li>
+        <li><strong>Hacker News:</strong> Regular discussions of AI coding tools and their implications</li>
+        <li><strong>Dev.to:</strong> Community posts about vibe coding experiences, both positive and negative</li>
+        <li><strong>Product Hunt:</strong> Where new tools launch first</li>
+      </ul>
+
+      <hr>
+
+      <!-- Conclusion -->
+      <h2>Conclusion: Vibes and Verification</h2>
+
+      <p>
+        The promise of vibe coding is real: people who couldn't build software before
+        can now create functional applications through conversation. Barriers have
+        lowered. Ideas can become prototypes in hours.
+      </p>
+
+      <p>
+        But the premise has limits. "Forget that the code even exists" works for
+        throwaway projects. It's dangerous for anything consequential. The code
+        <em>does</em> exist, and it has properties you didn't specify—security
+        characteristics, performance implications, maintenance burdens.
+      </p>
+
+      <div class="callout callout-principle">
+        <div class="callout-title">The Most Useful Mental Model</div>
+        <p class="mb-0">
+          <strong>Vibe coding is a first draft tool.</strong> Writers know first drafts
+          are rough. They exist to get ideas on paper, to see what might work, to have
+          something to react against. The magic happens in revision. Vibe-coded
+          applications are first drafts. They show what's possible. They test assumptions.
+          But if they're worth keeping, they're worth reviewing.
+        </p>
+      </div>
+
+      <p>
+        Karpathy himself, the person who coined the term, recently built a project
+        without vibe coding. "I tried to use Claude/Codex agents a few times but they
+        just didn't work well enough at all," he posted. The godfather of vibe coding
+        reached for traditional tools when the stakes rose.
+      </p>
+
+      <p>
+        That's not failure—it's maturity. Understanding when a tool fits and when it
+        doesn't is expertise. Vibe coding is one tool among many. Use it where it shines.
+        Know its limits. And never forget that code you didn't write is still code
+        you're responsible for.
+      </p>
+
+      <p>
+        Now go build something. Start small. Test everything. And pay attention to what
+        you learn—not just about the tools, but about what you're actually trying to create.
+      </p>
+
+      <div class="callout callout-info">
+        <div class="callout-title">A Note on This Module</div>
+        <p class="mb-0">
+          This module was written with AI assistance and verified by human review—much
+          like the balance we recommend for anything beyond weekend projects.
+        </p>
+      </div>
+
+      <!-- Learning Objectives -->
+      <div class="objectives phase-2">
+        <h4 class="objectives-title">Learning Objectives</h4>
+        <ul class="objectives-list">
+          <li>Define vibe coding and distinguish it from AI-assisted development</li>
+          <li>Navigate Replit Agent and Lovable to build simple applications</li>
+          <li>Write effective prompts that produce usable first-draft applications</li>
+          <li>Identify security and maintenance risks in vibe-coded applications</li>
+          <li>Determine appropriate use cases for vibe coding in professional contexts</li>
+          <li>Apply iterative workflows to refine AI-generated applications</li>
+        </ul>
+      </div>
+
+      <!-- Page Navigation -->
+      <nav class="page-nav">
+        <a href="module-12.html" class="page-nav-link prev">
+          <span class="page-nav-arrow"><i data-lucide="arrow-left"></i></span>
+          <div>
+            <span class="page-nav-label">Previous</span>
+            <span class="page-nav-title">Module 12: Everyday Ways to Use AI</span>
+          </div>
+        </a>
+        <a href="appendix-1.html" class="page-nav-link next">
+          <span class="page-nav-arrow"><i data-lucide="arrow-right"></i></span>
+          <div>
+            <span class="page-nav-label">Next</span>
+            <span class="page-nav-title">Appendix A: AI's Environmental Footprint</span>
+          </div>
+        </a>
+      </nav>
+
+    </article>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div><strong>AI 101</strong> · A Self-Paced Guide to AI in Medicine</div>
+      <div>v1.0 · 2025</div>
+    </div>
+  </footer>
+
+  <script>
+    lucide.createIcons();
+    const navToggle = document.querySelector('.nav-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    if (navToggle) {
+      navToggle.addEventListener('click', () => {
+        navLinks.classList.toggle('nav-open');
+      });
+    }
+  </script>
+
+</body>
+</html>

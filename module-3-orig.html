@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Module 3: The Art of the Ask — Prompting LLMs | AI 101</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-brand">
+        <span class="nav-badge">AI 101</span>
+        <span class="nav-title">A Self-Paced Guide to AI in Medicine</span>
+      </a>
+      <button class="nav-toggle" aria-label="Toggle menu">
+        <i data-lucide="menu"></i>
+      </button>
+      <div class="nav-links">
+        <a href="index.html" class="nav-link">Modules</a>
+        <!-- <a href="resources.html" class="nav-link">Resources</a> -->
+        <a href="about.html" class="nav-link">About</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="main">
+    <article class="content">
+
+      <header class="unit-header">
+        <span class="unit-label phase-1">PHASE I · MODULE 3</span>
+        <h1 class="unit-title">The Art of the Ask</h1>
+        <p class="unit-subtitle">
+          Prompting LLMs effectively—how to communicate with AI tools to get
+          outputs that actually help your clinical work.
+        </p>
+        <div class="unit-meta">
+          <span class="unit-meta-item">
+            <i data-lucide="book-open"></i>
+            6 readings
+          </span>
+          <span class="unit-meta-item">
+            <i data-lucide="headphones"></i>
+            4 podcasts
+          </span>
+        </div>
+      </header>
+
+      <div class="callout callout-question">
+        <div class="callout-title">Core Question</div>
+        <p class="mb-0">
+          How do you communicate effectively with AI tools to get outputs that
+          are actually useful—and what skills do you already have that transfer directly?
+        </p>
+      </div>
+
+      <h2>What Does "Prompting" Actually Mean?</h2>
+
+      <p>
+        If you've spent any time reading about AI, you've encountered the term "prompting"—probably
+        dozens of times, used in ways that seem contradictory or confusing. Before we go further,
+        let's untangle this, because the word carries at least three distinct meanings in AI
+        discussions, and conflating them creates unnecessary confusion.
+      </p>
+
+      <div class="concepts-grid">
+        <div class="concept-card">
+          <div class="concept-icon"><i data-lucide="message-square"></i></div>
+          <div class="concept-name">Prompt as Input</div>
+          <div class="concept-desc">Simply the text you give an AI model—the thing you type in the box</div>
+        </div>
+        <div class="concept-card">
+          <div class="concept-icon"><i data-lucide="settings"></i></div>
+          <div class="concept-name">Prompt Engineering</div>
+          <div class="concept-desc">Deliberately structuring and refining inputs to get better outputs</div>
+        </div>
+        <div class="concept-card">
+          <div class="concept-icon"><i data-lucide="code"></i></div>
+          <div class="concept-name">System Prompts</div>
+          <div class="concept-desc">Hidden instructions that shape AI behavior before you ever interact</div>
+        </div>
+      </div>
+
+      <p>
+        For this module, we're primarily concerned with the first two meanings—what you type and
+        how to type it better. But understanding that third layer helps explain why the same
+        question can produce different results in different AI tools, even when they use the same
+        underlying technology.
+      </p>
+
+      <p>
+        A better way to think about it: <strong>prompting is the skill of clear communication applied
+        to a new medium</strong>. You're not learning arcane techniques—you're learning to communicate
+        effectively with a particular kind of interlocutor that processes language differently than
+        humans do. The same principles that make you a clear communicator with colleagues, patients,
+        and trainees apply here, just with some adjustments for the AI's particular characteristics.
+      </p>
+
+      <h2>The Clinical Parallel: You Already Know This</h2>
+
+      <p>
+        Here's the thing: if you've practiced medicine for any length of time, you already understand
+        the core principles of effective prompting. You just call it something else.
+      </p>
+
+      <p>
+        Consider the patient history. Every clinician knows that a well-taken history does most of
+        the diagnostic work. "I don't feel good" gives you almost nothing to work with. "I've had
+        progressive shortness of breath over two weeks, worse with exertion, no chest pain, but I
+        noticed my ankles are swelling and I've gained about five pounds even though I'm not eating
+        more"—that gives you a direction.
+      </p>
+
+      <p>
+        The same principle applies to AI. A vague prompt produces vague output. A specific,
+        well-structured prompt produces focused, useful output. The clinical intuition you've
+        developed about what information matters for a given question transfers directly.
+      </p>
+
+      <p>Consider how you'd present a case to a specialist:</p>
+
+      <div class="prompt-box">"I'd like your input on a 45-year-old woman with three months of progressive fatigue. She has hypothyroidism on replacement, well-controlled. Recent TSH was normal. She's noticed weight gain despite no dietary changes, and her husband says she snores loudly now, which is new. She's sleepy during the day. I'm wondering about sleep apnea, but I wanted to make sure I'm not missing anything before pursuing a sleep study."</div>
+
+      <p>
+        Notice what you've done: you've established the patient, the timeline, the key symptoms, the
+        relevant background, what you've already ruled out, what you're considering, and what you
+        actually want from the consultant. That's expert-level prompting of a human intelligence.
+        The same structure works for artificial intelligence.
+      </p>
+
+      <div class="callout callout-principle">
+        <div class="callout-title">Key Insight</div>
+        <p class="mb-0">
+          The difference is that the specialist would interrupt to ask clarifying questions if you
+          left something important out. The AI usually won't—it will just produce an answer based on
+          incomplete information. This is why being thorough upfront matters even more with AI than
+          with human colleagues.
+        </p>
+      </div>
+
+      <h2>Why Good Input Matters</h2>
+
+      <p>
+        Large language models are pattern-matching engines trained on vast amounts of text. They
+        predict what text should come next based on statistical patterns learned during training.
+        When you give an LLM a vague prompt, you're essentially asking it to guess what you mean.
+        When you give it a specific, well-structured prompt, you're constraining the space of
+        reasonable responses, making it much more likely to produce something useful.
+      </p>
+
+      <p>Compare these two prompts about diabetes management:</p>
+
+      <p><strong>Vague:</strong></p>
+      <div class="prompt-box">"Tell me about diabetes treatment."</div>
+
+      <p><strong>Specific:</strong></p>
+      <div class="prompt-box">"I'm a primary care physician seeing a 58-year-old woman with type 2 diabetes, A1c 8.2%, on metformin 1000mg BID for three years, BMI 32, eGFR 65. She has mild peripheral neuropathy. I'm considering adding a second agent. What are the main options, their benefits and risks in her specific situation, and what would guide the choice between them?"</div>
+
+      <p>
+        The first prompt will generate something encyclopedic and unhelpful—a survey of diabetes
+        treatment written for no particular audience with no particular purpose. The second will
+        generate a clinically relevant comparison tailored to a specific patient scenario.
+      </p>
+
+      <h2>The Anatomy of an Effective Prompt</h2>
+
+      <p>
+        Think of a good prompt as having the same structure as a good case presentation. Not every
+        prompt needs every element, but knowing the components helps you include what matters.
+      </p>
+
+      <div class="table-responsive">
+        <table class="reference-table">
+          <thead>
+            <tr>
+              <th>Component</th>
+              <th>Purpose</th>
+              <th>Example</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Context</td>
+              <td>Establishes the situation and frame of reference</td>
+              <td>"As a pediatric hospitalist..." or "For a patient education handout..."</td>
+            </tr>
+            <tr>
+              <td>Task</td>
+              <td>Defines what you want—be explicit</td>
+              <td>"Explain," "list," "compare," "create a differential"</td>
+            </tr>
+            <tr>
+              <td>Constraints</td>
+              <td>Focuses the output with guardrails</td>
+              <td>Length, format, what to exclude, what to assume</td>
+            </tr>
+            <tr>
+              <td>Examples</td>
+              <td>Demonstrates what you mean</td>
+              <td>Show format, style, or approach you want</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>Let's see how these components work together:</p>
+
+      <div class="prompt-box"><strong>Context:</strong> "I'm a family physician explaining results to a patient with limited health literacy."
+
+<strong>Task:</strong> "Help me explain what a hemoglobin A1c of 7.2% means."
+
+<strong>Constraints:</strong> "Use simple language, avoid medical jargon, keep it to 2-3 paragraphs. Don't mention specific medications."
+
+<strong>Example:</strong> "Similar to how I'd explain blood pressure: 'Your blood pressure number shows how hard your heart is working to pump blood. We want it under 130 on top because higher numbers mean your heart is working too hard, which can cause problems over time.'"</div>
+
+      <p>
+        This prompt gives the AI everything it needs to produce something genuinely useful on the
+        first try.
+      </p>
+
+      <h2>Specificity: The Most Valuable Habit</h2>
+
+      <p>
+        If you take one thing from this module, let it be this: <strong>specificity costs nothing
+        but transforms results</strong>.
+      </p>
+
+      <p>
+        Every time you're about to submit a prompt, pause and ask: what am I leaving implicit that
+        I could make explicit? What assumptions am I hoping the AI will correctly guess?
+      </p>
+
+      <div class="table-responsive">
+        <table class="reference-table">
+          <thead>
+            <tr>
+              <th>Vague Prompt</th>
+              <th>Specific Prompt</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>"What medications treat hypertension?"</td>
+              <td>"What are first-line antihypertensive options for a 45-year-old Black woman with stage 1 hypertension and no comorbidities, based on current ACC/AHA guidelines?"</td>
+            </tr>
+            <tr>
+              <td>"Write discharge instructions for pneumonia."</td>
+              <td>"Write discharge instructions for an elderly patient leaving the hospital after treatment for community-acquired pneumonia. 6th-grade reading level, include when to call the doctor versus return to the ER."</td>
+            </tr>
+            <tr>
+              <td>"Help me with a difficult conversation."</td>
+              <td>"I'm about to tell a 70-year-old patient that his lung nodule is highly suspicious for cancer. He has anxiety and tends to catastrophize. Help me structure this conversation with specific phrases I can use."</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>
+        Notice that the specific versions take longer to write. This is actually the point. The few
+        seconds you spend thinking about what you really need get repaid in responses that actually
+        help, rather than responses you have to fix, regenerate, or supplement.
+      </p>
+
+      <h2>Role Assignment: Giving the AI a Persona</h2>
+
+      <p>
+        A powerful technique in prompting is telling the AI what role to assume. This isn't pretend
+        play—it's a way of activating different knowledge domains and communication styles within
+        the model.
+      </p>
+
+      <p>
+        When you say "You are an experienced pediatric cardiologist," you're not claiming the AI
+        actually <em>is</em> a cardiologist. You're telling it to draw on pediatric cardiology
+        knowledge, use appropriate terminology, and frame responses as a specialist would.
+      </p>
+
+      <p>Some useful roles in medical contexts:</p>
+
+      <ul>
+        <li><strong>"You are an experienced clinician explaining a concept to a medical student"</strong>—produces educational content with appropriate depth</li>
+        <li><strong>"You are a patient educator creating materials for low-literacy audiences"</strong>—produces simpler language with more concrete examples</li>
+        <li><strong>"You are a clinical pharmacist reviewing medication interactions"</strong>—activates drug interaction knowledge with attention to clinical significance</li>
+        <li><strong>"You are an evidence-based medicine specialist"</strong>—encourages citation of evidence and acknowledgment of uncertainty</li>
+        <li><strong>"You are a quality improvement consultant"</strong>—frames responses around process, measurement, and system factors</li>
+      </ul>
+
+      <h2>Structured Prompting: Breaking Complex Tasks into Steps</h2>
+
+      <p>
+        When you're asking an AI to do something complex, asking for everything at once often
+        produces worse results than breaking the task into logical steps. This is sometimes called
+        "chain of thought" prompting, and it mirrors how clinicians actually reason through complex cases.
+      </p>
+
+      <div class="prompt-box">"A 35-year-old woman presents with fatigue, weight gain, and cold intolerance.
+
+<strong>Step 1:</strong> Generate a differential diagnosis, listing possibilities from most to least likely based on these symptoms and her demographics.
+
+<strong>Step 2:</strong> For the top three possibilities, list what additional history, physical exam findings, or initial labs would help distinguish between them.
+
+<strong>Step 3:</strong> Her TSH comes back at 12.5 mIU/L (normal 0.4-4.0). Update your assessment and explain what this means for her differential."</div>
+
+      <p>
+        This step-by-step approach produces more thorough reasoning than simply asking "What's wrong
+        with this patient?" It also makes the AI's thinking visible, which helps you evaluate
+        whether its reasoning is sound.
+      </p>
+
+      <h2>The Power of Examples: Showing Rather Than Telling</h2>
+
+      <p>
+        If you want a specific format, style, or approach, showing an example is often more
+        effective than describing what you want. This is sometimes called "few-shot prompting."
+      </p>
+
+      <div class="prompt-box">"I need to create patient education materials. Here's an example of the style I want:
+
+<strong>Example:</strong> 'WHAT IS A STRESS TEST? A stress test shows how well your heart works during exercise. You'll walk on a treadmill while we monitor your heart. The test helps us see if your heart is getting enough blood. Most people find it tiring but not painful. The whole appointment takes about an hour, but you'll only be exercising for about 10-15 minutes.'
+
+Now create similar materials explaining what to expect during a colonoscopy."</div>
+
+      <p>
+        The AI will match the reading level, structure, and tone of your example, producing
+        consistent materials without you having to describe every stylistic element.
+      </p>
+
+      <h2>Iterative Refinement: The Conversation Continues</h2>
+
+      <p>
+        One of the most underused features of AI assistants is their ability to have conversations.
+        You don't have to get your prompt perfect on the first try. You can refine.
+      </p>
+
+      <ul>
+        <li>If the AI produces something too technical: <em>"That's too complex. Simplify it for a patient with an 8th-grade reading level."</em></li>
+        <li>If it's too long: <em>"Good content, but condense to half the length."</em></li>
+        <li>If it missed your point: <em>"I was asking specifically about dosing considerations for patients with renal impairment."</em></li>
+        <li>If you want it to reconsider: <em>"What would be the argument against your recommendation?"</em></li>
+      </ul>
+
+      <p>Here's a practical example of iteration in action:</p>
+
+      <div class="example-card">
+        <div class="example-header">
+          <span class="example-number">1</span>
+          <h3 class="example-title">Iteration Example</h3>
+        </div>
+        <p><strong>Initial prompt:</strong> "Help me explain heart failure to a patient."</p>
+        <p><strong>AI response:</strong> [Produces technically accurate but dense explanation with medical terminology]</p>
+        <p><strong>Follow-up 1:</strong> "That's too technical. Rewrite it assuming the patient has no medical background."</p>
+        <p><strong>AI response:</strong> [Produces simpler explanation, but still long]</p>
+        <p><strong>Follow-up 2:</strong> "Better. Now make it about 3 paragraphs, and use an analogy—like comparing the heart to a pump."</p>
+        <p><strong>AI response:</strong> [Produces concise, analogy-based explanation]</p>
+        <p><strong>Follow-up 3:</strong> "Good. Now add a sentence at the end about why taking their medications every day matters."</p>
+        <p><strong>Final result:</strong> A patient-friendly explanation you couldn't have gotten in one try without much more elaborate initial prompting.</p>
+      </div>
+
+      <p>
+        The key insight is that prompting isn't a single transaction. It's a dialogue. Treat it like
+        a conversation with a knowledgeable but not omniscient colleague.
+      </p>
+
+      <h2>Prompt Patterns for Clinical Work</h2>
+
+      <p>Certain prompt structures work well for common clinical tasks. Here are patterns you can adapt:</p>
+
+      <div class="table-responsive">
+        <table class="reference-table">
+          <thead>
+            <tr>
+              <th>Task Type</th>
+              <th>Prompt Pattern</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Clinical summaries</td>
+              <td>"Summarize this [case/note] for [audience]. Focus on [key elements]. Keep it to [length]."</td>
+            </tr>
+            <tr>
+              <td>Patient education</td>
+              <td>"Explain [concept] to a patient who [characteristics]. Use language appropriate for [literacy level]. Avoid [exclusions]."</td>
+            </tr>
+            <tr>
+              <td>Differential diagnosis</td>
+              <td>"Given [presentation], generate a differential. Rate likelihood and list supporting/opposing features. Suggest discriminating information."</td>
+            </tr>
+            <tr>
+              <td>Literature review</td>
+              <td>"Summarize current evidence on [topic]. Note study quality and controversies. Flag where evidence is limited."</td>
+            </tr>
+            <tr>
+              <td>Communication assistance</td>
+              <td>"Help me communicate [information] to [recipient]. Challenge: [difficulty]. Goal: [outcome]. Suggest language and prepare for responses."</td>
+            </tr>
+            <tr>
+              <td>Clinical decision support</td>
+              <td>"I'm considering [intervention] for [patient]. Walk me through key factors. Arguments for and against? What would change your recommendation?"</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>
+        These templates aren't magic formulas. They're starting points that remind you to include
+        relevant context, specify your task, and constrain the output appropriately.
+      </p>
+
+      <h2>Common Pitfalls and How to Avoid Them</h2>
+
+      <div class="concepts-grid">
+        <div class="concept-card">
+          <div class="concept-icon"><i data-lucide="inbox"></i></div>
+          <div class="concept-name">Kitchen Sink Problem</div>
+          <div class="concept-desc">Too much irrelevant information confuses the AI. Be thorough about what matters, not exhaustive about everything.</div>
+        </div>
+        <div class="concept-card">
+          <div class="concept-icon"><i data-lucide="help-circle"></i></div>
+          <div class="concept-name">Task Ambiguity</div>
+          <div class="concept-desc">If you're not clear about what you want, the AI will guess. Use specific verbs: summarize, list, compare, explain.</div>
+        </div>
+        <div class="concept-card">
+          <div class="concept-icon"><i data-lucide="eye-off"></i></div>
+          <div class="concept-name">Implicit Assumptions</div>
+          <div class="concept-desc">The AI doesn't know what you know unless you tell it. Make guidelines, populations, and context explicit.</div>
+        </div>
+        <div class="concept-card">
+          <div class="concept-icon"><i data-lucide="check-circle"></i></div>
+          <div class="concept-name">Over-reliance</div>
+          <td>AI models can be confident and wrong. Ask for alternatives, request critiques, verify independently.</td>
+        </div>
+      </div>
+
+      <h2>Working with Uncertainty: Prompting for Nuance</h2>
+
+      <p>
+        One hallmark of clinical expertise is comfort with uncertainty. AI tools, by contrast, often
+        default to confident-sounding responses even when uncertainty would be more appropriate.
+        You can prompt for more nuanced responses:
+      </p>
+
+      <div class="table-responsive">
+        <table class="reference-table">
+          <thead>
+            <tr>
+              <th>Instead of...</th>
+              <th>Try...</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>"What's the best treatment for this condition?"</td>
+              <td>"What are the treatment options, and what factors would influence the choice? Where is evidence strong versus uncertain?"</td>
+            </tr>
+            <tr>
+              <td>"Is this finding significant?"</td>
+              <td>"How would you interpret this finding? What are different possibilities, and what additional information would help?"</td>
+            </tr>
+            <tr>
+              <td>"Should I refer this patient?"</td>
+              <td>"What are the considerations for and against referral? What would a reasonable clinician weigh?"</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>You can also explicitly request acknowledgment of limitations:</p>
+      <ul>
+        <li><em>"After answering, note any important caveats or situations where this guidance might not apply."</em></li>
+        <li><em>"If the evidence is limited or conflicting, say so explicitly rather than presenting a definitive answer."</em></li>
+        <li><em>"What would you want to know that you don't have information about in order to answer this better?"</em></li>
+      </ul>
+
+      <h2>When Prompting Reaches Its Limits</h2>
+
+      <p>
+        Effective prompting can dramatically improve AI outputs, but it can't fix fundamental
+        limitations. It's worth knowing when you're bumping against walls that better prompting won't move.
+      </p>
+
+      <ul>
+        <li><strong>Knowledge cutoffs:</strong> Most AI models were trained on data up to a certain date and don't know about subsequent events, guidelines, or research.</li>
+        <li><strong>Hallucination:</strong> AI models can generate plausible-sounding but false information. No prompt can guarantee accuracy. Verification remains essential.</li>
+        <li><strong>Proprietary information:</strong> The AI doesn't have access to your hospital's protocols, your patient's chart, or your organization's policies unless you provide it.</li>
+        <li><strong>Tasks requiring real-world interaction:</strong> The AI can help you plan a conversation, but it can't have it. It can suggest what to look for on exam, but it can't perform it.</li>
+        <li><strong>Logical reasoning edge cases:</strong> AI models can still fail at edge cases, multi-step logic, or situations requiring common sense.</li>
+      </ul>
+
+      <div class="callout callout-principle">
+        <div class="callout-title">The Core Insight</div>
+        <p class="mb-0">
+          Prompt engineering is not going to be a stand-alone job for most healthcare professionals.
+          It's going to be a component skill—like information literacy or evidence-based practice—that
+          makes you more effective at work that remains fundamentally human.
+        </p>
+      </div>
+
+      <h2>Practical Exercises</h2>
+
+      <p>To build prompting skills, try these exercises:</p>
+
+      <ol>
+        <li><strong>The Specificity Upgrade:</strong> Take a question you'd naturally ask an AI and make it more specific. Then more specific again. See how outputs differ.</li>
+        <li><strong>The Role Experiment:</strong> Ask the same clinical question three times with different roles (generalist, specialist, patient educator). Compare responses.</li>
+        <li><strong>The Format Requirement:</strong> Ask for information in three formats: paragraph, bullet points, and table. Notice which is most useful when.</li>
+        <li><strong>The Step-by-Step Approach:</strong> Take a complex clinical question and break it into sequential steps. Compare to asking all at once.</li>
+        <li><strong>The Example Provision:</strong> When asking for content in a particular style, provide an example. Compare to asking without one.</li>
+        <li><strong>The Iteration Practice:</strong> Start with a basic prompt, then refine through 3-4 rounds of follow-up. Notice how output improves.</li>
+        <li><strong>The Cross-Check:</strong> Ask a clinical question, then follow up with "What's the strongest argument against what you just said?"</li>
+      </ol>
+
+      <!-- Featured Exercise Link -->
+      <a href="module-3-exercise.html" class="exercise-link">
+        <div class="exercise-link-icon">
+          <i data-lucide="flask-conical"></i>
+        </div>
+        <div class="exercise-link-content">
+          <div class="exercise-link-label">Hands-On Exercise</div>
+          <div class="exercise-link-title">The Prompt Matters: A Side-by-Side Comparison</div>
+          <p class="exercise-link-desc">
+            See exactly how vague vs. specific prompts produce dramatically different outputs
+            using a real clinical scenario about pediatric statin therapy.
+          </p>
+        </div>
+        <div class="exercise-link-arrow">
+          <i data-lucide="arrow-right"></i>
+        </div>
+      </a>
+
+      <!-- NotebookLM Reminder -->
+      <div class="callout callout-tool">
+        <div class="callout-title">Try This with NotebookLM</div>
+        <p>
+          This module's concepts are perfect for hands-on practice with NotebookLM:
+        </p>
+        <ul>
+          <li>Upload a clinical guideline and practice different prompting approaches</li>
+          <li>Try vague vs. specific prompts on the same content and compare results</li>
+          <li>Use role assignment to get the same information framed for different audiences</li>
+          <li>Practice iterative refinement to improve initial outputs</li>
+        </ul>
+        <p class="mb-0">
+          The document-grounded nature of NotebookLM makes it a safe sandbox to build prompting
+          intuition before applying these skills to general-purpose AI tools.
+        </p>
+      </div>
+
+      <h2>Readings</h2>
+      <div class="reading-list">
+        <div class="reading-item">
+          <div class="reading-type"><i data-lucide="file-text"></i></div>
+          <div class="reading-content">
+            <div class="reading-title">
+              <a href="https://www.jmir.org/2023/1/e50638" target="_blank">Prompt Engineering as an Important Emerging Skill for Medical Professionals: Tutorial</a>
+            </div>
+            <div class="reading-meta">Meskó B, Topol EJ · JMIR 2023 · Comprehensive framework with healthcare-specific applications</div>
+          </div>
+        </div>
+        <div class="reading-item">
+          <div class="reading-type"><i data-lucide="file-text"></i></div>
+          <div class="reading-content">
+            <div class="reading-title">
+              <a href="https://www.frontiersin.org/journals/medicine/articles/10.3389/fmed.2024.1504532/full" target="_blank">A Guide to Prompt Design for Healthcare Simulationists</a>
+            </div>
+            <div class="reading-meta">Elhassan M, et al. · Frontiers in Medicine 2024 · Practical guidance for clinical education</div>
+          </div>
+        </div>
+        <div class="reading-item">
+          <div class="reading-type"><i data-lucide="file-text"></i></div>
+          <div class="reading-content">
+            <div class="reading-title">
+              <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC11396764/" target="_blank">Large Language Model Prompting Techniques for Advancement in Clinical Medicine</a>
+            </div>
+            <div class="reading-meta">PMC 2024 · Zero-shot, one-shot, and few-shot learning with clinical examples</div>
+          </div>
+        </div>
+        <div class="reading-item">
+          <div class="reading-type"><i data-lucide="file-text"></i></div>
+          <div class="reading-content">
+            <div class="reading-title">
+              <a href="https://docs.anthropic.com/claude/docs/intro-to-prompting" target="_blank">Anthropic Prompting Documentation</a>
+            </div>
+            <div class="reading-meta">Anthropic · Official guidance on structuring prompts—principles transfer across tools</div>
+          </div>
+        </div>
+        <div class="reading-item">
+          <div class="reading-type"><i data-lucide="file-text"></i></div>
+          <div class="reading-content">
+            <div class="reading-title">
+              <a href="https://learnprompting.org/" target="_blank">Learn Prompting</a>
+            </div>
+            <div class="reading-meta">Comprehensive free guide cited by Google, Microsoft · Beginner through advanced</div>
+          </div>
+        </div>
+        <div class="reading-item">
+          <div class="reading-type"><i data-lucide="file-text"></i></div>
+          <div class="reading-content">
+            <div class="reading-title">
+              <a href="https://www.mdpi.com/1648-9144/60/1/148" target="_blank">Chain of Thought Utilization in Large Language Models and Application in Nephrology</a>
+            </div>
+            <div class="reading-meta">Medicina 2024 · How chain-of-thought prompting mirrors clinical reasoning</div>
+          </div>
+        </div>
+      </div>
+
+      <h2>Podcasts</h2>
+      <div class="reading-list">
+        <div class="reading-item">
+          <div class="reading-type"><i data-lucide="headphones"></i></div>
+          <div class="reading-content">
+            <div class="reading-title">
+              <a href="https://ai-podcast.nejm.org/" target="_blank">NEJM AI Grand Rounds</a>
+            </div>
+            <div class="reading-meta">Hosts Arjun Manrai & Andrew Beam · Practical implementation and emerging research</div>
+          </div>
+        </div>
+        <div class="reading-item">
+          <div class="reading-type"><i data-lucide="headphones"></i></div>
+          <div class="reading-content">
+            <div class="reading-title">
+              <a href="https://www.microsoft.com/en-us/research/podcast/the-ai-revolution-in-medicine-revisited-the-reality-of-generative-ai-in-the-clinic/" target="_blank">The AI Revolution in Medicine, Revisited</a>
+            </div>
+            <div class="reading-meta">Microsoft Research Podcast · Peter Lee interviews UCSF and UC San Diego health AI leaders</div>
+          </div>
+        </div>
+        <div class="reading-item">
+          <div class="reading-type"><i data-lucide="headphones"></i></div>
+          <div class="reading-content">
+            <div class="reading-title">
+              <a href="https://med.stanford.edu/health-compass-podcast/ai-health-care.html" target="_blank">Health Compass Podcast: AI & Healthcare</a>
+            </div>
+            <div class="reading-meta">Stanford Medicine · Jonathan Chen and Michael Pfeffer on AI's real-world impact</div>
+          </div>
+        </div>
+        <div class="reading-item">
+          <div class="reading-type"><i data-lucide="headphones"></i></div>
+          <div class="reading-content">
+            <div class="reading-title">
+              <a href="https://kevinmd.com/podcast" target="_blank">KevinMD Podcast</a>
+            </div>
+            <div class="reading-meta">Kevin Pho, MD · Regular episodes on AI from various physician perspectives</div>
+          </div>
+        </div>
+      </div>
+
+      <h2>Books</h2>
+      <div class="reading-list">
+        <div class="reading-item">
+          <div class="reading-type"><i data-lucide="book"></i></div>
+          <div class="reading-content">
+            <div class="reading-title">
+              The AI Revolution in Medicine: GPT-4 and Beyond
+            </div>
+            <div class="reading-meta">Lee P, Goldberg C, Kohane I · Pearson 2023 · How LLMs will transform medical practice</div>
+          </div>
+        </div>
+        <div class="reading-item">
+          <div class="reading-type"><i data-lucide="book"></i></div>
+          <div class="reading-content">
+            <div class="reading-title">
+              Deep Medicine: How AI Can Make Healthcare Human Again
+            </div>
+            <div class="reading-meta">Topol E · Basic Books 2019 · AI as augmentation, restoring humanism to medicine</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="discussion-questions">
+        <h4>Reflection Questions</h4>
+        <ol>
+          <li>
+            Think of a recent clinical question you had. How would you prompt an AI to help
+            with it? What context, constraints, and specificity would you include?
+          </li>
+          <li>
+            How does the structure of a good case presentation parallel the structure of
+            a good prompt? What elements transfer directly?
+          </li>
+          <li>
+            When has vague communication led to problems in your clinical work? How might
+            those same issues appear when communicating with AI?
+          </li>
+          <li>
+            What clinical tasks in your workflow might benefit most from well-crafted prompts?
+            What makes those tasks good candidates?
+          </li>
+        </ol>
+      </div>
+
+      <div class="objectives phase-1">
+        <h4 class="objectives-title">Learning Objectives</h4>
+        <ul class="objectives-list">
+          <li>Explain the three meanings of "prompting" and how they differ</li>
+          <li>Apply clinical communication skills (specificity, context, structure) to AI interactions</li>
+          <li>Construct effective prompts using context, task, constraints, and examples</li>
+          <li>Use role assignment and chain-of-thought techniques to improve AI outputs</li>
+          <li>Practice iterative refinement to get useful results without perfect initial prompts</li>
+          <li>Recognize when prompting limitations require verification or alternative approaches</li>
+        </ul>
+      </div>
+
+      <nav class="page-nav">
+        <a href="module-2.html" class="page-nav-link prev">
+          <span class="page-nav-arrow"><i data-lucide="arrow-left"></i></span>
+          <div>
+            <span class="page-nav-label">Previous</span>
+            <span class="page-nav-title">Module 2: PHI, HIPAA, and AI</span>
+          </div>
+        </a>
+        <a href="module-4.html" class="page-nav-link next">
+          <span class="page-nav-arrow"><i data-lucide="arrow-right"></i></span>
+          <div>
+            <span class="page-nav-label">Next</span>
+            <span class="page-nav-title">Module 4: The Big Three</span>
+          </div>
+        </a>
+      </nav>
+
+    </article>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div><strong>AI 101</strong> · A Self-Paced Guide to AI in Medicine</div>
+      <div>v1.0 · 2025</div>
+    </div>
+  </footer>
+
+  <script>
+    lucide.createIcons();
+    const navToggle = document.querySelector('.nav-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    if (navToggle) {
+      navToggle.addEventListener('click', () => {
+        navLinks.classList.toggle('nav-open');
+      });
+    }
+  </script>
+
+</body>
+</html>

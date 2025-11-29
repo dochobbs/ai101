@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Week 6: Module 13: Hallucinations and Supervision | AI 101</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-brand">
+        <span class="nav-badge">AI 101</span>
+        <span class="nav-title">A Self-Paced Guide to AI in Medicine</span>
+      </a>
+      <button class="nav-toggle" aria-label="Toggle menu">
+        <i data-lucide="menu"></i>
+      </button>
+      <div class="nav-links">
+        <a href="index.html" class="nav-link">Modules</a>
+        <!-- <a href="resources.html" class="nav-link">Resources</a> -->
+        <a href="about.html" class="nav-link">About</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="main">
+    <article class="content">
+
+      <header class="unit-header">
+        <span class="unit-label phase-2">PHASE II · MODULE 13</span>
+        <h1 class="unit-title">Hallucinations and Supervision</h1>
+        <p class="unit-subtitle">
+          A taxonomy of AI confabulation and the DEFT-AI framework for
+          structured clinical oversight.
+        </p>
+        <div class="unit-meta">
+          <span class="unit-meta-item">
+            <i data-lucide="book-open"></i>
+            4 readings
+          </span>
+        </div>
+      </header>
+
+      <div class="callout callout-question">
+        <div class="callout-title">Core Question</div>
+        <p class="mb-0">
+          How do we build systematic oversight frameworks for AI outputs when 
+          the AI is confident, fluent, and wrong?
+        </p>
+      </div>
+
+      <h2>Overview</h2>
+      <p>
+        "Hallucination" is the term for when LLMs generate plausible but factually 
+        incorrect information. In medicine, hallucinated drug dosages, invented 
+        contraindications, or fabricated research citations could cause direct 
+        patient harm. Unlike obvious errors, hallucinations are often grammatically 
+        correct, contextually appropriate, and delivered with inappropriate confidence.
+      </p>
+      <p>
+        This week develops both a conceptual taxonomy of hallucination types and 
+        practical frameworks for human oversight. The goal isn't to make AI 
+        "safe enough to trust autonomously"—it's to structure supervision so 
+        that humans remain meaningfully in control.
+      </p>
+
+      <h2>Key Concepts</h2>
+
+      <h3>A Taxonomy of Hallucinations</h3>
+      <p>
+        Not all hallucinations are the same. Useful categories include:
+      </p>
+      <ul>
+        <li><strong>Factual fabrication:</strong> Invented facts, citations, or data points</li>
+        <li><strong>Conflation:</strong> Mixing up details from different sources or contexts</li>
+        <li><strong>Outdated information:</strong> Confidently stating information that was once true but is no longer</li>
+        <li><strong>Plausible extrapolation:</strong> Extending patterns beyond what data supports</li>
+        <li><strong>Context blindness:</strong> Failing to account for specific patient factors that modify general recommendations</li>
+      </ul>
+
+      <h3>The DEFT-AI Framework</h3>
+      <p>
+        DEFT-AI provides a structured approach to supervising AI clinical outputs:
+      </p>
+      <ul>
+        <li><strong>D</strong>iagnosis verification: Does the assessment fit the presented data?</li>
+        <li><strong>E</strong>vidence checking: Can you verify the key claims against reliable sources?</li>
+        <li><strong>F</strong>eedback loops: Are you documenting errors to improve future performance?</li>
+        <li><strong>T</strong>eaching moments: Are you using AI outputs as learning opportunities rather than final answers?</li>
+      </ul>
+
+      <h3>When Supervision Fails</h3>
+      <p>
+        Human oversight is not a magic fix. Research shows that humans often 
+        over-trust AI outputs, especially when tired, rushed, or facing outputs 
+        outside their expertise. Automation bias—the tendency to accept automated 
+        suggestions uncritically—is well-documented in aviation, radiology, and 
+        other domains.
+      </p>
+
+      <div class="callout callout-warning">
+        <div class="callout-title">Critical Point</div>
+        <p class="mb-0">
+          "Human in the loop" is not a safety guarantee—it's a starting point 
+          for thinking about how to structure oversight so the human can actually 
+          catch errors. Speed pressure, false confidence, and expertise mismatches 
+          all undermine effective supervision.
+        </p>
+      </div>
+
+      <div class="callout callout-info">
+        <div class="callout-title">Activity: Hallucination Hunter</div>
+        <p class="mb-0">
+          You'll review AI-generated discharge summaries that contain subtle 
+          errors—wrong dosages, fabricated history details, inappropriate 
+          recommendations. Can you catch them all in the time available?
+        </p>
+      </div>
+
+      <h2>Readings</h2>
+      <div class="reading-list">
+        <div class="reading-item">
+          <div class="reading-type">📄</div>
+          <div class="reading-content">
+            <div class="reading-title">
+              Umapathi, L. et al. "Large language models generate incorrect but plausible medical information"
+
+            </div>
+            <div class="reading-meta">Nature Scientific Reports, 2023</div>
+          </div>
+        </div>
+        <div class="reading-item">
+          <div class="reading-type">📄</div>
+          <div class="reading-content">
+            <div class="reading-title">
+              Bates, D. et al. "The Safety of Inpatient Health Care"
+
+            </div>
+            <div class="reading-meta">NEJM, 2023 · Context on error rates in healthcare</div>
+          </div>
+        </div>
+        <div class="reading-item">
+          <div class="reading-type">📄</div>
+          <div class="reading-content">
+            <div class="reading-title">
+              Gaube, S. et al. "Do as AI say: susceptibility in deployment of clinical decision-aids"
+
+            </div>
+            <div class="reading-meta">NPJ Digital Medicine, 2021 · Automation bias in medicine</div>
+          </div>
+        </div>
+        <div class="reading-item">
+          <div class="reading-type">📄</div>
+          <div class="reading-content">
+            <div class="reading-title">
+              Ji, Z. et al. "Survey of Hallucination in Natural Language Generation"
+
+            </div>
+            <div class="reading-meta">ACM Computing Surveys, 2023 · Technical deep dive</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="discussion-questions">
+        <h4>Discussion Questions</h4>
+        <ol>
+          <li>
+            You're using an AI to draft discharge instructions and it recommends 
+            a medication dose you don't recognize. What's your verification process?
+          </li>
+          <li>
+            A resident says "I always check what the AI suggests against UpToDate." 
+            Is this sufficient oversight? What are the limitations?
+          </li>
+          <li>
+            How might workflow design either support or undermine effective 
+            supervision of AI outputs?
+          </li>
+        </ol>
+      </div>
+
+      <div class="objectives phase-2">
+        <h4 class="objectives-title">Learning Objectives</h4>
+        <ul class="objectives-list">
+          <li>Categorize different types of AI hallucinations in clinical contexts</li>
+          <li>Apply the DEFT-AI framework to structure supervision of AI outputs</li>
+          <li>Identify conditions under which human oversight is likely to fail</li>
+          <li>Design workflow elements that support effective AI supervision</li>
+        </ul>
+      </div>
+
+      <nav class="page-nav">
+        <a href="week-5.html" class="page-nav-link prev">
+          <span class="page-nav-arrow"><i data-lucide="arrow-left"></i></span>
+          <div>
+            <span class="page-nav-label">Previous</span>
+            <span class="page-nav-title">Module 12: Large Language Models</span>
+          </div>
+        </a>
+        <a href="week-7.html" class="page-nav-link next">
+          <span class="page-nav-arrow"><i data-lucide="arrow-right"></i></span>
+          <div>
+            <span class="page-nav-label">Next</span>
+            <span class="page-nav-title">Module 14: Centaurs and Cyborgs</span>
+          </div>
+        </a>
+      </nav>
+
+    </article>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div><strong>AI 101</strong> · A Self-Paced Guide to AI in Medicine</div>
+      <div>v1.0 · 2025</div>
+    </div>
+  </footer>
+
+  <script>
+    lucide.createIcons();
+    const navToggle = document.querySelector('.nav-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    if (navToggle) {
+      navToggle.addEventListener('click', () => {
+        navLinks.classList.toggle('nav-open');
+      });
+    }
+  </script>
+
+</body>
+</html>

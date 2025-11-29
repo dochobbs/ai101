@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Week 5: Module 13: Large Language Models | AI 101</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-brand">
+        <span class="nav-badge">AI 101</span>
+        <span class="nav-title">A Self-Paced Guide to AI in Medicine</span>
+      </a>
+      <button class="nav-toggle" aria-label="Toggle menu">
+        <i data-lucide="menu"></i>
+      </button>
+      <div class="nav-links">
+        <a href="index.html" class="nav-link">Modules</a>
+        <!-- <a href="resources.html" class="nav-link">Resources</a> -->
+        <a href="about.html" class="nav-link">About</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="main">
+    <article class="content">
+
+      <header class="unit-header">
+        <span class="unit-label phase-2">PHASE II · MODULE 13</span>
+        <h1 class="unit-title">Large Language Models</h1>
+        <p class="unit-subtitle">
+          From Med-PaLM 2's USMLE performance to GPT-4's clinical reasoning:
+          capabilities, architectures, and fundamental limitations.
+        </p>
+        <div class="unit-meta">
+          <span class="unit-meta-item">
+            <i data-lucide="book-open"></i>
+            5 readings
+          </span>
+        </div>
+      </header>
+
+      <div class="callout callout-question">
+        <div class="callout-title">Core Question</div>
+        <p class="mb-0">
+          What can large language models actually do in clinical contexts—and 
+          what fundamental limitations prevent them from being autonomous 
+          medical decision-makers?
+        </p>
+      </div>
+
+      <h2>Overview</h2>
+      <p>
+        Phase II shifts from predictive AI to generative AI—systems that produce 
+        new content rather than classifying existing inputs. Large language models 
+        (LLMs) like GPT-4, Claude, and specialized medical models like Med-PaLM 2 
+        represent a qualitative shift in AI capabilities, passing medical licensing 
+        exams and producing clinical notes that sometimes earn higher quality ratings 
+        than human-written documentation.
+      </p>
+      <p>
+        But impressive benchmarks don't equal clinical readiness. This week builds 
+        a technical foundation for understanding what LLMs are, how they work at a 
+        conceptual level, and why their architecture creates specific failure modes.
+      </p>
+
+      <h2>Key Concepts</h2>
+
+      <h3>Next-Token Prediction and Emergent Capabilities</h3>
+      <p>
+        LLMs are trained on a deceptively simple task: predict the next word (or 
+        "token") given the preceding context. This statistical pattern-matching, 
+        scaled to trillions of words and billions of parameters, produces surprising 
+        "emergent" capabilities—abilities that weren't explicitly trained but appear 
+        at sufficient scale.
+      </p>
+      <p>
+        Understanding this foundation matters: LLMs don't "know" medicine the way 
+        physicians do. They predict what a medical text would likely say next. The 
+        difference is subtle but crucial.
+      </p>
+
+      <h3>Benchmarks and Their Limits</h3>
+      <p>
+        Med-PaLM 2 achieved 86.5% on USMLE-style questions. GPT-4 passes various 
+        medical licensing exams. These results are genuinely impressive—but they 
+        measure performance on structured questions with defined right answers, 
+        not messy real-world clinical scenarios with incomplete information, 
+        competing priorities, and no clear "correct" answer.
+      </p>
+
+      <h3>Context Windows and Knowledge Boundaries</h3>
+      <p>
+        LLMs have a "context window"—a limit on how much text they can consider 
+        at once. This creates practical constraints: a model can't read an entire 
+        EHR at once. Additionally, LLMs have a knowledge cutoff—they don't know 
+        about events, guidelines, or research published after their training data 
+        was collected. In rapidly evolving fields, this is a significant limitation.
+      </p>
+
+      <div class="callout callout-principle">
+        <div class="callout-title">Key Distinction</div>
+        <p class="mb-0">
+          Passing a test is not the same as practicing medicine. A model that 
+          scores well on USMLE questions may still generate dangerous recommendations 
+          when given an unusual presentation or asked to integrate information 
+          across multiple domains.
+        </p>
+      </div>
+
+      <h2>Readings</h2>
+      <div class="reading-list">
+        <div class="reading-item">
+          <div class="reading-type">📄</div>
+          <div class="reading-content">
+            <div class="reading-title">
+              Singhal, K. et al. "Large language models encode clinical knowledge"
+
+            </div>
+            <div class="reading-meta">Nature, 2023 · Med-PaLM paper</div>
+          </div>
+        </div>
+        <div class="reading-item">
+          <div class="reading-type">📄</div>
+          <div class="reading-content">
+            <div class="reading-title">
+              Nori, H. et al. "Capabilities of GPT-4 on Medical Challenge Problems"
+
+            </div>
+            <div class="reading-meta">Microsoft Research, 2023 · GPT-4 medical evaluation</div>
+          </div>
+        </div>
+        <div class="reading-item">
+          <div class="reading-type">📄</div>
+          <div class="reading-content">
+            <div class="reading-title">
+              Lee, P. et al. "Benefits, Limits, and Risks of GPT-4 as an AI Chatbot for Medicine"
+
+            </div>
+            <div class="reading-meta">NEJM, 2023 · Balanced clinical perspective</div>
+          </div>
+        </div>
+        <div class="reading-item">
+          <div class="reading-type">📄</div>
+          <div class="reading-content">
+            <div class="reading-title">
+              Thirunavukarasu, A. et al. "Large language models in medicine"
+
+            </div>
+            <div class="reading-meta">Nature Medicine, 2023 · Comprehensive review</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="discussion-questions">
+        <h4>Discussion Questions</h4>
+        <ol>
+          <li>
+            If an LLM achieves 90% on a medical exam, is that "good enough" for 
+            clinical use? What other factors should we consider?
+          </li>
+          <li>
+            How does the "next-token prediction" training objective relate to 
+            hallucination—the tendency to generate plausible but false information?
+          </li>
+          <li>
+            A colleague says "ChatGPT knows everything in medical textbooks, so 
+            it should be great for differential diagnosis." How would you respond?
+          </li>
+        </ol>
+      </div>
+
+      <div class="objectives phase-2">
+        <h4 class="objectives-title">Learning Objectives</h4>
+        <ul class="objectives-list">
+          <li>Explain how LLMs are trained and what "next-token prediction" means</li>
+          <li>Interpret medical benchmark results with appropriate skepticism</li>
+          <li>Identify fundamental architectural limitations of LLMs for clinical use</li>
+          <li>Distinguish between knowledge retrieval and clinical reasoning</li>
+        </ul>
+      </div>
+
+      <nav class="page-nav">
+        <a href="module-12.html" class="page-nav-link prev">
+          <span class="page-nav-arrow"><i data-lucide="arrow-left"></i></span>
+          <div>
+            <span class="page-nav-label">Previous</span>
+            <span class="page-nav-title">Module 12: Everyday Ways to Use AI</span>
+          </div>
+        </a>
+        <a href="week-7.html" class="page-nav-link next">
+          <span class="page-nav-arrow"><i data-lucide="arrow-right"></i></span>
+          <div>
+            <span class="page-nav-label">Next</span>
+            <span class="page-nav-title">Module 14: Centaurs and Cyborgs</span>
+          </div>
+        </a>
+      </nav>
+
+    </article>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div><strong>AI 101</strong> · A Self-Paced Guide to AI in Medicine</div>
+      <div>v1.0 · 2025</div>
+    </div>
+  </footer>
+
+  <script>
+    lucide.createIcons();
+    const navToggle = document.querySelector('.nav-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    if (navToggle) {
+      navToggle.addEventListener('click', () => {
+        navLinks.classList.toggle('nav-open');
+      });
+    }
+  </script>
+
+</body>
+</html>

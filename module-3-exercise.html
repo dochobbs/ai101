@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercise: The Prompt Matters | Module 3 | AI 101</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-brand">
+        <span class="nav-badge">AI 101</span>
+        <span class="nav-title">A Self-Paced Guide to AI in Medicine</span>
+      </a>
+      <button class="nav-toggle" aria-label="Toggle menu">
+        <i data-lucide="menu"></i>
+      </button>
+      <div class="nav-links">
+        <a href="index.html" class="nav-link">Modules</a>
+        <!-- <a href="resources.html" class="nav-link">Resources</a> -->
+        <a href="about.html" class="nav-link">About</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="main">
+    <article class="content">
+
+      <header class="unit-header">
+        <span class="unit-label phase-1">PHASE I · MODULE 3 EXERCISE</span>
+        <h1 class="unit-title">The Prompt Matters</h1>
+        <p class="unit-subtitle">
+          A side-by-side comparison using a clinical AI tool—see how
+          the same question produces dramatically different outputs.
+        </p>
+        <div class="unit-meta">
+          <span class="unit-meta-item">
+            <i data-lucide="flask-conical"></i>
+            Hands-on exercise
+          </span>
+        </div>
+      </header>
+
+      <!-- The Setup -->
+      <h2>The Setup</h2>
+
+      <p>
+        You're a pediatrician. A 12-year-old boy with familial hypercholesterolemia (FH)
+        is in your office. His LDL is 190 mg/dL despite six months of dietary modifications.
+        His father had a myocardial infarction at age 42. You're considering statin therapy
+        and want to check the evidence.
+      </p>
+
+      <p>
+        You open a clinical AI tool to help inform your decision.
+      </p>
+
+      <div class="callout callout-principle">
+        <div class="callout-title">The Key Insight</div>
+        <p class="mb-0">
+          <em>How</em> you ask the question will dramatically shape the answer you get—and
+          whether that answer actually helps you care for this patient.
+        </p>
+      </div>
+
+      <hr>
+
+      <!-- Prompt A: The Vague Approach -->
+      <h2>Prompt A: The Vague Approach</h2>
+
+      <div class="screenshot-container">
+        <img src="images/bad_prompt_statins.png" alt="Screenshot showing a vague prompt: What about statins in kids?" class="screenshot">
+      </div>
+
+      <div class="prompt-box">"What about statins in kids?"</div>
+
+      <h3>What's Wrong With This Prompt?</h3>
+
+      <p>
+        Let's break down why this prompt is likely to produce unhelpful—or potentially
+        misleading—output.
+      </p>
+
+      <h4>Problem 1: No clinical context</h4>
+      <p>
+        The AI has no idea who's asking or why. Are you a:
+      </p>
+      <ul>
+        <li>Pediatrician considering treatment for a specific patient?</li>
+        <li>Medical student studying pharmacology?</li>
+        <li>Parent who read something online?</li>
+        <li>Researcher reviewing the literature?</li>
+      </ul>
+      <p>
+        Each of these would warrant a completely different response. Without context,
+        the AI has to guess—and it will default to a generic, encyclopedia-style overview
+        that may not address your actual need.
+      </p>
+
+      <h4>Problem 2: No specific question</h4>
+      <p>
+        "What about statins in kids?" could mean dozens of things:
+      </p>
+      <ul>
+        <li>Are they safe?</li>
+        <li>Are they effective?</li>
+        <li>Which ones are approved?</li>
+        <li>At what age can they be started?</li>
+        <li>What are the indications?</li>
+        <li>What are the side effects?</li>
+        <li>How do you monitor?</li>
+        <li>What do guidelines say?</li>
+      </ul>
+      <p>
+        The AI will try to cover everything superficially rather than anything deeply.
+        You'll get breadth without the depth you need to make a clinical decision.
+      </p>
+
+      <h4>Problem 3: No patient specifics</h4>
+      <p>
+        Statins in a child with heterozygous FH is a very different question than statins
+        in a child with obesity-related dyslipidemia. Without knowing your patient's diagnosis,
+        labs, family history, and what's already been tried, the AI can't tailor its response
+        to your situation.
+      </p>
+
+      <h4>Problem 4: Increased hallucination risk</h4>
+      <p>
+        Here's a critical point from Module 2: <strong>vague prompts increase hallucination risk</strong>.
+        When a question is ambiguous, the AI has more "degrees of freedom" in generating a response.
+        It's more likely to:
+      </p>
+      <ul>
+        <li>Fill gaps with plausible-sounding but potentially inaccurate information</li>
+        <li>Blend information from different contexts inappropriately</li>
+        <li>Generate confident-sounding statements about things it's uncertain about</li>
+      </ul>
+      <p>
+        A specific question constrains the response space. A vague question lets the AI wander.
+      </p>
+
+      <h4>Problem 5: No way to verify relevance</h4>
+      <p>
+        Even if the AI produces accurate general information, how will you know if it applies
+        to your patient? You'll have to do the mental work of filtering and applying—work
+        the AI could have done if you'd given it the information to work with.
+      </p>
+
+      <h3>What You're Likely to Get</h3>
+
+      <p>With a prompt like "What about statins in kids?", expect:</p>
+
+      <ul>
+        <li>A general overview of pediatric statin use</li>
+        <li>Broad statements about safety and efficacy</li>
+        <li>Possibly outdated or non-specific guideline references</li>
+        <li>No guidance on YOUR patient's specific situation</li>
+        <li>No clear decision support</li>
+        <li>Information you'll need to significantly filter and supplement</li>
+      </ul>
+
+      <p>
+        You've essentially asked the AI to write a review article when what you needed
+        was a focused consultation.
+      </p>
+
+      <div class="callout callout-info">
+        <div class="callout-title">The Clinical Parallel</div>
+        <p>
+          Imagine calling a colleague for a curbside consult and saying only:
+          "Hey, what about statins in kids?"
+        </p>
+        <p class="mb-0">
+          They'd immediately ask: "What's the situation? Who's the patient? What have
+          you tried? What specifically are you wondering about?" Your colleague needs
+          context to give useful advice. So does the AI. The difference is that your
+          colleague will ask clarifying questions. The AI will just... answer. With
+          whatever interpretation it defaults to.
+        </p>
+      </div>
+
+      <hr>
+
+      <!-- Prompt B: The Specific Approach -->
+      <h2>Prompt B: The Specific Approach</h2>
+
+      <div class="screenshot-container">
+        <img src="images/good_prompt_statins.png" alt="Screenshot showing a specific, well-structured prompt about pediatric statin therapy" class="screenshot">
+      </div>
+
+      <div class="prompt-box">"I'm a pediatrician seeing a 12-year-old boy with familial hypercholesterolemia. His LDL is 190 mg/dL despite 6 months of dietary modifications. His father had an MI at age 42. What does current evidence say about initiating statin therapy in pediatric FH patients—specifically, at what LDL threshold, which statins have pediatric safety data, and what monitoring is recommended?"</div>
+
+      <h3>What Makes This Prompt Effective?</h3>
+
+      <h4>Element 1: Professional identity establishes context</h4>
+      <p>
+        "I'm a pediatrician" tells the AI:
+      </p>
+      <ul>
+        <li>Use clinical language appropriate for a physician</li>
+        <li>Assume baseline medical knowledge</li>
+        <li>Frame the response as peer-to-peer clinical guidance</li>
+        <li>Focus on practical decision-making, not patient education</li>
+      </ul>
+
+      <h4>Element 2: Specific patient details focus the response</h4>
+      <ul>
+        <li><strong>"12-year-old boy"</strong>—age and sex matter for pediatric prescribing</li>
+        <li><strong>"familial hypercholesterolemia"</strong>—this is the specific indication, not generic dyslipidemia</li>
+        <li><strong>"LDL is 190 mg/dL"</strong>—quantifies the severity</li>
+        <li><strong>"despite 6 months of dietary modifications"</strong>—establishes that first-line therapy has been tried</li>
+        <li><strong>"father had an MI at age 42"</strong>—provides family history that influences risk assessment</li>
+      </ul>
+      <p>
+        Each detail constrains the response toward relevance. The AI isn't guessing what
+        scenario you're asking about—you've told it.
+      </p>
+
+      <h4>Element 3: Explicit question structure</h4>
+      <p>
+        The prompt doesn't just ask "what should I do?" It breaks down the specific
+        information needed:
+      </p>
+      <ul>
+        <li>LDL threshold for treatment initiation</li>
+        <li>Which statins have pediatric safety data</li>
+        <li>Monitoring recommendations</li>
+      </ul>
+      <p>
+        This structure guides the AI to organize its response around your actual decision
+        points rather than generating a generic overview.
+      </p>
+
+      <h4>Element 4: Evidence framing</h4>
+      <p>
+        "What does current evidence say" signals that you want evidence-based guidance,
+        not opinion. This primes the AI to reference guidelines, studies, and established
+        recommendations rather than generating general statements.
+      </p>
+
+      <h3>What You're Likely to Get</h3>
+
+      <p>With this specific prompt, expect:</p>
+
+      <ul>
+        <li>Targeted information about statin therapy specifically in pediatric FH</li>
+        <li>Reference to relevant guidelines (AAP, AHA, NLA recommendations for FH)</li>
+        <li>Specific LDL thresholds for treatment initiation in this population</li>
+        <li>Information about which statins (likely atorvastatin, rosuvastatin, pravastatin) have pediatric indication or safety data</li>
+        <li>Monitoring parameters (baseline and follow-up LFTs, CK if symptomatic, lipid panels)</li>
+        <li>Contextually relevant information you can actually apply to your patient</li>
+      </ul>
+
+      <p>
+        The response should function more like a focused literature summary or specialist
+        consultation than an encyclopedia entry.
+      </p>
+
+      <h3>Reduced Hallucination Risk</h3>
+
+      <p>The specific prompt reduces hallucination risk in several ways:</p>
+
+      <p>
+        <strong>Narrower scope = less room for error.</strong> When you ask about pediatric
+        FH specifically, the AI draws on a more focused knowledge domain. When you ask
+        vaguely about "statins in kids," it has to synthesize across many contexts,
+        increasing the chance of inappropriate blending.
+      </p>
+
+      <p>
+        <strong>Checkable claims.</strong> Specific questions tend to produce specific,
+        verifiable answers. "Atorvastatin is FDA-approved for pediatric FH starting at
+        age 10" is verifiable. "Statins can be used in children in some situations" is
+        technically true but not useful or checkable.
+      </p>
+
+      <p>
+        <strong>Explicit uncertainty prompting.</strong> By asking "what does the evidence
+        say," you're implicitly asking the AI to anchor its response in sources—making it
+        more likely to acknowledge when evidence is limited rather than generating
+        confident-sounding filler.
+      </p>
+
+      <hr>
+
+      <!-- Comparison Table -->
+      <h2>The Comparison at a Glance</h2>
+
+      <div class="table-responsive">
+        <table class="reference-table">
+          <thead>
+            <tr>
+              <th>Dimension</th>
+              <th>Vague Prompt</th>
+              <th>Specific Prompt</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Who's asking</strong></td>
+              <td>Unknown</td>
+              <td>Pediatrician</td>
+            </tr>
+            <tr>
+              <td><strong>Clinical scenario</strong></td>
+              <td>None</td>
+              <td>12yo male, FH, LDL 190, diet failed, FHx of early MI</td>
+            </tr>
+            <tr>
+              <td><strong>Question</strong></td>
+              <td>Unclear ("what about...?")</td>
+              <td>Three specific sub-questions</td>
+            </tr>
+            <tr>
+              <td><strong>Expected output</strong></td>
+              <td>Generic overview</td>
+              <td>Targeted decision support</td>
+            </tr>
+            <tr>
+              <td><strong>Hallucination risk</strong></td>
+              <td>Higher</td>
+              <td>Lower</td>
+            </tr>
+            <tr>
+              <td><strong>Clinical utility</strong></td>
+              <td>Low—requires significant filtering</td>
+              <td>High—directly applicable</td>
+            </tr>
+            <tr>
+              <td><strong>Verification</strong></td>
+              <td>Difficult—claims are vague</td>
+              <td>Easier—claims are specific</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <hr>
+
+      <!-- The Takeaway -->
+      <h2>The Takeaway</h2>
+
+      <p>
+        The same clinical question can produce dramatically different AI outputs depending
+        on how you frame it. This isn't about knowing magic words or secret techniques.
+        It's about the same principle that governs good clinical communication:
+      </p>
+
+      <div class="callout callout-principle">
+        <div class="callout-title">Specific input produces specific output.</div>
+        <p class="mb-0">
+          You already know this from taking histories. "I don't feel good" gives you nothing.
+          "I've had three days of progressive shortness of breath, worse when I lie flat,
+          and I noticed my ankles are swollen" gives you a direction.
+        </p>
+      </div>
+
+      <p>
+        <strong>The habit to build:</strong> before submitting any prompt to a clinical AI tool,
+        pause and ask yourself:
+      </p>
+
+      <ul>
+        <li>Have I told it who I am and what context I'm working in?</li>
+        <li>Have I provided the relevant patient details?</li>
+        <li>Have I specified exactly what I need to know?</li>
+        <li>Is my question focused enough that I'll be able to verify the answer?</li>
+      </ul>
+
+      <p>
+        Those few seconds of thought consistently transform vague, marginally useful AI
+        responses into focused, clinically applicable guidance.
+      </p>
+
+      <hr>
+
+      <!-- Connection to Modules -->
+      <h2>Connection to Module 2: Why This Matters for Safety</h2>
+
+      <p>
+        Remember from Module 2 that AI hallucinations aren't random—they're more likely
+        under certain conditions. Vague prompts create those conditions:
+      </p>
+
+      <ul>
+        <li><strong>Ambiguity</strong> forces the AI to guess your intent, and guesses can be wrong</li>
+        <li><strong>Broad scope</strong> requires synthesis across contexts, increasing error risk</li>
+        <li><strong>Lack of constraints</strong> gives the AI more freedom to generate plausible-sounding but inaccurate content</li>
+      </ul>
+
+      <p>
+        Specific prompts are a <em>safety practice</em>, not just an efficiency practice.
+        They reduce the attack surface for hallucination by constraining what the AI needs to produce.
+      </p>
+
+      <p>
+        This doesn't eliminate the need for verification—you should still check important
+        claims regardless of how you prompted. But specific prompts make verification easier
+        (because claims are more concrete) and reduce the volume of content you need to
+        verify (because the response is more focused).
+      </p>
+
+      <div class="callout callout-info">
+        <div class="callout-title">Key Principles Reinforced</div>
+        <p><strong>From Module 1:</strong> AI tools are most useful when you understand what they actually do—predict likely text given input. Better input = better predictions.</p>
+        <p><strong>From Module 2:</strong> Hallucinations are more likely with vague, open-ended prompts. Specificity is a risk-reduction strategy.</p>
+        <p class="mb-0"><strong>From Module 3:</strong> The principles of good clinical communication—context, specificity, clear questions—apply directly to AI interaction. You already have these skills; now apply them to a new medium.</p>
+      </div>
+
+      <hr>
+
+      <!-- Challenge Section -->
+      <h2>Your Challenge: Try It Yourself</h2>
+
+      <div class="activity-section">
+        <h3 class="activity-title">Hands-On Comparison</h3>
+        <ol class="activity-steps">
+          <li class="activity-step">
+            <span class="step-number">1</span>
+            <div class="step-content">
+              <p><strong>Run both prompts</strong> through a clinical AI tool you have access to (Open Evidence, Glass AI, or a general tool like Claude or ChatGPT).</p>
+            </div>
+          </li>
+          <li class="activity-step">
+            <span class="step-number">2</span>
+            <div class="step-content">
+              <p><strong>Compare the outputs.</strong> Note:</p>
+              <ul>
+                <li>How much of each response is directly relevant to the clinical scenario?</li>
+                <li>Which response gives you actionable guidance?</li>
+                <li>Which response makes claims that are easier to verify?</li>
+                <li>Which response would you trust more—and why?</li>
+              </ul>
+            </div>
+          </li>
+          <li class="activity-step">
+            <span class="step-number">3</span>
+            <div class="step-content">
+              <p><strong>Reflect on the difference.</strong> The time investment in the specific prompt was perhaps 30 seconds of additional typing. What was the return on that investment in terms of output quality?</p>
+            </div>
+          </li>
+          <li class="activity-step">
+            <span class="step-number">4</span>
+            <div class="step-content">
+              <p><strong>Apply it forward.</strong> The next time you use an AI tool for a clinical question, deliberately construct a specific prompt before falling back on a quick, vague one. Track whether the outputs improve.</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+
+      <!-- Extra Challenge -->
+      <div class="callout callout-question">
+        <div class="callout-title">Extra Challenge</div>
+        <p>
+          Think of a clinical question you've had recently—something you might have
+          searched UpToDate or consulted a colleague about. Write two versions of that
+          question as AI prompts:
+        </p>
+        <ol>
+          <li>A quick, vague version (how you might naturally type it)</li>
+          <li>A specific, well-structured version (applying what you've learned)</li>
+        </ol>
+        <p class="mb-0">
+          Run both through an AI tool. Did the extra 30 seconds of crafting the specific
+          prompt save you time in filtering, verifying, or re-prompting? Most clinicians
+          find the investment pays off immediately.
+        </p>
+      </div>
+
+      <!-- Navigation -->
+      <nav class="page-nav">
+        <a href="module-3.html" class="page-nav-link prev">
+          <span class="page-nav-arrow"><i data-lucide="arrow-left"></i></span>
+          <div>
+            <span class="page-nav-label">Return to</span>
+            <span class="page-nav-title">Module 3: The Art of the Ask</span>
+          </div>
+        </a>
+        <a href="week-1.html" class="page-nav-link next">
+          <span class="page-nav-arrow"><i data-lucide="arrow-right"></i></span>
+          <div>
+            <span class="page-nav-label">Next Module</span>
+            <span class="page-nav-title">Module 4: The AI Triad</span>
+          </div>
+        </a>
+      </nav>
+
+    </article>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div><strong>AI 101</strong> · A Self-Paced Guide to AI in Medicine</div>
+      <div>v1.0 · 2025</div>
+    </div>
+  </footer>
+
+  <script>
+    lucide.createIcons();
+    const navToggle = document.querySelector('.nav-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    if (navToggle) {
+      navToggle.addEventListener('click', () => {
+        navLinks.classList.toggle('nav-open');
+      });
+    }
+  </script>
+
+</body>
+</html>

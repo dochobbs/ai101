@@ -1,0 +1,858 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Module 4: The Big Three — ChatGPT, Claude, and Gemini | AI 101</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-brand">
+        <span class="nav-badge">AI 101</span>
+        <span class="nav-title">A Self-Paced Guide to AI in Medicine</span>
+      </a>
+      <button class="nav-toggle" aria-label="Toggle menu">
+        <i data-lucide="menu"></i>
+      </button>
+      <div class="nav-links">
+        <a href="index.html" class="nav-link">Modules</a>
+        <!-- <a href="resources.html" class="nav-link">Resources</a> -->
+        <a href="about.html" class="nav-link">About</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="main">
+    <article class="content content-wide">
+
+      <header class="unit-header">
+        <span class="unit-label phase-1">PHASE I · MODULE 4</span>
+        <h1 class="unit-title">The Big Three</h1>
+        <p class="unit-subtitle">
+          ChatGPT, Claude, and Gemini—your guide to today's leading foundation
+          models and how to choose between them.
+        </p>
+        <div class="unit-meta">
+          <span class="unit-meta-item">
+            <i data-lucide="clock"></i>
+            ~30 min read
+          </span>
+          <span class="unit-meta-item">
+            <i data-lucide="zap"></i>
+            Practical guide
+          </span>
+        </div>
+      </header>
+
+      <div class="callout callout-question">
+        <div class="callout-title">Core Question</div>
+        <p class="mb-0">
+          Which foundation model should you use—and does it actually matter?
+        </p>
+      </div>
+
+      <!-- Starting Here Section -->
+      <h2>Starting Here? Read This First</h2>
+
+      <p>
+        If you've jumped straight to this module hoping to pick a model and get started,
+        you're in good company—this is exactly what most people want. But foundation models
+        are tools, and like any tool, their value depends on how skillfully you use them.
+        Before you dive too deep here, consider at least skimming these foundational concepts
+        from earlier modules:
+      </p>
+
+      <div class="callout callout-info">
+        <div class="callout-title">Key Concepts from Earlier Modules</div>
+        <p>
+          <strong>From Module 1 (How LLMs Think):</strong> These models work by predicting
+          the most likely next word in a sequence, trained on enormous datasets of human-generated
+          text. They don't "know" things the way you do—they recognize patterns. This matters
+          because it explains both their remarkable capabilities and their characteristic failures.
+        </p>
+        <p>
+          <strong>From Module 2 (PHI and HIPAA):</strong> None of these consumer-facing chat
+          interfaces are HIPAA-compliant out of the box. We'll discuss BAA pathways later in
+          this module, but the critical principle remains: never enter PHI into a consumer AI
+          product without proper safeguards.
+        </p>
+        <p class="mb-0">
+          <strong>From Module 3 (Prompting):</strong> The quality of your output depends
+          enormously on the quality of your input. A vague prompt produces vague results.
+          A well-structured prompt with context, role, and constraints produces dramatically
+          better outputs. We'll reference prompting principles throughout this module—they
+          apply equally to all three platforms.
+        </p>
+      </div>
+
+      <p>Now, let's meet the models.<sup><a href="#fn1" id="fnref1">[1]</a></sup></p>
+
+      <hr>
+
+      <!-- The Med Student Analogy -->
+      <h2>The Med Student Analogy</h2>
+
+      <p>
+        Think of each foundation model as a brilliant medical student who has read essentially
+        everything ever published—every textbook, every journal article, every clinical guideline,
+        every case study, and frankly, every Reddit thread and random blog post too. This student
+        has near-perfect recall of patterns across all that material and can synthesize information
+        across domains in ways that would take you hours or days.
+      </p>
+
+      <p>
+        But here's what's crucial: <strong>this med student has never actually seen a patient</strong>.
+        They haven't felt the resistance of tissue, watched a parent's face crumple at difficult news,
+        or learned from the case that didn't follow the textbook. They know what clinical reasoning
+        looks like on paper, but they don't have clinical judgment.
+      </p>
+
+      <p>This framing helps calibrate expectations:</p>
+
+      <ul>
+        <li>
+          <strong>They're genuinely useful</strong> for the kind of work where pattern recognition
+          and information synthesis matter—drafting notes, summarizing literature, explaining
+          concepts, generating differential diagnoses for discussion.
+        </li>
+        <li>
+          <strong>They require supervision</strong> the same way any trainee does. You wouldn't
+          let even a brilliant third-year student sign notes unsupervised, and you shouldn't
+          let an AI do so either.
+        </li>
+        <li>
+          <strong>They need clear instructions</strong>. Just as you'd give a student specific
+          guidance ("I need a note that addresses the parent's concern about developmental delay,
+          focuses on what we observed today, and includes our reasoning for not ordering imaging"),
+          you need to give the model explicit context and constraints.
+        </li>
+        <li>
+          <strong>They sometimes confabulate</strong>. A student who doesn't know something might
+          make up an answer that sounds plausible rather than saying "I don't know." These models
+          do the same—we call it "hallucination," but it's really just pattern-matching in the
+          absence of actual knowledge. This is why you verify before you trust.
+        </li>
+      </ul>
+
+      <p>
+        With that framing in mind, let's look at who these three "students" are and what each
+        brings to your practice.
+      </p>
+
+      <hr>
+
+      <!-- ChatGPT Section -->
+      <h2>ChatGPT: The First Mover</h2>
+
+      <h3>The Story</h3>
+      <p>
+        OpenAI was founded in December 2015 by Sam Altman, Elon Musk, and others with the stated
+        mission of developing artificial general intelligence that benefits humanity. The company
+        initially operated as a nonprofit research lab before restructuring in 2019 to attract
+        the investment needed for increasingly expensive AI training.
+      </p>
+      <p>
+        The GPT (Generative Pre-trained Transformer) architecture emerged from this research,
+        with GPT-1 in 2018, GPT-2 in 2019 (initially withheld due to concerns about misuse),
+        and GPT-3 in 2020. But the inflection point came on November 30, 2022, when OpenAI
+        released ChatGPT as a free research preview. Within five days, it had a million users.
+        Within two months, it reached 100 million—the fastest-growing consumer application in history.
+      </p>
+      <p>
+        That explosive growth fundamentally changed how the world understood AI. Suddenly, anyone
+        could have a conversation with a system that felt like talking to a knowledgeable colleague.
+        The technology wasn't new, but the accessibility was.
+      </p>
+
+      <h3>The Current Offering</h3>
+      <p>As of late 2025, ChatGPT operates across several tiers:</p>
+
+      <div class="tier-grid">
+        <div class="tier-card">
+          <h4>ChatGPT Free</h4>
+          <p class="tier-price">$0</p>
+          <p>Access to GPT-4o with usage limits. Good for exploration and occasional use.</p>
+        </div>
+        <div class="tier-card">
+          <h4>ChatGPT Plus</h4>
+          <p class="tier-price">$20/month</p>
+          <p>Higher limits, priority access, o1 reasoning models, DALL-E, advanced voice mode.</p>
+        </div>
+        <div class="tier-card">
+          <h4>ChatGPT Pro</h4>
+          <p class="tier-price">$200/month</p>
+          <p>For power users. o1 pro mode, extended features, essentially unlimited usage.</p>
+        </div>
+        <div class="tier-card">
+          <h4>ChatGPT Team</h4>
+          <p class="tier-price">$25-30/user/month</p>
+          <p>Collaborative workspace. Data not used for training. Still not HIPAA-compliant without additional measures.</p>
+        </div>
+      </div>
+
+      <h3>Strengths</h3>
+      <p>
+        ChatGPT excels at <strong>breadth and general capability</strong>. Its training data is
+        enormous and diverse, making it effective across an unusually wide range of tasks—from
+        creative writing to coding to analysis. The ecosystem is mature, with a GPT Store containing
+        millions of customized applications, extensive plugin support, and deep integrations with
+        tools many people already use.
+      </p>
+      <p>
+        The <strong>voice and image capabilities</strong> are polished and genuinely useful.
+        Advanced Voice Mode allows natural, conversational interaction that feels different from typing.
+        Image generation through DALL-E has improved dramatically.
+      </p>
+      <p>
+        For <strong>coding assistance</strong>, ChatGPT remains strong, with Code Interpreter
+        allowing it to execute Python code to analyze data, create visualizations, and iterate
+        on complex problems.
+      </p>
+
+      <h3>Limitations</h3>
+      <p>
+        ChatGPT has historically been more prone to <strong>sycophancy</strong>—telling users
+        what they seem to want to hear rather than pushing back when appropriate. An April 2025
+        update was actually rolled back because the model had become excessively agreeable to the
+        point of supporting clearly problematic ideas. OpenAI has worked to address this, but it
+        remains a known tendency.
+      </p>
+      <p>
+        The <strong>HIPAA pathway is more complex</strong> than some alternatives. OpenAI offers
+        BAAs for API services and, for ChatGPT, only through Enterprise or Edu plans with
+        sales-managed accounts. ChatGPT Free, Plus, Pro, and even Team plans are explicitly not
+        covered by BAAs and cannot be used with protected health information.
+      </p>
+
+      <hr>
+
+      <!-- Claude Section -->
+      <h2>Claude: The Safety-First Approach</h2>
+
+      <h3>The Story</h3>
+      <p>
+        Anthropic was founded in 2021 by Dario and Daniela Amodei, along with several other
+        former OpenAI researchers and executives. The founding team included key figures in AI
+        safety research, and that orientation shaped the company's approach from the beginning.
+      </p>
+      <p>
+        The company developed "Constitutional AI," a training approach that uses AI feedback
+        (rather than exclusively human feedback) to shape model behavior according to a set of
+        principles. The goal was to create systems that are helpful but also harmless and
+        honest—what Anthropic describes as the "HHH" framework.
+      </p>
+      <p>
+        Claude 1.0 launched in March 2023, positioning itself as a thoughtful alternative to
+        ChatGPT. The Claude 3 family arrived in March 2024, introducing the Haiku/Sonnet/Opus
+        tiering (small/medium/large models with different capability and cost profiles). By late
+        2025, Claude Opus 4.5 emerged as the latest iteration, with Anthropic positioning it as
+        "the best model in the world for coding, agents, and computer use."
+      </p>
+
+      <h3>The Current Offering</h3>
+
+      <div class="tier-grid">
+        <div class="tier-card">
+          <h4>Claude Free</h4>
+          <p class="tier-price">$0</p>
+          <p>Access to Claude with usage limits that reset every few hours. Good for exploration.</p>
+        </div>
+        <div class="tier-card">
+          <h4>Claude Pro</h4>
+          <p class="tier-price">$20/month</p>
+          <p>~5x usage of free tier, all models including Opus, priority access to new features.</p>
+        </div>
+        <div class="tier-card">
+          <h4>Claude Max</h4>
+          <p class="tier-price">$100-200/month</p>
+          <p>5x-20x Pro limits. Designed for power users, especially Claude Code developers.</p>
+        </div>
+        <div class="tier-card">
+          <h4>Claude Team</h4>
+          <p class="tier-price">$25-30/user/month</p>
+          <p>Collaborative features, admin controls. Data not used for training. Min 5 seats.</p>
+        </div>
+      </div>
+
+      <h3>Strengths</h3>
+      <p>
+        Claude's distinguishing characteristic is <strong>nuanced reasoning and writing quality</strong>.
+        Users consistently report that Claude's outputs feel more thoughtful, with better handling
+        of ambiguity and more natural prose. For drafting patient communications, clinical notes,
+        or educational materials, many find Claude produces text that requires less editing.
+      </p>
+      <p>
+        The <strong>safety orientation</strong> manifests in several ways: Claude is less likely
+        to generate harmful content, more likely to express appropriate uncertainty, and specifically
+        trained to reduce behaviors like sycophancy, deception, and "power-seeking." For clinical
+        applications where reliability matters, this orientation has value.
+      </p>
+      <p>
+        <strong>Long context handling</strong> is excellent. Claude supports 200,000-token context
+        windows (roughly 150,000 words), allowing you to upload substantial documents—research papers,
+        clinical protocols, patient histories—and have coherent conversations about them.
+      </p>
+      <p>
+        <strong>Claude Code</strong> represents a genuine differentiator for anyone who works with
+        code or technical systems. The ability to delegate coding tasks through natural language,
+        with the model maintaining context across complex multi-step projects, has attracted
+        significant developer adoption.
+      </p>
+
+      <h3>Limitations</h3>
+      <p>
+        Claude can be <strong>more conservative</strong> than some alternatives. The same safety
+        orientation that prevents harmful outputs sometimes means Claude declines requests that
+        other models would handle. This can occasionally feel like friction for benign use cases.
+      </p>
+      <p>
+        The <strong>ecosystem is less developed</strong> than ChatGPT's. There's no equivalent
+        to the GPT Store, fewer integrations with third-party tools, and a smaller community
+        creating resources and tutorials.
+      </p>
+      <p>
+        <strong>Image generation</strong> is not a native Claude capability. While Claude can
+        analyze images you provide and create artifacts like code or documents, it doesn't
+        generate images from scratch the way ChatGPT or Gemini can.
+      </p>
+
+      <hr>
+
+      <!-- Gemini Section -->
+      <h2>Gemini: The Integration Play</h2>
+
+      <h3>The Story</h3>
+      <p>
+        Google's path to Gemini began with earlier AI efforts including LaMDA (the model behind
+        the original Bard chatbot) and PaLM (Pathways Language Model). But Google's extensive AI
+        research, which predates the current generation by decades, positioned the company as a
+        natural major player once the race began.
+      </p>
+      <p>
+        Gemini was announced in December 2023 as Google's response to GPT-4, with the company
+        emphasizing its native multimodal training—the model was trained from the beginning on
+        text, images, and other modalities together, rather than having capabilities bolted on afterward.
+      </p>
+      <p>
+        Gemini 1.5 arrived in February 2024 with a groundbreaking 1-million-token context window
+        (later expanded to 2 million)—dramatically larger than competitors at the time. In November
+        2025, Google announced Gemini 3, positioned as "our most intelligent model" with significant
+        improvements in reasoning, multimodal understanding, and agent capabilities.
+      </p>
+
+      <h3>The Current Offering</h3>
+
+      <div class="tier-grid">
+        <div class="tier-card">
+          <h4>Gemini Free</h4>
+          <p class="tier-price">$0</p>
+          <p>Access to Gemini 2.5 Flash, basic features, limited Deep Research access.</p>
+        </div>
+        <div class="tier-card">
+          <h4>Google AI Pro</h4>
+          <p class="tier-price">$19.99/month</p>
+          <p>Gemini 2.5 Pro, 1M-token context, Deep Research, Workspace integration, 2TB storage.</p>
+        </div>
+        <div class="tier-card">
+          <h4>Google AI Ultra</h4>
+          <p class="tier-price">$249.99/month</p>
+          <p>Gemini 3 Pro with Deep Think, highest limits, 30TB storage, Veo 3 video generation.</p>
+        </div>
+      </div>
+
+      <h3>Strengths</h3>
+      <p>
+        The <strong>Google ecosystem integration</strong> is Gemini's defining advantage. If your
+        organization lives in Google Workspace, Gemini works natively within Gmail, Docs, Sheets,
+        Slides, and Meet. The side panel in Google Docs can help you write, summarize, and refine.
+        Gemini in Gmail drafts responses and summarizes threads. For organizations already committed
+        to Google, this reduces friction dramatically.
+      </p>
+      <p>
+        <strong>Multimodal capabilities</strong> are genuinely strong. Gemini's ability to process
+        video (not just images) allows analysis of recorded content, extraction of key moments,
+        and summarization of visual information in ways that currently exceed competitors.
+      </p>
+      <p>
+        The <strong>context window</strong> remains best-in-class at 1-2 million tokens, allowing
+        you to work with enormous documents or entire codebases without hitting limits.
+      </p>
+      <p>
+        For healthcare specifically, <strong>Google Workspace with Gemini is HIPAA-eligible</strong>.
+        Google's HIPAA Included Functionality list explicitly covers Gemini in Workspace. Organizations
+        that sign Google's Business Associate Amendment through the Admin Console can use these
+        services with protected health information.
+      </p>
+
+      <h3>Limitations</h3>
+      <p>
+        <strong>Gemini's full potential requires the Google ecosystem</strong>. If you don't use
+        Google Workspace, many of the integration advantages disappear. For organizations on
+        Microsoft 365 or other platforms, the standalone Gemini experience is less compelling.
+      </p>
+      <p>
+        The <strong>pricing structure is more complex</strong> and the highest tier ($249.99/month
+        for Ultra) is significantly more expensive than competitors' premium offerings. While it
+        includes substantial bundled value (storage, YouTube Premium, advanced video generation),
+        the headline price may exceed what many users need.
+      </p>
+
+      <hr>
+
+      <!-- Comparison Section -->
+      <h2>Side-by-Side Comparison</h2>
+
+      <div class="table-responsive">
+        <table class="reference-table">
+          <thead>
+            <tr>
+              <th>Factor</th>
+              <th>ChatGPT</th>
+              <th>Claude</th>
+              <th>Gemini</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Developer</strong></td>
+              <td>OpenAI (Microsoft-backed)</td>
+              <td>Anthropic (Amazon/Google-backed)</td>
+              <td>Google DeepMind</td>
+            </tr>
+            <tr>
+              <td><strong>Consumer Price Entry</strong></td>
+              <td>$20/month (Plus)</td>
+              <td>$20/month (Pro)</td>
+              <td>$19.99/month (AI Pro)</td>
+            </tr>
+            <tr>
+              <td><strong>Premium Tier</strong></td>
+              <td>$200/month (Pro)</td>
+              <td>$200/month (Max 20x)</td>
+              <td>$249.99/month (Ultra)</td>
+            </tr>
+            <tr>
+              <td><strong>Context Window</strong></td>
+              <td>128K tokens</td>
+              <td>200K tokens</td>
+              <td>1-2M tokens</td>
+            </tr>
+            <tr>
+              <td><strong>Native Image Gen</strong></td>
+              <td>Yes (DALL-E)</td>
+              <td>No</td>
+              <td>Yes (Imagen)</td>
+            </tr>
+            <tr>
+              <td><strong>Voice Mode</strong></td>
+              <td>Advanced Voice Mode</td>
+              <td>Limited</td>
+              <td>Gemini Live</td>
+            </tr>
+            <tr>
+              <td><strong>Ecosystem</strong></td>
+              <td>GPT Store, plugins</td>
+              <td>MCP integrations</td>
+              <td>Google Workspace</td>
+            </tr>
+            <tr>
+              <td><strong>Writing Style</strong></td>
+              <td>Engaging, occasionally verbose</td>
+              <td>Nuanced, thoughtful</td>
+              <td>Variable, improving</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>HIPAA/BAA Comparison</h3>
+
+      <div class="table-responsive">
+        <table class="reference-table">
+          <thead>
+            <tr>
+              <th>Platform</th>
+              <th>Consumer Chat BAA</th>
+              <th>API BAA</th>
+              <th>Easiest Path</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>ChatGPT</strong></td>
+              <td>Enterprise/Edu only</td>
+              <td>Yes, via application</td>
+              <td>Azure OpenAI Service</td>
+            </tr>
+            <tr>
+              <td><strong>Claude</strong></td>
+              <td>No</td>
+              <td>Yes, with ZDR agreement</td>
+              <td>AWS Bedrock</td>
+            </tr>
+            <tr>
+              <td><strong>Gemini</strong></td>
+              <td>Workspace integration covered</td>
+              <td>Yes via Vertex AI</td>
+              <td>Google Workspace + BAA</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="callout callout-warning">
+        <div class="callout-title">Critical Reminder</div>
+        <p class="mb-0">
+          For the consumer chat interfaces most people use day-to-day (ChatGPT Plus, Claude Pro,
+          standard Gemini), <strong>none are HIPAA-compliant</strong> and should never be used
+          with PHI without additional safeguards.
+        </p>
+      </div>
+
+      <hr>
+
+      <!-- What Each Does Best -->
+      <h2>What Each Model Does Best</h2>
+
+      <p>Based on extensive user reports and benchmark data, here's where each model tends to excel:</p>
+
+      <div class="model-strengths">
+        <div class="model-strength-card chatgpt">
+          <h3><i data-lucide="sparkles"></i> ChatGPT Excels At</h3>
+          <ul>
+            <li><strong>Breadth of capability</strong>: One tool that does many things well</li>
+            <li><strong>Creative content</strong>: Marketing copy, engaging educational materials</li>
+            <li><strong>Image generation</strong>: Visuals for presentations or patient education</li>
+            <li><strong>Voice interaction</strong>: When you want to talk rather than type</li>
+            <li><strong>Ecosystem integration</strong>: Custom GPTs and plugins</li>
+            <li><strong>Step-by-step tutorials</strong>: Clear, accessible explanations</li>
+          </ul>
+        </div>
+
+        <div class="model-strength-card claude">
+          <h3><i data-lucide="pen-tool"></i> Claude Excels At</h3>
+          <ul>
+            <li><strong>Nuanced writing</strong>: Patient communications, clinical notes</li>
+            <li><strong>Complex analysis</strong>: Reasoning through ambiguous situations</li>
+            <li><strong>Long document work</strong>: Summarizing papers, analyzing protocols</li>
+            <li><strong>Coding and technical work</strong>: Especially via Claude Code</li>
+            <li><strong>Safety-sensitive applications</strong>: Conservative guardrails</li>
+            <li><strong>Academic writing</strong>: Papers, grants, formal documentation</li>
+          </ul>
+        </div>
+
+        <div class="model-strength-card gemini">
+          <h3><i data-lucide="layers"></i> Gemini Excels At</h3>
+          <ul>
+            <li><strong>Google Workspace integration</strong>: AI woven throughout your tools</li>
+            <li><strong>Video and multimodal analysis</strong>: Processing recorded content</li>
+            <li><strong>Massive context</strong>: Entire books, codebases, extensive docs</li>
+            <li><strong>Real-time assistance</strong>: Voice connected to calendar and email</li>
+            <li><strong>HIPAA-compliant productivity</strong>: Compliant daily workflow AI</li>
+            <li><strong>Data analysis</strong>: Spreadsheets and structured information</li>
+          </ul>
+        </div>
+      </div>
+
+      <hr>
+
+      <!-- Practical Guidance -->
+      <h2>Practical Guidance: Just Start</h2>
+
+      <p>
+        The most important advice in this entire module is this: <strong>pick one and start using it</strong>.
+      </p>
+      <p>
+        The differences between these models matter at the margins. For the vast majority of tasks
+        most clinicians will encounter, all three will produce useful results. The limiting factor
+        isn't which model you choose—it's whether you've developed the skill to use it effectively.
+      </p>
+
+      <h3>Week 1: Establish a Baseline</h3>
+      <p>
+        Choose whichever model you have easiest access to. For your first week, use it for
+        low-stakes tasks:
+      </p>
+      <ul>
+        <li>Summarizing an article you're reading anyway</li>
+        <li>Drafting an email you'll heavily edit</li>
+        <li>Explaining a concept to yourself before explaining it to a patient</li>
+        <li>Brainstorming questions for a meeting</li>
+      </ul>
+      <p>Don't worry about optimization. Just get comfortable with the interaction pattern.</p>
+
+      <h3>Week 2: Apply Prompting Principles</h3>
+      <p>Revisit the prompting framework from Module 3 and apply it deliberately:</p>
+      <ul>
+        <li>Give the model a role ("You are helping me prepare for a difficult conversation with a parent")</li>
+        <li>Provide context ("The patient is 8 years old with a new ADHD diagnosis")</li>
+        <li>Be specific about format ("I need three main points, in language a non-medical parent would understand")</li>
+        <li>Include constraints ("Avoid medical jargon; emphasize that this is manageable")</li>
+      </ul>
+      <p>Notice how the quality of outputs changes as you prompt more skillfully.</p>
+
+      <h3>Week 3: Try Something Harder</h3>
+      <p>Push into a task that actually matters:</p>
+      <ul>
+        <li>Draft a real (de-identified) clinical note</li>
+        <li>Summarize a complex patient case for a referral</li>
+        <li>Create patient education materials for a condition you see frequently</li>
+        <li>Analyze a clinical guideline and identify key practice implications</li>
+      </ul>
+      <p>
+        Evaluate the output critically. What did it get right? Where did it need correction?
+        What would you prompt differently next time?
+      </p>
+
+      <h3>Week 4: Compare</h3>
+      <p>
+        Now try a second model with a task you've done before. Use the same prompt and compare
+        outputs. You'll develop intuition for the differences—and often find that your preference
+        is less about the model and more about how you've learned to work with it.
+      </p>
+
+      <hr>
+
+      <!-- The Cost Question -->
+      <h2>The Cost Question</h2>
+
+      <p>Let's be direct about money.</p>
+
+      <p>
+        <strong>Free tiers are sufficient for exploration and light use.</strong> If you're using
+        AI occasionally—a few times a week for non-critical tasks—you may never need to pay.
+      </p>
+
+      <p>
+        <strong>$20/month is the "serious user" threshold.</strong> ChatGPT Plus, Claude Pro, and
+        Google AI Pro all cluster around this price point. At this tier, you get higher usage limits,
+        access to the best models, and priority features. For a professional tool you might use daily,
+        $20/month is modest—less than many software subscriptions with narrower utility.
+      </p>
+
+      <p>
+        <strong>Premium tiers ($200-250/month) are for power users.</strong> If you're running into
+        limits on the $20 tier, pushing complex coding projects, or need maximum model capabilities
+        for professional work, the premium tiers exist. But most users won't need them.
+      </p>
+
+      <div class="callout callout-principle">
+        <div class="callout-title">Recommendation for Most Clinicians</div>
+        <ol class="mb-0">
+          <li>Start with free tiers</li>
+          <li>Upgrade to ~$20/month when you hit limits regularly</li>
+          <li>Evaluate premium tiers only if you're a genuine power user</li>
+          <li>Discuss organizational deployment with compliance and IT before rolling out team solutions</li>
+        </ol>
+      </div>
+
+      <hr>
+
+      <!-- Common Pitfalls -->
+      <h2>Common Pitfalls and How to Avoid Them</h2>
+
+      <div class="concepts-grid">
+        <div class="concept-card">
+          <div class="concept-icon"><i data-lucide="check-check"></i></div>
+          <div class="concept-name">Treating Output as Truth</div>
+          <div class="concept-desc">The models generate plausible text, not verified facts. Treat all outputs as first drafts requiring verification.</div>
+        </div>
+        <div class="concept-card">
+          <div class="concept-icon"><i data-lucide="shield-off"></i></div>
+          <div class="concept-name">Assuming Privacy</div>
+          <div class="concept-desc">Consumer AI tools aren't HIPAA-compliant. Establish clear rules about what can be entered into which tools.</div>
+        </div>
+        <div class="concept-card">
+          <div class="concept-icon"><i data-lucide="trending-down"></i></div>
+          <div class="concept-name">Underusing the Tools</div>
+          <div class="concept-desc">One bad result doesn't mean AI isn't useful. Commit to sustained experimentation over weeks, not minutes.</div>
+        </div>
+        <div class="concept-card">
+          <div class="concept-icon"><i data-lucide="brain-cog"></i></div>
+          <div class="concept-name">Overusing the Tools</div>
+          <div class="concept-desc">Don't outsource judgment you should retain. Use AI to augment, not replace, your critical thinking.</div>
+        </div>
+      </div>
+
+      <hr>
+
+      <!-- Quick Reference -->
+      <h2>Quick Reference: Getting Started</h2>
+
+      <div class="quick-ref-grid">
+        <div class="quick-ref-card">
+          <h4>ChatGPT</h4>
+          <p><strong>URL:</strong> chat.openai.com</p>
+          <p><strong>Mobile:</strong> iOS and Android apps</p>
+          <p><strong>Sign up:</strong> Google, Microsoft, or email</p>
+          <p><strong>Best for:</strong> Broad capabilities, images, mature ecosystem</p>
+        </div>
+        <div class="quick-ref-card">
+          <h4>Claude</h4>
+          <p><strong>URL:</strong> claude.ai</p>
+          <p><strong>Mobile:</strong> iOS and Android apps</p>
+          <p><strong>Sign up:</strong> Google, email, or phone</p>
+          <p><strong>Best for:</strong> Nuanced writing, analysis, coding, long documents</p>
+        </div>
+        <div class="quick-ref-card">
+          <h4>Gemini</h4>
+          <p><strong>URL:</strong> gemini.google.com</p>
+          <p><strong>Mobile:</strong> iOS and Android apps</p>
+          <p><strong>Sign up:</strong> Google account required</p>
+          <p><strong>Best for:</strong> Google Workspace, massive context, HIPAA via Workspace</p>
+        </div>
+      </div>
+
+      <hr>
+
+      <!-- Action Items -->
+      <h2>Action Items</h2>
+
+      <p>Before moving to the next module, complete at least one of these:</p>
+
+      <ol>
+        <li>
+          <strong>Create accounts on all three platforms</strong> (if you haven't already).
+          Even if you end up preferring one, having tried the others gives you useful context.
+        </li>
+        <li>
+          <strong>Run the same prompt through all three</strong> and compare outputs. Notice
+          the differences in tone, organization, and approach.
+        </li>
+        <li>
+          <strong>Try something you actually need:</strong> Draft a real email, summarize a
+          real article, prepare for a real conversation. Experience how the tool performs on
+          your actual work.
+        </li>
+        <li>
+          <strong>Hit a limit and recover:</strong> Deliberately work on something complex
+          enough that your first output isn't good. Practice iterative refinement until
+          you're satisfied.
+        </li>
+        <li>
+          <strong>If you're in a healthcare organization:</strong> Identify which HIPAA pathway
+          makes sense for your situation and discuss it with appropriate stakeholders.
+        </li>
+      </ol>
+
+      <hr>
+
+      <!-- Summary -->
+      <h2>Summary</h2>
+
+      <p>
+        ChatGPT, Claude, and Gemini are all capable foundation models that can meaningfully assist
+        clinical work. ChatGPT offers the broadest ecosystem and most mature feature set. Claude
+        provides nuanced reasoning and a safety-first approach. Gemini integrates deeply with
+        Google Workspace and offers the easiest HIPAA pathway for organizations already in that ecosystem.
+      </p>
+
+      <p>
+        The choice between them matters less than developing skill with whichever you choose.
+        These are tools that respond to how you use them. A well-crafted prompt to any of these
+        models will outperform a vague prompt to the "best" model.
+      </p>
+
+      <div class="callout callout-principle">
+        <div class="callout-title">The Bottom Line</div>
+        <p class="mb-0">
+          Think of them as brilliant but inexperienced colleagues: genuinely helpful, occasionally
+          wrong, always requiring supervision. With that framing and the prompting skills from
+          earlier modules, you're ready to begin. Now close this document and go have a conversation
+          with one of them. That's where the real learning happens.
+        </p>
+      </div>
+
+      <!-- Learning Objectives -->
+      <div class="objectives phase-1">
+        <h4 class="objectives-title">Learning Objectives</h4>
+        <ul class="objectives-list">
+          <li>Compare the capabilities, strengths, and limitations of ChatGPT, Claude, and Gemini</li>
+          <li>Identify which model best fits specific clinical use cases</li>
+          <li>Understand HIPAA compliance pathways for each platform</li>
+          <li>Apply a practical framework for getting started with foundation models</li>
+          <li>Recognize common pitfalls in AI adoption and strategies to avoid them</li>
+        </ul>
+      </div>
+
+      <!-- Footnotes -->
+      <hr>
+      <section class="footnotes">
+        <h4>Notes</h4>
+        <ol class="footnote-list">
+          <li id="fn1">
+            <strong>Why not Grok?</strong> You may wonder why xAI's Grok isn't included here.
+            While Grok has some capable underlying technology, we don't recommend it for clinical
+            use due to significant concerns about accuracy and safety guardrails.
+            <p>
+              In early 2025, Grok generated and spread false information about prominent public
+              figures, including fabricated claims about an NBA owner that were widely amplified
+              on X (formerly Twitter). The system was also found to produce misleading election-related
+              content and struggled with basic factual queries where other models performed reliably.
+              Independent evaluations have noted that Grok's safety measures are notably weaker than
+              those of ChatGPT, Claude, or Gemini—the model is more likely to generate harmful content
+              when prompted.
+            </p>
+            <p>
+              For clinical applications where accuracy and appropriate guardrails matter, these
+              issues are disqualifying. The three platforms covered in this module have demonstrated
+              more robust approaches to safety and factual accuracy—though as we discuss throughout,
+              all AI outputs require verification.
+            </p>
+            <p class="footnote-refs">
+              <strong>References:</strong><br>
+              Verge. "<a href="https://www.theverge.com/news/616779/grok-ai-mark-cuban-x-misinformation">Grok's AI Fabricated Claims About Mark Cuban</a>." January 2025.<br>
+              BBC News. "<a href="https://www.bbc.com/news/articles/cvg7xgzejz7o">Grok chatbot falsely says Mark Cuban accused of assault</a>." January 2025.<br>
+              TechCrunch. "<a href="https://techcrunch.com/2024/12/17/elon-musks-grok-ai-spread-election-misinformation-on-x/">Elon Musk's Grok AI spread election misinformation</a>." December 2024.<br>
+              Adversa AI. "<a href="https://adversa.ai/blog/testing-safety-guardrails-of-publicly-available-llms-part-1/">Testing Safety Guardrails of Publicly Available LLMs</a>." 2024.
+            </p>
+            <a href="#fnref1" class="footnote-back">↩</a>
+          </li>
+        </ol>
+      </section>
+
+      <!-- Page Navigation -->
+      <nav class="page-nav">
+        <a href="module-3.html" class="page-nav-link prev">
+          <span class="page-nav-arrow"><i data-lucide="arrow-left"></i></span>
+          <div>
+            <span class="page-nav-label">Previous</span>
+            <span class="page-nav-title">Module 3: The Art of the Ask</span>
+          </div>
+        </a>
+        <a href="week-1.html" class="page-nav-link next">
+          <span class="page-nav-arrow"><i data-lucide="arrow-right"></i></span>
+          <div>
+            <span class="page-nav-label">Next</span>
+            <span class="page-nav-title">Module 5: The AI Triad</span>
+          </div>
+        </a>
+      </nav>
+
+    </article>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div><strong>AI 101</strong> · A Self-Paced Guide to AI in Medicine</div>
+      <div>v1.0 · 2025</div>
+    </div>
+  </footer>
+
+  <script>
+    lucide.createIcons();
+    const navToggle = document.querySelector('.nav-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    if (navToggle) {
+      navToggle.addEventListener('click', () => {
+        navLinks.classList.toggle('nav-open');
+      });
+    }
+  </script>
+
+</body>
+</html>

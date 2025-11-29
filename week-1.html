@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Module 5: The AI Triad | AI 101</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-brand">
+        <span class="nav-badge">AI 101</span>
+        <span class="nav-title">A Self-Paced Guide to AI in Medicine</span>
+      </a>
+      <button class="nav-toggle" aria-label="Toggle menu">
+        <i data-lucide="menu"></i>
+      </button>
+      <div class="nav-links">
+        <a href="index.html" class="nav-link">Modules</a>
+        <!-- <a href="resources.html" class="nav-link">Resources</a> -->
+        <a href="about.html" class="nav-link">About</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <main class="main">
+    <article class="content">
+
+      <!-- Unit Header -->
+      <header class="unit-header">
+        <span class="unit-label phase-1">PHASE I · MODULE 5</span>
+        <h1 class="unit-title">The AI Triad</h1>
+        <p class="unit-subtitle">
+          Data, algorithms, and compute—the three pillars of every AI system,
+          mapped to hospital infrastructure you already understand.
+        </p>
+        <div class="unit-meta">
+          <span class="unit-meta-item">
+            <i data-lucide="book-open"></i>
+            4 readings
+          </span>
+        </div>
+      </header>
+
+      <!-- Core Question -->
+      <div class="callout callout-question">
+        <div class="callout-title">Core Question</div>
+        <p class="mb-0">
+          What are the fundamental building blocks of AI systems, and how do they 
+          map to clinical infrastructure we already work with?
+        </p>
+      </div>
+
+      <!-- Overview -->
+      <h2>Overview</h2>
+      <p>
+        Before you can evaluate whether an AI system is trustworthy, you need a 
+        mental model of what it's made of. This week introduces the <strong>AI Triad</strong>: 
+        three interdependent components that determine what any AI system can and cannot do.
+      </p>
+
+      <div class="concepts-grid">
+        <div class="concept-card">
+          <div class="concept-icon">📊</div>
+          <div class="concept-name">Data</div>
+          <div class="concept-desc">The raw material AI learns from</div>
+        </div>
+        <div class="concept-card">
+          <div class="concept-icon">⚙️</div>
+          <div class="concept-name">Algorithms</div>
+          <div class="concept-desc">The patterns extracted from data</div>
+        </div>
+        <div class="concept-card">
+          <div class="concept-icon">🖥️</div>
+          <div class="concept-name">Compute</div>
+          <div class="concept-desc">The processing power enabling it all</div>
+        </div>
+      </div>
+
+      <p>
+        The triad isn't just abstract—it maps directly to hospital systems you use daily. 
+        Your EHR is a data reservoir. Clinical decision support tools are algorithms. 
+        Cloud infrastructure and on-premise servers are compute. Understanding this 
+        mapping helps you ask better questions when vendors pitch AI products.
+      </p>
+
+      <h2>Key Concepts</h2>
+
+      <h3>Data: More Than Volume</h3>
+      <p>
+        Healthcare generates enormous data volumes, but quantity alone doesn't produce 
+        good AI. What matters is data <em>quality</em>, <em>representativeness</em>, and 
+        <em>labeling accuracy</em>. An algorithm trained on data from one health system 
+        may fail when deployed at another—not because the algorithm is broken, but because 
+        the underlying data distributions differ.
+      </p>
+      <p>
+        Key questions to ask: Where did the training data come from? Does it reflect 
+        the patient population I serve? Who labeled the outcomes, and how?
+      </p>
+
+      <h3>Algorithms: Pattern Extraction</h3>
+      <p>
+        Algorithms are mathematical procedures that extract patterns from data. 
+        "Machine learning" refers to algorithms that improve with exposure to more data, 
+        rather than following fixed rules written by programmers. "Deep learning" uses 
+        layered neural networks to detect increasingly abstract patterns.
+      </p>
+      <p>
+        The clinical analogy: just as an experienced radiologist develops pattern 
+        recognition through thousands of case exposures, ML algorithms develop 
+        statistical pattern recognition through training examples.
+      </p>
+
+      <h3>Compute: The Invisible Enabler</h3>
+      <p>
+        Modern AI—especially large language models—requires enormous computational 
+        resources. This has implications for where AI can run (cloud vs. local), 
+        how quickly it responds, and who controls the infrastructure. Understanding 
+        compute helps you evaluate practical deployment questions: Can this run in 
+        real-time? Does patient data leave our network?
+      </p>
+
+      <!-- Readings -->
+      <h2>Readings</h2>
+      <div class="reading-list">
+        <div class="reading-item">
+          <div class="reading-type">📄</div>
+          <div class="reading-content">
+            <div class="reading-title">
+              Topol, E. "High-performance medicine: the convergence of human and artificial intelligence"
+
+            </div>
+            <div class="reading-meta">Nature Medicine, 2019 · ~30 min read</div>
+          </div>
+        </div>
+        <div class="reading-item">
+          <div class="reading-type">📄</div>
+          <div class="reading-content">
+            <div class="reading-title">
+              Rajpurkar, P. et al. "AI in health and medicine"
+
+            </div>
+            <div class="reading-meta">Nature Medicine, 2022 · ~25 min read</div>
+          </div>
+        </div>
+        <div class="reading-item">
+          <div class="reading-type">📄</div>
+          <div class="reading-content">
+            <div class="reading-title">
+              Beam, A. & Kohane, I. "Big Data and Machine Learning in Health Care"
+
+            </div>
+            <div class="reading-meta">JAMA, 2018 · ~15 min read</div>
+          </div>
+        </div>
+        <div class="reading-item">
+          <div class="reading-type">📄</div>
+          <div class="reading-content">
+            <div class="reading-title">
+              Chen, J. & Asch, S. "Machine Learning and Prediction in Medicine"
+
+            </div>
+            <div class="reading-meta">NEJM, 2017 · ~20 min read</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Discussion Questions -->
+      <div class="discussion-questions">
+        <h4>Discussion Questions</h4>
+        <ol>
+          <li>
+            Think of an AI tool currently used in your institution. Can you identify 
+            its data sources, the type of algorithm, and where the computation happens?
+          </li>
+          <li>
+            How might a sepsis prediction algorithm trained at Johns Hopkins perform 
+            differently at a rural critical access hospital? What triad elements 
+            would differ?
+          </li>
+          <li>
+            When a vendor says their AI is "FDA-cleared," what does that tell you—and 
+            not tell you—about each element of the triad?
+          </li>
+        </ol>
+      </div>
+
+      <!-- Learning Objectives -->
+      <div class="objectives">
+        <h4 class="objectives-title">Learning Objectives</h4>
+        <ul class="objectives-list">
+          <li>Define the three components of the AI Triad and their interdependencies</li>
+          <li>Map each triad element to familiar clinical infrastructure</li>
+          <li>Identify questions to ask vendors about data provenance, algorithm type, and compute requirements</li>
+          <li>Explain why an algorithm that performs well in one setting may fail in another</li>
+        </ul>
+      </div>
+
+      <!-- Page Navigation -->
+      <nav class="page-nav">
+        <a href="module-4.html" class="page-nav-link prev">
+          <span class="page-nav-arrow"><i data-lucide="arrow-left"></i></span>
+          <div>
+            <span class="page-nav-label">Previous</span>
+            <span class="page-nav-title">Module 4: The Big Three</span>
+          </div>
+        </a>
+        <a href="week-2.html" class="page-nav-link next">
+          <span class="page-nav-arrow"><i data-lucide="arrow-right"></i></span>
+          <div>
+            <span class="page-nav-label">Next</span>
+            <span class="page-nav-title">Module 6: Predictive AI in the Clinic</span>
+          </div>
+        </a>
+      </nav>
+
+    </article>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div>
+        <strong>AI 101</strong> · A Self-Paced Guide to AI in Medicine
+      </div>
+      <div>
+        v1.0 · 2025
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    lucide.createIcons();
+    const navToggle = document.querySelector('.nav-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    if (navToggle) {
+      navToggle.addEventListener('click', () => {
+        navLinks.classList.toggle('nav-open');
+      });
+    }
+  </script>
+
+</body>
+</html>
