@@ -1,0 +1,1004 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI 101 for Medical Learners | AI 101</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-brand">
+        <span class="nav-badge">AI 101</span>
+        <span class="nav-title">A Self-Paced Guide to AI in Medicine</span>
+      </a>
+      <button class="nav-toggle" aria-label="Toggle menu">
+        <i data-lucide="menu"></i>
+      </button>
+      <div class="nav-links">
+        <a href="index.html" class="nav-link">Topics</a>
+        <!-- <a href="resources.html" class="nav-link">Resources</a> -->
+        <a href="about.html" class="nav-link">About</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="main">
+    <article class="content content-wide">
+
+      <header class="unit-header">
+        <span class="unit-label learner">FOUNDATIONS</span>
+        <h1 class="unit-title">AI 101 for Medical Learners</h1>
+        <p class="unit-subtitle">
+          A practical guide for students and trainees—how to use AI tools effectively
+          while building (not bypassing) clinical reasoning.
+        </p>
+        <div class="unit-meta">
+          <span class="unit-meta-item">
+            <i data-lucide="clock"></i>
+            ~45 min read
+          </span>
+          <span class="unit-meta-item">
+            <i data-lucide="graduation-cap"></i>
+            For medical learners
+          </span>
+        </div>
+      </header>
+
+      <div class="callout callout-info">
+        <div class="callout-title">For Medical Students and Trainees</div>
+        <p class="mb-0">
+          This guide addresses your specific needs as a medical student or APP student.
+          You're not making independent clinical decisions yet—you're studying for high-stakes
+          exams, learning to think like a clinician, and beginning supervised patient encounters.
+          Your AI use cases look different from a practicing physician's, and so do your boundaries.
+        </p>
+      </div>
+
+      <!-- Introduction -->
+      <h2>Your Position in the AI Landscape</h2>
+
+      <p>
+        You're in a unique position. Unlike practicing clinicians who use AI to augment
+        established expertise, you're simultaneously learning medicine <em>and</em> learning
+        to work with AI tools. This creates both opportunity and risk.
+      </p>
+
+      <p>
+        <strong>The opportunity:</strong> AI can accelerate concept mastery, provide unlimited
+        practice scenarios, and help you develop pattern recognition faster than previous
+        generations.
+      </p>
+
+      <p>
+        <strong>The risk:</strong> Outsourcing your clinical reasoning before you've built it,
+        developing dependencies that undermine learning, and crossing professional boundaries
+        without realizing the implications.
+      </p>
+
+      <hr>
+
+      <!-- Part 1: Tool Landscape -->
+      <h2>Part 1: Consumer vs Institutional AI Tools</h2>
+
+      <div class="example-comparison">
+        <div class="example-box said">
+          <h4><i data-lucide="globe"></i> Consumer AI Tools</h4>
+          <p><strong>ChatGPT, Claude, Perplexity, Gemini</strong></p>
+          <ul>
+            <li>No HIPAA compliance</li>
+            <li>No institutional oversight</li>
+            <li>Accessible anywhere, anytime</li>
+            <li>Free or low-cost</li>
+            <li>General medical knowledge, not institution-specific</li>
+            <li>Conversation history may be used for training</li>
+          </ul>
+        </div>
+        <div class="example-box said">
+          <h4><i data-lucide="building"></i> Institutional AI Tools</h4>
+          <p><strong>Epic's AI, UpToDate AI, Hospital Systems</strong></p>
+          <ul>
+            <li>HIPAA-compliant</li>
+            <li>Vetted by your institution</li>
+            <li>Often integrated into EHR</li>
+            <li>Limited to specific use cases</li>
+            <li>May have usage monitoring</li>
+            <li>Typically only available within institutional network</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="callout callout-principle">
+        <div class="callout-title">The Key Distinction</div>
+        <p class="mb-0">
+          Consumer tools are for <strong>learning and general knowledge</strong>. Institutional
+          tools are for <strong>patient care</strong>. If it involves actual patient data or
+          care decisions, use only institutional tools or no AI at all.
+        </p>
+      </div>
+
+      <hr>
+
+      <!-- Part 2: Safe Use Cases -->
+      <h2>Part 2: Safe Use Cases for Consumer AI</h2>
+
+      <h3>1. Concept Mastery and Deep Understanding</h3>
+
+      <p>
+        Medical school throws enormous volumes of information at you. AI excels at explaining
+        complex concepts in multiple ways until something clicks.
+      </p>
+
+      <div class="prompt-example good">
+        <div class="prompt-label"><i data-lucide="check"></i> Effective Approach</div>
+        <div class="prompt-text">
+"Explain the renin-angiotensin-aldosterone system like I'm learning it for
+the first time. Start with the trigger, walk through each step, and explain
+what happens when it goes wrong. Then give me a clinical scenario where
+understanding this system matters for patient care."
+        </div>
+        <p class="prompt-explanation">
+          You're asking for progressive complexity—basic mechanism, then pathophysiology,
+          then clinical relevance. This mirrors how you need to understand it.
+        </p>
+      </div>
+
+      <p>
+        <strong>Follow-up strategy:</strong> Don't stop at the first explanation. Try:
+        "Now explain it using a plumbing system analogy, then point out where the analogy
+        breaks down and why." Forcing the AI to use analogies and then critique them helps
+        you understand conceptual boundaries.
+      </p>
+
+      <div class="callout callout-warning">
+        <div class="callout-title">Watch For This</div>
+        <p class="mb-0">
+          Using AI to simply look up facts you should memorize. If you're asking "What are
+          the branches of the facial nerve?" repeatedly without engaging deeper, you're
+          creating a dependency rather than building knowledge.
+        </p>
+      </div>
+
+      <h3>2. Exam Preparation (USMLE, COMLEX, PANCE, SHELF Exams)</h3>
+
+      <p>
+        AI can generate practice questions, explain answer rationales, and help you identify
+        knowledge gaps. But commercial question banks (UWorld, AMBOSS, Rosh Review) remain
+        superior for actual test prep because they're calibrated to exam format and difficulty.
+      </p>
+
+      <div class="prompt-example good">
+        <div class="prompt-label"><i data-lucide="check"></i> Effective Use</div>
+        <div class="prompt-text">
+"I'm studying renal physiology for Step 1. Create 3 clinical vignettes
+testing my understanding of different types of renal tubular acidosis.
+Make them progressively harder. After I answer each one, explain the
+reasoning behind the correct answer and why the wrong answers are
+tempting but incorrect."
+        </div>
+        <p class="prompt-explanation">
+          You're using AI for active recall practice with immediate feedback. The meta-cognitive
+          element ("why are wrong answers tempting") helps you understand your own reasoning errors.
+        </p>
+      </div>
+
+      <div class="prompt-example best">
+        <div class="prompt-label"><i data-lucide="star"></i> Better for Weak Areas</div>
+        <div class="prompt-text">
+"I keep missing questions about heart failure management. Give me a
+framework for approaching any heart failure question—what should I
+always ask myself first, second, third? Then create 2 questions that
+test different parts of this framework."
+        </div>
+        <p class="prompt-explanation">
+          You're not just drilling facts; you're building clinical reasoning scaffolding.
+        </p>
+      </div>
+
+      <p>
+        <strong>Strategy note:</strong> Use commercial QBanks for the bulk of practice—they
+        know how to write test questions. Use AI for supplementary exploration of concepts
+        you're struggling with, for building frameworks, and for understanding why you're
+        getting things wrong.
+      </p>
+
+      <h3>3. Clinical Reasoning Practice</h3>
+
+      <p>
+        Before you have real patients, you need to practice thinking through cases. AI can
+        generate unlimited scenarios and walk through diagnostic reasoning with you.
+      </p>
+
+      <div class="prompt-example good">
+        <div class="prompt-label"><i data-lucide="check"></i> Structured Approach</div>
+        <div class="prompt-text">
+"Give me a clinical vignette of a 45-year-old presenting to primary care
+with fatigue. Don't tell me the diagnosis yet. I'll work through my
+differential, ask for additional history and exam findings, and propose
+initial workup. After each step, give me the information I asked for and
+let me reason through it."
+        </div>
+        <p class="prompt-explanation">
+          This simulates the actual cognitive process of seeing a patient. You're practicing
+          information gathering, synthesis, and decision-making.
+        </p>
+      </div>
+
+      <div class="prompt-example best">
+        <div class="prompt-label"><i data-lucide="star"></i> Advanced Version</div>
+        <div class="prompt-text">
+"Same scenario, but this time point out when I'm asking for unnecessary
+tests, missing key history elements, or jumping to conclusions without
+adequate reasoning. Critique my clinical thinking process."
+        </div>
+      </div>
+
+      <div class="callout callout-warning">
+        <div class="callout-title">Important Boundary</div>
+        <p class="mb-0">
+          This is practice for learning, not clinical decision-making. If you're on clinical
+          rotations and thinking about an actual patient, you discuss with your preceptor,
+          not an AI. The moment it's real patient care, even as supervised practice, consumer
+          AI isn't the right tool for decision support.
+        </p>
+      </div>
+
+      <h3>4. Literature Comprehension</h3>
+
+      <p>
+        You'll encounter research papers in coursework and need to understand study design,
+        statistics, and clinical implications. AI can help decode dense methodology sections
+        and statistical analyses.
+      </p>
+
+      <div class="prompt-example good">
+        <div class="prompt-label"><i data-lucide="check"></i> For Understanding Statistics</div>
+        <div class="prompt-text">
+"This paper reports a hazard ratio of 0.73 (95% CI 0.61-0.88, p=0.001)
+for the primary outcome. Walk me through what this actually means—the
+effect size, the certainty, and how I should interpret this clinically."
+        </div>
+      </div>
+
+      <p>
+        <strong>What to verify:</strong> Always read the actual paper's conclusions yourself.
+        AI can miss nuance, context, or limitations the authors discuss. Use it to understand
+        methodology, not to replace critical reading.
+      </p>
+
+      <h3>5. Differential Diagnosis Development</h3>
+
+      <p>
+        Learning to generate comprehensive differential diagnoses is a core skill. AI can
+        help you practice this systematically.
+      </p>
+
+      <div class="prompt-example good">
+        <div class="prompt-label"><i data-lucide="check"></i> Framework-Building</div>
+        <div class="prompt-text">
+"For a patient presenting with acute dyspnea, help me build a systematic
+differential using an anatomical/system-based approach. Start with
+life-threatening causes, then move through cardiac, pulmonary, and other
+systems. For each category, explain what history or exam findings would
+point me toward or away from these diagnoses."
+        </div>
+        <p class="prompt-explanation">
+          You're learning a systematic framework (life-threatening first, then by system)
+          rather than just getting a list. This builds the cognitive scaffolding you'll
+          use in actual practice.
+        </p>
+      </div>
+
+      <h3>6. Practical Procedure Preparation</h3>
+
+      <p>
+        Before your first venipuncture, intubation, or lumbar puncture, you can use AI to
+        mentally rehearse steps, anticipate complications, and understand anatomy.
+      </p>
+
+      <div class="prompt-example good">
+        <div class="prompt-label"><i data-lucide="check"></i> Mental Rehearsal</div>
+        <div class="prompt-text">
+"I'm about to perform my first lumbar puncture tomorrow. Walk me through:
+(1) how to position the patient and why, (2) the anatomical landmarks and
+how to find them, (3) step-by-step technique, (4) what can go wrong and
+how to recognize it, (5) what I should do if I'm not getting CSF. Make it
+practical—things I need to know in the moment."
+        </div>
+        <p class="prompt-explanation">
+          You're mentally rehearsing the procedure, which improves actual performance.
+          But you're not replacing hands-on teaching or simulation training.
+        </p>
+      </div>
+
+      <p>
+        <strong>Remember:</strong> This supplements formal training; it doesn't replace it.
+        You still need direct supervision, simulation practice, and hands-on teaching. AI
+        gives you mental framework, not motor skills.
+      </p>
+
+      <h3>7. Personal Statements and Professional Development</h3>
+
+      <p>
+        AI can help you refine personal statements, prepare for interviews, and develop
+        your professional narrative.
+      </p>
+
+      <div class="prompt-example good">
+        <div class="prompt-label"><i data-lucide="check"></i> Editorial Assistance</div>
+        <div class="prompt-text">
+"I'm writing a personal statement for residency applications in pediatrics.
+Here's my draft [paste]. Help me identify: (1) where I'm telling instead of
+showing, (2) cliches I should remove, (3) places where I could add specific
+details that make it more memorable, (4) whether my motivation for pediatrics
+comes through clearly."
+        </div>
+        <p class="prompt-explanation">
+          You're using AI as an editorial assistant, not a ghostwriter. You wrote the
+          content; AI helps you refine it.
+        </p>
+      </div>
+
+      <div class="callout callout-principle">
+        <div class="callout-title">A Note on Authenticity</div>
+        <p class="mb-0">
+          Programs are looking for your voice, your experiences, your reasoning. AI-generated
+          content from scratch tends to be generic and often detectable. Use AI for editing
+          and refinement, not for creation.
+        </p>
+      </div>
+
+      <hr>
+
+      <!-- Part 3: Professional Boundaries -->
+      <h2>Part 3: Thinking About Professional Boundaries</h2>
+
+      <p>
+        As you develop as a clinician, you're also developing professional judgment—knowing
+        when to use which resources, when to seek supervision, and how to handle patient
+        information responsibly.
+      </p>
+
+      <h3>When Does Learning Become Patient Care?</h3>
+
+      <p><strong>The core question:</strong> Are you making decisions about what to actually
+      do for a real patient, or are you learning concepts?</p>
+
+      <div class="example-comparison">
+        <div class="example-box said">
+          <h4><i data-lucide="check-circle"></i> Learning (Consumer AI Appropriate)</h4>
+          <ul>
+            <li>"Explain the diagnostic approach to acute kidney injury"</li>
+            <li>"What's the pathophysiology of different types of AKI?"</li>
+            <li>"Walk me through how to interpret FENa and why it matters"</li>
+            <li>"I saw a patient with AKI today. Help me understand the underlying mechanisms better" (no identifiers)</li>
+          </ul>
+        </div>
+        <div class="example-box generated">
+          <h4><i data-lucide="x-circle"></i> Clinical Decision-Making (Discuss with Your Team)</h4>
+          <ul>
+            <li>"My patient has these specific findings—what should I order next?"</li>
+            <li>"Should I start this medication for my patient?"</li>
+            <li>"What's the right diagnosis for this case I'm working up?"</li>
+          </ul>
+        </div>
+      </div>
+
+      <h4>The Gray Zone: Preparing for Rounds</h4>
+
+      <p>
+        You're going to present a patient with AKI tomorrow. You want to make sure you
+        understand the concepts before discussing with your team. Using AI to review AKI
+        management in general? That's learning.
+      </p>
+
+      <p>
+        But remember: your preceptor expects to teach you, expects you to ask questions,
+        and expects your clinical reasoning to reflect your own thinking (even if you've
+        studied). The goal is to participate meaningfully in supervision, not to outsource
+        your reasoning and present it as your own.
+      </p>
+
+      <div class="callout callout-principle">
+        <div class="callout-title">The Principle</div>
+        <p class="mb-0">
+          Consumer AI doesn't replace clinical supervision. Use it to understand concepts
+          better so you can engage more thoughtfully with your preceptors, not to bypass
+          that supervision.
+        </p>
+      </div>
+
+      <h3>Handling Patient Information</h3>
+
+      <p>
+        You'll naturally want to learn from the patients you see. The question is how to
+        do that while respecting privacy and building good habits.
+      </p>
+
+      <h4>What Makes Information Identifiable?</h4>
+
+      <p>
+        It's not just name and medical record number. The combination of demographics,
+        specific clinical details, and timing can identify someone, especially in smaller
+        communities or for unusual presentations.
+      </p>
+
+      <h4>Safe Approaches for Learning from Your Cases</h4>
+
+      <div class="prompt-example bad">
+        <div class="prompt-label"><i data-lucide="x"></i> Instead of This</div>
+        <div class="prompt-text">
+"I saw a 34-year-old woman today with diabetes, hypertension, and this
+unusual maculopapular rash on her legs and trunk that started 3 days ago.
+What could it be?"
+        </div>
+      </div>
+
+      <div class="prompt-example good">
+        <div class="prompt-label"><i data-lucide="check"></i> Try This</div>
+        <div class="prompt-text">
+"What causes maculopapular rash in patients with diabetes? What should I
+think about in the differential?"
+        </div>
+      </div>
+
+      <div class="prompt-example best">
+        <div class="prompt-label"><i data-lucide="star"></i> Or Even Better (After Discussing with Your Team)</div>
+        <div class="prompt-text">
+"I saw a case of [diagnosis] today. Help me understand the pathophysiology
+so I can remember this for next time."
+        </div>
+      </div>
+
+      <p>
+        <strong>Why this matters:</strong> Building habits now about how you discuss cases
+        shapes habits that will last your entire career. Patients trust you with intimate
+        details about their lives and health. That trust is worth protecting, not because
+        of fear of consequences, but because it's fundamental to the physician-patient
+        relationship.
+      </p>
+
+      <h3>Academic Integrity Considerations</h3>
+
+      <p>
+        You're evaluated on your clinical reasoning, your writing, your understanding.
+        Using AI to help you learn is different from using it to do the work for you.
+      </p>
+
+      <p><strong>Think about it this way:</strong></p>
+
+      <p>
+        If your ethics course asks you to reflect on a challenging patient interaction,
+        the value is in <em>your</em> reflection—your thinking about what made it challenging,
+        what you learned, how you'd approach it differently. Having AI write that reflection
+        defeats the entire purpose of the assignment.
+      </p>
+
+      <p>
+        But asking AI "I want to write about informed consent challenges in pediatrics—help
+        me organize my argument" when you've already done the thinking? That's using a tool
+        appropriately.
+      </p>
+
+      <div class="callout callout-question">
+        <div class="callout-title">The Test</div>
+        <p class="mb-0">
+          Would you be comfortable telling your professor or course director exactly how
+          you used AI for this assignment? If yes, you're probably fine. If you'd have to
+          hide it or be vague about it, reconsider.
+        </p>
+      </div>
+
+      <hr>
+
+      <!-- Part 4: AI Tools -->
+      <h2>Part 4: Specific AI Tools and Features for Medical Learners</h2>
+
+      <h3>NotebookLM (Google)</h3>
+
+      <p>
+        Upload your notes, textbooks (PDFs), lecture slides, and NotebookLM creates study
+        guides, FAQs, and even audio discussions between two AI hosts reviewing the material.
+      </p>
+
+      <h4>Best Use Cases</h4>
+
+      <div class="feature-grid">
+        <div class="feature-card">
+          <h4><i data-lucide="headphones"></i> Audio Study Sessions</h4>
+          <p>
+            Upload lecture notes, generate an "Audio Overview"—two AI hosts discuss the
+            material conversationally. Listen while commuting or exercising.
+          </p>
+        </div>
+        <div class="feature-card">
+          <h4><i data-lucide="book-open"></i> Comprehensive Study Guides</h4>
+          <p>
+            Upload lecture slides + textbook chapters + your notes. Ask for a study guide
+            covering specific topics. NotebookLM synthesizes across all your sources.
+          </p>
+        </div>
+        <div class="feature-card">
+          <h4><i data-lucide="help-circle"></i> Practice Questions</h4>
+          <p>
+            "Generate 10 practice questions based on these uploaded lectures, ranging from
+            basic recall to clinical application."
+          </p>
+        </div>
+      </div>
+
+      <p>
+        <strong>What to know:</strong> NotebookLM only works with what you upload—it won't
+        add information beyond your sources. This is actually helpful because it keeps you
+        focused on your curriculum.
+      </p>
+
+      <h3>ChatGPT Features</h3>
+
+      <div class="feature-grid">
+        <div class="feature-card">
+          <h4><i data-lucide="sparkles"></i> Custom GPTs</h4>
+          <p>
+            Create specialized assistants like "Step 1 Tutor" with custom instructions
+            for your learning style. Upload your weak area notes.
+          </p>
+        </div>
+        <div class="feature-card">
+          <h4><i data-lucide="code"></i> Code Interpreter</h4>
+          <p>
+            Upload data for statistical analysis. Great for research projects and understanding
+            statistics: "Here's the data from a paper. Recreate their analysis step-by-step."
+          </p>
+        </div>
+        <div class="feature-card">
+          <h4><i data-lucide="mic"></i> Voice Mode</h4>
+          <p>
+            Explain concepts aloud and get immediate feedback. Practice presentations.
+            Work through differentials verbally.
+          </p>
+        </div>
+      </div>
+
+      <h3>Claude Features</h3>
+
+      <div class="feature-grid">
+        <div class="feature-card">
+          <h4><i data-lucide="folder"></i> Projects</h4>
+          <p>
+            Create separate workspaces for different subjects. Upload notes and add custom
+            instructions. Claude remembers everything you've discussed in that project.
+          </p>
+        </div>
+        <div class="feature-card">
+          <h4><i data-lucide="layout"></i> Artifacts</h4>
+          <p>
+            Generate interactive content: study schedules, comparison tables, flowcharts,
+            flashcards—all editable and exportable.
+          </p>
+        </div>
+        <div class="feature-card">
+          <h4><i data-lucide="brain"></i> Extended Thinking</h4>
+          <p>
+            For complex reasoning—Claude shows its reasoning process, which helps you learn
+            <em>how</em> to think through complex problems.
+          </p>
+        </div>
+      </div>
+
+      <h3>Gemini Features</h3>
+
+      <div class="feature-grid">
+        <div class="feature-card">
+          <h4><i data-lucide="image"></i> Image Generation</h4>
+          <p>
+            Create diagrams showing pathophysiology. Useful for visualizing complex pathways
+            and creating memory aids.
+          </p>
+        </div>
+        <div class="feature-card">
+          <h4><i data-lucide="search"></i> Deep Research</h4>
+          <p>
+            Extensive research with comprehensive reports. Great for research projects
+            and understanding evolving clinical topics.
+          </p>
+        </div>
+        <div class="feature-card">
+          <h4><i data-lucide="eye"></i> Multimodal Analysis</h4>
+          <p>
+            Upload teaching images (histology, practice EKGs, radiology teaching files)
+            for systematic analysis and interpretation practice.
+          </p>
+        </div>
+      </div>
+
+      <h3>Perplexity for Research</h3>
+
+      <div class="feature-grid">
+        <div class="feature-card">
+          <h4><i data-lucide="search"></i> Pro Search</h4>
+          <p>
+            Academic-focused search with citations. Returns sourced information with direct
+            links to papers you can verify.
+          </p>
+        </div>
+        <div class="feature-card">
+          <h4><i data-lucide="bookmark"></i> Spaces</h4>
+          <p>
+            Create dedicated research spaces for different projects. Follow-up questions
+            maintain context within that space.
+          </p>
+        </div>
+      </div>
+
+      <h3>Tool Selection Quick Guide</h3>
+
+      <div class="table-responsive">
+        <table class="reference-table">
+          <thead>
+            <tr>
+              <th>Need</th>
+              <th>Best Tool</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Understand a difficult concept</td>
+              <td>Claude or ChatGPT (deep explanations, analogies)</td>
+            </tr>
+            <tr>
+              <td>Create study materials from notes</td>
+              <td>NotebookLM (audio) or Claude Projects (tables, flashcards)</td>
+            </tr>
+            <tr>
+              <td>Research a clinical topic</td>
+              <td>Perplexity (cited sources) or Gemini Deep Research</td>
+            </tr>
+            <tr>
+              <td>Analyze images (histology, EKG, radiology)</td>
+              <td>Gemini or ChatGPT (multimodal capabilities)</td>
+            </tr>
+            <tr>
+              <td>Find and understand research papers</td>
+              <td>Consensus, Elicit, or Perplexity</td>
+            </tr>
+            <tr>
+              <td>Generate practice questions</td>
+              <td>Any LLM with good prompting, or QuizGPT</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <hr>
+
+      <!-- Part 5: Practical Workflows -->
+      <h2>Part 5: Practical Workflows</h2>
+
+      <h3>Workflow 1: Studying for Board Exams</h3>
+
+      <div class="pipeline-grid">
+        <div class="pipeline-stage">
+          <div class="pipeline-number">1</div>
+          <h4>Content Review</h4>
+          <p>Use AI to explain concepts in multiple ways until they click. Ask for analogies and clinical applications.</p>
+        </div>
+        <div class="pipeline-stage">
+          <div class="pipeline-number">2</div>
+          <h4>Active Recall</h4>
+          <p>"Quiz me on 5 key concepts. After I answer each one, explain what I got right and wrong."</p>
+        </div>
+        <div class="pipeline-stage">
+          <div class="pipeline-number">3</div>
+          <h4>Practice Questions</h4>
+          <p>Use QBanks primarily. Use AI for topics you're struggling with—build frameworks, understand reasoning errors.</p>
+        </div>
+        <div class="pipeline-stage">
+          <div class="pipeline-number">4</div>
+          <h4>Integration</h4>
+          <p>"Connect embryology, pathophysiology, exam findings, and management in one coherent explanation."</p>
+        </div>
+      </div>
+
+      <h3>Workflow 2: Preparing for Clinical Rotations</h3>
+
+      <div class="example-comparison">
+        <div class="example-box said">
+          <h4><i data-lucide="sunrise"></i> Before Rotation Starts</h4>
+          <p>
+            "I'm starting my surgery rotation. I need to know: (1) common operations I'll see,
+            (2) basic anatomy I must know cold, (3) typical questions I'll be asked on rounds,
+            (4) what I should read the night before common cases."
+          </p>
+        </div>
+        <div class="example-box said">
+          <h4><i data-lucide="sunset"></i> During Rotation (Evening Review)</h4>
+          <p>
+            After rounds: "Today I was asked about the blood supply to the pancreas and didn't
+            know it. Teach me this in a way I'll remember."
+          </p>
+          <p>
+            Evening: "I saw a case of acute cholecystitis today. Help me understand the
+            pathophysiology and standard management so I can learn from this case."
+          </p>
+        </div>
+      </div>
+
+      <p>
+        <strong>The distinction:</strong> Learning about clinical topics to prepare yourself
+        is different from making decisions about actual patients. The first enhances your
+        ability to participate in supervised care; the second bypasses that supervision.
+      </p>
+
+      <h3>Workflow 3: Preparing Case Presentations</h3>
+
+      <p><strong>Thoughtful approach:</strong></p>
+
+      <p>
+        Write your presentation first—your history, your physical exam findings, your
+        assessment, your differential, your plan. This is your clinical thinking.
+      </p>
+
+      <p>Then, if helpful:</p>
+
+      <div class="prompt-example good">
+        <div class="prompt-label"><i data-lucide="check"></i> Polish and Prepare</div>
+        <div class="prompt-text">
+"I'm presenting a case of community-acquired pneumonia. Here's my structure
+[outline]. Am I missing any key elements? Is my reasoning clear? What
+questions might I get asked and how should I prepare?"
+        </div>
+        <p class="prompt-explanation">
+          You've done the clinical work. AI helps you polish the presentation and anticipate
+          teaching questions, similar to how you might ask a senior resident "what do you
+          think they'll ask me about?"
+        </p>
+      </div>
+
+      <hr>
+
+      <!-- Part 6: Developing AI Literacy -->
+      <h2>Part 6: Developing AI Literacy Alongside Clinical Skills</h2>
+
+      <p>
+        You're learning to be a clinician in the AI era. This means developing parallel
+        competencies.
+      </p>
+
+      <h3>Skill 1: Prompt Engineering for Learning</h3>
+
+      <div class="prompt-examples">
+        <div class="prompt-example bad">
+          <div class="prompt-label"><i data-lucide="x"></i> Vague</div>
+          <p>"Tell me about heart failure"</p>
+        </div>
+        <div class="prompt-example good">
+          <div class="prompt-label"><i data-lucide="check"></i> Specific</div>
+          <p>"Explain the pathophysiology of systolic vs diastolic heart failure, focusing on what causes each and how this explains different exam findings"</p>
+        </div>
+        <div class="prompt-example best">
+          <div class="prompt-label"><i data-lucide="star"></i> Targeted at Your Gap</div>
+          <p>"I understand the Frank-Starling curve but don't understand how it breaks down in heart failure. Explain this, then show me how it explains why we use specific medications"</p>
+        </div>
+      </div>
+
+      <h3>Skill 2: Critical Verification</h3>
+
+      <p>
+        Treat AI output like a consult note from a colleague you don't know well—potentially
+        useful, but verify everything important.
+      </p>
+
+      <p><strong>Practice this:</strong></p>
+      <ol>
+        <li>Ask AI a clinical question</li>
+        <li>Verify the answer in UpToDate, a textbook, or primary literature</li>
+        <li>Note discrepancies</li>
+        <li>Understand why the discrepancy occurred</li>
+      </ol>
+
+      <p>
+        This builds your ability to spot AI hallucinations and reinforces that AI is a
+        starting point, not an endpoint.
+      </p>
+
+      <h3>Skill 3: Recognizing Appropriate Use Boundaries</h3>
+
+      <p>Build a personal decision tree:</p>
+      <ul>
+        <li>Does this involve an actual patient's care? → Discuss with my team</li>
+        <li>Am I trying to learn something? → Consumer AI likely fine</li>
+        <li>Would my attending expect me to ask them instead? → Ask them, not AI</li>
+        <li>Am I using AI to avoid thinking? → Stop and think first</li>
+        <li>Will this help me learn or just get the answer? → Former is good, latter is problematic</li>
+      </ul>
+
+      <h3>Skill 4: Integrating AI into Clinical Reasoning</h3>
+
+      <p>AI should enhance your clinical thinking, not replace it. Test this:</p>
+
+      <ul>
+        <li><strong>Before AI:</strong> Spend 5 minutes thinking through a clinical question yourself</li>
+        <li><strong>After AI:</strong> Compare your reasoning to AI's response</li>
+        <li><strong>Reflection:</strong> What did you get right? What did you miss? <em>Why</em> did you miss it?</li>
+      </ul>
+
+      <p>
+        This metacognitive practice—thinking about your thinking—is how you improve
+        clinical reasoning.
+      </p>
+
+      <hr>
+
+      <!-- Part 7: Resources -->
+      <h2>Part 7: Resources for Further Learning</h2>
+
+      <h3>YouTube Channels</h3>
+
+      <div class="resource-grid">
+        <div class="resource-card">
+          <h4>AI Explained</h4>
+          <p>Technical but accessible explanations of how AI works. Helps you understand limitations and capabilities.</p>
+        </div>
+        <div class="resource-card">
+          <h4>Med School Insiders</h4>
+          <p>Has covered AI in medical education. Practical study strategies incorporating AI tools.</p>
+        </div>
+        <div class="resource-card">
+          <h4>Ali Abdaal</h4>
+          <p>Productivity and learning techniques. "How to use ChatGPT for studying" series.</p>
+        </div>
+      </div>
+
+      <h3>Podcasts</h3>
+
+      <div class="resource-grid">
+        <div class="resource-card">
+          <h4>The Medical Futurist Podcast</h4>
+          <p>Healthcare AI developments. Episodes on AI in medical education.</p>
+        </div>
+        <div class="resource-card">
+          <h4>The Clinical Problem Solvers</h4>
+          <p>Clinical reasoning podcast. Some episodes discuss AI's role in diagnosis.</p>
+        </div>
+        <div class="resource-card">
+          <h4>The Curbsiders</h4>
+          <p>Internal medicine podcast. Practical, evidence-based. Some episodes on AI tools in practice.</p>
+        </div>
+      </div>
+
+      <h3>Courses</h3>
+
+      <div class="resource-grid">
+        <div class="resource-card">
+          <h4>Stanford's "AI in Healthcare" (Coursera)</h4>
+          <p>Free audit option. Medical school-level content on AI capabilities and limitations.</p>
+        </div>
+        <div class="resource-card">
+          <h4>DeepLearning.AI's "ChatGPT Prompt Engineering"</h4>
+          <p>Short course (hours, not weeks). Teaches effective prompting. Directly applicable to studying.</p>
+        </div>
+      </div>
+
+      <hr>
+
+      <!-- Final Principles -->
+      <h2>Final Principles</h2>
+
+      <div class="key-points-grid">
+        <div class="key-point-card">
+          <h4>1. AI is for Learning, Not Replacing Learning</h4>
+          <p>Your goal is to become an independent clinician with sound judgment. Every time you let AI do your thinking, you're practicing the wrong skill.</p>
+        </div>
+        <div class="key-point-card">
+          <h4>2. Context Matters More Than the Tool</h4>
+          <p>Consumer AI is excellent for understanding concepts. But when you're caring for a real patient—even under supervision—the context has changed.</p>
+        </div>
+        <div class="key-point-card">
+          <h4>3. Verify What Matters</h4>
+          <p>AI can hallucinate and confidently state incorrect information. For anything clinically important, verify independently.</p>
+        </div>
+        <div class="key-point-card">
+          <h4>4. Patient Privacy Builds Professional Trust</h4>
+          <p>The way you handle patient information now shapes habits that will last your entire career. That trust is worth protecting.</p>
+        </div>
+        <div class="key-point-card">
+          <h4>5. Develop Judgment About Resources</h4>
+          <p>Not every question needs AI. Some need your preceptor. Some need a textbook. Learning <em>when</em> to use which resource is part of clinical training.</p>
+        </div>
+        <div class="key-point-card">
+          <h4>6. The Human Parts Matter Most</h4>
+          <p>AI can't teach you how to deliver difficult news with compassion or build trust with scared patients. Prioritize the human skills that make you not just knowledgeable, but a good clinician.</p>
+        </div>
+      </div>
+
+      <hr>
+
+      <!-- Conclusion -->
+      <h2>Conclusion: Building Your Practice</h2>
+
+      <p>
+        You're learning medicine at a unique time. AI will be part of your practice for
+        your entire career, but its role will evolve. What won't change: your responsibility
+        to patients, your commitment to lifelong learning, and your professional judgment.
+      </p>
+
+      <p>Start now by building thoughtful habits:</p>
+      <ul>
+        <li>Use AI deliberately, not reflexively</li>
+        <li>Always know why you're using it and what you're trying to learn</li>
+        <li>Verify information before you rely on it</li>
+        <li>Think carefully about professional boundaries</li>
+        <li>Keep developing your own clinical reasoning</li>
+        <li>Seek human mentorship and supervision</li>
+        <li>Reflect regularly on whether AI is enhancing or undermining your learning</li>
+      </ul>
+
+      <p>
+        The clinicians who will thrive in the coming decades aren't those who avoid AI or
+        those who depend on it uncritically. They're the ones who integrate it thoughtfully
+        into their practice while maintaining the core competencies, professional judgment,
+        and human connection that define excellent medicine.
+      </p>
+
+      <p>You're building that practice now. Make it intentional.</p>
+
+      <div class="callout callout-tip">
+        <div class="callout-title">Final Note</div>
+        <p class="mb-0">
+          Consume resources selectively. You don't need to become an AI expert. You need to
+          be an excellent clinician who uses AI thoughtfully. Spend 90% of your time learning
+          medicine. Spend 10% learning to use tools (including AI) that help you learn medicine better.
+        </p>
+      </div>
+
+      <!-- Page Navigation -->
+      <nav class="page-nav">
+        <a href="big-three.html" class="page-nav-link prev">
+          <span class="page-nav-arrow"><i data-lucide="arrow-left"></i></span>
+          <div>
+            <span class="page-nav-label">Previous</span>
+            <span class="page-nav-title">The Big Three</span>
+          </div>
+        </a>
+        <a href="clinical-decision-support.html" class="page-nav-link next">
+          <span class="page-nav-arrow"><i data-lucide="arrow-right"></i></span>
+          <div>
+            <span class="page-nav-label">Next</span>
+            <span class="page-nav-title">Clinical Decision Support Tools</span>
+          </div>
+        </a>
+      </nav>
+
+    </article>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div>
+        <strong>AI 101</strong> · A Self-Paced Guide to AI in Medicine
+      </div>
+      <div>
+        v1.0 · 2025
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    lucide.createIcons();
+
+    // Mobile nav toggle
+    const navToggle = document.querySelector('.nav-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    if (navToggle) {
+      navToggle.addEventListener('click', () => {
+        navLinks.classList.toggle('nav-open');
+        navToggle.classList.toggle('nav-toggle-active');
+      });
+    }
+  </script>
+
+</body>
+</html>

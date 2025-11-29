@@ -2834,3 +2834,29 @@ blockquote.pull-quote {
 .mt-md {
   margin-top: var(--space-md);
 }
+
+/* ==========================================
+   Medical Learner Bonus Styles (Green)
+   ========================================== */
+
+/* Learner label styling */
+.unit-label.learner {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  color: white;
+}
+
+/* Learner module card styling */
+.week-card.learner {
+  border-color: #10b981;
+  background: linear-gradient(135deg, #ecfdf5 0%, #d1fae5 100%);
+}
+
+.week-card.learner:hover {
+  border-color: #059669;
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.15);
+}
+
+.week-card.learner .week-number {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  color: white;
+}
