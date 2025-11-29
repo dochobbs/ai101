@@ -1,0 +1,983 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Running AI Models on Your Own Computer | AI 101</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-brand">
+        <span class="nav-badge">AI 101</span>
+        <span class="nav-title">A Self-Paced Guide to AI in Medicine</span>
+      </a>
+      <button class="nav-toggle" aria-label="Toggle menu">
+        <i data-lucide="menu"></i>
+      </button>
+      <div class="nav-links">
+        <a href="index.html" class="nav-link">Topics</a>
+        <!-- <a href="resources.html" class="nav-link">Resources</a> -->
+        <a href="about.html" class="nav-link">About</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="main">
+    <article class="content content-wide">
+
+      <header class="unit-header">
+        <span class="unit-label appendix">RESOURCES</span>
+        <h1 class="unit-title">Running AI Models on Your Own Computer</h1>
+        <p class="unit-subtitle">
+          Technical guidance for running medical AI models locally—for privacy,
+          offline access, and understanding how these systems work under the hood.
+        </p>
+        <div class="unit-meta">
+          <span class="unit-meta-item">
+            <i data-lucide="clock"></i>
+            ~45 min read
+          </span>
+          <span class="unit-meta-item">
+            <i data-lucide="hard-drive"></i>
+            Technical guide
+          </span>
+        </div>
+      </header>
+
+      <div class="callout callout-warning">
+        <div class="callout-title">Important Disclaimer</div>
+        <p class="mb-0">
+          No current open-source medical model is validated for clinical decision-making.
+          This guide is for educational and development purposes. Nothing here constitutes
+          medical, legal, or compliance advice. Consult appropriate professionals before
+          deploying AI systems in clinical settings.
+        </p>
+      </div>
+
+      <!-- Why Local Models Matter -->
+      <h2>Why Local Models Matter for Healthcare</h2>
+
+      <p>
+        Cloud-based AI services like ChatGPT and Claude offer powerful capabilities, but they
+        present challenges for healthcare applications. Data sent to these services may be
+        retained for training, lacks guaranteed HIPAA compliance without specific enterprise
+        agreements, and requires constant internet connectivity.
+      </p>
+
+      <p>
+        Local models flip this equation. When you run an AI model on your own hardware,
+        patient data never leaves your machine. There's no network transmission, no third-party
+        storage, no Business Associate Agreement required for internal experimentation.
+      </p>
+
+      <h3>Ideal Use Cases for Local Models</h3>
+
+      <div class="feature-grid">
+        <div class="feature-card">
+          <h4><i data-lucide="flask-conical"></i> Prototyping</h4>
+          <p>Test clinical applications before investing in HIPAA-compliant cloud infrastructure.</p>
+        </div>
+        <div class="feature-card">
+          <h4><i data-lucide="graduation-cap"></i> Education</h4>
+          <p>Understand how these systems behave without compliance overhead.</p>
+        </div>
+        <div class="feature-card">
+          <h4><i data-lucide="wifi-off"></i> Offline Access</h4>
+          <p>Work in settings with unreliable connectivity.</p>
+        </div>
+        <div class="feature-card">
+          <h4><i data-lucide="microscope"></i> Research</h4>
+          <p>Full control over model parameters and outputs.</p>
+        </div>
+        <div class="feature-card">
+          <h4><i data-lucide="piggy-bank"></i> Cost Management</h4>
+          <p>High-volume experimentation without API fees.</p>
+        </div>
+        <div class="feature-card">
+          <h4><i data-lucide="shield"></i> Privacy</h4>
+          <p>Data never leaves your machine.</p>
+        </div>
+      </div>
+
+      <div class="callout callout-principle">
+        <div class="callout-title">The Tradeoff</div>
+        <p class="mb-0">
+          Local models running on consumer hardware are smaller and less capable than frontier
+          models like GPT-4 or Claude. A 7B parameter model on your laptop won't match a 1.8
+          trillion parameter model running on a data center. But for many tasks—answering
+          medical questions, summarizing notes, generating draft content—smaller models can
+          be surprisingly effective.
+        </p>
+      </div>
+
+      <hr>
+
+      <!-- Medical-Specific Models -->
+      <h2>Medical-Specific Models</h2>
+
+      <p>
+        Several open-source models have been specifically trained or fine-tuned for healthcare
+        applications. These offer better baseline performance on medical tasks than general-purpose
+        models of similar size. However, "better baseline performance" doesn't mean "ready for
+        clinical use"—all require validation for any specific application.
+      </p>
+
+      <h3>MedGemma</h3>
+
+      <p>
+        Released by Google DeepMind in May 2025, MedGemma represents the current state-of-the-art
+        for open medical models. Built on Google's Gemma 3 architecture, these models underwent
+        continued pre-training on diverse medical data while preserving general capabilities.
+      </p>
+
+      <div class="table-responsive">
+        <table class="reference-table">
+          <thead>
+            <tr>
+              <th>Variant</th>
+              <th>Parameters</th>
+              <th>Modalities</th>
+              <th>Key Training Data</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>MedGemma 4B Multimodal</td>
+              <td>4 billion</td>
+              <td>Text + Images</td>
+              <td>Radiology, dermatology, ophthalmology, histopathology</td>
+            </tr>
+            <tr>
+              <td>MedGemma 27B Text</td>
+              <td>27 billion</td>
+              <td>Text only</td>
+              <td>Medical literature, clinical text</td>
+            </tr>
+            <tr>
+              <td>MedGemma 27B Multimodal</td>
+              <td>27 billion</td>
+              <td>Text + Images + EHR</td>
+              <td>All above plus FHIR-based EHR data</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p><strong>Performance Claims:</strong></p>
+      <ul>
+        <li>MedGemma 4B scores 64.4% on MedQA, ranking among the best sub-8B open models</li>
+        <li>In radiologist evaluation, 81% of its chest X-ray reports were judged sufficient for similar patient management</li>
+        <li>MedGemma 27B Text scores 87.7% on MedQA—within 3 points of much larger proprietary models</li>
+      </ul>
+
+      <p><strong>Image Capabilities:</strong> The multimodal variants can process medical images including chest X-rays, dermatology photographs, fundus images, and histopathology slides.</p>
+
+      <div class="callout callout-warning">
+        <div class="callout-title">Important Limitations</div>
+        <p>
+          Google explicitly states MedGemma is not clinical-grade. From their documentation:
+          "MedGemma is not intended to be used without appropriate validation, adaptation
+          and/or making meaningful modification by developers for their specific use case."
+        </p>
+        <p class="mb-0">
+          Early testing has revealed significant gaps. One clinician found MedGemma generated
+          a "normal" interpretation for a chest X-ray with clear tuberculosis findings.
+        </p>
+      </div>
+
+      <p><strong>Hardware Requirements:</strong></p>
+      <ul>
+        <li><strong>MedGemma 4B:</strong> Runs on single consumer GPU (8GB+ VRAM) or Apple Silicon Macs with 16GB+ RAM</li>
+        <li><strong>MedGemma 27B:</strong> Requires substantial hardware—64GB+ RAM or professional GPUs with 24GB+ VRAM</li>
+      </ul>
+
+      <p><strong>Access:</strong> Available on Hugging Face (<code>google/medgemma-4b-it</code> for the instruction-tuned 4B variant). Requires agreeing to Google's terms of use.</p>
+
+      <h3>Meditron</h3>
+
+      <p>
+        Developed by researchers at EPFL and Yale School of Medicine, Meditron adapts Meta's
+        Llama 2 architecture through continued pretraining on curated medical data. The project
+        emphasizes open access and low-resource settings.
+      </p>
+
+      <p><strong>Training Corpus (GAP-Replay, 48.1 billion tokens):</strong></p>
+      <ul>
+        <li><strong>Clinical guidelines:</strong> 46,000 guidelines from hospitals and international organizations (including ICRC)</li>
+        <li><strong>PubMed abstracts:</strong> 16.1 million abstracts from medical literature</li>
+        <li><strong>Medical papers:</strong> Full text from 5 million publicly available papers</li>
+        <li><strong>Replay data:</strong> 400 million tokens of general-domain content to prevent catastrophic forgetting</li>
+      </ul>
+
+      <p><strong>Model Variants:</strong></p>
+      <ul>
+        <li><strong>Meditron-7B:</strong> Smaller variant suitable for laptops with 16GB+ RAM at Q4 quantization</li>
+        <li><strong>Meditron-70B:</strong> Full-size variant that outperforms GPT-3.5 and Flan-PaLM on multiple medical reasoning benchmarks. Requires serious hardware.</li>
+      </ul>
+
+      <p><strong>Access:</strong> GitHub (<code>epfLLM/meditron</code>), Hugging Face. Available in Ollama as <code>meditron:7b</code>.</p>
+
+      <h3>BioMistral</h3>
+
+      <p>
+        Built on the Mistral architecture and pre-trained on PubMed Central, BioMistral offers
+        strong biomedical question-answering performance in a 7B parameter package. Its standout
+        feature is multilingual evaluation—the team tested performance across eight languages.
+      </p>
+
+      <p><strong>Best Use Cases:</strong></p>
+      <ul>
+        <li>Biomedical literature synthesis and analysis</li>
+        <li>Research question-answering</li>
+        <li>Applications requiring non-English language support</li>
+        <li>Settings where smaller model size is important</li>
+      </ul>
+
+      <p><strong>Access:</strong> Hugging Face (<code>BioMistral/BioMistral-7B</code>), available in some Ollama model repositories.</p>
+
+      <h3>Other Notable Models</h3>
+
+      <div class="resource-grid">
+        <div class="resource-card">
+          <h4>OpenBioLLM-70B</h4>
+          <p>Claims to outperform GPT-4 on several biomedical benchmarks. Built on Meta's Llama 3 with medical fine-tuning.</p>
+        </div>
+        <div class="resource-card">
+          <h4>MedAlpaca-7B</h4>
+          <p>Fine-tuned for medical dialogue and question-answering. Good for conversational medical education. Available in Ollama.</p>
+        </div>
+        <div class="resource-card">
+          <h4>Meerkat-7B/8B</h4>
+          <p>First 7B models to exceed USMLE passing threshold. Strong diagnostic reasoning on NEJM Case Challenges.</p>
+        </div>
+        <div class="resource-card">
+          <h4>ClinicalBERT</h4>
+          <p>Smaller encoder model trained on MIMIC-III clinical notes. Excellent for classification and entity recognition.</p>
+        </div>
+      </div>
+
+      <h3>Choosing a Model</h3>
+
+      <div class="table-responsive">
+        <table class="reference-table">
+          <thead>
+            <tr>
+              <th>Hardware</th>
+              <th>Recommended Models</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Limited (8-16GB RAM)</td>
+              <td>Phi-3, MedAlpaca-7B, or Meditron-7B at Q4</td>
+            </tr>
+            <tr>
+              <td>Medical QA focus</td>
+              <td>BioMistral-7B or Meditron-7B</td>
+            </tr>
+            <tr>
+              <td>Image + text tasks</td>
+              <td>MedGemma 4B (if hardware allows)</td>
+            </tr>
+            <tr>
+              <td>Research/academic</td>
+              <td>BioMistral for literature, Meditron for guidelines</td>
+            </tr>
+            <tr>
+              <td>Maximum capability</td>
+              <td>MedGemma 27B or OpenBioLLM-70B (significant hardware required)</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <hr>
+
+      <!-- Hardware Requirements -->
+      <h2>Hardware Requirements and Performance</h2>
+
+      <p>
+        Running local models requires understanding the relationship between model size,
+        quantization, and your available hardware. The bottleneck is almost always memory—either
+        system RAM or GPU VRAM.
+      </p>
+
+      <h3>Memory Math</h3>
+
+      <p>
+        A model's parameters are stored as floating-point numbers. In full precision (FP16),
+        each parameter requires 2 bytes. So a 7B parameter model needs roughly 14GB just for
+        the weights. Add overhead for inference and you're looking at 16-20GB for comfortable operation.
+      </p>
+
+      <p>
+        Most consumer hardware can't handle this, which is where <strong>quantization</strong> comes in.
+      </p>
+
+      <h3>Understanding Quantization</h3>
+
+      <p>
+        Quantization reduces precision from 16-bit floating point to smaller representations—8-bit,
+        4-bit, even 2-bit. This trades some accuracy for dramatically reduced memory requirements.
+      </p>
+
+      <div class="table-responsive">
+        <table class="reference-table">
+          <thead>
+            <tr>
+              <th>Quantization</th>
+              <th>Bits/Parameter</th>
+              <th>7B Model Size</th>
+              <th>Quality Impact</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>FP16</td>
+              <td>16</td>
+              <td>~14GB</td>
+              <td>Baseline</td>
+            </tr>
+            <tr>
+              <td>Q8_0</td>
+              <td>8</td>
+              <td>~7GB</td>
+              <td>Minimal loss</td>
+            </tr>
+            <tr>
+              <td>Q6_K</td>
+              <td>6</td>
+              <td>~5.4GB</td>
+              <td>Very slight loss</td>
+            </tr>
+            <tr>
+              <td>Q5_K_M</td>
+              <td>5</td>
+              <td>~4.7GB</td>
+              <td>Slight loss</td>
+            </tr>
+            <tr>
+              <td>Q4_K_M</td>
+              <td>4</td>
+              <td>~3.8GB</td>
+              <td>Small but acceptable</td>
+            </tr>
+            <tr>
+              <td>Q3_K_M</td>
+              <td>3</td>
+              <td>~3.0GB</td>
+              <td>Noticeable loss</td>
+            </tr>
+            <tr>
+              <td>Q2_K</td>
+              <td>2</td>
+              <td>~2.7GB</td>
+              <td>Significant loss</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>
+        For most users, <strong>Q4_K_M is the sweet spot</strong>—good quality, reasonable size.
+        The "_K_" notation indicates "K-quant" methods that intelligently quantize different
+        parts of the model to preserve quality.
+      </p>
+
+      <h3>Practical Hardware Guidelines</h3>
+
+      <div class="pipeline-grid">
+        <div class="pipeline-stage">
+          <div class="pipeline-number">8</div>
+          <h4>8GB RAM (Minimum)</h4>
+          <p>3B-4B parameter models at Q4. Slow inference, limited context. Examples: Phi-3 mini, TinyLlama.</p>
+        </div>
+        <div class="pipeline-stage">
+          <div class="pipeline-number">16</div>
+          <h4>16GB RAM (Comfortable)</h4>
+          <p>7B models at Q4-Q5. Reasonable speed, 2K-4K context. Examples: MedGemma 4B, BioMistral 7B.</p>
+        </div>
+        <div class="pipeline-stage">
+          <div class="pipeline-number">32</div>
+          <h4>32GB RAM (Development)</h4>
+          <p>7B at Q8 or 13B at Q4-Q5. Good inference speed, larger context windows.</p>
+        </div>
+        <div class="pipeline-stage">
+          <div class="pipeline-number">64</div>
+          <h4>64GB+ RAM (Serious)</h4>
+          <p>27B+ models at Q4-Q5. Multiple models loaded simultaneously.</p>
+        </div>
+      </div>
+
+      <h3>Apple Silicon Performance</h3>
+
+      <p>
+        M-series Macs deserve special mention. Their unified memory architecture—where CPU
+        and GPU share the same RAM pool—eliminates the VRAM bottleneck that limits Windows/Linux
+        GPU usage. A 16GB M1 Mac can effectively use all 16GB for model weights.
+      </p>
+
+      <div class="table-responsive">
+        <table class="reference-table">
+          <thead>
+            <tr>
+              <th>Mac Configuration</th>
+              <th>Comfortable Model Size</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>M1/M2 8GB</td>
+              <td>3B-4B at Q4</td>
+            </tr>
+            <tr>
+              <td>M1/M2 16GB</td>
+              <td>7B at Q4-Q5</td>
+            </tr>
+            <tr>
+              <td>M1/M2/M3 24GB</td>
+              <td>7B at Q8 or 13B at Q4</td>
+            </tr>
+            <tr>
+              <td>M1/M2/M3 Max 32GB+</td>
+              <td>13B at Q5-Q8, 27B at Q4</td>
+            </tr>
+            <tr>
+              <td>M1/M2/M3 Ultra 64GB+</td>
+              <td>27B-70B models</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>GPU Acceleration</h3>
+
+      <p>For NVIDIA GPUs, the key metric is VRAM:</p>
+
+      <div class="table-responsive">
+        <table class="reference-table">
+          <thead>
+            <tr>
+              <th>VRAM</th>
+              <th>Typical Cards</th>
+              <th>Model Capacity</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>4GB</td>
+              <td>GTX 1650, RTX 3050</td>
+              <td>3B-4B models only</td>
+            </tr>
+            <tr>
+              <td>8GB</td>
+              <td>RTX 3060, RTX 4060</td>
+              <td>7B at Q4-Q5 comfortably</td>
+            </tr>
+            <tr>
+              <td>12GB</td>
+              <td>RTX 3060 12GB, RTX 4070</td>
+              <td>7B at Q8, 13B at Q4</td>
+            </tr>
+            <tr>
+              <td>24GB</td>
+              <td>RTX 4090, A5000</td>
+              <td>13B at Q8, 27B at Q4</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>
+        <strong>Partial offloading:</strong> You don't need to fit the entire model in VRAM.
+        Both Ollama and LM Studio support loading some layers on GPU and others in system RAM.
+        Even 50% GPU offloading provides meaningful speedup.
+      </p>
+
+      <hr>
+
+      <!-- Security Setup -->
+      <h2>Security Setup for HIPAA-Compliant Work</h2>
+
+      <p>
+        Even though local models don't transmit data externally, proper security hygiene matters.
+        This section covers practical steps rather than comprehensive compliance frameworks.
+      </p>
+
+      <div class="callout callout-info">
+        <div class="callout-title">What Local Models Solve</div>
+        <p class="mb-0">
+          Local deployment addresses data transmission to third parties. When you prompt ChatGPT
+          with patient information, that data travels to external servers. Local models eliminate
+          this—data stays on your machine. But local deployment doesn't automatically create a
+          HIPAA-compliant system. For any work involving actual patient information, full
+          organizational compliance infrastructure is required.
+        </p>
+      </div>
+
+      <h3>Full Disk Encryption</h3>
+
+      <p>
+        Non-negotiable for any machine that might touch patient data. If your laptop is stolen,
+        encryption prevents data access without the decryption key.
+      </p>
+
+      <h4>macOS (FileVault)</h4>
+      <ol>
+        <li>Open System Settings → Privacy & Security → FileVault</li>
+        <li>Click "Turn On FileVault"</li>
+        <li>Choose recovery key option (store securely, not on the same machine)</li>
+        <li>Encryption proceeds in background; may take several hours</li>
+      </ol>
+
+      <h4>Windows (BitLocker)</h4>
+      <ol>
+        <li>Open Control Panel → System and Security → BitLocker Drive Encryption</li>
+        <li>Click "Turn on BitLocker" for your OS drive</li>
+        <li>Choose how to unlock (PIN or USB key for stronger security)</li>
+        <li>Save recovery key to secure location</li>
+        <li>Choose encryption scope (entire drive recommended)</li>
+      </ol>
+
+      <h3>Network Isolation</h3>
+
+      <p>Local models don't need internet access once downloaded:</p>
+
+      <ul>
+        <li>Run in airplane mode during sessions involving any patient context</li>
+        <li>Use application-level blocking (Little Snitch on macOS, Windows Firewall)</li>
+        <li>Consider air-gapped machines for highest sensitivity work</li>
+      </ul>
+
+      <h3>Data Handling Practices</h3>
+
+      <ul>
+        <li>Never paste real patient identifiers into prompts</li>
+        <li>Use synthetic data or de-identified case presentations for development</li>
+        <li>Clear chat histories after sessions</li>
+        <li>Disable persistent storage of conversations when possible</li>
+      </ul>
+
+      <hr>
+
+      <!-- Ollama Installation -->
+      <h2>Installation: Ollama</h2>
+
+      <p>
+        Ollama is the simplest path to running local models. It handles model downloading,
+        quantization management, and provides both a command-line interface and local API.
+        Think of it like Docker for language models.
+      </p>
+
+      <h3>macOS Installation</h3>
+
+      <p><strong>Option 1: Direct download (recommended)</strong></p>
+      <ol>
+        <li>Visit <a href="https://ollama.com/download">ollama.com/download</a></li>
+        <li>Download the macOS installer (.dmg file, ~50MB)</li>
+        <li>Open the .dmg and drag Ollama to Applications</li>
+        <li>Launch Ollama from Applications folder</li>
+        <li>A llama icon appears in your menu bar when running</li>
+      </ol>
+
+      <p><strong>Option 2: Homebrew</strong></p>
+      <pre><code>brew install ollama
+brew services start ollama</code></pre>
+
+      <h3>Windows Installation</h3>
+
+      <ol>
+        <li>Download the Windows installer from <a href="https://ollama.com/download">ollama.com/download</a></li>
+        <li>Run the .exe installer</li>
+        <li>Follow prompts; Ollama installs as a background service</li>
+        <li>The llama icon appears in system tray when running</li>
+      </ol>
+
+      <p>
+        <strong>GPU Setup for NVIDIA:</strong> Before installing Ollama, ensure you have recent
+        NVIDIA drivers from <a href="https://www.nvidia.com/Download/index.aspx">nvidia.com/drivers</a>.
+        Ollama will automatically detect and use your GPU.
+      </p>
+
+      <h3>Linux Installation</h3>
+
+      <pre><code>curl -fsSL https://ollama.com/install.sh | sh</code></pre>
+
+      <h3>Verifying Installation</h3>
+
+      <pre><code>ollama --version
+ollama list</code></pre>
+
+      <h3>Downloading Models</h3>
+
+      <p>Browse available models at <a href="https://ollama.com/library">ollama.com/library</a>.</p>
+
+      <pre><code># Small, fast model for testing setup
+ollama pull phi3
+
+# Medical-focused model
+ollama pull meditron:7b
+
+# Specific quantization variant
+ollama pull llama3.1:8b-q4_k_m</code></pre>
+
+      <h3>Running Models</h3>
+
+      <pre><code># Interactive chat
+ollama run phi3
+
+# Single prompt (no interactive session)
+ollama run phi3 "What are the most common causes of pediatric fever?"</code></pre>
+
+      <p>Type <code>/bye</code> to exit interactive mode.</p>
+
+      <h3>Model Parameters</h3>
+
+      <pre><code># Set temperature (0.0 = deterministic, 1.0 = creative)
+ollama run phi3 --temperature 0.7
+
+# Set context window size
+ollama run phi3 --ctx-size 4096
+
+# Set number of tokens to generate
+ollama run phi3 --num-predict 500</code></pre>
+
+      <h3>Useful Ollama Commands</h3>
+
+      <div class="table-responsive">
+        <table class="reference-table">
+          <thead>
+            <tr>
+              <th>Command</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>ollama list</code></td>
+              <td>List downloaded models with sizes</td>
+            </tr>
+            <tr>
+              <td><code>ollama show meditron:7b</code></td>
+              <td>Show model details</td>
+            </tr>
+            <tr>
+              <td><code>ollama rm phi3</code></td>
+              <td>Remove a model</td>
+            </tr>
+            <tr>
+              <td><code>ollama pull phi3</code></td>
+              <td>Pull latest version of a model</td>
+            </tr>
+            <tr>
+              <td><code>ollama ps</code></td>
+              <td>Show running models</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>Local API</h3>
+
+      <p>Ollama automatically serves an OpenAI-compatible API at <code>http://localhost:11434</code>:</p>
+
+      <pre><code>curl http://localhost:11434/api/generate -d '{
+  "model": "phi3",
+  "prompt": "What are common causes of pediatric fever?"
+}'</code></pre>
+
+      <hr>
+
+      <!-- LM Studio Installation -->
+      <h2>Installation: LM Studio</h2>
+
+      <p>
+        LM Studio provides a graphical interface for running local models, making it more
+        approachable for users who prefer visual tools over command lines.
+      </p>
+
+      <h3>Installation</h3>
+
+      <ol>
+        <li>Visit <a href="https://lmstudio.ai">lmstudio.ai</a></li>
+        <li>Download for your operating system</li>
+        <li><strong>macOS:</strong> Drag to Applications folder</li>
+        <li><strong>Windows:</strong> Run the installer</li>
+        <li><strong>Linux:</strong> Make the AppImage executable and run</li>
+      </ol>
+
+      <h3>Downloading Models</h3>
+
+      <ol>
+        <li>Launch LM Studio</li>
+        <li>Click "Discover" in the left navigation</li>
+        <li>Search for a model (try "phi3" or "meditron")</li>
+        <li>Click Download on your chosen variant</li>
+      </ol>
+
+      <h3>Running Models</h3>
+
+      <ol>
+        <li>Click "Chat" in left navigation</li>
+        <li>Click the dropdown at top to select your downloaded model</li>
+        <li>Click "Load" to load the model into memory</li>
+        <li>Start typing in the chat interface</li>
+      </ol>
+
+      <h3>GPU Offloading</h3>
+
+      <ol>
+        <li>Go to model settings (gear icon)</li>
+        <li>Adjust "GPU Layers" slider</li>
+        <li>More layers = faster but more VRAM required</li>
+        <li>Start with 50% and adjust based on performance</li>
+      </ol>
+
+      <hr>
+
+      <!-- Comparing Tools -->
+      <h2>Comparing Ollama and LM Studio</h2>
+
+      <div class="table-responsive">
+        <table class="reference-table">
+          <thead>
+            <tr>
+              <th>Aspect</th>
+              <th>Ollama</th>
+              <th>LM Studio</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Interface</td>
+              <td>Command line + API</td>
+              <td>Graphical + API</td>
+            </tr>
+            <tr>
+              <td>Learning curve</td>
+              <td>Steeper initially</td>
+              <td>Gentler start</td>
+            </tr>
+            <tr>
+              <td>Resource usage</td>
+              <td>Lighter</td>
+              <td>Heavier</td>
+            </tr>
+            <tr>
+              <td>Model discovery</td>
+              <td>Manual download or pull</td>
+              <td>Built-in browser</td>
+            </tr>
+            <tr>
+              <td>Scripting/automation</td>
+              <td>Excellent</td>
+              <td>Limited</td>
+            </tr>
+            <tr>
+              <td>Best for</td>
+              <td>Developers, automation</td>
+              <td>Exploration, non-technical users</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>
+        Many users install both: LM Studio for discovery and quick testing, Ollama for
+        integration and automation.
+      </p>
+
+      <hr>
+
+      <!-- Critical Limitations -->
+      <h2>Critical Limitations to Understand</h2>
+
+      <div class="callout callout-warning">
+        <div class="callout-title">These Models Are Not Clinical Grade</div>
+        <p class="mb-0">
+          No current open-source medical model is validated for clinical decision-making.
+          MedGemma's documentation explicitly states it requires "appropriate validation,
+          adaptation and/or meaningful modification" before any clinical use. Meditron's
+          team "recommends against using Meditron in medical applications without extensive
+          use-case alignment."
+        </p>
+      </div>
+
+      <h3>Real-World Failure Modes</h3>
+
+      <div class="error-taxonomy">
+        <div class="error-type">
+          <h3><span class="error-number">1</span> False Precision</h3>
+          <p>
+            A model might confidently state "the sensitivity of rapid strep testing is 86%"
+            when the actual figure varies by test manufacturer, technique, and population.
+            The confident delivery masks significant uncertainty.
+          </p>
+        </div>
+        <div class="error-type">
+          <h3><span class="error-number">2</span> Pattern Matching Errors</h3>
+          <p>
+            Presented with "12-year-old with sore throat and fever," a model may generate
+            a reasonable differential. But it can't actually examine the patient, notice
+            the sandpaper rash suggesting scarlet fever, or appreciate that the child
+            looks toxic versus well-appearing.
+          </p>
+        </div>
+        <div class="error-type">
+          <h3><span class="error-number">3</span> Outdated Information</h3>
+          <p>
+            Training data has a cutoff date. Guidelines change, drug interactions are
+            discovered, new variants emerge. A model has no way to know that recommendations
+            shifted six months ago.
+          </p>
+        </div>
+        <div class="error-type">
+          <h3><span class="error-number">4</span> Plausible but Wrong</h3>
+          <p>
+            One early tester found MedGemma generated a "normal" interpretation for a chest
+            X-ray with obvious tuberculosis findings. The output was grammatically perfect,
+            appropriately formatted, and completely wrong.
+          </p>
+        </div>
+      </div>
+
+      <h3>Benchmark Scores Don't Equal Clinical Competence</h3>
+
+      <p>
+        A model scoring 87% on MedQA (multiple-choice medical questions) isn't "87% as good
+        as a doctor." MedQA measures pattern recognition and fact recall. Success does <em>not</em> require:
+      </p>
+
+      <ul>
+        <li>Integration of physical examination findings</li>
+        <li>Patient communication and history-taking</li>
+        <li>Weighing benefits and harms in individual contexts</li>
+        <li>Recognizing when a question is unanswerable</li>
+        <li>Knowing the limits of one's own knowledge</li>
+        <li>Managing uncertainty over time</li>
+      </ul>
+
+      <h3>The Hallucination Problem</h3>
+
+      <p>
+        All language models sometimes generate confident, fluent, and completely wrong outputs.
+        This is an intrinsic architectural limitation, not a bug to be fixed.
+      </p>
+
+      <p>In medical contexts, hallucination could mean:</p>
+      <ul>
+        <li>Inventing drug interactions that don't exist</li>
+        <li>Citing non-existent studies with realistic-sounding titles</li>
+        <li>Missing critical differential diagnoses while confidently presenting an incomplete list</li>
+        <li>Providing incorrect dosing information</li>
+      </ul>
+
+      <h3>What Local Models Can Reasonably Do</h3>
+
+      <div class="example-comparison">
+        <div class="example-box said">
+          <h4><i data-lucide="check-circle"></i> Appropriate Uses</h4>
+          <ul>
+            <li>Draft content for human review</li>
+            <li>Answer general medical questions (consumer health level)</li>
+            <li>Summarization with verification</li>
+            <li>Development and prototyping</li>
+            <li>Education and understanding AI behavior</li>
+          </ul>
+        </div>
+        <div class="example-box generated">
+          <h4><i data-lucide="x-circle"></i> Inappropriate Uses</h4>
+          <ul>
+            <li>Patient-specific diagnostic recommendations</li>
+            <li>Replacing clinical decision-making workflows</li>
+            <li>Operating autonomously in patient-facing applications</li>
+            <li>Handling real PHI without compliance infrastructure</li>
+            <li>Informing care without independent verification</li>
+          </ul>
+        </div>
+      </div>
+
+      <hr>
+
+      <!-- Resources -->
+      <h2>Resources</h2>
+
+      <h3>Model Repositories</h3>
+      <ul>
+        <li><a href="https://huggingface.co/models?pipeline_tag=text-generation&sort=trending&search=medical">Hugging Face Medical Models</a></li>
+        <li><a href="https://ollama.com/library">Ollama Model Library</a></li>
+        <li><a href="https://huggingface.co/google/medgemma-4b-it">MedGemma on Hugging Face</a></li>
+        <li><a href="https://github.com/epfLLM/meditron">Meditron GitHub</a></li>
+      </ul>
+
+      <h3>Technical Documentation</h3>
+      <ul>
+        <li><a href="https://github.com/ollama/ollama">Ollama GitHub</a></li>
+        <li><a href="https://lmstudio.ai/docs">LM Studio Documentation</a></li>
+      </ul>
+
+      <h3>Medical AI Evaluation</h3>
+      <ul>
+        <li><a href="https://huggingface.co/spaces/openlifescienceai/open_medical_llm_leaderboard">Open Medical LLM Leaderboard</a></li>
+        <li><a href="https://github.com/AI-in-Health/MedLLMsPracticalGuide">MedLLMs Practical Guide</a></li>
+      </ul>
+
+      <h3>Community</h3>
+      <ul>
+        <li><a href="https://discord.gg/ollama">Ollama Discord</a></li>
+        <li><a href="https://discord.gg/lmstudio">LM Studio Discord</a></li>
+        <li><a href="https://reddit.com/r/LocalLLaMA">r/LocalLLaMA</a></li>
+      </ul>
+
+      <!-- Page Navigation -->
+      <nav class="page-nav">
+        <a href="environmental-footprint.html" class="page-nav-link prev">
+          <span class="page-nav-arrow"><i data-lucide="arrow-left"></i></span>
+          <div>
+            <span class="page-nav-label">Previous</span>
+            <span class="page-nav-title">AI's Environmental Footprint</span>
+          </div>
+        </a>
+        <a href="glossary.html" class="page-nav-link next">
+          <span class="page-nav-arrow"><i data-lucide="arrow-right"></i></span>
+          <div>
+            <span class="page-nav-label">Next</span>
+            <span class="page-nav-title">AI Glossary & Learning Resources</span>
+          </div>
+        </a>
+      </nav>
+
+    </article>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div>
+        <strong>AI 101</strong> · A Self-Paced Guide to AI in Medicine
+      </div>
+      <div>
+        v1.0 · 2025
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    lucide.createIcons();
+
+    // Mobile nav toggle
+    const navToggle = document.querySelector('.nav-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    if (navToggle) {
+      navToggle.addEventListener('click', () => {
+        navLinks.classList.toggle('nav-open');
+        navToggle.classList.toggle('nav-toggle-active');
+      });
+    }
+  </script>
+
+</body>
+</html>
