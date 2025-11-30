@@ -75,20 +75,14 @@
       <h3>Worked Example: Vague vs. Structured Input</h3>
       <p>Compare these two inputs:</p>
 
-      <div class="prompt-box">
-        <strong>Vague:</strong> "Patient has chest pain."
-      </div>
+      <div class="prompt-box"><strong>Vague:</strong> "Patient has chest pain."</div>
 
       <p>
         This generates a broad, unfocused differential: ACS, PE, pneumonia, GERD, MSK,
         anxiety... The model (or clinician) has no way to weight these possibilities.
       </p>
 
-      <div class="prompt-box">
-        <strong>Structured:</strong> "58-year-old male, diabetic, smoker, presenting with
-        substernal pressure radiating to left arm, onset 2 hours ago while shoveling snow,
-        associated diaphoresis, relieved partially by rest."
-      </div>
+      <div class="prompt-box"><strong>Structured:</strong> "58-year-old male, diabetic, smoker, presenting with substernal pressure radiating to left arm, onset 2 hours ago while shoveling snow, associated diaphoresis, relieved partially by rest."</div>
 
       <p>
         Now the probability distribution shifts dramatically. ACS moves to the top; MSK
@@ -101,7 +95,7 @@
         <p class="mb-0">See how the probability distribution "collapses" from noise to signal.</p>
         
         <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-top: 1.5rem; align-items: end;">
-          
+
           <div style="text-align: center;">
             <div style="display: flex; gap: 4px; height: 100px; align-items: flex-end; justify-content: center; margin-bottom: 0.5rem;">
               <div style="width: 20%; background: #94a3b8; height: 20%; border-radius: 2px;"></div>
@@ -110,19 +104,20 @@
               <div style="width: 20%; background: #94a3b8; height: 22%; border-radius: 2px;"></div>
               <div style="width: 20%; background: #94a3b8; height: 18%; border-radius: 2px;"></div>
             </div>
-            <div style="font-size: 0.85rem; font-weight: 600; color: #64748b;">Vague Input</div>
-            <div style="font-size: 0.75rem; color: #94a3b8;">Flat Distribution (High Entropy)</div>
+            <div style="font-size: 0.85rem; font-weight: 600; color: #1e3a8a;">Vague Input</div>
+            <div style="font-size: 0.75rem; color: #475569;">Flat Distribution (High Entropy)</div>
           </div>
 
           <div style="text-align: center;">
             <div style="display: flex; gap: 4px; height: 100px; align-items: flex-end; justify-content: center; margin-bottom: 0.5rem;">
               <div style="width: 20%; background: #cbd5e1; height: 5%; border-radius: 2px;"></div>
-              <div style="width: 20%; background: #2563eb; height: 90%; border-radius: 2px;"></div> <div style="width: 20%; background: #cbd5e1; height: 3%; border-radius: 2px;"></div>
+              <div style="width: 20%; background: #2563eb; height: 90%; border-radius: 2px;"></div>
+              <div style="width: 20%; background: #cbd5e1; height: 3%; border-radius: 2px;"></div>
               <div style="width: 20%; background: #cbd5e1; height: 8%; border-radius: 2px;"></div>
               <div style="width: 20%; background: #cbd5e1; height: 2%; border-radius: 2px;"></div>
             </div>
-            <div style="font-size: 0.85rem; font-weight: 600; color: #0f172a;">Structured Input</div>
-            <div style="font-size: 0.75rem; color: #64748b;">Spiky Distribution (Low Entropy)</div>
+            <div style="font-size: 0.85rem; font-weight: 600; color: #1e3a8a;">Structured Input</div>
+            <div style="font-size: 0.75rem; color: #475569;">Spiky Distribution (Low Entropy)</div>
           </div>
 
         </div>
@@ -699,6 +694,24 @@
       </div>
 
       <h2>Video</h2>
+
+      <!-- Prioritize This! -->
+      <div class="callout" style="border-left-color: #f59e0b; background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%); margin-bottom: 1.5rem;">
+        <div class="callout-title" style="color: #b45309;">
+          <i data-lucide="star" style="width: 18px; height: 18px; margin-right: 0.5rem; fill: #f59e0b; stroke: #b45309;"></i>
+          Prioritize This!
+        </div>
+        <div class="reading-item" style="background: white; border-radius: 8px; padding: 1rem; margin-top: 0.75rem; border: 1px solid #fcd34d;">
+          <div class="reading-type"><i data-lucide="video"></i></div>
+          <div class="reading-content">
+            <div class="reading-title">
+              <a href="https://www.3blue1brown.com/?v=mini-llm#video-section" target="_blank">How might LLMs store facts</a>
+            </div>
+            <div class="reading-meta">3Blue1Brown · A brilliantly visual, intuitive explanation of how LLMs actually work under the hood. If you watch one thing, watch this.</div>
+          </div>
+        </div>
+      </div>
+
       <div class="reading-list">
         <div class="reading-item">
           <div class="reading-type"><i data-lucide="video"></i></div>
@@ -714,22 +727,9 @@
           <div class="reading-type"><i data-lucide="video"></i></div>
           <div class="reading-content">
             <div class="reading-title">
-              <a href="https://www.3blue1brown.com/topics/neural-networks" target="_blank">But What Is a Neural Network?</a>
-            </div>
-            <div class="reading-meta">3Blue1Brown · The most intuitive visual explanation of the math behind the models.</div>
-          </div>
-        </div>
-      </div>
-
-      <h2>Video</h2>
-      <div class="reading-list">
-        <div class="reading-item">
-          <div class="reading-type"><i data-lucide="video"></i></div>
-          <div class="reading-content">
-            <div class="reading-title">
               <a href="https://www.3blue1brown.com/topics/neural-networks" target="_blank">3Blue1Brown: Neural Networks / Deep Learning Series</a>
             </div>
-            <div class="reading-meta">Visual explanations of how LLMs work · Start with "But What Is a Neural Network?"</div>
+            <div class="reading-meta">Visual explanations of how neural networks work · Start with "But What Is a Neural Network?"</div>
           </div>
         </div>
       </div>

@@ -502,6 +502,11 @@ hr {
   white-space: pre-wrap;
 }
 
+.prompt-box strong {
+  color: #f8fafc;
+  font-weight: 700;
+}
+
 /* Reference Tables */
 .table-responsive {
   overflow-x: auto;
