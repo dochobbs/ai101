@@ -1,0 +1,102 @@
+[
+  {
+    "title": "Email Draft Helper",
+    "category": "Writing",
+    "prompt": "Write a professional email to [recipient] about [topic].\n\nContext: [your situation]\nTone: [professional/friendly/formal]\nKey points to include:\n- [point 1]\n- [point 2]\n\nKeep it concise, under 200 words."
+  },
+  {
+    "title": "Meeting Summary",
+    "category": "Writing",
+    "prompt": "Summarize the following meeting notes into a clear, actionable summary:\n\n[paste meeting notes]\n\nInclude:\n- Key decisions made\n- Action items with owners\n- Next steps\n- Any open questions\n\nFormat as bullet points."
+  },
+  {
+    "title": "Explain Like I'm 5",
+    "category": "Learning",
+    "prompt": "Explain [complex topic] in simple terms that a complete beginner could understand.\n\nUse:\n- Everyday analogies\n- No jargon or technical terms\n- Short sentences\n- A concrete example\n\nKeep it under 150 words."
+  },
+  {
+    "title": "Study Guide Creator",
+    "category": "Learning",
+    "prompt": "Create a study guide for [topic/subject].\n\nI need to understand:\n- Key concepts and definitions\n- Important relationships between ideas\n- Common misconceptions\n- Practice questions to test my understanding\n\nMy current level: [beginner/intermediate/advanced]\nTime available: [timeframe]"
+  },
+  {
+    "title": "Code Explainer",
+    "category": "Coding",
+    "prompt": "Explain what this code does, line by line:\n\n```\n[paste code here]\n```\n\nAssume I'm a beginner. Explain:\n- What each section does\n- Why it's written this way\n- Any potential issues or improvements\n\nUse simple language, not technical jargon."
+  },
+  {
+    "title": "Debug Helper",
+    "category": "Coding",
+    "prompt": "I'm getting this error:\n\n```\n[paste error message]\n```\n\nIn this code:\n\n```\n[paste relevant code]\n```\n\nWhat I'm trying to do: [describe goal]\nWhat I've already tried: [list attempts]\n\nHelp me understand what's wrong and how to fix it."
+  },
+  {
+    "title": "Recipe Modifier",
+    "category": "Daily Life",
+    "prompt": "Modify this recipe for my dietary needs:\n\n[paste recipe]\n\nMy requirements:\n- [dietary restriction, e.g., vegetarian, gluten-free, dairy-free]\n- Serving size: [number] people\n- Skill level: [beginner/intermediate/advanced]\n\nProvide substitutions and any technique changes needed."
+  },
+  {
+    "title": "Travel Itinerary",
+    "category": "Daily Life",
+    "prompt": "Create a [number]-day itinerary for [destination].\n\nTravel style: [budget/moderate/luxury]\nInterests: [list interests, e.g., history, food, nature, art]\nTraveling with: [solo/couple/family with kids/group]\nMobility considerations: [any limitations]\n\nInclude:\n- Daily schedule with timing\n- Must-see attractions\n- Restaurant recommendations\n- Local tips"
+  },
+  {
+    "title": "Product Comparison",
+    "category": "Research",
+    "prompt": "Compare [product A] vs [product B] for [specific use case].\n\nI care most about:\n- [priority 1]\n- [priority 2]\n- [priority 3]\n\nBudget: [range]\n\nGive me a clear recommendation with pros and cons of each."
+  },
+  {
+    "title": "Research Summary",
+    "category": "Research",
+    "prompt": "Summarize the key points about [topic].\n\nI need to understand:\n- What it is and why it matters\n- Current state/developments\n- Different perspectives on it\n- What experts recommend\n\nAudience: [who you're explaining to]\nLength: [brief overview/detailed analysis]"
+  },
+  {
+    "title": "Cover Letter Writer",
+    "category": "Career",
+    "prompt": "Write a cover letter for [job title] at [company].\n\nMy background:\n- Current role: [title]\n- Years of experience: [number]\n- Key achievements: [list 2-3]\n\nJob requirements to highlight:\n[paste key requirements from job posting]\n\nTone: Professional but personable\nLength: Under 300 words"
+  },
+  {
+    "title": "Interview Prep",
+    "category": "Career",
+    "prompt": "Help me prepare for a [job title] interview at [company type].\n\nGenerate:\n1. 10 likely interview questions for this role\n2. Tips for answering each one\n3. Questions I should ask the interviewer\n4. Key talking points about my experience in [relevant areas]\n\nMy background: [brief summary]"
+  },
+  {
+    "title": "Social Media Post",
+    "category": "Social Media",
+    "prompt": "Write a [platform] post about [topic].\n\nGoal: [inform/engage/promote/entertain]\nTone: [professional/casual/humorous/inspiring]\nAudience: [describe target audience]\n\nInclude:\n- Attention-grabbing hook\n- Key message\n- Call to action\n- Relevant hashtags (if applicable)\n\nCharacter limit: [number]"
+  },
+  {
+    "title": "Content Ideas Generator",
+    "category": "Social Media",
+    "prompt": "Generate 10 content ideas for [platform] about [topic/niche].\n\nMy audience: [describe]\nContent style: [educational/entertaining/inspiring/mixed]\nPosting frequency: [daily/weekly]\n\nFor each idea, provide:\n- The hook/headline\n- Brief description of the content\n- Best format (video/image/text/carousel)"
+  },
+  {
+    "title": "Feedback Giver",
+    "category": "Writing",
+    "prompt": "Review this [type of writing] and give constructive feedback:\n\n[paste text]\n\nFocus on:\n- Clarity and flow\n- Grammar and style\n- Strength of arguments/points\n- Suggestions for improvement\n\nBe specific and actionable. Highlight what works well too."
+  },
+  {
+    "title": "Brainstorm Partner",
+    "category": "Creativity",
+    "prompt": "Help me brainstorm ideas for [project/problem].\n\nContext: [describe situation]\nConstraints: [any limitations]\nWhat I've already considered: [list ideas]\n\nGenerate 10 diverse ideas, ranging from safe/conventional to creative/unconventional.\n\nFor each idea, give a one-sentence explanation of how it could work."
+  },
+  {
+    "title": "Decision Helper",
+    "category": "Daily Life",
+    "prompt": "Help me decide between:\n- Option A: [describe]\n- Option B: [describe]\n\nWhat matters most to me:\n1. [priority]\n2. [priority]\n3. [priority]\n\nMy concerns:\n- About A: [concern]\n- About B: [concern]\n\nAsk me clarifying questions if needed, then provide a structured analysis."
+  },
+  {
+    "title": "Explain This Article",
+    "category": "Learning",
+    "prompt": "Summarize and explain this article:\n\n[paste article text]\n\nTell me:\n1. The main argument or point (2-3 sentences)\n2. Key supporting evidence\n3. What's new or important about this\n4. Any limitations or counterarguments\n5. Why this matters (the \"so what?\")\n\nWrite for someone unfamiliar with the topic."
+  },
+  {
+    "title": "Medical Symptom Organizer",
+    "category": "Health",
+    "prompt": "Help me organize my symptoms to discuss with my doctor.\n\nSymptoms I'm experiencing:\n[list symptoms]\n\nHelp me describe:\n- When each started\n- How often it occurs\n- What makes it better/worse\n- Severity (1-10)\n- Any patterns I should note\n\nNote: This is to prepare for a doctor visit, not to get medical advice."
+  },
+  {
+    "title": "Workout Plan",
+    "category": "Health",
+    "prompt": "Create a [duration]-week workout plan for [goal].\n\nMy situation:\n- Current fitness level: [beginner/intermediate/advanced]\n- Available equipment: [list]\n- Time per session: [minutes]\n- Days per week: [number]\n- Any injuries/limitations: [describe]\n\nInclude warm-up, main workout, and cool-down for each session."
+  }
+]

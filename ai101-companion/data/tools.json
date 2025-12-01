@@ -1,0 +1,146 @@
+[
+  {
+    "name": "ChatGPT",
+    "description": "OpenAI's flagship chatbot powered by GPT-4. Great all-rounder for conversation, writing, coding, and analysis. The most widely used AI assistant.",
+    "url": "https://chat.openai.com",
+    "skill_level": "beginner",
+    "has_free_tier": true,
+    "use_cases": ["writing", "coding", "research", "productivity", "data"],
+    "best_for": ["chat", "documents", "code", "email", "learning", "creative"]
+  },
+  {
+    "name": "Claude",
+    "description": "Anthropic's AI assistant known for nuanced understanding, long context, and thoughtful responses. Excellent for complex analysis and writing.",
+    "url": "https://claude.ai",
+    "skill_level": "beginner",
+    "has_free_tier": true,
+    "use_cases": ["writing", "coding", "research", "productivity", "data"],
+    "best_for": ["chat", "documents", "code", "email", "learning", "creative"]
+  },
+  {
+    "name": "Google Gemini",
+    "description": "Google's AI assistant integrated with Google services. Good for research and works well with Gmail, Docs, and Search.",
+    "url": "https://gemini.google.com",
+    "skill_level": "beginner",
+    "has_free_tier": true,
+    "use_cases": ["writing", "research", "productivity"],
+    "best_for": ["chat", "documents", "email", "learning"]
+  },
+  {
+    "name": "Microsoft Copilot",
+    "description": "Microsoft's AI assistant built into Office 365, Edge, and Windows. Best for users already in the Microsoft ecosystem.",
+    "url": "https://copilot.microsoft.com",
+    "skill_level": "beginner",
+    "has_free_tier": true,
+    "use_cases": ["writing", "productivity", "research"],
+    "best_for": ["documents", "email", "chat"]
+  },
+  {
+    "name": "GitHub Copilot",
+    "description": "AI pair programmer that suggests code as you type in your IDE. Dramatically speeds up coding with smart completions.",
+    "url": "https://github.com/features/copilot",
+    "skill_level": "intermediate",
+    "has_free_tier": false,
+    "use_cases": ["coding"],
+    "best_for": ["code"]
+  },
+  {
+    "name": "Midjourney",
+    "description": "Leading AI image generator known for artistic, high-quality visuals. Accessed through Discord. Great for creative projects.",
+    "url": "https://midjourney.com",
+    "skill_level": "intermediate",
+    "has_free_tier": false,
+    "use_cases": ["images"],
+    "best_for": ["creative"]
+  },
+  {
+    "name": "DALL-E 3",
+    "description": "OpenAI's image generator integrated into ChatGPT. Easy to use with natural language prompts. Good for illustrations and concepts.",
+    "url": "https://openai.com/dall-e-3",
+    "skill_level": "beginner",
+    "has_free_tier": true,
+    "use_cases": ["images"],
+    "best_for": ["creative"]
+  },
+  {
+    "name": "Perplexity",
+    "description": "AI-powered search engine that provides sourced answers. Great for research with citations and less hallucination.",
+    "url": "https://perplexity.ai",
+    "skill_level": "beginner",
+    "has_free_tier": true,
+    "use_cases": ["research"],
+    "best_for": ["learning", "chat"]
+  },
+  {
+    "name": "Notion AI",
+    "description": "AI writing assistant built into Notion. Great for note-taking, writing, and organizing information in Notion workspaces.",
+    "url": "https://notion.so",
+    "skill_level": "beginner",
+    "has_free_tier": true,
+    "use_cases": ["writing", "productivity"],
+    "best_for": ["documents", "creative"]
+  },
+  {
+    "name": "Grammarly",
+    "description": "AI writing assistant focused on grammar, clarity, and style. Works across browsers and apps to improve your writing.",
+    "url": "https://grammarly.com",
+    "skill_level": "beginner",
+    "has_free_tier": true,
+    "use_cases": ["writing"],
+    "best_for": ["documents", "email"]
+  },
+  {
+    "name": "Cursor",
+    "description": "AI-powered code editor built for pair programming with AI. Full IDE with deep AI integration for serious developers.",
+    "url": "https://cursor.sh",
+    "skill_level": "advanced",
+    "has_free_tier": true,
+    "use_cases": ["coding"],
+    "best_for": ["code"]
+  },
+  {
+    "name": "Otter.ai",
+    "description": "AI transcription and meeting notes. Records meetings, transcribes in real-time, and generates summaries.",
+    "url": "https://otter.ai",
+    "skill_level": "beginner",
+    "has_free_tier": true,
+    "use_cases": ["productivity"],
+    "best_for": ["documents"]
+  },
+  {
+    "name": "Canva AI",
+    "description": "Design tool with AI features for generating images, writing copy, and creating presentations. No design skills needed.",
+    "url": "https://canva.com",
+    "skill_level": "beginner",
+    "has_free_tier": true,
+    "use_cases": ["images", "writing"],
+    "best_for": ["creative"]
+  },
+  {
+    "name": "Jasper",
+    "description": "AI writing tool focused on marketing content. Templates for ads, emails, blogs, and social media posts.",
+    "url": "https://jasper.ai",
+    "skill_level": "beginner",
+    "has_free_tier": false,
+    "use_cases": ["writing"],
+    "best_for": ["creative", "email"]
+  },
+  {
+    "name": "Whisper",
+    "description": "OpenAI's speech recognition model. Highly accurate transcription that runs locally or via API. Free and open source.",
+    "url": "https://openai.com/research/whisper",
+    "skill_level": "advanced",
+    "has_free_tier": true,
+    "use_cases": ["productivity"],
+    "best_for": ["documents"]
+  },
+  {
+    "name": "Replit AI",
+    "description": "AI coding assistant in a browser-based IDE. Great for learning to code and building quick projects without setup.",
+    "url": "https://replit.com",
+    "skill_level": "beginner",
+    "has_free_tier": true,
+    "use_cases": ["coding"],
+    "best_for": ["code", "learning"]
+  }
+]

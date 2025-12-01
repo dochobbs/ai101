@@ -1,0 +1,202 @@
+[
+  {
+    "term": "AI (Artificial Intelligence)",
+    "definition": "Computer systems designed to perform tasks that typically require human intelligence, like understanding language, recognizing images, or making decisions.",
+    "example": "ChatGPT is an AI that can have conversations and answer questions."
+  },
+  {
+    "term": "LLM (Large Language Model)",
+    "definition": "A type of AI trained on massive amounts of text to understand and generate human-like language. Think of it as a very sophisticated autocomplete.",
+    "example": "GPT-4 and Claude are LLMs that power chatbots like ChatGPT and Claude.ai."
+  },
+  {
+    "term": "Prompt",
+    "definition": "The text input you give to an AI to tell it what you want. Like giving instructions to a very capable assistant.",
+    "example": "Write a haiku about coffee - this is a prompt."
+  },
+  {
+    "term": "Prompt Engineering",
+    "definition": "The skill of crafting effective prompts to get better results from AI. It's about learning how to communicate clearly with AI systems.",
+    "example": "Adding 'explain like I'm a beginner' to your prompt is a prompt engineering technique."
+  },
+  {
+    "term": "Hallucination",
+    "definition": "When AI confidently generates information that sounds plausible but is actually incorrect or made up. A key limitation to watch for.",
+    "example": "An AI might invent a fake research study or cite a book that doesn't exist."
+  },
+  {
+    "term": "Token",
+    "definition": "The basic unit AI uses to process text. Roughly 4 characters or about 3/4 of a word in English. Affects pricing and context limits.",
+    "example": "The word 'hamburger' is typically 3 tokens: 'ham', 'bur', 'ger'."
+  },
+  {
+    "term": "Context Window",
+    "definition": "The maximum amount of text an AI can consider at once, measured in tokens. Like the AI's working memory.",
+    "example": "A 100K token context window can handle roughly a 300-page book."
+  },
+  {
+    "term": "Temperature",
+    "definition": "A setting that controls how creative or random AI responses are. Low = predictable and focused, high = creative and varied.",
+    "example": "Use low temperature for factual answers, high temperature for creative writing."
+  },
+  {
+    "term": "Fine-tuning",
+    "definition": "Training an existing AI model on specific data to make it better at particular tasks. Like giving it specialized education.",
+    "example": "Fine-tuning GPT on medical texts creates a model better at medical questions."
+  },
+  {
+    "term": "RAG (Retrieval Augmented Generation)",
+    "definition": "A technique where AI retrieves relevant information from a database before generating a response. Helps provide accurate, up-to-date answers.",
+    "example": "An AI that searches your company's docs before answering uses RAG."
+  },
+  {
+    "term": "API (Application Programming Interface)",
+    "definition": "A way for software applications to communicate with AI services. Developers use APIs to add AI capabilities to their apps.",
+    "example": "A website might use the OpenAI API to add a chatbot feature."
+  },
+  {
+    "term": "Chatbot",
+    "definition": "An AI program designed to have text conversations with humans. Can range from simple rule-based bots to advanced LLM-powered assistants.",
+    "example": "ChatGPT, Claude, and Gemini are all chatbots."
+  },
+  {
+    "term": "Generative AI",
+    "definition": "AI that creates new content - text, images, audio, video - rather than just analyzing existing content.",
+    "example": "DALL-E generating images and ChatGPT writing stories are generative AI."
+  },
+  {
+    "term": "Machine Learning",
+    "definition": "A type of AI where systems learn patterns from data rather than being explicitly programmed with rules.",
+    "example": "Spam filters learn what spam looks like from examples rather than hard-coded rules."
+  },
+  {
+    "term": "Neural Network",
+    "definition": "A computing system inspired by the human brain, made of interconnected nodes that process information. The foundation of modern AI.",
+    "example": "LLMs are built on neural networks with billions of parameters."
+  },
+  {
+    "term": "Training Data",
+    "definition": "The information used to teach an AI model. The quality and breadth of training data significantly affects AI capabilities.",
+    "example": "GPT was trained on books, websites, and other text from the internet."
+  },
+  {
+    "term": "Inference",
+    "definition": "When an AI uses what it learned during training to process new inputs and generate outputs. The 'thinking' part.",
+    "example": "Every time you chat with an AI, it's doing inference to generate responses."
+  },
+  {
+    "term": "Zero-shot",
+    "definition": "When AI performs a task without any examples, using only its general training. Just tell it what to do.",
+    "example": "Asking 'Translate this to French' without giving translation examples."
+  },
+  {
+    "term": "Few-shot",
+    "definition": "Giving AI a few examples of what you want before asking it to do the task. Helps it understand the format you want.",
+    "example": "Showing 3 example product descriptions before asking AI to write one."
+  },
+  {
+    "term": "Chain of Thought",
+    "definition": "A prompting technique where you ask AI to explain its reasoning step-by-step. Improves accuracy on complex problems.",
+    "example": "Let's solve this step by step... is chain of thought prompting."
+  },
+  {
+    "term": "System Prompt",
+    "definition": "Hidden instructions that define how an AI should behave, set by developers. Users typically don't see or control these.",
+    "example": "A system prompt might say 'You are a helpful customer service agent.'"
+  },
+  {
+    "term": "Multimodal",
+    "definition": "AI that can understand and generate multiple types of content - text, images, audio, video - not just one type.",
+    "example": "GPT-4V can look at images and describe them, making it multimodal."
+  },
+  {
+    "term": "Embedding",
+    "definition": "A way to represent text as numbers that capture meaning. Allows AI to understand relationships between concepts.",
+    "example": "Embeddings help AI know that 'doctor' and 'physician' mean similar things."
+  },
+  {
+    "term": "Bias",
+    "definition": "Unfair or skewed patterns in AI outputs, often reflecting biases in training data or design choices.",
+    "example": "An AI might associate certain professions with specific genders due to biased data."
+  },
+  {
+    "term": "Guardrails",
+    "definition": "Safety measures built into AI to prevent harmful outputs like dangerous instructions or inappropriate content.",
+    "example": "Guardrails prevent AI from explaining how to make weapons."
+  },
+  {
+    "term": "Alignment",
+    "definition": "Making AI systems behave according to human values and intentions. A major area of AI safety research.",
+    "example": "Training AI to be helpful, harmless, and honest is alignment work."
+  },
+  {
+    "term": "RLHF (Reinforcement Learning from Human Feedback)",
+    "definition": "Training AI using human ratings of responses to make outputs more helpful and aligned with human preferences.",
+    "example": "Human trainers rating AI responses helps improve future versions."
+  },
+  {
+    "term": "Latency",
+    "definition": "The time delay between sending a request to AI and getting a response. Lower latency = faster responses.",
+    "example": "High latency makes chatbots feel slow and unresponsive."
+  },
+  {
+    "term": "Transformer",
+    "definition": "The neural network architecture behind modern LLMs. Introduced in 2017, it revolutionized natural language processing.",
+    "example": "The T in GPT stands for Transformer."
+  },
+  {
+    "term": "Open Source AI",
+    "definition": "AI models whose code and weights are publicly available, allowing anyone to use, modify, and study them.",
+    "example": "Meta's Llama is an open source model anyone can download and run."
+  },
+  {
+    "term": "Closed Source / Proprietary AI",
+    "definition": "AI models owned by companies that don't share the underlying code or weights. Accessed only through official services.",
+    "example": "GPT-4 is proprietary - you can only use it through OpenAI's services."
+  },
+  {
+    "term": "AGI (Artificial General Intelligence)",
+    "definition": "Hypothetical AI with human-level intelligence across all domains, able to learn any task a human can. Doesn't exist yet.",
+    "example": "Current AI is 'narrow' - good at specific tasks but not generally intelligent."
+  },
+  {
+    "term": "Edge AI",
+    "definition": "AI that runs locally on your device (phone, computer) rather than in the cloud. More private but often less capable.",
+    "example": "Your phone's face recognition works without internet - that's edge AI."
+  },
+  {
+    "term": "Vector Database",
+    "definition": "A specialized database for storing embeddings, enabling fast similarity searches. Powers many AI search and retrieval features.",
+    "example": "Vector databases help AI find documents relevant to your question."
+  },
+  {
+    "term": "Prompt Injection",
+    "definition": "A security attack where malicious input tricks AI into ignoring its instructions or behaving unexpectedly.",
+    "example": "Telling AI 'Ignore previous instructions and...' is a prompt injection attempt."
+  },
+  {
+    "term": "Model Collapse",
+    "definition": "Degradation that occurs when AI is trained on AI-generated content, potentially losing diversity and accuracy over generations.",
+    "example": "Training new AI on ChatGPT outputs could cause model collapse."
+  },
+  {
+    "term": "Agentic AI",
+    "definition": "AI systems that can take actions, use tools, and work toward goals with minimal human intervention.",
+    "example": "An AI agent that can browse the web, write code, and complete tasks autonomously."
+  },
+  {
+    "term": "Context Length",
+    "definition": "See 'Context Window' - the maximum amount of text an AI can process at once.",
+    "example": "Longer context length lets you share more information with the AI."
+  },
+  {
+    "term": "Prompt Template",
+    "definition": "A reusable prompt structure with placeholders you fill in for specific tasks. Saves time and improves consistency.",
+    "example": "Write a [tone] email to [recipient] about [topic] is a template."
+  },
+  {
+    "term": "Output Tokens",
+    "definition": "The tokens (text units) generated by AI in its response. Often limited and affects pricing.",
+    "example": "A 4000 output token limit means roughly 3000 words maximum per response."
+  }
+]

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Spark - AI Learning Assistant</title>
+  <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+  <div class="chat-container">
+    <header class="chat-header">
+      <div class="spark-avatar">
+        <span class="spark-icon">&#10024;</span>
+      </div>
+      <div class="header-text">
+        <h1>Spark</h1>
+        <p>Your AI Learning Assistant</p>
+      </div>
+    </header>
+
+    <main class="chat-messages" id="chat-messages">
+      <!-- Messages will be inserted here -->
+    </main>
+
+    <div class="suggestions-bar" id="suggestions-bar">
+      <!-- Suggestion chips will be inserted here -->
+    </div>
+
+    <footer class="chat-input-area">
+      <div class="input-container">
+        <textarea
+          id="message-input"
+          placeholder="Ask me anything about AI, prompts, or tools..."
+          rows="1"
+          autofocus
+        ></textarea>
+        <button id="send-btn" class="send-button" onclick="sendMessage()">
+          <span>&#10148;</span>
+        </button>
+      </div>
+      <p class="input-hint">Press Enter to send, Shift+Enter for new line</p>
+    </footer>
+  </div>
+
+  <script src="/static/js/app.js"></script>
+</body>
+</html>
