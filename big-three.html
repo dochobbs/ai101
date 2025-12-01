@@ -22,6 +22,7 @@
         <a href="index.html" class="nav-link">Topics</a>
         <!-- <a href="resources.html" class="nav-link">Resources</a> -->
         <a href="about.html" class="nav-link">About</a>
+        <a href="contribute.html" class="nav-link">Contribute</a>
       </div>
     </div>
   </nav>
@@ -628,10 +629,11 @@
       </p>
 
       <p>
-        <strong>$20/month is the "serious user" threshold.</strong> ChatGPT Plus, Claude Pro, and
+        <strong>$20/month is the standard paid tier.</strong> ChatGPT Plus, Claude Pro, and
         Google AI Pro all cluster around this price point. At this tier, you get higher usage limits,
         access to the best models, and priority features. For a professional tool you might use daily,
-        $20/month is modest—less than many software subscriptions with narrower utility.
+        $20/month is modest—less than many software subscriptions with narrower utility. This is
+        where most regular users land.
       </p>
 
       <p>
@@ -648,6 +650,186 @@
           <li>Evaluate premium tiers only if you're a genuine power user</li>
           <li>Discuss organizational deployment with compliance and IT before rolling out team solutions</li>
         </ol>
+      </div>
+
+      <hr>
+
+      <!-- Benchmarks Section -->
+      <h2>Understanding AI Benchmarks</h2>
+
+      <p>
+        You'll often see AI companies touting benchmark scores when announcing new models.
+        Headlines declare one model "beats" another on some test. But what do these numbers
+        actually mean—and more importantly, what <em>don't</em> they mean?
+      </p>
+
+      <h3>What Benchmarks Measure</h3>
+      <p>
+        Benchmarks are standardized tests designed to evaluate specific AI capabilities.
+        They provide a common yardstick for comparing models on tasks like:
+      </p>
+      <ul>
+        <li><strong>Knowledge recall:</strong> Can the model answer questions across academic domains?</li>
+        <li><strong>Reasoning:</strong> Can it work through multi-step logic problems?</li>
+        <li><strong>Coding:</strong> Can it write functional code that solves programming challenges?</li>
+        <li><strong>Domain expertise:</strong> How does it perform on professional exams (medical, legal, etc.)?</li>
+      </ul>
+
+      <h3>What Benchmarks Don't Measure</h3>
+      <p>
+        Here's what no benchmark captures—and what often matters most for real-world use:
+      </p>
+      <ul>
+        <li><strong>Writing quality:</strong> Does the output sound natural and require minimal editing?</li>
+        <li><strong>Appropriate uncertainty:</strong> Does the model say "I don't know" when it should?</li>
+        <li><strong>Instruction following:</strong> Does it do what you actually asked, or what it thinks you asked?</li>
+        <li><strong>Consistency:</strong> Does it give similar quality outputs across multiple attempts?</li>
+        <li><strong>Your specific use case:</strong> A model that aces coding benchmarks might produce worse clinical notes than one that scores lower.</li>
+      </ul>
+
+      <div class="callout callout-warning">
+        <div class="callout-title">The Gap Between Benchmarks and Reality</div>
+        <p class="mb-0">
+          A model scoring 90% vs 88% on a knowledge test is not meaningfully different for
+          most practical purposes. What matters is whether the model helps <em>you</em> do
+          <em>your</em> work better. The only benchmark that truly matters is your own
+          experience using the tool.
+        </p>
+      </div>
+
+      <h3>How to Use Benchmark Data</h3>
+      <ol>
+        <li><strong>As a rough filter:</strong> If a model scores dramatically lower on everything, it's probably less capable overall.</li>
+        <li><strong>For specific tasks:</strong> If you primarily need coding help, look at coding benchmarks. For medical questions, look at MedQA scores.</li>
+        <li><strong>With skepticism:</strong> Companies often cherry-pick favorable benchmarks. Independent testing (like LMArena) provides more balanced pictures.</li>
+        <li><strong>As a starting point:</strong> Use benchmarks to decide which 2-3 models to try, then let your own experience guide your choice.</li>
+      </ol>
+
+      <h3>Key Benchmarks Explained</h3>
+
+      <div class="table-responsive">
+        <table class="reference-table">
+          <thead>
+            <tr>
+              <th>Benchmark</th>
+              <th>What It Tests</th>
+              <th>Why It Matters</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Humanity's Last Exam</strong></td>
+              <td>2,500 expert-level questions across all disciplines, designed to be genuinely difficult</td>
+              <td>The hardest general benchmark; tests limits of AI reasoning</td>
+            </tr>
+            <tr>
+              <td><strong>GPQA Diamond</strong></td>
+              <td>PhD-level science questions (physics, chemistry, biology)</td>
+              <td>Deep reasoning in scientific domains</td>
+            </tr>
+            <tr>
+              <td><strong>MedQA</strong></td>
+              <td>USMLE-style medical licensing questions</td>
+              <td>Medical knowledge directly relevant to clinical practice</td>
+            </tr>
+            <tr>
+              <td><strong>SimpleQA</strong></td>
+              <td>Short fact-seeking questions with single correct answers</td>
+              <td>Measures hallucination rate and factual accuracy</td>
+            </tr>
+            <tr>
+              <td><strong>SimpleBench</strong></td>
+              <td>Common-sense reasoning that humans find easy but AI finds hard</td>
+              <td>Tests practical reasoning vs pattern matching</td>
+            </tr>
+            <tr>
+              <td><strong>LMArena Elo</strong></td>
+              <td>Human preference ratings from blind head-to-head comparisons</td>
+              <td>Real users choosing preferred outputs—closest to "usefulness"</td>
+            </tr>
+            <tr>
+              <td><strong>SWE-Bench</strong></td>
+              <td>Fixing real bugs in actual open-source codebases</td>
+              <td>Real-world software engineering capability</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>Current Benchmark Results (November 2025)</h3>
+      <p>
+        Below are scores for the current flagship models: OpenAI's GPT-5.1, Anthropic's Claude Opus 4.5,
+        and Google's Gemini 3 Pro. These represent the state of the art as of late November 2025.
+      </p>
+
+      <div class="table-responsive">
+        <table class="reference-table benchmark-table">
+          <thead>
+            <tr>
+              <th>Benchmark</th>
+              <th>GPT-5.1</th>
+              <th>Claude Opus 4.5</th>
+              <th>Gemini 3 Pro</th>
+              <th>Notes</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Humanity's Last Exam</strong></td>
+              <td>~36%</td>
+              <td>~35%</td>
+              <td>45.8%</td>
+              <td>Gemini leads on hardest reasoning test</td>
+            </tr>
+            <tr>
+              <td><strong>GPQA Diamond</strong></td>
+              <td>88.1%</td>
+              <td>87.0%</td>
+              <td>91.9%</td>
+              <td>Gemini ahead on PhD-level science</td>
+            </tr>
+            <tr>
+              <td><strong>MedQA</strong></td>
+              <td>~96%</td>
+              <td>~94%</td>
+              <td>~93%</td>
+              <td>All far exceed passing threshold (~60%)</td>
+            </tr>
+            <tr>
+              <td><strong>SimpleQA (Factuality)</strong></td>
+              <td>~63%</td>
+              <td>~45%</td>
+              <td>72.1%</td>
+              <td>Gemini leads on factual accuracy</td>
+            </tr>
+            <tr>
+              <td><strong>LMArena Elo</strong></td>
+              <td>~1480</td>
+              <td>~1470</td>
+              <td>1501</td>
+              <td>Gemini tops human preference ratings</td>
+            </tr>
+            <tr>
+              <td><strong>SWE-Bench Verified</strong></td>
+              <td>76.3%</td>
+              <td>80.9%</td>
+              <td>76.2%</td>
+              <td>Claude leads on real-world coding</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="callout callout-info">
+        <div class="callout-title">The Bottom Line on Benchmarks</div>
+        <p class="mb-0">
+          As of November 2025, Gemini 3 Pro leads on reasoning benchmarks (Humanity's Last Exam, GPQA)
+          and factual accuracy (SimpleQA). Claude Opus 4.5 dominates real-world coding tasks (SWE-Bench).
+          GPT-5.1 excels on medical knowledge (MedQA) and offers the most mature ecosystem. But here's
+          what matters: <strong>all three score 93%+ on MedQA</strong>—far above the passing threshold.
+          For clinical use, all are capable enough. Your choice should depend on ecosystem fit, pricing,
+          and personal preference rather than benchmark margins.
+        </p>
       </div>
 
       <hr>

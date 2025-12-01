@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contribute | AI 101</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-brand">
+        <span class="nav-badge">AI 101</span>
+        <span class="nav-title">A Self-Paced Guide to AI in Medicine</span>
+      </a>
+      <button class="nav-toggle" aria-label="Toggle menu">
+        <i data-lucide="menu"></i>
+      </button>
+      <div class="nav-links">
+        <a href="index.html" class="nav-link">Topics</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="contribute.html" class="nav-link active">Contribute</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="main">
+    <article class="content">
+
+      <header class="unit-header">
+        <h1 class="unit-title">Contribute</h1>
+        <p class="unit-subtitle">
+          Share resources, prompts, and tools that have helped you use AI in clinical practice.
+        </p>
+      </header>
+
+      <h2>Help Build This Resource</h2>
+      <p>
+        This guide is a living document. The best resources often come from clinicians
+        discovering what works in their own practice. If you've found a helpful article,
+        a prompt that saves you time, or a tool worth knowing about, share it here.
+      </p>
+
+      <div class="callout callout-info">
+        <div class="callout-title">What We're Looking For</div>
+        <ul class="mb-0">
+          <li><strong>Links:</strong> Articles, papers, videos, or tools that helped you understand or use AI</li>
+          <li><strong>Prompts:</strong> Effective prompts you've developed for clinical tasks</li>
+          <li><strong>Tips:</strong> Practical advice from your experience using AI in healthcare</li>
+        </ul>
+      </div>
+
+      <hr>
+
+      <h2>Submit a Resource</h2>
+
+      <form class="contribute-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+
+        <div class="form-group">
+          <label for="contributor-name" class="form-label">Your Name (optional)</label>
+          <input type="text" id="contributor-name" name="name" class="form-input" placeholder="How you'd like to be credited">
+        </div>
+
+        <div class="form-group">
+          <label for="contributor-email" class="form-label">Email (optional)</label>
+          <input type="email" id="contributor-email" name="email" class="form-input" placeholder="In case we have questions">
+          <span class="form-hint">We won't share your email or add you to any lists.</span>
+        </div>
+
+        <div class="form-group">
+          <label for="submission-type" class="form-label">What are you sharing? <span class="required">*</span></label>
+          <select id="submission-type" name="type" class="form-select" required>
+            <option value="">Select one...</option>
+            <option value="link">Link (article, paper, video, tool)</option>
+            <option value="prompt">Prompt (for clinical tasks)</option>
+            <option value="tip">Tip or insight</option>
+            <option value="correction">Correction or update</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="submission-url" class="form-label">URL (if applicable)</label>
+          <input type="url" id="submission-url" name="url" class="form-input" placeholder="https://...">
+        </div>
+
+        <div class="form-group">
+          <label for="submission-title" class="form-label">Title or Summary <span class="required">*</span></label>
+          <input type="text" id="submission-title" name="title" class="form-input" placeholder="Brief description of what you're sharing" required>
+        </div>
+
+        <div class="form-group">
+          <label for="submission-content" class="form-label">Details <span class="required">*</span></label>
+          <textarea id="submission-content" name="content" class="form-textarea" rows="6" placeholder="For prompts: paste the full prompt text.
+For links: explain why it's useful.
+For tips: share your experience." required></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="submission-context" class="form-label">Clinical Context (optional)</label>
+          <input type="text" id="submission-context" name="context" class="form-input" placeholder="e.g., Primary care, Pediatrics, Documentation, Patient education">
+          <span class="form-hint">Helps us categorize and surface your contribution to the right audience.</span>
+        </div>
+
+        <div class="form-group">
+          <label class="form-checkbox-label">
+            <input type="checkbox" name="permission" value="yes" class="form-checkbox">
+            <span>I'm okay with this being shared publicly (with attribution if name provided)</span>
+          </label>
+        </div>
+
+        <button type="submit" class="form-submit">
+          <i data-lucide="send"></i>
+          Submit Contribution
+        </button>
+      </form>
+
+      <hr>
+
+      <h2>Guidelines</h2>
+
+      <h3>For Links</h3>
+      <ul>
+        <li>Prefer primary sources (original research, official documentation) over summaries</li>
+        <li>Check that the link works and isn't behind a hard paywall</li>
+        <li>Briefly explain what makes it valuable and who would benefit</li>
+      </ul>
+
+      <h3>For Prompts</h3>
+      <ul>
+        <li>Include the full prompt text so others can use it directly</li>
+        <li>Note which AI tool(s) you've tested it with</li>
+        <li>Describe the clinical task it helps with</li>
+        <li><strong>Never include PHI</strong>—use generic placeholders like [patient age], [medication], etc.</li>
+      </ul>
+
+      <h3>For Tips</h3>
+      <ul>
+        <li>Be specific about what worked and in what context</li>
+        <li>Share what you learned, including what didn't work</li>
+        <li>Consider what others in similar situations would need to know</li>
+      </ul>
+
+      <div class="callout callout-warning">
+        <div class="callout-title">Privacy Reminder</div>
+        <p class="mb-0">
+          Never include protected health information (PHI) in any submission. All prompts
+          and examples should use de-identified, hypothetical scenarios only.
+        </p>
+      </div>
+
+    </article>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div><strong>AI 101</strong> · A Self-Paced Guide to AI in Medicine</div>
+      <div>v1.0 · 2025</div>
+    </div>
+  </footer>
+
+  <script>
+    lucide.createIcons();
+    const navToggle = document.querySelector('.nav-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    if (navToggle) {
+      navToggle.addEventListener('click', () => {
+        navLinks.classList.toggle('nav-open');
+      });
+    }
+  </script>
+
+</body>
+</html>

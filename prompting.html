@@ -22,6 +22,7 @@
         <a href="index.html" class="nav-link">Topics</a>
         <!-- <a href="resources.html" class="nav-link">Resources</a> -->
         <a href="about.html" class="nav-link">About</a>
+        <a href="contribute.html" class="nav-link">Contribute</a>
       </div>
     </div>
   </nav>
@@ -172,30 +173,24 @@
       </p>
       <div class="callout callout-principle" style="border-left-color: #10b981; background: #ecfdf5;">
         <div class="callout-title" style="color: #047857;">The "Perfect Prompt" Formula</div>
-        <p class="mb-0">Most failed prompts are missing one of these four cornerstones.</p>
-        
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1.5rem;">
-          
-          <div style="background: white; padding: 12px; border: 1px solid #a7f3d0; border-radius: 6px;">
-            <div style="color: #059669; font-weight: 700; font-size: 0.8rem; text-transform: uppercase; margin-bottom: 4px;">1. Persona</div>
-            <div style="font-size: 0.9rem; line-height: 1.3;">"Act as an expert cardiologist..."</div>
-            <div style="font-size: 0.75rem; color: #6b7280; margin-top: 4px;">Sets the knowledge base.</div>
-          </div>
+        <p class="mb-0">Most failed prompts are missing one of these three essentials.</p>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1rem; margin-top: 1.5rem;">
 
           <div style="background: white; padding: 12px; border: 1px solid #a7f3d0; border-radius: 6px;">
-            <div style="color: #059669; font-weight: 700; font-size: 0.8rem; text-transform: uppercase; margin-bottom: 4px;">2. Context</div>
+            <div style="color: #059669; font-weight: 700; font-size: 0.8rem; text-transform: uppercase; margin-bottom: 4px;">1. Context</div>
             <div style="font-size: 0.9rem; line-height: 1.3;">"Patient is 85yo female with..."</div>
             <div style="font-size: 0.75rem; color: #6b7280; margin-top: 4px;">Constrains the variables.</div>
           </div>
 
           <div style="background: white; padding: 12px; border: 1px solid #a7f3d0; border-radius: 6px;">
-            <div style="color: #059669; font-weight: 700; font-size: 0.8rem; text-transform: uppercase; margin-bottom: 4px;">3. Task</div>
+            <div style="color: #059669; font-weight: 700; font-size: 0.8rem; text-transform: uppercase; margin-bottom: 4px;">2. Task</div>
             <div style="font-size: 0.9rem; line-height: 1.3;">"Summarize the risks of..."</div>
             <div style="font-size: 0.75rem; color: #6b7280; margin-top: 4px;">Defines the action.</div>
           </div>
 
           <div style="background: white; padding: 12px; border: 1px solid #a7f3d0; border-radius: 6px;">
-            <div style="color: #059669; font-weight: 700; font-size: 0.8rem; text-transform: uppercase; margin-bottom: 4px;">4. Format</div>
+            <div style="color: #059669; font-weight: 700; font-size: 0.8rem; text-transform: uppercase; margin-bottom: 4px;">3. Format</div>
             <div style="font-size: 0.9rem; line-height: 1.3;">"Use bullet points, 5th grade level."</div>
             <div style="font-size: 0.75rem; color: #6b7280; margin-top: 4px;">Shapes the output.</div>
           </div>
@@ -295,29 +290,31 @@
         help, rather than responses you have to fix, regenerate, or supplement.
       </p>
 
-      <h2>Role Assignment: Giving the AI a Persona</h2>
+      <h2>Role Assignment: When It Helps (and When It Doesn't)</h2>
 
       <p>
-        A powerful technique in prompting is telling the AI what role to assume. This isn't pretend
-        play—it's a way of activating different knowledge domains and communication styles within
-        the model.
+        Early AI prompting guides emphasized "persona" heavily—telling the AI to "act as" a specialist.
+        With modern models (GPT-4o, Claude 3.5+, Gemini 1.5), this technique has become <strong>less
+        essential</strong>. Today's models are much better at inferring appropriate framing from the
+        task itself. If you ask a detailed clinical question, the model responds clinically without
+        being told to "act as a physician."
       </p>
 
       <p>
-        When you say "You are an experienced pediatric cardiologist," you're not claiming the AI
-        actually <em>is</em> a cardiologist. You're telling it to draw on pediatric cardiology
-        knowledge, use appropriate terminology, and frame responses as a specialist would.
+        That said, role assignment still helps in specific situations:
       </p>
-
-      <p>Some useful roles in medical contexts:</p>
 
       <ul>
-        <li><strong>"You are an experienced clinician explaining a concept to a medical student"</strong>—produces educational content with appropriate depth</li>
-        <li><strong>"You are a patient educator creating materials for low-literacy audiences"</strong>—produces simpler language with more concrete examples</li>
-        <li><strong>"You are a clinical pharmacist reviewing medication interactions"</strong>—activates drug interaction knowledge with attention to clinical significance</li>
-        <li><strong>"You are an evidence-based medicine specialist"</strong>—encourages citation of evidence and acknowledgment of uncertainty</li>
-        <li><strong>"You are a quality improvement consultant"</strong>—frames responses around process, measurement, and system factors</li>
+        <li><strong>Adjusting communication style:</strong> "Explain this to a patient with an 8th-grade reading level" or "Write this for a medical student" shapes tone and depth.</li>
+        <li><strong>Simulation and practice:</strong> "Act as a patient with poorly controlled diabetes who is resistant to starting insulin" creates useful role-play scenarios for training.</li>
+        <li><strong>Perspective-taking:</strong> "What would a clinical pharmacist flag about this regimen?" can surface considerations you might miss.</li>
       </ul>
+
+      <p>
+        The key insight: <strong>specificity about your task and context matters more than persona</strong>.
+        A detailed, well-structured prompt without any role assignment will usually outperform a vague
+        prompt that starts with "Act as an expert." Focus your effort on context, task, and format first.
+      </p>
 
       <h2>Structured Prompting: Breaking Complex Tasks into Steps</h2>
 
@@ -530,18 +527,169 @@ Now create similar materials explaining what to expect during a colonoscopy."</d
         </p>
       </div>
 
+      <h2>Personalizing Your AI: Custom Instructions</h2>
+
+      <p>
+        Every time you start a new conversation with an AI, it knows nothing about you. You're starting
+        from scratch—explaining your role, your preferences, your context. But all three major AI platforms
+        let you set <strong>custom instructions</strong> that apply to every conversation automatically.
+        This is like giving a new colleague an orientation on their first day, so you don't have to
+        re-explain the basics every time you work together.
+      </p>
+
+      <p>
+        Custom instructions are particularly valuable for clinicians because your context is consistent:
+        your specialty, your patient population, how you prefer information formatted, what you typically
+        need AI help with. Setting this up once saves repetition and produces more relevant outputs from
+        the start.
+      </p>
+
+      <h3>What to Include in Custom Instructions</h3>
+
+      <p>Think about what you'd tell a knowledgeable assistant on their first day:</p>
+
+      <div class="table-responsive">
+        <table class="reference-table">
+          <thead>
+            <tr>
+              <th>Category</th>
+              <th>What to Specify</th>
+              <th>Example</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Your Role</strong></td>
+              <td>Specialty, practice setting, patient population</td>
+              <td>"I'm a pediatric hospitalist at a community hospital. Most of my patients are ages 0-18 with acute illnesses."</td>
+            </tr>
+            <tr>
+              <td><strong>Tone Preferences</strong></td>
+              <td>Formal vs conversational, concise vs detailed</td>
+              <td>"I prefer direct, concise responses. Skip the preamble and get to the point."</td>
+            </tr>
+            <tr>
+              <td><strong>Format Preferences</strong></td>
+              <td>Bullet points, tables, prose; use of headers</td>
+              <td>"Use bullet points for lists. For clinical comparisons, use tables."</td>
+            </tr>
+            <tr>
+              <td><strong>Knowledge Level</strong></td>
+              <td>What to assume you already know</td>
+              <td>"Assume physician-level medical knowledge. Don't explain basic concepts unless I ask."</td>
+            </tr>
+            <tr>
+              <td><strong>Common Tasks</strong></td>
+              <td>What you typically need help with</td>
+              <td>"I often need help drafting patient education materials, summarizing guidelines, and preparing for difficult conversations."</td>
+            </tr>
+            <tr>
+              <td><strong>Guidelines & Standards</strong></td>
+              <td>Which guidelines you follow</td>
+              <td>"Reference AAP guidelines for pediatric care. Use UpToDate as a standard reference."</td>
+            </tr>
+            <tr>
+              <td><strong>Safety Reminders</strong></td>
+              <td>What the AI should flag or avoid</td>
+              <td>"Always remind me to verify medication dosing independently. Flag anything that requires specialist consultation."</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>Setting Up Custom Instructions by Platform</h3>
+
+      <div class="model-strengths">
+        <div class="model-strength-card chatgpt">
+          <h3><i data-lucide="sparkles"></i> ChatGPT</h3>
+          <p><strong>Where to find it:</strong></p>
+          <ul>
+            <li><strong>Desktop/Web:</strong> Click your profile icon → Settings → Personalization → Custom Instructions</li>
+            <li><strong>Mobile:</strong> Tap the menu → Settings → Personalization → Custom Instructions</li>
+          </ul>
+          <p><strong>How it works:</strong> Two text boxes—"What would you like ChatGPT to know about you?" and "How would you like ChatGPT to respond?" Each has a 1,500 character limit.</p>
+          <p><strong>Tip:</strong> ChatGPT also has "Memory" that learns from conversations. You can review and edit what it remembers in Settings → Personalization → Memory.</p>
+        </div>
+
+        <div class="model-strength-card claude">
+          <h3><i data-lucide="pen-tool"></i> Claude</h3>
+          <p><strong>Where to find it:</strong></p>
+          <ul>
+            <li><strong>Desktop/Web:</strong> Click your profile icon → Settings → Profile → "Describe yourself to Claude"</li>
+            <li><strong>Mobile:</strong> Tap menu → Settings → Profile</li>
+          </ul>
+          <p><strong>How it works:</strong> A single text field where you describe yourself, your work, and how you'd like Claude to respond. Claude uses this context in every new conversation.</p>
+          <p><strong>Tip:</strong> Claude also supports "Projects" where you can set project-specific instructions and upload reference documents that persist across conversations.</p>
+        </div>
+
+        <div class="model-strength-card gemini">
+          <h3><i data-lucide="layers"></i> Gemini</h3>
+          <p><strong>Where to find it:</strong></p>
+          <ul>
+            <li><strong>Desktop/Web:</strong> Click Settings (gear icon) → Extensions & Data → Response preferences, or use "Saved Info" in Settings</li>
+            <li><strong>Mobile:</strong> Tap your profile → Settings → Saved Info</li>
+          </ul>
+          <p><strong>How it works:</strong> Gemini lets you save personal details (location, work, interests) and response preferences (length, tone, complexity). It integrates with your Google account.</p>
+          <p><strong>Tip:</strong> If you use Google Workspace, Gemini can access your Drive, Gmail, and Calendar with permission, making context even richer.</p>
+        </div>
+      </div>
+
+      <h3>Example Custom Instructions for Clinicians</h3>
+
+      <p>Here's a template you can adapt:</p>
+
+      <div class="prompt-box"><strong>About Me:</strong>
+I'm a [specialty] physician practicing at a [setting: academic/community/private practice]. My patients are primarily [population]. I've been practicing for [X] years.
+
+I typically use AI help for: drafting patient education materials, summarizing clinical literature, preparing for difficult conversations, and administrative tasks like letters and documentation.
+
+<strong>How I'd Like Responses:</strong>
+- Be concise and direct. Skip the "Great question!" preamble.
+- Use bullet points for lists, tables for comparisons.
+- Assume physician-level medical knowledge—don't explain basics unless I ask.
+- When discussing treatments, reference current guidelines (specify: AAP, AHA, IDSA, etc.).
+- For medication recommendations, always note to verify dosing independently.
+- If something is outside my likely scope or requires specialist input, flag it.
+- When I'm drafting patient materials, default to 6th-grade reading level unless I specify otherwise.
+- If you're uncertain about something, say so rather than guessing.</div>
+
+      <div class="callout callout-warning">
+        <div class="callout-title">Privacy Reminder</div>
+        <p class="mb-0">
+          Custom instructions are stored by the AI provider and used to personalize your experience.
+          <strong>Don't include PHI, specific patient details, or sensitive institutional information</strong>
+          in your custom instructions. Keep it to your general role, preferences, and workflow patterns.
+        </p>
+      </div>
+
+      <h3>Testing and Refining Your Setup</h3>
+
+      <p>After setting custom instructions:</p>
+      <ol>
+        <li><strong>Start a new conversation</strong> and ask a typical question without adding context. See if the response reflects your preferences.</li>
+        <li><strong>Check the tone and format.</strong> Is it as concise as you wanted? Using the right structure?</li>
+        <li><strong>Try different task types</strong>—patient education, clinical questions, administrative help. Make sure your instructions work across your common use cases.</li>
+        <li><strong>Iterate.</strong> If something isn't working, go back and refine. "Be concise" might need to become "Limit responses to 3-4 paragraphs maximum unless I ask for more detail."</li>
+      </ol>
+
+      <p>
+        Well-configured custom instructions won't make every prompt perfect, but they'll give you a
+        meaningful head start. Instead of explaining your context every time, you can jump straight
+        to the specific question—and get responses that are already calibrated to your needs.
+      </p>
+
       <h2>Practical Exercises</h2>
 
       <p>To build prompting skills, try these exercises:</p>
 
       <ol>
         <li><strong>The Specificity Upgrade:</strong> Take a question you'd naturally ask an AI and make it more specific. Then more specific again. See how outputs differ.</li>
-        <li><strong>The Role Experiment:</strong> Ask the same clinical question three times with different roles (generalist, specialist, patient educator). Compare responses.</li>
         <li><strong>The Format Requirement:</strong> Ask for information in three formats: paragraph, bullet points, and table. Notice which is most useful when.</li>
         <li><strong>The Step-by-Step Approach:</strong> Take a complex clinical question and break it into sequential steps. Compare to asking all at once.</li>
         <li><strong>The Example Provision:</strong> When asking for content in a particular style, provide an example. Compare to asking without one.</li>
         <li><strong>The Iteration Practice:</strong> Start with a basic prompt, then refine through 3-4 rounds of follow-up. Notice how output improves.</li>
         <li><strong>The Cross-Check:</strong> Ask a clinical question, then follow up with "What's the strongest argument against what you just said?"</li>
+        <li><strong>The Audience Shift:</strong> Ask the AI to explain a concept to a patient, then to a medical student, then to a specialist. Notice how context shapes output better than "act as" instructions.</li>
       </ol>
 
       <!-- Featured Exercise Link -->
@@ -581,25 +729,42 @@ Now create similar materials explaining what to expect during a colonoscopy."</d
       </div>
 
       <h2>Readings</h2>
+
+      <!-- Prioritize This! -->
+      <div class="callout" style="border-left-color: #f59e0b; background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%); margin-bottom: 1.5rem;">
+        <div class="callout-title" style="color: #b45309;">
+          <i data-lucide="star" style="width: 18px; height: 18px; margin-right: 0.5rem; fill: #f59e0b; stroke: #b45309;"></i>
+          Prioritize This!
+        </div>
+        <div class="reading-item" style="background: white; border-radius: 8px; padding: 1rem; margin-top: 0.75rem; border: 1px solid #fcd34d;">
+          <div class="reading-type"><i data-lucide="file-text"></i></div>
+          <div class="reading-content">
+            <div class="reading-title">
+              <a href="https://www.offcall.com/learn/articles/5-ai-prompting-frameworks-every-physician-should-know" target="_blank">5 AI Prompting Frameworks Every Physician Should Know</a>
+            </div>
+            <div class="reading-meta">Offcall · The practical cheat sheet. Mnemonic-based frameworks (like "RTFT": Role, Task, Format, Tone) that busy providers can mentally reference for immediate results during administrative tasks or clinical support.</div>
+          </div>
+        </div>
+      </div>
+
       <div class="reading-list">
-        
         <div class="reading-item">
           <div class="reading-type"><i data-lucide="file-text"></i></div>
           <div class="reading-content">
             <div class="reading-title">
-              <a href="https://www.jmir.org/2025/1/e72644" target="_blank">Prompt Engineering in Clinical Practice: Tutorial for Clinicians (2025)</a>
+              <a href="https://www.jmir.org/2025/1/e72644" target="_blank">Prompt Engineering in Clinical Practice: Tutorial for Clinicians</a>
             </div>
-            <div class="reading-meta">JMIR · The updated "gold standard" paper with a 5-step framework for medical prompting.</div>
+            <div class="reading-meta">JMIR Medical Education · The academic standard. Defines specific techniques like "zero-shot," "chain-of-thought," and "curriculum prompting" for clinical scenarios.</div>
           </div>
         </div>
 
         <div class="reading-item">
-          <div class="reading-type"><i data-lucide="file-text"></i></div>
+          <div class="reading-type"><i data-lucide="book-open"></i></div>
           <div class="reading-content">
             <div class="reading-title">
-              <a href="https://physicianpromptengineering.com/best-practices.html" target="_blank">Physician Prompting Best Practices</a>
+              <a href="https://arxiv.org/abs/2308.11628" target="_blank">Prompt Engineering: For Students of Medicine and Their Teachers</a>
             </div>
-            <div class="reading-meta">Physician Prompt Engineering · A curated library of efficiency-focused prompts for documentation.</div>
+            <div class="reading-meta">Thomas F. Heston, MD (WSU) · A comprehensive open-access textbook treating prompting as a pedagogical tool—showing how "teaching" an AI to solve a case helps students master the pathology themselves.</div>
           </div>
         </div>
 
@@ -609,17 +774,7 @@ Now create similar materials explaining what to expect during a colonoscopy."</d
             <div class="reading-title">
               <a href="https://docs.anthropic.com/en/docs/build-with-claude/prompt-engineering/overview" target="_blank">Anthropic Prompting Guide</a>
             </div>
-            <div class="reading-meta">Anthropic · The best technical guide on "system prompts" and structuring complex asks.</div>
-          </div>
-        </div>
-
-        <div class="reading-item">
-          <div class="reading-type"><i data-lucide="file-text"></i></div>
-          <div class="reading-content">
-            <div class="reading-title">
-              <a href="https://www.frontiersin.org/journals/medicine/articles/10.3389/fmed.2024.1504532/full" target="_blank">A Guide to Prompt Design for Healthcare Simulationists</a>
-            </div>
-            <div class="reading-meta">Frontiers in Medicine · How to create "patient personas" for practicing difficult conversations.</div>
+            <div class="reading-meta">Anthropic · The best technical guide on system prompts and structuring complex asks.</div>
           </div>
         </div>
 
@@ -632,11 +787,41 @@ Now create similar materials explaining what to expect during a colonoscopy."</d
             <div class="reading-meta">PMC · Explains "Zero-shot" vs "Few-shot" learning with clinical examples.</div>
           </div>
         </div>
+
+        <div class="reading-item">
+          <div class="reading-type"><i data-lucide="file-text"></i></div>
+          <div class="reading-content">
+            <div class="reading-title">
+              <a href="https://www.frontiersin.org/journals/medicine/articles/10.3389/fmed.2024.1504532/full" target="_blank">A Guide to Prompt Design for Healthcare Simulationists</a>
+            </div>
+            <div class="reading-meta">Frontiers in Medicine · How to create patient personas for practicing difficult conversations.</div>
+          </div>
+        </div>
+
+        <div class="reading-item">
+          <div class="reading-type"><i data-lucide="globe"></i></div>
+          <div class="reading-content">
+            <div class="reading-title">
+              <a href="https://ai.nejm.org/" target="_blank">NEJM AI (The Journal)</a>
+            </div>
+            <div class="reading-meta">New England Journal of Medicine · The ongoing source of truth. Subscribe for the long term to separate hype from evidence-based AI utility. Frequent "For Clinicians" pieces evaluate tools and strategies.</div>
+          </div>
+        </div>
       </div>
 
       <h2>Podcasts & Video</h2>
       <div class="reading-list">
-        
+
+        <div class="reading-item">
+          <div class="reading-type"><i data-lucide="video"></i></div>
+          <div class="reading-content">
+            <div class="reading-title">
+              <a href="https://www.youtube.com/watch?v=cLsWvxLsxVY" target="_blank">Stanford Peds Grand Rounds: AI in Healthcare Professionals Education</a>
+            </div>
+            <div class="reading-meta">Dr. Traci Wolbrink, Stanford Medicine · The deep-dive lecture exploring how GenAI tools are revolutionizing teaching and learning. Covers both the "how-to" of prompting and the ethical "why" and "when."</div>
+          </div>
+        </div>
+
         <div class="reading-item">
           <div class="reading-type"><i data-lucide="video"></i></div>
           <div class="reading-content">
