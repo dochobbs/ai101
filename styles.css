@@ -2988,3 +2988,20 @@ blockquote.pull-quote {
   width: 18px;
   height: 18px;
 }
+
+/* ==========================================
+   NAV CHATBOT EMBED
+   ========================================== */
+
+.nav-chatbot {
+  display: flex;
+  align-items: center;
+  margin-left: var(--space-md);
+}
+
+@media (max-width: 768px) {
+  .nav-chatbot {
+    margin-left: 0;
+    margin-top: var(--space-sm);
+  }
+}
