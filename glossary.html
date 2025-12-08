@@ -65,6 +65,7 @@
         <a href="#companies">Companies & Models</a> ·
         <a href="#infrastructure">Infrastructure</a> ·
         <a href="#emerging">Emerging Terms</a> ·
+        <a href="#healthcare">Healthcare AI</a> ·
         <a href="#resources">Learning Resources</a>
       </div>
 
@@ -79,7 +80,7 @@
           <dd>
             The broad field of creating systems that can perform tasks typically
             requiring human intelligence—learning, reasoning, problem-solving,
-            perception. When people say "AI" in 2024-2025, they usually mean
+            perception. When people say "AI" today, they usually mean
             generative AI or LLMs specifically, but the term encompasses everything
             from chess engines to self-driving cars.
           </dd>
@@ -123,6 +124,26 @@
             (excellent at specific things, unable to generalize). AGI remains a research
             goal, not a current reality. Claims about AGI timelines vary wildly and
             should be viewed skeptically.
+          </dd>
+        </div>
+
+        <div class="glossary-item">
+          <dt>Reasoning Models</dt>
+          <dd>
+            A new category of AI models designed to "think" through problems step-by-step
+            before responding. OpenAI's o1 and o3 models, Claude's extended thinking mode,
+            and Google's Gemini 2.0 Flash Thinking exemplify this approach. They trade speed
+            for accuracy on complex tasks by using more compute at inference time.
+          </dd>
+        </div>
+
+        <div class="glossary-item">
+          <dt>Inference-Time Compute (Test-Time Compute)</dt>
+          <dd>
+            The computational resources used when a model generates a response, as opposed
+            to during training. Reasoning models use significantly more inference-time compute
+            to "think longer" about difficult problems. A major 2025 research direction—some
+            argue it's as important as scaling training data.
           </dd>
         </div>
       </dl>
@@ -283,6 +304,45 @@
             coherent language, not truth. <strong>Always verify important facts.</strong>
           </dd>
         </div>
+
+        <div class="glossary-item">
+          <dt>Tool Use (Function Calling)</dt>
+          <dd>
+            The ability for AI models to interact with external tools, APIs, and services.
+            Instead of just generating text, the model can search the web, run code, query
+            databases, or control other software. Enables AI to take actions, not just
+            provide information. Foundation for AI agents.
+          </dd>
+        </div>
+
+        <div class="glossary-item">
+          <dt>MCP (Model Context Protocol)</dt>
+          <dd>
+            Anthropic's open protocol that standardizes how AI applications connect to
+            external data sources and tools. Think of it as a universal adapter—instead
+            of building custom integrations for each tool, MCP provides a common interface.
+            Gaining adoption across AI tools in 2025.
+          </dd>
+        </div>
+
+        <div class="glossary-item">
+          <dt>Artifacts</dt>
+          <dd>
+            Interactive outputs that Claude can create—code, documents, diagrams, or
+            applications—that appear in a separate panel and can be edited, copied, or
+            downloaded. Enables Claude to produce working prototypes, not just descriptions.
+            A key feature for vibe coding and rapid prototyping.
+          </dd>
+        </div>
+
+        <div class="glossary-item">
+          <dt>Extended Thinking</dt>
+          <dd>
+            Claude's reasoning mode where the model shows its step-by-step thinking process
+            before providing a final answer. Uses more inference-time compute to work through
+            complex problems. Particularly useful for math, logic, and multi-step reasoning tasks.
+          </dd>
+        </div>
       </dl>
 
       <hr>
@@ -421,6 +481,33 @@
             passages quickly. Pinecone, Weaviate, and Chroma are common examples.
           </dd>
         </div>
+
+        <div class="glossary-item">
+          <dt>RLAIF (Reinforcement Learning from AI Feedback)</dt>
+          <dd>
+            Similar to RLHF, but using AI-generated feedback instead of human ratings
+            to guide training. More scalable than human feedback. Anthropic's Constitutional
+            AI uses this approach—Claude evaluates its own outputs against principles.
+          </dd>
+        </div>
+
+        <div class="glossary-item">
+          <dt>DPO (Direct Preference Optimization)</dt>
+          <dd>
+            A simpler alternative to RLHF that directly optimizes models on preference
+            data without needing a separate reward model. Increasingly popular for
+            fine-tuning because it's more stable and computationally efficient.
+          </dd>
+        </div>
+
+        <div class="glossary-item">
+          <dt>Distillation</dt>
+          <dd>
+            Transferring knowledge from a large "teacher" model to a smaller "student"
+            model. The smaller model learns to mimic the larger model's outputs, achieving
+            similar performance at lower cost. How many efficient local models are created.
+          </dd>
+        </div>
       </dl>
 
       <hr>
@@ -497,6 +584,38 @@
             humans do.
           </dd>
         </div>
+
+        <div class="glossary-item">
+          <dt>Vibe Coding</dt>
+          <dd>
+            Building software by describing what you want in natural language and letting
+            AI generate the code—without necessarily reading or understanding the code yourself.
+            Coined by Andrej Karpathy in February 2025 and named Collins Dictionary's Word of
+            the Year. Tools like Replit, Lovable, and Claude Code enable this approach.
+            <a href="vibe-coding.html">See our full module on vibe coding.</a>
+          </dd>
+        </div>
+
+        <div class="glossary-item">
+          <dt>Custom GPTs / Gems / Projects</dt>
+          <dd>
+            Customizable AI assistants created by users for specific purposes. OpenAI calls
+            them "Custom GPTs," Google calls them "Gems," and Anthropic uses "Projects."
+            You define instructions, upload reference documents, and create a specialized
+            assistant without coding. Great for creating patient-facing tools or
+            specialty-specific assistants.
+          </dd>
+        </div>
+
+        <div class="glossary-item">
+          <dt>Computer Use</dt>
+          <dd>
+            AI capability to control desktop interfaces—clicking, typing, navigating
+            applications like a human would. Claude's computer use feature and similar
+            tools enable AI to interact with any software, not just API-connected services.
+            An early but rapidly developing capability.
+          </dd>
+        </div>
       </dl>
 
       <hr>
@@ -551,6 +670,39 @@
             email might contain hidden instructions that manipulate an AI email assistant.
           </dd>
         </div>
+
+        <div class="glossary-item">
+          <dt>Jailbreaking</dt>
+          <dd>
+            Techniques to bypass an AI model's safety measures and get it to produce
+            content it would normally refuse. Often involves clever prompt manipulation
+            or roleplay scenarios. A constant cat-and-mouse game between AI developers
+            and those attempting to circumvent safeguards.
+          </dd>
+        </div>
+
+        <div class="glossary-item">
+          <dt>Refusal</dt>
+          <dd>
+            When an AI model declines to respond to a request, typically because it
+            violates safety guidelines. "I can't help with that" responses. Models are
+            trained to refuse harmful, illegal, or inappropriate requests. Sometimes
+            models refuse too cautiously (false positives) or not enough (false negatives).
+          </dd>
+        </div>
+
+        <div class="glossary-item">
+          <dt>Common Benchmarks</dt>
+          <dd>
+            <strong>MMLU</strong> (Massive Multitask Language Understanding): Tests knowledge
+            across 57 subjects from elementary to professional level.<br>
+            <strong>GPQA</strong> (Graduate-Level Google-Proof Q&A): PhD-level science questions
+            that can't be easily Googled.<br>
+            <strong>HumanEval / SWE-bench</strong>: Coding ability tests—writing functions and
+            solving real GitHub issues.<br>
+            <strong>MedQA</strong>: Medical licensing exam questions, relevant for healthcare AI.
+          </dd>
+        </div>
       </dl>
 
       <hr>
@@ -561,32 +713,43 @@
       <div class="company-grid">
         <div class="company-card">
           <h4>OpenAI</h4>
-          <p>Created GPT-4, ChatGPT, DALL-E. The company most associated with the
-          current AI boom. Now partially owned by Microsoft.</p>
+          <p>Created GPT-4, ChatGPT, DALL-E, o1/o3 reasoning models. The company most
+          associated with the current AI boom. Partnered with Microsoft.</p>
         </div>
         <div class="company-card">
           <h4>Anthropic</h4>
           <p>Created Claude. Founded by former OpenAI researchers focused on AI safety.
-          Notable for "constitutional AI" alignment approach.</p>
+          Notable for constitutional AI, extended thinking, and computer use capabilities.</p>
         </div>
         <div class="company-card">
           <h4>Google/DeepMind</h4>
-          <p>Created Gemini (formerly Bard), PaLM, BERT. Deep research heritage.
-          DeepMind created AlphaFold and AlphaGo.</p>
+          <p>Created Gemini, PaLM, BERT. Deep research heritage. DeepMind created
+          AlphaFold (protein structure) and AlphaGo. Gemini 2.0 leads in multimodal.</p>
         </div>
         <div class="company-card">
           <h4>Meta</h4>
-          <p>Created Llama (open-source LLMs). Major contributor to open AI research
-          and model releases.</p>
+          <p>Created Llama (open-source LLMs). Major contributor to open AI research.
+          Llama models power many local and fine-tuned applications.</p>
+        </div>
+        <div class="company-card">
+          <h4>xAI</h4>
+          <p>Elon Musk's AI company. Created Grok, integrated into X (Twitter).
+          Known for fewer content restrictions than competitors.</p>
         </div>
         <div class="company-card">
           <h4>Mistral</h4>
-          <p>French AI company with strong open-source models competing with
-          proprietary offerings.</p>
+          <p>French AI company with strong open-source models. Known for efficient
+          architectures that compete with larger proprietary models.</p>
         </div>
         <div class="company-card">
-          <h4>Stability AI</h4>
-          <p>Created Stable Diffusion image generation models.</p>
+          <h4>Cohere</h4>
+          <p>Enterprise-focused AI company. Strong in RAG, embeddings, and business
+          applications. Popular for companies building AI into products.</p>
+        </div>
+        <div class="company-card">
+          <h4>Perplexity</h4>
+          <p>AI-powered search engine that answers questions with citations.
+          Combines LLMs with real-time web search. Growing alternative to Google.</p>
         </div>
       </div>
 
@@ -639,6 +802,44 @@
             Web search and RAG help address this limitation.
           </dd>
         </div>
+
+        <div class="glossary-item">
+          <dt>TPU (Tensor Processing Unit)</dt>
+          <dd>
+            Google's custom AI chips, designed specifically for machine learning workloads.
+            An alternative to NVIDIA GPUs. Google uses TPUs to train and run Gemini models.
+            Amazon (Trainium) and others are developing similar custom AI chips.
+          </dd>
+        </div>
+
+        <div class="glossary-item">
+          <dt>Quantization</dt>
+          <dd>
+            Reducing the precision of model weights (e.g., from 32-bit to 4-bit numbers)
+            to shrink model size and speed up inference. Makes large models runnable on
+            consumer hardware. Essential for local AI—a quantized Llama model can run on
+            a laptop that couldn't handle the full-precision version.
+          </dd>
+        </div>
+
+        <div class="glossary-item">
+          <dt>GGUF</dt>
+          <dd>
+            A file format for storing quantized language models, commonly used for local
+            AI applications. If you see a model file ending in .gguf, it's designed to
+            run locally with tools like Ollama or LM Studio. Successor to the older GGML format.
+          </dd>
+        </div>
+
+        <div class="glossary-item">
+          <dt>Ollama</dt>
+          <dd>
+            Popular open-source tool for running LLMs locally on your computer. Handles
+            model downloading, quantization, and provides a simple interface. The easiest
+            way to experiment with local AI. <a href="local-models.html">See our module
+            on running local models.</a>
+          </dd>
+        </div>
       </dl>
 
       <hr>
@@ -685,6 +886,121 @@
             The emerging practice of systematically managing everything that goes
             into a model's context window—prompts, examples, retrieved documents,
             conversation history.
+          </dd>
+        </div>
+      </dl>
+
+      <hr>
+
+      <!-- Healthcare AI Terms -->
+      <h2 id="healthcare">Healthcare AI Terms</h2>
+
+      <p>
+        Terms specific to AI applications in clinical settings—the vocabulary you'll
+        encounter in health system AI initiatives, vendor pitches, and medical literature.
+      </p>
+
+      <dl class="glossary-list">
+        <div class="glossary-item">
+          <dt>AI Scribe (Ambient AI)</dt>
+          <dd>
+            AI systems that listen to patient encounters and automatically generate
+            clinical documentation. Products like DAX Copilot, Abridge, and Freed
+            transcribe conversations and draft notes in EHR format. Aims to reduce
+            documentation burden and restore face-to-face patient time.
+            <a href="ambient-ai.html">See our module on ambient AI tools.</a>
+          </dd>
+        </div>
+
+        <div class="glossary-item">
+          <dt>CDS (Clinical Decision Support)</dt>
+          <dd>
+            AI systems that provide diagnostic suggestions, treatment recommendations,
+            or alerts based on patient data. Ranges from simple rule-based alerts to
+            AI-powered tools like UpToDate, OpenEvidence, and Glass Health that synthesize
+            evidence for specific clinical questions.
+            <a href="clinical-decision-support.html">See our CDS module.</a>
+          </dd>
+        </div>
+
+        <div class="glossary-item">
+          <dt>FDA Clearance (510(k) / De Novo)</dt>
+          <dd>
+            The regulatory pathway for medical AI devices in the US. <strong>510(k)</strong>
+            clearance means the device is "substantially equivalent" to an existing approved
+            device. <strong>De Novo</strong> is for novel low-to-moderate risk devices.
+            <strong>PMA</strong> (Premarket Approval) is for high-risk devices. Over 900
+            AI/ML medical devices have received FDA clearance as of 2025.
+          </dd>
+        </div>
+
+        <div class="glossary-item">
+          <dt>CDSS (Clinical Decision Support System)</dt>
+          <dd>
+            The broader category of software providing clinician-facing decision support.
+            Includes both AI-powered and traditional rule-based systems. Often integrated
+            into EHRs with alerts, order sets, and diagnostic suggestions.
+          </dd>
+        </div>
+
+        <div class="glossary-item">
+          <dt>CADe / CADx</dt>
+          <dd>
+            <strong>CADe</strong> (Computer-Aided Detection): AI that identifies potential
+            findings in medical images (e.g., flagging a possible nodule on chest CT).<br>
+            <strong>CADx</strong> (Computer-Aided Diagnosis): AI that characterizes findings
+            (e.g., suggesting a nodule is likely malignant). Radiology and pathology have
+            the most FDA-cleared CAD tools.
+          </dd>
+        </div>
+
+        <div class="glossary-item">
+          <dt>LLM-as-Judge</dt>
+          <dd>
+            Using one AI model to evaluate outputs from another—increasingly common in
+            medical AI evaluation. Instead of only human review, an LLM assesses whether
+            AI-generated clinical content is accurate, complete, and appropriate.
+            Useful for scaling quality assessment but requires validation.
+          </dd>
+        </div>
+
+        <div class="glossary-item">
+          <dt>Medical LLMs</dt>
+          <dd>
+            Language models fine-tuned or designed specifically for healthcare applications.
+            Examples include Med-PaLM (Google), BioMistral, and various clinical GPT variants.
+            Often trained on medical literature and clinical notes to improve healthcare-specific
+            performance over general-purpose models.
+          </dd>
+        </div>
+
+        <div class="glossary-item">
+          <dt>De-identification</dt>
+          <dd>
+            Removing or obscuring protected health information (PHI) from data before
+            AI processing. HIPAA defines 18 identifiers that must be addressed. AI tools
+            can help automate de-identification, but verification remains important.
+            <a href="phi-hipaa.html">See our PHI and HIPAA module.</a>
+          </dd>
+        </div>
+
+        <div class="glossary-item">
+          <dt>BAA (Business Associate Agreement)</dt>
+          <dd>
+            Legal agreement required under HIPAA when sharing PHI with third parties,
+            including AI vendors. A BAA establishes the vendor's obligations to protect
+            health data. Using AI tools for patient data without a BAA violates HIPAA.
+            Check whether your AI tools have BAA options.
+          </dd>
+        </div>
+
+        <div class="glossary-item">
+          <dt>Algorithmic Bias in Healthcare</dt>
+          <dd>
+            When AI systems produce systematically different (often worse) outcomes for
+            certain patient populations. Can arise from training data that underrepresents
+            groups, features that correlate with race/ethnicity, or historical disparities
+            embedded in the data. A significant concern for healthcare AI equity.
           </dd>
         </div>
       </dl>

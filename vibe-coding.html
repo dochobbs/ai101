@@ -50,6 +50,25 @@
         </div>
       </header>
 
+      <div class="callout callout-tip" style="border-left-color: #16a34a; background: #f0fdf4;">
+        <div class="callout-title" style="color: #16a34a;">Prioritize This!</div>
+        <p>
+          If you take one thing from this topic: <strong>Jump in and have fun.</strong>
+          Code is cheap now. Don't overthink it. If it doesn't work, scrap it and start over.
+        </p>
+        <p>
+          This is a massive shift from just a few years ago. <a href="https://news.microsoft.com/source/features/ai/vibe-coding-and-other-ways-ai-is-changing-who-can-build-apps-and-how/" target="_blank">Microsoft's David Fowler</a>
+          puts it perfectly: "The barrier to getting your idea on paper or on a computer
+          or getting it working, getting the first cut, first draft, is down to zero."
+        </p>
+        <p class="mb-0">
+          <a href="https://techcrunch.com/2025/03/06/a-quarter-of-startups-in-ycs-current-cohort-have-codebases-that-are-almost-entirely-ai-generated/" target="_blank">25% of Y Combinator's Winter 2025 startups</a>
+          have codebases that are 95% AI-generated—and these are the fastest-growing
+          companies in YC history. As Garry Tan says: "Vibe coding isn't a fad. This isn't going away."
+          <strong>Anyone can be a full-stack developer now. JUST DO IT.</strong>
+        </p>
+      </div>
+
       <div class="callout callout-warning">
         <div class="callout-title">Fair Warning</div>
         <p class="mb-0">
@@ -605,12 +624,108 @@
 
       <hr>
 
-      <!-- Part 5 -->
-      <h2>Part 5: Choosing Between Tools</h2>
+      <!-- Part 5: Claude Code -->
+      <h2>Part 5: Getting Started with Claude Code</h2>
+
+      <h3>What Claude Code Is</h3>
 
       <p>
-        With both Replit and Lovable introduced, a natural question emerges: which
-        should you use?
+        <a href="https://claude.ai" target="_blank">Claude Code</a> is Anthropic's
+        agentic coding tool that works across three environments: the web interface
+        at claude.ai, the <a href="https://claude.com/download" target="_blank">Claude Desktop app</a>,
+        and a powerful <a href="https://github.com/anthropics/claude-code" target="_blank">command-line interface (CLI)</a>
+        for your terminal. This flexibility makes it accessible whether you prefer
+        clicking buttons or typing commands.
+      </p>
+
+      <p>
+        Unlike tools that hide everything behind a chat interface, Claude Code
+        gives you choices about how much you want to see. You can vibe code
+        entirely through conversation, or peek under the hood when you're curious.
+      </p>
+
+      <h3>Three Ways to Use Claude Code</h3>
+
+      <div class="workflow-phases">
+        <div class="workflow-phase">
+          <h4><i data-lucide="globe"></i> Web Interface (claude.ai)</h4>
+          <p>
+            The most accessible option. Go to <a href="https://claude.ai" target="_blank">claude.ai</a>,
+            start a conversation, and describe what you want to build. Claude generates
+            code in "Artifacts"—sandboxed previews you can see and interact with immediately.
+            Perfect for beginners who want to experiment safely.
+          </p>
+        </div>
+        <div class="workflow-phase">
+          <h4><i data-lucide="monitor"></i> Desktop App</h4>
+          <p>
+            The <a href="https://claude.com/download" target="_blank">Claude Desktop app</a>
+            offers a native experience with powerful features: run multiple Claude Code
+            sessions simultaneously, each isolated in its own git worktree. Great for
+            working on multiple features or projects in parallel without confusion.
+          </p>
+        </div>
+        <div class="workflow-phase">
+          <h4><i data-lucide="terminal"></i> Command Line (CLI)</h4>
+          <p>
+            For those comfortable in the terminal, <a href="https://github.com/anthropics/claude-code" target="_blank">Claude Code CLI</a>
+            is incredibly powerful. It understands your entire codebase, executes commands,
+            handles git workflows, and can work autonomously on complex tasks. It also
+            integrates with VS Code, Cursor, and JetBrains IDEs.
+          </p>
+        </div>
+      </div>
+
+      <h3>When Claude Code Shines</h3>
+
+      <ul>
+        <li><strong>Conversational iteration:</strong> Describe what you want, see it built, refine through dialogue</li>
+        <li><strong>Learning while building:</strong> Ask Claude to explain what it's doing as it works</li>
+        <li><strong>Complex projects:</strong> The CLI can handle multi-file codebases that would overwhelm simpler tools</li>
+        <li><strong>Integration flexibility:</strong> Works with your existing tools and workflows</li>
+      </ul>
+
+      <h3>Practical Tips for Claude Code</h3>
+
+      <div class="best-practices-grid">
+        <div class="practice-card">
+          <h4>Start on the Web</h4>
+          <p>
+            If you're new to vibe coding, start at claude.ai. The Artifacts feature
+            lets you see working previews instantly without any setup.
+          </p>
+        </div>
+        <div class="practice-card">
+          <h4>Use the Desktop for Parallel Work</h4>
+          <p>
+            When you're juggling multiple ideas or features, the desktop app's
+            session management keeps everything organized.
+          </p>
+        </div>
+        <div class="practice-card">
+          <h4>Graduate to CLI for Serious Projects</h4>
+          <p>
+            Once you're comfortable, the CLI offers the most power—full codebase
+            understanding, automated git commits, and IDE integration.
+          </p>
+        </div>
+        <div class="practice-card">
+          <h4>Ask for Explanations</h4>
+          <p>
+            Unlike pure vibe coding, Claude can teach as it builds. Ask "why did
+            you do it that way?" to learn while you create.
+          </p>
+        </div>
+      </div>
+
+      <hr>
+
+      <!-- Part 6 -->
+      <h2>Part 6: Choosing Between Tools</h2>
+
+      <p>
+        With Replit, Lovable, and Claude Code introduced, a natural question emerges:
+        which should you use?
       </p>
 
       <h3>Replit is Better When:</h3>
@@ -631,24 +746,34 @@
         <li><strong>Rapid iteration on design is the priority.</strong> Clicking and dragging to adjust layouts is faster than describing changes textually.</li>
       </ul>
 
+      <h3>Claude Code is Better When:</h3>
+
+      <ul>
+        <li><strong>You want flexibility in how you work.</strong> Web, desktop, or CLI—choose the interface that matches your comfort level.</li>
+        <li><strong>You want to learn while building.</strong> Claude explains its reasoning when asked, turning vibe coding into a learning experience.</li>
+        <li><strong>You're working on larger projects.</strong> The CLI handles complex, multi-file codebases better than browser-based tools.</li>
+        <li><strong>You already use VS Code or another IDE.</strong> Claude Code integrates directly into your existing workflow.</li>
+        <li><strong>You want a conversation partner.</strong> Claude's strength is dialogue—refining ideas through back-and-forth discussion.</li>
+      </ul>
+
       <h3>The Honest Answer</h3>
 
       <p>
-        For complete beginners, both work. Try each with a simple project—a to-do list
+        For complete beginners, all three work. Try each with a simple project—a to-do list
         or personal homepage—and see which interaction style fits you better. The best
         tool is the one you'll actually use.
       </p>
 
       <p>
-        For many projects, you might use both: Lovable to rapidly prototype the interface,
-        then rebuild in Replit (or proper development tools) when the concept is validated
-        and you need more robust infrastructure.
+        For many projects, you might use multiple tools: Claude to brainstorm and prototype
+        ideas conversationally, Lovable for visual iteration, then Replit (or proper
+        development tools) when the concept is validated and you need robust infrastructure.
       </p>
 
       <hr>
 
-      <!-- Part 6 -->
-      <h2>Part 6: The Shared Workflow—Vibe Coding in Practice</h2>
+      <!-- Part 7 -->
+      <h2>Part 7: The Shared Workflow—Vibe Coding in Practice</h2>
 
       <p>
         Whether you use Replit, Lovable, or other tools, vibe coding follows a similar pattern:
@@ -757,8 +882,8 @@
 
       <hr>
 
-      <!-- Part 7 -->
-      <h2>Part 7: The Pitfalls—Where Vibe Coding Goes Wrong</h2>
+      <!-- Part 8 -->
+      <h2>Part 8: The Pitfalls—Where Vibe Coding Goes Wrong</h2>
 
       <p>
         Vibe coding has produced impressive demonstrations. A doctor building dashboards
@@ -901,8 +1026,8 @@
 
       <hr>
 
-      <!-- Part 8 -->
-      <h2>Part 8: When to Vibe Code (And When Not To)</h2>
+      <!-- Part 9 -->
+      <h2>Part 9: When to Vibe Code (And When Not To)</h2>
 
       <p>Based on the landscape in late 2025, here are reasonable guidelines:</p>
 
@@ -975,50 +1100,52 @@
 
       <hr>
 
-      <!-- Part 9 -->
-      <h2>Part 9: Your First Vibe Coding Project</h2>
+      <!-- Part 10 -->
+      <h2>Part 10: Your First Vibe Coding Project</h2>
 
       <p>
         If you've made it this far, you might be wondering where to actually start.
         Here's a concrete suggestion for a first project that's useful but low-stakes:
       </p>
 
-      <h3>The Personal Bookmark Manager</h3>
+      <h3>The Patient Instruction Generator</h3>
 
       <p>
-        <strong>What it does:</strong> A simple web app where you can save links with
-        notes, organize them into categories, and search through them later.
+        <strong>What it does:</strong> A simple tool where you enter a diagnosis or
+        procedure, and it generates patient-friendly discharge instructions or aftercare
+        guides. You can customize reading level and add your own standard modifications.
       </p>
 
       <p><strong>Why it's good for learning:</strong></p>
 
       <ul>
-        <li>It's useful to you (everyone has bookmarks scattered across browsers)</li>
-        <li>It requires basic CRUD operations (create, read, update, delete)</li>
-        <li>It benefits from a search function (teaches you how to request features)</li>
-        <li>It doesn't need authentication for a personal version (simpler)</li>
-        <li>It can be extended (add tags, add sharing, add reading list features)</li>
+        <li>It's immediately useful in your practice</li>
+        <li>It teaches you how to work with AI text generation</li>
+        <li>It involves forms, dropdowns, and text output (core UI patterns)</li>
+        <li>It doesn't need a database for a basic version (simpler)</li>
+        <li>It can be extended with more conditions, languages, or reading levels</li>
       </ul>
 
       <h3>How to Start</h3>
 
       <div class="prompt-examples">
         <div class="prompt-example good">
-          <div class="prompt-label"><i data-lucide="terminal"></i> In Replit</div>
+          <div class="prompt-label"><i data-lucide="terminal"></i> In Replit or Claude</div>
           <p>
-            "Build a personal bookmark manager web app. I want to save URLs with a
-            title, description, and category. I should be able to see all my bookmarks
-            in a list, search through them by title or description, filter by category,
-            and delete ones I don't need anymore. Keep the design simple and clean."
+            "Build a patient instruction generator. I want to select a condition from
+            a dropdown (start with: ankle sprain, UTI, minor laceration, upper respiratory
+            infection), choose a reading level (simple, standard, detailed), and click
+            Generate. It should produce patient-friendly aftercare instructions I can
+            copy or print. Keep the design clean and medical-professional looking."
           </p>
         </div>
         <div class="prompt-example good">
           <div class="prompt-label"><i data-lucide="layout"></i> In Lovable</div>
           <p>
-            "Create a bookmark manager where I can save and organize links. Include
-            a form to add new bookmarks (URL, title, description, and category dropdown).
-            Show bookmarks in a card layout with search and category filter. Use a
-            minimal, modern design."
+            "Create a patient discharge instruction tool. Include a dropdown to select
+            common conditions, a reading level selector (5th grade, 8th grade, adult),
+            and a Generate button. Display the instructions in a printable format with
+            a Copy button. Use a clean, professional medical aesthetic—blue and white."
           </p>
         </div>
       </div>
@@ -1030,7 +1157,7 @@
         <li>How to iterate when the first result isn't quite right</li>
         <li>How to debug when something doesn't work</li>
         <li>How the AI handles requests differently across platforms</li>
-        <li>Whether you prefer Replit's code-visible approach or Lovable's visual approach</li>
+        <li>Whether you prefer Replit's code-visible approach, Lovable's visual approach, or Claude's conversational style</li>
       </ul>
 
       <h3>Stretch Goals</h3>
@@ -1038,51 +1165,160 @@
       <p>After the basic version works:</p>
 
       <ul>
-        <li>Add tags for more flexible organization</li>
-        <li>Create a browser extension to add bookmarks with one click</li>
-        <li>Add export/import functionality</li>
-        <li>Share certain bookmarks publicly</li>
+        <li>Add more conditions specific to your specialty</li>
+        <li>Include Spanish (or other language) translations</li>
+        <li>Add a "custom instructions" text field for patient-specific notes</li>
+        <li>Create a printable PDF format</li>
+        <li>Save your most-used templates for quick access</li>
       </ul>
 
       <p>
-        The goal isn't to build the world's best bookmark manager. It's to go through
-        the complete cycle—describing, testing, iterating, debugging—with something
-        concrete and useful.
+        The goal isn't to build the world's best patient education system. It's to go
+        through the complete cycle—describing, testing, iterating, debugging—with
+        something concrete and useful to your practice.
       </p>
 
       <hr>
 
-      <!-- Part 10 -->
-      <h2>Part 10: Resources for Further Exploration</h2>
+      <!-- Part 11 -->
+      <h2>Part 11: Understanding GitHub</h2>
+
+      <p>
+        As you build projects with vibe coding tools, you'll want a way to save your work,
+        track changes, and potentially share or collaborate. That's where GitHub comes in.
+      </p>
+
+      <h3>What GitHub Is (And Why It Matters)</h3>
+
+      <p>
+        <a href="https://github.com" target="_blank">GitHub</a> is where developers store
+        and share code. Think of it as Google Docs for programming—it keeps track of every
+        change, lets you go back to previous versions, and enables collaboration.
+      </p>
+
+      <p>For vibe coders, GitHub matters because:</p>
+
+      <ul>
+        <li><strong>Backup:</strong> Your code isn't trapped in one platform</li>
+        <li><strong>Portability:</strong> Move projects between tools (Replit, Lovable, local development)</li>
+        <li><strong>History:</strong> See how your project evolved over time</li>
+        <li><strong>Sharing:</strong> Show your work to others or collaborate on projects</li>
+      </ul>
 
       <h3>Getting Started</h3>
+
+      <p>
+        You don't need to master Git (the underlying version control system) to benefit
+        from GitHub. Both Replit and Lovable have built-in GitHub integration—connect
+        your account, and your projects sync automatically.
+      </p>
+
+      <p>If you want to learn more:</p>
+
+      <div class="reading-list">
+        <div class="reading-item">
+          <div class="reading-type"><i data-lucide="book-open"></i></div>
+          <div class="reading-content">
+            <div class="reading-title">
+              <a href="https://github.blog/developer-skills/programming-languages-and-frameworks/what-is-git-our-beginners-guide-to-version-control/" target="_blank">GitHub Blog: What is Git?</a>
+            </div>
+            <div class="reading-meta">GitHub's own beginner guide—covers the basics without overwhelming you.</div>
+          </div>
+        </div>
+        <div class="reading-item">
+          <div class="reading-type"><i data-lucide="graduation-cap"></i></div>
+          <div class="reading-content">
+            <div class="reading-title">
+              <a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Version_control" target="_blank">MDN: Version Control</a>
+            </div>
+            <div class="reading-meta">Mozilla's practical guide with hands-on tutorials for creating repos, branches, and pull requests.</div>
+          </div>
+        </div>
+        <div class="reading-item">
+          <div class="reading-type"><i data-lucide="play-circle"></i></div>
+          <div class="reading-content">
+            <div class="reading-title">
+              <a href="https://www.udacity.com/course/version-control-with-git--ud123" target="_blank">Udacity: Version Control with Git</a>
+            </div>
+            <div class="reading-meta">Free course if you want a structured introduction to Git fundamentals.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="callout callout-tip">
+        <div class="callout-title">You Don't Need to Be an Expert</div>
+        <p class="mb-0">
+          For vibe coding, just knowing that GitHub exists and connecting your accounts
+          is enough to start. The deep knowledge of branching, merging, and pull requests
+          can come later—if and when you need it.
+        </p>
+      </div>
+
+      <hr>
+
+      <!-- Part 12 -->
+      <h2>Part 12: Resources for Further Exploration</h2>
+
+      <h3>Courses & Tutorials</h3>
 
       <div class="reading-list">
         <div class="reading-item">
           <div class="reading-type"><i data-lucide="graduation-cap"></i></div>
           <div class="reading-content">
             <div class="reading-title">
+              <a href="https://www.coursera.org/specializations/vibe-coding" target="_blank">Coursera: Vibe Coding Essentials by Scrimba</a>
+            </div>
+            <div class="reading-meta">Learn to use GitHub Copilot, Cursor AI, Claude Code, and ChatGPT to turn ideas into apps—no coding experience required.</div>
+          </div>
+        </div>
+        <div class="reading-item">
+          <div class="reading-type"><i data-lucide="graduation-cap"></i></div>
+          <div class="reading-content">
+            <div class="reading-title">
               <a href="https://www.codecademy.com/learn/intro-to-vibe-coding" target="_blank">Codecademy: Intro to Vibe Coding</a>
             </div>
-            <div class="reading-meta">A structured course covering the basics—what vibe coding is, how to brainstorm projects, and hands-on practice.</div>
+            <div class="reading-meta">Free structured course covering the basics—what vibe coding is, how to brainstorm projects, and hands-on practice.</div>
+          </div>
+        </div>
+        <div class="reading-item">
+          <div class="reading-type"><i data-lucide="graduation-cap"></i></div>
+          <div class="reading-content">
+            <div class="reading-title">
+              <a href="https://www.udemy.com/course/vibe-coding-for-beginners-ai-programming-for-non-developers/" target="_blank">Udemy: Vibe Coding for Everyone</a>
+            </div>
+            <div class="reading-meta">Structured step-by-step path—build AI tools and automations without learning to code.</div>
+          </div>
+        </div>
+      </div>
+
+      <h3>Tool Documentation</h3>
+
+      <div class="reading-list">
+        <div class="reading-item">
+          <div class="reading-type"><i data-lucide="book-open"></i></div>
+          <div class="reading-content">
+            <div class="reading-title">
+              <a href="https://docs.anthropic.com/en/docs/claude-code/overview" target="_blank">Claude Code Documentation</a>
+            </div>
+            <div class="reading-meta">Official guide to Claude Code—CLI setup, IDE integration, and best practices for agentic coding.</div>
           </div>
         </div>
         <div class="reading-item">
           <div class="reading-type"><i data-lucide="book-open"></i></div>
           <div class="reading-content">
             <div class="reading-title">
-              <a href="https://docs.replit.com/replitai/agent" target="_blank">Replit Documentation: Vibe Coding Guide</a>
+              <a href="https://docs.replit.com/replitai/agent" target="_blank">Replit Agent Documentation</a>
             </div>
-            <div class="reading-meta">Replit's own guide to effective prompting and working with their Agent.</div>
+            <div class="reading-meta">Replit's guide to effective prompting and working with their AI Agent.</div>
           </div>
         </div>
         <div class="reading-item">
-          <div class="reading-type"><i data-lucide="video"></i></div>
+          <div class="reading-type"><i data-lucide="book-open"></i></div>
           <div class="reading-content">
             <div class="reading-title">
-              <a href="https://lovable.dev/videos/tutorial" target="_blank">Lovable Tutorial Videos</a>
+              <a href="https://docs.lovable.dev" target="_blank">Lovable Documentation</a>
             </div>
-            <div class="reading-meta">Video tutorials covering everything from basic setup to Supabase integration.</div>
+            <div class="reading-meta">Getting started guides, Supabase integration, and tips for visual app building.</div>
           </div>
         </div>
       </div>
@@ -1094,9 +1330,36 @@
           <div class="reading-type"><i data-lucide="file-text"></i></div>
           <div class="reading-content">
             <div class="reading-title">
+              <a href="https://www.technologyreview.com/2025/04/16/1115135/what-is-vibe-coding-exactly/" target="_blank">MIT Technology Review: "What is vibe coding, exactly?"</a>
+            </div>
+            <div class="reading-meta">Authoritative overview of the vibe coding phenomenon and its implications for software development.</div>
+          </div>
+        </div>
+        <div class="reading-item">
+          <div class="reading-type"><i data-lucide="file-text"></i></div>
+          <div class="reading-content">
+            <div class="reading-title">
+              <a href="https://news.microsoft.com/source/features/ai/vibe-coding-and-other-ways-ai-is-changing-who-can-build-apps-and-how/" target="_blank">Microsoft: "Vibe coding and other ways AI is changing who can build apps"</a>
+            </div>
+            <div class="reading-meta">How vibe coding is democratizing software development—includes the "barrier to zero" quote.</div>
+          </div>
+        </div>
+        <div class="reading-item">
+          <div class="reading-type"><i data-lucide="file-text"></i></div>
+          <div class="reading-content">
+            <div class="reading-title">
               <a href="https://simonwillison.net/2025/Mar/19/vibe-coding/" target="_blank">Simon Willison: "Not all AI-assisted programming is vibe coding"</a>
             </div>
             <div class="reading-meta">One of the clearest explanations of what distinguishes vibe coding from responsible AI-assisted development.</div>
+          </div>
+        </div>
+        <div class="reading-item">
+          <div class="reading-type"><i data-lucide="file-text"></i></div>
+          <div class="reading-content">
+            <div class="reading-title">
+              <a href="https://techcrunch.com/2025/03/06/a-quarter-of-startups-in-ycs-current-cohort-have-codebases-that-are-almost-entirely-ai-generated/" target="_blank">TechCrunch: "A quarter of YC startups have 95% AI-generated code"</a>
+            </div>
+            <div class="reading-meta">The Y Combinator data that made headlines—what it means for the future of startups.</div>
           </div>
         </div>
         <div class="reading-item">
@@ -1106,15 +1369,6 @@
               <a href="https://www.databricks.com/blog/passing-security-vibe-check-dangers-vibe-coding" target="_blank">Databricks: "Passing the Security Vibe Check"</a>
             </div>
             <div class="reading-meta">A technical but readable analysis of security vulnerabilities in vibe-coded applications.</div>
-          </div>
-        </div>
-        <div class="reading-item">
-          <div class="reading-type"><i data-lucide="scale"></i></div>
-          <div class="reading-content">
-            <div class="reading-title">
-              <a href="https://www.lawfaremedia.org/article/when-the-vibe-are-off--the-security-risks-of-ai-generated-code" target="_blank">Lawfare: "When the Vibes Are Off"</a>
-            </div>
-            <div class="reading-meta">A policy-oriented perspective on vibe coding and regulatory implications.</div>
           </div>
         </div>
       </div>

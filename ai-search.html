@@ -1,0 +1,954 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI-Powered Search—Answer Engines, Deep Research, and When to Just Google It | AI 101</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-brand">
+        <span class="nav-badge">AI 101</span>
+        <span class="nav-title">A Self-Paced Guide to AI in Medicine</span>
+      </a>
+      <button class="nav-toggle" aria-label="Toggle menu">
+        <i data-lucide="menu"></i>
+      </button>
+      <div class="nav-links">
+        <a href="index.html" class="nav-link">Topics</a>
+        <!-- <a href="resources.html" class="nav-link">Resources</a> -->
+        <a href="about.html" class="nav-link">About</a>
+        <a href="contribute.html" class="nav-link">Contribute</a>
+        <div id="deployment-1fa153eb-d95d-460c-9711-c41a3f103961" class="nav-chatbot"></div>
+      </div>
+    </div>
+  </nav>
+
+  <main class="main">
+    <article class="content content-wide">
+
+      <header class="unit-header">
+        <span class="unit-label phase-2">USING AI</span>
+        <h1 class="unit-title">AI-Powered Search</h1>
+        <p class="unit-subtitle">
+          Answer engines, deep research, and knowing when to just Google it—a practical
+          guide to the new landscape of finding information.
+        </p>
+        <div class="unit-meta">
+          <span class="unit-meta-item">
+            <i data-lucide="clock"></i>
+            ~30 min read
+          </span>
+          <span class="unit-meta-item">
+            <i data-lucide="zap"></i>
+            Practical guide
+          </span>
+        </div>
+      </header>
+
+      <div class="callout callout-tip" style="border-left-color: #16a34a; background: #f0fdf4;">
+        <div class="callout-title" style="color: #16a34a;">Prioritize This!</div>
+        <p>
+          If you take one thing from this topic: <strong>Match the tool to the task.</strong>
+          Use Google for local info and quick facts. Use Perplexity for synthesized answers
+          with citations. Use Deep Research for comprehensive literature review. None of
+          them replace your clinical judgment—they accelerate your access to information.
+        </p>
+      </div>
+
+      <!-- Introduction -->
+      <h2>Introduction: Search Has Split Into Three Lanes</h2>
+
+      <p>
+        For 25 years, "searching the internet" meant one thing: Google. Type keywords,
+        scan blue links, click through to find what you need. That model is fragmenting
+        rapidly, and the implications for how clinicians find information are profound.
+      </p>
+
+      <p>
+        Consider this scenario: A patient asks about a supplement they saw promoted on
+        social media for "reducing inflammation." In the old model, you'd Google it, wade
+        through sponsored results, scan a few pages, and piece together an answer. Now you
+        have options: ask Perplexity for a synthesized answer with citations, use ChatGPT's
+        deep research to get a comprehensive report, or check if Google's AI Overview gives
+        you what you need instantly.
+      </p>
+
+      <p>
+        In 2025, you have three distinct approaches to finding information online:
+      </p>
+
+      <ul>
+        <li><strong>Traditional search</strong> (Google, Bing): Returns links for you to explore—still dominant with 89.7% market share</li>
+        <li><strong>Answer engines</strong> (Perplexity, Google AI Overviews): Synthesize information and give you answers with citations</li>
+        <li><strong>Deep research</strong> (ChatGPT, Claude, Gemini, Perplexity Pro): Spend minutes autonomously researching, then deliver comprehensive reports</li>
+      </ul>
+
+      <p>
+        Each has different strengths. Knowing which to reach for—and when to just Google
+        it—will make you dramatically more efficient at finding the information you need.
+        This module will help you navigate this new landscape with practical guidance for
+        clinical scenarios.
+      </p>
+
+      <hr>
+
+      <!-- Part 1: Answer Engines -->
+      <h2>Part 1: Answer Engines—Perplexity and the New Search</h2>
+
+      <h3>What Perplexity Is</h3>
+
+      <p>
+        <a href="https://perplexity.ai" target="_blank">Perplexity</a> calls itself an
+        "answer engine" rather than a search engine—and the distinction matters. Instead
+        of returning a page of links for you to explore, it synthesizes information from
+        multiple sources and gives you a direct answer with inline citations.
+      </p>
+
+      <p>
+        Ask Perplexity "What are the current first-line treatments for community-acquired
+        pneumonia?" and you get a structured response citing UpToDate, IDSA guidelines,
+        and recent literature—not ten blue links to sift through. Every factual claim
+        includes a numbered citation you can click to verify.
+      </p>
+
+      <p>
+        The growth has been remarkable: Perplexity now handles 780 million monthly queries,
+        up from 230 million just a year ago. With a $14 billion valuation and 15-30 million
+        active monthly users, it's become a serious alternative to traditional search—particularly
+        for research-oriented tasks.
+      </p>
+
+      <h3>How It Works</h3>
+
+      <p>
+        Perplexity combines real-time web search with large language models. When you
+        ask a question:
+      </p>
+
+      <ol>
+        <li>It searches the web for relevant sources (often 5-15 for quick search, many more for Pro)</li>
+        <li>It reads and processes those sources, extracting relevant information</li>
+        <li>It synthesizes an answer, citing each claim with numbered references</li>
+        <li>It suggests follow-up questions based on related topics</li>
+      </ol>
+
+      <p>
+        The result is conversational research. You can ask follow-ups, refine your
+        question, and drill deeper—all while seeing exactly where the information
+        comes from. Unlike traditional search, where you're doing the synthesis mentally
+        as you click through links, Perplexity does that cognitive work for you.
+      </p>
+
+      <p>
+        This shift matters because it changes the skill required. Instead of crafting
+        keyword queries and evaluating source credibility from snippets, you're crafting
+        natural language questions and evaluating whether the synthesis is accurate. The
+        literacy required is different—not necessarily easier, but different.
+      </p>
+
+      <h3>Quick Search vs. Pro Search</h3>
+
+      <p>
+        Perplexity offers two modes:
+      </p>
+
+      <div class="comparison-table">
+        <table>
+          <thead>
+            <tr>
+              <th>Quick Search</th>
+              <th>Pro Search</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Fast (~1-2 seconds)</td>
+              <td>Thorough (~30-60 seconds)</td>
+            </tr>
+            <tr>
+              <td>Searches a few sources</td>
+              <td>Searches dozens of sources</td>
+            </tr>
+            <tr>
+              <td>Best for simple questions</td>
+              <td>Best for complex research</td>
+            </tr>
+            <tr>
+              <td>Unlimited (free tier)</td>
+              <td>5/day free, 300/month with Pro ($20/mo)</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>
+        For quick factual questions, Quick Search is fine. For anything requiring
+        synthesis across multiple sources—literature review, differential diagnosis
+        research, guideline comparisons—Pro Search is worth the wait.
+      </p>
+
+      <h3>Perplexity for Clinical Research</h3>
+
+      <p>
+        Perplexity is particularly useful for clinicians when you need to:
+      </p>
+
+      <ul>
+        <li><strong>Stay current:</strong> "What's new in GLP-1 agonist research in 2025?"</li>
+        <li><strong>Find guidelines:</strong> "Current AHA recommendations for anticoagulation in AFib"</li>
+        <li><strong>Research patient questions:</strong> "Safety of turmeric supplements with blood thinners"</li>
+        <li><strong>Explore differentials:</strong> "Causes of elevated ferritin with normal iron studies"</li>
+        <li><strong>Find grey literature:</strong> Institute reports, white papers, professional society statements</li>
+        <li><strong>Compare treatments:</strong> "Head-to-head trials comparing SGLT2 inhibitors"</li>
+      </ul>
+
+      <p>
+        The University of Michigan Library specifically recommends Perplexity for finding
+        current grey literature—think tank reports, institute white papers, professional
+        society statements—that traditional academic databases often miss. It's also useful
+        for tracking down peer-reviewed articles as a starting point for exploration, though
+        it can't access full text behind paywalls.
+      </p>
+
+      <div class="callout callout-info">
+        <div class="callout-title">Academic Sources</div>
+        <p class="mb-0">
+          Perplexity can search academic literature specifically. Toggle the "Academic"
+          focus to prioritize peer-reviewed sources. It won't replace PubMed for systematic
+          searches, but it's excellent for quick literature exploration. For dedicated
+          academic search, also consider <a href="https://consensus.app" target="_blank">Consensus</a>
+          (academic papers only) or <a href="https://elicit.com" target="_blank">Elicit</a>
+          (AI research assistant for literature review).
+        </p>
+      </div>
+
+      <h3>Practical Examples</h3>
+
+      <p>Here's how Perplexity handles real clinical queries:</p>
+
+      <div class="prompt-examples">
+        <div class="prompt-example good">
+          <div class="prompt-label"><i data-lucide="search"></i> Example Query</div>
+          <p>
+            "What is the current evidence for using metformin in prediabetes? Include
+            recent studies and guideline recommendations."
+          </p>
+        </div>
+      </div>
+
+      <p>
+        Perplexity returns a structured response covering the DPP trial results, ADA
+        guideline recommendations, recent meta-analyses on cardiovascular outcomes,
+        and emerging research on metformin's effects beyond glucose—each claim with
+        a citation. You can then ask follow-ups: "What about in patients over 65?"
+        or "Any concerns with renal function?"
+      </p>
+
+      <p>
+        Compare this to Google, where the same query returns a mix of Mayo Clinic
+        patient information, sponsored pharmacy results, and news articles—requiring
+        you to click through multiple sources to piece together the same information.
+      </p>
+
+      <h3>Perplexity's Limitations</h3>
+
+      <p>
+        Despite its strengths, Perplexity has real limitations that matter for clinical use:
+      </p>
+
+      <ul>
+        <li><strong>Still hallucinates:</strong> A 2025 Wordstream study found a 13% error rate
+        (better than Google AI Overviews at 26%, but not zero). That's roughly 1 in 8 responses
+        containing some inaccuracy.</li>
+        <li><strong>Source quality varies:</strong> It sometimes cites sources that plagiarize
+        other articles, or relies on outdated information. One analysis found Perplexity
+        occasionally citing the same underlying text multiple times through different websites,
+        creating an illusion of corroboration.</li>
+        <li><strong>Struggles with structured data:</strong> Restaurant hours, local business
+        info, real-time schedules—Google is still better. Ask Perplexity for the nearest
+        open pharmacy and you'll often get a generic answer rather than actual local results.</li>
+        <li><strong>Can't access paywalled content:</strong> Won't see full text of most journal
+        articles without institutional access. It can find that a study exists and summarize
+        the abstract, but can't read the full methodology or results sections.</li>
+        <li><strong>Time-sensitive information:</strong> For rapidly evolving topics, Perplexity
+        sometimes uses outdated or less trustworthy sources, particularly when recent high-quality
+        sources haven't been indexed yet.</li>
+      </ul>
+
+      <p>
+        <strong>Always verify important clinical information against primary sources.</strong>
+        Use Perplexity to find those sources quickly, not to replace reading them. The citations
+        are the feature—click them, verify them, and use your clinical judgment to assess
+        whether the synthesis accurately represents what the sources actually say.
+      </p>
+
+      <hr>
+
+      <!-- Part 2: Google AI Overviews -->
+      <h2>Part 2: Google AI Overviews—AI Meets Traditional Search</h2>
+
+      <h3>What Changed</h3>
+
+      <p>
+        Google hasn't ceded search to Perplexity. Instead, it's added AI Overviews—AI-generated
+        summaries that appear at the top of search results for many queries. These use
+        Google's Gemini model to synthesize information from multiple sources, and they're
+        now rolling out to over a billion users globally.
+      </p>
+
+      <p>
+        Search for "symptoms of pulmonary embolism" and you'll see an AI-generated
+        summary before the traditional blue links—covering the classic presentation,
+        risk factors, and when to seek emergency care. Google is trying to give you the
+        best of both worlds: synthesized answers plus the ability to explore sources
+        through the traditional link-based interface below.
+      </p>
+
+      <p>
+        This represents Google's acknowledgment that the search paradigm is shifting.
+        Users increasingly want answers, not just links. But Google's approach is
+        additive—AI Overviews enhance traditional search rather than replacing it.
+        The blue links, ads, Maps integration, and vertical search features all remain.
+      </p>
+
+      <h3>How AI Overviews Compare to Perplexity</h3>
+
+      <div class="comparison-table">
+        <table>
+          <thead>
+            <tr>
+              <th>Feature</th>
+              <th>Perplexity</th>
+              <th>Google AI Overviews</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Speed</td>
+              <td>1-2 seconds</td>
+              <td>Near-instant (~0.5 sec)</td>
+            </tr>
+            <tr>
+              <td>Citations</td>
+              <td>Inline, every claim</td>
+              <td>Less clear, sources below</td>
+            </tr>
+            <tr>
+              <td>Follow-up questions</td>
+              <td>Conversational</td>
+              <td>New search required</td>
+            </tr>
+            <tr>
+              <td>Local/structured data</td>
+              <td>Weak</td>
+              <td>Excellent (Maps, Flights, etc.)</td>
+            </tr>
+            <tr>
+              <td>Error rate (2025 studies)</td>
+              <td>~13%</td>
+              <td>~26%</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>
+        The key insight: Google AI Overviews are better integrated with Google's ecosystem
+        (Maps, Flights, Shopping, Calendar), while Perplexity is better for pure research
+        and synthesis. Google is faster and more seamless; Perplexity is more thorough and
+        better cited.
+      </p>
+
+      <h3>The Accuracy Problem</h3>
+
+      <p>
+        The higher error rate for Google AI Overviews (26% vs. Perplexity's 13% in one study)
+        deserves attention. Google's AI Overviews are optimized for speed and integration,
+        not deep research. They can be confidently wrong in ways that are hard to detect
+        without clicking through to sources.
+      </p>
+
+      <p>
+        For medical queries specifically, Google has implemented additional safeguards—AI
+        Overviews for health topics often include disclaimers and may link directly to
+        authoritative sources like Mayo Clinic or CDC. But these safeguards aren't perfect,
+        and the convenience of a quick answer can discourage the verification that clinical
+        questions demand.
+      </p>
+
+      <h3>When Google Still Wins</h3>
+
+      <p>
+        Despite all the AI advances, traditional Google search remains better for:
+      </p>
+
+      <ul>
+        <li><strong>Local information:</strong> "Pharmacy near me open now"—Google's Maps
+        integration with real-time hours is unmatched</li>
+        <li><strong>Real-time data:</strong> Flight status, stock prices, sports scores—structured
+        data that updates continuously</li>
+        <li><strong>Navigation:</strong> Directions, business hours, contact info—tap to call,
+        tap to navigate</li>
+        <li><strong>Shopping:</strong> Price comparisons, product availability, reviews—vertical
+        search with purchase intent</li>
+        <li><strong>Specific websites:</strong> When you need a particular site, not a summary—
+        "UpToDate atrial fibrillation" gets you there faster than asking for a summary</li>
+        <li><strong>Images and videos:</strong> Finding specific visual content, medical imaging
+        examples, procedure videos</li>
+      </ul>
+
+      <p>
+        The rule of thumb: if you need to <em>do something</em> (book, buy, navigate, call),
+        use Google. If you need to <em>understand something</em>, consider Perplexity. If you
+        need to <em>understand something comprehensively</em>, use deep research.
+      </p>
+
+      <hr>
+
+      <!-- Part 3: Deep Research -->
+      <h2>Part 3: Deep Research—When You Need a Full Investigation</h2>
+
+      <h3>What Deep Research Is</h3>
+
+      <p>
+        Both Perplexity and the major chat models (ChatGPT, Claude, Gemini) now offer
+        "deep research" modes that go far beyond quick searches. These features autonomously
+        research a topic for minutes—reading dozens or hundreds of sources—then deliver
+        comprehensive reports with citations throughout.
+      </p>
+
+      <p>
+        Think of it as having a research assistant who spends 15-30 minutes pulling
+        together everything relevant on a topic, synthesizing it, and presenting it
+        in a structured format. The AI iteratively searches, reads documents, reasons
+        about what it's learned, identifies gaps, searches again, and refines its
+        understanding—mimicking how a human expert might research an unfamiliar topic.
+      </p>
+
+      <p>
+        Perplexity's deep research, for example, achieved a 93.9% accuracy score on
+        the SimpleQA benchmark—far exceeding standard search or quick responses. For
+        complex topics that require synthesizing multiple perspectives, this thoroughness
+        matters.
+      </p>
+
+      <h3>When Deep Research Makes Sense</h3>
+
+      <p>
+        Deep research isn't always the right choice—it takes minutes instead of seconds.
+        But for certain tasks, the investment pays off:
+      </p>
+
+      <ul>
+        <li><strong>Preparing presentations:</strong> Grand rounds, case conferences, educational talks</li>
+        <li><strong>Complex clinical questions:</strong> When you need multiple perspectives and comprehensive coverage</li>
+        <li><strong>Staying current on a topic:</strong> "What's changed in heart failure management in the past year?"</li>
+        <li><strong>Understanding controversies:</strong> When expert opinion is divided and you need to understand why</li>
+        <li><strong>Writing or research:</strong> Review articles, grant backgrounds, policy documents</li>
+      </ul>
+
+      <h3>How the Major Players Compare</h3>
+
+      <div class="comparison-table">
+        <table>
+          <thead>
+            <tr>
+              <th>Feature</th>
+              <th>ChatGPT Deep Research</th>
+              <th>Claude Web Search</th>
+              <th>Gemini Deep Research</th>
+              <th>Perplexity Deep Research</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Research time</td>
+              <td>2-5 minutes</td>
+              <td>1-3 minutes</td>
+              <td>10-15 minutes</td>
+              <td>2-4 minutes</td>
+            </tr>
+            <tr>
+              <td>Sources searched</td>
+              <td>~25-50</td>
+              <td>~250-400</td>
+              <td>~60-100</td>
+              <td>~50-100</td>
+            </tr>
+            <tr>
+              <td>Output length</td>
+              <td>Long (20-40 pages)</td>
+              <td>Moderate (5-10 pages)</td>
+              <td>Very long (40-50 pages)</td>
+              <td>Moderate (5-15 pages)</td>
+            </tr>
+            <tr>
+              <td>Strength</td>
+              <td>Detailed, specific recommendations</td>
+              <td>Synthesized insights, quality over quantity</td>
+              <td>Comprehensive, integrates Google ecosystem</td>
+              <td>Fast, well-cited</td>
+            </tr>
+            <tr>
+              <td>Weakness</td>
+              <td>Limited access (30/month for Plus)</td>
+              <td>Shorter reports</td>
+              <td>Verbose, slow</td>
+              <td>Can feel less thorough</td>
+            </tr>
+            <tr>
+              <td>Access</td>
+              <td>Plus/Pro subscription</td>
+              <td>Pro subscription</td>
+              <td>Advanced subscription</td>
+              <td>Pro subscription</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>Enabling Search in the Big Three</h3>
+
+      <p>
+        If you're using ChatGPT, Claude, or Gemini, here's how to make them search the web:
+      </p>
+
+      <div class="workflow-phases">
+        <div class="workflow-phase">
+          <h4><i data-lucide="message-circle"></i> ChatGPT</h4>
+          <p>
+            Web search is automatic for many queries. For deep research, look for the
+            "Deep Research" option when starting a new chat, or explicitly ask:
+            "Search the web and give me a comprehensive report on X." Requires Plus ($20/mo)
+            for full access; free users get limited searches.
+          </p>
+        </div>
+        <div class="workflow-phase">
+          <h4><i data-lucide="sparkles"></i> Claude</h4>
+          <p>
+            Claude can search the web when you ask it to. Say "Search for recent research on X"
+            or enable web search in your conversation. The feature synthesizes across many
+            sources and cites them. Requires Pro subscription ($20/mo).
+          </p>
+        </div>
+        <div class="workflow-phase">
+          <h4><i data-lucide="search"></i> Gemini</h4>
+          <p>
+            Gemini searches Google automatically for relevant queries. For Deep Research,
+            select the feature from the model dropdown (requires Advanced subscription at $20/mo).
+            Deep Research can also access your Gmail, Drive, and Docs for personalized research.
+          </p>
+        </div>
+      </div>
+
+      <h3>With Search vs. Without Search</h3>
+
+      <p>
+        Understanding when models are searching matters for interpreting their answers.
+        By default, ChatGPT, Claude, and Gemini respond from their training data—they're
+        not searching the web unless you specifically ask them to or enable search features.
+      </p>
+
+      <div class="comparison-table">
+        <table>
+          <thead>
+            <tr>
+              <th>Without Web Search</th>
+              <th>With Web Search</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Limited to training data (knowledge cutoff)</td>
+              <td>Access to current information</td>
+            </tr>
+            <tr>
+              <td>Can't cite specific sources</td>
+              <td>Provides citations to verify</td>
+            </tr>
+            <tr>
+              <td>May be outdated on recent topics</td>
+              <td>Finds recent publications and news</td>
+            </tr>
+            <tr>
+              <td>Faster responses</td>
+              <td>Takes longer but more comprehensive</td>
+            </tr>
+            <tr>
+              <td>Good for reasoning, writing, coding</td>
+              <td>Essential for current events, research</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>
+        For clinical questions where currency matters—new guidelines, recent studies,
+        drug interactions—always ensure search is enabled or use a dedicated search tool.
+        A question like "What's the current recommendation for aspirin in primary prevention?"
+        will get different answers depending on whether the model is searching or relying
+        on potentially outdated training data.
+      </p>
+
+      <div class="callout callout-warning">
+        <div class="callout-title">Know What You're Getting</div>
+        <p class="mb-0">
+          When you ask ChatGPT or Claude a clinical question, check whether they're
+          citing sources. If there are no citations, the answer is coming from training
+          data, not current search. For anything where guidelines or evidence have
+          changed recently, that distinction matters.
+        </p>
+      </div>
+
+      <hr>
+
+      <!-- Part 4: Practical Workflow -->
+      <h2>Part 4: Choosing the Right Tool</h2>
+
+      <h3>A Decision Framework</h3>
+
+      <div class="key-points-grid">
+        <div class="key-point-card">
+          <h4>Use Google When...</h4>
+          <ul>
+            <li>You need local information (pharmacy, restaurant, directions)</li>
+            <li>You want to find a specific website</li>
+            <li>You need real-time data (flights, weather, scores)</li>
+            <li>You want to buy something</li>
+            <li>You need images or videos</li>
+          </ul>
+        </div>
+        <div class="key-point-card">
+          <h4>Use Perplexity When...</h4>
+          <ul>
+            <li>You want a synthesized answer, not links</li>
+            <li>You need citations for each claim</li>
+            <li>You're doing quick literature exploration</li>
+            <li>You want to ask follow-up questions</li>
+            <li>You're researching a clinical question</li>
+          </ul>
+        </div>
+        <div class="key-point-card">
+          <h4>Use Deep Research When...</h4>
+          <ul>
+            <li>You need comprehensive coverage of a topic</li>
+            <li>You're preparing a presentation or report</li>
+            <li>You want multiple perspectives synthesized</li>
+            <li>You have 5-15 minutes for the AI to work</li>
+            <li>The topic is complex and multi-faceted</li>
+          </ul>
+        </div>
+        <div class="key-point-card">
+          <h4>Use PubMed/Specialized Databases When...</h4>
+          <ul>
+            <li>You need systematic, reproducible searches</li>
+            <li>You're writing for peer review</li>
+            <li>You need specific study types (RCTs, meta-analyses)</li>
+            <li>Comprehensiveness is critical</li>
+            <li>You need full-text access through your institution</li>
+          </ul>
+        </div>
+      </div>
+
+      <h3>Clinical Scenarios</h3>
+
+      <p>Here's how this plays out in practice:</p>
+
+      <div class="scenario-list">
+        <div class="scenario">
+          <strong>Scenario:</strong> Patient asks about a supplement they saw on TikTok<br>
+          <strong>Best tool:</strong> Perplexity Quick Search<br>
+          <strong>Why:</strong> Fast synthesis with citations you can share. Ask: "What is the
+          evidence for [supplement] for [claimed benefit]? Include any safety concerns or
+          drug interactions."
+        </div>
+        <div class="scenario">
+          <strong>Scenario:</strong> Preparing a grand rounds presentation on new diabetes medications<br>
+          <strong>Best tool:</strong> ChatGPT or Gemini Deep Research<br>
+          <strong>Why:</strong> Comprehensive coverage, multiple sources, structured output.
+          Request: "Create a comprehensive overview of GLP-1 agonists and SGLT2 inhibitors,
+          including mechanism, major trials, current guidelines, and emerging applications."
+        </div>
+        <div class="scenario">
+          <strong>Scenario:</strong> Finding the nearest 24-hour pharmacy for a patient<br>
+          <strong>Best tool:</strong> Google<br>
+          <strong>Why:</strong> Local data, maps integration, real-time hours. No AI synthesis
+          needed—you need current, local, actionable information.
+        </div>
+        <div class="scenario">
+          <strong>Scenario:</strong> Systematic review for a research paper<br>
+          <strong>Best tool:</strong> PubMed + traditional databases<br>
+          <strong>Why:</strong> Reproducible, comprehensive, meets publication standards.
+          AI search can help identify keywords and scope, but formal systematic reviews
+          require documented, reproducible search strategies.
+        </div>
+        <div class="scenario">
+          <strong>Scenario:</strong> Quick refresher on a condition before seeing a patient<br>
+          <strong>Best tool:</strong> Perplexity Pro Search or <a href="clinical-decision-support.html">CDS tools</a><br>
+          <strong>Why:</strong> Authoritative summary with citations in under a minute.
+          For established conditions, UpToDate or DynaMed may still be faster and more reliable.
+        </div>
+        <div class="scenario">
+          <strong>Scenario:</strong> Patient brings in printout from ChatGPT about their condition<br>
+          <strong>Best tool:</strong> Perplexity (Academic focus) to verify<br>
+          <strong>Why:</strong> Quickly verify claims with current literature. Ask: "What does
+          current evidence say about [specific claim from patient's printout]?"
+        </div>
+        <div class="scenario">
+          <strong>Scenario:</strong> Need to understand a new drug you haven't prescribed before<br>
+          <strong>Best tool:</strong> Start with Perplexity, verify with official prescribing information<br>
+          <strong>Why:</strong> Perplexity can give you a quick orientation, but always verify
+          dosing, contraindications, and interactions against official FDA labeling.
+        </div>
+      </div>
+
+      <hr>
+
+      <!-- Part 5: Verification -->
+      <h2>Part 5: Verification—The Non-Negotiable Step</h2>
+
+      <p>
+        No matter which tool you use, verification remains essential. AI search tools
+        make finding information faster, but they don't make it automatically accurate.
+        The speed and convenience can actually make verification more important, not less—
+        because the barrier to acting on unverified information has never been lower.
+      </p>
+
+      <h3>Why Verification Still Matters</h3>
+
+      <p>
+        A 2025 Frontiers in Digital Health study compared ChatGPT, Gemini, Copilot, Claude,
+        and Perplexity on clinical practice guideline questions for lumbosacral radicular pain.
+        The finding: <strong>no AI chatbot provided advice in absolute agreement with CPGs.</strong>
+        All had errors, omissions, or outdated information.
+      </p>
+
+      <p>
+        This finding is consistent across studies. AI tools can synthesize information
+        effectively, but they lack the clinical context to know when guidelines don't apply,
+        when patient-specific factors change the calculus, or when the latest evidence hasn't
+        yet been incorporated into their sources.
+      </p>
+
+      <p>
+        This doesn't mean the tools aren't useful—they dramatically accelerate finding
+        relevant information. But they're research accelerants, not replacements for
+        clinical judgment. Use them to find information faster, then apply your expertise
+        to evaluate and contextualize that information.
+      </p>
+
+      <h3>Verification Checklist</h3>
+
+      <ul>
+        <li><strong>Check the citations:</strong> Click through to source documents. Are they saying
+        what the AI claims? AI synthesis can subtly distort meaning, especially for nuanced recommendations.</li>
+        <li><strong>Check the dates:</strong> Is this based on current guidelines or outdated sources?
+        A 2019 source might predate important trials that changed practice.</li>
+        <li><strong>Cross-reference:</strong> Does UpToDate, DynaMed, or another authoritative source agree?
+        If there's disagreement, investigate why.</li>
+        <li><strong>Consider the source quality:</strong> Peer-reviewed journal vs. institutional website vs.
+        blog post vs. forum? AI search tools don't always distinguish quality reliably.</li>
+        <li><strong>Trust your training:</strong> Does this align with what you know? If not, investigate further.
+        Sometimes the AI is right and your knowledge is outdated—but sometimes the AI is wrong.</li>
+        <li><strong>Consider the patient context:</strong> Even accurate general information may not apply
+        to your specific patient's situation, comorbidities, or preferences.</li>
+      </ul>
+
+      <div class="callout callout-warning">
+        <div class="callout-title">For Patient-Facing Information</div>
+        <p class="mb-0">
+          If you're going to share AI-generated information with patients or use it for
+          clinical decisions, <strong>always verify against authoritative sources first.</strong>
+          The 13-26% error rates in current studies are too high for unverified clinical use.
+          Patients trust that you've vetted the information you share—make sure that trust is warranted.
+        </p>
+      </div>
+
+      <h3>Building a Verification Habit</h3>
+
+      <p>
+        The challenge isn't knowing that verification matters—it's actually doing it consistently
+        when the AI-generated answer seems reasonable and you're pressed for time. Some strategies:
+      </p>
+
+      <ul>
+        <li><strong>Make it automatic:</strong> Before acting on any clinical information from AI,
+        open UpToDate or your preferred authoritative source in another tab</li>
+        <li><strong>Verify the key claims:</strong> You don't need to verify every sentence—focus on
+        the specific recommendations that would change your management</li>
+        <li><strong>Be especially careful with:</strong> Dosing, contraindications, drug interactions,
+        and anything that differs from your training or usual practice</li>
+        <li><strong>Note the limitations:</strong> When sharing information with patients, acknowledge
+        that you're providing general information and their specific situation may differ</li>
+      </ul>
+
+      <hr>
+
+      <!-- Resources -->
+      <h2>Resources</h2>
+
+      <h3>Essential Reading</h3>
+
+      <div class="reading-list">
+        <div class="reading-item">
+          <div class="reading-type"><i data-lucide="file-text"></i></div>
+          <div class="reading-content">
+            <div class="reading-title">
+              <a href="https://www.tomsguide.com/ai/we-tested-google-ai-overview-vs-perplexity-to-find-the-search-champion-the-results-are-shocking" target="_blank">Tom's Guide: "Perplexity vs Google AI Overview—The Results Are Shocking"</a>
+            </div>
+            <div class="reading-meta">Head-to-head comparison with specific test queries and accuracy analysis.</div>
+          </div>
+        </div>
+        <div class="reading-item">
+          <div class="reading-type"><i data-lucide="file-text"></i></div>
+          <div class="reading-content">
+            <div class="reading-title">
+              <a href="https://brightinventions.pl/blog/ai-deep-research-comparison/" target="_blank">Bright Inventions: "Deep Research AI Tools Comparison"</a>
+            </div>
+            <div class="reading-meta">Detailed comparison of ChatGPT, Claude, Gemini, Grok, and Perplexity deep research features.</div>
+          </div>
+        </div>
+        <div class="reading-item">
+          <div class="reading-type"><i data-lucide="file-text"></i></div>
+          <div class="reading-content">
+            <div class="reading-title">
+              <a href="https://www.firstaimovers.com/p/perplexity-ai-vs-google-2025-complete-research-guide" target="_blank">First AI Movers: "Perplexity AI vs Google 2025: Complete Research Guide"</a>
+            </div>
+            <div class="reading-meta">Comprehensive guide to choosing between traditional and AI-powered search.</div>
+          </div>
+        </div>
+        <div class="reading-item">
+          <div class="reading-type"><i data-lucide="file-text"></i></div>
+          <div class="reading-content">
+            <div class="reading-title">
+              <a href="https://www.frontiersin.org/journals/digital-health/articles/10.3389/fdgth.2025.1574287/full" target="_blank">Frontiers: "Accuracy of AI Chatbots Against Clinical Practice Guidelines"</a>
+            </div>
+            <div class="reading-meta">2025 study comparing ChatGPT, Gemini, Copilot, Claude, and Perplexity on clinical accuracy.</div>
+          </div>
+        </div>
+        <div class="reading-item">
+          <div class="reading-type"><i data-lucide="file-text"></i></div>
+          <div class="reading-content">
+            <div class="reading-title">
+              <a href="https://guides.lib.umich.edu/c.php?g=746493&p=9938599" target="_blank">University of Michigan Library: "Searching with AI Tools"</a>
+            </div>
+            <div class="reading-meta">Academic librarian guidance on using Perplexity and other AI tools for research.</div>
+          </div>
+        </div>
+      </div>
+
+      <h3>Tools to Try</h3>
+
+      <div class="concepts-grid">
+        <div class="concept-card">
+          <div class="concept-icon"><i data-lucide="search"></i></div>
+          <div class="concept-name">Perplexity</div>
+          <div class="concept-desc"><a href="https://perplexity.ai" target="_blank">perplexity.ai</a> — Answer engine with citations</div>
+        </div>
+        <div class="concept-card">
+          <div class="concept-icon"><i data-lucide="book-open"></i></div>
+          <div class="concept-name">Consensus</div>
+          <div class="concept-desc"><a href="https://consensus.app" target="_blank">consensus.app</a> — AI search for academic papers only</div>
+        </div>
+        <div class="concept-card">
+          <div class="concept-icon"><i data-lucide="search"></i></div>
+          <div class="concept-name">Elicit</div>
+          <div class="concept-desc"><a href="https://elicit.com" target="_blank">elicit.com</a> — AI research assistant for literature review</div>
+        </div>
+        <div class="concept-card">
+          <div class="concept-icon"><i data-lucide="globe"></i></div>
+          <div class="concept-name">You.com</div>
+          <div class="concept-desc"><a href="https://you.com" target="_blank">you.com</a> — AI search with multiple modes</div>
+        </div>
+      </div>
+
+      <h3>Podcasts & Videos</h3>
+
+      <div class="reading-list">
+        <div class="reading-item">
+          <div class="reading-type"><i data-lucide="headphones"></i></div>
+          <div class="reading-content">
+            <div class="reading-title">
+              <a href="https://lexfridman.com/aravind-srinivas/" target="_blank">Lex Fridman Podcast #434: Aravind Srinivas on Future of AI, Search & the Internet</a>
+            </div>
+            <div class="reading-meta">3-hour deep dive with Perplexity's CEO on the future of search and knowledge.</div>
+          </div>
+        </div>
+        <div class="reading-item">
+          <div class="reading-type"><i data-lucide="headphones"></i></div>
+          <div class="reading-content">
+            <div class="reading-title">Hard Fork (NYT): "Is This the End of Google Search?"</div>
+            <div class="reading-meta">Kevin Roose and Casey Newton discuss the AI search disruption.</div>
+          </div>
+        </div>
+        <div class="reading-item">
+          <div class="reading-type"><i data-lucide="video"></i></div>
+          <div class="reading-content">
+            <div class="reading-title">
+              <a href="https://www.perplexity.ai/hub/blog/introducing-perplexity-deep-research" target="_blank">Perplexity: Introducing Deep Research</a>
+            </div>
+            <div class="reading-meta">Official introduction to Perplexity's deep research feature.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Learning Objectives -->
+      <div class="objectives phase-2">
+        <h4 class="objectives-title">Learning Objectives</h4>
+        <ul class="objectives-list">
+          <li>Distinguish between traditional search, answer engines, and deep research tools</li>
+          <li>Use Perplexity effectively for clinical research questions</li>
+          <li>Enable and use web search in ChatGPT, Claude, and Gemini</li>
+          <li>Choose the appropriate search tool for different clinical scenarios</li>
+          <li>Verify AI-generated search results before clinical use</li>
+        </ul>
+      </div>
+
+      <!-- Page Navigation -->
+      <nav class="page-nav">
+        <a href="ambient-ai.html" class="page-nav-link prev">
+          <span class="page-nav-arrow"><i data-lucide="arrow-left"></i></span>
+          <div>
+            <span class="page-nav-label">Previous</span>
+            <span class="page-nav-title">Ambient AI Tools</span>
+          </div>
+        </a>
+        <a href="image-video.html" class="page-nav-link next">
+          <span class="page-nav-arrow"><i data-lucide="arrow-right"></i></span>
+          <div>
+            <span class="page-nav-label">Next</span>
+            <span class="page-nav-title">AI Image and Video Creation</span>
+          </div>
+        </a>
+      </nav>
+
+    </article>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div><strong>AI 101</strong> · A Self-Paced Guide to AI in Medicine</div>
+      <div>v1.0 · 2025</div>
+    </div>
+  </footer>
+
+  <script>
+    lucide.createIcons();
+    const navToggle = document.querySelector('.nav-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    if (navToggle) {
+      navToggle.addEventListener('click', () => {
+        navLinks.classList.toggle('nav-open');
+      });
+    }
+  </script>
+
+  <script src="https://studio.pickaxe.co/api/embed/bundle.js" defer></script>
+
+</body>
+</html>
