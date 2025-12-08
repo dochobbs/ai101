@@ -56,6 +56,21 @@
         </p>
       </div>
 
+      <!-- Prioritize This -->
+      <div class="callout callout-tip" style="border-left-color: #16a34a; background: #f0fdf4;">
+        <div class="callout-title" style="color: #16a34a;">Prioritize This!</div>
+        <p>
+          If you take one thing from this topic: <strong>start asking about AI use without
+          judgment</strong>. Add this question to your routine: <em>"Have you looked this up
+          online or talked to any AI tools about it? I'd love to hear what you found."</em>
+        </p>
+        <p class="mb-0">
+          This simple question—asked with genuine curiosity, not suspicion—opens dialogue,
+          builds trust, and gives you insight into what your patient is thinking. Patients
+          who feel judged for using AI will hide it. Patients who feel heard will share it.
+        </p>
+      </div>
+
       <!-- Introduction -->
       <h2>Introduction: The New Reality</h2>
 
@@ -150,6 +165,44 @@
         of the time. This suggests that AI responses are reaching a level of sophistication that makes
         them credible to patients, for better or worse.
       </p>
+
+      <h3>Why Patients Trust AI—And What It Teaches Us</h3>
+
+      <p>
+        Here's an uncomfortable truth that the research reveals: <strong>AI chatbots often outperform
+        physicians in perceived empathy</strong>. A landmark
+        <a href="https://jamanetwork.com/journals/jamainternalmedicine/fullarticle/2804309" target="_blank">JAMA Internal Medicine study</a>
+        found that healthcare professionals preferred ChatGPT responses over physician responses 79% of
+        the time. Even more striking: empathetic responses were <em>9.8 times more common</em> from ChatGPT
+        (45.1%) than from physicians (4.6%).
+      </p>
+
+      <p>Why? The differences are instructive:</p>
+
+      <ul>
+        <li><strong>Length:</strong> ChatGPT responses averaged 168-245 words; physician responses averaged 17-62 words</li>
+        <li><strong>Validation:</strong> AI consistently acknowledges patient concerns before providing information</li>
+        <li><strong>Patience:</strong> AI never rushes, never seems annoyed by "obvious" questions, never makes patients feel burdensome</li>
+        <li><strong>Availability:</strong> AI is there at 2 AM when anxiety peaks, with no wait time or cost</li>
+      </ul>
+
+      <div class="callout callout-principle">
+        <div class="callout-title">The Opportunity for Providers</div>
+        <p>
+          This isn't about AI replacing physicians—it's about AI revealing what patients crave:
+          <strong>time, validation, and explanation</strong>. When a patient turns to ChatGPT, they're
+          often seeking what a rushed 18-minute visit couldn't provide.
+        </p>
+        <p>
+          The research suggests a path forward: physicians using AI to draft responses produced messages
+          that were 2-3 times longer and rated more empathetic, while reporting decreased cognitive burden.
+          AI can help us be more human, not less.
+        </p>
+        <p class="mb-0">
+          <strong>Ask yourself:</strong> When a patient brings AI research to your visit, are they
+          challenging your expertise—or showing you what they needed that they didn't get elsewhere?
+        </p>
+      </div>
 
       <h3>The Limitations Patients Don't See</h3>
 
@@ -507,8 +560,108 @@
 
       <hr>
 
-      <!-- Part 5 -->
-      <h2>Part 5: Special Populations and Considerations</h2>
+      <!-- Part 5: Creating AI Tools for Patients -->
+      <h2>Part 5: Creating AI Tools for Your Patients</h2>
+
+      <p>
+        Rather than hoping patients use general-purpose AI wisely, you can create custom AI tools
+        tailored to your practice and patients. This gives you control over the information patients
+        receive while meeting them where they are. No coding required—just the skills you've already
+        developed in this course.
+      </p>
+
+      <h3>Why Create Patient-Facing AI Tools?</h3>
+
+      <ul>
+        <li><strong>Control the information:</strong> Your custom GPT can only reference your approved materials, protocols, and guidance</li>
+        <li><strong>Reduce after-hours burden:</strong> Patients get immediate answers to routine questions without calling the on-call line</li>
+        <li><strong>Consistent messaging:</strong> Every patient gets the same accurate information, in your voice</li>
+        <li><strong>Extend your care:</strong> Patients feel supported between visits</li>
+        <li><strong>Triage appropriately:</strong> Build in guidance about when to seek urgent care vs. wait for an appointment</li>
+      </ul>
+
+      <h3>Ideas for Patient-Facing Custom GPTs</h3>
+
+      <div class="example-card">
+        <div class="example-header">
+          <span class="example-number">1</span>
+          <h4 class="example-title">Post-Procedure Care Guide</h4>
+        </div>
+        <p>Upload your post-operative instructions and create a GPT that answers patient questions about recovery:</p>
+        <ul>
+          <li>"Is this amount of bruising normal after day 3?"</li>
+          <li>"Can I shower yet?"</li>
+          <li>"When should I be concerned about pain levels?"</li>
+        </ul>
+        <p><strong>Key instruction:</strong> "Always recommend calling the office or going to the ER for fever over 101°F, signs of infection, or uncontrolled pain."</p>
+      </div>
+
+      <div class="example-card">
+        <div class="example-header">
+          <span class="example-number">2</span>
+          <h4 class="example-title">New Diagnosis Companion</h4>
+        </div>
+        <p>For patients newly diagnosed with chronic conditions (diabetes, hypertension, asthma), create a GPT loaded with your practice's educational materials:</p>
+        <ul>
+          <li>Answers questions about the condition in plain language</li>
+          <li>Explains medications you commonly prescribe</li>
+          <li>Provides lifestyle guidance consistent with your recommendations</li>
+          <li>Generates questions for patients to bring to their next visit</li>
+        </ul>
+      </div>
+
+      <div class="example-card">
+        <div class="example-header">
+          <span class="example-number">3</span>
+          <h4 class="example-title">Appointment Preparation Assistant</h4>
+        </div>
+        <p>Help patients arrive prepared:</p>
+        <ul>
+          <li>"What should I bring to my first visit?"</li>
+          <li>"How do I describe my symptoms clearly?"</li>
+          <li>"What questions should I ask about my test results?"</li>
+        </ul>
+        <p>This improves visit efficiency and patient satisfaction.</p>
+      </div>
+
+      <h3>How to Build It</h3>
+
+      <p>
+        If you've read the <a href="everyday-ai.html">Everyday Ways to Use AI</a> topic, you already
+        have the skills. The process is identical:
+      </p>
+
+      <ol>
+        <li><strong>Choose your platform:</strong> Custom GPTs (ChatGPT Plus) or Claude Projects work well. Custom GPTs can be shared via link.</li>
+        <li><strong>Write clear instructions:</strong> Define the GPT's role, what it should and shouldn't discuss, and when to recommend professional care.</li>
+        <li><strong>Upload your materials:</strong> Patient handouts, FAQs, post-procedure instructions, condition guides.</li>
+        <li><strong>Test thoroughly:</strong> Try to break it. Ask questions that should trigger safety warnings.</li>
+        <li><strong>Share with patients:</strong> Provide the link at checkout, in follow-up emails, or on your patient portal.</li>
+      </ol>
+
+      <div class="callout callout-warning">
+        <div class="callout-title">Important Considerations</div>
+        <ul class="mb-0">
+          <li><strong>Not for emergencies:</strong> Make clear in your instructions that emergencies require 911 or the ER, not a chatbot</li>
+          <li><strong>Not a replacement for care:</strong> The GPT should encourage—not replace—communication with your team</li>
+          <li><strong>Privacy:</strong> Standard ChatGPT isn't HIPAA-compliant. Instruct patients not to enter identifying information. For HIPAA-compliant options, consider <a href="https://bastiongpt.com/" target="_blank">BastionGPT</a> or enterprise solutions</li>
+          <li><strong>Review and update:</strong> Medical information changes. Schedule regular reviews of your GPT's knowledge base</li>
+        </ul>
+      </div>
+
+      <div class="callout callout-tip">
+        <div class="callout-title">Start Simple</div>
+        <p class="mb-0">
+          You don't need to build something comprehensive. Start with a single use case—like post-procedure
+          questions for one common procedure—and expand from there. A narrow, well-designed tool is more
+          useful than a broad, mediocre one.
+        </p>
+      </div>
+
+      <hr>
+
+      <!-- Part 6 -->
+      <h2>Part 6: Special Populations and Considerations</h2>
 
       <h3>Equity Considerations</h3>
 
@@ -674,30 +827,153 @@
       <hr>
 
       <!-- Resources -->
-      <h2>Resources</h2>
+      <h2>Resources for Further Learning</h2>
 
-      <h3>Key Research</h3>
+      <h3>Essential Reading</h3>
 
-      <ul>
-        <li>Ayo-Ajibola O, et al. "Characterizing the Adoption and Experiences of Users of Artificial Intelligence–Generated Health Information in the United States." <em>J Med Internet Res</em> 2024;26:e55138</li>
-        <li>"Doctor ChatGPT, Can You Help Me? The Patient's Perspective: Cross-Sectional Study." <em>J Med Internet Res</em> 2024</li>
-        <li>"Utilisation of AI-driven chatbots for perioperative health information seeking." <em>BMJ Open</em> 2025</li>
-      </ul>
+      <div class="reading-list">
+        <div class="reading-item">
+          <div class="reading-type"><i data-lucide="file-text"></i></div>
+          <div class="reading-content">
+            <div class="reading-title">
+              <a href="https://jamanetwork.com/journals/jamainternalmedicine/fullarticle/2804309" target="_blank">"Comparing Physician and AI Chatbot Responses to Patient Questions"</a>
+            </div>
+            <div class="reading-meta">JAMA Internal Medicine, 2023 · The landmark study showing ChatGPT responses were preferred 79% of the time and rated 9.8x more empathetic than physician responses.</div>
+          </div>
+        </div>
 
-      <h3>Guidelines and Frameworks</h3>
+        <div class="reading-item">
+          <div class="reading-type"><i data-lucide="file-text"></i></div>
+          <div class="reading-content">
+            <div class="reading-title">
+              <a href="https://www.statnews.com/2025/10/29/chatbots-doctors-guide-medical-appointments-questions/" target="_blank">"Doctors Need to Ask Patients About Chatbots"</a>
+            </div>
+            <div class="reading-meta">STAT News, October 2025 · Why "tell me about your use of chatbots" should become a standard question at appointments.</div>
+          </div>
+        </div>
 
-      <ul>
-        <li>World Health Organization: Ethics and Governance of Artificial Intelligence for Health</li>
-        <li>FDA: Artificial Intelligence and Machine Learning in Software as a Medical Device</li>
-        <li>NCBI Bookshelf: Chatbots in Health Care: Connecting Patients to Information</li>
-      </ul>
+        <div class="reading-item">
+          <div class="reading-type"><i data-lucide="file-text"></i></div>
+          <div class="reading-content">
+            <div class="reading-title">
+              <a href="https://www.statnews.com/2025/09/08/chatbots-patients-diagnosis-dr-google-story/" target="_blank">"The Right—and Wrong—Ways for Patients to Use Chatbots"</a>
+            </div>
+            <div class="reading-meta">STAT News, September 2025 · How chatbots are changing patient narratives: "patients aren't just arriving with facts—they're arriving with shaped, rehearsed stories."</div>
+          </div>
+        </div>
 
-      <h3>Patient-Facing Resources</h3>
+        <div class="reading-item">
+          <div class="reading-type"><i data-lucide="file-text"></i></div>
+          <div class="reading-content">
+            <div class="reading-title">
+              <a href="https://www.mountsinai.org/about/newsroom/2025/ai-chatbots-can-run-with-medical-misinformation-study-finds-highlighting-the-need-for-stronger-safeguards" target="_blank">"AI Chatbots Can Run With Medical Misinformation"</a>
+            </div>
+            <div class="reading-meta">Mount Sinai, 2025 · Study finding AI chatbots are highly vulnerable to repeating and elaborating on false medical information.</div>
+          </div>
+        </div>
 
-      <ul>
-        <li>MedlinePlus: Trusted patient health information for comparison with AI responses</li>
-        <li>OpenNotes: Research on patient access to clinical notes and AI interpretation</li>
-      </ul>
+        <div class="reading-item">
+          <div class="reading-type"><i data-lucide="file-text"></i></div>
+          <div class="reading-content">
+            <div class="reading-title">
+              <a href="https://www.washingtonpost.com/opinions/2025/10/14/ai-chatbots-health-care-diagnoses/" target="_blank">"Guidance on Using AI Chatbots for Your Health Issues"</a>
+            </div>
+            <div class="reading-meta">Washington Post, October 2025 · Patient-focused guidance you can share with your patients.</div>
+          </div>
+        </div>
+      </div>
+
+      <h3>Podcasts</h3>
+
+      <div class="reading-list">
+        <div class="reading-item">
+          <div class="reading-type"><i data-lucide="headphones"></i></div>
+          <div class="reading-content">
+            <div class="reading-title">
+              <a href="https://ai-podcast.nejm.org/" target="_blank">NEJM AI Grand Rounds</a>
+            </div>
+            <div class="reading-meta">Explores why empathy—not memorization—may become the most valuable clinical skill in the AI era. Episodes feature discussions about patient-AI interactions and the future of clinical conversations.</div>
+          </div>
+        </div>
+
+        <div class="reading-item">
+          <div class="reading-type"><i data-lucide="headphones"></i></div>
+          <div class="reading-content">
+            <div class="reading-title">
+              <a href="https://med.stanford.edu/health-compass-podcast/ai-health-care.html" target="_blank">Stanford Health Compass: AI & Health Care</a>
+            </div>
+            <div class="reading-meta">Jonathan Chen, MD, PhD and Michael Pfeffer discuss how AI is changing physician-patient interactions, including research on chatbot-assisted clinical decisions.</div>
+          </div>
+        </div>
+
+        <div class="reading-item">
+          <div class="reading-type"><i data-lucide="headphones"></i></div>
+          <div class="reading-content">
+            <div class="reading-title">
+              <a href="https://www.microsoft.com/en-us/research/podcast/the-ai-revolution-in-medicine-revisited-the-reality-of-generative-ai-in-the-clinic/" target="_blank">"The AI Revolution in Medicine, Revisited"</a>
+            </div>
+            <div class="reading-meta">Microsoft Research Podcast · Dr. Murray from UCSF discusses AI's integration into clinical workflows, including patient messaging and empathetic communication.</div>
+          </div>
+        </div>
+
+        <div class="reading-item">
+          <div class="reading-type"><i data-lucide="headphones"></i></div>
+          <div class="reading-content">
+            <div class="reading-title">
+              <a href="https://podcasts.apple.com/us/podcast/the-heart-of-healthcare-a-digital-health-podcast/id1575404727" target="_blank">The Heart of Healthcare</a>
+            </div>
+            <div class="reading-meta">Digital health podcast exploring how AI is reshaping doctor-patient interactions and the future of healthcare communication.</div>
+          </div>
+        </div>
+      </div>
+
+      <h3>For Your Patients</h3>
+
+      <div class="reading-list">
+        <div class="reading-item">
+          <div class="reading-type"><i data-lucide="users"></i></div>
+          <div class="reading-content">
+            <div class="reading-title">
+              <a href="https://medlineplus.gov/" target="_blank">MedlinePlus</a>
+            </div>
+            <div class="reading-meta">NIH's trusted patient health information—recommend as a verification source for AI-generated health claims.</div>
+          </div>
+        </div>
+
+        <div class="reading-item">
+          <div class="reading-type"><i data-lucide="users"></i></div>
+          <div class="reading-content">
+            <div class="reading-title">
+              <a href="https://www.opennotes.org/" target="_blank">OpenNotes</a>
+            </div>
+            <div class="reading-meta">Research and resources on patient access to clinical notes—context for discussions about AI interpretation of medical records.</div>
+          </div>
+        </div>
+      </div>
+
+      <h3>Building Patient-Facing AI Tools</h3>
+
+      <div class="reading-list">
+        <div class="reading-item">
+          <div class="reading-type"><i data-lucide="wrench"></i></div>
+          <div class="reading-content">
+            <div class="reading-title">
+              <a href="https://pubmed.ncbi.nlm.nih.gov/38285894/" target="_blank">"Twelve Tips on Creating Custom GPTs for Health Professions Education"</a>
+            </div>
+            <div class="reading-meta">PubMed, 2024 · Practical guide to building custom GPTs—applies directly to patient-facing tools.</div>
+          </div>
+        </div>
+
+        <div class="reading-item">
+          <div class="reading-type"><i data-lucide="wrench"></i></div>
+          <div class="reading-content">
+            <div class="reading-title">
+              <a href="https://bastiongpt.com/" target="_blank">BastionGPT</a>
+            </div>
+            <div class="reading-meta">HIPAA-compliant medical GPT platform for practices needing compliant patient-facing AI tools.</div>
+          </div>
+        </div>
+      </div>
 
       <hr>
 
