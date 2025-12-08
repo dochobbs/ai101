@@ -73,8 +73,10 @@
         This is ambient AI documentation in action. It represents one of the fastest-adopted
         technologies in the history of medical practice. The Permanente Medical Group deployed
         ambient AI scribes to 10,000 physicians in late 2023; within ten weeks, over 3,400
-        physicians had used the tool across 303,000 patient encounters. By 2025, projections
-        suggest 60% of healthcare providers will use some form of AI-driven documentation.
+        physicians had used the tool across 303,000 patient encounters. By late 2025, roughly
+        1 in 5 provider organizations have fully deployed ambient documentation, with another
+        2 in 5 in active pilots—adoption is accelerating faster than almost any previous
+        clinical technology.
       </p>
 
       <div class="callout callout-warning">
@@ -95,6 +97,28 @@
         their failure modes. Here, we'll translate that understanding into practical wisdom
         for one of the most consequential ambient tools you'll encounter in clinical practice.
       </p>
+
+      <!-- Prioritize This -->
+      <div class="callout callout-tip" style="border-left-color: #16a34a; background: #f0fdf4;">
+        <div class="callout-title" style="color: #16a34a;">Prioritize This!</div>
+        <p>
+          If you're ready to try ambient AI, start with tools that combine documentation
+          <em>and</em> clinical decision support—you get the scribe functionality plus
+          real-time diagnostic assistance.
+        </p>
+        <p>
+          <strong><a href="https://openevidence.com" target="_blank">OpenEvidence Visits</a></strong>
+          is free for NPI holders and now includes a HIPAA-secure Dialer for phone encounters.
+          <strong><a href="https://glass.health" target="_blank">Glass Health</a></strong> offers
+          ambient CDS that generates differential diagnoses in real-time during the encounter.
+        </p>
+        <p class="mb-0">
+          Both integrate documentation with evidence-based guidance—the scribe becomes a
+          clinical partner, not just a secretary. See the
+          <a href="clinical-decision-support.html">Clinical Decision Support</a> topic for
+          detailed setup instructions.
+        </p>
+      </div>
 
       <hr>
 
@@ -362,6 +386,24 @@
         know what to look for during review.
       </p>
 
+      <div class="callout callout-info">
+        <div class="callout-title">What the Research Shows: Quantified Error Rates</div>
+        <p>
+          A 2025 study in <em>npj Digital Medicine</em> analyzed 12,999 clinician-annotated
+          sentences from LLM-generated clinical notes and found:
+        </p>
+        <ul>
+          <li><strong>Hallucination rate:</strong> 1.47% (fabricated content not in source material)</li>
+          <li><strong>Omission rate:</strong> 3.45% (critical information missing from notes)</li>
+        </ul>
+        <p class="mb-0">
+          These rates are lower than traditional speech recognition (7–11% error rate) but
+          still clinically significant. Even 1–2% hallucination rates mean errors in
+          thousands of notes across a health system. Other studies report hallucination
+          rates as high as 7% depending on the system and clinical context.
+        </p>
+      </div>
+
       <div class="error-taxonomy">
         <div class="error-type">
           <h3><span class="error-number">1</span> Fabrications (Hallucinations)</h3>
@@ -618,12 +660,12 @@
         <div class="vendor-category">
           <h4>Enterprise-Grade Solutions</h4>
           <div class="vendor-card">
-            <h5>Nuance DAX Copilot (Microsoft)</h5>
-            <p>Deep Epic integration, enterprise focus. $600-700/month.</p>
+            <h5>Microsoft Dragon Copilot (formerly Nuance DAX)</h5>
+            <p>Deep Epic integration, enterprise focus. ~$600/month + $650 setup fee. Now integrating OpenEvidence for real-time literature access.</p>
           </div>
           <div class="vendor-card">
             <h5>Abridge</h5>
-            <p>2025 Best in KLAS winner. Deployed across 100+ health systems.</p>
+            <p><strong>2025 Best in KLAS winner.</strong> 150+ health systems including Mayo Clinic, Emory, UNC Health. $300M Series E (June 2025). Reports 73% less after-hours documentation, 61% reduced cognitive burden.</p>
           </div>
           <div class="vendor-card">
             <h5>DeepScribe</h5>
@@ -635,15 +677,15 @@
           <h4>Practice-Level Solutions</h4>
           <div class="vendor-card">
             <h5>Freed</h5>
-            <p>Popular among individual practitioners. $99/month.</p>
+            <p>20,000+ clinician users. $99/month, HIPAA-compliant. Best for primary care, psychiatry, internal medicine. Free tier available (3 notes/week).</p>
+          </div>
+          <div class="vendor-card">
+            <h5>Heidi Health</h5>
+            <p>2M+ consultations/week globally. $99/month. HIPAA, SOC 2 Type II, ISO 27001 certified. Strong EHR integrations including Epic. Free tier available.</p>
           </div>
           <div class="vendor-card">
             <h5>Suki</h5>
             <p>Voice commands for EHR navigation, not just documentation.</p>
-          </div>
-          <div class="vendor-card">
-            <h5>HealOS</h5>
-            <p>$49/month unlimited. 50+ specialty templates.</p>
           </div>
         </div>
 
@@ -651,11 +693,11 @@
           <h4>Hybrid CDS + Documentation</h4>
           <div class="vendor-card">
             <h5>OpenEvidence Visits</h5>
-            <p>Documentation with evidence-based clinical decision support.</p>
+            <p><strong>Free for NPI holders.</strong> Documentation + evidence-based CDS + new HIPAA-secure Dialer for phone encounters.</p>
           </div>
           <div class="vendor-card">
             <h5>Glass Health Ambient CDS</h5>
-            <p>Real-time diagnostic support during encounters.</p>
+            <p>Real-time differential diagnosis during encounters. EHR integration for patient context.</p>
           </div>
         </div>
       </div>
@@ -708,12 +750,16 @@
 
       <div class="callout callout-warning">
         <div class="callout-title">Important Boundaries</div>
+        <p>
+          Granola is <strong>not</strong> designed for clinical encounters. Their standard tiers
+          are not HIPAA-compliant—though their <strong>Enterprise tier</strong> now offers HIPAA
+          compliance, SSO, and private storage for healthcare organizations willing to pay for
+          custom pricing.
+        </p>
         <p class="mb-0">
-          Granola is <strong>not</strong> designed for clinical encounters and is <strong>not</strong>
-          HIPAA-compliant for patient care documentation. Use it for meetings about patients
-          (like case conferences) with appropriate caution, but never as a substitute for clinical
-          documentation tools. For patient encounters, use purpose-built clinical AI scribes with
-          BAAs and HIPAA compliance.
+          For most individual clinicians: use Granola for administrative meetings only, never for
+          patient care documentation. For patient encounters, use purpose-built clinical AI scribes
+          with BAAs and HIPAA compliance.
         </p>
       </div>
 
@@ -730,9 +776,9 @@
         <ul class="mb-0">
           <li><strong>Physical device:</strong> A credit-card-sized recorder that attaches magnetically to your phone or sits on your desk</li>
           <li><strong>Desktop mode:</strong> Can record virtual visits on your laptop/desktop via audio capture</li>
-          <li><strong>HIPAA compliance:</strong> Offers a BAA and HIPAA-compliant processing for healthcare users</li>
-          <li><strong>AI transcription and summarization:</strong> Generates transcripts and structured summaries</li>
-          <li><strong>Local-first option:</strong> Audio can be processed without cloud upload for maximum privacy</li>
+          <li><strong>Full compliance stack:</strong> HIPAA, SOC 2 Type II, GDPR, ISO 27001, ISO 27701 certified—one of the most thoroughly certified options available</li>
+          <li><strong>Healthcare-specific features:</strong> Medical terminology recognition, SOAP note generation, speaker diarization across 112+ languages</li>
+          <li><strong>Local-first option:</strong> Choose between local device storage and cloud processing; customize data retention periods</li>
         </ul>
       </div>
 
@@ -861,6 +907,29 @@
         <li><strong>In-context CDS:</strong> Highlight text in the generated note, and OpenEvidence provides guideline-based suggestions</li>
         <li><strong>Evidence insertion:</strong> Ask the system to insert supporting evidence from the transcript</li>
       </ul>
+
+      <div class="callout callout-info">
+        <div class="callout-title">New: HIPAA-Secure Dialer for Phone Encounters</div>
+        <p>
+          In late 2025, OpenEvidence launched a <strong>free HIPAA-secure Dialer</strong> that
+          extends ambient documentation to phone calls:
+        </p>
+        <ul>
+          <li><strong>Privacy-first calling:</strong> Your personal number stays hidden—caller ID displays your practice number</li>
+          <li><strong>Automatic note generation:</strong> Phone encounters automatically generate clinical notes through Visits integration</li>
+          <li><strong>Unlimited minutes:</strong> No per-call charges for verified NPI holders</li>
+        </ul>
+        <p class="mb-0">
+          This is particularly valuable for follow-up calls, test result discussions, and care
+          coordination—encounters that previously generated no documentation or required manual notes.
+        </p>
+      </div>
+
+      <p>
+        <strong>Microsoft Integration (October 2025):</strong> OpenEvidence announced collaboration
+        with Microsoft to integrate its evidence service into the Dragon Copilot ambient platform,
+        bringing real-time literature access directly into enterprise clinical workflows.
+      </p>
 
       <h3>Glass Health Ambient CDS</h3>
 
@@ -1068,16 +1137,16 @@
       <!-- Resources Section -->
       <h2>Resources for Further Learning</h2>
 
-      <h3>Research and Guidelines</h3>
+      <h3>Essential Research (2025)</h3>
 
       <div class="reading-list">
         <div class="reading-item">
           <div class="reading-type"><i data-lucide="file-text"></i></div>
           <div class="reading-content">
             <div class="reading-title">
-              "Ambient Artificial Intelligence Scribes to Alleviate the Burden of Clinical Documentation"
+              <a href="https://ai.nejm.org/doi/full/10.1056/AIoa2501000" target="_blank">"Ambient AI Scribes in Clinical Practice: A Randomized Trial"</a>
             </div>
-            <div class="reading-meta">Tierney et al. · NEJM Catalyst, 2024 · The landmark TPMG implementation study</div>
+            <div class="reading-meta">NEJM AI, November 2025 · First randomized controlled trial comparing DAX Copilot vs Nabla vs control. Found modest time savings (41 sec/note) and burnout reduction. <strong>Key finding:</strong> "Occasional inaccuracies observed in either scribe require ongoing physician vigilance."</div>
           </div>
         </div>
 
@@ -1085,9 +1154,87 @@
           <div class="reading-type"><i data-lucide="file-text"></i></div>
           <div class="reading-content">
             <div class="reading-title">
-              "Beyond human ears: navigating the uncharted risks of AI scribes in clinical practice"
+              <a href="https://catalyst.nejm.org/doi/full/10.1056/CAT.25.0040" target="_blank">"Ambient Artificial Intelligence Scribes: Learnings after 1 Year and over 2.5 Million Uses"</a>
             </div>
-            <div class="reading-meta">npj Digital Medicine, 2025 · Comprehensive taxonomy of AI scribe errors</div>
+            <div class="reading-meta">NEJM Catalyst, 2025 · Permanente Medical Group's comprehensive follow-up. 84% reported improved patient communication, 82% improved work satisfaction.</div>
+          </div>
+        </div>
+
+        <div class="reading-item">
+          <div class="reading-type"><i data-lucide="file-text"></i></div>
+          <div class="reading-content">
+            <div class="reading-title">
+              <a href="https://www.nature.com/articles/s41746-025-01895-6" target="_blank">"Beyond human ears: navigating the uncharted risks of AI scribes in clinical practice"</a>
+            </div>
+            <div class="reading-meta">npj Digital Medicine, 2025 · Comprehensive taxonomy of AI scribe errors including hallucinations, omissions, and misattributions.</div>
+          </div>
+        </div>
+
+        <div class="reading-item">
+          <div class="reading-type"><i data-lucide="file-text"></i></div>
+          <div class="reading-content">
+            <div class="reading-title">
+              <a href="https://www.nature.com/articles/s41746-025-01670-7" target="_blank">"A framework to assess clinical safety and hallucination rates of LLMs for medical text summarisation"</a>
+            </div>
+            <div class="reading-meta">npj Digital Medicine, 2025 · Quantified error rates: 1.47% hallucination rate, 3.45% omission rate across 12,999 clinician-annotated sentences.</div>
+          </div>
+        </div>
+      </div>
+
+      <h3>Podcasts & Videos</h3>
+
+      <div class="reading-list">
+        <div class="reading-item">
+          <div class="reading-type"><i data-lucide="headphones"></i></div>
+          <div class="reading-content">
+            <div class="reading-title">
+              <a href="https://podcasts.apple.com/us/podcast/127-the-doctor-is-in-so-is-their-ai/id1550788298?i=1000706641394" target="_blank">"The Doctor Is In—So Is Their AI"</a>
+            </div>
+            <div class="reading-meta">STAT News First Opinion Podcast, May 2025 (34 min) · Two physicians debate AI scribes—one enthusiast, one skeptic. Covers privacy, patient rapport, burnout, and consent. Deeply thoughtful rather than adversarial.</div>
+          </div>
+        </div>
+
+        <div class="reading-item">
+          <div class="reading-type"><i data-lucide="video"></i></div>
+          <div class="reading-content">
+            <div class="reading-title">
+              <a href="https://www.ama-assn.org/practice-management/digital-health/ai-scribes-clinicians-how-ambient-listening-medicine-works-and" target="_blank">"AI Scribes for Clinicians: How Ambient Listening in Medicine Works"</a>
+            </div>
+            <div class="reading-meta">AMA Update Video, 2025 · Dr. Brian Hoberman (CIO, Kaiser Permanente) discusses their system-wide Abridge deployment across 40 hospitals and 600+ medical offices. "It feels like magic."</div>
+          </div>
+        </div>
+
+        <div class="reading-item">
+          <div class="reading-type"><i data-lucide="headphones"></i></div>
+          <div class="reading-content">
+            <div class="reading-title">
+              <a href="https://thecurbsiders.com/cribsiders-podcast/135" target="_blank">"GPT: Great Pediatric Tools! Harnessing the Power of AI in Pediatric Medicine"</a>
+            </div>
+            <div class="reading-meta">The Cribsiders #135, March 2025 · Dr. Tristan Nichols covers AI scribes, LLMs in clinical practice, and ethical considerations. Good overview for trainees.</div>
+          </div>
+        </div>
+
+        <div class="reading-item">
+          <div class="reading-type"><i data-lucide="headphones"></i></div>
+          <div class="reading-content">
+            <div class="reading-title">
+              <a href="https://ai.nejm.org/" target="_blank">NEJM AI Grand Rounds Podcast</a>
+            </div>
+            <div class="reading-meta">Ongoing series · Informal conversations with experts at the intersection of AI and medicine. Check for ambient scribe episodes.</div>
+          </div>
+        </div>
+      </div>
+
+      <h3>Additional Resources</h3>
+
+      <div class="reading-list">
+        <div class="reading-item">
+          <div class="reading-type"><i data-lucide="file-text"></i></div>
+          <div class="reading-content">
+            <div class="reading-title">
+              <a href="https://catalyst.nejm.org/doi/full/10.1056/CAT.23.0404" target="_blank">"Ambient Artificial Intelligence Scribes to Alleviate the Burden of Clinical Documentation"</a>
+            </div>
+            <div class="reading-meta">Tierney et al. · NEJM Catalyst, 2024 · The landmark TPMG implementation study</div>
           </div>
         </div>
 
@@ -1108,6 +1255,26 @@
               "Careless Whisper: Speech-to-Text Hallucination Harms"
             </div>
             <div class="reading-meta">Koenecke et al. · ACM FAccT, 2024 · Critical research on transcription hallucinations</div>
+          </div>
+        </div>
+
+        <div class="reading-item">
+          <div class="reading-type"><i data-lucide="newspaper"></i></div>
+          <div class="reading-content">
+            <div class="reading-title">
+              <a href="https://techysurgeon.substack.com/p/youre-using-your-clinics-ambient" target="_blank">"You're Using Your Clinic's Ambient Scribe Wrong"</a>
+            </div>
+            <div class="reading-meta">TechySurgeon Substack · Practical physician perspective on optimizing ambient scribe workflows</div>
+          </div>
+        </div>
+
+        <div class="reading-item">
+          <div class="reading-type"><i data-lucide="file-text"></i></div>
+          <div class="reading-content">
+            <div class="reading-title">
+              <a href="https://www.statnews.com/2025/04/15/ai-scribes-artificial-intelligence-medicine-note-writing-physician-patient-relationship/" target="_blank">"As a Patient, I Don't Want My Doctor to Use an AI Scribe"</a>
+            </div>
+            <div class="reading-meta">Aliaa Barakat · STAT First Opinion, April 2025 · The patient perspective on AI documentation—important counterpoint to physician enthusiasm.</div>
           </div>
         </div>
       </div>

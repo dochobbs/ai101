@@ -82,18 +82,38 @@
       </p>
 
       <div class="callout callout-info">
-        <div class="callout-title">Building on Earlier Modules</div>
+        <div class="callout-title">Building on Earlier Topics</div>
         <p>
-          This module builds on everything we've covered so far. You understand how language
-          models work (Module 1), you know how to prompt them effectively (Module 3), and
-          you've learned to evaluate their outputs critically (Module 4). You've explored the
-          major platforms (Module 4) and understand the privacy considerations around PHI
-          (Module 2).
+          This topic builds on everything we've covered so far. You understand
+          <a href="llm-thinking.html">how language models work</a>, you know
+          <a href="prompting.html">how to prompt them effectively</a>, and you've explored
+          <a href="big-three.html">the major platforms</a>. You also understand the
+          <a href="phi-hipaa.html">privacy considerations around PHI</a>.
         </p>
         <p class="mb-0">
           Now we're putting it all together—learning how to use CDS tools to practice better
           medicine. The goal isn't to replace your clinical judgment. It's to augment it with
           the best available evidence, delivered when and where you need it.
+        </p>
+      </div>
+
+      <!-- Prioritize This -->
+      <div class="callout callout-tip" style="border-left-color: #16a34a; background: #f0fdf4;">
+        <div class="callout-title" style="color: #16a34a;">Prioritize This!</div>
+        <p>
+          If you only do one thing after reading this topic: <strong>sign up for
+          <a href="https://openevidence.com" target="_blank">OpenEvidence</a></strong>.
+        </p>
+        <p>
+          If you have an NPI number, registration takes 2 minutes and gives you free access
+          to the platform used by 40% of U.S. physicians. It's the fastest way to experience
+          what AI-powered clinical decision support actually feels like in practice.
+        </p>
+        <p class="mb-0">
+          <strong>Medical students:</strong> OpenEvidence now accepts student registration.
+          You'll need to upload proof of enrollment (student ID, transcript, or enrollment letter).
+          If that's not available yet, <a href="https://glass.health" target="_blank">Glass Health</a>
+          offers free accounts without NPI verification—start there.
         </p>
       </div>
 
@@ -494,7 +514,7 @@
 
       <div class="callout callout-warning">
         <div class="callout-title">PHI Rules Apply</div>
-        <p>Whatever tools you use, the PHI principles from Module 2 apply:</p>
+        <p>Whatever tools you use, the <a href="phi-hipaa.html">PHI principles</a> apply:</p>
         <ul>
           <li>
             <strong>Never enter identifiable patient information into consumer AI platforms.</strong>
@@ -502,12 +522,15 @@
             None of these have BAAs that would make them HIPAA-compliant for PHI.
           </li>
           <li>
-            <strong>OpenEvidence is HIPAA-compliant</strong> for clinical queries, but you
-            should still follow minimum necessary principles—include only the clinical
-            details needed to answer your question, not full patient identifiers.
+            <strong>OpenEvidence requires an organizational BAA for PHI.</strong> As of April 2025,
+            OpenEvidence is HIPAA-compliant—but to input protected health information, your
+            organization must sign a (free) Business Associate Agreement. An authorized signatory
+            (physician-owner, CMIO, or compliance officer) can complete this online at
+            openevidence.com. Individual clinicians without an organizational BAA should use
+            de-identified queries only.
           </li>
           <li>
-            <strong>De-identification works.</strong> You can safely ask about "a 4-year-old
+            <strong>De-identification works for everyone.</strong> You can safely ask about "a 4-year-old
             male with 3 days of fever, cough, and reduced oral intake" without violating
             privacy. You cannot safely enter "Johnny Smith, DOB 01/15/2021, MRN 123456."
           </li>
@@ -1170,6 +1193,50 @@
         </div>
       </div>
 
+      <h3>Podcasts & Videos</h3>
+
+      <div class="reading-list">
+        <div class="reading-item">
+          <div class="reading-type"><i data-lucide="headphones"></i></div>
+          <div class="reading-content">
+            <div class="reading-title">
+              <a href="https://www.heartofhealthcarepodcast.com/episodes/zack-ziegler-openevidence" target="_blank">"How a Small Team Built the Fastest-Growing Clinician App Ever"</a>
+            </div>
+            <div class="reading-meta">The Heart of Healthcare Podcast, December 2025 · OpenEvidence co-founder Zack Ziegler on building AI that helps clinicians make better decisions without replacing their judgment. Essential listening for understanding the philosophy behind modern CDS.</div>
+          </div>
+        </div>
+
+        <div class="reading-item">
+          <div class="reading-type"><i data-lucide="headphones"></i></div>
+          <div class="reading-content">
+            <div class="reading-title">
+              <a href="https://www.stataipodcast.com/episodes-1/y9u971mplvzk9edhlm16vxp0uaitwn" target="_blank">"Open Evidence: AI & Clinical Decision Support"</a>
+            </div>
+            <div class="reading-meta">Stat AI: Emergency Medicine Podcast, Episode 10, February 2025 · Dr. Travis Zack and Varun Mangalick discuss how AI tools assist physicians in real-time diagnosis and treatment planning.</div>
+          </div>
+        </div>
+
+        <div class="reading-item">
+          <div class="reading-type"><i data-lucide="headphones"></i></div>
+          <div class="reading-content">
+            <div class="reading-title">
+              <a href="https://ai-podcast.nejm.org/" target="_blank">NEJM AI Grand Rounds</a>
+            </div>
+            <div class="reading-meta">Ongoing podcast series · Raj Manrai and Andrew Beam host conversations with experts at the intersection of AI and medicine. Check for episodes on clinical decision support and diagnostic AI.</div>
+          </div>
+        </div>
+
+        <div class="reading-item">
+          <div class="reading-type"><i data-lucide="headphones"></i></div>
+          <div class="reading-content">
+            <div class="reading-title">
+              <a href="https://kevinmd.com/2025/11/why-physicians-must-lead-the-vetting-of-medical-ai-podcast.html" target="_blank">"Why Physicians Must Lead the Vetting of Medical AI"</a>
+            </div>
+            <div class="reading-meta">KevinMD Podcast, November 2025 · Cardiologist Saurabh Gupta on why algorithms influencing clinical care must meet rigorous standards—essential context for critically evaluating CDS tools.</div>
+          </div>
+        </div>
+      </div>
+
       <h3>Articles and Research</h3>
 
       <div class="reading-list">
@@ -1186,9 +1253,9 @@
           <div class="reading-type"><i data-lucide="file-text"></i></div>
           <div class="reading-content">
             <div class="reading-title">
-              "The Use of an Artificial Intelligence Platform OpenEvidence to Augment Clinical Decision-Making"
+              <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC12033599/" target="_blank">"The Use of an Artificial Intelligence Platform OpenEvidence to Augment Clinical Decision-Making"</a>
             </div>
-            <div class="reading-meta">SAGE Open Medicine, 2025 · Recent study evaluating OpenEvidence in primary care</div>
+            <div class="reading-meta">SAGE Open Medicine, 2025 · Recent study evaluating OpenEvidence in primary care—rated high in clarity, relevance, and evidence-based support</div>
           </div>
         </div>
         <div class="reading-item">
@@ -1198,6 +1265,15 @@
               "Toward a responsible future: recommendations for AI-enabled clinical decision support"
             </div>
             <div class="reading-meta">JAMIA, 2024 · AMIA consensus recommendations on trustworthy AI-CDS</div>
+          </div>
+        </div>
+        <div class="reading-item">
+          <div class="reading-type"><i data-lucide="newspaper"></i></div>
+          <div class="reading-content">
+            <div class="reading-title">
+              <a href="https://www.statnews.com/2025/10/02/uptodate-artificial-intelligence-openevidence-clinical-decision-chatbot/" target="_blank">"UpToDate launches Expert AI to answer doctors' clinical questions"</a>
+            </div>
+            <div class="reading-meta">STAT News, October 2025 · Coverage of UpToDate's entry into AI-powered CDS and physician reactions</div>
           </div>
         </div>
       </div>
