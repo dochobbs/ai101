@@ -1,0 +1,885 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bias, Ethics, and the Training Data Problem | AI 101</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-brand">
+        <span class="nav-badge">AI 101</span>
+        <span class="nav-title">A Self-Paced Guide to AI in Medicine</span>
+      </a>
+      <button class="nav-toggle" aria-label="Toggle menu">
+        <i data-lucide="menu"></i>
+      </button>
+      <div class="nav-links">
+        <a href="index.html" class="nav-link">Topics</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="contribute.html" class="nav-link">Contribute</a>
+        <div id="deployment-eac8a421-3c54-4717-bbef-54bb81b54243" class="nav-chatbot"></div>
+      </div>
+    </div>
+  </nav>
+
+  <main class="main">
+    <article class="content">
+
+      <header class="unit-header">
+        <span class="unit-label phase-1">FOUNDATIONS</span>
+        <h1 class="unit-title">Bias, Ethics, and the Training Data Problem</h1>
+        <p class="unit-subtitle">
+          AI doesn't introduce bias into healthcare—it inherits, encodes, and scales
+          the biases already embedded in our data and our systems.
+        </p>
+        <div class="unit-meta">
+          <span class="unit-meta-item">
+            <i data-lucide="clock"></i>
+            ~25 min read
+          </span>
+          <span class="unit-meta-item">
+            <i data-lucide="book-open"></i>
+            12 readings
+          </span>
+          <span class="unit-meta-item">
+            <i data-lucide="headphones"></i>
+            3 podcasts
+          </span>
+        </div>
+      </header>
+
+      <div class="callout callout-question">
+        <div class="callout-title">Core Question</div>
+        <p class="mb-0">
+          If AI learns from data that reflects decades of healthcare disparities,
+          how do we prevent it from perpetuating—or amplifying—those inequities?
+        </p>
+      </div>
+
+      <h2>The Mirror Problem</h2>
+
+      <p>
+        Here's an uncomfortable truth: AI systems are mirrors. They reflect back what we
+        show them. If the data they learn from contains bias, the AI will learn that bias.
+        If historical medical decisions disadvantaged certain populations, AI trained on
+        those decisions will learn to disadvantage them too.
+      </p>
+
+      <p>
+        This isn't a bug—it's how machine learning fundamentally works. The algorithm's
+        job is to find patterns in data and replicate them. It has no concept of fairness,
+        justice, or ethics. It simply learns: <em>given inputs like this, outputs like that
+        have occurred before</em>. If "inputs like this" correlate with race, gender, or
+        socioeconomic status in the training data, the model learns those correlations too.
+      </p>
+
+      <p>
+        The old computing adage applies with new force: <strong>garbage in, garbage out</strong>.
+        But in healthcare AI, the stakes are higher than bad spreadsheet outputs. We're talking
+        about who gets referred for specialist care, who gets flagged as high-risk, whose
+        symptoms get taken seriously, and whose get dismissed.
+      </p>
+
+      <div class="callout callout-warning">
+        <div class="callout-title">The Philosophical Core</div>
+        <p>
+          Algorithmic bias is not fundamentally an AI problem—it's a human one. AI systems
+          encode the decisions we've already made, the data we've already collected, and the
+          priorities we've already established. The algorithm doesn't create inequity; it
+          operationalizes inequity at scale.
+        </p>
+        <p class="mb-0">
+          This is why technical fixes alone aren't enough. Addressing algorithmic bias requires
+          confronting the structural inequities in healthcare that generated the biased data
+          in the first place.
+        </p>
+      </div>
+
+      <h2>The Obermeyer Study: A Case Study in Systemic Bias</h2>
+
+      <p>
+        In 2019, a team led by Ziad Obermeyer at UC Berkeley published what would become
+        the landmark paper on algorithmic bias in healthcare. The study examined a widely
+        used commercial algorithm that helped hospitals identify patients who would benefit
+        from "high-risk care management" programs—extra nursing support, closer monitoring,
+        more primary care visits.
+      </p>
+
+      <p>
+        The algorithm was used on approximately <strong>200 million Americans annually</strong>.
+        It seemed to work well by standard metrics. But when Obermeyer's team examined the
+        outcomes by race, they found something disturbing.
+      </p>
+
+      <div class="callout callout-principle">
+        <div class="callout-title">The Key Finding</div>
+        <p>
+          At any given risk score, Black patients were significantly sicker than white patients
+          with the same score. The algorithm systematically underestimated the health needs
+          of Black patients.
+        </p>
+        <p class="mb-0">
+          <strong>The impact:</strong> Fixing this disparity would increase the percentage of
+          Black patients receiving additional help from 17.7% to 46.5%—nearly tripling access
+          to care management programs.
+        </p>
+      </div>
+
+      <h3>How Did This Happen?</h3>
+
+      <p>
+        The algorithm's designers made a seemingly reasonable choice: they used <strong>healthcare
+        costs</strong> as a proxy for healthcare needs. Patients who cost more to treat were
+        presumably sicker and needed more intervention. This made intuitive sense and was
+        easy to measure.
+      </p>
+
+      <p>
+        But here's the problem: healthcare costs don't just reflect health needs. They also
+        reflect <strong>access to care</strong>. Black patients in America, due to systemic
+        barriers—insurance disparities, geographic access, implicit bias in clinical encounters,
+        historical mistrust of medical institutions—tend to receive less healthcare than white
+        patients at equivalent levels of illness.
+      </p>
+
+      <p>
+        So the algorithm learned: Black patients = lower costs = lower risk scores = less
+        need for intervention. The model wasn't racist in any intentional sense. It simply
+        learned the pattern in the data. But that pattern encoded decades of healthcare inequity.
+      </p>
+
+      <div class="callout callout-info">
+        <div class="callout-title">The Fix</div>
+        <p class="mb-0">
+          When the researchers reformulated the algorithm to predict <strong>actual health
+          needs</strong> rather than costs, racial bias in outcomes dropped by 84%. The
+          algorithm manufacturer worked with the researchers to implement changes. This
+          demonstrates that bias, once identified, can often be mitigated—but it requires
+          actively looking for it.
+        </p>
+      </div>
+
+      <h2>Where Bias Enters AI Systems</h2>
+
+      <p>
+        The Obermeyer study illustrates one pathway for bias, but there are many others.
+        Understanding where bias enters helps you spot it—and advocate for mitigation.
+      </p>
+
+      <h3>1. Training Data Composition</h3>
+
+      <p>
+        AI models learn from data, and that data comes from somewhere. In healthcare:
+      </p>
+
+      <ul>
+        <li>
+          <strong>Over half of published clinical AI models</strong> use data from just
+          two countries—the United States and China
+        </li>
+        <li>
+          Many datasets <strong>overrepresent non-Hispanic white patients</strong> relative
+          to actual population demographics
+        </li>
+        <li>
+          <strong>Social determinants of health data are largely absent</strong>—only about
+          3% of clinical documentation contains any SDOH information
+        </li>
+        <li>
+          <strong>Rare diseases and conditions affecting smaller populations</strong> are
+          underrepresented, leading to worse model performance for these groups
+        </li>
+      </ul>
+
+      <p>
+        When an algorithm is trained on imbalanced data, it performs worse for underrepresented
+        groups. This isn't theoretical—it's been demonstrated across multiple domains.
+      </p>
+
+      <h3>2. The Dermatology Problem</h3>
+
+      <p>
+        Dermatology AI offers a vivid example. Studies have consistently shown that skin
+        lesion classification algorithms perform significantly worse on darker skin tones.
+        Why? The training data.
+      </p>
+
+      <div class="callout callout-warning">
+        <div class="callout-title">The Numbers</div>
+        <p>
+          An analysis of dermatology educational materials—textbooks, lecture notes, journal
+          articles—found that <strong>only 1 in 10 images</strong> showed skin in the
+          black-brown range on the Fitzpatrick Scale.
+        </p>
+        <p>
+          A 2024 Northwestern study found that dermatologists accurately diagnosed about
+          38% of images overall, but <strong>only 34% of images showing darker skin</strong>.
+          AI assistance improved accuracy, but the improvement was greater for lighter skin—the
+          disparity persisted.
+        </p>
+        <p class="mb-0">
+          When AI image generators were asked to create medical images, Adobe Firefly showed
+          38% dark skin representation, but ChatGPT-4o showed only 6%, Stable Diffusion 8.7%,
+          and Midjourney just 3.9%.
+        </p>
+      </div>
+
+      <p>
+        The bias compounds: medical education underrepresents darker skin → clinicians are
+        less experienced with these presentations → diagnostic algorithms are trained on
+        biased datasets → AI perpetuates and potentially amplifies the disparity.
+      </p>
+
+      <h3>3. Proxy Variables and Hidden Correlations</h3>
+
+      <p>
+        Even when you remove explicit demographic variables, bias can sneak in through
+        proxies. ZIP code correlates with race and socioeconomic status. Insurance type
+        correlates with employment and income. Medication lists correlate with access to
+        care. The algorithm doesn't need to "see" race to learn racial patterns.
+      </p>
+
+      <p>
+        This is why the "just remove race from the algorithm" approach often fails. The
+        correlations remain embedded in other variables. True debiasing requires understanding
+        the causal structure of the data, not just removing surface-level features.
+      </p>
+
+      <h3>4. Label Bias: Who Defines "Ground Truth"?</h3>
+
+      <p>
+        Supervised machine learning requires labeled data—examples where we know the "right
+        answer." But in medicine, who decides what's right?
+      </p>
+
+      <ul>
+        <li>
+          <strong>Diagnostic labels</strong> reflect the judgments of clinicians who may
+          themselves have implicit biases
+        </li>
+        <li>
+          <strong>Treatment decisions</strong> reflect what patients could access, not
+          necessarily what they needed
+        </li>
+        <li>
+          <strong>Outcome measures</strong> may not capture what matters to all patient populations
+        </li>
+      </ul>
+
+      <p>
+        If the "ground truth" labels are themselves biased, the model learns to replicate
+        biased judgments with machine efficiency.
+      </p>
+
+      <h3>5. Feedback Loops and Amplification</h3>
+
+      <p>
+        Perhaps most concerning: AI systems can create feedback loops that amplify initial
+        biases. If an algorithm predicts certain patients are "low risk" and they receive
+        less intervention, they may have worse outcomes—which then becomes training data
+        confirming the algorithm's prediction.
+      </p>
+
+      <p>
+        Over time, small initial biases can compound into large disparities. The algorithm
+        becomes a self-fulfilling prophecy.
+      </p>
+
+      <h2>The Gender Dimension</h2>
+
+      <p>
+        Bias isn't only about race. Gender disparities are pervasive in medical AI.
+      </p>
+
+      <p>
+        Consider cardiovascular disease: heart attacks present differently in women than
+        in men. Women more often experience atypical symptoms—fatigue, nausea, back pain
+        rather than classic crushing chest pain. Yet cardiovascular AI models are often
+        trained predominantly on male data.
+      </p>
+
+      <p>
+        The result: AI systems that are less accurate at predicting heart disease in women,
+        potentially contributing to the well-documented problem of women's cardiac symptoms
+        being dismissed or misdiagnosed.
+      </p>
+
+      <p>
+        Similar patterns appear in:
+      </p>
+
+      <ul>
+        <li><strong>Pain assessment:</strong> Women's pain is historically undertreated; AI trained on treatment patterns may perpetuate this</li>
+        <li><strong>Mental health:</strong> Different presentation patterns and diagnostic rates by gender affect training data</li>
+        <li><strong>Drug dosing:</strong> Women were historically excluded from clinical trials; AI models may not accurately predict responses</li>
+        <li><strong>Autoimmune diseases:</strong> Conditions like lupus that disproportionately affect women may be underrepresented in general medical AI training sets</li>
+      </ul>
+
+      <p>
+        The historical exclusion of women from clinical trials until the 1990s means that
+        much of the foundational medical data AI learns from was generated primarily from
+        male subjects. We're still living with the consequences of that exclusion—now
+        encoded in our algorithms.
+      </p>
+
+      <h2>Beyond Demographics: Other Axes of Bias</h2>
+
+      <p>
+        While race and gender receive the most attention, algorithmic bias extends across
+        many dimensions:
+      </p>
+
+      <h3>Age</h3>
+      <p>
+        Elderly patients are often underrepresented in clinical trials and may present
+        with atypical symptoms. AI models trained on younger populations may perform
+        poorly for geriatric patients—precisely the population most likely to have
+        complex medical needs.
+      </p>
+
+      <h3>Disability</h3>
+      <p>
+        Patients with disabilities may have different baseline vital signs, different
+        communication patterns, and different care needs. If training data doesn't
+        adequately represent these populations, AI recommendations may be inappropriate
+        or even harmful.
+      </p>
+
+      <h3>Language and Literacy</h3>
+      <p>
+        Natural language processing models are predominantly trained on English text.
+        Patients who speak other languages, or who have lower health literacy, may
+        receive worse AI-assisted care. Clinical notes about these patients may also
+        be systematically different in ways that affect model training.
+      </p>
+
+      <h3>Geographic Location</h3>
+      <p>
+        Rural patients face different disease prevalences, different access patterns,
+        and different healthcare resources than urban patients. Models trained primarily
+        on urban academic medical center data may not generalize well to rural settings.
+      </p>
+
+      <h3>Socioeconomic Status</h3>
+      <p>
+        Patients with lower socioeconomic status may have less complete medical records
+        (due to fragmented care), different patterns of healthcare utilization, and
+        different social determinants affecting their health. If AI learns to associate
+        incomplete records with "lower risk," it may systematically underserve
+        vulnerable populations.
+      </p>
+
+      <div class="callout callout-info">
+        <div class="callout-title">Intersectionality Matters</div>
+        <p class="mb-0">
+          These biases don't exist in isolation—they intersect. A Black woman, an elderly
+          rural patient, a low-income person with a disability: these individuals exist
+          at the intersection of multiple underrepresented categories. The compounding
+          effect of intersectional bias can be greater than any single dimension alone.
+        </p>
+      </div>
+
+      <h2>The Regulatory Landscape</h2>
+
+      <p>
+        Regulators are beginning to respond. As of May 2024, the FDA has approved 882
+        AI-enabled medical devices—an unprecedented surge. But the regulatory framework,
+        largely established in 1976, is struggling to keep pace.
+      </p>
+
+      <h3>Current Developments</h3>
+
+      <ul>
+        <li>
+          <strong>FDA:</strong> Implementing guidelines for AI safety and effectiveness,
+          but primarily focused on high-level governance rather than technical bias detection
+        </li>
+        <li>
+          <strong>WHO:</strong> Published ethics and governance guidance emphasizing fairness,
+          equity, and explainability
+        </li>
+        <li>
+          <strong>European Commission:</strong> The EU AI Act classifies medical AI as
+          high-risk, requiring conformity assessments and bias documentation
+        </li>
+        <li>
+          <strong>Health Canada:</strong> Developing frameworks for algorithmic transparency
+          and bias reporting
+        </li>
+      </ul>
+
+      <p>
+        The trend is toward greater scrutiny, but gaps remain. Current methods may be
+        inadequate for detecting bias in complex AI systems, and enforcement is inconsistent.
+      </p>
+
+      <h2>What Clinicians Can Do</h2>
+
+      <p>
+        You may not build AI systems, but you use them—and your voice matters in how they're
+        deployed. Here's how to engage with algorithmic bias as a clinician:
+      </p>
+
+      <h3>1. Ask Questions About the Tools You Use</h3>
+
+      <ul>
+        <li>What data was this model trained on? What populations were represented?</li>
+        <li>Has performance been validated across demographic groups?</li>
+        <li>Are there known disparities in accuracy or outcomes?</li>
+        <li>What's the process for reporting concerns about biased outputs?</li>
+      </ul>
+
+      <h3>2. Maintain Clinical Judgment</h3>
+
+      <p>
+        AI outputs are inputs to your decision-making, not replacements for it. When an
+        algorithm's recommendation doesn't match your clinical intuition—especially for
+        patients from underrepresented groups—trust your training. The model may be wrong
+        in ways that reflect its training data limitations.
+      </p>
+
+      <h3>3. Document Discrepancies</h3>
+
+      <p>
+        If you notice an AI tool consistently performing poorly for certain patient populations,
+        document it and report it. Systematic feedback is how these systems improve. Your
+        observations from clinical practice are valuable data that algorithm developers
+        often lack.
+      </p>
+
+      <h3>4. Advocate for Diverse Development Teams</h3>
+
+      <p>
+        Research shows that more diverse AI development teams build less biased systems.
+        Only about 5% of active physicians identify as Black, and the percentage of
+        underrepresented developers is even lower. Support initiatives that increase
+        diversity in both medicine and technology.
+      </p>
+
+      <h3>5. Support Inclusive Data Collection</h3>
+
+      <p>
+        Better AI requires better data. This means:
+      </p>
+
+      <ul>
+        <li>Documenting social determinants of health in clinical encounters</li>
+        <li>Supporting research that actively recruits diverse populations</li>
+        <li>Advocating for data sharing practices that don't perpetuate existing gaps</li>
+      </ul>
+
+      <h2>The Philosophical Stakes</h2>
+
+      <p>
+        Algorithmic bias forces us to confront uncomfortable questions about medicine itself:
+      </p>
+
+      <ul>
+        <li>If AI reflects our historical decisions, what does it reveal about the care we've provided?</li>
+        <li>If "objective" algorithms encode subjective judgments, what counts as unbiased care?</li>
+        <li>If we deploy AI to scale healthcare, are we scaling equity or inequity?</li>
+      </ul>
+
+      <p>
+        These aren't just technical questions with technical solutions. They're ethical
+        questions that require ethical engagement.
+      </p>
+
+      <div class="callout callout-principle">
+        <div class="callout-title">The Opportunity</div>
+        <p>
+          Here's the hopeful framing: AI makes bias visible in ways that human decision-making
+          doesn't. We can audit an algorithm. We can measure its disparate impact. We can
+          track whether interventions improve equity.
+        </p>
+        <p class="mb-0">
+          Human clinicians carry implicit biases that are harder to detect and correct. If we
+          approach AI development thoughtfully, these systems could actually <em>reduce</em>
+          healthcare disparities by making bias measurable and addressable. But only if we
+          actively design for fairness rather than assuming it will emerge automatically.
+        </p>
+      </div>
+
+      <h2>Looking Forward</h2>
+
+      <p>
+        The field is evolving. Promising developments include:
+      </p>
+
+      <ul>
+        <li>
+          <strong>Fairness-aware machine learning:</strong> Techniques that explicitly
+          optimize for equitable performance across groups, treating fairness as a
+          constraint in the optimization process rather than an afterthought
+        </li>
+        <li>
+          <strong>Algorithmic auditing:</strong> Systematic evaluation of AI systems for
+          bias before and after deployment. Some organizations now require bias audits
+          as part of their AI governance frameworks
+        </li>
+        <li>
+          <strong>Datasheets for datasets:</strong> Standardized documentation of training
+          data composition, limitations, and potential biases—similar to nutrition labels
+          for food products
+        </li>
+        <li>
+          <strong>Model cards:</strong> Documentation accompanying trained models that
+          describes intended use cases, performance across populations, and known limitations
+        </li>
+        <li>
+          <strong>Federated learning:</strong> Training models on distributed data without
+          centralizing sensitive information, potentially enabling more diverse training sets
+          while preserving privacy
+        </li>
+        <li>
+          <strong>Synthetic data augmentation:</strong> Generating additional training
+          examples for underrepresented groups to balance datasets—research shows this
+          can reduce racial bias in some imaging applications
+        </li>
+      </ul>
+
+      <p>
+        None of these are silver bullets. But together, they represent a maturing understanding
+        that fairness must be intentionally designed, not assumed.
+      </p>
+
+      <h3>The Role of Diverse Teams</h3>
+
+      <p>
+        Technical solutions alone aren't enough. Research consistently shows that more
+        diverse AI development teams build less biased systems. People with different
+        lived experiences notice different potential failure modes. They ask different
+        questions about who might be harmed.
+      </p>
+
+      <p>
+        This is why the composition of AI teams matters—not just for representation's
+        sake, but for the quality of the products they build. Clinicians, patients,
+        ethicists, and community representatives all have perspectives that pure
+        technologists may lack.
+      </p>
+
+      <h3>Continuous Monitoring</h3>
+
+      <p>
+        Bias can emerge or worsen over time, even in systems that were initially fair.
+        Population shifts, changes in clinical practice, and the feedback loops we
+        discussed can all introduce or amplify disparities. This means bias detection
+        isn't a one-time audit—it requires ongoing monitoring with stratified performance
+        metrics.
+      </p>
+
+      <p>
+        Organizations deploying healthcare AI should establish processes for continuous
+        bias monitoring, with clear escalation pathways when disparities are detected.
+      </p>
+
+      <hr>
+
+      <h2>Readings</h2>
+
+      <!-- Prioritize This! -->
+      <div class="callout" style="border-left-color: #f59e0b; background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%); margin-bottom: 1.5rem;">
+        <div class="callout-title" style="color: #b45309;">
+          <i data-lucide="star" style="width: 18px; height: 18px; margin-right: 0.5rem; fill: #f59e0b; stroke: #b45309;"></i>
+          Prioritize This!
+        </div>
+        <div class="reading-item" style="background: white; border-radius: 8px; padding: 1rem; margin-top: 0.75rem; border: 1px solid #fcd34d;">
+          <div class="reading-type"><i data-lucide="file-text"></i></div>
+          <div class="reading-content">
+            <div class="reading-title">
+              <a href="https://www.science.org/doi/10.1126/science.aax2342" target="_blank">Dissecting Racial Bias in an Algorithm Used to Manage the Health of Populations</a>
+            </div>
+            <div class="reading-meta">Obermeyer et al., Science, 2019 · The landmark paper. Essential reading for anyone working with healthcare AI. Shows how a widely-used algorithm systematically disadvantaged Black patients—and how fixing the proxy variable reduced bias by 84%.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="reading-list">
+        <div class="reading-item">
+          <div class="reading-type"><i data-lucide="file-text"></i></div>
+          <div class="reading-content">
+            <div class="reading-title">
+              <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC11542778/" target="_blank">Bias in Medical AI: Implications for Clinical Decision-Making</a>
+            </div>
+            <div class="reading-meta">PMC · Comprehensive review of how bias enters AI systems and affects clinical decisions. Good taxonomy of bias types.</div>
+          </div>
+        </div>
+
+        <div class="reading-item">
+          <div class="reading-type"><i data-lucide="file-text"></i></div>
+          <div class="reading-content">
+            <div class="reading-title">
+              <a href="https://www.nature.com/articles/s41746-025-01503-7" target="_blank">Bias Recognition and Mitigation Strategies in AI Healthcare Applications</a>
+            </div>
+            <div class="reading-meta">npj Digital Medicine · Practical strategies for identifying and reducing algorithmic bias. Includes framework for systematic evaluation.</div>
+          </div>
+        </div>
+
+        <div class="reading-item">
+          <div class="reading-type"><i data-lucide="file-text"></i></div>
+          <div class="reading-content">
+            <div class="reading-title">
+              <a href="https://www.science.org/doi/10.1126/sciadv.abq6147" target="_blank">Disparities in Dermatology AI Performance on a Diverse Clinical Image Set</a>
+            </div>
+            <div class="reading-meta">Science Advances · Rigorous evaluation showing how dermatology AI performs worse on darker skin tones. Important empirical evidence.</div>
+          </div>
+        </div>
+
+        <div class="reading-item">
+          <div class="reading-type"><i data-lucide="file-text"></i></div>
+          <div class="reading-content">
+            <div class="reading-title">
+              <a href="https://news.northwestern.edu/stories/2024/02/new-study-suggests-racial-bias-exists-in-photo-based-diagnosis-despite-assistance-from-fair-ai" target="_blank">Racial Bias in Photo-Based Diagnosis Despite AI Assistance</a>
+            </div>
+            <div class="reading-meta">Northwestern University, 2024 · Shows that AI assistance improves diagnostic accuracy but doesn't eliminate skin tone disparities.</div>
+          </div>
+        </div>
+
+        <div class="reading-item">
+          <div class="reading-type"><i data-lucide="file-text"></i></div>
+          <div class="reading-content">
+            <div class="reading-title">
+              <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC8515002/" target="_blank">Addressing Bias in Big Data and AI for Health Care: A Call for Open Science</a>
+            </div>
+            <div class="reading-meta">PMC · Argues for transparency and open data practices to address algorithmic bias. Policy-focused.</div>
+          </div>
+        </div>
+
+        <div class="reading-item">
+          <div class="reading-type"><i data-lucide="file-text"></i></div>
+          <div class="reading-content">
+            <div class="reading-title">
+              <a href="https://learn.hms.harvard.edu/insights/all-insights/confronting-mirror-reflecting-our-biases-through-ai-health-care" target="_blank">Confronting the Mirror: Reflecting on Our Biases Through AI in Health Care</a>
+            </div>
+            <div class="reading-meta">Harvard Medical School · Thoughtful piece on how AI reveals human biases. Good philosophical framing.</div>
+          </div>
+        </div>
+
+        <div class="reading-item">
+          <div class="reading-type"><i data-lucide="file-text"></i></div>
+          <div class="reading-content">
+            <div class="reading-title">
+              <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC12076083/" target="_blank">Ethical and Legal Considerations in Healthcare AI: Innovation and Policy for Safe and Fair Use</a>
+            </div>
+            <div class="reading-meta">Royal Society Open Science · Covers autonomy, beneficence, non-maleficence, justice, transparency, and accountability in AI.</div>
+          </div>
+        </div>
+
+        <div class="reading-item">
+          <div class="reading-type"><i data-lucide="file-text"></i></div>
+          <div class="reading-content">
+            <div class="reading-title">
+              <a href="https://www.cdc.gov/pcd/issues/2024/24_0245.htm" target="_blank">Health Equity and Ethical Considerations in Using AI in Public Health and Medicine</a>
+            </div>
+            <div class="reading-meta">CDC · Public health perspective on AI ethics. Practical guidance for population-level applications.</div>
+          </div>
+        </div>
+      </div>
+
+      <h2>Books</h2>
+      <div class="reading-list">
+        <div class="reading-item">
+          <div class="reading-type"><i data-lucide="book"></i></div>
+          <div class="reading-content">
+            <div class="reading-title">
+              <a href="https://www.amazon.com/Weapons-Math-Destruction-Increases-Inequality/dp/0553418815" target="_blank">Weapons of Math Destruction: How Big Data Increases Inequality and Threatens Democracy</a>
+            </div>
+            <div class="reading-meta">Cathy O'Neil · The foundational text on algorithmic bias. O'Neil, a mathematician, shows how opaque, unregulated algorithms perpetuate discrimination across domains including healthcare. Won the Euler Book Prize.</div>
+          </div>
+        </div>
+
+        <div class="reading-item">
+          <div class="reading-type"><i data-lucide="book"></i></div>
+          <div class="reading-content">
+            <div class="reading-title">
+              <a href="https://www.amazon.com/Deep-Medicine-Artificial-Intelligence-Healthcare/dp/1541644638" target="_blank">Deep Medicine: How Artificial Intelligence Can Make Healthcare Human Again</a>
+            </div>
+            <div class="reading-meta">Eric Topol · Balanced view of AI's potential and risks. Topol addresses bias concerns while arguing AI could ultimately improve equity if developed thoughtfully.</div>
+          </div>
+        </div>
+      </div>
+
+      <h2>Podcasts</h2>
+      <div class="reading-list">
+        <div class="reading-item">
+          <div class="reading-type"><i data-lucide="headphones"></i></div>
+          <div class="reading-content">
+            <div class="reading-title">
+              <a href="https://ai-podcast.nejm.org/e/14-interrogating-ai-fairness-and-bias-in-dermatology-and-beyond-with-dr-roxana-daneshjou" target="_blank">NEJM AI Grand Rounds: Interrogating AI Fairness and Bias with Dr. Roxana Daneshjou</a>
+            </div>
+            <div class="reading-meta">NEJM · Dr. Daneshjou discusses her research on dermatology AI disparities and the broader implications for fairness in healthcare AI. Essential listening.</div>
+          </div>
+        </div>
+
+        <div class="reading-item">
+          <div class="reading-type"><i data-lucide="headphones"></i></div>
+          <div class="reading-content">
+            <div class="reading-title">
+              <a href="https://erictopol.substack.com/p/faisal-mahmood-ais-transformation" target="_blank">Ground Truths: Faisal Mahmood on AI's Transformation of Pathology</a>
+            </div>
+            <div class="reading-meta">Eric Topol · Discusses counterintuitive findings that generative AI could actually reduce biases by using richer feature representations.</div>
+          </div>
+        </div>
+
+        <div class="reading-item">
+          <div class="reading-type"><i data-lucide="headphones"></i></div>
+          <div class="reading-content">
+            <div class="reading-title">
+              <a href="https://thenocturnists.org/podcast/erictopol" target="_blank">The Nocturnists: The Promise of AI in Medicine with Eric Topol</a>
+            </div>
+            <div class="reading-meta">The Nocturnists · Topol discusses both the transformative potential and the ethical pitfalls of medical AI.</div>
+          </div>
+        </div>
+      </div>
+
+      <h2>Video</h2>
+      <div class="reading-list">
+        <div class="reading-item">
+          <div class="reading-type"><i data-lucide="film"></i></div>
+          <div class="reading-content">
+            <div class="reading-title">
+              <a href="https://www.netflix.com/title/81328723" target="_blank">Coded Bias (Documentary)</a>
+            </div>
+            <div class="reading-meta">Netflix/PBS · Emmy-nominated documentary following Joy Buolamwini's discovery of racial bias in facial recognition AI. Features Timnit Gebru, Cathy O'Neil, and other key researchers. 100% on Rotten Tomatoes.</div>
+          </div>
+        </div>
+
+        <div class="reading-item">
+          <div class="reading-type"><i data-lucide="video"></i></div>
+          <div class="reading-content">
+            <div class="reading-title">
+              <a href="https://www.pbs.org/video/algorithmic-bias-and-fairness-18-4gxvyl/" target="_blank">Crash Course AI: Algorithmic Bias and Fairness</a>
+            </div>
+            <div class="reading-meta">PBS/Crash Course · Accessible 12-minute explainer covering five types of algorithmic bias and how they lead to discrimination. Good starting point.</div>
+          </div>
+        </div>
+      </div>
+
+      <h2>Key Researchers to Follow</h2>
+      <div class="reading-list">
+        <div class="reading-item">
+          <div class="reading-type"><i data-lucide="user"></i></div>
+          <div class="reading-content">
+            <div class="reading-title">
+              <a href="https://ziadobermeyer.com/" target="_blank">Ziad Obermeyer, MD</a>
+            </div>
+            <div class="reading-meta">UC Berkeley · Led the landmark healthcare algorithm bias study. Continues research on algorithmic fairness in medicine.</div>
+          </div>
+        </div>
+
+        <div class="reading-item">
+          <div class="reading-type"><i data-lucide="user"></i></div>
+          <div class="reading-content">
+            <div class="reading-title">
+              <a href="https://www.ajl.org/" target="_blank">Joy Buolamwini / Algorithmic Justice League</a>
+            </div>
+            <div class="reading-meta">MIT Media Lab · Founded the Algorithmic Justice League. Co-authored the "Gender Shades" study on facial recognition bias.</div>
+          </div>
+        </div>
+
+        <div class="reading-item">
+          <div class="reading-type"><i data-lucide="user"></i></div>
+          <div class="reading-content">
+            <div class="reading-title">
+              <a href="https://www.dair-institute.org/" target="_blank">Timnit Gebru / DAIR Institute</a>
+            </div>
+            <div class="reading-meta">Distributed AI Research Institute · Co-authored Gender Shades. Founded DAIR to examine AI through an ethical lens with focus on marginalized communities.</div>
+          </div>
+        </div>
+
+        <div class="reading-item">
+          <div class="reading-type"><i data-lucide="user"></i></div>
+          <div class="reading-content">
+            <div class="reading-title">
+              <a href="https://profiles.stanford.edu/roxana-daneshjou" target="_blank">Roxana Daneshjou, MD, PhD</a>
+            </div>
+            <div class="reading-meta">Stanford · Leading researcher on dermatology AI bias and equitable algorithm development.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="discussion-questions">
+        <h4>Reflection Questions</h4>
+        <ol>
+          <li>
+            Think about AI tools you use or encounter in clinical practice. What populations
+            might be underrepresented in their training data? How might this affect their
+            recommendations?
+          </li>
+          <li>
+            The Obermeyer study found that using healthcare costs as a proxy for health
+            needs encoded racial bias. What other "reasonable" proxy measures might encode
+            hidden biases?
+          </li>
+          <li>
+            If AI makes bias more visible and measurable than human decision-making, does
+            this represent an opportunity for improvement—or just a new form of the same
+            old problem?
+          </li>
+          <li>
+            How would you respond if you noticed an AI tool consistently giving different
+            recommendations for similar patients from different demographic groups?
+          </li>
+        </ol>
+      </div>
+
+      <div class="objectives phase-1">
+        <h4 class="objectives-title">Learning Objectives</h4>
+        <ul class="objectives-list">
+          <li>Explain how AI systems inherit and potentially amplify biases from training data</li>
+          <li>Describe the Obermeyer study and why using costs as a proxy for needs created racial bias</li>
+          <li>Identify multiple pathways through which bias enters AI systems (data composition, proxy variables, label bias, feedback loops)</li>
+          <li>Recognize how dermatology AI performance disparities illustrate the training data problem</li>
+          <li>Apply a framework for questioning AI tools about their training data and validation across populations</li>
+          <li>Articulate the philosophical argument that algorithmic bias reflects—and makes visible—human bias</li>
+        </ul>
+      </div>
+
+      <nav class="page-nav">
+        <a href="big-three.html" class="page-nav-link prev">
+          <span class="page-nav-arrow"><i data-lucide="arrow-left"></i></span>
+          <div>
+            <span class="page-nav-label">Previous</span>
+            <span class="page-nav-title">The Big Three</span>
+          </div>
+        </a>
+        <a href="medical-learners.html" class="page-nav-link next">
+          <span class="page-nav-arrow"><i data-lucide="arrow-right"></i></span>
+          <div>
+            <span class="page-nav-label">Next</span>
+            <span class="page-nav-title">AI 101 for Medical Learners</span>
+          </div>
+        </a>
+      </nav>
+
+    </article>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div><strong>AI 101</strong> · A Self-Paced Guide to AI in Medicine</div>
+      <div>v1.0 · 2025</div>
+    </div>
+  </footer>
+
+  <script>
+    lucide.createIcons();
+    const navToggle = document.querySelector('.nav-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    if (navToggle) {
+      navToggle.addEventListener('click', () => {
+        navLinks.classList.toggle('nav-open');
+      });
+    }
+  </script>
+
+  <script src="https://studio.pickaxe.co/api/embed/bundle.js" defer></script>
+
+</body>
+</html>
