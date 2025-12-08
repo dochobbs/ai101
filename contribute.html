@@ -56,66 +56,9 @@
 
       <h2>Submit a Resource</h2>
 
-      <form class="contribute-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
-
-        <div class="form-group">
-          <label for="contributor-name" class="form-label">Your Name (optional)</label>
-          <input type="text" id="contributor-name" name="name" class="form-input" placeholder="How you'd like to be credited">
-        </div>
-
-        <div class="form-group">
-          <label for="contributor-email" class="form-label">Email (optional)</label>
-          <input type="email" id="contributor-email" name="email" class="form-input" placeholder="In case we have questions">
-          <span class="form-hint">We won't share your email or add you to any lists.</span>
-        </div>
-
-        <div class="form-group">
-          <label for="submission-type" class="form-label">What are you sharing? <span class="required">*</span></label>
-          <select id="submission-type" name="type" class="form-select" required>
-            <option value="">Select one...</option>
-            <option value="link">Link (article, paper, video, tool)</option>
-            <option value="prompt">Prompt (for clinical tasks)</option>
-            <option value="tip">Tip or insight</option>
-            <option value="correction">Correction or update</option>
-            <option value="other">Other</option>
-          </select>
-        </div>
-
-        <div class="form-group">
-          <label for="submission-url" class="form-label">URL (if applicable)</label>
-          <input type="url" id="submission-url" name="url" class="form-input" placeholder="https://...">
-        </div>
-
-        <div class="form-group">
-          <label for="submission-title" class="form-label">Title or Summary <span class="required">*</span></label>
-          <input type="text" id="submission-title" name="title" class="form-input" placeholder="Brief description of what you're sharing" required>
-        </div>
-
-        <div class="form-group">
-          <label for="submission-content" class="form-label">Details <span class="required">*</span></label>
-          <textarea id="submission-content" name="content" class="form-textarea" rows="6" placeholder="For prompts: paste the full prompt text.
-For links: explain why it's useful.
-For tips: share your experience." required></textarea>
-        </div>
-
-        <div class="form-group">
-          <label for="submission-context" class="form-label">Clinical Context (optional)</label>
-          <input type="text" id="submission-context" name="context" class="form-input" placeholder="e.g., Primary care, Pediatrics, Documentation, Patient education">
-          <span class="form-hint">Helps us categorize and surface your contribution to the right audience.</span>
-        </div>
-
-        <div class="form-group">
-          <label class="form-checkbox-label">
-            <input type="checkbox" name="permission" value="yes" class="form-checkbox">
-            <span>I'm okay with this being shared publicly (with attribution if name provided)</span>
-          </label>
-        </div>
-
-        <button type="submit" class="form-submit">
-          <i data-lucide="send"></i>
-          Submit Contribution
-        </button>
-      </form>
+      <div class="google-form-container">
+        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSc3qPCR5gyR8tg2Qg41bt1xVEIlZl3kXkDLm50h4uvJcFbAaw/viewform?embedded=true" width="100%" height="1941" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+      </div>
 
       <hr>
 
