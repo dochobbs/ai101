@@ -983,6 +983,58 @@
         it entirely.
       </p>
 
+      <h3>Semantic Drift: A Real-World Example</h3>
+
+      <p>
+        In December 2025, <a href="https://medium.com/@olivia.milgrom/a-semantic-drift-perfect-storm-in-medical-ai-f0e9cd1b0f03" target="_blank">Dr. Olivia Milgrom documented a striking example</a>
+        of how even well-designed medical AI can fail. A popular clinical AI tool confidently
+        recommended dose reduction for oxacillin in dialysis patients—advice that could lead
+        to subtherapeutic antibiotic levels in critical situations. The correct answer: oxacillin
+        does <em>not</em> require renal dose adjustment.
+      </p>
+
+      <p>
+        How did this happen? Dr. Milgrom traced the error to what she calls a "semantic drift
+        perfect storm":
+      </p>
+
+      <ul>
+        <li>
+          <strong>The sources weren't wrong—but weren't designed for this question.</strong>
+          The AI cited FDA drug labels that mentioned "consider dose reduction if toxicity is
+          a concern" in precaution sections. These labels were written for worst-case scenarios,
+          not typical clinical use.
+        </li>
+        <li>
+          <strong>Oxacillin is an exception in its class.</strong> Unlike other beta-lactam
+          antibiotics, oxacillin has hepatic metabolism and biliary excretion—it doesn't
+          accumulate in renal failure despite being substantially excreted by the kidney.
+        </li>
+        <li>
+          <strong>Medical language drifted in meaning.</strong> "Should be considered" became
+          "is required." "Precaution IF toxicity is a concern" became "rule for all dialysis
+          patients." "Substantially excreted by the kidney" became "renally dependent."
+        </li>
+      </ul>
+
+      <p>
+        As Dr. Milgrom wrote: <em>"The drug label's conservative precautionary language doesn't
+        capture this nuanced reality. It's written for the worst-case scenario, not the typical
+        clinical case. The AI interpreted it as an absolute requirement for all dialysis patients.
+        This is the constraint vs. real-world scenario mismatch. And medical knowledge is full of
+        exceptions, contexts, and constraints."</em>
+      </p>
+
+      <div class="callout callout-warning">
+        <div class="callout-title">The Lesson</div>
+        <p class="mb-0">
+          Even when a CDS tool cites legitimate sources, semantic drift can transform cautious
+          hedging into confident recommendations. The AI may not hallucinate the reference—but
+          it can hallucinate the interpretation. This is why verification matters most precisely
+          when the AI sounds most confident and cites its sources.
+        </p>
+      </div>
+
       <h3>Verification in Practice</h3>
 
       <p>What does verification actually look like in a busy clinical day?</p>
@@ -1274,6 +1326,15 @@
               <a href="https://www.statnews.com/2025/10/02/uptodate-artificial-intelligence-openevidence-clinical-decision-chatbot/" target="_blank">"UpToDate launches Expert AI to answer doctors' clinical questions"</a>
             </div>
             <div class="reading-meta">STAT News, October 2025 · Coverage of UpToDate's entry into AI-powered CDS and physician reactions</div>
+          </div>
+        </div>
+        <div class="reading-item">
+          <div class="reading-type"><i data-lucide="file-text"></i></div>
+          <div class="reading-content">
+            <div class="reading-title">
+              <a href="https://medium.com/@olivia.milgrom/a-semantic-drift-perfect-storm-in-medical-ai-f0e9cd1b0f03" target="_blank">"A 'Semantic Drift' Perfect Storm: How Medical AI Chatbots Get It Wrong"</a>
+            </div>
+            <div class="reading-meta">Olivia Milgrom, MD, MPH · December 2025 · Essential case study of how CDS tools can misinterpret sources—even when citing them correctly</div>
           </div>
         </div>
       </div>
