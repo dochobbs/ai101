@@ -2867,6 +2867,32 @@ blockquote.pull-quote {
 }
 
 /* ==========================================
+   Action-Oriented Styles (Blue)
+   ========================================== */
+
+/* Action label styling */
+.unit-label.action {
+  background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+  color: white;
+}
+
+/* Action module card styling */
+.week-card.action {
+  border-color: #3b82f6;
+  background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+}
+
+.week-card.action:hover {
+  border-color: #2563eb;
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.15);
+}
+
+.week-card.action .week-number {
+  background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+  color: white;
+}
+
+/* ==========================================
    CONTRIBUTE FORM STYLES
    ========================================== */
 
