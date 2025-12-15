@@ -40,7 +40,7 @@
         <div class="unit-meta">
           <span class="unit-meta-item">
             <i data-lucide="clock"></i>
-            ~15 min read
+            ~25 min read
           </span>
           <span class="unit-meta-item">
             <i data-lucide="rocket"></i>
@@ -100,16 +100,16 @@
       <h2>Accept the Speed (Or Get Left Behind)</h2>
 
       <p>
-        Let's be honest about what you're up against. In 2024 alone:
+        Let's be honest about what you're up against. In 2025 alone:
       </p>
 
       <ul>
-        <li>OpenAI released GPT-4o, GPT-4o mini, o1-preview, and o1 (the reasoning model)</li>
-        <li>Anthropic shipped Claude 3 Opus, Sonnet, Haiku, then 3.5 Sonnet, then Claude 3.5 Sonnet (yes, twice)</li>
-        <li>Google released Gemini 1.5 Pro, Flash, and announced Gemini 2.0</li>
-        <li>Meta open-sourced Llama 3 and 3.1, fundamentally changing the open-source landscape</li>
-        <li>Apple shipped Apple Intelligence across their ecosystem</li>
-        <li>Microsoft embedded Copilot into everything</li>
+        <li>OpenAI released o3, o4-mini, GPT-5 (with Mini and Nano variants), then GPT-5.1, and now GPT-5.2—all in one year</li>
+        <li>Anthropic shipped Claude Opus 4 and Sonnet 4 in May, then Sonnet 4.5 in September, then Opus 4.5 in November—three major releases in six months</li>
+        <li>Google launched Gemini 2.5 Pro and Flash, then Gemini 3 Pro and Deep Think by November</li>
+        <li>DeepSeek released R1 in January (rivaling GPT-4 at a fraction of the cost), then V3.1 and V3.2 through the fall</li>
+        <li>AI agents went from demos to production—computer use, coding assistants, research tools that actually work</li>
+        <li>Every major EHR vendor shipped or expanded AI documentation features</li>
       </ul>
 
       <p>
@@ -126,8 +126,9 @@
       <h3>Build Your Information Diet</h3>
 
       <p>
-        You need reliable sources that filter the noise without missing the signal. Here's a
-        starting point:
+        You need reliable sources that filter the noise without missing the signal. The resources
+        below are some of my favorites—they're a good place to start, but you'll find new ones you
+        love as you develop your own information diet.
       </p>
 
       <div class="reading-list">
@@ -186,6 +187,43 @@
         Subscribe to 2-3 of these. Skim them weekly. Most items won't be relevant to you—that's
         fine. You're looking for the occasional piece that changes how you think or points to
         something you should try.
+      </p>
+
+      <h3>The Lenny's Pass: A Shortcut Worth Knowing About</h3>
+
+      <p>
+        One resource deserves special mention. <a href="https://lennysproductpass.com/" target="_blank">Lenny's Newsletter</a>
+        offers something called "Lenny's Pass" (or "Product Pass") to annual subscribers that's genuinely
+        remarkable for anyone wanting to experiment with AI tools.
+      </p>
+
+      <p>
+        For $200-350/year, annual subscribers get free year-long access to many of the most popular
+        AI-powered tools in the world—tools that would cost thousands of dollars individually:
+      </p>
+
+      <ul>
+        <li><strong>Cursor</strong> — The AI-native code editor we mentioned in Vibe Coding</li>
+        <li><strong>v0</strong> — Vercel's AI that generates React components from descriptions</li>
+        <li><strong>Replit</strong> — Browser-based coding environment with AI assistance</li>
+        <li><strong>Lovable</strong> — AI-powered app builder</li>
+        <li><strong>Bolt</strong> — Another AI app builder for rapid prototyping</li>
+        <li><strong>Granola</strong> — AI notetaker for meetings</li>
+        <li><strong>Notion AI</strong> — AI features in the popular workspace tool</li>
+        <li><strong>Perplexity</strong> — AI-powered search and research</li>
+        <li>And many more...</li>
+      </ul>
+
+      <p>
+        The catch: you need to be a new customer of each product to get the free year, and some
+        popular tools sell out. The $350 "Insider" tier guarantees access to everything.
+      </p>
+
+      <p>
+        This isn't an endorsement—it's a practical observation. If you're planning to experiment
+        with AI development tools anyway, this bundle could save you significant money while giving
+        you access to experiment with multiple platforms. The newsletter itself is also genuinely
+        excellent for understanding how tech companies think about product development and AI integration.
       </p>
 
       <!-- Find Your Niche -->
@@ -270,7 +308,78 @@
         </div>
       </div>
 
-      <h3>For Learning to Evaluate AI Systems</h3>
+      <h3>For Learning to Evaluate AI Systems: The Critical Skill</h3>
+
+      <p>
+        <strong>Evals</strong>—short for evaluations—is the emerging discipline of rigorously testing what
+        AI systems can and can't do. This might sound academic, but it's arguably the most important
+        skill for anyone deploying AI in clinical settings. Here's why.
+      </p>
+
+      <p>
+        When a vendor tells you their AI is "95% accurate," what does that actually mean? Accurate at what?
+        On what population? Measured how? Under what conditions? The answers to these questions determine
+        whether the tool will help or harm your patients.
+      </p>
+
+      <p>
+        Consider a simple example: An AI scribe claims "95% accuracy" in generating clinical notes.
+        But what if:
+      </p>
+
+      <ul>
+        <li>The 5% errors are concentrated in medication dosing and allergy documentation?</li>
+        <li>The accuracy drops to 70% for patients with accents the training data didn't include?</li>
+        <li>The system was evaluated on 15-minute primary care visits but you're using it for 45-minute psychiatric intakes?</li>
+        <li>"Accuracy" was measured by whether the note contained the right information, not whether it omitted critical details?</li>
+      </ul>
+
+      <p>
+        Understanding evals means understanding what questions to ask, how to interpret the answers,
+        and—increasingly—how to run your own evaluations before deploying AI in your practice.
+      </p>
+
+      <div class="callout callout-principle">
+        <div class="callout-title">The Eval Mindset</div>
+        <p class="mb-0">
+          Think like a skeptical scientist, not a hopeful adopter. Every AI claim should trigger the
+          question: "How would I test that?" The clinicians who will navigate AI safely are those who
+          habitually ask for evidence and understand what that evidence actually shows.
+        </p>
+      </div>
+
+      <h4>Core Concepts in AI Evaluation</h4>
+
+      <p>
+        You don't need to become an evaluation scientist, but understanding a few key concepts will
+        make you a much more sophisticated consumer of AI tools:
+      </p>
+
+      <ul>
+        <li><strong>Benchmarks vs. Real-World Performance:</strong> AI models are often evaluated on standardized
+        benchmarks (like medical licensing exams), but benchmark performance doesn't always translate to
+        clinical utility. A model that aces USMLE questions might still give dangerous advice to a real
+        patient with atypical presentation.</li>
+
+        <li><strong>Distribution Shift:</strong> AI systems perform best on data that looks like their training
+        data. When your patient population, documentation style, or clinical workflow differs from what
+        the AI was trained on, expect degraded performance. This is why an AI trained on academic medical
+        center data might fail in a rural clinic.</li>
+
+        <li><strong>Failure Modes:</strong> It's not enough to know how often AI is right—you need to know
+        how it fails. Does it fail safely (expressing uncertainty) or dangerously (confidently wrong)?
+        Does it fail randomly or systematically on certain patient populations?</li>
+
+        <li><strong>Task-Specific Evaluation:</strong> An AI that's excellent at summarizing notes might be
+        terrible at identifying drug interactions. Evaluate each use case separately; don't assume
+        competence transfers.</li>
+
+        <li><strong>Longitudinal Drift:</strong> AI performance can degrade over time as the world changes
+        but the model doesn't. New drug names, updated guidelines, emerging diseases—static models
+        become stale. Ongoing evaluation is essential, not just initial testing.</li>
+      </ul>
+
+      <h4>Learning to Run Your Own Evals</h4>
 
       <div class="reading-list">
         <div class="reading-item">
@@ -279,16 +388,36 @@
             <div class="reading-title">
               <a href="https://maven.com/parlance-labs/evals" target="_blank">Parlance Labs: AI Evals Course</a>
             </div>
-            <div class="reading-meta">Learn how to systematically evaluate AI systems. "Evals" is the emerging discipline of measuring what AI can actually do—essential knowledge for anyone deploying AI in clinical settings.</div>
+            <div class="reading-meta">The definitive course on AI evaluation methodology. Learn how to design test sets, measure performance, and identify failure modes. Taught by Hamel Husain, who built evaluation frameworks at major AI companies.</div>
+          </div>
+        </div>
+
+        <div class="reading-item">
+          <div class="reading-type"><i data-lucide="book-open"></i></div>
+          <div class="reading-content">
+            <div class="reading-title">
+              <a href="https://hamel.dev/blog/posts/evals/" target="_blank">Your AI Product Needs Evals (Hamel Husain)</a>
+            </div>
+            <div class="reading-meta">A free introduction to why evals matter and how to think about them. Start here before committing to the full course.</div>
+          </div>
+        </div>
+
+        <div class="reading-item">
+          <div class="reading-type"><i data-lucide="file-text"></i></div>
+          <div class="reading-content">
+            <div class="reading-title">
+              <a href="https://www.anthropic.com/research/evaluating-ai-systems" target="_blank">Evaluating AI Systems (Anthropic)</a>
+            </div>
+            <div class="reading-meta">How Anthropic thinks about evaluating Claude. Gives insight into what sophisticated AI evaluation looks like at the frontier.</div>
           </div>
         </div>
       </div>
 
       <p>
-        Evals deserve special attention. As AI gets deployed in higher-stakes settings, the ability
-        to rigorously test what it can and can't do becomes critical. This isn't just for researchers—
-        clinicians who understand evaluation methodology can ask better questions of vendors and
-        make better deployment decisions.
+        The practical application: Before deploying any AI tool in your practice, create a test set of
+        challenging cases from your own patient population. Run the AI on these cases. Have colleagues
+        blindly evaluate the outputs. Document failures. This isn't academic—it's basic due diligence
+        that most healthcare organizations skip.
       </p>
 
       <!-- Developer Tools -->
@@ -297,7 +426,13 @@
       <p>
         Vibe coding is real and powerful—but the most capable builders understand at least the
         basics of what's happening under the hood. You don't need to become a software engineer,
-        but some foundational skills will multiply your effectiveness.
+        but some foundational skills will multiply your effectiveness dramatically.
+      </p>
+
+      <p>
+        Think of it like learning to drive. You don't need to be a mechanic, but understanding
+        that the car needs gas, how brakes work, and what that warning light means makes you a
+        much better driver. The same applies to building with AI.
       </p>
 
       <h3>Git: Your Safety Net</h3>
@@ -309,10 +444,11 @@
       </p>
 
       <ul>
-        <li>You can save working versions before experimenting</li>
-        <li>You can undo catastrophic AI-generated changes</li>
+        <li>You can save working versions before experimenting with risky changes</li>
+        <li>You can undo catastrophic AI-generated changes with a single command</li>
         <li>You can collaborate with others (or with AI agents) without losing work</li>
-        <li>You can deploy your projects to the web</li>
+        <li>You can deploy your projects to the web for free via GitHub Pages</li>
+        <li>You can see exactly what changed between versions—essential for debugging</li>
       </ul>
 
       <p>
@@ -320,6 +456,40 @@
         tracking, and collaboration tools. Learning the basics takes an afternoon and pays dividends
         forever.
       </p>
+
+      <div class="reading-list">
+        <div class="reading-item">
+          <div class="reading-type"><i data-lucide="graduation-cap"></i></div>
+          <div class="reading-content">
+            <div class="reading-title">
+              <a href="https://docs.github.com/en/get-started/start-your-journey" target="_blank">GitHub's Official Getting Started Guide</a>
+            </div>
+            <div class="reading-meta">The best free introduction to Git and GitHub. Interactive, well-paced, and you'll have a working repository by the end.</div>
+          </div>
+        </div>
+
+        <div class="reading-item">
+          <div class="reading-type"><i data-lucide="youtube"></i></div>
+          <div class="reading-content">
+            <div class="reading-title">
+              <a href="https://www.youtube.com/watch?v=RGOj5yH7evk" target="_blank">Git and GitHub for Beginners (freeCodeCamp)</a>
+            </div>
+            <div class="reading-meta">A comprehensive video tutorial if you prefer watching to reading. About an hour, covers everything you need.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="callout callout-tip">
+        <div class="callout-title">The Five Git Commands You Actually Need</div>
+        <p class="mb-0">
+          <code>git status</code> — See what's changed<br>
+          <code>git add .</code> — Stage all changes<br>
+          <code>git commit -m "message"</code> — Save a snapshot with a description<br>
+          <code>git push</code> — Upload to GitHub<br>
+          <code>git pull</code> — Download changes from GitHub<br><br>
+          That's it. You can learn more commands later, but these five will handle 90% of what you need.
+        </p>
+      </div>
 
       <h3>The Command Line: Where Power Lives</h3>
 
@@ -329,18 +499,235 @@
       </p>
 
       <ul>
-        <li>Most serious AI tools work best from the command line</li>
-        <li>Automation becomes possible (run tasks on schedule, process multiple files)</li>
-        <li>You can use AI coding assistants that work in terminal environments</li>
+        <li>Most serious AI tools work best (or only) from the command line</li>
+        <li>Automation becomes possible—run tasks on schedule, process multiple files at once</li>
+        <li>You can use AI coding assistants like Claude Code that work in terminal environments</li>
         <li>Many problems are solved with a single command that would take dozens of clicks</li>
+        <li>It's how developers actually work, so learning it unlocks their tutorials and resources</li>
       </ul>
 
       <p>
-        Start by opening Terminal (Mac) or PowerShell (Windows) and learning five commands: cd, ls,
-        mkdir, rm, and cp. That's enough to navigate. Build from there.
+        <strong>How to open the terminal:</strong> On Mac, search for "Terminal" in Spotlight (Cmd+Space)
+        or find it in Applications → Utilities. On Windows, search for "PowerShell" or "Windows Terminal"
+        in the Start menu. You'll see a blank window with a blinking cursor—that's it. You're in.
+      </p>
+
+      <div class="callout callout-tip">
+        <div class="callout-title">The Commands You Actually Need</div>
+        <p class="mb-0">
+          <strong>Navigation:</strong><br>
+          <code>cd foldername</code> — Change directory (go into a folder)<br>
+          <code>cd ..</code> — Go up one level<br>
+          <code>cd ~</code> — Go to your home directory<br>
+          <code>ls</code> — List files in current folder (<code>dir</code> on Windows)<br>
+          <code>pwd</code> — Print working directory (shows where you are)<br><br>
+          <strong>File operations:</strong><br>
+          <code>mkdir foldername</code> — Create a new folder<br>
+          <code>touch filename</code> — Create a new empty file<br>
+          <code>cp file1 file2</code> — Copy a file<br>
+          <code>mv file1 file2</code> — Move or rename a file<br>
+          <code>rm filename</code> — Delete a file (careful—no trash can!)<br><br>
+          <strong>Useful extras:</strong><br>
+          <code>clear</code> — Clear the screen when it gets cluttered<br>
+          <code>history</code> — See your recent commands<br>
+          <code>ctrl+c</code> — Stop whatever's currently running<br><br>
+          Open Terminal and try navigating around. You can't break anything just by looking.
+        </p>
+      </div>
+
+      <p>
+        <strong>Pro tip:</strong> When you're learning, have an AI chat window open alongside your terminal.
+        When you get stuck or see an error, paste it into Claude or ChatGPT and ask what went wrong. This
+        is how most developers actually work—nobody memorizes everything.
+      </p>
+
+      <div class="reading-list">
+        <div class="reading-item">
+          <div class="reading-type"><i data-lucide="graduation-cap"></i></div>
+          <div class="reading-content">
+            <div class="reading-title">
+              <a href="https://www.codecademy.com/learn/learn-the-command-line" target="_blank">Codecademy: Learn the Command Line</a>
+            </div>
+            <div class="reading-meta">Free interactive course. About 4 hours total, but the first module (30 minutes) teaches you enough to be functional.</div>
+          </div>
+        </div>
+
+        <div class="reading-item">
+          <div class="reading-type"><i data-lucide="youtube"></i></div>
+          <div class="reading-content">
+            <div class="reading-title">
+              <a href="https://www.youtube.com/watch?v=uwAqEzhyjtw" target="_blank">Beginner's Guide to the Bash Terminal (freeCodeCamp)</a>
+            </div>
+            <div class="reading-meta">Comprehensive video tutorial for Mac/Linux. About an hour, covers everything you need and more.</div>
+          </div>
+        </div>
+      </div>
+
+      <h3>APIs: How Software Talks to Software</h3>
+
+      <p>
+        An <strong>API</strong> (Application Programming Interface) is how different software systems
+        communicate with each other. When you use ChatGPT through the website, you're using their interface.
+        When you build your own tool that uses GPT, you use their API—a structured way to send requests
+        and receive responses programmatically.
+      </p>
+
+      <p>
+        Understanding APIs matters because:
+      </p>
+
+      <ul>
+        <li>It's how you integrate AI into your own applications</li>
+        <li>API access is often cheaper than chat subscriptions for high-volume use</li>
+        <li>APIs give you more control—you can customize behavior, process data in bulk, and build workflows</li>
+        <li>Many AI tools (Claude Code, automation platforms, custom apps) use APIs under the hood</li>
+      </ul>
+
+      <h4>How APIs Work (The Simple Version)</h4>
+
+      <p>
+        Think of an API like a restaurant. You (the customer) don't go into the kitchen—you give your
+        order to a waiter (the API), who brings it to the kitchen (the server), and returns with your
+        food (the response). The menu tells you what you can order and how to order it (the documentation).
+      </p>
+
+      <p>
+        In practice, using an AI API means:
+      </p>
+
+      <ol>
+        <li>You send a <strong>request</strong> containing your prompt and settings</li>
+        <li>The AI processes it on their servers</li>
+        <li>You receive a <strong>response</strong> containing the AI's output</li>
+        <li>You pay based on usage (typically per token—roughly per word)</li>
+      </ol>
+
+      <h4>API Keys: Your Access Credential</h4>
+
+      <p>
+        To use an API, you need an <strong>API key</strong>—a long string of characters that identifies
+        you and authorizes your requests. It's like a password that lets the service know who's making
+        requests and who to bill.
+      </p>
+
+      <div class="callout callout-warning">
+        <div class="callout-title">Protect Your API Keys</div>
+        <p class="mb-0">
+          API keys are sensitive. Anyone with your key can make requests and you'll be charged. Never
+          share them publicly, don't commit them to GitHub, and don't paste them into chat windows.
+          Store them securely—most developers use environment variables or secret management tools.
+        </p>
+      </div>
+
+      <h4>Getting API Keys from Major Providers</h4>
+
+      <div class="reading-list">
+        <div class="reading-item">
+          <div class="reading-type"><i data-lucide="key"></i></div>
+          <div class="reading-content">
+            <div class="reading-title">
+              <a href="https://platform.openai.com/api-keys" target="_blank">OpenAI API</a>
+            </div>
+            <div class="reading-meta">
+              Go to platform.openai.com → Sign up or log in → API Keys → Create new secret key.
+              You'll need to add a payment method. Pricing is pay-as-you-go based on tokens used.
+              GPT-4o is roughly $2.50-10 per million tokens depending on input/output.
+            </div>
+          </div>
+        </div>
+
+        <div class="reading-item">
+          <div class="reading-type"><i data-lucide="key"></i></div>
+          <div class="reading-content">
+            <div class="reading-title">
+              <a href="https://console.anthropic.com/" target="_blank">Anthropic API (Claude)</a>
+            </div>
+            <div class="reading-meta">
+              Go to console.anthropic.com → Sign up or log in → API Keys → Create Key.
+              Requires payment method. Claude Sonnet is roughly $3-15 per million tokens.
+              Anthropic's API is known for generous rate limits and reliable uptime.
+            </div>
+          </div>
+        </div>
+
+        <div class="reading-item">
+          <div class="reading-type"><i data-lucide="key"></i></div>
+          <div class="reading-content">
+            <div class="reading-title">
+              <a href="https://aistudio.google.com/apikey" target="_blank">Google AI API (Gemini)</a>
+            </div>
+            <div class="reading-meta">
+              Go to aistudio.google.com → Get API key → Create API key in new project.
+              Google offers a generous free tier for experimentation. Gemini Flash is very
+              cost-effective for high-volume use cases.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <h4>Your First API Call</h4>
+
+      <p>
+        Once you have an API key, the simplest way to test it is through each provider's "playground"
+        or documentation. But if you want to use it programmatically, here's what a basic API call
+        looks like in Python (the most common language for AI work):
+      </p>
+
+      <pre><code># Example: Calling Claude API (simplified)
+import anthropic
+
+client = anthropic.Anthropic(api_key="your-api-key-here")
+
+message = client.messages.create(
+    model="claude-sonnet-4-20250514",
+    max_tokens=1024,
+    messages=[
+        {"role": "user", "content": "Explain APIs in one paragraph."}
+    ]
+)
+
+print(message.content)</code></pre>
+
+      <p>
+        You don't need to understand every line right now. The point is: it's not magic. You're sending
+        a message, specifying which model to use, and getting a response back. AI coding assistants can
+        help you write and modify code like this—you describe what you want, they handle the syntax.
+      </p>
+
+      <h3>Understanding How Web Apps Work</h3>
+
+      <p>
+        If you want to build tools that run in a browser (rather than just on your local machine),
+        it helps to understand the basic architecture:
+      </p>
+
+      <ul>
+        <li><strong>Frontend:</strong> What users see and interact with. HTML defines structure, CSS defines
+        styling, JavaScript makes it interactive. Modern frameworks like React or Vue make this easier.</li>
+
+        <li><strong>Backend:</strong> The server that processes data, talks to databases, handles authentication.
+        This is where sensitive logic lives. Python (with Flask or FastAPI) is popular and readable.</li>
+
+        <li><strong>Database:</strong> Where data persists. User accounts, saved preferences, application state.
+        SQL databases (PostgreSQL, MySQL) are the workhorses; "NoSQL" databases (MongoDB) are more flexible.</li>
+
+        <li><strong>APIs:</strong> How different systems talk to each other. When your frontend needs data from
+        your backend, it makes an API call. When you integrate with OpenAI or Anthropic, you use their APIs.</li>
+      </ul>
+
+      <p>
+        You don't need to master all of this—that's what AI coding assistants are for. But understanding
+        the concepts helps you communicate with the AI and debug when things go wrong.
       </p>
 
       <h3>AI-Powered Development Tools</h3>
+
+      <p>
+        These are the tools that make building accessible to non-engineers. The first three deserve
+        special attention—they're genuinely transformative, but that power comes with real responsibility.
+      </p>
+
+      <h4>Cursor: The AI Code Editor</h4>
 
       <div class="reading-list">
         <div class="reading-item">
@@ -349,15 +736,92 @@
             <div class="reading-title">
               <a href="https://cursor.com/" target="_blank">Cursor</a>
             </div>
-            <div class="reading-meta">The AI-native code editor we mentioned in Vibe Coding. If you're going to build anything, start here. It's VS Code with AI superpowers built in.</div>
+            <div class="reading-meta">The AI-native code editor. If you're going to build anything beyond a simple script, start here. It's VS Code with AI superpowers—code completion, chat about your codebase, and the ability to make changes across multiple files. The $20/month Pro tier is worth it.</div>
+          </div>
+        </div>
+      </div>
+
+      <p>
+        Cursor is where most people should start. It looks and feels like VS Code (the most popular
+        code editor), but with AI deeply integrated. You can highlight code and ask "what does this do?"
+        You can describe a feature and watch it write the implementation. You can paste an error message
+        and get a fix.
+      </p>
+
+      <p>
+        The "Composer" feature is particularly powerful—it can make coordinated changes across multiple
+        files, understanding how your codebase fits together. For building real applications, this is
+        transformative.
+      </p>
+
+      <div class="callout callout-warning">
+        <div class="callout-title">Power Requires Caution</div>
+        <p class="mb-0">
+          Cursor can run commands, modify files, and execute code. When it's working well, this is magical.
+          When it makes a mistake, it can break things quickly. <strong>Always use Git</strong> so you can
+          roll back. Review changes before accepting them. Start with small projects where mistakes are
+          cheap. The AI is confident even when it's wrong—your job is to verify.
+        </p>
+      </div>
+
+      <h4>Claude Code and Codex: AI in the Command Line</h4>
+
+      <div class="reading-list">
+        <div class="reading-item">
+          <div class="reading-type"><i data-lucide="terminal"></i></div>
+          <div class="reading-content">
+            <div class="reading-title">
+              <a href="https://docs.anthropic.com/en/docs/claude-code" target="_blank">Claude Code</a> (Anthropic)
+            </div>
+            <div class="reading-meta">Anthropic's command-line AI assistant. Lives in your terminal, can read your entire codebase, write and edit files, run commands, and handle complex multi-step tasks. Requires a Claude Pro or Max subscription.</div>
           </div>
         </div>
 
         <div class="reading-item">
           <div class="reading-type"><i data-lucide="terminal"></i></div>
           <div class="reading-content">
-            <div class="reading-title">Claude Code / Codex</div>
-            <div class="reading-meta">Command-line AI assistants that can read, write, and execute code. More powerful than chat interfaces for complex tasks. Claude Code runs in your terminal; Codex is OpenAI's equivalent.</div>
+            <div class="reading-title">
+              <a href="https://openai.com/index/codex/" target="_blank">Codex</a> (OpenAI)
+            </div>
+            <div class="reading-meta">OpenAI's command-line coding agent. Similar capabilities to Claude Code—reads codebases, writes files, executes commands. Requires a ChatGPT Plus or Pro subscription.</div>
+          </div>
+        </div>
+      </div>
+
+      <p>
+        These tools are more powerful than Cursor in some ways—they operate directly in your terminal,
+        can run shell commands, and handle complex multi-step tasks autonomously. You describe what you
+        want ("add user authentication to this app" or "find and fix the bug causing the test to fail"),
+        and they figure out the steps: reading files, making changes, running tests, iterating until it works.
+      </p>
+
+      <p>
+        Both are excellent. Claude Code tends to be more thorough and careful; Codex can be faster and
+        more aggressive. Try both and see which one matches how you think. Many developers use both
+        depending on the task.
+      </p>
+
+      <div class="callout callout-warning">
+        <div class="callout-title">Autonomous Agents Can Do Real Damage</div>
+        <p class="mb-0">
+          These tools can delete files, run commands, modify your system. They're operating with your
+          permissions. A misunderstood instruction can cascade into significant damage before you notice.
+          <strong>Always work in a Git repository. Always review what the agent is doing. Start with
+          low-stakes projects.</strong> The productivity gains are real, but so is the risk of an AI
+          confidently executing the wrong plan.
+        </p>
+      </div>
+
+      <h4>App Builders and Infrastructure</h4>
+
+      <div class="reading-list">
+        <div class="reading-item">
+          <div class="reading-type"><i data-lucide="sparkles"></i></div>
+          <div class="reading-content">
+            <div class="reading-title">
+              <a href="https://bolt.new/" target="_blank">Bolt</a> / <a href="https://lovable.dev/" target="_blank">Lovable</a> / <a href="https://replit.com/" target="_blank">Replit</a> / <a href="https://v0.dev/" target="_blank">v0</a>
+            </div>
+            <div class="reading-meta">AI app builders that generate full applications from descriptions. Great for rapid prototyping and learning how modern web apps are structured. Bolt, Lovable, and Replit create full-stack apps; v0 (from Vercel) specializes in UI components.</div>
           </div>
         </div>
 
@@ -367,32 +831,144 @@
             <div class="reading-title">
               <a href="https://supabase.com/" target="_blank">Supabase</a>
             </div>
-            <div class="reading-meta">An open-source backend platform that handles databases, authentication, and APIs. Makes building "real" applications dramatically easier. Free tier is generous.</div>
+            <div class="reading-meta">An open-source backend platform that handles databases, authentication, file storage, and APIs. Makes building "real" applications dramatically easier. Free tier is generous enough for learning and small projects.</div>
+          </div>
+        </div>
+
+        <div class="reading-item">
+          <div class="reading-type"><i data-lucide="cloud"></i></div>
+          <div class="reading-content">
+            <div class="reading-title">
+              <a href="https://vercel.com/" target="_blank">Vercel</a> / <a href="https://netlify.com/" target="_blank">Netlify</a>
+            </div>
+            <div class="reading-meta">Deployment platforms that make putting your app on the internet trivially easy. Connect to your GitHub repository and they handle the rest. Free tiers are generous.</div>
           </div>
         </div>
       </div>
+
+      <h3>A Learning Path for the Ambitious</h3>
+
+      <p>
+        If you want to go beyond vibe coding to actually understanding what you're building:
+      </p>
+
+      <ol>
+        <li><strong>Week 1-2:</strong> Learn Git and GitHub basics. Create a repository, make commits, push to GitHub.</li>
+        <li><strong>Week 3-4:</strong> Get comfortable with the command line. Navigate, create files, run scripts.</li>
+        <li><strong>Week 5-6:</strong> Build something simple with Cursor or Bolt. A personal website, a to-do app, anything.</li>
+        <li><strong>Week 7-8:</strong> Learn basic HTML/CSS by customizing what the AI generated. Understand how to make changes yourself.</li>
+        <li><strong>Week 9-10:</strong> Add a backend with Supabase. User authentication, saving data, the basics of a real application.</li>
+        <li><strong>Week 11-12:</strong> Deploy to Vercel or Netlify. Put something on the internet that you built.</li>
+      </ol>
+
+      <p>
+        By the end of three months, you'll understand enough to have intelligent conversations with
+        developers, evaluate technical proposals, and build increasingly sophisticated tools with AI assistance.
+      </p>
 
       <!-- Agents -->
       <h2>The Next Frontier: AI Agents</h2>
 
       <p>
-        Everything we've discussed so far involves AI that responds to your prompts. The next wave
-        is <strong>AI that takes action autonomously</strong>—agents that can browse the web,
-        execute code, call APIs, and complete multi-step tasks without constant supervision.
+        Everything we've discussed so far involves AI that responds to your prompts. You ask, it answers.
+        You supervise, it executes. The emerging wave is fundamentally different: <strong>AI that takes
+        action autonomously</strong>—agents that can browse the web, execute code, call APIs, send messages,
+        and complete multi-step tasks without constant supervision.
       </p>
 
       <p>
-        This is where things get both exciting and concerning:
+        This is where things get both exciting and genuinely concerning for healthcare.
+      </p>
+
+      <h3>What Are AI Agents, Really?</h3>
+
+      <p>
+        An AI agent is a system that can:
       </p>
 
       <ul>
-        <li><strong>Exciting:</strong> Imagine an AI that monitors your patient panel, alerts you to concerning trends, drafts messages to patients who need outreach, and schedules follow-ups—all while you sleep.</li>
-        <li><strong>Concerning:</strong> Imagine an AI that makes decisions with patient-safety implications while you're not watching.</li>
+        <li><strong>Perceive:</strong> Take in information from the environment (emails, databases, APIs, sensors)</li>
+        <li><strong>Plan:</strong> Break complex goals into subtasks and decide what to do next</li>
+        <li><strong>Act:</strong> Execute those plans by calling tools, writing code, sending messages, or modifying systems</li>
+        <li><strong>Learn (sometimes):</strong> Adjust behavior based on feedback and outcomes</li>
       </ul>
 
       <p>
-        The governance frameworks we discussed earlier become even more critical as AI moves from
-        "tool I use" to "system that acts on my behalf."
+        The key difference from a chatbot: agents operate in loops without waiting for human approval
+        at each step. You give them a goal, and they figure out how to achieve it.
+      </p>
+
+      <h3>The Promise: Healthcare Scenarios</h3>
+
+      <p>
+        Imagine AI agents that could:
+      </p>
+
+      <ul>
+        <li><strong>Panel Management:</strong> Monitor your entire patient panel overnight, identifying patients
+        who missed medications, skipped appointments, or have lab results that need attention—then draft
+        appropriate outreach for your review in the morning.</li>
+
+        <li><strong>Prior Authorization:</strong> Handle the entire prior auth process—pulling relevant
+        documentation, filling out forms, submitting requests, tracking status, and escalating denials—
+        only involving you when clinical judgment is needed.</li>
+
+        <li><strong>Literature Surveillance:</strong> Monitor PubMed and preprint servers for papers relevant
+        to your specialty, summarize findings, and alert you when something might change your practice.</li>
+
+        <li><strong>Care Coordination:</strong> Track referrals, ensure follow-up appointments are scheduled,
+        verify imaging results are received, and flag when care plans aren't being executed.</li>
+
+        <li><strong>Documentation Completion:</strong> After your visit, automatically pull in relevant
+        outside records, reconcile medication lists, update problem lists, and draft care gaps assessments.</li>
+      </ul>
+
+      <p>
+        These aren't science fiction—early versions exist today. The question is whether we can deploy
+        them safely.
+      </p>
+
+      <h3>The Peril: What Could Go Wrong</h3>
+
+      <p>
+        AI agents amplify both capabilities and risks:
+      </p>
+
+      <ul>
+        <li><strong>Compounding Errors:</strong> When agents operate in loops, a small error in step 1 can
+        cascade through steps 2-10. By the time a human notices, significant damage may be done.</li>
+
+        <li><strong>Misaligned Goals:</strong> An agent optimizing for "efficient patient outreach" might
+        send overwhelming numbers of messages, contact patients about sensitive diagnoses inappropriately,
+        or prioritize metrics over actual patient benefit.</li>
+
+        <li><strong>Reduced Oversight:</strong> The whole point of agents is to operate without constant
+        supervision. But "without constant supervision" can quickly become "without adequate supervision."</li>
+
+        <li><strong>Authorization Creep:</strong> Agents need permissions to act. A prior auth agent needs
+        access to patient records and insurer portals. A documentation agent needs EHR write access. Each
+        permission creates attack surface and potential for misuse.</li>
+
+        <li><strong>Liability Uncertainty:</strong> When an agent makes a mistake, who's responsible? The
+        clinician who deployed it? The vendor who built it? The institution that approved it? We don't
+        have clear answers yet.</li>
+      </ul>
+
+      <div class="callout callout-warning">
+        <div class="callout-title">The Autonomy Paradox</div>
+        <p class="mb-0">
+          The more capable agents become, the less we can afford to supervise every action. But the more
+          autonomous they become, the more important supervision is. Healthcare will need to develop new
+          frameworks for "appropriate autonomy"—not the binary choice between "human does everything" and
+          "AI does everything," but graduated trust based on task risk, agent capability, and verification
+          mechanisms.
+        </p>
+      </div>
+
+      <h3>Current Agent Technologies</h3>
+
+      <p>
+        If you want to start experimenting with agents (in low-stakes settings), here's the landscape:
       </p>
 
       <div class="reading-list">
@@ -402,63 +978,299 @@
             <div class="reading-title">
               <a href="https://n8n.io/" target="_blank">n8n</a>
             </div>
-            <div class="reading-meta">Open-source workflow automation that connects AI to your other tools. Build agents that trigger based on conditions, process data, and take actions across services. Self-hostable for privacy.</div>
+            <div class="reading-meta">Open-source workflow automation that connects AI to your other tools. Build agents that trigger based on conditions, process data, and take actions across services. Self-hostable for privacy. Great starting point for understanding agent architectures.</div>
+          </div>
+        </div>
+
+        <div class="reading-item">
+          <div class="reading-type"><i data-lucide="bot"></i></div>
+          <div class="reading-content">
+            <div class="reading-title">
+              <a href="https://www.langchain.com/" target="_blank">LangChain / LangGraph</a>
+            </div>
+            <div class="reading-meta">The most popular framework for building AI agents. LangGraph specifically handles complex agent workflows with loops and decision points. More technical, but the industry standard.</div>
+          </div>
+        </div>
+
+        <div class="reading-item">
+          <div class="reading-type"><i data-lucide="terminal"></i></div>
+          <div class="reading-content">
+            <div class="reading-title">Claude Computer Use / OpenAI Operator</div>
+            <div class="reading-meta">AI that can control a computer—clicking buttons, filling forms, navigating websites. Still early but shows where things are heading. Anthropic's computer use is available; OpenAI's Operator is in preview.</div>
+          </div>
+        </div>
+
+        <div class="reading-item">
+          <div class="reading-type"><i data-lucide="plug"></i></div>
+          <div class="reading-content">
+            <div class="reading-title">MCP (Model Context Protocol)</div>
+            <div class="reading-meta">Anthropic's open protocol for connecting AI to external tools and data sources. Not an agent framework itself, but the plumbing that makes sophisticated agents possible. Watch this space.</div>
+          </div>
+        </div>
+      </div>
+
+      <h3>Getting Started Safely</h3>
+
+      <p>
+        If you want to experiment with agents, start with:
+      </p>
+
+      <ol>
+        <li><strong>Non-clinical tasks first:</strong> Build agents for scheduling, email triage, literature
+        searches—anything where mistakes are annoying, not dangerous.</li>
+
+        <li><strong>Human-in-the-loop always (for now):</strong> Configure agents to propose actions rather than
+        execute them. You approve, then the agent acts.</li>
+
+        <li><strong>Narrow scope:</strong> An agent that does one thing well is safer than a general-purpose
+        agent that can do everything poorly.</li>
+
+        <li><strong>Audit logging:</strong> Every action the agent takes should be logged. You need to be able
+        to reconstruct what happened and why.</li>
+
+        <li><strong>Kill switches:</strong> Always have a way to shut down an agent immediately. Automated
+        monitoring that triggers alerts (and potentially automatic shutdown) when behavior seems anomalous.</li>
+      </ol>
+
+      <p>
+        The foundational knowledge you've built—especially around supervision, evaluation, bias, and
+        governance—becomes even more critical as AI moves from "tool I use" to "system that acts on my behalf."
+      </p>
+
+      <!-- AI Browsers -->
+      <h3>AI Browsers: A Glimpse of the Agentic Future</h3>
+
+      <p>
+        2025 saw the emergence of "agentic browsers"—web browsers with built-in AI that can take actions
+        on your behalf. These are worth knowing about, even if they're not ready for clinical use.
+      </p>
+
+      <div class="reading-list">
+        <div class="reading-item">
+          <div class="reading-type"><i data-lucide="globe"></i></div>
+          <div class="reading-content">
+            <div class="reading-title">
+              <a href="https://www.perplexity.ai/comet" target="_blank">Comet</a> (Perplexity)
+            </div>
+            <div class="reading-meta">Free AI browser with built-in assistant that can navigate websites, summarize content, and perform multi-step tasks. Supports multiple LLMs (GPT, Claude, Gemini). Available on Mac, Windows, and Android.</div>
+          </div>
+        </div>
+
+        <div class="reading-item">
+          <div class="reading-type"><i data-lucide="globe"></i></div>
+          <div class="reading-content">
+            <div class="reading-title">
+              <a href="https://chatgpt.com/atlas/" target="_blank">Atlas</a> (OpenAI)
+            </div>
+            <div class="reading-meta">ChatGPT integrated into a browser with "agent mode" that can shop, make reservations, fill forms, and complete multi-step web tasks. Full agent features require Plus/Pro subscription. Currently Mac only.</div>
           </div>
         </div>
       </div>
 
       <p>
-        We're not going deep on agents here—they deserve their own module. But know that this is
-        coming, and the foundational knowledge you've built (especially around supervision,
-        evaluation, and governance) will be essential.
+        The appeal is obvious: tell the browser "find me the cheapest flight to Chicago next Tuesday"
+        and watch it navigate multiple airline sites, compare prices, and present options. Or "summarize
+        all the tabs I have open about this clinical trial."
       </p>
 
-      <!-- What's Coming -->
-      <h2>What's Coming: AI 202</h2>
+      <div class="callout callout-warning">
+        <div class="callout-title">Why AI Browsers Aren't Ready for Clinical Work</div>
+        <p>
+          These tools are genuinely impressive for personal productivity, but they carry significant risks
+          for anything involving patient information:
+        </p>
+        <ul class="mb-0">
+          <li><strong>Prompt injection attacks:</strong> Malicious websites can embed hidden instructions
+          that hijack the AI agent, potentially causing it to leak information, navigate to phishing sites,
+          or take unintended actions. This is an unsolved security problem.</li>
+
+          <li><strong>Data exposure:</strong> When an AI browser "reads" a page for you, that content may
+          be processed by external servers. Browser memories and context features raise questions about
+          what data is retained and how it's used.</li>
+
+          <li><strong>Unpredictable behavior:</strong> Agent mode can click links, fill forms, and navigate
+          autonomously. In a healthcare context, unintended actions could have serious consequences.</li>
+
+          <li><strong>Audit gaps:</strong> Traditional browsers leave clear audit trails. Agentic browsers
+          that take autonomous actions make it harder to reconstruct what happened and why.</li>
+        </ul>
+      </div>
 
       <p>
-        This curriculum was designed as a foundation—<strong>AI 101</strong>. There's more to come.
+        <strong>The bottom line:</strong> AI browsers are fun to explore for personal use—booking travel,
+        shopping, research, organizing information. They offer a real preview of where human-computer
+        interaction is heading. But keep them far away from anything involving PHI or clinical decision-making
+        until the security and privacy landscape matures significantly.
       </p>
 
+      <!-- First Projects -->
+      <h2>Your First Projects: Where to Start</h2>
+
       <p>
-        <strong>AI 202</strong> is in development. It will go deeper on:
+        Theory is necessary but insufficient. You need to build things. Here are concrete first projects
+        organized by complexity and risk level:
+      </p>
+
+      <h3>Level 1: Zero Risk, High Learning</h3>
+
+      <p>
+        These projects involve only your own data or synthetic data. No patient information, no clinical
+        decisions.
       </p>
 
       <ul>
-        <li><strong>AI Agents in Clinical Practice:</strong> Building, deploying, and governing autonomous systems</li>
-        <li><strong>Advanced Evaluation:</strong> How to rigorously test AI systems before deployment</li>
-        <li><strong>Implementation Science:</strong> Moving from pilot to production in healthcare organizations</li>
-        <li><strong>Building Your Own Tools:</strong> From custom GPTs to full applications</li>
-        <li><strong>The Regulatory Horizon:</strong> What's coming from FDA, ONC, and state medical boards</li>
+        <li><strong>Personal Literature Workflow:</strong> Set up NotebookLM with 5-10 papers from your
+        specialty. Practice having it synthesize across sources, identify contradictions, and generate
+        podcast-style summaries. Document what works and what doesn't.</li>
+
+        <li><strong>Study Aid Generator:</strong> Use Claude or ChatGPT to create flashcards, practice
+        questions, or case vignettes from textbook material you already own. Experience the AI as a
+        learning tool.</li>
+
+        <li><strong>Meeting Summarizer:</strong> Record a non-confidential meeting (staff meeting, journal
+        club) and run it through Granola or another AI notetaker. Compare the AI summary to your own
+        notes. Where does it add value? Where does it fail?</li>
+
+        <li><strong>Personal Productivity Agent:</strong> Use n8n or Zapier to connect your email, calendar,
+        and a language model. Build a simple agent that summarizes your daily emails or suggests time
+        blocks for focused work. Learn agent architecture on low-stakes tasks.</li>
       </ul>
 
+      <h3>Level 2: Professional Context, Personal Use</h3>
+
       <p>
-        Watch for announcements. In the meantime, the best preparation is practice—take what you've
-        learned here and apply it.
+        These projects involve your professional life but not direct patient care. Still relatively low risk.
       </p>
+
+      <ul>
+        <li><strong>Grant or Protocol Assistant:</strong> Feed a grant RFA or study protocol into Claude
+        and iterate on specific aims, background sections, or methods. You maintain full control; the AI
+        is just a drafting partner.</li>
+
+        <li><strong>Teaching Material Generator:</strong> Create patient education handouts, resident
+        teaching scripts, or presentation slides using AI. Practice prompt engineering for medical
+        accuracy and appropriate reading level.</li>
+
+        <li><strong>Documentation Template Builder:</strong> Design templates for your most common note
+        types. Use AI to draft initial versions, then refine them based on what actually works in your
+        workflow.</li>
+
+        <li><strong>Custom GPT for Your Specialty:</strong> Build a Custom GPT loaded with your specialty's
+        guidelines, your preferred references, and instructions for how to respond. Share it with
+        colleagues, gather feedback, iterate.</li>
+      </ul>
+
+      <h3>Level 3: Clinical Adjacent, Supervised</h3>
+
+      <p>
+        These projects touch clinical workflows but maintain human oversight at every step.
+      </p>
+
+      <ul>
+        <li><strong>Prior Auth Draft Helper:</strong> Build a system that takes a clinical scenario and
+        drafts prior authorization letters citing relevant guidelines. You review and send every letter;
+        the AI accelerates drafting.</li>
+
+        <li><strong>Differential Diagnosis Expander:</strong> Create a tool that takes your initial
+        differential and suggests additional considerations based on guidelines and literature. Use it
+        as a cognitive forcing function, not a replacement for your thinking.</li>
+
+        <li><strong>Patient Message Draft Responder:</strong> Build a system that drafts responses to
+        patient portal messages. Every message is reviewed by you before sending. Track where AI saves
+        time and where it creates problems.</li>
+      </ul>
+
+      <div class="callout callout-warning">
+        <div class="callout-title">Before Any Clinical-Adjacent Project</div>
+        <p class="mb-0">
+          Review your institution's policies on AI use. Get appropriate approvals. Consider PHI/HIPAA
+          implications. Document what you're doing and why. These projects should enhance your learning
+          and potentially improve care—but only if done responsibly.
+        </p>
+      </div>
 
       <!-- Call to Action -->
       <h2>Your Next Steps (Pick One)</h2>
 
       <p>
-        Don't try to do everything. Pick <strong>one thing</strong> from this list and do it this week:
+        Don't try to do everything. The biggest mistake people make when finishing a course like this
+        is creating a massive to-do list and then doing nothing because it's overwhelming. Pick
+        <strong>one thing</strong> from this list and do it this week:
       </p>
 
       <div class="callout callout-tip">
-        <div class="callout-title">Immediate Actions</div>
+        <div class="callout-title">Immediate Actions (Pick ONE)</div>
         <ol class="mb-0">
-          <li><strong>Subscribe to one newsletter</strong> from the list above. Just one. Read it for a month.</li>
-          <li><strong>Build a Custom GPT</strong> for something you actually need—patient FAQs, differential diagnosis helper, literature summarizer.</li>
-          <li><strong>Try Claude Code or Cursor</strong> on a small project. A personal website. A simple tool. Something with low stakes where you can experiment.</li>
-          <li><strong>Identify your niche.</strong> What specific problem in your work would you most like AI to solve? Write it down. Start researching.</li>
-          <li><strong>Teach someone else</strong> what you learned here. Teaching is the best way to solidify your own understanding.</li>
+          <li><strong>Subscribe to one newsletter</strong> from the list above. Just one. Read it for a month before adding another.</li>
+          <li><strong>Build a Custom GPT</strong> for something you actually need—patient FAQs, differential diagnosis helper, literature summarizer, study guide generator.</li>
+          <li><strong>Try Claude Code or Cursor</strong> on a small project. A personal website. A simple tool. A script that automates something tedious. Something with low stakes where you can experiment.</li>
+          <li><strong>Identify your niche.</strong> What specific problem in your work would you most like AI to solve? Write it down in one sentence. Start researching how others are approaching it.</li>
+          <li><strong>Teach someone else</strong> what you learned here. Give a lunch talk. Write a blog post. Explain it to a colleague. Teaching is the best way to solidify your own understanding.</li>
+          <li><strong>Run a simple evaluation.</strong> Take an AI tool you're already using and create 10 challenging test cases from your practice. Document how it performs. Share your findings.</li>
+          <li><strong>Set up your first agent workflow.</strong> Connect your email to a language model using n8n or Zapier. Have it summarize your unread messages each morning. Experience what "AI that takes action" feels like.</li>
         </ol>
       </div>
 
       <p>
+        Seriously—pick <strong>one</strong>. Finish it. Then pick another.
+      </p>
+
+      <h3>The 30-Day Challenge</h3>
+
+      <p>
+        If you want more structure, here's a simple 30-day challenge to maintain momentum:
+      </p>
+
+      <ul>
+        <li><strong>Days 1-7:</strong> Use AI every day for something in your professional life. Doesn't matter
+        what—literature search, email drafting, note template, patient education. Just build the habit of
+        reaching for AI tools.</li>
+
+        <li><strong>Days 8-14:</strong> Pick one tool and go deep. If it's ChatGPT, explore Custom GPTs.
+        If it's Claude, try the Projects feature. If it's NotebookLM, load it with your most-used references.
+        Understand what your chosen tool can really do.</li>
+
+        <li><strong>Days 15-21:</strong> Build something. A Custom GPT. A simple automation. A documentation
+        template. Something tangible that you can point to and say "I made that."</li>
+
+        <li><strong>Days 22-28:</strong> Share what you built. Show a colleague. Post about it (anonymized,
+        of course). Get feedback. Iterate.</li>
+
+        <li><strong>Days 29-30:</strong> Reflect and plan. What worked? What didn't? What do you want to
+        learn next? Write it down.</li>
+      </ul>
+
+      <p>
+        This isn't about becoming an AI expert in 30 days. It's about building momentum that continues
+        beyond any structured program.
+      </p>
+
+      <h3>Finding Your Community</h3>
+
+      <p>
+        Learning alone is harder than learning with others. Consider:
+      </p>
+
+      <ul>
+        <li><strong>Local interest groups:</strong> Does your hospital or medical society have an AI
+        interest group? If not, start one. Even 3-4 people meeting monthly creates valuable accountability.</li>
+
+        <li><strong>Online communities:</strong> LinkedIn has active healthcare AI discussions. Find where your
+        specialty's AI conversations happen.</li>
+
+        <li><strong>Conferences:</strong> AMIA (American Medical Informatics Association), HIMSS, and
+        specialty-specific conferences increasingly feature AI tracks. These are good for seeing what's
+        actually being deployed, not just what's being hyped.</li>
+
+        <li><strong>Industry connections:</strong> Vendors are often happy to demo their tools and discuss
+        use cases. Take these conversations with appropriate skepticism, but they're a window into what's
+        being built.</li>
+      </ul>
+
+      <p>
         The people who will shape how AI transforms healthcare aren't the ones who read the most
         articles or took the most courses. They're the ones who <strong>started building, started
-        experimenting, and started learning from their mistakes.</strong>
+        experimenting, started teaching others, and started learning from their mistakes.</strong>
       </p>
 
       <p>
@@ -469,6 +1281,11 @@
 
       <!-- Resources Summary -->
       <h2>All Resources</h2>
+
+      <p>
+        A consolidated list of everything mentioned above. These are starting points—you'll
+        discover your own favorites as you go deeper.
+      </p>
 
       <h3>Stay Current</h3>
 
@@ -550,13 +1367,36 @@
             <div class="reading-meta">AI safety courses</div>
           </div>
         </div>
+      </div>
+
+      <h3>AI Evaluation</h3>
+
+      <div class="reading-list">
         <div class="reading-item">
           <div class="reading-type"><i data-lucide="beaker"></i></div>
           <div class="reading-content">
             <div class="reading-title">
-              <a href="https://maven.com/parlance-labs/evals" target="_blank">Parlance Labs: AI Evals</a>
+              <a href="https://maven.com/parlance-labs/evals" target="_blank">Parlance Labs: AI Evals Course</a>
             </div>
-            <div class="reading-meta">Learn to evaluate AI systems</div>
+            <div class="reading-meta">Comprehensive course on evaluation methodology</div>
+          </div>
+        </div>
+        <div class="reading-item">
+          <div class="reading-type"><i data-lucide="book-open"></i></div>
+          <div class="reading-content">
+            <div class="reading-title">
+              <a href="https://hamel.dev/blog/posts/evals/" target="_blank">Your AI Product Needs Evals</a>
+            </div>
+            <div class="reading-meta">Free introduction to evaluation thinking</div>
+          </div>
+        </div>
+        <div class="reading-item">
+          <div class="reading-type"><i data-lucide="file-text"></i></div>
+          <div class="reading-content">
+            <div class="reading-title">
+              <a href="https://www.anthropic.com/research/evaluating-ai-systems" target="_blank">Evaluating AI Systems (Anthropic)</a>
+            </div>
+            <div class="reading-meta">How frontier AI companies evaluate their models</div>
           </div>
         </div>
       </div>
@@ -583,12 +1423,35 @@
           </div>
         </div>
         <div class="reading-item">
+          <div class="reading-type"><i data-lucide="gift"></i></div>
+          <div class="reading-content">
+            <div class="reading-title">
+              <a href="https://lennysproductpass.com/" target="_blank">Lenny's Pass</a>
+            </div>
+            <div class="reading-meta">Bundle of AI tools with newsletter subscription</div>
+          </div>
+        </div>
+      </div>
+
+      <h3>AI Agents & Automation</h3>
+
+      <div class="reading-list">
+        <div class="reading-item">
           <div class="reading-type"><i data-lucide="workflow"></i></div>
           <div class="reading-content">
             <div class="reading-title">
               <a href="https://n8n.io/" target="_blank">n8n</a>
             </div>
-            <div class="reading-meta">Workflow automation for agents</div>
+            <div class="reading-meta">Open-source workflow automation</div>
+          </div>
+        </div>
+        <div class="reading-item">
+          <div class="reading-type"><i data-lucide="bot"></i></div>
+          <div class="reading-content">
+            <div class="reading-title">
+              <a href="https://www.langchain.com/" target="_blank">LangChain / LangGraph</a>
+            </div>
+            <div class="reading-meta">Agent development framework</div>
           </div>
         </div>
       </div>
