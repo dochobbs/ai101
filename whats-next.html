@@ -181,6 +181,16 @@
             <div class="reading-meta">Conversations with people actually using AI in their work. Practical insights over theoretical discussions.</div>
           </div>
         </div>
+
+        <div class="reading-item">
+          <div class="reading-type"><i data-lucide="rss"></i></div>
+          <div class="reading-content">
+            <div class="reading-title">
+              <a href="https://simonwillison.net/" target="_blank">Simon Willison's Blog</a>
+            </div>
+            <div class="reading-meta">One of the best technical writers covering AI. Deep, thoughtful analysis of new developments, tools, and implications. If you only follow one person who actually builds with AI, make it Simon.</div>
+          </div>
+        </div>
       </div>
 
       <p>
@@ -540,6 +550,17 @@
         When you get stuck or see an error, paste it into Claude or ChatGPT and ask what went wrong. This
         is how most developers actually work—nobody memorizes everything.
       </p>
+
+      <div class="callout callout-warning">
+        <div class="callout-title">AI + Command Line = Real Risk</div>
+        <p class="mb-0">
+          When AI tools operate in your terminal, they have real power—including the power to delete files
+          permanently. <a href="https://old.reddit.com/r/ClaudeAI/comments/1pgxckk/claude_cli_deleted_my_entire_home_directory_wiped/" target="_blank">One user lost their entire home directory</a>
+          when an AI misunderstood an instruction. This isn't hypothetical. Always work in a Git repository
+          (so you can recover), review commands before running them, and never give AI tools access to
+          directories containing irreplaceable files. The command line has no "undo" and no trash can.
+        </p>
+      </div>
 
       <div class="reading-list">
         <div class="reading-item">
@@ -1478,7 +1499,7 @@ print(message.content)</code></pre>
   <footer class="footer">
     <div class="footer-inner">
       <div><strong>AI 101</strong> · A Self-Paced Guide to AI in Medicine</div>
-      <div>v1.0 · 2025</div>
+      <div>v1.1 · 2025</div>
     </div>
   </footer>
 
