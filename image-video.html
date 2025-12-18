@@ -264,20 +264,42 @@
       <h3>ChatGPT's GPT-4o Image Generation</h3>
 
       <p>
-        OpenAI's image generation is now natively integrated into GPT-4o, making it available
-        directly in ChatGPT. This replaced DALL-E 3 as the default in March 2025.
+        In March 2025, OpenAI rolled out native image generation directly within GPT-4o, replacing
+        DALL-E 3 as ChatGPT's default image generator. This represents a fundamental architectural
+        shift: rather than calling a separate specialized model, image generation is now built into
+        the language model itself.
       </p>
+
+      <div class="callout callout-info">
+        <div class="callout-title">Why This Matters</div>
+        <p class="mb-0">
+          DALL-E models were separate systems that connected to language models through an interface—
+          two AI systems working in sequence. GPT-4o integrates image generation as a native capability,
+          meaning the model "thinks" about images the same way it thinks about text. This enables
+          better understanding of context, more accurate prompt following, and seamless conversation
+          about generated images.
+        </p>
+      </div>
 
       <div class="tool-card">
         <h4>Key Capabilities</h4>
         <ul>
           <li><strong>Native multimodal integration:</strong> Because image generation is built into the conversation model, ChatGPT can analyze uploaded images, understand context from your conversation, and generate images that reference that context.</li>
-          <li><strong>Precise prompt following:</strong> Excels at following detailed instructions including specific colors (via hex codes), aspect ratios, and transparent backgrounds.</li>
-          <li><strong>Text rendering:</strong> Improved text accuracy compared to earlier DALL-E versions, though still occasionally struggles with longer passages.</li>
-          <li><strong>Editing capabilities:</strong> You can upload images and request modifications, or use the built-in selection tool to edit specific areas.</li>
+          <li><strong>Better accuracy:</strong> GPT-4o "thinks" longer than DALL-E 3 to produce more accurate and detailed images.</li>
+          <li><strong>More objects:</strong> Can accurately render up to 20 different items in a single image—where competing generators often struggle with more than a handful.</li>
+          <li><strong>Improved text rendering:</strong> Generates text more reliably than DALL-E 3, though still verify any text in generated images.</li>
+          <li><strong>Better editing:</strong> Can edit existing images including images with people—transforming them or "inpainting" details like foreground and background objects.</li>
+          <li><strong>Transparent backgrounds:</strong> Can create objects with transparent backgrounds, useful for combining visual assets or integrating elements into existing designs.</li>
+          <li><strong>Improved anatomy:</strong> OpenAI used human trainers to identify errors in hands, faces, and proportions—resulting in more natural-looking people.</li>
         </ul>
-        <p><strong>Access:</strong> Available to all ChatGPT users, including free tier. Plus subscribers ($20/month) get higher usage limits. Pro subscribers ($200/month) get the highest access.</p>
+        <p><strong>Access:</strong> Available to all ChatGPT users, including free tier (30 images/day). Plus subscribers ($20/month) get higher limits. Pro subscribers ($200/month) get the highest access. API pricing starts at ~$0.04/image.</p>
       </div>
+
+      <p>
+        <strong>What happened to DALL-E 3?</strong> It's now considered OpenAI's "legacy image generation
+        model." It remains available through the API for existing integrations, but ChatGPT now uses
+        GPT-4o for all image generation by default.
+      </p>
 
       <h2>Video Generation Tools</h2>
 
@@ -775,6 +797,15 @@
               <a href="https://deepmind.google/models/veo/" target="_blank">Google DeepMind Veo 3.1 Model Page</a>
             </div>
             <div class="reading-meta">Technical overview of Veo 3.1 capabilities including Flow integration</div>
+          </div>
+        </div>
+        <div class="reading-item">
+          <div class="reading-type"><i data-lucide="book-open"></i></div>
+          <div class="reading-content">
+            <div class="reading-title">
+              <a href="https://openai.com/index/introducing-4o-image-generation/" target="_blank">OpenAI: Introducing 4o Image Generation</a>
+            </div>
+            <div class="reading-meta">Official announcement of GPT-4o native image generation (March 2025)</div>
           </div>
         </div>
         <div class="reading-item">
