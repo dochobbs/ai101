@@ -1028,6 +1028,14 @@ hr {
   color: var(--slate-500);
 }
 
+.week-updated {
+  display: block;
+  margin-top: var(--space-sm);
+  font-size: 0.75rem;
+  font-style: italic;
+  color: var(--slate-400);
+}
+
 /* Intro card (special styling) */
 .intro-card {
   background: linear-gradient(135deg, var(--slate-800) 0%, var(--slate-900) 100%);
