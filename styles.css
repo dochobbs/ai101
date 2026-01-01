@@ -915,6 +915,64 @@ hr {
   color: var(--slate-900);
 }
 
+/* Temporary promo sticker */
+.hero-sticker {
+  position: absolute;
+  top: var(--space-xl);
+  right: var(--space-xl);
+  background:
+    linear-gradient(135deg, rgba(13, 148, 136, 0.85) 0%, rgba(15, 118, 110, 0.9) 100%),
+    url('images/aidb-sticker-bg.png');
+  background-size: cover;
+  background-position: center;
+  color: var(--white);
+  padding: var(--space-xl) var(--space-2xl);
+  border-radius: var(--radius-lg);
+  transform: rotate(3deg);
+  box-shadow: var(--shadow-lg), 0 0 0 2px rgba(255,255,255,0.2);
+  text-decoration: none;
+  font-size: 1.125rem;
+  font-weight: 600;
+  text-align: center;
+  max-width: 260px;
+  line-height: 1.4;
+  z-index: 10;
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.hero-sticker:hover {
+  transform: rotate(0deg) scale(1.05);
+  box-shadow: var(--shadow-xl), 0 0 0 2px rgba(255,255,255,0.3);
+  text-decoration: none;
+  color: var(--white);
+}
+
+.hero-sticker-label {
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  opacity: 0.9;
+  margin-bottom: 0.4rem;
+}
+
+@media (max-width: 768px) {
+  .hero-sticker {
+    position: relative;
+    top: 0;
+    right: 0;
+    transform: none;
+    margin-top: var(--space-lg);
+    max-width: 100%;
+    display: block;
+  }
+
+  .hero-sticker:hover {
+    transform: scale(1.02);
+  }
+}
+
 /* Phase sections */
 .phase-section {
   margin-bottom: var(--space-3xl);
