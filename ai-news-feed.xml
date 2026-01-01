@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>AI 101 News</title>
+    <link>https://dochobbs.github.io/ai101/ai-news.html</link>
+    <description>AI news and developments relevant to healthcare and medical practice, curated for AI 101: A Self-Paced Guide to AI in Medicine.</description>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 01 Jan 2026 00:00:00 GMT</lastBuildDate>
+    <atom:link href="https://dochobbs.github.io/ai101/ai-news-feed.xml" rel="self" type="application/rss+xml"/>
+
+    <item>
+      <title>2025: The Year in LLMs</title>
+      <link>https://simonwillison.net/2025/Dec/31/the-year-in-llms/</link>
+      <description>Simon Willison's comprehensive annual review of major developments in large language models throughout 2025—covering reasoning models, coding agents like Claude Code, image generation advances, and the rise of competitive Chinese AI models.</description>
+      <pubDate>Tue, 31 Dec 2025 00:00:00 GMT</pubDate>
+      <guid>https://simonwillison.net/2025/Dec/31/the-year-in-llms/</guid>
+    </item>
+
+  </channel>
+</rss>

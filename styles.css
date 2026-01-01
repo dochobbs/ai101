@@ -1535,6 +1535,63 @@ tr:hover td {
   line-height: 1.7;
 }
 
+/* News feed */
+.news-feed {
+  margin: var(--space-xl) 0;
+}
+
+.news-item {
+  margin-bottom: var(--space-xl);
+  padding-bottom: var(--space-xl);
+  border-bottom: 1px solid var(--slate-200);
+}
+
+.news-item:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.news-dates {
+  display: flex;
+  gap: var(--space-lg);
+  margin-bottom: var(--space-sm);
+  font-size: 0.8125rem;
+  color: var(--slate-500);
+}
+
+.news-date-published {
+  font-weight: 500;
+}
+
+.news-date-added {
+  font-style: italic;
+}
+
+.news-title {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 0 0 var(--space-sm) 0;
+  line-height: 1.3;
+}
+
+.news-title a {
+  color: var(--slate-900);
+  text-decoration: none;
+}
+
+.news-title a:hover {
+  color: var(--accent-blue);
+  text-decoration: underline;
+}
+
+.news-description {
+  margin: 0;
+  color: var(--slate-700);
+  line-height: 1.6;
+}
+
 /* Company grid */
 .company-grid {
   display: grid;

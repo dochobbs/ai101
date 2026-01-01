@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI News | AI 101</title>
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="alternate" type="application/rss+xml" title="AI 101 News Feed" href="ai-news-feed.xml">
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-brand">
+        <span class="nav-badge">AI 101</span>
+        <span class="nav-title">A Self-Paced Guide to AI in Medicine</span>
+      </a>
+      <button class="nav-toggle" aria-label="Toggle menu">
+        <i data-lucide="menu"></i>
+      </button>
+      <div class="nav-links">
+        <a href="index.html" class="nav-link">Topics</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="contribute.html" class="nav-link">Contribute</a>
+        <div id="deployment-eac8a421-3c54-4717-bbef-54bb81b54243" class="nav-chatbot"></div>
+      </div>
+    </div>
+  </nav>
+
+  <main class="main">
+    <article class="content">
+
+      <header class="unit-header">
+        <span class="unit-label appendix">RESOURCES</span>
+        <h1 class="unit-title">AI News</h1>
+        <p class="unit-subtitle">
+          AI is fast moving—here are some of the latest updates and developments worth knowing about.
+        </p>
+        <div class="unit-meta">
+          <a href="ai-news-feed.xml" class="unit-meta-item" title="Subscribe to RSS feed">
+            <i data-lucide="rss"></i>
+            RSS feed
+          </a>
+        </div>
+      </header>
+
+      <p>
+        This page collects notable AI news, announcements, and developments relevant to healthcare
+        and medical practice. Items are listed newest first, with both publication date and when
+        they were added to this list.
+      </p>
+
+      <hr>
+
+      <!-- News Items -->
+      <div class="news-feed">
+
+        <article class="news-item">
+          <div class="news-dates">
+            <span class="news-date-published">Published: Dec 31, 2025</span>
+            <span class="news-date-added">Added: Jan 1, 2026</span>
+          </div>
+          <h3 class="news-title">
+            <a href="https://simonwillison.net/2025/Dec/31/the-year-in-llms/" target="_blank">2025: The Year in LLMs</a>
+          </h3>
+          <p class="news-description">
+            Simon Willison's comprehensive annual review of major developments in large language models
+            throughout 2025—covering reasoning models, coding agents like Claude Code, image generation
+            advances, and the rise of competitive Chinese AI models.
+          </p>
+        </article>
+
+      </div>
+
+      <hr>
+
+      <p class="text-muted text-small">
+        <em>This page is updated periodically as notable developments occur.
+        For daily AI news, see the resources in our <a href="glossary.html#resources">Learning Resources</a> section.</em>
+      </p>
+
+      <!-- Page Navigation -->
+      <nav class="page-nav">
+        <a href="glossary.html" class="page-nav-link prev">
+          <span class="page-nav-arrow"><i data-lucide="arrow-left"></i></span>
+          <div>
+            <span class="page-nav-label">Previous</span>
+            <span class="page-nav-title">AI Glossary & Learning Resources</span>
+          </div>
+        </a>
+        <a href="index.html" class="page-nav-link next">
+          <span class="page-nav-arrow"><i data-lucide="arrow-right"></i></span>
+          <div>
+            <span class="page-nav-label">Return to</span>
+            <span class="page-nav-title">All Topics</span>
+          </div>
+        </a>
+      </nav>
+
+    </article>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div><strong>AI 101</strong> · A Self-Paced Guide to AI in Medicine</div>
+      <div>v1.1 · 2025</div>
+    </div>
+  </footer>
+
+  <script>
+    lucide.createIcons();
+    const navToggle = document.querySelector('.nav-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    if (navToggle) {
+      navToggle.addEventListener('click', () => {
+        navLinks.classList.toggle('nav-open');
+      });
+    }
+  </script>
+
+  <script src="https://studio.pickaxe.co/api/embed/bundle.js" defer></script>
+
+</body>
+</html>
