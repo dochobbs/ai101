@@ -1592,6 +1592,18 @@ tr:hover td {
   line-height: 1.6;
 }
 
+.news-item.warning {
+  background: linear-gradient(135deg, var(--warning-light) 0%, var(--white) 100%);
+  border-left: 4px solid var(--warning);
+  padding: var(--space-lg);
+  border-radius: var(--radius);
+  margin-bottom: var(--space-xl);
+}
+
+.news-item.warning .news-title {
+  color: var(--warning);
+}
+
 /* Company grid */
 .company-grid {
   display: grid;
