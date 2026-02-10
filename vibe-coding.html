@@ -98,7 +98,8 @@
         The post went viral, viewed over 4.5 million times. Within weeks, major
         publications from the New York Times to Ars Technica were covering it. By
         March, Merriam-Webster had added the term to their trending vocabulary.
-        A new paradigm had a name.
+        By year's end, Collins Dictionary named "vibe coding" its 2025 Word of
+        the Year, and Wikipedia had a dedicated article. A new paradigm had a name.
       </p>
 
       <p>
@@ -253,7 +254,7 @@
         code that actually ran.
       </p>
 
-      <h3>The Platform Wave (2024-2025)</h3>
+      <h3>The Platform Wave (2024-2026)</h3>
 
       <p>
         The tools we'll focus on in this module emerged from recognizing that
@@ -266,17 +267,18 @@
         <strong>Replit</strong> had been a browser-based coding environment since 2016.
         They added AI assistance, then an AI "Agent" that could not only write code but
         also configure environments, install dependencies, set up databases, and deploy
-        applications. Suddenly, the whole pipeline was AI-assisted. Their Agent has
-        continued to evolve with autonomous testing capabilities—the AI can test its
-        own work and fix issues it discovers.
+        applications. Suddenly, the whole pipeline was AI-assisted. Their Agent—now
+        in its third generation—can test its own work and fix issues it discovers.
+        Replit's revenue jumped from $10M to $100M in nine months after launching
+        the Agent, a signal of just how much demand existed for this approach.
       </p>
 
       <p>
         <strong>Lovable</strong> (originally called GPT Engineer) took a different approach:
         start from the assumption that users don't want to see code at all. Describe your
         app, watch it appear, click to edit elements visually, chat to refine functionality.
-        Their rapid growth—reportedly reaching significant revenue within months of
-        launch—demonstrated demand for this approach.
+        Their growth has been staggering—reaching $100M in annual recurring revenue
+        within eight months of launch, potentially the fastest-growing startup in history.
       </p>
 
       <p>
@@ -311,6 +313,34 @@
       </p>
 
       <p>Both perspectives contain truth. The experiment is ongoing.</p>
+
+      <div class="callout callout-info">
+        <div class="callout-title">The February 2026 Moment</div>
+        <p>
+          In the first week of February 2026, the vibe coding landscape shifted
+          dramatically. OpenAI launched its <strong>Codex macOS app</strong>—a
+          standalone "command center" for coding agents that hit one million
+          downloads in its first week—followed days later by
+          <strong>GPT-5.3-Codex</strong>, their most powerful coding model yet.
+          The same day, Anthropic released <strong>Claude Opus 4.6</strong> with
+          a one-million-token context window and "agent teams" that can coordinate
+          across a shared codebase without human orchestration.
+        </p>
+        <p>
+          To demonstrate the capability, Anthropic tasked 16 Opus 4.6 instances
+          to autonomously build a C compiler from scratch. Over ~2,000 sessions,
+          they produced 100,000 lines of Rust that successfully compiles a
+          bootable Linux kernel.
+        </p>
+        <p class="mb-0">
+          The numbers tell the broader story: <strong>41% of all code written
+          globally is now AI-generated</strong>, and 92% of US developers report
+          using AI coding tools daily. Anthropic's head of enterprise product
+          introduced the term "vibe working"—the idea that the vibe coding
+          paradigm is expanding beyond software into every professional domain.
+          What started as a tweet is becoming a way of working.
+        </p>
+      </div>
 
       <hr>
 
@@ -632,11 +662,14 @@
 
       <p>
         <a href="https://claude.ai" target="_blank">Claude Code</a> is Anthropic's
-        agentic coding tool that works across three environments: the web interface
-        at claude.ai, the <a href="https://claude.com/download" target="_blank">Claude Desktop app</a>,
+        agentic coding tool, now powered by <strong>Claude Opus 4.6</strong>
+        (with Claude Sonnet 4.5 available for faster tasks). It works across three
+        environments: the web interface at claude.ai, the
+        <a href="https://claude.com/download" target="_blank">Claude Desktop app</a>,
         and a powerful <a href="https://github.com/anthropics/claude-code" target="_blank">command-line interface (CLI)</a>
-        for your terminal. This flexibility makes it accessible whether you prefer
-        clicking buttons or typing commands.
+        for your terminal. Opus 4.6 brings a one-million-token context window,
+        meaning it can understand your entire codebase at once, and "agent teams"
+        that let multiple Claude instances work in parallel on the same project.
       </p>
 
       <p>
@@ -757,6 +790,14 @@
         <li><strong>You want a conversation partner.</strong> Claude's strength is dialogue—refining ideas through back-and-forth discussion.</li>
       </ul>
 
+      <h3>OpenAI Codex App is Better When:</h3>
+
+      <ul>
+        <li><strong>You want parallel agents.</strong> The Codex macOS app lets you run multiple coding agents simultaneously, each working on a different task—useful when you have several ideas to prototype at once.</li>
+        <li><strong>You're already in the OpenAI ecosystem.</strong> If ChatGPT is your daily driver, Codex integrates naturally with your existing workflow.</li>
+        <li><strong>You want a desktop-native experience.</strong> The standalone app (macOS with Apple Silicon) is purpose-built for coding, not a browser tab.</li>
+      </ul>
+
       <h3>The Honest Answer</h3>
 
       <p>
@@ -772,6 +813,24 @@
       </p>
 
       <hr>
+
+      <div class="callout callout-tip" style="border-left-color: #7c3aed; background: #f5f3ff;">
+        <div class="callout-title" style="color: #7c3aed;">
+          <i data-lucide="headphones"></i> Listen Before You Build
+        </div>
+        <p>
+          <strong><a href="https://podcasts.apple.com/us/podcast/the-ai-daily-brief-artificial-intelligence-news/id1680633614?i=1000748715790" target="_blank">"How to Learn AI With AI"</a></strong>
+          — The AI Daily Brief (AI Operators) · NLW · 17 min
+        </p>
+        <p class="mb-0">
+          The best episode we've found on the meta-skill behind vibe coding:
+          learning to collaborate with AI effectively. NLW breaks down six
+          practices that high-agency learners use—vision-first thinking, messy
+          exploration, productive pushback, handoff documents, prompt chaining,
+          and thread management. If you're about to start your first project,
+          this is a perfect 17-minute primer for your commute.
+        </p>
+      </div>
 
       <!-- Part 7 -->
       <h2>Part 7: The Shared Workflow—Vibe Coding in Practice</h2>
@@ -993,6 +1052,19 @@
         and growing.
       </p>
 
+      <h3>The Open Source Tension</h3>
+
+      <p>
+        A growing concern is vibe coding's impact on the open-source ecosystem.
+        <a href="https://www.theregister.com/2026/01/26/vibe_coding_hazardous_open_source/" target="_blank">Research published in January 2026</a>
+        argues that AI tools intercept the feedback loop between developers and
+        open-source maintainers—people use AI-generated code instead of visiting
+        documentation, filing issues, or contributing back. Stack Overflow questions
+        have declined measurably in countries with ChatGPT access. The tools that
+        make vibe coding possible depend on open-source code for training data;
+        if that ecosystem weakens, the tools weaken too.
+      </p>
+
       <h3>Platform Lock-in</h3>
 
       <p>
@@ -1030,7 +1102,7 @@
       <!-- Part 9 -->
       <h2>Part 9: When to Vibe Code (And When Not To)</h2>
 
-      <p>Based on the landscape in late 2025, here are reasonable guidelines:</p>
+      <p>Based on the landscape in early 2026, here are reasonable guidelines:</p>
 
       <h3>Vibe Coding Is Well-Suited For:</h3>
 
@@ -1098,6 +1170,25 @@
         This treats vibe coding as a rapid prototyping tool rather than a production
         methodology.
       </p>
+
+      <div class="callout callout-info">
+        <div class="callout-title">Vibe Coding in Healthcare</div>
+        <p>
+          Physicians are increasingly building their own tools. A
+          <a href="https://biodatamining.biomedcentral.com/articles/10.1186/s13040-025-00462-9" target="_blank">2025 paper in BioData Mining</a>
+          called vibe coding "a new paradigm for biomedical software development,"
+          describing how researchers can build data analysis pipelines in plain
+          English. At Stanford, clinicians have used AI tools to prototype custom
+          dashboards and patient portals in days instead of months.
+        </p>
+        <p class="mb-0">
+          <strong>The critical caveat:</strong> consumer vibe coding platforms
+          (Replit, Lovable, Claude.ai) are not HIPAA-compliant. Never enter
+          real patient data. The recommended pattern for healthcare: use vibe
+          coding to prototype and test ideas, then engage your compliance team
+          with something tangible before any production deployment.
+        </p>
+      </div>
 
       <hr>
 
@@ -1511,7 +1602,7 @@
   <footer class="footer">
     <div class="footer-inner">
       <div><strong>AI 101</strong> · A Self-Paced Guide to AI in Medicine</div>
-      <div>v1.1 · 2025</div>
+      <div>v1.2 · 2026</div>
     </div>
   </footer>
 
