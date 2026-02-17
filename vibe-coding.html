@@ -1565,6 +1565,89 @@
         </p>
       </div>
 
+      <hr>
+
+      <!-- Something's Changed -->
+      <h2>Something's Changed (February 2026 Update)</h2>
+
+      <p>
+        When we first published this module, vibe coding was a promising experiment
+        with a handful of capable tools. In the span of a few weeks, the landscape
+        shifted in ways worth documenting.
+      </p>
+
+      <h3>The Model Rush</h3>
+
+      <p>
+        February 2026 saw more major model releases in a single month than some entire
+        years. The two most relevant for vibe coders:
+      </p>
+
+      <p>
+        <strong>Claude Opus 4.6</strong> (Anthropic, February 5) introduced a
+        one-million-token context window—meaning the model can hold an entire large
+        codebase in memory at once. It also launched "agent teams": multiple AI instances
+        that coordinate across a shared codebase without human orchestration. To demonstrate,
+        Anthropic had 16 Opus 4.6 instances autonomously build a C compiler from scratch—100,000
+        lines of Rust that successfully compiles a bootable Linux kernel. For vibe coders,
+        the practical impact is that projects that used to overwhelm AI tools—multi-file
+        applications, complex backends, interconnected systems—are now within reach.
+      </p>
+
+      <p>
+        <strong>GPT-5.3-Codex-Spark</strong> (OpenAI, February 12) took a different
+        approach. It's OpenAI's first model running on Cerebras chips instead of Nvidia,
+        optimized for speed over raw capability. The companion <strong>Codex macOS app</strong>
+        hit one million downloads in its first week—a standalone "command center" that
+        lets you run multiple coding agents simultaneously, each working on a different
+        task. If Claude Opus 4.6 is the most powerful engine, Codex Spark is the fastest
+        one for everyday coding tasks.
+      </p>
+
+      <p>
+        And they weren't alone. Google updated Gemini Deep Think for advanced reasoning.
+        DeepSeek expanded its context window 10x and is about to release V4, a coding-focused
+        model. Alibaba's Qwen3-Max-Thinking, GLM 5, Grok 4.20—seven major models in a single
+        month. The competitive pressure is driving capabilities up and costs down at a pace
+        that would have seemed absurd even six months ago.
+      </p>
+
+      <h3>What This Means for You</h3>
+
+      <p>
+        Three practical changes since we wrote this module:
+      </p>
+
+      <ul>
+        <li>
+          <strong>Larger projects are viable.</strong> Million-token context windows mean
+          you can vibe code applications with 50+ files and the AI won't lose track of
+          how things connect. The "complexity ceiling" described in Part 8 has risen
+          significantly.
+        </li>
+        <li>
+          <strong>Agent-based workflows are the new default.</strong> Tools like Claude
+          Code and the Codex app don't just suggest code—they execute it, test it, and
+          fix errors autonomously. This is powerful, but it also means your AI tools now
+          have access to your terminal and file system. See our new
+          <a href="openclaw.html"><strong>AI Coding Agents</strong></a> module for
+          what this means for security.
+        </li>
+        <li>
+          <strong>Costs are dropping fast.</strong> Competition among model providers and
+          new hardware (like the Cerebras chips powering Codex Spark) are driving inference
+          costs down dramatically. Vibe coding sessions that cost dollars now cost cents.
+          The economic barriers are approaching zero alongside the technical ones.
+        </li>
+      </ul>
+
+      <p>
+        The advice from our conclusion still holds: vibe coding is a first draft tool,
+        and code you didn't write is still code you're responsible for. But the drafts
+        are getting better, faster, and cheaper—and the tools writing them now have more
+        power on your machine than ever before.
+      </p>
+
       <!-- Learning Objectives -->
       <div class="objectives phase-2">
         <h4 class="objectives-title">Learning Objectives</h4>
@@ -1587,11 +1670,11 @@
             <span class="page-nav-title">When Patients Use AI Too</span>
           </div>
         </a>
-        <a href="environmental-footprint.html" class="page-nav-link next">
+        <a href="openclaw.html" class="page-nav-link next">
           <span class="page-nav-arrow"><i data-lucide="arrow-right"></i></span>
           <div>
             <span class="page-nav-label">Next</span>
-            <span class="page-nav-title">AI's Environmental Footprint</span>
+            <span class="page-nav-title">OpenClaw</span>
           </div>
         </a>
       </nav>
