@@ -42,7 +42,7 @@
         <div class="unit-meta">
           <span class="unit-meta-item">
             <i data-lucide="clock"></i>
-            ~30 min read
+            ~40 min read
           </span>
           <span class="unit-meta-item">
             <i data-lucide="shield-alert"></i>
@@ -63,6 +63,26 @@
         </p>
       </div>
 
+      <div class="callout callout-warning">
+        <div class="callout-title">March 2026 Update</div>
+        <p>
+          Since this module was first published, the OpenClaw story has accelerated
+          dramatically. Malicious skills on ClawHub have jumped from roughly 341 to
+          over 1,184&mdash;many now deploying commodity macOS malware that harvests
+          keychain passwords, browser credentials, and SSH keys. Two new critical CVEs
+          have been disclosed, including a pre-authentication remote code execution flaw
+          affecting 42,000 publicly exposed servers. Meanwhile, OpenClaw has surpassed
+          250,000 GitHub stars, and the broader agentic AI threat landscape has produced
+          real-world harm: a healthcare AI was jailbroken into tripling opioid doses,
+          and a consumer AI browser was found vulnerable to zero-click calendar-invite
+          exploits.
+        </p>
+        <p class="mb-0">
+          The sections below have been updated to reflect these developments. New
+          material is marked with <strong>[March 2026]</strong> where applicable.
+        </p>
+      </div>
+
       <!-- The OpenClaw Story -->
       <h2>The OpenClaw Story</h2>
 
@@ -71,8 +91,9 @@
         GitHub. Built by Peter Steinberger&mdash;founder of PSPDFKit, a well-known mobile
         software company&mdash;it was a personal AI agent that could write code, manage your
         calendar, control smart home devices, and interact across WhatsApp, Telegram, Slack,
-        and a dozen other platforms. Within weeks it had over 157,000 GitHub stars, making it
-        one of the most popular open-source projects in the world.
+        and a dozen other platforms. Within weeks it had over 157,000 GitHub stars&mdash;eventually surpassing
+        250,000, more than React&mdash;making it one of the most popular open-source
+        projects in the world.
       </p>
 
       <p>
@@ -107,7 +128,8 @@
       <p>
         On February 15, 2026&mdash;just weeks later&mdash;Steinberger
         <a href="https://techcrunch.com/2026/02/15/openclaw-creator-peter-steinberger-joins-openai/" target="_blank">joined OpenAI</a>.
-        Sam Altman announced it personally.
+        Sam Altman announced it personally. OpenClaw moved to an independent
+        open-source foundation to continue without him.
       </p>
 
       <hr>
@@ -194,6 +216,88 @@
         430,000-line program they'd never audited access to their most sensitive accounts.
       </p>
 
+      <h3>[March 2026] ClawHavoc: The Supply Chain Gets Worse</h3>
+
+      <p>
+        In late February 2026, the malicious skills problem on ClawHub&mdash;OpenClaw's
+        community plugin marketplace&mdash;escalated dramatically. Researchers tracking the
+        "<a href="https://cyberpress.org/clawhavoc-poisons-openclaws-clawhub-with-1184-malicious-skills/" target="_blank">ClawHavoc</a>"
+        campaign found that the number of malicious skills had jumped from roughly 341 to
+        <strong>over 1,184</strong>.
+      </p>
+
+      <p>
+        More concerning than the numbers is what the skills now do. According to
+        <a href="https://www.trendmicro.com/en_us/research/26/b/openclaw-skills-used-to-distribute-atomic-macos-stealer.html" target="_blank">Trend Micro</a>,
+        <strong>335 skills now install Atomic Stealer (AMOS)</strong>&mdash;a commodity
+        macOS info-stealer available for $500&ndash;$1,000 per month on criminal
+        marketplaces. AMOS harvests keychain passwords, browser credentials, SSH keys,
+        and API keys, then exfiltrates them silently.
+      </p>
+
+      <p>
+        The key shift is in the attack model. Earlier malicious skills relied on the user
+        to run them. The newer skills manipulate the AI agent itself as a
+        <strong>trusted intermediary</strong>&mdash;embedding instructions that cause the
+        agent to install the malware on the attacker's behalf. The user sees the agent
+        working normally. The agent doesn't know it's been compromised. The malware runs
+        with the user's full permissions.
+      </p>
+
+      <h3>[March 2026] New Critical Vulnerabilities</h3>
+
+      <p>
+        Two new CVEs have added to OpenClaw's growing vulnerability catalog (now tracked
+        at <a href="https://github.com/jgamblin/OpenClawCVEs" target="_blank">github.com/jgamblin/OpenClawCVEs</a>):
+      </p>
+
+      <ul>
+        <li>
+          <strong><a href="https://dev.to/tiamatenity/cve-2026-28446-cvss-98-openclaw-voice-extension-rce-what-you-need-to-know-n2i" target="_blank">CVE-2026-28446</a>
+          (CVSS 9.8, Critical)</strong>&mdash;A pre-authentication remote code execution
+          flaw in OpenClaw's voice-call extension. An attacker needs no credentials to
+          exploit it. Approximately <strong>42,000 publicly exposed OpenClaw
+          instances</strong> were found vulnerable&mdash;up from roughly 1,000 just weeks
+          earlier. Fixed in v2026.2.1.
+        </li>
+        <li>
+          <strong>CVE-2026-28458 (CVSS 7.5, High)</strong>&mdash;The WebSocket endpoint
+          used for real-time communication lacks authentication, allowing an attacker to
+          steal session cookies across browser tabs. This means a malicious webpage open
+          in one tab could hijack your OpenClaw session in another.
+        </li>
+      </ul>
+
+      <div class="callout callout-warning">
+        <div class="callout-title">42,000 Exposed Servers</div>
+        <p class="mb-0">
+          Internet scanning found <strong>42,000 OpenClaw instances</strong> publicly
+          accessible on the open internet&mdash;up from roughly 1,000 in early February.
+          Each of these is a machine running an AI agent with access to its owner's files,
+          credentials, and connected services, now reachable by anyone. If you've installed
+          OpenClaw, verify it is not exposed on a public IP address or port.
+        </p>
+      </div>
+
+      <h3>[March 2026] Rapid Security Hardening</h3>
+
+      <p>
+        To its credit, the OpenClaw project has responded with a burst of security-focused
+        releases. Versions v2026.2.17 through v2026.2.25 shipped transport security
+        improvements, session cleanup fixes, and WebSocket authentication lockdowns.
+        The WebSocket vulnerability was patched within 24 hours of public disclosure.
+        The onboarding experience now warns that OpenClaw is
+        <strong>"personal-by-default"</strong> with a single trusted operator boundary&mdash;an
+        acknowledgment that multi-user or public-facing deployments were never the intended
+        use case.
+      </p>
+
+      <p>
+        These are positive steps. But they also underscore the fundamental tension: a
+        project moving at 6,600 commits per month will always be patching vulnerabilities
+        faster than most users can update.
+      </p>
+
       <p>
         And it wasn't just OpenClaw. Across the broader AI agent ecosystem:
       </p>
@@ -245,6 +349,12 @@
           in PMC</a> found that <strong>97% of organizations that experienced AI-related security
           incidents lacked proper AI access controls</strong>.
         </p>
+        <p>
+          <strong>[March 2026]</strong> The costs are now quantifiable: data breaches
+          involving shadow AI tools cost an average of <strong>$670,000 more</strong> than
+          standard incidents. Palo Alto Networks has labeled AI agents "2026's biggest
+          insider threat."
+        </p>
         <p class="mb-0">
           When a clinician installs a coding agent on their laptop and connects it to Slack,
           email, and a cloud database&mdash;even for a side project&mdash;they've created
@@ -275,6 +385,72 @@
         without asking. A coding agent that auto-installs packages is one hallucination
         away from executing malicious code.
       </p>
+
+      <!-- Broader Agentic AI Threat Landscape -->
+      <h2>[March 2026] The Broader Agentic AI Threat Landscape</h2>
+
+      <p>
+        OpenClaw's vulnerabilities are not isolated. They are symptoms of a broader
+        security crisis as autonomous AI agents proliferate across every industry.
+        Several developments in early 2026 illustrate how quickly this landscape is
+        evolving.
+      </p>
+
+      <h3>State-Level Actors Are Using AI Agents Offensively</h3>
+
+      <p>
+        Chinese state-affiliated group GTG-1002 has been documented using AI agents to
+        execute <strong>80&ndash;90% of attack lifecycle steps autonomously</strong>&mdash;from
+        reconnaissance to exploitation. This is not theoretical; it represents a
+        fundamental shift in how adversaries operate. When attacks are automated by AI,
+        they scale faster and cost less to execute than human-driven campaigns.
+      </p>
+
+      <h3>Shadow AI Costs Are Quantifiable</h3>
+
+      <p>
+        Data breaches involving unauthorized "shadow AI" tools now cost organizations
+        an average of <strong>$670,000 more</strong> than standard security incidents.
+        Palo Alto Networks has called AI agents <strong>"2026's biggest insider
+        threat"</strong>&mdash;not because the agents are malicious, but because they
+        operate with broad permissions and minimal oversight inside enterprise networks.
+      </p>
+
+      <h3>Healthcare AI Is Already Being Exploited</h3>
+
+      <p>
+        In March 2026, researchers demonstrated that
+        <a href="https://www.axios.com/2026/03/04/doctronic-utah-prescriptions-ai-jailbreak" target="_blank">Doctronic</a>,
+        a healthcare AI system used for clinical decision support, could be jailbroken
+        via prompt injection&mdash;the same attack class that affects OpenClaw skills.
+        Researchers were able to <strong>triple recommended OxyContin doses</strong>
+        by manipulating the system's instructions. This is the direct clinical
+        consequence of the security patterns we see in the agent ecosystem.
+      </p>
+
+      <h3>Consumer AI Browsers Are Vulnerable Too</h3>
+
+      <p>
+        <a href="https://www.theregister.com/2026/03/03/perplexity_comet_browser_hole_cal_invite/" target="_blank">Perplexity's Comet browser</a>
+        was found to contain zero-click exploits: a malicious calendar invite could
+        silently exfiltrate files from the user's machine with no interaction required.
+        This reinforces a pattern: any tool that combines AI capabilities with local
+        system access creates an attack surface that traditional security models were
+        not designed to handle.
+      </p>
+
+      <div class="callout callout-warning">
+        <div class="callout-title">For Clinicians: Why This Pattern Matters</div>
+        <p class="mb-0">
+          Every example above shares the same root cause: an AI system with broad
+          permissions was manipulated through its inputs. Whether it's an OpenClaw skill
+          installing malware, a healthcare AI recommending dangerous doses, or a browser
+          leaking files via a calendar invite&mdash;the attack works because the AI
+          acts as a <strong>trusted intermediary</strong> between the attacker and your
+          data. If you use any AI tool that can access patient data, clinical systems,
+          or credentials, these are not abstract risks. They are the current threat model.
+        </p>
+      </div>
 
       <hr>
 
@@ -491,7 +667,7 @@
             <div class="reading-title">
               <a href="https://www.kaspersky.com/blog/openclaw-vulnerabilities-exposed/55263/" target="_blank">Kaspersky: New OpenClaw AI Agent Found Unsafe for Use</a>
             </div>
-            <div class="reading-meta">Major antivirus vendor's verdict: 512 vulnerabilities (8 critical), 900 malicious skills on ClawHub.</div>
+            <div class="reading-meta">Major antivirus vendor's verdict: 512 vulnerabilities (8 critical), malicious skills on ClawHub (now 1,184+).</div>
           </div>
         </div>
         <div class="reading-item">
@@ -519,6 +695,65 @@
               <a href="https://www.thestack.technology/a-backdoor-was-the-most-downloaded-skill-for-viral-clawdbot-moltbot-and-why-that-matters/" target="_blank">The Stack: A Backdoor Was the Most Downloaded Skill for Viral Clawdbot</a>
             </div>
             <div class="reading-meta">A researcher uploaded a malicious skill, inflated it to 4,000+ downloads, and watched developers from 7 countries execute it.</div>
+          </div>
+        </div>
+      </div>
+
+      <h3>March 2026 Updates</h3>
+
+      <div class="reading-list">
+        <div class="reading-item">
+          <div class="reading-type"><i data-lucide="shield"></i></div>
+          <div class="reading-content">
+            <div class="reading-title">
+              <a href="https://cyberpress.org/clawhavoc-poisons-openclaws-clawhub-with-1184-malicious-skills/" target="_blank">CyberPress: ClawHavoc Poisons OpenClaw's ClawHub with 1,184+ Malicious Skills</a>
+            </div>
+            <div class="reading-meta">The definitive account of the ClawHavoc supply chain campaign&mdash;skill counts, attack techniques, and AMOS deployment.</div>
+          </div>
+        </div>
+        <div class="reading-item">
+          <div class="reading-type"><i data-lucide="shield"></i></div>
+          <div class="reading-content">
+            <div class="reading-title">
+              <a href="https://www.trendmicro.com/en_us/research/26/b/openclaw-skills-used-to-distribute-atomic-macos-stealer.html" target="_blank">Trend Micro: OpenClaw Skills Used to Distribute Atomic macOS Stealer</a>
+            </div>
+            <div class="reading-meta">Technical analysis of how 335 skills deploy AMOS to harvest keychain passwords, browser creds, SSH keys, and API keys.</div>
+          </div>
+        </div>
+        <div class="reading-item">
+          <div class="reading-type"><i data-lucide="shield"></i></div>
+          <div class="reading-content">
+            <div class="reading-title">
+              <a href="https://dev.to/tiamatenity/cve-2026-28446-cvss-98-openclaw-voice-extension-rce-what-you-need-to-know-n2i" target="_blank">CVE-2026-28446: OpenClaw Voice Extension RCE&mdash;What You Need to Know</a>
+            </div>
+            <div class="reading-meta">CVSS 9.8 pre-auth remote code execution via voice-call extension, 42,000 instances affected.</div>
+          </div>
+        </div>
+        <div class="reading-item">
+          <div class="reading-type"><i data-lucide="shield"></i></div>
+          <div class="reading-content">
+            <div class="reading-title">
+              <a href="https://github.com/jgamblin/OpenClawCVEs" target="_blank">OpenClaw CVE Tracker (GitHub)</a>
+            </div>
+            <div class="reading-meta">Community-maintained list of all known OpenClaw CVEs with status and affected versions.</div>
+          </div>
+        </div>
+        <div class="reading-item">
+          <div class="reading-type"><i data-lucide="heart-pulse"></i></div>
+          <div class="reading-content">
+            <div class="reading-title">
+              <a href="https://www.axios.com/2026/03/04/doctronic-utah-prescriptions-ai-jailbreak" target="_blank">Axios: Doctronic Healthcare AI Jailbroken to Triple OxyContin Doses</a>
+            </div>
+            <div class="reading-meta">Prompt injection applied to clinical AI&mdash;researchers manipulated prescribing recommendations, demonstrating direct patient safety risk.</div>
+          </div>
+        </div>
+        <div class="reading-item">
+          <div class="reading-type"><i data-lucide="shield"></i></div>
+          <div class="reading-content">
+            <div class="reading-title">
+              <a href="https://www.theregister.com/2026/03/03/perplexity_comet_browser_hole_cal_invite/" target="_blank">The Register: Perplexity Comet Browser Zero-Click Exploits</a>
+            </div>
+            <div class="reading-meta">Calendar invites used to silently exfiltrate files from AI-powered browser&mdash;no user interaction required.</div>
           </div>
         </div>
       </div>
@@ -600,7 +835,7 @@
             <div class="reading-title">
               <a href="https://isc.sans.edu/podcastdetail/9792" target="_blank">SANS Stormcast: Scanning for AI; OpenClaw Vulnerabilities</a>
             </div>
-            <div class="reading-meta">SANS Institute&mdash;gold standard in cybersecurity training&mdash;noted 20,000+ exposed OpenClaw installs found via internet scanning.</div>
+            <div class="reading-meta">SANS Institute&mdash;gold standard in cybersecurity training&mdash;noted exposed OpenClaw installs found via internet scanning (now 42,000+).</div>
           </div>
         </div>
       </div>
@@ -644,7 +879,7 @@
 
       <p>
         OpenClaw isn't a cautionary tale about a bad product. It's a well-built platform
-        created by an experienced developer that attracted 157,000 stars for good reasons.
+        created by an experienced developer that attracted 250,000 stars for good reasons.
         The problem isn't OpenClaw specifically&mdash;it's what OpenClaw represents: a new
         category of tool that blurs the line between "software you use" and "software that
         acts on your behalf with your credentials."
@@ -652,7 +887,7 @@
 
       <p>
         Steinberger shipping code he didn't read was a choice about his own risk tolerance.
-        But when 157,000 people install that same agent&mdash;many of them less technical,
+        But when 250,000 people install that same agent&mdash;many of them less technical,
         some of them handling sensitive data&mdash;the risk calculus changes. The agent that's
         a productivity miracle for one person is a security incident waiting to happen for another.
       </p>
@@ -678,8 +913,10 @@
         <div class="callout-title">A Note on This Module</div>
         <p class="mb-0">
           This module was written with AI assistance and verified by human review.
-          All linked sources were checked at time of publication. The OpenClaw story
-          is still unfolding&mdash;some details may have evolved since writing.
+          All linked sources were checked at time of publication. Last updated March 2026
+          with ClawHavoc supply chain data, new CVEs, and broader agentic AI threat
+          context. The OpenClaw story is still unfolding&mdash;some details may have
+          evolved since writing.
         </p>
       </div>
 
@@ -691,7 +928,9 @@
           <li>Explain how AI agents differ from browser-based chatbots in terms of system access</li>
           <li>Identify how agents can access API keys, credentials, and sensitive files on your machine</li>
           <li>Recognize specific attack vectors including prompt injection, slopsquatting, and credential exfiltration</li>
+          <li>Describe how supply chain attacks through AI agent marketplaces (e.g., ClawHavoc) use the agent as a trusted intermediary to deploy malware</li>
           <li>Compare OpenClaw to safer alternatives like NanoClaw and Nanobot</li>
+          <li>Connect OpenClaw's vulnerabilities to the broader agentic AI threat landscape, including healthcare AI jailbreaks and state-level AI-driven attacks</li>
           <li>Apply practical guardrails to protect sensitive data when using any AI agent</li>
         </ul>
       </div>
@@ -720,7 +959,7 @@
   <footer class="footer">
     <div class="footer-inner">
       <div><strong>AI 101</strong> · A Self-Paced Guide to AI in Medicine</div>
-      <div>v1.2 · 2026</div>
+      <div>v1.3 · 2026</div>
     </div>
   </footer>
 

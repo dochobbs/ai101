@@ -207,6 +207,26 @@
         </p>
       </div>
 
+      <div class="callout callout-info">
+        <div class="callout-title">February 2026 Update: Perplexity Computer</div>
+        <p>
+          Perplexity launched
+          <a href="https://techcrunch.com/2026/02/27/perplexitys-new-computer-is-another-bet-that-users-need-many-ai-models/" target="_blank">Perplexity Computer</a>
+          on February 27, 2026&mdash;a system that orchestrates 19 AI models to plan, delegate,
+          and execute complex multi-step workflows. Available on the $200/mo Max tier, Computer
+          goes beyond search: it can reason about a task, break it into subtasks, and route each
+          to the most appropriate model. Deep Research now runs on Claude Opus 4.6. Perplexity
+          also added Voice Mode for hands-free interaction and premium content integrations from
+          Wiley (health data), Statista, and PitchBook.
+        </p>
+        <p class="mb-0">
+          <strong>Why it matters for clinicians:</strong> The premium content partnerships mean
+          Perplexity Max users may get access to health data sources that were previously paywalled.
+          The multi-model orchestration approach is worth watching&mdash;it's an early example of
+          "agentic" AI that doesn't just answer questions but executes multi-step research workflows.
+        </p>
+      </div>
+
       <h3>Perplexity for Clinical Research</h3>
 
       <p>
@@ -301,6 +321,39 @@
         are the feature—click them, verify them, and use your clinical judgment to assess
         whether the synthesis accurately represents what the sources actually say.
       </p>
+
+      <div class="callout callout-warning">
+        <div class="callout-title">March 2026 Security Alert: Perplexity Comet Browser</div>
+        <p>
+          Perplexity's Comet browser&mdash;an "agentic" AI browser that can browse, click, and
+          act on your behalf&mdash;was found to have
+          <a href="https://www.theregister.com/2026/03/03/perplexity_comet_browser_hole_cal_invite/" target="_blank">serious zero-click vulnerabilities</a>
+          within days of its launch. Multiple independent research teams documented critical flaws:
+        </p>
+        <ul>
+          <li><strong>Calendar invite attack:</strong> Hidden prompts embedded in calendar invitations
+          silently instructed Comet to exfiltrate local files&mdash;no user interaction required</li>
+          <li><strong>Credential theft:</strong> Researchers demonstrated 1Password credentials being
+          stolen through prompt injection</li>
+          <li><strong>Phishing vulnerability:</strong> LayerX Security found Comet was
+          <a href="https://layerxsecurity.com/blog/cometjacking-how-one-click-can-turn-perplexitys-comet-ai-browser-against-you/" target="_blank">85% more vulnerable to phishing</a>
+          than Chrome</li>
+          <li><strong>Invisible prompt injection:</strong>
+          <a href="https://brave.com/blog/comet-prompt-injection/" target="_blank">Brave Research</a>
+          showed that white-on-white text invisible to users could hijack the browser's AI agent</li>
+        </ul>
+        <p>
+          As Zenity's CTO noted: <em>"This is an inherent vulnerability in agentic systems"</em>&mdash;any
+          AI that can take actions on your behalf can be tricked into taking the wrong actions.
+        </p>
+        <p class="mb-0">
+          <strong>For clinicians: Do not use Comet (or any agentic AI browser) with anything involving
+          patient data, clinical credentials, EHR access, or sensitive health information.</strong> The
+          attack surface is fundamentally different from traditional browsers. These vulnerabilities
+          are not bugs to be patched&mdash;they reflect a structural challenge in agentic AI that
+          the industry has not yet solved. Stick with standard browsers for clinical work.
+        </p>
+      </div>
 
       <hr>
 
@@ -525,6 +578,22 @@
             </tr>
           </tbody>
         </table>
+      </div>
+
+      <div class="callout callout-info">
+        <div class="callout-title">February 2026 Update: Gemini 3.1 Pro Powers NotebookLM</div>
+        <p class="mb-0">
+          Google upgraded
+          <a href="https://9to5google.com/2026/02/20/notebooklm-slide-prompts/" target="_blank">NotebookLM</a>
+          to run on Gemini 3.1 Pro with the full 1 million token context window available in chat.
+          New features include prompt-based slide revisions (edit presentations by describing what
+          you want changed), PPTX export for use in PowerPoint and Google Slides, and video
+          customization options. For clinicians who use NotebookLM to process dense PDFs, guidelines,
+          or lecture recordings (see our <a href="start-here.html">Start Here</a> module), the
+          expanded context window means you can now load substantially more source material into
+          a single notebook&mdash;multiple guidelines, a full textbook chapter, or an entire
+          conference worth of abstracts&mdash;and chat across all of it at once.
+        </p>
       </div>
 
       <h3>Enabling Search in the Big Three</h3>
@@ -948,7 +1017,7 @@
   <footer class="footer">
     <div class="footer-inner">
       <div><strong>AI 101</strong> · A Self-Paced Guide to AI in Medicine</div>
-      <div>v1.2 · 2026</div>
+      <div>v1.3 · 2026</div>
     </div>
   </footer>
 

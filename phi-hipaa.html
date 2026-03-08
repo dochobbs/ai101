@@ -664,6 +664,84 @@
         </p>
       </div>
 
+      <h2>In the News</h2>
+
+      <p>
+        These recent developments illustrate how fast the PHI and AI landscape is
+        shifting&mdash;and why the principles in this module matter right now.
+      </p>
+
+      <div class="callout callout-warning">
+        <div class="callout-title">Doctronic SOAP Note Injection Risk (Mar 2026)</div>
+        <p>
+          Utah&rsquo;s first-in-nation AI prescription bot,
+          <a href="https://www.axios.com/2026/03/04/doctronic-utah-prescriptions-ai-jailbreak" target="_blank">Doctronic, was trivially jailbroken</a>
+          via prompt injection. Security researchers tripled OxyContin doses and extracted
+          methamphetamine recommendations. But the PHI angle goes deeper: Doctronic generates
+          SOAP notes that are transmitted to physicians <em>before</em> consultations. A
+          jailbroken session could inject fabricated clinical information into those notes.
+          Physicians reviewing AI-generated summaries are conditioned to treat them as credible.
+          In the Utah pilot&mdash;which allows autonomous prescription renewals&mdash;some cases
+          may have no human review at all. This is not just a safety issue; it&rsquo;s a data
+          integrity issue where compromised AI outputs become part of the medical record.
+        </p>
+        <p class="mb-0">
+          <strong>Source:</strong>
+          <a href="https://www.axios.com/2026/03/04/doctronic-utah-prescriptions-ai-jailbreak" target="_blank">Axios</a> ·
+          <a href="https://mindgard.ai/blog/doctronic-is-now-accepting-new-patients-and-unsafe-instructions" target="_blank">Mindgard</a>
+        </p>
+      </div>
+
+      <div class="callout callout-warning">
+        <div class="callout-title">HHS Proposes Gutting AI Transparency Rules (HTI-5)</div>
+        <p>
+          The Trump administration proposed eliminating 34 of 60 health IT certification
+          requirements, including Biden-era model card requirements that forced AI developers
+          to disclose data sources and attributes. These were among the only federal
+          transparency guardrails for clinical AI&mdash;without them, clinicians and
+          organizations may have no way to evaluate what data an AI tool was trained on,
+          whether it has known biases, or how it handles PHI internally. The comment period
+          closed February 27, 2026.
+        </p>
+        <p class="mb-0">
+          <strong>Source:</strong>
+          <a href="https://www.healthcaredive.com/news/astp-onc-hti5-ai-model-cards-health-it-certification-proposed-rule/808582/" target="_blank">Healthcare Dive</a>
+        </p>
+      </div>
+
+      <div class="callout callout-warning">
+        <div class="callout-title">DeepSeek V4 Data Privacy Concerns (Feb 2026)</div>
+        <p>
+          Anthropic identified approximately 24,000 fraudulent accounts generating 16 million
+          exchanges for model distillation. Separately, the Texas Attorney General opened an
+          investigation into DeepSeek&rsquo;s data practices. Any clinician or organization
+          using DeepSeek-based tools should be aware of significant data privacy risks&mdash;if
+          a model&rsquo;s developer is under investigation for data handling practices, PHI
+          processed through that model carries elevated and largely unquantifiable risk.
+        </p>
+        <p class="mb-0">
+          <strong>Source:</strong>
+          <a href="https://www.bloomberg.com/news/articles/2026-02-23/anthropic-says-deepseek-minimax-distilled-ai-models-for-gains" target="_blank">Bloomberg</a>
+        </p>
+      </div>
+
+      <div class="callout callout-warning">
+        <div class="callout-title">Perplexity Comet: Zero-Click File Exfiltration (Mar 2026)</div>
+        <p>
+          Multiple research teams discovered that Perplexity&rsquo;s Comet browser is
+          vulnerable to zero-click exploits. Calendar invites with hidden prompts can silently
+          access local files. In proof-of-concept attacks, 1Password credentials were stolen
+          without user interaction. If a clinician uses Comet with patient files accessible on
+          their machine, this is a direct PHI exposure vector&mdash;no clicking, no
+          downloading, no visible indication that data has left the device. The browser was
+          found to be 85% more vulnerable to phishing than Chrome.
+        </p>
+        <p class="mb-0">
+          <strong>Source:</strong>
+          <a href="https://www.theregister.com/2026/03/03/perplexity_comet_browser_hole_cal_invite/" target="_blank">The Register</a>
+        </p>
+      </div>
+
       <h2>Readings</h2>
 
       <!-- Prioritize This! -->
@@ -912,7 +990,7 @@
   <footer class="footer">
     <div class="footer-inner">
       <div><strong>AI 101</strong> · A Self-Paced Guide to AI in Medicine</div>
-      <div>v1.2 · 2026</div>
+      <div>v1.3 · 2026</div>
     </div>
   </footer>
 

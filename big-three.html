@@ -270,7 +270,9 @@
         tiering (small/medium/large models with different capability and cost profiles). In
         February 2026, Claude Opus 4.6 launched with a one-million-token context window and
         "agent teams" that can coordinate across shared codebases. Anthropic closed a record
-        $30 billion funding round, valuing the company at approximately $380 billion.
+        $30 billion funding round, valuing the company at approximately $380 billion. Later
+        that month, Claude Sonnet 4.6 arrived—delivering near-Opus performance at one-fifth
+        the cost, and becoming the default model for both free and Pro users.
       </p>
 
       <h3>The Current Offering</h3>
@@ -305,10 +307,10 @@
         AI assistance for developers. The ecosystem emphasizes depth over breadth.
       </p>
       <p>
-        <strong>Features:</strong> 200,000-token context window (roughly 150,000 words) for working
-        with substantial documents. Projects feature for organizing related conversations. Artifacts
-        for generating code, documents, and other outputs. No native image generation, but can
-        analyze images you provide.
+        <strong>Features:</strong> Up to 1-million-token context window on Opus (200K on Sonnet),
+        for working with substantial documents. Projects feature for organizing related conversations.
+        Artifacts for generating code, documents, and other outputs. Computer use capabilities for
+        agentic workflows. No native image generation, but can analyze images you provide.
       </p>
       <p>
         <strong>HIPAA pathway:</strong> BAAs available through the API with Zero Data Retention (ZDR)
@@ -337,7 +339,9 @@
         Gemini 1.5 arrived in February 2024 with a groundbreaking 1-million-token context window
         (later expanded to 2 million)—dramatically larger than competitors at the time. In November
         2025, Google announced Gemini 3, positioned as "our most intelligent model" with significant
-        improvements in reasoning, multimodal understanding, and agent capabilities.
+        improvements in reasoning, multimodal understanding, and agent capabilities. In February
+        2026, Gemini 3.1 Pro doubled the reasoning performance of its predecessor and dominated
+        13 of 16 major AI benchmarks, now powering NotebookLM.
       </p>
 
       <h3>The Current Offering</h3>
@@ -417,8 +421,8 @@
             </tr>
             <tr>
               <td><strong>Context Window</strong></td>
-              <td>128K tokens</td>
-              <td>200K tokens</td>
+              <td>1M tokens (GPT-5.4)</td>
+              <td>200K&ndash;1M tokens</td>
               <td>1-2M tokens</td>
             </tr>
             <tr>
@@ -988,6 +992,46 @@
         </p>
       </div>
 
+      <div class="callout callout-info">
+        <div class="callout-title">March 2026 Update — The Model Rush Continues</div>
+        <p>
+          Late February and early March 2026 brought an unprecedented wave of major model releases.
+          The competitive landscape is moving faster than ever:
+        </p>
+        <ul>
+          <li><strong>GPT-5.4</strong> (March 5, 2026) arrived with Thinking and Pro versions,
+          a 1-million-token context window, native computer-use capabilities, and 33% fewer
+          factual errors than GPT-5.2. OpenAI is closing the context-window gap with competitors.
+          <a href="https://openai.com/index/introducing-gpt-5-4/" target="_blank">[Source]</a></li>
+          <li><strong>Claude Sonnet 4.6</strong> (February 17) delivers near-Opus performance at
+          one-fifth the cost ($3/$15 per million tokens), with improved computer use. Now the
+          default model for both free and Pro users—meaning most Claude users just got a major
+          upgrade without changing anything.
+          <a href="https://www.anthropic.com/news/claude-sonnet-4-6" target="_blank">[Source]</a></li>
+          <li><strong>Gemini 3.1 Pro</strong> (February 19) doubles reasoning performance over
+          Gemini 3 Pro, dominates 13 of 16 major benchmarks, maintains a 1M-token context window,
+          and now powers NotebookLM.
+          <a href="https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-1-pro/" target="_blank">[Source]</a></li>
+          <li><strong>Meta Llama 4</strong> (February 15) introduced Scout (with a remarkable
+          10-million-token context window) and Maverick models, both open-weight. A major development
+          for privacy-first and on-premise healthcare deployments where data never leaves the building.
+          <a href="https://ai.meta.com/blog/llama-4/" target="_blank">[Source]</a></li>
+          <li><strong>DeepSeek V4</strong> launched amid controversy: a trillion-parameter model
+          facing distillation fraud accusations from both Anthropic (reporting ~24K fake accounts)
+          and OpenAI. A Texas Attorney General investigation has been opened. Regardless of the
+          controversy, the data privacy concerns with Chinese-hosted models remain significant for
+          healthcare use cases.
+          <a href="https://www.bloomberg.com/news/articles/2026-02-23/anthropic-says-deepseek-minimax-distilled-ai-models-for-gains" target="_blank">[Source]</a></li>
+        </ul>
+        <p class="mb-0">
+          The practical takeaway: the Big Three are now converging on 1M+ token context windows,
+          native tool use and computer control, and dramatically improved reasoning. Open-weight
+          alternatives like Llama 4 are increasingly viable for organizations that need data
+          sovereignty. Re-run your personal test set—results from even three months ago are likely
+          outdated.
+        </p>
+      </div>
+
       <div class="callout callout-principle">
         <div class="callout-title">The Bottom Line</div>
         <p class="mb-0">
@@ -1071,7 +1115,7 @@
   <footer class="footer">
     <div class="footer-inner">
       <div><strong>AI 101</strong> · A Self-Paced Guide to AI in Medicine</div>
-      <div>v1.2 · 2026</div>
+      <div>v1.3 · 2026</div>
     </div>
   </footer>
 

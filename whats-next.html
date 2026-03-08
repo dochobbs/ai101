@@ -1004,6 +1004,42 @@ print(message.content)</code></pre>
         </p>
       </div>
 
+      <div class="callout callout-info">
+        <div class="callout-title">March 2026 Update: Agentic AI Goes Mainstream</div>
+        <p>
+          <strong><a href="https://www.himssconference.com/" target="_blank">HIMSS 2026</a></strong>
+          made agentic AI its central theme—and the framing says everything about where the industry
+          is heading. The conference isn't asking "should we use AI?" but "how do we deploy AI that
+          takes actions autonomously?" Every major lab is positioning models for multi-step autonomous
+          workflows: AI that doesn't just answer your questions about prior authorization but actually
+          submits the request, tracks the response, and escalates denials. AI that schedules follow-ups,
+          flags care gaps, and drafts outreach—then waits for your approval before acting. The promise
+          from the section above is becoming product roadmaps.
+        </p>
+        <p>
+          <strong><a href="https://ai.meta.com/blog/llama-4/" target="_blank">Llama 4 Scout</a></strong>
+          (Meta) launched with a 10-million-token context window and open weights. For health systems,
+          this is potentially transformative: an enterprise-grade model that can be run locally, on
+          your own infrastructure, without sending PHI to external APIs. Combined with the local
+          model guidance in our <a href="local-models.html"><strong>Running AI Locally</strong></a>
+          module, Llama 4 represents a viable path toward institutional AI that keeps patient data
+          in-house.
+        </p>
+        <p>
+          <strong><a href="https://techcrunch.com/2026/03/05/aws-amazon-connect-health-ai-agent-platform-health-care-providers/" target="_blank">AWS Health AI Agent Platform</a></strong>
+          (March 5) launched Amazon Connect Health, a turnkey platform that automates patient scheduling,
+          documentation, and verification. Amazon is betting that health systems want agentic AI
+          but don't want to build it themselves—and they're probably right. The platform handles
+          multi-step workflows (schedule appointment, verify insurance, send confirmation, generate
+          pre-visit documentation) that would previously require custom development.
+        </p>
+        <p class="mb-0">
+          The agentic shift is real, it's accelerating, and healthcare is a primary target market.
+          The frameworks from the sections below—human-in-the-loop, narrow scope, audit logging,
+          kill switches—aren't theoretical best practices anymore. They're deployment requirements.
+        </p>
+      </div>
+
       <h3>Current Agent Technologies</h3>
 
       <p>
@@ -1118,7 +1154,7 @@ print(message.content)</code></pre>
           These tools are genuinely impressive for personal productivity, but they carry significant risks
           for anything involving patient information:
         </p>
-        <ul class="mb-0">
+        <ul>
           <li><strong>Prompt injection attacks:</strong> Malicious websites can embed hidden instructions
           that hijack the AI agent, potentially causing it to leak information, navigate to phishing sites,
           or take unintended actions. This is an unsolved security problem.</li>
@@ -1133,13 +1169,24 @@ print(message.content)</code></pre>
           <li><strong>Audit gaps:</strong> Traditional browsers leave clear audit trails. Agentic browsers
           that take autonomous actions make it harder to reconstruct what happened and why.</li>
         </ul>
+        <p class="mb-0">
+          <strong>March 2026 update:</strong> These concerns are no longer theoretical. In early March,
+          security researchers demonstrated active exploits against Comet's agent mode—crafted web pages
+          that could hijack the browser's AI to exfiltrate data and take unintended actions. This happened
+          in the same week as the OpenClaw <a href="openclaw.html">ClawHavoc vulnerability</a> and the
+          Doctronic jailbreak (where researchers convinced a medical AI chatbot to provide harmful
+          clinical advice). Three major agentic AI security incidents in a single week. The pattern is
+          clear: as AI gains the ability to take actions, the attack surface expands dramatically.
+        </p>
       </div>
 
       <p>
         <strong>The bottom line:</strong> AI browsers are fun to explore for personal use—booking travel,
         shopping, research, organizing information. They offer a real preview of where human-computer
         interaction is heading. But keep them far away from anything involving PHI or clinical decision-making
-        until the security and privacy landscape matures significantly.
+        until the security and privacy landscape matures significantly. The March 2026 security incidents
+        reinforce this—the agentic AI era comes with demonstrated, serious security risks that are
+        not yet solved.
       </p>
 
       <!-- First Projects -->
@@ -1517,7 +1564,7 @@ print(message.content)</code></pre>
   <footer class="footer">
     <div class="footer-inner">
       <div><strong>AI 101</strong> · A Self-Paced Guide to AI in Medicine</div>
-      <div>v1.2 · 2026</div>
+      <div>v1.3 · 2026</div>
     </div>
   </footer>
 

@@ -6,7 +6,7 @@
 
 ---
 
-## Executive Summary
+## Summary
 
 A 4-session co-branded webinar series pairing AI 101 (ai101.health) with Offcall (offcall.com) to deliver practical AI literacy to practicing physicians. Each session follows the same format and builds on the last, transforming attendees from AI skeptics to AI builders.
 
@@ -27,7 +27,7 @@ A 4-session co-branded webinar series pairing AI 101 (ai101.health) with Offcall
 
 **Audience:** Mixed skill levels -- some AI-curious beginners, some daily AI users. All practicing clinicians.
 
-**Cadence:** Monthly (recommended), 60 minutes each.
+**Cadence:** Monthly (possible), 60 minutes each.
 
 **Format:** Co-hosted by Dr. Michael Hobbs (AI 101) and Graham Walker (Offcall).
 
@@ -312,7 +312,7 @@ The physician needs to: generate a differential, determine urgent next steps, an
 | 2 | Claude | 3 min | Reasoning transparency, writing quality |
 | 3 | OpenEvidence | 3 min | Citations, guideline grounding |
 | 4 | Perplexity Pro | 2 min | Real-time sources, academic focus |
-| 5 | Glass Health | 2 min | Narrow-purpose DDx generation |
+| 5 | UpToDate | 2 min | Narrow-purpose DDx generation |
 
 Same exact prompt into each tool. Michael narrates differences in real time.
 
