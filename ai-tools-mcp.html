@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How AI Talks to Your Tools—APIs, MCP, and Skills | AI 101</title>
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-brand">
+        <span class="nav-badge">AI 101</span>
+        <span class="nav-title">A Self-Paced Guide to AI in Medicine</span>
+      </a>
+      <button class="nav-toggle" aria-label="Toggle menu">
+        <i data-lucide="menu"></i>
+      </button>
+      <div class="nav-links">
+        <a href="index.html" class="nav-link">Topics</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="contribute.html" class="nav-link">Contribute</a>
+        <div id="deployment-eac8a421-3c54-4717-bbef-54bb81b54243" class="nav-chatbot"></div>
+      </div>
+    </div>
+  </nav>
+
+  <main class="main">
+    <article class="content content-wide">
+
+      <header class="unit-header">
+        <span class="unit-label bonus">USING AI</span>
+        <h1 class="unit-title">How AI Talks to Your Tools</h1>
+        <p class="unit-subtitle">
+          APIs, MCP, and the plumbing that lets AI do more than chat&mdash;explained
+          through the language of consults and referrals.
+        </p>
+        <div class="unit-meta">
+          <span class="unit-meta-item">
+            <i data-lucide="clock"></i>
+            ~15 min read
+          </span>
+          <span class="unit-meta-item">
+            <i data-lucide="plug"></i>
+            Integrations
+          </span>
+        </div>
+      </header>
+
+      <div class="callout callout-question">
+        <div class="callout-title">The Question</div>
+        <p class="mb-0">
+          When your AI assistant pulls up a drug interaction, checks your calendar,
+          or searches PubMed&mdash;how does it actually <em>do</em> that? It turns
+          out the answer looks a lot like something you already understand: the
+          consult and referral.
+        </p>
+      </div>
+
+
+      <!-- Section 1: The Analogy -->
+      <h2>The Consult/Referral Model</h2>
+
+      <p>
+        Every day in clinical practice, you send structured requests to specialists.
+        A referral has a specific format: patient demographics, clinical question,
+        relevant history, and what you need back. The specialist has a defined scope
+        of practice, processes your request, and returns a structured response.
+      </p>
+
+      <p>
+        AI integrations work exactly the same way. When ChatGPT searches the web
+        or Claude reads a PDF, there's a structured request going out, a specialized
+        service processing it, and a structured response coming back. The AI model
+        itself doesn't "know" how to search the web any more than you personally
+        run the MRI machine&mdash;it knows how to write the order and interpret the
+        results.
+      </p>
+
+      <p>
+        This is the mental model that will carry you through the rest of this module:
+        <strong>APIs are the referral system, tools and skills are the specialists,
+        and MCP is the universal referral form.</strong>
+      </p>
+
+
+      <!-- Section 2: APIs -->
+      <h2>APIs&mdash;The Referral</h2>
+
+      <p>
+        An <strong>API</strong> (Application Programming Interface) is a structured
+        way for one piece of software to ask another for something specific. It's
+        the referral form of the software world: a defined format, a specific
+        recipient, and an expected response.
+      </p>
+
+      <p>
+        You already use dozens of systems that rely on APIs every day:
+      </p>
+
+      <ul>
+        <li><strong>Your EHR pulling lab results</strong>&mdash;the EHR sends a structured
+          request to the lab system's API, which returns results in a standard format</li>
+        <li><strong>E-prescribing</strong>&mdash;your prescription order hits the pharmacy's
+          API, which confirms receipt and flags interactions</li>
+        <li><strong>Insurance eligibility checks</strong>&mdash;a request goes to the payer's
+          API, which returns coverage details in real time</li>
+        <li><strong>Appointment scheduling</strong>&mdash;when a patient books online, the
+          scheduling widget talks to your practice management system's API</li>
+      </ul>
+
+      <p>
+        APIs have been around for decades. What's new isn't the concept&mdash;it's
+        that AI models can now <em>decide which APIs to call, compose the right
+        request, and interpret the response</em> without a human writing the code
+        each time.
+      </p>
+
+      <div class="callout callout-principle">
+        <div class="callout-title">The Key Shift</div>
+        <p class="mb-0">
+          Traditional software follows pre-programmed paths: <em>if</em> the user
+          clicks this button, <em>then</em> call this API. AI models can reason
+          about <em>which</em> API to call based on natural language. You say
+          "check if this patient's insurance covers Ozempic" and the AI figures out
+          which systems to query and in what order. That's a fundamental change in
+          how software works.
+        </p>
+      </div>
+
+
+      <!-- Section 3: Tools and Skills -->
+      <h2>Tools and Skills&mdash;The Specialists on Call</h2>
+
+      <p>
+        Once AI can make API calls, it needs to know which specialists are available
+        and how to consult them. These packaged capabilities go by different names
+        depending on the platform&mdash;<strong>tools</strong>, <strong>skills</strong>,
+        <strong>plugins</strong>, <strong>extensions</strong>&mdash;but they all work
+        the same way: a defined scope of practice, a declaration of what information
+        is needed, and a structured response format.
+      </p>
+
+      <p>
+        Here are real examples of tools AI assistants can use today:
+      </p>
+
+      <ul>
+        <li><strong>Search PubMed</strong> for recent evidence on a clinical question</li>
+        <li><strong>Read and summarize PDFs</strong>&mdash;that 47-page prior authorization
+          document, for instance</li>
+        <li><strong>Query an EHR</strong> for patient history (in systems that support it)</li>
+        <li><strong>Send messages</strong> through Slack, email, or other communication
+          platforms</li>
+        <li><strong>Browse the web</strong> for drug pricing, guideline updates, or
+          formulary information</li>
+        <li><strong>Manage calendars</strong>&mdash;check availability, schedule meetings,
+          send invites</li>
+        <li><strong>Run code</strong>&mdash;execute Python scripts, analyze data,
+          generate charts</li>
+        <li><strong>Search and edit files</strong> on your local computer</li>
+      </ul>
+
+      <p>
+        Think of each tool like a specialist with a defined scope of practice. A
+        PubMed search tool declares: "I can search the medical literature. Give me
+        a query and optional filters, and I'll return relevant articles with
+        abstracts." The AI model reads that declaration, decides when to use it,
+        and interprets the results&mdash;just like a PCP coordinating care across
+        multiple specialists.
+      </p>
+
+      <div class="callout callout-info">
+        <div class="callout-title">The AI Doesn't Actually "Know" How</div>
+        <p class="mb-0">
+          This is an important distinction. When Claude searches PubMed, Claude
+          isn't accessing a medical database stored in its training data. It's
+          sending a real-time request to the National Library of Medicine's API
+          and getting back real results. The model's job is to figure out
+          <em>when</em> to search, <em>what</em> to search for, and how to
+          interpret what comes back. The actual searching is done by the tool.
+          This is why tool-assisted AI responses can be more current and
+          verifiable than responses from the model's training data alone.
+        </p>
+      </div>
+
+      <h3>Tool Ecosystems and Marketplaces</h3>
+
+      <p>
+        As tools become more useful, platforms have started building marketplaces
+        where developers can publish tools for others to use. OpenAI has the GPT
+        Store. Various open-source projects have their own plugin registries. This
+        creates enormous potential&mdash;and, as we'll explore in the
+        <a href="openclaw.html">next module on OpenClaw</a>, enormous risk. A
+        tool marketplace is only as trustworthy as its vetting process, and many
+        of these ecosystems are moving faster than their security reviews.
+      </p>
+
+
+      <!-- Section 4: MCP -->
+      <h2>MCP&mdash;The Universal Referral Form</h2>
+
+      <p>
+        Here's the problem MCP solves. Before MCP, every AI platform had its own
+        proprietary way of connecting to tools. Building an EHR integration for
+        Claude was completely different from building one for ChatGPT, which was
+        completely different from building one for Gemini. If you wanted your tool
+        to work everywhere, you had to build and maintain separate integrations for
+        each platform.
+      </p>
+
+      <p>
+        Sound familiar? It's the same problem healthcare faced before FHIR (Fast
+        Healthcare Interoperability Resources). Every hospital system had its own
+        data format. Transferring a patient record meant custom interfaces between
+        every pair of systems. FHIR said: here's one standard format for exchanging
+        health data, and now everyone speaks the same language.
+      </p>
+
+      <p>
+        <strong>MCP (Model Context Protocol)</strong> does the same thing for AI
+        tools. Published by Anthropic in late 2024 as an open standard, MCP defines
+        a single way to package a tool so that <em>any</em> AI model can use it.
+        Build your PubMed integration once using MCP, and it works with Claude,
+        ChatGPT, Gemini, and any other platform that supports the protocol.
+      </p>
+
+      <div class="callout callout-principle">
+        <div class="callout-title">FHIR for AI</div>
+        <p class="mb-0">
+          FHIR standardized how health systems exchange patient data. MCP
+          standardizes how AI systems connect to tools. Both solve the same
+          fundamental problem: interoperability. And both matter because the
+          alternative&mdash;proprietary integrations between every pair of
+          systems&mdash;doesn't scale.
+        </p>
+      </div>
+
+      <h3>MCP Servers in the Wild</h3>
+
+      <p>
+        MCP has moved well past the whitepaper stage. Real MCP servers are running
+        in production today, and the ecosystem is growing fast. Here's a sampling
+        of what's available:
+      </p>
+
+      <ul>
+        <li><strong>PubMed</strong>&mdash;search and retrieve medical literature from
+          the National Library of Medicine</li>
+        <li><strong>File systems</strong>&mdash;read, write, and search files on your
+          local computer</li>
+        <li><strong>Slack and Gmail</strong>&mdash;search messages, read threads, send
+          drafts, manage channels</li>
+        <li><strong>Google Calendar</strong>&mdash;view events, find free time, create
+          and update appointments</li>
+        <li><strong>GitHub</strong>&mdash;manage code repositories, review pull requests,
+          track issues</li>
+        <li><strong>Web browsing</strong>&mdash;navigate websites, take screenshots,
+          extract content from pages</li>
+        <li><strong>Database access</strong>&mdash;query PostgreSQL, SQLite, and other
+          databases directly</li>
+        <li><strong>Hugging Face</strong>&mdash;search AI models, datasets, and research
+          papers</li>
+      </ul>
+
+      <p>
+        Notice the range. Some of these tools are read-only (searching PubMed),
+        while others can take actions (sending emails, writing files, modifying
+        databases). That distinction matters enormously for safety, and it's one
+        you should keep in mind as AI tools get more capable.
+      </p>
+
+      <h3>How MCP Actually Works</h3>
+
+      <p>
+        The architecture is straightforward. An <strong>MCP server</strong> wraps
+        around an existing service (like PubMed or your calendar) and exposes it
+        in a standardized format. An <strong>MCP client</strong> is built into the
+        AI application (Claude Desktop, for example) and knows how to discover
+        and communicate with MCP servers. When you ask Claude to search PubMed:
+      </p>
+
+      <ol>
+        <li>Claude recognizes that answering your question requires the PubMed tool</li>
+        <li>The MCP client sends a standardized request to the PubMed MCP server</li>
+        <li>The MCP server translates that into a real API call to the National Library
+          of Medicine</li>
+        <li>Results come back through the same standardized path</li>
+        <li>Claude interprets the results and gives you a useful answer</li>
+      </ol>
+
+      <p>
+        The key insight: <strong>the AI model never talks directly to PubMed</strong>.
+        The MCP server is a middleman that translates between the AI world and the
+        service world. This creates a natural place for access controls, audit logs,
+        and security checks&mdash;though as we'll see in the OpenClaw module, not
+        everyone implements those safeguards.
+      </p>
+
+      <h3>Where MCP Is Heading</h3>
+
+      <p>
+        The MCP ecosystem is evolving rapidly. Active developments include:
+      </p>
+
+      <ul>
+        <li><strong>MCP registries</strong>&mdash;centralized directories where you can
+          discover and install MCP servers, similar to app stores</li>
+        <li><strong>Authentication standards</strong>&mdash;OAuth-based flows so MCP
+          servers can securely access services on your behalf without storing raw
+          credentials</li>
+        <li><strong>Enterprise deployments</strong>&mdash;organizations packaging internal
+          tools (EHR access, billing systems, policy databases) as MCP servers for
+          their staff's AI assistants</li>
+        <li><strong>EHR integrations</strong>&mdash;early-stage MCP servers connecting
+          AI to clinical systems like Elation, Epic, and Cerner, though these are
+          still largely experimental</li>
+        <li><strong>Cross-platform adoption</strong>&mdash;Google, Microsoft, and other
+          major players have announced MCP support, validating it as an industry
+          standard rather than a single-vendor project</li>
+      </ul>
+
+      <p>
+        This is infrastructure being built right now. The decisions being made about
+        authentication, permissions, and audit trails in MCP today will shape how
+        AI interacts with clinical systems for years to come.
+      </p>
+
+
+      <!-- Section 5: Why Clinicians Should Care -->
+      <h2>Why This Matters for Clinicians</h2>
+
+      <p>
+        You might be thinking: "I don't need to know how the plumbing works. I just
+        need to know if the tool is reliable." That's fair&mdash;and it's the same
+        reasoning you apply to most technology in practice. You don't need to
+        understand TCP/IP to use your EHR.
+      </p>
+
+      <p>
+        But there are three reasons this particular plumbing is worth understanding
+        right now:
+      </p>
+
+      <h3>1. Actions Are Different from Answers</h3>
+
+      <p>
+        An AI that gives you a wrong answer is one kind of problem. An AI that
+        <em>does the wrong thing</em>&mdash;sends the wrong message, modifies the
+        wrong record, schedules the wrong appointment&mdash;is a fundamentally
+        different kind of problem. As AI tools gain the ability to take actions
+        through APIs, the stakes of errors change. Understanding that your AI
+        assistant has tools that can <em>read</em> your calendar versus tools that
+        can <em>write</em> to it changes how much supervision you should apply.
+      </p>
+
+      <h3>2. Data Flows Where Tools Flow</h3>
+
+      <p>
+        Every tool connection is a data pathway. When an AI assistant can access
+        your email, your calendar, and your EHR, information from all three can
+        flow through the AI model. This has profound implications for PHI. A
+        question like "What did my patient with diabetes email about last week?"
+        requires the AI to pull data from both clinical and communication
+        systems&mdash;and the privacy considerations multiply.
+      </p>
+
+      <h3>3. The Ecosystem Is Growing Fast</h3>
+
+      <p>
+        MCP means the tools your AI can access will expand rapidly. Third parties
+        can build integrations without needing permission from the AI vendor. This
+        creates opportunity (a vibrant ecosystem of useful tools) and risk (a
+        vibrant ecosystem of poorly vetted or actively malicious tools). As the
+        <a href="openclaw.html">next module</a> will make painfully clear, tool
+        marketplaces can become attack surfaces.
+      </p>
+
+      <div class="callout callout-warning">
+        <div class="callout-title">With Great Connectivity Comes Great Responsibility</div>
+        <p>
+          Every tool connection is a potential attack surface. Every API call could
+          carry PHI. Every skill marketplace could host malicious code. When
+          evaluating AI products for your practice, ask:
+        </p>
+        <ul class="mb-0">
+          <li>What tools does this AI have access to? Can I see the list?</li>
+          <li>Which tools can <em>read</em> data versus <em>write</em> or <em>act</em>?</li>
+          <li>Where does data flow? What leaves my system?</li>
+          <li>Who built these integrations? How are they vetted?</li>
+          <li>Can I disable tools I don't need?</li>
+        </ul>
+      </div>
+
+
+      <!-- Further Reading -->
+      <h2>Further Reading</h2>
+
+      <div class="reading-list">
+        <div class="reading-item">
+          <div class="reading-type"><i data-lucide="file-text"></i></div>
+          <div class="reading-content">
+            <div class="reading-title">
+              <a href="https://modelcontextprotocol.io/" target="_blank">
+                Model Context Protocol Documentation
+              </a>
+            </div>
+            <div class="reading-meta">Anthropic &middot; Official MCP specification and guides</div>
+          </div>
+        </div>
+        <div class="reading-item">
+          <div class="reading-type"><i data-lucide="file-text"></i></div>
+          <div class="reading-content">
+            <div class="reading-title">
+              <a href="https://www.anthropic.com/news/model-context-protocol" target="_blank">
+                Introducing the Model Context Protocol
+              </a>
+            </div>
+            <div class="reading-meta">Anthropic &middot; November 2024 &middot; Original announcement</div>
+          </div>
+        </div>
+        <div class="reading-item">
+          <div class="reading-type"><i data-lucide="file-text"></i></div>
+          <div class="reading-content">
+            <div class="reading-title">
+              <a href="https://www.hl7.org/fhir/overview.html" target="_blank">
+                FHIR Overview
+              </a>
+            </div>
+            <div class="reading-meta">HL7 International &middot; The healthcare interoperability standard that MCP parallels</div>
+          </div>
+        </div>
+        <div class="reading-item">
+          <div class="reading-type"><i data-lucide="headphones"></i></div>
+          <div class="reading-content">
+            <div class="reading-title">
+              <a href="https://a16z.com/podcasts/a16z-podcast/" target="_blank">
+                a16z Podcast: AI Agents and Tool Use
+              </a>
+            </div>
+            <div class="reading-meta">Andreessen Horowitz &middot; How AI agents are evolving beyond chatbots</div>
+          </div>
+        </div>
+        <div class="reading-item">
+          <div class="reading-type"><i data-lucide="file-text"></i></div>
+          <div class="reading-content">
+            <div class="reading-title">
+              <a href="https://github.com/modelcontextprotocol/servers" target="_blank">
+                MCP Servers Repository
+              </a>
+            </div>
+            <div class="reading-meta">GitHub &middot; Open-source directory of available MCP server implementations</div>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- Discussion Questions -->
+      <div class="discussion-questions">
+        <h4>Reflection Questions</h4>
+        <ol>
+          <li>What tools or integrations would be most valuable if your AI assistant
+            could access them in your clinical workflow? What would you explicitly
+            <em>not</em> want it to access?</li>
+          <li>What's the difference between an AI that can <em>look up</em> your
+            patient's chart versus one that can <em>write</em> to it? Where would
+            you draw the line?</li>
+          <li>How should we think about consent when AI tools access patient data
+            through APIs? Is the current consent model for EHR data sufficient when
+            AI is the one querying it?</li>
+          <li>The FHIR analogy suggests MCP could become critical healthcare
+            infrastructure. What governance should exist around AI tool standards
+            that touch clinical data?</li>
+        </ol>
+      </div>
+
+
+      <!-- Page Navigation -->
+      <nav class="page-nav">
+        <a href="vibe-coding.html" class="page-nav-link prev">
+          <span class="page-nav-arrow"><i data-lucide="arrow-left"></i></span>
+          <div>
+            <span class="page-nav-label">Previous</span>
+            <span class="page-nav-title">Vibe Coding</span>
+          </div>
+        </a>
+        <a href="openclaw.html" class="page-nav-link next">
+          <span class="page-nav-arrow"><i data-lucide="arrow-right"></i></span>
+          <div>
+            <span class="page-nav-label">Next</span>
+            <span class="page-nav-title">OpenClaw</span>
+          </div>
+        </a>
+      </nav>
+
+    </article>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div><strong>AI 101</strong> · A Self-Paced Guide to AI in Medicine</div>
+      <div>v1.3 · 2026</div>
+    </div>
+  </footer>
+
+  <script>
+    lucide.createIcons();
+
+    // Mobile nav toggle
+    const navToggle = document.querySelector('.nav-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    if (navToggle) {
+      navToggle.addEventListener('click', () => {
+        navLinks.classList.toggle('nav-open');
+        navToggle.classList.toggle('nav-toggle-active');
+      });
+    }
+  </script>
+
+  <script src="https://studio.pickaxe.co/api/embed/bundle.js" defer></script>
+
+</body>
+</html>
