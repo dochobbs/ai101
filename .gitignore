@@ -13,6 +13,7 @@
 # Local tooling state
 .remember/
 .claude/sessions/
+.playwright-mcp/
 
 # Archive folder (if not needed in repo)
 # archive/
