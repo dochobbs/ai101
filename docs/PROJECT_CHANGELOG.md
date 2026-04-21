@@ -4,10 +4,9 @@
 
 **Project:** AI 101 for Clinicians (ai101.health)
 **Repository:** GitHub Pages static site
-**Date range:** November 28, 2025 - February 10, 2026
-**Total commits:** 57
-**Cumulative stats:** ~35,600 lines added, ~1,350 lines removed across 413 file-change events
-**Current pages:** 43 HTML topic pages + supporting assets
+**Date range:** November 28, 2025 - April 21, 2026
+**Total commits:** 65
+**Current pages:** 27 topic pages in site root + `archive/` containing 18 legacy drafts (old week-*.html and *-orig.html files)
 
 ---
 
@@ -28,6 +27,8 @@
 - [Phase 13: New Year Features (Jan 1, 2026)](#phase-13-new-year-features-jan-1-2026)
 - [Phase 14: AI News Expansion (Jan 6 - Feb 1, 2026)](#phase-14-ai-news-expansion-jan-6---feb-1-2026)
 - [Phase 15: Domain & Planning (Feb 4-10, 2026)](#phase-15-domain--planning-feb-4-10-2026)
+- [Phase 16: Content Expansion & Site Reorg (Feb–Mar 2026)](#phase-16-content-expansion--site-reorg-febmar-2026)
+- [Phase 17: Cleanup & Operational Automation (Apr 2026)](#phase-17-cleanup--operational-automation-apr-2026)
 
 ---
 
@@ -477,3 +478,77 @@ Archived the February 7 development session with session artifacts.
 - AI News (ai-news.html)
 - Contribute (contribute.html)
 - Resources (resources.html)
+
+---
+
+## Phase 16: Content Expansion & Site Reorg (Feb–Mar 2026)
+
+### `4275009` — FEATURE: Update vibe coding module and add AI Off Call series design
+**Date:** 2026-02-10
+
+Refreshed vibe-coding.html with the latest tool landscape (Claude Code, Cursor, Replit). Added docs/plans/2026-02-07-ai-off-call-series-design.md, an off-call/clinician-podcast concept that has not yet shipped as site content.
+
+### `6fb619b` — CHORE: Archive session 2026-02-07
+**Date:** 2026-02-10
+
+Session archival under .claude/sessions/.
+
+### `8e77df1` — FEATURE: Add OpenClaw module, update 6 cards, bump site to v1.2 · 2026
+**Date:** 2026-02-17
+
+Launched openclaw.html — a long-form piece on the viral Clawdbot → Moltbot → OpenClaw autonomous-agent saga and the credential-theft risk it exposed. Updated six home-page cards; bumped the footer version to v1.2.
+
+### `1712175` — DOCS: Add v1.2 February 2026 entry to updates page
+**Date:** 2026-02-17
+
+Added a v1.2 block to updates.html documenting the OpenClaw module and the February content refresh.
+
+### `c2e8061` — FIX: Update start-here.html footer to v1.2 · 2026
+**Date:** 2026-02-17
+
+One page (start-here.html) had been missed in the site-wide version bump. Footer brought back in line.
+
+### `bab767a` — FEATURE: v1.3 March 2026 update — 14 modules refreshed, 18 news stories, version bump
+**Date:** 2026-03-17
+
+Largest single release since initial launch. Substantive refreshes to 14 topic pages covering GPT-5.4, Claude Sonnet 4.6, Gemini 3.1 Pro, Meta Llama 4, DeepSeek V4, Doctronic jailbreak, athenahealth free ambient scribe, Nabla vs DAX RCT, Perplexity Comet browser exploits, HHS HTI-5 transparency rollback, and more. Added 18 news items; bumped to v1.3.
+
+### `03ae761` — FEATURE: Add 'How AI Talks to Your Tools' module — APIs, MCP, and skills
+**Date:** 2026-03-17
+
+Added ai-tools-mcp.html, a short explainer framing APIs, MCP, and skills in clinical-consult / referral analogies. Positioned in the "What's Next" section.
+
+### `6a266de` — FEATURE: Add 'What's Next' section, reorder modules, add skills content
+**Date:** 2026-03-28
+
+Restructured the home page: introduced a dedicated "What's Next" section (whats-next.html + vibe-coding.html + ai-tools-mcp.html + openclaw.html), reordered cards, and refined language across the Foundations and Using AI sections. This is the structure the current site uses.
+
+---
+
+## Phase 17: Cleanup & Operational Automation (Apr 2026)
+
+### `TBD` — CHORE: Archive 18 orphaned legacy pages
+**Date:** 2026-04-21
+
+Moved the original cohort-era drafts into archive/ to stop them from polluting audits. Files moved:
+
+- week-1.html through week-12.html (12 files) — the old BlueDot-style cohort pages. Each page's prev/next nav already pointed to module-N.html files that had been renamed months earlier (big-three.html, clinical-decision-support.html, everyday-ai.html, vibe-coding.html, environmental-footprint.html), so the nav was already broken. No live page linked to any week-*.html.
+- module-1-orig.html, module-2-orig.html, module-3-orig.html — early-draft versions of Foundations modules.
+- unit-0-orig.html, unit-0-new.html — prior drafts of start-here.html.
+- big-three-v1.0-archive.html — a manually versioned snapshot superseded by the current big-three.html.
+
+### `TBD` — DOCS: Rewrite PROJECT-SUMMARY.md and update changelog
+**Date:** 2026-04-21
+
+PROJECT-SUMMARY.md had drifted: it still described the retired 12-week cohort structure with Phase I/II/III coloring. Rewrote it to reflect the topic-organized four-section layout (Foundations / Using AI / What's Next / Resources). Updated page counts, added operational-workflow section, documented the weekly audit.
+
+### `TBD` — CHORE: Add scheduled weekly content audit
+**Date:** 2026-04-21
+
+Stood up a Sunday 12:00 PT scheduled agent against the dochobbs/ai101 repo that scans Claude/ChatGPT/Gemini and healthcare-AI news for the prior week, cross-references against "Updated Mmm YYYY" timestamps on each topic page, validates external links, drafts an updates.html entry, and emails michael@hobbs.md. Report-only — all edits still go through review.
+
+### `TBD` — FEATURE: v1.4 April 2026 content refresh
+**Date:** 2026-04-21
+
+Updates reflecting the Apr 1–21 landscape: Claude Opus 4.7 launch, GPT-5.4 and GPT-Rosalind, Gemini 3 as new default, Abridge × NEJM + JAMA partnership, JAMA ambient-scribe multi-center study (13.4 min EHR / 16.0 min documentation savings), Epic Art expansion to home care, Microsoft Copilot Health 500k-conversation study, Hartford PatientGPT and Sutter/Reid Emmie pilots, AMA 2026 Physician Survey (81% AI adoption), HHS RFI on AI in clinical care, Claude Code prompt-injection CVE, Cursor 3, NotebookLM April updates.
+

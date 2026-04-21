@@ -909,14 +909,54 @@
         </p>
       </div>
 
+      <div class="callout callout-warning">
+        <div class="callout-title">April 2026 Update: The Exploits Keep Landing</div>
+        <p>
+          <strong>Claude Code prompt-injection CVE.</strong> After Claude Code's source was
+          leaked, security firm Adversa discovered that its deny rules can be bypassed via
+          prompt injection, letting attackers execute tool calls Claude Code was configured to
+          refuse. The lesson: agent-side guardrails are only as strong as the inputs they
+          reason about.
+          <a href="https://www.scworld.com/brief/claude-code-vulnerable-to-prompt-injection-due-to-subcommand-limit" target="_blank">[Source]</a>
+        </p>
+        <p>
+          <strong>GitHub Copilot CVE-2025-53773 (CVSS 9.6).</strong> Hidden prompt injection in
+          a pull-request description enabled remote code execution on machines running Copilot.
+          Anyone in a health-system engineering org using Copilot to review PRs should confirm
+          their deployment is patched. This is prompt injection graduating from &ldquo;concerning
+          research&rdquo; to &ldquo;near-10 CVSS on a production tool used by millions.&rdquo;
+        </p>
+        <p>
+          <strong>Meta internal AI data leak (March 2026).</strong> A Meta employee posted a
+          routine technical question on an internal forum; an AI assistant's response exposed
+          sensitive user and company data to internal engineers. Two hours later, a major
+          security alert fired. The incident is a template for what will happen when internal
+          help-desk AIs at health systems hit the same failure mode.
+        </p>
+        <p>
+          <strong>Prompt injection is still the #1 AI vulnerability.</strong> OWASP's 2026 list
+          keeps prompt injection at LLM01, and enterprise readiness remains low&mdash;only
+          <strong>34.7%</strong> of organizations have deployed dedicated defenses. For
+          clinicians: if your health system is piloting agent-based workflows, ask explicitly
+          what prompt-injection controls are in place, and where they've been tested.
+          <a href="https://medium.com/@stawils/prompt-injection-is-still-the-1-ai-vulnerability-in-2026-and-were-running-out-of-excuses-288e3e5cb303" target="_blank">[Context]</a>
+        </p>
+        <p class="mb-0">
+          <strong>MCP Dev Summit North America (NYC, ~1,200 attendees)</strong> and MCP
+          maintainer expansion (April 8) signal that the agent-tool integration standard is
+          maturing fast&mdash;see <a href="ai-tools-mcp.html">How AI Talks to Your Tools</a>
+          for the clinician-facing explainer.
+        </p>
+      </div>
+
       <div class="callout callout-info">
         <div class="callout-title">A Note on This Module</div>
         <p class="mb-0">
           This module was written with AI assistance and verified by human review.
-          All linked sources were checked at time of publication. Last updated March 2026
-          with ClawHavoc supply chain data, new CVEs, and broader agentic AI threat
-          context. The OpenClaw story is still unfolding&mdash;some details may have
-          evolved since writing.
+          All linked sources were checked at time of publication. Last updated April 2026
+          with Claude Code and Copilot CVEs, the Meta internal AI data leak, and MCP
+          ecosystem maturation. The OpenClaw story is still unfolding&mdash;some details
+          may have evolved since writing.
         </p>
       </div>
 
@@ -959,7 +999,7 @@
   <footer class="footer">
     <div class="footer-inner">
       <div><strong>AI 101</strong> · A Self-Paced Guide to AI in Medicine</div>
-      <div>v1.3 · 2026</div>
+      <div>v1.4 · 2026</div>
     </div>
   </footer>
 

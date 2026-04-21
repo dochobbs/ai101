@@ -10,5 +10,9 @@
 *.swo
 *~
 
+# Local tooling state
+.remember/
+.claude/sessions/
+
 # Archive folder (if not needed in repo)
 # archive/

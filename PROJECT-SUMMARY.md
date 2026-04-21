@@ -1,90 +1,85 @@
-# AI 101 Course Website - Project Summary
+# AI 101 for Clinicians — Project Summary
 
 ## What This Is
-A complete 17-page static website for a 12-week clinical AI governance and safety course. Designed for healthcare professionals learning to evaluate, supervise, and govern AI systems. Modeled after BlueDot Impact's cohort-based pedagogy.
-
-## Project Origin
-Built from a 22-page PDF curriculum document ("Clinical AI Governance and Safety: A Comprehensive Architectural Blueprint for Multimodal Medical Education") that outlined the full course structure, readings, activities, and pedagogical approach.
+A self-paced static website that teaches clinicians and medical learners to
+evaluate, supervise, and thoughtfully integrate AI tools into practice.
+Topic-organized (not cohort/week-based), hosted on GitHub Pages at
+**ai101.health**.
 
 ## Site Structure
 
-```
-/mnt/user-data/outputs/
-├── index.html          # Landing page with hero, phase sections, week cards
-├── unit-0.html         # "Start Here, Not with Theory" - NotebookLM practical intro
-├── week-1.html         # The AI Triad (Data, Algorithms, Compute)
-├── week-2.html         # Predictive AI (TREWS vs Epic Sepsis Model)
-├── week-3.html         # Algorithmic Bias (Obermeyer Science paper)
-├── week-4.html         # Computer Vision / CLAIM Checklist
-├── week-5.html         # Large Language Models (Med-PaLM, GPT-4)
-├── week-6.html         # Hallucinations and Supervision (DEFT-AI framework)
-├── week-7.html         # Centaurs and Cyborgs (human-AI collaboration modes)
-├── week-8.html         # Prompt Engineering for Clinicians
-├── week-9.html         # Liability and Malpractice
-├── week-10.html        # Institutional Governance / CONSORT-AI / Shadow AI
-├── week-11.html        # Patient Communication and Informed Consent
-├── week-12.html        # Capstone Presentations and Future Horizons
-├── resources.html      # Frameworks, tools, glossary, complete reading list
-├── about.html          # Course philosophy and pedagogy
-└── styles.css          # Shared stylesheet (22KB)
-```
+The site is organized into four sections driven by [index.html](index.html):
 
-## Three-Phase Structure
-- **Phase I (Weeks 1-4): Foundations** - Teal color (#0d9488)
-- **Phase II (Weeks 5-8): Generative AI** - Violet color (#7c3aed)  
-- **Phase III (Weeks 9-12): Governance** - Orange color (#ea580c)
+**Foundations** — core mental models
+- [llm-thinking.html](llm-thinking.html) — How LLMs Think Like Clinicians
+- [phi-hipaa.html](phi-hipaa.html) — PHI, HIPAA, and AI
+- [prompting.html](prompting.html) — The Art of the Ask (+ [prompting-exercise.html](prompting-exercise.html))
+- [big-three.html](big-three.html) — The Big Three (Claude, ChatGPT, Gemini)
+- [bias-ethics.html](bias-ethics.html) — Bias, Ethics, and the Training Data Problem
+- [medical-learners.html](medical-learners.html) — AI 101 for Medical Learners
+
+**Using AI** — practical applications
+- [clinical-decision-support.html](clinical-decision-support.html) — Clinical Decision Support Tools
+- [ambient-ai.html](ambient-ai.html) — Ambient AI Tools (scribes)
+- [ai-search.html](ai-search.html) — AI-Powered Search
+- [image-video.html](image-video.html) — AI Image and Video Creation
+- [everyday-ai.html](everyday-ai.html) — Everyday Ways to Use AI
+- [patients-ai.html](patients-ai.html) — When Patients Use AI Too
+
+**What's Next** — go deeper
+- [whats-next.html](whats-next.html) — So...What Next?
+- [vibe-coding.html](vibe-coding.html) — Vibe Coding
+- [ai-tools-mcp.html](ai-tools-mcp.html) — How AI Talks to Your Tools (APIs, MCP)
+- [openclaw.html](openclaw.html) — OpenClaw (autonomous agent risk)
+
+**Resources** — supporting content
+- [ai-news.html](ai-news.html) — Ongoing news feed (+ [ai-news-feed.xml](ai-news-feed.xml) RSS)
+- [environmental-footprint.html](environmental-footprint.html) — AI's Environmental Footprint
+- [local-models.html](local-models.html) — Running AI Models on Your Own Computer
+- [glossary.html](glossary.html) — AI Glossary & Learning Resources
+
+**Meta pages**
+- [start-here.html](start-here.html) — NotebookLM-driven practical on-ramp
+- [about.html](about.html) — Course philosophy
+- [contribute.html](contribute.html) — Contribution guide
+- [updates.html](updates.html) — Version changelog visible to readers
+- [resources.html](resources.html) — Legacy curated resources page (orphaned — nav entry
+  commented out in index.html; has placeholder `#` links)
+
+## Companion App (`ai101-companion/`)
+A small Flask + vanilla-JS chatbot named **Spark** that teaches prompting and
+recommends AI tools. Knowledge bases in `data/*.json` (glossary, prompts,
+tools). Serves on `localhost:5050` (note: the README says 5000 — needs fix).
 
 ## Design System
-- **Fonts**: Fraunces (display/headers), Source Sans 3 (body), JetBrains Mono (code)
-- **Aesthetic**: Editorial/academic - clean, generous whitespace, professional
-- **Components**: Callout boxes (question, tool, principle, warning, info), reading lists with badges, example cards, activity steps, learning objectives
-
-## Key Frameworks Referenced
-- **AI Triad**: Data, Algorithms, Compute
-- **CLAIM Checklist**: 42-item evaluation for imaging AI papers
-- **DEFT-AI**: Diagnosis, Evidence, Feedback, Teaching supervision framework
-- **CONSORT-AI**: Reporting guidelines for AI clinical trials
-- **Centaur/Cyborg**: Human-AI collaboration modes (clear division vs seamless integration)
-
-## Content Status
-All pages have substantive content including:
-- Core questions for each week
-- Key concepts sections
-- Required/optional reading lists (with real citations)
-- Discussion questions for synchronous sessions
-- Learning objectives
-- Activity descriptions
-
-**Content is editable placeholder** - readings are real papers but links are placeholder (#). Activities described but not fully built out.
-
-## What Might Need Editing
-1. **Reading links**: Currently placeholder (#) - need actual URLs
-2. **Activity details**: Described conceptually but could be expanded
-3. **Download links**: Model Card template, CLAIM checklist PDFs, etc.
-4. **Contact/enrollment info**: Placeholder on About page
-5. **Facilitator guides**: Not included - could be added
-6. **Simulation tools**: Alert Fatigue Simulator, Prompt Golf, etc. mentioned but not built
+- **Fonts**: Fraunces (display), Source Sans 3 (body), JetBrains Mono (code)
+- **Aesthetic**: Editorial/academic — clean, generous whitespace
+- **Icons**: Lucide via CDN
+- **Chatbot embed**: Pickaxe deployment widget in nav on most pages
+- **Responsive**: Breakpoints at 900px and 600px
+- **Shared stylesheet**: [styles.css](styles.css)
 
 ## Technical Notes
-- Pure HTML/CSS, no JavaScript dependencies
-- Google Fonts loaded via CDN
-- Mobile-responsive with breakpoints at 900px and 600px
-- All internal links are relative (works locally or hosted)
-- ~200KB total site size
+- Pure HTML/CSS — no framework, no build step
+- Google Fonts + Lucide loaded via CDN
+- All internal links relative — works locally or hosted
+- Current version: **v1.3 · 2026** (bumped each release)
+- Deployment: GitHub Pages via [dochobbs/ai101](https://github.com/dochobbs/ai101)
+- Custom domain: ai101.health (CNAME configured)
 
-## Key Design Decisions Made
-1. **Unit 0 before Week 1**: Practical "just try it" intro with NotebookLM before theory
-2. **Two examples, not five**: Keeps intro focused and actionable
-3. **Warning boxes prominent**: Sets supervision/verification tone early
-4. **Phase color coding**: Visual wayfinding through 12-week journey
-5. **Reading badges**: Clear required vs optional distinction
-6. **Prompt boxes**: Dark background, monospace - scannable examples
+## Legacy Content
+The original curriculum was modeled after BlueDot Impact's 12-week cohort
+format (Phase I/II/III, numbered modules, `week-*.html` pages). That structure
+was retired in favor of topic-based, self-paced navigation. The old drafts live
+in [archive/](archive/) and are not linked from any live page.
 
-## To Continue This Project
-You can ask Claude to:
-- Add actual URLs to reading lists
-- Expand activity descriptions into full interactive exercises
-- Create facilitator guides for each week
-- Build out the simulation tools (would need React artifacts)
-- Add assessment rubrics for capstone projects
-- Create printable PDF versions of key pages
+## Operational Workflow
+- **Weekly audit**: a scheduled remote agent scans the AI landscape every
+  Sunday 12:00 PT, emails `michael@hobbs.md` with a punch list of pages
+  needing updates, link-check results, and a ready-to-paste [updates.html](updates.html)
+  entry. See [docs/PROJECT_CHANGELOG.md](docs/PROJECT_CHANGELOG.md) for
+  history.
+- **Version bumps** happen in the footer of every page at release time
+  (currently `v1.3 · 2026`).
+- **ai-news.html** is the lightweight running log; `updates.html` is the
+  formal changelog for readers.
