@@ -5,8 +5,104 @@
     <link>https://dochobbs.github.io/ai101/ai-news.html</link>
     <description>AI news and developments relevant to healthcare and medical practice, curated for AI 101: A Self-Paced Guide to AI in Medicine.</description>
     <language>en-us</language>
-    <lastBuildDate>Thu, 16 Jan 2026 00:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 21 Apr 2026 00:00:00 GMT</lastBuildDate>
     <atom:link href="https://dochobbs.github.io/ai101/ai-news-feed.xml" rel="self" type="application/rss+xml"/>
+
+    <item>
+      <title>Claude Opus 4.7 Launches with Same-Day GPT-5.4 and Gemini 3 Releases</title>
+      <link>https://www.anthropic.com/news/claude-opus-4-7</link>
+      <description>Anthropic, OpenAI, and Google all shipped flagship model updates within hours of each other on April 16. Opus 4.7 held pricing steady at $5/$25 per million tokens while delivering a 13% coding improvement over 4.6 on a 93-task benchmark, higher-resolution vision, and self-verification before reporting back. The coordinated release is the clearest sign yet that the frontier has become a weekly moving target.</description>
+      <pubDate>Thu, 16 Apr 2026 00:00:00 GMT</pubDate>
+      <guid>https://www.anthropic.com/news/claude-opus-4-7</guid>
+    </item>
+
+    <item>
+      <title>OpenAI Ships GPT-5.4, GPT-5.4-Cyber, and GPT-Rosalind</title>
+      <link>https://openai.com/index/introducing-gpt-rosalind/</link>
+      <description>OpenAI released GPT-5.4 as its most capable frontier model for professional work, GPT-5.4-Cyber for vetted security professionals, and GPT-Rosalind — a life-sciences reasoning model optimized for molecules, proteins, genes, pathways, and disease biology. Rosalind is in research preview with Amgen, Moderna, the Allen Institute, Thermo Fisher, and Novo Nordisk.</description>
+      <pubDate>Thu, 16 Apr 2026 00:00:00 GMT</pubDate>
+      <guid>https://openai.com/index/introducing-gpt-rosalind/</guid>
+    </item>
+
+    <item>
+      <title>Gemini 3 Arrives: Flash as Default, Plus Agent and Deep Think</title>
+      <link>https://blog.google/products/gemini/gemini-3/</link>
+      <description>Google made Gemini 3 Flash the default model in the Gemini app, with Gemini Agent (multi-step task execution across Workspace, Deep Research, Canvas, and live web) and Gemini 3 Deep Think available to Google AI Ultra subscribers. Grounding with Google Maps is now supported.</description>
+      <pubDate>Thu, 16 Apr 2026 00:00:00 GMT</pubDate>
+      <guid>https://blog.google/products/gemini/gemini-3/</guid>
+    </item>
+
+    <item>
+      <title>NEJM AI Publishes ChexGen: Generative Foundation Model for Chest Radiographs</title>
+      <link>https://ai.nejm.org/</link>
+      <description>A vision-language foundation model for chest radiographs supporting text-, mask-, and bounding-box-guided image synthesis. Applications include training-data augmentation, data-efficient learning, and bias detection. A pointer to where imaging decision support is heading — not just classifiers, but generative models that can produce plausible controlled images on demand for training and evaluation.</description>
+      <pubDate>Thu, 16 Apr 2026 00:00:00 GMT</pubDate>
+      <guid>ai101-chexgen-nejm-apr-2026</guid>
+    </item>
+
+    <item>
+      <title>Abridge Embeds NEJM and JAMA Content Directly into Clinical Decision Support</title>
+      <link>https://hitconsultant.net/2026/04/15/abridge-nejm-jama-partnership-clinical-decision-support-ehr/</link>
+      <description>Abridge announced content partnerships with NEJM Group and the AMA covering JAMA plus 11 specialty journals and JAMA Network Open. The peer-reviewed content now feeds Abridge's CDS engine grounded in the actual patient conversation happening in the room. First time a clinical AI company has wired first-tier peer-reviewed journals directly into CDS at the point of care.</description>
+      <pubDate>Wed, 15 Apr 2026 00:00:00 GMT</pubDate>
+      <guid>https://hitconsultant.net/2026/04/15/abridge-nejm-jama-partnership-clinical-decision-support-ehr/</guid>
+    </item>
+
+    <item>
+      <title>Claude Code Prompt-Injection CVE After Source Leak</title>
+      <link>https://www.scworld.com/brief/claude-code-vulnerable-to-prompt-injection-due-to-subcommand-limit</link>
+      <description>After Claude Code's source was leaked, security firm Adversa found its deny rules can be bypassed via prompt injection — letting attackers execute tool calls Claude Code was configured to refuse. Combined with GitHub Copilot CVE-2025-53773 (CVSS 9.6) earlier in the month, a clear message for health-system engineering teams: agent-side guardrails are only as strong as the inputs they reason about.</description>
+      <pubDate>Tue, 14 Apr 2026 00:00:00 GMT</pubDate>
+      <guid>https://www.scworld.com/brief/claude-code-vulnerable-to-prompt-injection-due-to-subcommand-limit</guid>
+    </item>
+
+    <item>
+      <title>Hartford Rolls Out PatientGPT; Sutter and Reid Pilot Epic's Emmie</title>
+      <link>https://www.statnews.com/2026/04/13/hospitals-launch-chatbots-creating-new-funnel-for-patients/</link>
+      <description>Hartford HealthCare launched PatientGPT (built by K Health) for Connecticut patients. Sutter Health and Reid Health are piloting Epic's Emmie. Health systems are increasingly treating patient-facing AI as an intake funnel — a new layer of triage before the appointment rather than after.</description>
+      <pubDate>Mon, 13 Apr 2026 00:00:00 GMT</pubDate>
+      <guid>https://www.statnews.com/2026/04/13/hospitals-launch-chatbots-creating-new-funnel-for-patients/</guid>
+    </item>
+
+    <item>
+      <title>Microsoft Launches Copilot Health as a Consumer AI Companion</title>
+      <link>https://www.fiercehealthcare.com/ai-and-machine-learning/microsoft-unveils-copilot-health-ai-health-companion-consumers</link>
+      <description>Microsoft unveiled Copilot Health, a consumer AI companion that combines health records, wearables data, and health history. Sits alongside OpenAI's simultaneous rollout of ChatGPT Health, which now connects directly to patient portals. Expect patients to arrive with synthesized records, trend charts, and differential diagnoses they didn't have three months ago.</description>
+      <pubDate>Wed, 15 Apr 2026 00:00:00 GMT</pubDate>
+      <guid>https://www.fiercehealthcare.com/ai-and-machine-learning/microsoft-unveils-copilot-health-ai-health-companion-consumers</guid>
+    </item>
+
+    <item>
+      <title>MedQA Leaderboard Snapshot: Top Models Clear 95%</title>
+      <link>https://pricepertoken.com/leaderboards/benchmark/medqa</link>
+      <description>April 9 snapshot of the medical-question benchmark: o4 Mini High 95.2%, Gemini 2.5 Pro 94.6%, Claude 3.7 Sonnet 92.3%. Average across all 34 evaluated models is 79.4%. MedQA alone isn't clinical validation, but it's a useful sanity check when comparing models. The narrow spread at the top reinforces the point: the gap between frontier models on text medical reasoning is closing fast.</description>
+      <pubDate>Thu, 09 Apr 2026 00:00:00 GMT</pubDate>
+      <guid>ai101-medqa-leaderboard-apr-2026</guid>
+    </item>
+
+    <item>
+      <title>Epic Art Expands to Home Care; Insights Hits 16M Monthly Uses</title>
+      <link>https://www.fiercehealthcare.com/ai-and-machine-learning/epic-rolls-out-ai-charting-and-more-built-automation-clinicians-and</link>
+      <description>Epic's Art (ambient documentation) now extends to home care, joining outpatient specialty deployment and Houston Methodist's bedside-nursing pilot. Insights is used 16 million times per month (3x since November 2025), and 85% of Epic customers are now live with at least one generative AI feature. A separate multi-center JAMA study this month confirmed ambient scribes reduce EHR time by 13.4 minutes and documentation time by 16.0 minutes per clinician per day.</description>
+      <pubDate>Wed, 15 Apr 2026 00:00:00 GMT</pubDate>
+      <guid>https://www.fiercehealthcare.com/ai-and-machine-learning/epic-rolls-out-ai-charting-and-more-built-automation-clinicians-and</guid>
+    </item>
+
+    <item>
+      <title>AMA 2026 Physician Survey: AI Use Among Doctors Has Doubled</title>
+      <link>https://www.ama-assn.org/press-center/ama-press-releases/ama-ai-usage-among-doctors-doubles-confidence-technology-grows</link>
+      <description>Per the AMA Physician Survey, 39% of physicians now use AI to produce summaries of medical research and standards of care (the most common use case). 30% use it for discharge instructions and care plans, 28% for documentation, and 28% for chart summaries. The average physician uses AI for 2.3 distinct use cases — up from 1.1 in 2023.</description>
+      <pubDate>Wed, 15 Apr 2026 00:00:00 GMT</pubDate>
+      <guid>https://www.ama-assn.org/press-center/ama-press-releases/ama-ai-usage-among-doctors-doubles-confidence-technology-grows</guid>
+    </item>
+
+    <item>
+      <title>CMS OPPS Billing Pathway for Cardiovascular AI Takes Effect</title>
+      <link>https://cardiovascularbusiness.com/topics/cardiac-imaging/electrocardiography-ecg/fda-clears-next-generation-platform-ai-enabled-ecg-evaluations</link>
+      <description>CMS's new OPPS billing pathway for cardiovascular AI took effect April 1 — the first time reimbursement has moved in lockstep with FDA clearance for this category. Bunkerhill Health received 510(k) clearance for AI analysis of coronary artery and aortic valve calcium on routine chest CT. When regulators and payers align on a category, deployment follows.</description>
+      <pubDate>Wed, 01 Apr 2026 00:00:00 GMT</pubDate>
+      <guid>ai101-cms-opps-cardiovascular-ai-apr-2026</guid>
+    </item>
 
     <item>
       <title>State of Clinical AI Report 2026</title>
