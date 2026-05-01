@@ -77,6 +77,15 @@
         storage, no Business Associate Agreement required for internal experimentation.
       </p>
 
+      <p>
+        The 2026 landscape is also bifurcating. Meta's <strong>Muse Spark</strong> (April 2026)
+        is its first proprietary, cloud-only frontier model—but the open-weight Llama 4 line
+        continues to ship and remains the substrate for most new medical fine-tunes. When
+        you read announcements about a vendor's "frontier" model, check whether it's a hosted
+        product or downloadable weights; that distinction determines whether local deployment
+        is even an option.
+      </p>
+
       <h3>Ideal Use Cases for Local Models</h3>
 
       <div class="feature-grid">
@@ -246,8 +255,12 @@
 
       <div class="resource-grid">
         <div class="resource-card">
+          <h4>Llama 4 Scout / Maverick</h4>
+          <p>Meta's April 2025 open-weight models. Mixture-of-experts architecture (17B active params), with Scout offering a 10M-token context window. The current substrate for most new medical fine-tunes.</p>
+        </div>
+        <div class="resource-card">
           <h4>OpenBioLLM-70B</h4>
-          <p>Claims to outperform GPT-4 on several biomedical benchmarks. Built on Meta's Llama 3 with medical fine-tuning.</p>
+          <p>Claims to outperform GPT-4 on several biomedical benchmarks. Originally built on Llama 3 with medical fine-tuning; newer releases are migrating to Llama 4.</p>
         </div>
         <div class="resource-card">
           <h4>MedAlpaca-7B</h4>
@@ -292,7 +305,7 @@
             </tr>
             <tr>
               <td>Maximum capability</td>
-              <td>MedGemma 27B or OpenBioLLM-70B (significant hardware required)</td>
+              <td>MedGemma 27B, OpenBioLLM-70B, or DeepSeek V4 Pro (1M-token context, significant hardware required)</td>
             </tr>
           </tbody>
         </table>
@@ -442,16 +455,16 @@
               <td>7B at Q4-Q5</td>
             </tr>
             <tr>
-              <td>M1/M2/M3 24GB</td>
+              <td>M1/M2/M3/M4 24GB</td>
               <td>7B at Q8 or 13B at Q4</td>
             </tr>
             <tr>
-              <td>M1/M2/M3 Max 32GB+</td>
-              <td>13B at Q5-Q8, 27B at Q4</td>
+              <td>M1/M2/M3/M4 Pro / Max 32–64GB</td>
+              <td>13B at Q5-Q8, 27B at Q4, Llama 4 Scout at Q4</td>
             </tr>
             <tr>
-              <td>M1/M2/M3 Ultra 64GB+</td>
-              <td>27B-70B models</td>
+              <td>M-series Ultra / Mac Studio 96GB+</td>
+              <td>27B-70B models, DeepSeek V4 Pro variants</td>
             </tr>
           </tbody>
         </table>
@@ -626,7 +639,7 @@ ollama pull phi3
 ollama pull meditron:7b
 
 # Specific quantization variant
-ollama pull llama3.1:8b-q4_k_m</code></pre>
+ollama pull llama4:scout-8b-q4_k_m</code></pre>
 
       <h3>Running Models</h3>
 
@@ -925,7 +938,7 @@ ollama run phi3 --num-predict 500</code></pre>
 
       <h3>Medical AI Evaluation</h3>
       <ul>
-        <li><a href="https://huggingface.co/blog/leaderboard-medicalllm">Open Medical-LLM Leaderboard</a> (Hugging Face)</li>
+        <li><a href="https://huggingface.co/spaces/openlifescienceai/open_medical_llm_leaderboard">Open Medical-LLM Leaderboard</a> (Hugging Face Spaces)</li>
         <li><a href="https://github.com/AI-in-Health/MedLLMsPracticalGuide">MedLLMs Practical Guide</a></li>
       </ul>
 
@@ -963,7 +976,7 @@ ollama run phi3 --num-predict 500</code></pre>
         <strong>AI 101</strong> · A Self-Paced Guide to AI in Medicine
       </div>
       <div>
-        v1.4 · 2026
+        v1.5 · 2026
       </div>
     </div>
   </footer>

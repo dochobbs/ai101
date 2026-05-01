@@ -216,18 +216,47 @@
         <div class="tier-card">
           <h4>ChatGPT Plus</h4>
           <p class="tier-price">$20/month</p>
-          <p>Higher limits, priority access, o1 reasoning models, DALL-E, advanced voice mode.</p>
+          <p>Higher limits, priority access, GPT-5.5 reasoning, image generation, advanced voice mode.</p>
         </div>
         <div class="tier-card">
           <h4>ChatGPT Pro</h4>
           <p class="tier-price">$200/month</p>
-          <p>For power users. o1 pro mode, extended features, essentially unlimited usage.</p>
+          <p>For power users. GPT-5.5 Pro, extended features, essentially unlimited usage.</p>
         </div>
         <div class="tier-card">
           <h4>ChatGPT Team</h4>
           <p class="tier-price">$25-30/user/month</p>
           <p>Collaborative workspace. Data not used for training. Still not HIPAA-compliant without additional measures.</p>
         </div>
+        <div class="tier-card">
+          <h4>ChatGPT for Clinicians</h4>
+          <p class="tier-price">Free (verified)</p>
+          <p>Free tier for verified US physicians, NPs, PAs, and pharmacists. Tuned for documentation and medical research. <strong>Not</strong> a BAA tier on its own.</p>
+        </div>
+        <div class="tier-card">
+          <h4>ChatGPT for Healthcare</h4>
+          <p class="tier-price">Enterprise</p>
+          <p>Hospital/health-system tier with BAA, customer-managed encryption keys, audit logs, and data residency. Deployed at UCSF, Cedars-Sinai, MSK, Stanford Children's, HCA, Boston Children's, and others.</p>
+        </div>
+      </div>
+
+      <div class="callout callout-info">
+        <div class="callout-title">ChatGPT for Clinicians vs. ChatGPT for Healthcare</div>
+        <p>
+          OpenAI launched two distinct healthcare offerings in 2026 that are easy to confuse.
+          <strong>ChatGPT for Clinicians</strong> is a free, individual product for verified US
+          clinicians—handy for documentation drafts, summarization, and medical research, but
+          it is <em>not</em> covered by a BAA and should not be used with PHI.
+          <strong>ChatGPT for Healthcare</strong> is the enterprise product that <em>does</em>
+          come with a BAA, alongside HIPAA-compliant controls (encryption keys, audit logs,
+          data residency) and a "no training on shared content" guarantee. It's negotiated and
+          deployed at the institution level, not by individual users.
+        </p>
+        <p class="mb-0">
+          Practical implication: don't assume that signing in with your hospital email upgrades
+          your account. Check with your organization whether a BAA-backed deployment is in place
+          before entering anything that could be PHI.
+        </p>
       </div>
 
       <h3>What You Get</h3>
@@ -243,9 +272,11 @@
         for current information.
       </p>
       <p>
-        <strong>HIPAA pathway:</strong> BAAs available for API services and Enterprise/Edu plans
-        with sales-managed accounts. ChatGPT Free, Plus, Pro, and Team plans are explicitly not
-        covered by BAAs and cannot be used with protected health information.</p>
+        <strong>HIPAA pathway:</strong> BAAs available for API services, Enterprise/Edu plans,
+        and the new <strong>ChatGPT for Healthcare</strong> tier deployed at major academic
+        medical centers. ChatGPT Free, Plus, Pro, Team, and the free <strong>ChatGPT for
+        Clinicians</strong> tier are explicitly not covered by BAAs and cannot be used with
+        protected health information.</p>
 
       <hr>
 
@@ -462,9 +493,9 @@
           <tbody>
             <tr>
               <td><strong>ChatGPT</strong></td>
-              <td>Enterprise/Edu only</td>
+              <td>Enterprise/Edu and ChatGPT for Healthcare</td>
               <td>Yes, via application</td>
-              <td>Azure OpenAI Service</td>
+              <td>Azure OpenAI Service or ChatGPT for Healthcare</td>
             </tr>
             <tr>
               <td><strong>Claude</strong></td>
@@ -1156,7 +1187,7 @@
   <footer class="footer">
     <div class="footer-inner">
       <div><strong>AI 101</strong> · A Self-Paced Guide to AI in Medicine</div>
-      <div>v1.4 · 2026</div>
+      <div>v1.5 · 2026</div>
     </div>
   </footer>
 

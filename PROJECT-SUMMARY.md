@@ -63,7 +63,7 @@ tools). Serves on `localhost:5050` (note: the README says 5000 — needs fix).
 - Pure HTML/CSS — no framework, no build step
 - Google Fonts + Lucide loaded via CDN
 - All internal links relative — works locally or hosted
-- Current version: **v1.3 · 2026** (bumped each release)
+- Current version: **v1.5 · 2026** (bumped each release)
 - Deployment: GitHub Pages via [dochobbs/ai101](https://github.com/dochobbs/ai101)
 - Custom domain: ai101.health (CNAME configured)
 
@@ -74,12 +74,17 @@ was retired in favor of topic-based, self-paced navigation. The old drafts live
 in [archive/](archive/) and are not linked from any live page.
 
 ## Operational Workflow
-- **Weekly audit**: a scheduled remote agent scans the AI landscape every
-  Sunday 12:00 PT, emails `michael@hobbs.md` with a punch list of pages
-  needing updates, link-check results, and a ready-to-paste [updates.html](updates.html)
-  entry. See [docs/PROJECT_CHANGELOG.md](docs/PROJECT_CHANGELOG.md) for
-  history.
+- **Weekly audit**: a scheduled remote agent (claude.ai routine
+  `trig_01KvbzVEe51SjAHdzHhwSMqQ`) scans the AI landscape every Sunday at
+  17:00 UTC (12:00 PM CT / 10:00 AM PT) and files a GitHub issue on
+  `dochobbs/ai101` with the `audit` label containing a punch list of pages
+  needing updates, link-check results, and a ready-to-paste
+  [updates.html](updates.html) entry. The routine has an empty-week failsafe:
+  if no pages are flagged and no broken links are found, no issue is created
+  — issue creation is the signal that work is pending. The repo is watched
+  on GitHub, so new issues land in the inbox automatically. See
+  [docs/PROJECT_CHANGELOG.md](docs/PROJECT_CHANGELOG.md) for history.
 - **Version bumps** happen in the footer of every page at release time
-  (currently `v1.3 · 2026`).
+  (currently `v1.5 · 2026`).
 - **ai-news.html** is the lightweight running log; `updates.html` is the
   formal changelog for readers.

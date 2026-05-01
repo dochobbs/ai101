@@ -45,6 +45,93 @@
 
       <hr>
 
+      <!-- v1.5 -->
+      <h2>v1.5 <span style="font-weight: normal; color: var(--text-muted);">— April 2026</span></h2>
+
+      <h3>Module Updates</h3>
+      <ul>
+        <li>
+          <strong>The Big Three</strong> — Added <strong>ChatGPT for Clinicians</strong>
+          (free verified-clinician tier) and <strong>ChatGPT for Healthcare</strong> (enterprise
+          BAA tier, deployed at UCSF, Cedars-Sinai, MSK, Stanford Children's, Boston Children's,
+          HCA, Baylor Scott &amp; White, AdventHealth) to the ChatGPT tier grid; clarified that
+          the free clinician tier is <em>not</em> covered by a BAA. Updated reasoning-model
+          references from o1/o3 to GPT-5.5 and GPT-5.5 Pro. Refreshed the HIPAA/BAA comparison
+          table.
+        </li>
+        <li>
+          <strong>PHI, HIPAA, and AI</strong> — Expanded the BAA Availability list to
+          distinguish ChatGPT for Clinicians (no BAA) from ChatGPT for Healthcare (BAA
+          available, encryption keys, audit logs, data residency).
+        </li>
+        <li>
+          <strong>AI Image and Video Creation</strong> — Replaced the GPT Image 1.5 section
+          with <strong>ChatGPT Images 2.0</strong> (Apr 21, 2026): #1 on Image Arena within
+          12 hours of launch, available on all plans including Free. Added <strong>Claude
+          Design</strong> (Anthropic Labs, Apr 2026) to the Prioritize This callout. Updated
+          conversational-iteration tool reference from GPT-4o to GPT-5.5.
+        </li>
+        <li>
+          <strong>Running AI Models on Your Own Computer</strong> — Added <strong>Llama 4
+          Scout / Maverick</strong> (10M-token context, MoE architecture) to the Notable
+          Models grid. Added a Muse Spark / open-vs-proprietary note to "Why Local Models
+          Matter." Refreshed the Apple Silicon hardware table to include M4 / M4 Pro / M4 Max.
+          Updated the example <code>ollama pull</code> command to a Llama 4 tag. Added DeepSeek
+          V4 Pro to the Maximum Capability row. Migrated the HuggingFace Open Medical-LLM
+          Leaderboard link from the deprecated blog post to the current Spaces deployment.
+        </li>
+        <li>
+          <strong>The Art of the Ask (Prompting)</strong> — Updated stale model references
+          (GPT-4o &rarr; GPT-5.5, Claude 3.5+ &rarr; Opus 4.7, Gemini 1.5 &rarr; 3.1 Pro).
+          Softened the "knowledge cutoffs" limitation to acknowledge that modern frontends
+          layer live web search on top of the frozen weights.
+        </li>
+        <li>
+          <strong>How LLMs Think Like Clinicians</strong> — Fixed a broken 3Blue1Brown link
+          (wrong URL format &rarr; <code>3blue1brown.com/lessons/mlp/</code>). Added nuance to
+          the "continuous learning" distinction now that ChatGPT, Claude, and Gemini layer
+          persistent memory and live search on top of frozen weights. Updated context-window
+          framing (128K &rarr; 200K&ndash;1M typical, with Llama 4 Scout up to 10M).
+        </li>
+        <li>
+          <strong>Glossary</strong> — Updated the Reasoning Models entry (GPT-5.5,
+          Claude Opus 4.7, Gemini 3.1 Pro Deep Think). Refreshed the Context Window
+          examples for the April 2026 landscape. Updated the OpenAI, Google/DeepMind,
+          and Meta company cards (added the Muse Spark proprietary/open split). Bumped
+          FDA AI/ML device clearance count to 1,000+. Updated the page-footer timestamp
+          from November 2025 to April 2026.
+        </li>
+      </ul>
+
+      <h3>Headline events reflected</h3>
+      <ul>
+        <li>OpenAI <strong>GPT-5.5</strong> and <strong>GPT-5.5 Pro</strong> (Apr 23, 2026)</li>
+        <li>OpenAI <strong>ChatGPT Images 2.0</strong> (Apr 21, 2026)</li>
+        <li>OpenAI <strong>ChatGPT for Clinicians</strong> and <strong>ChatGPT for Healthcare</strong> (rolling out 2026)</li>
+        <li>Anthropic <strong>Claude Opus 4.7</strong> with adaptive thinking (Apr 16, 2026)</li>
+        <li>Anthropic <strong>Claude Design</strong> (Anthropic Labs, Apr 2026)</li>
+        <li>DeepSeek <strong>V4 Flash</strong> and <strong>V4 Pro</strong> preview (Apr 24, 2026)</li>
+        <li>Meta <strong>Muse Spark</strong> &mdash; first proprietary frontier model (Apr 8, 2026)</li>
+      </ul>
+
+      <h3>Operations</h3>
+      <ul>
+        <li>Weekly audit routine updated with an <strong>empty-week failsafe</strong>: when
+            a Sunday audit finds no pages overdue and no broken links, no GitHub issue is
+            created. Issue creation is now the signal that work is pending.</li>
+        <li>Enabled GitHub email notifications for the repo so audit issues land in the
+            inbox automatically.</li>
+      </ul>
+
+      <h3>Site-Wide</h3>
+      <ul>
+        <li>Bumped site version from v1.4 &middot; 2026 to v1.5 &middot; 2026 across all pages</li>
+        <li>Updated card "Updated" dates on the homepage for the five revised modules
+            (llm-thinking, prompting, image-video, local-models, glossary)</li>
+      </ul>
+
+      <hr>
+
       <!-- v1.4 -->
       <h2>v1.4 <span style="font-weight: normal; color: var(--text-muted);">— April 2026</span></h2>
 
@@ -454,7 +541,7 @@
   <footer class="footer">
     <div class="footer-inner">
       <div><strong>AI 101</strong> · A Self-Paced Guide to AI in Medicine</div>
-      <div>v1.4 · 2026</div>
+      <div>v1.5 · 2026</div>
     </div>
   </footer>
 

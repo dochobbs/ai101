@@ -206,7 +206,7 @@
       <p>
         This constraint has practical implications. A patient with a 50-page chart history
         exceeds working memory; the clinician must decide what's relevant to pull forward.
-        Similarly, an LLM with a 128k token context window still can't process an entire
+        Similarly, an LLM with a 200k–1M token context window still can't process an entire
         EMR—someone must decide what goes in the prompt.
       </p>
 
@@ -452,7 +452,7 @@
       <ul>
         <li><strong>Embodiment:</strong> Clinicians have bodies that provide intuitions about pain, fatigue, and physical sensation. LLMs process tokens without embodied experience.</li>
         <li><strong>Stakes and accountability:</strong> A clinician's errors have professional, legal, and moral consequences that shape reasoning. LLMs have no stakes in their outputs.</li>
-        <li><strong>Continuous learning:</strong> Clinicians update in real-time from individual cases. LLMs (mostly) have fixed training and don't learn from individual interactions.</li>
+        <li><strong>Continuous learning:</strong> Clinicians update in real-time from individual cases. Base LLM weights remain fixed at inference time, though many 2026 frontends (ChatGPT, Claude, Gemini) layer persistent memory and live web search on top of that frozen core.</li>
         <li><strong>Metacognition:</strong> Clinicians can reflect on their own reasoning processes and deliberately change strategies. LLMs lack this recursive self-awareness.</li>
         <li><strong>Causal reasoning:</strong> Clinicians understand (or try to understand) causal mechanisms. LLMs learn correlations without causal models.</li>
       </ul>
@@ -730,7 +730,7 @@
           <div class="reading-type"><i data-lucide="video"></i></div>
           <div class="reading-content">
             <div class="reading-title">
-              <a href="https://www.3blue1brown.com/?v=mini-llm#video-section" target="_blank">How might LLMs store facts</a>
+              <a href="https://www.3blue1brown.com/lessons/mlp/" target="_blank">How might LLMs store facts</a>
             </div>
             <div class="reading-meta">3Blue1Brown · A brilliantly visual, intuitive explanation of how LLMs actually work under the hood. If you watch one thing, watch this.</div>
           </div>
@@ -817,7 +817,7 @@
   <footer class="footer">
     <div class="footer-inner">
       <div><strong>AI 101</strong> · A Self-Paced Guide to AI in Medicine</div>
-      <div>v1.4 · 2026</div>
+      <div>v1.5 · 2026</div>
     </div>
   </footer>
 
