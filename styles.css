@@ -3166,3 +3166,42 @@ blockquote.pull-quote {
     margin-top: var(--space-sm);
   }
 }
+
+/* ==========================================
+   v1.5 utility classes — extracted from inline styles
+   ========================================== */
+
+/* Tight list reset for use inside callouts and dense cards. */
+.list-flush {
+  margin: 0;
+  padding-left: 1.2rem;
+}
+
+/* "Prioritize This!" callout — amber/gold accent, used to highlight
+   a single recommended path or resource. */
+.callout-prioritize {
+  border-left-color: #f59e0b;
+  background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%);
+  margin-bottom: 1.5rem;
+}
+
+.callout-prioritize .callout-title {
+  color: #b45309;
+}
+
+.callout-prioritize .callout-title .priority-icon {
+  width: 18px;
+  height: 18px;
+  margin-right: 0.5rem;
+  fill: #f59e0b;
+  stroke: #b45309;
+}
+
+/* Inner white card used inside Prioritize callouts. */
+.priority-card {
+  background: var(--white);
+  border-radius: 8px;
+  padding: 1rem;
+  margin-top: 0.75rem;
+  border: 1px solid #fcd34d;
+}
