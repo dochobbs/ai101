@@ -46,6 +46,91 @@
 
       <hr>
 
+      <!-- v1.6 -->
+      <h2>v1.6 <span style="font-weight: normal; color: var(--text-muted);">— May 2026</span></h2>
+
+      <h3>Module Updates</h3>
+      <ul>
+        <li>
+          <strong>AI News</strong> &mdash; Added 12 new items from late April&ndash;May 2026:
+          <strong>Perplexity &times; VisualDx</strong> clinician-validated medical imagery in AI
+          search (May 5); <strong>Harvard/OpenAI study</strong> showing AI outperforms physicians
+          in real-world diagnosis (Apr 30); <strong>NEJM retraction</strong> for AI-manipulated
+          clinical image (Apr 29); <strong>DeepSeek V4 Flash/Pro</strong> MIT-licensed open-source
+          release with 1M-token context at $1.74/M tokens (Apr 24); <strong>GPT-5.5 and GPT-5.5
+          Pro</strong> launch, becoming ChatGPT default May 5 (Apr 23); <strong>AMA letter to
+          Congress</strong> on health AI chatbot guardrails (Apr 23); <strong>ChatGPT Images
+          2.0</strong> launch (Apr 21); <strong>ECRI 2026</strong>: AI chatbot misuse is #1
+          health tech hazard (Apr 13); <strong>ambient scribe upcoding crisis</strong> &mdash;
+          JAMA Health Forum, npj Digital Medicine, PHTI (Apr 8&ndash;13); <strong>Meta Muse
+          Spark</strong>, first proprietary frontier model (Apr 8); <strong>KFF Tracking
+          Poll</strong>: 1-in-3 US adults use AI for health info (Apr 2026). Fixed unlinked
+          headline for the OpenAI Lockdown Mode item.
+        </li>
+        <li>
+          <strong>Bias, Ethics, and the Training Data Problem</strong> &mdash; Added three new
+          &ldquo;In the News&rdquo; callouts: ECRI 2026 #1 health tech hazard, KFF Tracking
+          Poll on AI health-info use, and the NEJM image retraction. Updated the Regulatory
+          Landscape with the <strong>EU AI Act high-risk obligations effective August 2,
+          2026</strong>, the <strong>AMA April 23 letter to Congress</strong> calling for
+          federal guardrails on health AI chatbots, and a note on the proposed
+          <strong>HTI-5 rule</strong> that would eliminate ONC model-card requirements.
+        </li>
+        <li>
+          <strong>AI-Powered Search</strong> &mdash; Refreshed the Perplexity Model Council
+          callout to the current flagship lineup: Claude Opus 4.7, GPT-5.5, and Gemini 3 Flash
+          (was: Opus 4.6, GPT 5.2, Gemini 3.0). Updated &ldquo;In 2025&rdquo; framing to
+          &ldquo;In 2026.&rdquo;
+        </li>
+        <li>
+          <strong>Everyday Ways to Use AI</strong> &mdash; Fixed stale comparison-table value:
+          Google Gems image-generation cell <code>Yes (Nano Banana)</code> &rarr;
+          <code>Yes (Imagen 4)</code>.
+        </li>
+        <li>
+          <strong>So...What Next?</strong> &mdash; Updated the Claude API code example from
+          the stale <code>claude-sonnet-4-20250514</code> model ID to <code>claude-sonnet-4-6</code>
+          (current Claude Sonnet as of 2026).
+        </li>
+        <li>
+          <strong>AI&rsquo;s Environmental Footprint</strong> &mdash; Added hyperlinks to three
+          Further Reading items that were plain text: Strubell et al. (ACL 2019), Luccioni et al.
+          on BLOOM (2022), and the IEA Data Centres tracking page.
+        </li>
+      </ul>
+
+      <h3>Headline events reflected</h3>
+      <ul>
+        <li>OpenAI <strong>GPT-5.5 Instant</strong> as ChatGPT default (May 5, 2026)</li>
+        <li>DeepSeek <strong>V4 Flash and V4 Pro</strong> open-source MIT release (Apr 24, 2026)</li>
+        <li>Perplexity &times; <strong>VisualDx</strong> clinician-validated medical imagery in AI search (May 5, 2026)</li>
+        <li>Ambient scribe <strong>upcoding policy crisis</strong> &mdash; JAMA Health Forum + npj Digital Medicine + PHTI (Apr 8&ndash;13, 2026)</li>
+        <li>ECRI: <strong>AI chatbot misuse</strong> is #1 health technology hazard for 2026</li>
+        <li>EU AI Act <strong>high-risk AI deadline</strong>: August 2, 2026</li>
+        <li><strong>NEJM image retraction</strong> for AI-manipulated clinical photo (Apr 29, 2026)</li>
+        <li><strong>AMA letter to Congress</strong> on federal guardrails for health AI chatbots (Apr 23, 2026)</li>
+        <li>KFF: <strong>1 in 3 US adults</strong> use AI chatbots for health information (Apr 2026)</li>
+      </ul>
+
+      <h3>Operations</h3>
+      <ul>
+        <li>Added a project-local <strong>SessionStart hook</strong> in
+            <code>.claude/settings.local.json</code> that runs
+            <code>gh issue list --label audit --state open</code> on every session start.
+            Open audit issues now surface automatically as <code>[AUDIT] N open audit issue(s)</code>
+            instead of requiring manual GitHub inbox checks.</li>
+      </ul>
+
+      <h3>Site-Wide</h3>
+      <ul>
+        <li>Bumped site version from v1.5 &middot; 2026 to v1.6 &middot; 2026 across all pages</li>
+        <li>Updated card &ldquo;Updated&rdquo; dates on the homepage for revised modules
+            (ai-news Mar &rarr; May; bias-ethics Feb &rarr; May; ai-search Mar &rarr; May;
+            everyday-ai Feb &rarr; May; environmental-footprint Mar &rarr; May)</li>
+      </ul>
+
+      <hr>
+
       <!-- v1.5 -->
       <h2>v1.5 <span style="font-weight: normal; color: var(--text-muted);">— April 2026</span></h2>
 
@@ -542,7 +627,7 @@
   <footer class="footer">
     <div class="footer-inner">
       <div><strong>AI 101</strong> · A Self-Paced Guide to AI in Medicine</div>
-      <div>v1.5 · 2026</div>
+      <div>v1.6 · 2026</div>
     </div>
   </footer>
 
