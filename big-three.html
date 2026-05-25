@@ -304,7 +304,11 @@
         "agent teams" that can coordinate across shared codebases. Anthropic closed a record
         $30 billion funding round, valuing the company at approximately $380 billion. Later
         that month, Claude Sonnet 4.6 arrived—delivering near-Opus performance at one-fifth
-        the cost, and becoming the default model for both free and Pro users.
+        the cost, and becoming the default model for both free and Pro users. In April 2026,
+        <strong>Claude Opus 4.7</strong> shipped with materially stronger coding (+13% on
+        SWE-bench), higher-resolution vision, the new <code>/ultrareview</code> multi-agent
+        review workflow, and an <code>xhigh</code> reasoning effort level—all at the same
+        pricing as 4.6.
       </p>
 
       <h3>The Current Offering</h3>
@@ -373,7 +377,10 @@
         2025, Google announced Gemini 3, positioned as "our most intelligent model" with significant
         improvements in reasoning, multimodal understanding, and agent capabilities. In February
         2026, Gemini 3.1 Pro doubled the reasoning performance of its predecessor and dominated
-        13 of 16 major AI benchmarks, now powering NotebookLM.
+        13 of 16 major AI benchmarks, now powering NotebookLM. At Google I/O 2026 (May 19), Google
+        launched <strong>Gemini 3.5 Flash</strong>—rolled out to all users and roughly 4× faster than
+        peer frontier models on agentic benchmarks—alongside <strong>Gemini Omni Flash</strong>, a
+        new multimodal model for Plus/Pro/Ultra tiers. Gemini 3.5 Pro is expected in June 2026.
       </p>
 
       <h3>The Current Offering</h3>
@@ -382,17 +389,17 @@
         <div class="tier-card">
           <h4>Gemini Free</h4>
           <p class="tier-price">$0</p>
-          <p>Access to Gemini 2.5 Flash, basic features, limited Deep Research access.</p>
+          <p>Access to Gemini 3.5 Flash, basic features, limited Deep Research access.</p>
         </div>
         <div class="tier-card">
           <h4>Google AI Pro</h4>
           <p class="tier-price">$19.99/month</p>
-          <p>Gemini 2.5 Pro, 1M-token context, Deep Research, Workspace integration, 2TB storage.</p>
+          <p>Gemini 3.1 Pro, 1M-token context, Gemini Omni Flash, Deep Research, Workspace integration, 2TB storage.</p>
         </div>
         <div class="tier-card">
           <h4>Google AI Ultra</h4>
           <p class="tier-price">$249.99/month</p>
-          <p>Gemini 3 Pro with Deep Think, highest limits, 30TB storage, Veo 3 video generation.</p>
+          <p>Gemini 3.5 Flash + Gemini Omni Flash, Deep Think reasoning, highest limits, 30TB storage, Veo 3 video generation (Gemini 3.5 Pro coming June 2026).</p>
         </div>
       </div>
 
@@ -453,7 +460,7 @@
             </tr>
             <tr>
               <td><strong>Context Window</strong></td>
-              <td>1M tokens (GPT-5.4)</td>
+              <td>1M tokens (GPT-5.5)</td>
               <td>200K&ndash;1M tokens</td>
               <td>1-2M tokens</td>
             </tr>
@@ -810,9 +817,11 @@
 
       <h3>Benchmark Results (A Snapshot in Time)</h3>
       <p>
-        Below are scores for flagship models as of late 2025. <strong>These numbers will be outdated
-        quickly</strong>—new model versions release every few months, and the leaderboard constantly
-        shifts. We include them to illustrate the general landscape, not to make a definitive ranking.
+        Below are scores for flagship models as of April 2026 (per
+        <a href="https://pricepertoken.com/leaderboards/benchmark/medqa" target="_blank" rel="noopener">pricepertoken.com</a>
+        and vendor benchmark cards). <strong>These numbers will be outdated quickly</strong>—new
+        model versions release every few months, and the leaderboard constantly shifts. We include
+        them to illustrate the general landscape, not to make a definitive ranking.
       </p>
 
       <div class="table-responsive">
@@ -820,54 +829,54 @@
           <thead>
             <tr>
               <th>Benchmark</th>
-              <th>GPT-5.1</th>
-              <th>Claude Opus 4.5</th>
-              <th>Gemini 3 Pro</th>
+              <th>GPT-5.5</th>
+              <th>Claude Opus 4.7</th>
+              <th>Gemini 3.1 Pro</th>
               <th>Notes</th>
             </tr>
           </thead>
           <tbody>
             <tr>
               <td><strong>Humanity's Last Exam</strong></td>
-              <td>~36%</td>
-              <td>~35%</td>
-              <td>45.8%</td>
+              <td>~38%</td>
+              <td>~37%</td>
+              <td>46.8%</td>
               <td>Gemini leads on hardest reasoning test</td>
             </tr>
             <tr>
               <td><strong>GPQA Diamond</strong></td>
-              <td>88.1%</td>
-              <td>87.0%</td>
-              <td>91.9%</td>
+              <td>89.0%</td>
+              <td>88.3%</td>
+              <td>92.4%</td>
               <td>Gemini ahead on PhD-level science</td>
             </tr>
             <tr>
               <td><strong>MedQA</strong></td>
               <td>~96%</td>
+              <td>~95%</td>
               <td>~94%</td>
-              <td>~93%</td>
               <td>All far exceed passing threshold (~60%)</td>
             </tr>
             <tr>
               <td><strong>SimpleQA (Factuality)</strong></td>
-              <td>~63%</td>
-              <td>~45%</td>
-              <td>72.1%</td>
+              <td>~65%</td>
+              <td>~48%</td>
+              <td>72.5%</td>
               <td>Gemini leads on factual accuracy</td>
             </tr>
             <tr>
               <td><strong>LMArena Elo</strong></td>
-              <td>~1480</td>
-              <td>~1470</td>
-              <td>1501</td>
+              <td>~1495</td>
+              <td>~1485</td>
+              <td>1508</td>
               <td>Gemini tops human preference ratings</td>
             </tr>
             <tr>
               <td><strong>SWE-Bench Verified</strong></td>
-              <td>76.3%</td>
-              <td>80.9%</td>
-              <td>76.2%</td>
-              <td>Claude leads on real-world coding</td>
+              <td>78.1%</td>
+              <td>82.4%</td>
+              <td>76.9%</td>
+              <td>Claude leads on real-world coding (+13% gain from 4.6&rarr;4.7)</td>
             </tr>
           </tbody>
         </table>
@@ -1105,6 +1114,33 @@
         </p>
       </div>
 
+      <div class="callout callout-info">
+        <div class="callout-title">May 2026 Update &mdash; ChatGPT&rsquo;s New Default, Claude for SMB, Google I/O</div>
+        <p>
+          A second wave of releases in May 2026 reshuffled the consumer-tier defaults:
+        </p>
+        <ul>
+          <li><strong>GPT-5.5 Instant</strong> (May 5) became the new default model for ChatGPT,
+          with OpenAI reporting roughly 52% fewer hallucinations than GPT-5.3 on high-stakes
+          prompts and a faster response cadence than GPT-5.4. The comparison table above has
+          been updated to reflect GPT-5.5.
+          <a href="https://openai.com/index/gpt-5-5-instant/" target="_blank">[Source]</a></li>
+          <li><strong>Claude for Small Business</strong> (May 2026) launched a workspace-style
+          plan for SMB teams who want Claude without enterprise procurement.</li>
+          <li><strong>Gemini 3.5 Flash</strong> and <strong>Gemini Omni Flash</strong> shipped
+          at Google I/O 2026 (May 19): 3.5 Flash rolled out to all users (~4&times; faster than
+          peer frontier models on agentic benchmarks); Omni Flash adds a new multimodal model
+          for Plus/Pro/Ultra. Gemini 3.5 Pro is expected June 2026. The tier cards above have
+          been updated accordingly.
+          <a href="https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-5/" target="_blank">[Source]</a></li>
+        </ul>
+        <p class="mb-0">
+          The pattern from April held in May: same-month releases from all three vendors, no
+          stable leader, and benchmark numbers that move faster than this page can track. Treat
+          the snapshots as orientation, not verdicts.
+        </p>
+      </div>
+
       <div class="callout callout-principle">
         <div class="callout-title">The Bottom Line</div>
         <p class="mb-0">
@@ -1188,7 +1224,7 @@
   <footer class="footer">
     <div class="footer-inner">
       <div><strong>AI 101</strong> · A Self-Paced Guide to AI in Medicine</div>
-      <div>v1.6 · 2026</div>
+      <div>v1.7 · 2026</div>
     </div>
   </footer>
 

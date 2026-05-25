@@ -333,13 +333,24 @@
           they produced 100,000 lines of Rust that successfully compiles a
           bootable Linux kernel.
         </p>
-        <p class="mb-0">
+        <p>
           The numbers tell the broader story: <strong>41% of all code written
           globally is now AI-generated</strong>, and 92% of US developers report
           using AI coding tools daily. Anthropic's head of enterprise product
           introduced the term "vibe working"—the idea that the vibe coding
           paradigm is expanding beyond software into every professional domain.
           What started as a tweet is becoming a way of working.
+        </p>
+        <p class="mb-0">
+          <strong>Since this was written:</strong> GPT-5.3-Codex and Opus 4.6 have
+          both been superseded&mdash;<strong>GPT-5.5 Instant</strong> became the
+          ChatGPT default on May 5, 2026, and <strong>Claude Opus 4.7</strong>
+          shipped April 16 with +13% coding gains, higher-resolution vision,
+          <code>/ultrareview</code> multi-agent review, and a new
+          <code>xhigh</code> reasoning level built specifically for complex
+          vibe-coding work. Cursor crossed <strong>$2B ARR</strong> in March and
+          entered talks at a <strong>$50B valuation</strong> in April (a16z,
+          Thrive, Nvidia).
         </p>
       </div>
 
@@ -1668,7 +1679,9 @@
         window and 33% fewer factual errors than its predecessor, it represents a significant step
         toward AI that can actually operate software alongside you. For vibe coders, the practical
         implication is that your AI assistant can now help test your applications by literally
-        using them the way a human would.
+        using them the way a human would. Two months later, <strong><a href="https://openai.com/index/gpt-5-5-instant/" target="_blank" rel="noopener">GPT-5.5 Instant</a></strong>
+        (May 5, 2026) replaced GPT-5.4 as the ChatGPT default with ~52% fewer hallucinations on
+        high-stakes prompts and faster responses across the board.
       </p>
 
       <p>
@@ -1710,6 +1723,75 @@
         month, the tools you're using have already gotten meaningfully better.
       </p>
 
+      <!-- May 2026 Update -->
+      <h2>Three Tools, One Workflow (May 2026 Update)</h2>
+
+      <p>
+        By May 2026 the agentic-coding ecosystem has converged on three workhorses&mdash;Cursor,
+        Claude Code, and OpenAI Codex&mdash;each available across desktop, web, and increasingly
+        mobile. The interesting story this month wasn&rsquo;t a model release; it was a pricing
+        story and a form-factor story.
+      </p>
+
+      <div class="callout callout-warning">
+        <div class="callout-title">The Claude Code Pro Saga (April 22&ndash;23, 2026)</div>
+        <p class="mb-0">
+          On April 22, Anthropic briefly removed Claude Code from the $20 Pro plan, citing
+          unsustainable usage at the flat rate. Within 24 hours, after community backlash, the
+          change was reversed&mdash;but a small experimental cohort (~2% of new Pro signups)
+          remains in a test arm without Claude Code access. The episode is the clearest signal
+          yet that flat-rate AI economics are under strain for any tool that meaningfully
+          competes with paid IDE subscriptions. <strong>Practical advice for heavy Claude Code
+          users:</strong> the Max plan ($100/mo or $200/mo) is the safer bet if your daily
+          workflow depends on Claude Code, since it&rsquo;s unlikely to be silently downgraded.
+        </p>
+      </div>
+
+      <h3>Codex Mobile Preview (May 2026)</h3>
+
+      <p>
+        OpenAI shipped a <strong>Codex preview in the ChatGPT mobile app</strong>, letting you
+        monitor and interact with active Codex tasks from your phone while a Mac host keeps the
+        actual session running. For physicians who context-switch between EHR, clinic, and brief
+        commute windows, this is meaningful: a long-running build or refactor can keep
+        progressing during a 20-minute window between patients, and you can review &amp; redirect
+        from the phone without sitting back down at the desk.
+      </p>
+
+      <h3>Claude Code on the Web</h3>
+
+      <p>
+        Beyond the VS Code extension and the CLI, Claude Code is now also available at
+        <a href="https://claude.ai/code" target="_blank" rel="noopener">claude.ai/code</a>&mdash;
+        a full agentic coding workspace in the browser that doesn&rsquo;t require any local
+        install. It bundles the local-branch up to the cloud session, which is useful when
+        you&rsquo;re on an iPad or a borrowed laptop without your usual dev setup.
+      </p>
+
+      <h3>Claude Code Design Review &amp; Routines</h3>
+
+      <p>
+        Two additions worth knowing about: <strong>Claude Code Design Review</strong> (April 17,
+        2026) lets a multi-agent reviewer audit a frontend interface against design principles
+        and accessibility guidelines, returning a structured punch list. <strong>Claude Code
+        routines</strong> (May 2026) are scheduled cloud agents that run on a cron expression
+        and can do things like weekly content audits, dependency upgrades, or repo health
+        checks&mdash;exactly the kind of long-running maintenance that gets deferred when you
+        only think about it during active coding sessions.
+      </p>
+
+      <h3>What This Means</h3>
+
+      <p>
+        The three tools are converging on the same shape: a model, an agent loop, a way to scope
+        the work to a project, and an interface that works wherever you are. The 2026 YC class is
+        the obvious tell on adoption&mdash;the &ldquo;95% AI-generated codebase&rdquo; figure from
+        Winter 2025 (now 15 months stale) has been overtaken by a quieter pattern: across the
+        industry, vibe-coding workflows are now the default for new projects, and the question
+        has shifted from &ldquo;should I use it?&rdquo; to &ldquo;which of the three should I pick
+        for this task?&rdquo;
+      </p>
+
       <!-- Learning Objectives -->
       <div class="objectives phase-2">
         <h4 class="objectives-title">Learning Objectives</h4>
@@ -1747,7 +1829,7 @@
   <footer class="footer">
     <div class="footer-inner">
       <div><strong>AI 101</strong> · A Self-Paced Guide to AI in Medicine</div>
-      <div>v1.6 · 2026</div>
+      <div>v1.7 · 2026</div>
     </div>
   </footer>
 

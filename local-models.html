@@ -260,6 +260,22 @@
           <p>Meta's April 2025 open-weight models. Mixture-of-experts architecture (17B active params), with Scout offering a 10M-token context window. The current substrate for most new medical fine-tunes.</p>
         </div>
         <div class="resource-card">
+          <h4>DeepSeek V4 Pro / V4 Flash</h4>
+          <p>DeepSeek's late-2025/early-2026 line. V4 Pro is the reasoning flagship; <strong>V4 Flash</strong> (MIT-licensed, 1M-token context, ~$1.74/M tokens) is the cost-effective option for medical fine-tuning experimentation when you don't need the full reasoning stack.</p>
+        </div>
+        <div class="resource-card">
+          <h4>Qwen 3.6 27B</h4>
+          <p>Alibaba's May 2026 release. Scores 77.2% on SWE-bench&mdash;competitive with much larger models for code-adjacent medical tasks (clinical pipeline scripts, EHR data wrangling). Strong tool-use and JSON-mode support.</p>
+        </div>
+        <div class="resource-card">
+          <h4>Kimi K2.6</h4>
+          <p>Moonshot AI's May 2026 update. Currently the coding leader among May 2026 open-source releases; useful when your local workflow involves building small utilities or scripts alongside clinical reasoning.</p>
+        </div>
+        <div class="resource-card">
+          <h4>GLM-5.1</h4>
+          <p>Zhipu AI's May 2026 release. Improved instruction-following and multilingual handling; worth a look if your patient population includes Mandarin or other non-English speakers and you want a local fallback.</p>
+        </div>
+        <div class="resource-card">
           <h4>OpenBioLLM-70B</h4>
           <p>Claims to outperform GPT-4 on several biomedical benchmarks. Originally built on Llama 3 with medical fine-tuning; newer releases are migrating to Llama 4.</p>
         </div>
@@ -275,6 +291,16 @@
           <h4>ClinicalBERT</h4>
           <p>Smaller encoder model trained on MIMIC-III clinical notes. Excellent for classification and entity recognition.</p>
         </div>
+      </div>
+
+      <div class="callout callout-info">
+        <div class="callout-title">Watch this space: MedGemma 2 (Google I/O 2026)</div>
+        <p class="mb-0">
+          Google I/O 2026 (May 19) shipped Gemini 3.5 Flash and Gemini Omni Flash on the
+          frontier side, but no MedGemma update was announced on stage. If a MedGemma 2 or new
+          Gemma medical variant follows the I/O cadence, expect it in the weeks after I/O&mdash;
+          we&rsquo;ll add it here when it lands.
+        </p>
       </div>
 
       <h3>Choosing a Model</h3>
@@ -939,7 +965,8 @@ ollama run phi3 --num-predict 500</code></pre>
 
       <h3>Medical AI Evaluation</h3>
       <ul>
-        <li><a href="https://huggingface.co/spaces/openlifescienceai/open_medical_llm_leaderboard">Open Medical-LLM Leaderboard</a> (Hugging Face Spaces)</li>
+        <li><a href="https://huggingface.co/spaces/openlifescienceai/open_medical_llm_leaderboard">Open Medical-LLM Leaderboard</a> (Hugging Face Spaces) &mdash; <em>note: intermittently offline through late 2025/early 2026; if the Space is down, try the <a href="https://pricepertoken.com/leaderboards/benchmark/medqa">pricepertoken.com MedQA leaderboard</a> as a current-data fallback</em></li>
+        <li><a href="https://pricepertoken.com/leaderboards/benchmark/medqa">pricepertoken.com MedQA Leaderboard</a> &mdash; refreshed snapshot of frontier and open-source model MedQA scores</li>
         <li><a href="https://github.com/AI-in-Health/MedLLMsPracticalGuide">MedLLMs Practical Guide</a></li>
       </ul>
 
@@ -977,7 +1004,7 @@ ollama run phi3 --num-predict 500</code></pre>
         <strong>AI 101</strong> · A Self-Paced Guide to AI in Medicine
       </div>
       <div>
-        v1.6 · 2026
+        v1.7 · 2026
       </div>
     </div>
   </footer>
