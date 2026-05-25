@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">
+  <defs>
+    <clipPath id="round-sm">
+      <rect width="32" height="32" rx="3" ry="3"></rect>
+    </clipPath>
+  </defs>
+  <g clip-path="url(#round-sm)">
+    <rect width="32" height="32" fill="#0f172a"></rect>
+    <text x="16" y="16.5" font-family="&#39;JetBrains Mono&#39;, ui-monospace, Menlo, monospace" font-weight="700" font-size="20" fill="#ffffff" text-anchor="middle" dominant-baseline="middle">ai</text>
+  </g>
+</svg>

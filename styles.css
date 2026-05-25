@@ -3,7 +3,7 @@
    ========================================== */
 
 /* Import distinctive fonts */
-@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400&family=Source+Sans+3:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400&family=Source+Sans+3:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500;700&display=swap');
 
 /* CSS Variables */
 :root {
@@ -243,13 +243,27 @@ hr {
 
 .nav-badge {
   background: var(--slate-900);
-  color: var(--white);
   font-family: var(--font-mono);
   font-size: 0.75rem;
   font-weight: 500;
-  padding: 0.35em 0.7em;
   border-radius: var(--radius-sm);
-  letter-spacing: 0.05em;
+  letter-spacing: 0.06em;
+  display: inline-flex;
+  align-items: stretch;
+  overflow: hidden;
+  line-height: 1;
+}
+.nav-badge .b-ai,
+.nav-badge .b-num {
+  padding: 0.5em 0.7em;
+  display: inline-flex;
+  align-items: center;
+}
+.nav-badge .b-ai { color: var(--white); }
+.nav-badge .b-num {
+  color: #fb923c;
+  font-weight: 700;
+  border-left: 1px solid rgba(255, 255, 255, 0.18);
 }
 
 .nav-title {
@@ -866,6 +880,41 @@ hr {
   color: var(--white);
   font-size: 3rem;
   margin-bottom: var(--space-lg);
+}
+
+/* Hero-scale split badge — sits inside .hero on dark gradient */
+.hero-mark {
+  display: grid;
+  grid-template-columns: max-content;
+  grid-auto-flow: column;
+  justify-content: start;
+  align-items: stretch;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1.5px solid rgba(255, 255, 255, 0.18);
+  border-radius: 14px;
+  overflow: hidden;
+  width: max-content;
+  font-family: var(--font-mono);
+  font-weight: 500;
+  font-size: 3.25rem;
+  letter-spacing: 0.05em;
+  line-height: 1;
+  margin: 0 0 var(--space-lg);
+}
+.hero-mark .b-ai,
+.hero-mark .b-num {
+  padding: 0.32em 0.5em;
+  display: inline-flex;
+  align-items: center;
+}
+.hero-mark .b-ai { color: var(--white); }
+.hero-mark .b-num {
+  color: #fb923c;
+  font-weight: 700;
+  border-left: 1.5px solid rgba(255, 255, 255, 0.18);
+}
+@media (max-width: 600px) {
+  .hero-mark { font-size: 2.25rem; border-radius: 10px; }
 }
 
 .hero-subtitle {
