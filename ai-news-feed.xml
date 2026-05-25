@@ -5,8 +5,48 @@
     <link>https://dochobbs.github.io/ai101/ai-news.html</link>
     <description>AI news and developments relevant to healthcare and medical practice, curated for AI 101: A Self-Paced Guide to AI in Medicine.</description>
     <language>en-us</language>
-    <lastBuildDate>Tue, 21 Apr 2026 00:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Mon, 25 May 2026 00:00:00 GMT</lastBuildDate>
     <atom:link href="https://dochobbs.github.io/ai101/ai-news-feed.xml" rel="self" type="application/rss+xml"/>
+
+    <item>
+      <title>Google I/O 2026: Gemini 3.5 Flash for All Users, Gemini Omni Flash Multimodal</title>
+      <link>https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-5/</link>
+      <description>Google's I/O 2026 keynote shipped Gemini 3.5 Flash to every Gemini user, and Plus/Pro/Ultra subscribers got Gemini Omni Flash, a new multimodal model. 3.5 Flash is ~4x faster than peer frontier models on agentic benchmarks, paired with expanded Workspace agent capabilities. Gemini 3.5 Pro expected in June. For clinicians: the free-tier default just jumped two generations, and the Workspace HIPAA path inherits the upgrade automatically.</description>
+      <pubDate>Tue, 19 May 2026 00:00:00 GMT</pubDate>
+      <guid>https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-5/</guid>
+    </item>
+
+    <item>
+      <title>NEJM AI Afshar RCT: Ambient AI Cuts Exhaustion, Not Fulfillment</title>
+      <link>https://ai.nejm.org/doi/full/10.1056/AIoa2500945</link>
+      <description>A 24-week stepped-wedge pragmatic RCT of 66 health-care practitioners found ambient AI significantly reduced work exhaustion and interpersonal disengagement, but did not significantly improve professional fulfillment. Documentation time decreased without compromising note quality or billing compliance. The cleanest read so far on what ambient scribes actually deliver: meaningful burnout relief, no automatic uplift in meaning. Pair with the Lukac DAX-vs-Nabla RCT (also NEJM AI, 2026) for the strongest controlled evidence in the space.</description>
+      <pubDate>Mon, 18 May 2026 00:00:00 GMT</pubDate>
+      <guid>https://ai.nejm.org/doi/full/10.1056/AIoa2500945</guid>
+    </item>
+
+    <item>
+      <title>Anthropic Launches Claude for Small Business; Code w/ Claude Developer Conference</title>
+      <link>https://www.anthropic.com/news/claude-for-small-business</link>
+      <description>Anthropic shipped Claude for Small Business—a workspace-style plan for SMB teams that want Claude without enterprise procurement—and held its inaugural Code w/ Claude developer conference in San Francisco. For solo and small-group practices, the SMB plan is the first dedicated tier between individual Pro and full enterprise. The conference doubled down on Claude Code as Anthropic's flagship agentic product, with Claude Code routines (scheduled cloud agents) as the headline release.</description>
+      <pubDate>Fri, 15 May 2026 00:00:00 GMT</pubDate>
+      <guid>https://www.anthropic.com/news/claude-for-small-business</guid>
+    </item>
+
+    <item>
+      <title>OpenAI Codex Mobile Preview Ships in ChatGPT App</title>
+      <link>https://help.openai.com/en/articles/6825453-chatgpt-release-notes</link>
+      <description>OpenAI's Codex coding agent is now available as a preview inside the ChatGPT mobile app. Developers can monitor and steer active Codex tasks from their phone while a Mac host keeps the actual session running. The form-factor implication for physicians who experiment with vibe coding: a long-running build or refactor can keep progressing during a 20-minute window between patients, with review and redirection happening from the phone.</description>
+      <pubDate>Thu, 14 May 2026 00:00:00 GMT</pubDate>
+      <guid>https://help.openai.com/en/articles/6825453-chatgpt-release-notes#codex-mobile-preview-2026-05</guid>
+    </item>
+
+    <item>
+      <title>athenahealth Launches athenaAmbient—Free Ambient Scribe for athenaOne Customers</title>
+      <link>https://www.newsweek.com/athenahealth-throws-its-hat-in-ambient-scribe-ai-assistant-rings-access-health-10991353</link>
+      <description>athenahealth bundled an ambient scribe (athenaAmbient) into athenaOne at no additional cost, joining Epic Art, Microsoft Dragon Copilot, and Oracle Cerner in the "ambient as a default EHR feature" camp. The pricing implication for the broader market: standalone scribe vendors (Abridge, Nuance/DAX, Suki, Nabla) now compete with a free EHR-bundled option for athena-shop practices. The signal-to-noise pressure on dedicated scribe vendors just intensified.</description>
+      <pubDate>Wed, 13 May 2026 00:00:00 GMT</pubDate>
+      <guid>https://www.newsweek.com/athenahealth-throws-its-hat-in-ambient-scribe-ai-assistant-rings-access-health-10991353</guid>
+    </item>
 
     <item>
       <title>Claude Opus 4.7 Launches with Same-Day GPT-5.4 and Gemini 3 Releases</title>
