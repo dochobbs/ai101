@@ -3254,3 +3254,79 @@ blockquote.pull-quote {
   margin-top: 0.75rem;
   border: 1px solid #fcd34d;
 }
+
+/* ==========================================
+   "NEW" badge + announcement banner (Claude Code)
+   ========================================== */
+
+.badge-new {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35em;
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #fff;
+  background: linear-gradient(135deg, #fb923c 0%, #f97316 100%);
+  padding: 0.35em 0.7em;
+  border-radius: 999px;
+  box-shadow: 0 2px 8px rgba(249, 115, 22, 0.4);
+  animation: badge-pulse 2.4s ease-in-out infinite;
+}
+
+@keyframes badge-pulse {
+  0%, 100% { box-shadow: 0 2px 8px rgba(249, 115, 22, 0.35); }
+  50%      { box-shadow: 0 2px 18px rgba(249, 115, 22, 0.7); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .badge-new { animation: none; }
+}
+
+/* Corner placement on a card */
+.week-card.has-badge { position: relative; }
+.week-card.has-badge .badge-new {
+  position: absolute;
+  top: var(--space-md);
+  right: var(--space-md);
+}
+
+/* Announcement banner (sits inside .main, below the hero) */
+.announce-banner {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  background: linear-gradient(135deg, var(--slate-900) 0%, var(--slate-800) 100%);
+  border: 1px solid rgba(251, 146, 60, 0.45);
+  border-radius: var(--radius-lg);
+  padding: var(--space-md) var(--space-lg);
+  margin-bottom: var(--space-3xl);
+  text-decoration: none;
+  transition: all var(--transition-fast);
+}
+.announce-banner:hover {
+  border-color: #fb923c;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+  text-decoration: none;
+}
+.announce-banner .announce-text {
+  flex: 1;
+  font-size: 0.9375rem;
+  color: var(--slate-300);
+  line-height: 1.4;
+}
+.announce-banner .announce-text strong { color: var(--white); font-weight: 600; }
+.announce-banner .announce-arrow {
+  color: #fb923c;
+  display: inline-flex;
+  flex-shrink: 0;
+}
+.announce-banner .announce-arrow .lucide { width: 20px; height: 20px; }
+
+@media (max-width: 600px) {
+  .announce-banner { flex-wrap: wrap; }
+  .announce-banner .announce-text { font-size: 0.875rem; }
+}
