@@ -3319,14 +3319,34 @@ blockquote.pull-quote {
   line-height: 1.4;
 }
 .announce-banner .announce-text strong { color: var(--white); font-weight: 600; }
-.announce-banner .announce-arrow {
-  color: #fb923c;
+.announce-banner .announce-cta {
   display: inline-flex;
+  align-items: center;
+  gap: 0.4em;
   flex-shrink: 0;
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  color: #fff;
+  background: linear-gradient(135deg, #fb923c 0%, #f97316 100%);
+  padding: 0.55em 1em;
+  border-radius: var(--radius-md);
+  box-shadow: 0 2px 8px rgba(249, 115, 22, 0.3);
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
 }
-.announce-banner .announce-arrow .lucide { width: 20px; height: 20px; }
+.announce-banner .announce-cta .lucide {
+  width: 16px;
+  height: 16px;
+  transition: transform var(--transition-fast);
+}
+.announce-banner:hover .announce-cta {
+  box-shadow: 0 4px 14px rgba(249, 115, 22, 0.5);
+}
+.announce-banner:hover .announce-cta .lucide { transform: translateX(3px); }
 
 @media (max-width: 600px) {
   .announce-banner { flex-wrap: wrap; }
   .announce-banner .announce-text { font-size: 0.875rem; }
+  .announce-banner .announce-cta { width: 100%; justify-content: center; }
 }
