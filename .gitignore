@@ -17,3 +17,6 @@
 
 # Archive folder (if not needed in repo)
 # archive/
+
+# Resource-audit working artifacts (local only)
+.audit/
