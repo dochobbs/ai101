@@ -801,6 +801,7 @@ code.inline {
 .site-footer a{color:#cbd5e1}
 .site-footer a:hover{color:#fff}
 .site-footer strong{color:#e2e8f0}
+.sidebar-echs{margin:18px 0 10px}
 </style>
 </head>
 <body>
@@ -820,6 +821,8 @@ code.inline {
     </div>
     <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
   </div>
+
+  <div id="deployment-eac8a421-3c54-4717-bbef-54bb81b54243" class="sidebar-echs"></div>
 
   <nav id="sidenav">
     <div class="nav-phase">
@@ -923,6 +926,7 @@ code.inline {
     <ul class="promise-list">
       <li><span>The commands in this guide are safe. The basics — looking around, moving between folders — can’t hurt anything. Later, when Claude is doing more (creating files, moving things), it’ll ask permission first. You’ll see what it’s about to do before it happens.</span></li>
       <li><span>Claude will explain anything you don’t understand. When in doubt, ask it: <em>“What does this mean?”</em> or <em>“Is this safe to run?”</em></span></li>
+      <li><span>You have a second helper. <strong>Echs</strong>, the chat button on this page, answers questions about the program itself — what a day means, whether you’re ready for the next phase, where something is covered. Claude is the local in the terminal; Echs is the guide for the guide.</span></li>
       <li><span>Going slow is fine. This is a 30-day program, but if a day takes you two days, who cares.</span></li>
       <li><span>Copy and paste is allowed. You don’t need to type commands by hand. Highlight the command, Cmd+C, click into the terminal, Cmd+V, hit Enter.</span></li>
       <li><span>It uses your Claude subscription. Claude Code requires a paid plan (Pro is plenty for this program). Very heavy use can hit plan limits; the pace here won’t bump into anything.</span></li>
@@ -1827,6 +1831,10 @@ claude</pre><button class="copy-btn">Copy</button></div>
         <div class="weird-q">I’m overwhelmed.</div>
         <div class="weird-a">Close the terminal. Come back tomorrow. The terminal is not going anywhere, and neither is Claude.</div>
       </li>
+      <li>
+        <div class="weird-q">My question isn’t on this list.</div>
+        <div class="weird-a">Ask <strong>Echs</strong> — the chat button on this page. Or ask Claude itself, right in the terminal: it can usually explain what just happened.</div>
+      </li>
     </ul>
   </div>
 
@@ -1943,4 +1951,5 @@ claude</pre><button class="copy-btn">Copy</button></div>
   <div><a href="vibe-coding.html">Vibe Coding module</a> · <a href="https://code.claude.com/docs/en/overview" target="_blank" rel="noopener">Official Claude Code docs</a></div>
   <div><a href="updates.html">v1.11 · 2026</a></div>
 </footer>
+<script src="https://studio.pickaxe.co/api/embed/bundle.js" defer></script>
 </body></html>
