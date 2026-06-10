@@ -5,6 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Clinical Decision Support Tools in Daily Practice | AI 101</title>
   <meta name="description" content="Clinical Decision Support tools: UpToDate, OpenEvidence, Glass, Avo, and how to evaluate AI-powered CDS for your workflow.">
+  <link rel="canonical" href="https://ai101.health/clinical-decision-support.html">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://ai101.health/clinical-decision-support.html">
+  <meta property="og:title" content="Clinical Decision Support Tools in Daily Practice | AI 101">
+  <meta property="og:description" content="Clinical Decision Support tools: UpToDate, OpenEvidence, Glass, Avo, and how to evaluate AI-powered CDS for your workflow.">
+  <meta property="og:image" content="https://ai101.health/og-image.png">
+  <meta property="og:site_name" content="AI 101">
+  <meta name="twitter:card" content="summary_large_image">
   <meta name="theme-color" content="#0f172a">
   <link rel="icon" type="image/svg+xml" href="favicon-small.svg">
   <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
@@ -348,7 +356,11 @@
           late 2025, it's used by more than 40% of U.S. physicians, with over 65,000 new
           verified clinicians registering monthly. The platform draws from more than 35
           million peer-reviewed publications and has content partnerships with the
-          <em>New England Journal of Medicine</em>, <em>JAMA</em>, and NCCN.
+          <em>New England Journal of Medicine</em>, <em>JAMA</em>, and NCCN. In January
+          2026 it raised a
+          <a href="https://techcrunch.com/2026/01/21/openevidence-hits-12b-valuation-with-new-round-led-by-thrive-dst/" target="_blank">$250M Series D at a $12 billion valuation</a>
+          (co-led by Thrive Capital and DST Global), and the platform now handles on the
+          order of 15 million clinical consultations per month.
         </p>
         <p>
           OpenEvidence made headlines in 2025 when it became the first AI to score a
@@ -430,7 +442,10 @@
             Go to <strong>openevidence.com</strong> and register with your NPI number.
             The platform will verify your credentials automatically. Once verified, you
             have unlimited access to the full platform at no cost. CME credits are also
-            available for verified NPI users.
+            available for verified NPI users. Enterprise deployments are arriving too:
+            in March 2026 <a href="https://www.mountsinai.org/about/newsroom/2026/mount-sinai-health-system-collaborates-with-openevidence-to-provide-evidence-based-knowledge-within-electronic-medical-record" target="_blank">Mount Sinai began rolling OpenEvidence out system-wide</a>
+            inside its Epic EHR&mdash;physicians, nurses, and pharmacists across its
+            hospitals.
           </p>
         </div>
 
@@ -561,7 +576,7 @@
         tool represents a potential HIPAA violation.
       </p>
 
-      <p>Here's the current landscape as of late 2025:</p>
+      <p>Here's the current landscape as of mid-2026:</p>
 
       <div class="comparison-table-wrapper">
         <table class="comparison-table">
@@ -579,9 +594,14 @@
               <td>Not for Plus, Pro, or Team plans. Consumer ChatGPT is not HIPAA-compliant.</td>
             </tr>
             <tr>
+              <td><strong>ChatGPT for Healthcare</strong></td>
+              <td>Yes (Enterprise tier)</td>
+              <td>BAA plus customer-managed encryption keys, audit logs, and data residency. Organizational procurement, not individual signup.</td>
+            </tr>
+            <tr>
               <td><strong>Anthropic (Claude)</strong></td>
-              <td>API customers only</td>
-              <td>With zero data retention agreements. Not for Claude.ai consumer plans.</td>
+              <td>API & Enterprise</td>
+              <td>API with zero data retention; Claude Enterprise has a HIPAA-ready plan (admin opt-in). Not for Free/Pro/Max/Team plans. See the <a href="phi-hipaa.html">PHI &amp; HIPAA module</a> for details.</td>
             </tr>
             <tr>
               <td><strong>Google (Gemini)</strong></td>
@@ -1239,6 +1259,33 @@
         </p>
       </div>
 
+      <div class="callout callout-info">
+        <div class="callout-title">June 2026 Update: OpenEvidence at Enterprise Scale, AI Audits the Auditors</div>
+        <p>
+          <strong>OpenEvidence validates its own &ldquo;Prioritize This&rdquo; slot.</strong>
+          The January <a href="https://techcrunch.com/2026/01/21/openevidence-hits-12b-valuation-with-new-round-led-by-thrive-dst/" target="_blank">$250M Series D at a $12B valuation</a>
+          was followed by Mount Sinai's system-wide Epic integration (March)&mdash;physicians,
+          nurses, and pharmacists across its hospitals&mdash;and the platform now handles
+          roughly 15 million clinical consultations a month. The tool we recommend first on
+          this page is now the one health systems are deploying at enterprise scale.
+        </p>
+        <p>
+          <strong>Dragon Copilot embeds UpToDate (March).</strong> UpToDate content is now
+          delivered live inside Dragon Copilot at the point of documentation&mdash;the
+          reference look-up happens where the note is being written, not in a separate tab.
+          The same pattern as Avo&times;DynaMed above: CDS is moving into the workflow.
+        </p>
+        <p class="mb-0">
+          <strong>Government CDS, both directions.</strong> HHS launched
+          <a href="https://www.mintz.com/insights-center/viewpoints/54941/2026-05-26-may-2026-health-policy-update-ai-washington-report" target="_blank">AERO (May 21)</a>,
+          deploying AI to review five years of federally-funded health program audits across
+          all 50 states&mdash;AI now scrutinizes the programs clinicians bill under. And the
+          FDA issued an RFI (April 29) on whether AI tools can improve early-phase clinical
+          trial decision-making. Governance and enforcement are becoming AI use cases of
+          their own.
+        </p>
+      </div>
+
       <!-- Part 8: Future -->
       <h2>Part 8: The Future of CDS</h2>
 
@@ -1603,7 +1650,7 @@
   <footer class="footer">
     <div class="footer-inner">
       <div><strong>AI 101</strong> · A Self-Paced Guide to AI in Medicine</div>
-      <div><a href="updates.html">v1.10 · 2026</a></div>
+      <div><a href="updates.html">v1.11 · 2026</a></div>
     </div>
   </footer>
 

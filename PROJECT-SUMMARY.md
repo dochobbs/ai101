@@ -36,7 +36,7 @@ The site is organized into four sections driven by [index.html](index.html):
 - [ai-news.html](ai-news.html) — Ongoing news feed (+ [ai-news-feed.xml](ai-news-feed.xml) RSS)
 - [environmental-footprint.html](environmental-footprint.html) — AI's Environmental Footprint
 - [local-models.html](local-models.html) — Running AI Models on Your Own Computer
-- [glossary.html](glossary.html) — AI Glossary & Learning Resources
+- [glossary.html](glossary.html) — AI Glossary
 
 **Meta pages**
 - [start-here.html](start-here.html) — NotebookLM-driven practical on-ramp
@@ -51,7 +51,7 @@ The site is organized into four sections driven by [index.html](index.html):
 ## Companion App (`ai101-companion/`)
 A small Flask + vanilla-JS chatbot named **Spark** that teaches prompting and
 recommends AI tools. Knowledge bases in `data/*.json` (glossary, prompts,
-tools). Serves on `localhost:5050` (note: the README says 5000 — needs fix).
+tools). Serves on `localhost:5050`.
 
 ## Design System
 - **Fonts**: Fraunces (display), Source Sans 3 (body), JetBrains Mono (code)
@@ -65,7 +65,7 @@ tools). Serves on `localhost:5050` (note: the README says 5000 — needs fix).
 - Pure HTML/CSS — no framework, no build step
 - Google Fonts + Lucide loaded via CDN
 - All internal links relative — works locally or hosted
-- Current version: **v1.10 · 2026** (bumped each release; the footer version on
+- Current version: **v1.11 · 2026** (bumped each release; the footer version on
   every page links to [updates.html](updates.html))
 - Deployment: GitHub Pages via [dochobbs/ai101](https://github.com/dochobbs/ai101)
 - Custom domain: ai101.health (CNAME configured)
@@ -84,11 +84,14 @@ in [archive/](archive/) and are not linked from any live page.
   needing updates, link-check results, and a ready-to-paste
   [updates.html](updates.html) entry. The routine has an empty-week failsafe:
   if no pages are flagged and no broken links are found, no issue is created
-  — issue creation is the signal that work is pending. The repo is watched
-  on GitHub, so new issues land in the inbox automatically. See
+  — issue creation is the signal that work is pending. Because the issue is
+  filed with the owner's own credentials, GitHub does NOT send a notification
+  for it; the routine therefore also creates a Google Calendar alert event
+  ("⚠️ AI 101 audit: review issue #N", 2 PM Central the same Sunday) whenever
+  it files an issue. See
   [docs/PROJECT_CHANGELOG.md](docs/PROJECT_CHANGELOG.md) for history.
 - **Version bumps** happen in the footer of every page at release time
-  (currently `v1.10 · 2026`). One-liner:
+  (currently `v1.11 · 2026`). One-liner:
   `perl -pi -e 's/v1\.OLD · 2026/v1.NEW · 2026/g' *.html`
 - **ai-news.html** is the lightweight running log; `updates.html` is the
   formal changelog for readers.

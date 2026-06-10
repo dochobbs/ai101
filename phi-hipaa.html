@@ -5,6 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>PHI, HIPAA, and AI | AI 101</title>
   <meta name="description" content="PHI, HIPAA, and AI for clinicians: direct PHI exposure, indirect re-identification, BAA pathways, and shadow-AI risk in clinical workflows.">
+  <link rel="canonical" href="https://ai101.health/phi-hipaa.html">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://ai101.health/phi-hipaa.html">
+  <meta property="og:title" content="PHI, HIPAA, and AI | AI 101">
+  <meta property="og:description" content="PHI, HIPAA, and AI for clinicians: direct PHI exposure, indirect re-identification, BAA pathways, and shadow-AI risk in clinical workflows.">
+  <meta property="og:image" content="https://ai101.health/og-image.png">
+  <meta property="og:site_name" content="AI 101">
+  <meta name="twitter:card" content="summary_large_image">
   <meta name="theme-color" content="#0f172a">
   <link rel="icon" type="image/svg+xml" href="favicon-small.svg">
   <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
@@ -318,7 +326,9 @@
         <li><strong>ChatGPT for Healthcare (enterprise tier, launched Jan 2026):</strong> BAA available; HIPAA-aligned controls including encryption keys, audit logs, and data residency. Deployed at AdventHealth, Baylor Scott &amp; White, Boston Children's, Cedars-Sinai, HCA, MSK, Stanford Children's, and UCSF.</li>
         <li><strong>ChatGPT Enterprise/Edu:</strong> BAA available through sales-managed accounts</li>
         <li><strong>Anthropic API:</strong> BAA available only for HIPAA-eligible services with zero data retention; does not cover Claude.ai, Workbench, or beta features</li>
-        <li><strong>Claude (consumer/Pro/Team):</strong> No BAA available. Cannot be used with PHI.</li>
+        <li><strong>Claude Enterprise (HIPAA-ready plan):</strong> BAA available with admin HIPAA opt-in. BAAs signed <em>before</em> Dec 2, 2025 cover the API only; BAAs signed after that date can cover both API and Enterprise under a single agreement. (<a href="https://privacy.claude.com/en/articles/8114513-business-associate-agreements-baa-for-commercial-customers" target="_blank">Anthropic Privacy Center</a>)</li>
+        <li><strong>Claude Code (CLI):</strong> Conditionally covered under a BAA when Zero Data Retention is enabled on the account</li>
+        <li><strong>Claude (consumer Free/Pro/Max/Team):</strong> No BAA available. Cannot be used with PHI.</li>
         <li><strong>Azure OpenAI:</strong> BAA included in Microsoft Product Terms by default</li>
         <li><strong>Google Vertex AI:</strong> BAA available for healthcare customers</li>
         <li><strong>Google Workspace (Gemini):</strong> BAA available via Admin console; requires configuration. Note: NotebookLM is NOT covered.</li>
@@ -1003,7 +1013,7 @@
   <footer class="footer">
     <div class="footer-inner">
       <div><strong>AI 101</strong> · A Self-Paced Guide to AI in Medicine</div>
-      <div><a href="updates.html">v1.10 · 2026</a></div>
+      <div><a href="updates.html">v1.11 · 2026</a></div>
     </div>
   </footer>
 

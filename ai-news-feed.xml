@@ -105,6 +105,70 @@
     </item>
 
     <item>
+      <title>Perplexity × VisualDx: Clinician-Validated Medical Imagery in AI Search</title>
+      <link>https://hitconsultant.net/2026/05/05/perplexity-visualdx-medical-image-ai-partnership/</link>
+      <description>Perplexity integrated VisualDx’s clinician-validated medical image library— including diverse skin tones across Fitzpatrick types I–VI—directly into its health answers. VisualDx is already used in 2,300+ hospitals; embedding it in a general AI search engine is the first time peer-reviewed clinical imagery has been wired into a consumer-grade answer engine. Free for Pro and Max subscribers. A meaningful step toward reducing the diagnostic-image equity gap that has dogged dermatology AI.</description>
+      <pubDate>Tue, 05 May 2026 00:00:00 GMT</pubDate>
+      <guid>https://hitconsultant.net/2026/05/05/perplexity-visualdx-medical-image-ai-partnership/</guid>
+    </item>
+
+    <item>
+      <title>Harvard/OpenAI Study: AI Outperforms Physicians in Real-World Diagnosis</title>
+      <link>https://www.npr.org/2026/04/30/nx-s1-5804474/ai-doctors-openai-patient-care-diagnosis</link>
+      <description>A real-world evaluation by Harvard and OpenAI found an AI model outperformed doctors at diagnosing patients across a representative sample of presenting complaints. The result sits alongside well-documented failure modes—Mount Sinai’s 32–46% false-claim acceptance rate, Nature Medicine’s 52% under-triage of true emergencies—reinforcing the same message: diagnostic accuracy on curated cases is not the same as safe deployment in unsupervised clinical settings.</description>
+      <pubDate>Thu, 30 Apr 2026 00:00:00 GMT</pubDate>
+      <guid>https://www.npr.org/2026/04/30/nx-s1-5804474/ai-doctors-openai-patient-care-diagnosis</guid>
+    </item>
+
+    <item>
+      <title>KFF Tracking Poll: 1-in-3 US Adults Use AI for Health Information</title>
+      <link>https://www.kff.org/health-information-trust/poll-1-in-3-adults-are-turning-to-ai-chatbots-for-health-information-equaling-the-share-who-use-social-media-for-health/</link>
+      <description>KFF found that 1 in 3 US adults used an AI chatbot for health information in the past year— equal to the share using social media for health. 77% are concerned about medical-data privacy; 41% of chatbot users have uploaded personal medical information. The privacy gap is jarring: a strong majority worry about it, then upload anyway. Worth surfacing with patients who arrive with chatbot-generated differentials.</description>
+      <pubDate>Thu, 30 Apr 2026 00:00:00 GMT</pubDate>
+      <guid>https://www.kff.org/health-information-trust/poll-1-in-3-adults-are-turning-to-ai-chatbots-for-health-information-equaling-the-share-who-use-social-media-for-health/</guid>
+    </item>
+
+    <item>
+      <title>NEJM Retracts Case Study Over AI-Manipulated Clinical Image</title>
+      <link>https://retractionwatch.com/2026/05/01/nejm-retracts-case-study-for-ai-manipulated-imagery/</link>
+      <description>NEJM retracted a published case study after determining authors used AI to superimpose a ruler onto a clinical photograph, violating NEJM image integrity policy. The first NEJM retraction over image manipulation since the 2020 Surgisphere scandal. Generative tools for image editing are now indistinguishable enough from photography that journals are updating submission policies in real time.</description>
+      <pubDate>Wed, 29 Apr 2026 00:00:00 GMT</pubDate>
+      <guid>https://retractionwatch.com/2026/05/01/nejm-retracts-case-study-for-ai-manipulated-imagery/</guid>
+    </item>
+
+    <item>
+      <title>DeepSeek Releases V4 Flash and V4 Pro Open-Source Under MIT License</title>
+      <link>https://api-docs.deepseek.com/news/news260424</link>
+      <description>DeepSeek shipped V4 Flash and V4 Pro under an MIT license—1M-token context at $1.74 per million input tokens, roughly 1/20th the cost of frontier proprietary models. For healthcare deployments that need on-prem inference (HIPAA, data residency, network isolation), this is the strongest open-source contender to date. Pair with the Llama 4 and Muse Spark coverage in our Running AI Models Locally module for the broader open-vs-proprietary picture.</description>
+      <pubDate>Fri, 24 Apr 2026 00:00:00 GMT</pubDate>
+      <guid>https://api-docs.deepseek.com/news/news260424</guid>
+    </item>
+
+    <item>
+      <title>OpenAI Ships GPT-5.5 and GPT-5.5 Pro; Becomes ChatGPT Default (May 5)</title>
+      <link>https://openai.com/index/gpt-5-5-instant/</link>
+      <description>OpenAI released GPT-5.5 and GPT-5.5 Pro on Apr 23–24 with 1M-token context windows. GPT-5.5 Instant became the default ChatGPT model on May 5. OpenAI’s internal evals report 52% fewer hallucinated claims on high-stakes medical, legal, and financial prompts versus GPT-5.4. Note “internal evals”—the meaningful test is whether independent benchmarks reproduce the gain. If you’ve tuned workflows or Custom GPTs to GPT-5.4 behavior, retest.</description>
+      <pubDate>Thu, 23 Apr 2026 00:00:00 GMT</pubDate>
+      <guid>https://openai.com/index/gpt-5-5-instant/</guid>
+    </item>
+
+    <item>
+      <title>AMA to Congress: Federal Guardrails for Health AI Chatbots</title>
+      <link>https://www.statnews.com/2026/04/23/ama-urges-crackdown-on-chatbots-wellness-ai-health-tech/</link>
+      <description>The AMA sent letters to three congressional committees calling for an FDA device-review pathway, transparency rules, cybersecurity standards, and advertising limits on health AI chatbots. The letters cite mental health chatbot harms, unmediated symptom-checker use, and the absence of federal authority over wellness AI products that operate just outside the current FDA medical device definition. A meaningful shift from physician societies treating AI as a clinician productivity issue to treating it as a patient safety issue.</description>
+      <pubDate>Thu, 23 Apr 2026 00:00:00 GMT</pubDate>
+      <guid>https://www.statnews.com/2026/04/23/ama-urges-crackdown-on-chatbots-wellness-ai-health-tech/</guid>
+    </item>
+
+    <item>
+      <title>OpenAI Launches ChatGPT Images 2.0</title>
+      <link>https://openai.com/index/chatgpt-images-2/</link>
+      <description>ChatGPT Images 2.0 launched Apr 21 and hit #1 on Image Arena within 12 hours. Available on all plans including Free. Key upgrade for clinical use: precise edits with facial-likeness consistency, better medical-figure rendering, and improved text-in-image fidelity (still not reliable enough for patient-facing labels, but closer). See the AI Image and Video Creation module for the full tier breakdown.</description>
+      <pubDate>Tue, 21 Apr 2026 00:00:00 GMT</pubDate>
+      <guid>https://openai.com/index/chatgpt-images-2/</guid>
+    </item>
+
+    <item>
       <title>athenahealth Launches athenaAmbient—Free Ambient Scribe for athenaOne Customers</title>
       <link>https://www.newsweek.com/athenahealth-throws-its-hat-in-ambient-scribe-ai-assistant-rings-access-health-10991353</link>
       <description>athenahealth bundled an ambient scribe (athenaAmbient) into athenaOne at no additional cost, joining Epic Art, Microsoft Dragon Copilot, and Oracle Cerner in the "ambient as a default EHR feature" camp. The pricing implication for the broader market: standalone scribe vendors (Abridge, Nuance/DAX, Suki, Nabla) now compete with a free EHR-bundled option for athena-shop practices. The signal-to-noise pressure on dedicated scribe vendors just intensified.</description>
