@@ -3350,3 +3350,39 @@ blockquote.pull-quote {
   .announce-banner .announce-text { font-size: 0.875rem; }
   .announce-banner .announce-cta { width: 100%; justify-content: center; }
 }
+
+/* Hero corner ribbon — 30 Days announcement */
+.hero-ribbon {
+  position: absolute;
+  top: 2.1rem;
+  right: -3.6rem;
+  z-index: 2;
+  width: 14rem;
+  transform: rotate(45deg);
+  background: #fb923c;
+  color: var(--slate-900);
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-align: center;
+  padding: 0.5em 0;
+  box-shadow: 0 2px 12px rgba(15, 23, 42, 0.45);
+  text-decoration: none;
+  transition: background 180ms ease-out;
+}
+
+.hero-ribbon:hover {
+  background: #fdba74;
+  text-decoration: none;
+}
+
+@media (max-width: 600px) {
+  .hero-ribbon {
+    width: 12rem;
+    font-size: 0.62rem;
+    top: 1.7rem;
+    right: -3.4rem;
+  }
+}

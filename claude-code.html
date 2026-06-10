@@ -909,6 +909,15 @@ code.inline {
       <p class="ladder-note">Most clinicians get enormous value at Rungs 2 and 3. Rung 2 can save you an hour a week by next Friday. Rung 3 solves problems no vendor will solve &mdash; not at any price, not in any quarter. Rung 4 is optional; you do not need it to win. These 30 days walk you comfortably onto Rung 3.</p>
     </div>
 
+    <p><strong>The shape of the month.</strong> Four phases, each a small step up:</p>
+    <ul class="promise-list">
+      <li><span><strong>Days 1&ndash;7 · Getting Comfortable.</strong> First conversations. Moving around. Reading files. Cleaning up a mess.</span></li>
+      <li><span><strong>Days 8&ndash;14 · Real Work.</strong> Reformat a document. Compare two things. Numbers and data.</span></li>
+      <li><span><strong>Days 15&ndash;22 · Building Tools.</strong> Your first mini-tool. Then a smarter one. Then a real one.</span></li>
+      <li><span><strong>Days 23&ndash;30 · Making It Yours.</strong> Find your annoyances. Solve them. Teach someone else.</span></li>
+    </ul>
+    <p>Five to fifteen minutes a day. One small task. One small win. By Day 30, you have your own toolkit.</p>
+
     <p>A few promises before we start:</p>
 
     <ul class="promise-list">
@@ -958,13 +967,22 @@ code.inline {
     <div class="codeblock"><pre>pwd</pre><button class="copy-btn">Copy</button></div>
     <p>You’ll see something like <code class="inline">/Users/yourname</code>. That just told you which folder you’re currently “in.” More on that tomorrow.</p>
 
-    <p><strong>Install Claude Code.</strong> Copy this line, paste it into your terminal (Cmd+V), and press Enter:</p>
+    <p><strong>Install Claude Code.</strong> One command, once. Like getting a passport: you do it a single time, then you just travel. Copy this line, paste it into your terminal (Cmd+V), and press Enter:</p>
     <div class="codeblock"><pre>curl -fsSL https://claude.ai/install.sh | bash</pre><button class="copy-btn">Copy</button></div>
-    <p>You’ll see text scroll by. When it finishes, you should see “Claude Code successfully installed!” If something goes wrong, the official troubleshooting is at <a href="https://code.claude.com/docs/en/terminal-guide">code.claude.com/docs/en/terminal-guide</a>.</p>
+    <p>(On Windows, open PowerShell instead and run
+    <code class="inline">curl -fsSL https://claude.ai/install.cmd -o install.cmd &amp;&amp; install.cmd</code>
+    &mdash; the rest of the program works the same.)</p>
+    <p>You’ll see text scroll by. When it finishes, you should see “Claude Code successfully installed!” You don’t need to install anything else first &mdash; the installer brings everything it needs. If something goes wrong, the official troubleshooting is at <a href="https://code.claude.com/docs/en/terminal-guide">code.claude.com/docs/en/terminal-guide</a>.</p>
 
     <p>To check it worked, <strong>close the Terminal window and open a new one</strong>, then type:</p>
     <div class="codeblock"><pre>claude --version</pre><button class="copy-btn">Copy</button></div>
     <p>If you see a version number, you’re set.</p>
+
+    <p><strong>Log in (first run only).</strong> The first time you type <code class="inline">claude</code>, it will ask you to sign in &mdash; it opens a browser page, you approve it, and you’re back in the terminal. It uses your existing Claude account (a paid plan; Pro at $20/month is plenty for this program). You won’t be asked again.</p>
+
+    <p><strong>If anything ever looks off</strong> &mdash; weird errors, claude not found, login loops &mdash; there’s a built-in checkup:</p>
+    <div class="codeblock"><pre>claude doctor</pre><button class="copy-btn">Copy</button></div>
+    <p>It checks the installation and tells you what to fix, in plain language.</p>
 
     <div class="callout">
       <div class="callout-label">If you ever feel stuck</div>
@@ -1451,6 +1469,16 @@ claude</pre><button class="copy-btn">Copy</button></div>
   <div class="day-body">
     <p>Git is a tool that lets you save snapshots of your work and go back if you mess up. It has a reputation for being confusing. Claude makes it easy.</p>
 
+    <p>If you’ve used an EHR, you already understand the idea: every version of the chart is kept, every change has a name and a timestamp on it, and nothing is ever really gone. Git is that, for your files.</p>
+
+    <p>Three words you’ll hear, translated:</p>
+    <ul>
+      <li><strong>Repository</strong> (or “repo”) &mdash; a folder git is watching.</li>
+      <li><strong>Commit</strong> &mdash; one labeled snapshot. The label is yours to write.</li>
+      <li><strong>Diff</strong> &mdash; what changed between two snapshots.</li>
+    </ul>
+    <p>That’s the whole vocabulary you need. Claude handles the actual commands.</p>
+
     <div class="codeblock"><pre>cd ~/claude-lab
 claude</pre><button class="copy-btn">Copy</button></div>
 
@@ -1480,7 +1508,10 @@ claude</pre><button class="copy-btn">Copy</button></div>
     <p>Then:</p>
     <div class="codeblock"><pre>I just messed up reflections.md. Use git to get it back to the way it was at the last snapshot.</pre><button class="copy-btn">Copy</button></div>
 
-    <p>See how quickly you can recover.</p>
+    <p>See how quickly you can recover. Then look at the trail you’ve built:</p>
+    <div class="codeblock"><pre>Show me the history of snapshots in this folder, in plain language.</pre><button class="copy-btn">Copy</button></div>
+
+    <p>One honest caveat: git can only restore what was in a snapshot. A file you never committed, or a folder git isn’t watching, has no time machine. The habit that protects you is cheap &mdash; when something feels worth keeping, say <em>“save a snapshot.”</em> Takes five seconds.</p>
 
     <div class="learned">
       <div class="learned-label">What you just learned</div>
