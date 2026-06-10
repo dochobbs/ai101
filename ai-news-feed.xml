@@ -2,11 +2,75 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>AI 101 News</title>
-    <link>https://dochobbs.github.io/ai101/ai-news.html</link>
+    <link>https://ai101.health/ai-news.html</link>
     <description>AI news and developments relevant to healthcare and medical practice, curated for AI 101: A Self-Paced Guide to AI in Medicine.</description>
     <language>en-us</language>
-    <lastBuildDate>Mon, 25 May 2026 00:00:00 GMT</lastBuildDate>
-    <atom:link href="https://dochobbs.github.io/ai101/ai-news-feed.xml" rel="self" type="application/rss+xml"/>
+    <lastBuildDate>Wed, 10 Jun 2026 00:00:00 GMT</lastBuildDate>
+    <atom:link href="https://ai101.health/ai-news-feed.xml" rel="self" type="application/rss+xml"/>
+
+    <item>
+      <title>OpenAI Ships Lockdown Mode Against Prompt-Injection Attacks</title>
+      <link>https://techcrunch.com/2026/06/06/openai-unveils-lockdown-mode-to-protect-sensitive-data-from-prompt-injection-attacks/</link>
+      <description>OpenAI introduced Lockdown Mode, a hardened ChatGPT setting that restricts what connected tools and browsing can do, designed to protect sensitive data from prompt-injection attacks. Prompt injection is the main reason agentic AI and PHI don't mix yet; a major lab shipping a consumer-facing mitigation signals how seriously the industry now treats the problem.</description>
+      <pubDate>Sat, 06 Jun 2026 00:00:00 GMT</pubDate>
+      <guid>https://techcrunch.com/2026/06/06/openai-unveils-lockdown-mode-to-protect-sensitive-data-from-prompt-injection-attacks/</guid>
+    </item>
+
+    <item>
+      <title>Microsoft Teams Up with Mayo Clinic as Patients Flood Chatbots with Health Questions</title>
+      <link>https://www.cnn.com/2026/06/02/tech/ai-for-healthcare-microsoft-mayo-clinic</link>
+      <description>Microsoft announced a partnership with Mayo Clinic to ground its consumer health AI answers in vetted clinical content. With OpenAI's ChatGPT for Healthcare and Google's Health Coach, every major lab now has a dedicated consumer-health play — meaning more patients arriving with AI-shaped expectations.</description>
+      <pubDate>Tue, 02 Jun 2026 00:00:00 GMT</pubDate>
+      <guid>https://www.cnn.com/2026/06/02/tech/ai-for-healthcare-microsoft-mayo-clinic</guid>
+    </item>
+
+    <item>
+      <title>WHO Discussion Paper: AI in Evidence-Informed Health Decision-Making</title>
+      <link>https://www.who.int/news/item/02-06-2026-new-who-discussion-paper-sets-out-opportunities-and-risks-of-ai-in-evidence-informed-health-policy</link>
+      <description>The WHO published a discussion paper mapping the opportunities and risks of using AI in evidence-informed health policy — evidence synthesis, guideline development, and decision support. A citable anchor for committees weighing AI-assisted literature review.</description>
+      <pubDate>Tue, 02 Jun 2026 00:00:00 GMT</pubDate>
+      <guid>https://www.who.int/news/item/02-06-2026-new-who-discussion-paper-sets-out-opportunities-and-risks-of-ai-in-evidence-informed-health-policy</guid>
+    </item>
+
+    <item>
+      <title>MiniMax M3: Open-Weight Model with Frontier Coding, 1M Context, Native Multimodality</title>
+      <link>https://www.minimax.io/blog/minimax-m3</link>
+      <description>MiniMax released M3, the first open-weight model to combine frontier-level coding, a 1-million-token context window, and native multimodality (image, video, and desktop computer control). For health systems weighing on-prem deployment, the open-weight frontier just moved again.</description>
+      <pubDate>Mon, 01 Jun 2026 00:00:00 GMT</pubDate>
+      <guid>https://www.minimax.io/blog/minimax-m3</guid>
+    </item>
+
+    <item>
+      <title>GitHub Copilot Moves to Usage-Based AI Credits Billing</title>
+      <link>https://github.blog/changelog/2026-06-01-updates-to-github-copilot-billing-and-plans/</link>
+      <description>GitHub switched Copilot from request-based to usage-based AI Credits billing; plan prices unchanged ($10 Pro, $39 Pro+, $19/user Business, $39/user Enterprise). Continues the industry-wide drift toward metered agentic usage.</description>
+      <pubDate>Mon, 01 Jun 2026 00:00:00 GMT</pubDate>
+      <guid>https://github.blog/changelog/2026-06-01-updates-to-github-copilot-billing-and-plans/</guid>
+    </item>
+
+    <item>
+      <title>Claude Opus 4.8: Same Price, 128K Output, Fast Mode — Plus Mythos Preview and $965B Valuation</title>
+      <link>https://www.anthropic.com/news/claude-opus-4-8</link>
+      <description>Anthropic released Claude Opus 4.8: same pricing as 4.7, 128K max output tokens, 88.6% on SWE-Bench Verified, and a Fast mode ($10/$50 per million tokens at ~2.5x speed). The same week, Anthropic pre-released its cybersecurity-capable Mythos model to limited partners and raised $6.5B at a record $965B valuation.</description>
+      <pubDate>Thu, 28 May 2026 00:00:00 GMT</pubDate>
+      <guid>https://www.anthropic.com/news/claude-opus-4-8</guid>
+    </item>
+
+    <item>
+      <title>Claude Code Dynamic Workflows: Up to 1,000 Subagents per Task</title>
+      <link>https://claude.com/blog/introducing-dynamic-workflows-in-claude-code</link>
+      <description>Anthropic launched Dynamic Workflows in Claude Code (research preview for Max/Team/Enterprise): a single task can orchestrate up to 1,000 subagents (16 concurrent), with one confirmed 750K-line codebase port completed in 11 days. The ceiling on what one person can build just rose sharply.</description>
+      <pubDate>Thu, 28 May 2026 00:00:00 GMT</pubDate>
+      <guid>https://claude.com/blog/introducing-dynamic-workflows-in-claude-code</guid>
+    </item>
+
+    <item>
+      <title>Google Health Coach Launches: $9.99/month Gemini Companion with EHR Integration</title>
+      <link>https://techcrunch.com/2026/05/07/googles-9-99-per-month-ai-health-coach-launches-may-19/</link>
+      <description>Google's Health Coach went live May 19: a $9.99/month consumer AI health companion powered by Gemini, integrating Fitbit data and US EHR medical records, explicitly positioned as coaching rather than diagnosis. Patients will increasingly arrive with AI-synthesized trends from their own records.</description>
+      <pubDate>Thu, 07 May 2026 00:00:00 GMT</pubDate>
+      <guid>https://techcrunch.com/2026/05/07/googles-9-99-per-month-ai-health-coach-launches-may-19/</guid>
+    </item>
 
     <item>
       <title>Google I/O 2026: Gemini 3.5 Flash for All Users, Gemini Omni Flash Multimodal</title>

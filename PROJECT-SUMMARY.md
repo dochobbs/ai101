@@ -24,7 +24,7 @@ The site is organized into four sections driven by [index.html](index.html):
 - [ai-search.html](ai-search.html) — AI-Powered Search
 - [image-video.html](image-video.html) — AI Image and Video Creation
 - [everyday-ai.html](everyday-ai.html) — Everyday Ways to Use AI
-- [patients-ai.html](patients-ai.html) — When Patients Use AI Too
+- [patients-ai.html](patients-ai.html) — When Patients Bring AI to the Exam Room
 
 **What's Next** — go deeper
 - [whats-next.html](whats-next.html) — So...What Next?
@@ -40,11 +40,13 @@ The site is organized into four sections driven by [index.html](index.html):
 
 **Meta pages**
 - [start-here.html](start-here.html) — NotebookLM-driven practical on-ramp
+- [claude-code.html](claude-code.html) — "30 Days to Claude Code" daily program
+  (also reachable at the vanity URL `/30-days` via [30-days.html](30-days.html))
 - [about.html](about.html) — Course philosophy
 - [contribute.html](contribute.html) — Contribution guide
-- [updates.html](updates.html) — Version changelog visible to readers
-- [resources.html](resources.html) — Legacy curated resources page (orphaned — nav entry
-  commented out in index.html; has placeholder `#` links)
+- [updates.html](updates.html) — Version changelog (linked from every page footer)
+- [resources.html](resources.html) — Curated resources page (in the nav site-wide
+  as of v1.10)
 
 ## Companion App (`ai101-companion/`)
 A small Flask + vanilla-JS chatbot named **Spark** that teaches prompting and
@@ -63,7 +65,8 @@ tools). Serves on `localhost:5050` (note: the README says 5000 — needs fix).
 - Pure HTML/CSS — no framework, no build step
 - Google Fonts + Lucide loaded via CDN
 - All internal links relative — works locally or hosted
-- Current version: **v1.5 · 2026** (bumped each release)
+- Current version: **v1.10 · 2026** (bumped each release; the footer version on
+  every page links to [updates.html](updates.html))
 - Deployment: GitHub Pages via [dochobbs/ai101](https://github.com/dochobbs/ai101)
 - Custom domain: ai101.health (CNAME configured)
 
@@ -85,6 +88,7 @@ in [archive/](archive/) and are not linked from any live page.
   on GitHub, so new issues land in the inbox automatically. See
   [docs/PROJECT_CHANGELOG.md](docs/PROJECT_CHANGELOG.md) for history.
 - **Version bumps** happen in the footer of every page at release time
-  (currently `v1.5 · 2026`).
+  (currently `v1.10 · 2026`). One-liner:
+  `perl -pi -e 's/v1\.OLD · 2026/v1.NEW · 2026/g' *.html`
 - **ai-news.html** is the lightweight running log; `updates.html` is the
   formal changelog for readers.

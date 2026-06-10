@@ -27,7 +27,7 @@
       </button>
       <div class="nav-links">
         <a href="index.html" class="nav-link">Topics</a>
-        <!-- <a href="resources.html" class="nav-link">Resources</a> -->
+        <a href="resources.html" class="nav-link">Resources</a>
         <a href="about.html" class="nav-link">About</a>
         <a href="contribute.html" class="nav-link">Contribute</a>
         <div id="deployment-eac8a421-3c54-4717-bbef-54bb81b54243" class="nav-chatbot"></div>
@@ -313,7 +313,11 @@
         <strong>Claude Opus 4.7</strong> shipped with materially stronger coding (+13% on
         SWE-bench), higher-resolution vision, the new <code>/ultrareview</code> multi-agent
         review workflow, and an <code>xhigh</code> reasoning effort level—all at the same
-        pricing as 4.6.
+        pricing as 4.6. <strong>Claude Opus 4.8</strong> followed on May 28, 2026—again at
+        the same pricing—with 128K max output tokens, 88.6% on SWE-Bench Verified, a new
+        <strong>Fast mode</strong> ($10/$50 per million tokens at ~2.5&times; speed), and
+        <strong>Dynamic Workflows</strong> in Claude Code, which can orchestrate up to 1,000
+        subagents on a single task.
       </p>
 
       <h3>The Current Offering</h3>
@@ -385,7 +389,9 @@
         13 of 16 major AI benchmarks, now powering NotebookLM. At Google I/O 2026 (May 19), Google
         launched <strong>Gemini 3.5 Flash</strong>—rolled out to all users and roughly 4× faster than
         peer frontier models on agentic benchmarks—alongside <strong>Gemini Omni Flash</strong>, a
-        new multimodal model for Plus/Pro/Ultra tiers. Gemini 3.5 Pro is expected in June 2026.
+        new multimodal model for Plus/Pro/Ultra tiers. Gemini 3.5 Pro is expected later in
+        June 2026&mdash;reportedly with a 2-million-token context window and Deep Think
+        reasoning&mdash;but had not shipped as of June 10.
       </p>
 
       <h3>The Current Offering</h3>
@@ -404,7 +410,7 @@
         <div class="tier-card">
           <h4>Google AI Ultra</h4>
           <p class="tier-price">$249.99/month</p>
-          <p>Gemini 3.5 Flash + Gemini Omni Flash, Deep Think reasoning, highest limits, 30TB storage, Veo 3 video generation (Gemini 3.5 Pro coming June 2026).</p>
+          <p>Gemini 3.5 Flash + Gemini Omni Flash, Deep Think reasoning, highest limits, 30TB storage, Veo 3 video generation (Gemini 3.5 Pro expected late June 2026).</p>
         </div>
       </div>
 
@@ -839,7 +845,7 @@
             <tr>
               <th>Benchmark</th>
               <th>GPT-5.5</th>
-              <th>Claude Opus 4.7</th>
+              <th>Claude Opus 4.8</th>
               <th>Gemini 3.1 Pro</th>
               <th>Notes</th>
             </tr>
@@ -883,9 +889,9 @@
             <tr>
               <td><strong>SWE-Bench Verified</strong></td>
               <td>78.1%</td>
-              <td>82.4%</td>
+              <td>88.6%</td>
               <td>76.9%</td>
-              <td>Claude leads on real-world coding (+13% gain from 4.6&rarr;4.7)</td>
+              <td>Claude leads on real-world coding; Opus 4.8 (May 2026) extended the 4.6&rarr;4.7 gains</td>
             </tr>
           </tbody>
         </table>
@@ -1124,6 +1130,31 @@
       </div>
 
       <div class="callout callout-info">
+        <div class="callout-title">June 2026 Update &mdash; Claude Opus 4.8, Dynamic Workflows, Gemini 3.5 Pro Watch</div>
+        <p>
+          The headlines since the May update:
+        </p>
+        <ul>
+          <li><strong>Claude Opus 4.8</strong> (May 28) shipped at the same pricing as 4.7:
+          128K max output tokens, 88.6% on SWE-Bench Verified, and a <strong>Fast mode</strong>
+          ($10/$50 per million tokens at ~2.5&times; speed). The benchmark table above has been
+          updated. The same week, Anthropic pre-released its cybersecurity-focused
+          <strong>Mythos</strong> model to limited partners and raised $6.5B at a record $965B
+          valuation.
+          <a href="https://www.anthropic.com/news/claude-opus-4-8" target="_blank">[Source]</a></li>
+          <li><strong>Dynamic Workflows</strong> (May 28) arrived in Claude Code as a research
+          preview for Max/Team/Enterprise: one task can orchestrate up to 1,000 subagents. If
+          you use Claude Code heavily, the Max plan is the intended home for this.
+          <a href="https://claude.com/blog/introducing-dynamic-workflows-in-claude-code" target="_blank">[Source]</a></li>
+          <li><strong>Gemini 3.5 Pro</strong> remains unreleased as of June 10&mdash;reports
+          point to a late-June general availability with a 2-million-token context window and
+          Deep Think reasoning. Meanwhile <strong>Google Health Coach</strong> (May 19,
+          $9.99/month) became the first Gemini-powered consumer health product with US EHR
+          integration&mdash;the most clinically consequential Gemini release this cycle.</li>
+        </ul>
+      </div>
+
+      <div class="callout callout-info">
         <div class="callout-title">May 2026 Update &mdash; ChatGPT&rsquo;s New Default, Claude for SMB, Google I/O</div>
         <p>
           A second wave of releases in May 2026 reshuffled the consumer-tier defaults:
@@ -1139,8 +1170,7 @@
           <li><strong>Gemini 3.5 Flash</strong> and <strong>Gemini Omni Flash</strong> shipped
           at Google I/O 2026 (May 19): 3.5 Flash rolled out to all users (~4&times; faster than
           peer frontier models on agentic benchmarks); Omni Flash adds a new multimodal model
-          for Plus/Pro/Ultra. Gemini 3.5 Pro is expected June 2026. The tier cards above have
-          been updated accordingly.
+          for Plus/Pro/Ultra. The tier cards above have been updated accordingly.
           <a href="https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-5/" target="_blank">[Source]</a></li>
         </ul>
         <p class="mb-0">
@@ -1233,7 +1263,7 @@
   <footer class="footer">
     <div class="footer-inner">
       <div><strong>AI 101</strong> · A Self-Paced Guide to AI in Medicine</div>
-      <div>v1.7.2 · 2026</div>
+      <div><a href="updates.html">v1.10 · 2026</a></div>
     </div>
   </footer>
 
