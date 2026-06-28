@@ -399,7 +399,7 @@
         peer frontier models on agentic benchmarks—alongside <strong>Gemini Omni Flash</strong>, a
         new multimodal model for Plus/Pro/Ultra tiers. Gemini 3.5 Pro is expected later in
         June 2026&mdash;reportedly with a 2-million-token context window and Deep Think
-        reasoning&mdash;but had not shipped as of June 10.
+        reasoning&mdash;but remained in limited Vertex preview as of June 19.
       </p>
 
       <h3>The Current Offering</h3>
@@ -418,7 +418,7 @@
         <div class="tier-card">
           <h4>Google AI Ultra</h4>
           <p class="tier-price">$249.99/month</p>
-          <p>Gemini 3.5 Flash + Gemini Omni Flash, Deep Think reasoning, highest limits, 30TB storage, Veo 3 video generation (Gemini 3.5 Pro expected late June 2026).</p>
+          <p>Gemini 3.5 Flash + Gemini Omni Flash, Deep Think reasoning, highest limits, 30TB storage, Veo 3 video generation (Gemini 3.5 Pro still in limited preview as of late June 2026).</p>
         </div>
       </div>
 
@@ -1138,6 +1138,42 @@
       </div>
 
       <div class="callout callout-info">
+        <div class="callout-title">Late-June 2026 Update &mdash; Claude Fable 5 &amp; Mythos 5 Launched, Then Suspended</div>
+        <p>
+          The biggest story of the month is a governance one. On <strong>June 9</strong>, Anthropic
+          publicly released its most capable models yet&mdash;<strong>Claude Fable 5</strong> and the
+          cybersecurity-focused <strong>Mythos 5</strong>. Three days later, on <strong>June 12</strong>,
+          the US government issued an <strong>export-control directive</strong> citing national-security
+          authorities, suspending access to both models for any foreign national&mdash;inside or
+          outside the US, including Anthropic&rsquo;s own foreign-national employees.
+        </p>
+        <p>
+          To comply, Anthropic <strong>abruptly disabled Fable 5 and Mythos 5 for all customers</strong>.
+          Access to every other Anthropic model&mdash;including Claude Opus 4.8 and below&mdash;was
+          unaffected. The government&rsquo;s stated basis was a demonstrated &ldquo;jailbreak&rdquo;
+          technique; Anthropic said its own review found only a small number of previously known,
+          minor vulnerabilities, and it <strong>publicly disagreed</strong> that a narrow jailbreak
+          should justify recalling a model deployed to hundreds of millions of people.
+          <a href="https://www.anthropic.com/news/fable-mythos-access" target="_blank">[Anthropic statement]</a>
+          <a href="https://fortune.com/2026/06/13/anthropic-disables-fable-mythos-export-controls-national-security-threat/" target="_blank">[Fortune]</a>
+        </p>
+        <p>
+          It wasn&rsquo;t the only government touch on frontier access this month.
+          <strong>GPT-5.6</strong> (Sol, Terra, and Luna) launched June 26 not as a public release
+          but as a limited preview to about 20 pre-approved organizations &ldquo;shared with the
+          government,&rdquo; API and Codex only. Meanwhile the strongest <em>open</em> challenger
+          arrived from outside the US entirely: <strong>GLM-5.2</strong> (Zhipu AI, June 13), an
+          MIT-licensed model that independent rankings put #1 among open weights and #4
+          overall&mdash;at roughly one-sixth the cost of GPT-5.5.
+        </p>
+        <p class="mb-0">
+          <strong>Why it matters for clinicians:</strong> the frontier models you build on can now be
+          recalled by government order on short notice. If a clinical workflow depends on one specific
+          model, keep a fallback&mdash;don&rsquo;t hard-wire a single vendor or version.
+        </p>
+      </div>
+
+      <div class="callout callout-info">
         <div class="callout-title">June 2026 Update &mdash; Claude Opus 4.8, Dynamic Workflows, Gemini 3.5 Pro Watch</div>
         <p>
           The headlines since the May update:
@@ -1154,7 +1190,7 @@
           preview for Max/Team/Enterprise: one task can orchestrate up to 1,000 subagents. If
           you use Claude Code heavily, the Max plan is the intended home for this.
           <a href="https://claude.com/blog/introducing-dynamic-workflows-in-claude-code" target="_blank">[Source]</a></li>
-          <li><strong>Gemini 3.5 Pro</strong> remains unreleased as of June 10&mdash;reports
+          <li><strong>Gemini 3.5 Pro</strong> remained in limited Vertex preview as of June 19&mdash;reports
           point to a late-June general availability with a 2-million-token context window and
           Deep Think reasoning. Meanwhile <strong>Google Health Coach</strong> (May 19,
           $9.99/month) became the first Gemini-powered consumer health product with US EHR
@@ -1271,7 +1307,7 @@
   <footer class="footer">
     <div class="footer-inner">
       <div><strong>AI 101</strong> · A Self-Paced Guide to AI in Medicine</div>
-      <div><a href="updates.html">v1.11 · 2026</a></div>
+      <div><a href="updates.html">v1.12 · 2026</a></div>
     </div>
   </footer>
 

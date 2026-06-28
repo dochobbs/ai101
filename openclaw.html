@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>OpenClaw and AI Agents—What's Running on Your Machine | AI 101</title>
-  <meta name="description" content="OpenClaw: autonomous-agent risk, supply-chain attacks, and why your API keys, credentials, and PHI are at risk from agentic AI.">
+  <title>OpenClaw, Hermes, and AI Agents—What's Running on Your Machine | AI 101</title>
+  <meta name="description" content="OpenClaw and Hermes Agent: autonomous-agent risk, supply-chain attacks, memory poisoning, and why your API keys, credentials, and PHI are at risk from agentic AI.">
   <link rel="canonical" href="https://ai101.health/openclaw.html">
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://ai101.health/openclaw.html">
-  <meta property="og:title" content="OpenClaw and AI Agents—What's Running on Your Machine | AI 101">
-  <meta property="og:description" content="OpenClaw: autonomous-agent risk, supply-chain attacks, and why your API keys, credentials, and PHI are at risk from agentic AI.">
+  <meta property="og:title" content="OpenClaw, Hermes, and AI Agents—What's Running on Your Machine | AI 101">
+  <meta property="og:description" content="OpenClaw and Hermes Agent: autonomous-agent risk, supply-chain attacks, memory poisoning, and why your API keys, credentials, and PHI are at risk from agentic AI.">
   <meta property="og:image" content="https://ai101.health/og-image.png">
   <meta property="og:site_name" content="AI 101">
   <meta name="twitter:card" content="summary_large_image">
@@ -48,11 +48,12 @@
 
       <header class="unit-header">
         <span class="unit-label bonus">USING AI</span>
-        <h1 class="unit-title">OpenClaw</h1>
+        <h1 class="unit-title">OpenClaw &amp; Hermes</h1>
         <p class="unit-subtitle">
-          The viral AI agent that went from Clawdbot to Moltbot to OpenClaw in
-          five weeks&mdash;and exposed why autonomous agents running on your machine
-          put API keys, credentials, and patient data at risk.
+          The two AI agent frameworks that defined 2026&mdash;OpenClaw&rsquo;s viral rise from
+          Clawdbot to Moltbot, and Hermes Agent&rsquo;s persistent cross-session memory&mdash;and
+          why autonomous agents running on your machine put API keys, credentials, and patient
+          data at risk.
         </p>
         <div class="unit-meta">
           <span class="unit-meta-item">
@@ -470,6 +471,50 @@
 
       <hr>
 
+      <!-- The Other Framework: Hermes Agent -->
+      <h2>The Other Framework: Hermes Agent</h2>
+
+      <p>
+        OpenClaw isn&rsquo;t the only agent framework worth understanding. The other one
+        clinicians are likely to encounter is <strong>Hermes Agent</strong>, released in
+        February 2026 by <strong>Nous Research</strong>&mdash;the open-source lab behind the
+        well-known Hermes model series. Where OpenClaw bet on breadth (a gateway daemon routing
+        fifteen-plus messaging platforms through a single control plane), Hermes bet on
+        <strong>personalization</strong>. Its signature feature is a <em>learning loop</em>: after
+        finishing a complex task, the agent automatically writes itself a reusable
+        &ldquo;skill&rdquo; document, refines it on later runs, and builds a persistent model of
+        who you are across sessions.
+      </p>
+
+      <p>
+        That learning loop is genuinely useful&mdash;and it is also Hermes&rsquo;s defining
+        security problem. Because persistent memory is injected into the system prompt as a frozen
+        snapshot at the start of every session, <strong>anything that poisons that memory once
+        persists into every future session</strong>. And the skill-creation pathway writes new
+        procedural-memory files <strong>with no content inspection</strong>: if the agent can be
+        convinced to synthesize a malicious instruction into a skill, that instruction is committed
+        directly to memory and silently re-applied later. Security researchers have formalized this
+        as <strong>memory poisoning</strong>&mdash;a systemic architectural risk for any agent that
+        &ldquo;remembers you,&rdquo; not a one-off coding bug&mdash;and Nous Research now tracks the
+        class in its own open issue queue. On the conventional-vulnerability side, the project drew
+        a <strong>&ldquo;9 CVEs in 4 days&rdquo;</strong> disclosure run as enterprise interest
+        spiked, including a symlink-following flaw in its file tools (CVE-2026-7397).
+      </p>
+
+      <div class="callout callout-warning">
+        <div class="callout-title">Why a &ldquo;learning&rdquo; agent is riskier in a clinic</div>
+        <p class="mb-0">
+          An agent that quietly carries assumptions from one session into the next is the digital
+          version of a chart note nobody re-reads. If a Hermes-style assistant absorbs a wrong dose,
+          an outdated guideline, or a planted instruction&mdash;whether by accident or by a
+          prompt-injection attack&mdash;that error can resurface in later patient encounters looking
+          like established context: exactly the &ldquo;poisoned memory persists across encounters&rdquo;
+          failure mode flagged elsewhere in this module. Persistence is the feature <em>and</em> the
+          hazard. Treat any agent&rsquo;s long-term memory like a clinical record: know what&rsquo;s
+          in it, where it came from, and how to clear it.
+        </p>
+      </div>
+
       <!-- Safer Alternatives -->
       <h2>Safer Alternatives to OpenClaw</h2>
 
@@ -663,6 +708,24 @@
           <div class="reading-type"><i data-lucide="shield"></i></div>
           <div class="reading-content">
             <div class="reading-title">
+              <a href="https://arxiv.org/abs/2606.04329" target="_blank">arXiv: From Untrusted Input to Trusted Memory&mdash;Memory Poisoning Attacks in LLM Agents</a>
+            </div>
+            <div class="reading-meta">The systematic study behind the Hermes-style risk: how poisoned content written into persistent agent memory survives into future sessions.</div>
+          </div>
+        </div>
+        <div class="reading-item">
+          <div class="reading-type"><i data-lucide="shield"></i></div>
+          <div class="reading-content">
+            <div class="reading-title">
+              <a href="https://arxiv.org/abs/2603.27517" target="_blank">arXiv: A Systematic Taxonomy of Security Vulnerabilities in the OpenClaw AI Agent Framework</a>
+            </div>
+            <div class="reading-meta">A structured map of where OpenClaw&rsquo;s gateway architecture goes wrong&mdash;useful for reasoning about any super-agent you&rsquo;re asked to trust.</div>
+          </div>
+        </div>
+        <div class="reading-item">
+          <div class="reading-type"><i data-lucide="shield"></i></div>
+          <div class="reading-content">
+            <div class="reading-title">
               <a href="https://www.ox.security/blog/one-step-away-from-a-massive-data-breach-what-we-found-inside-moltbot/" target="_blank">OX Security: One Step Away From a Massive Data Breach</a>
             </div>
             <div class="reading-meta">The key credential analysis&mdash;cleartext API keys under ~/.clawdbot, backup files retaining deleted secrets, 300K&ndash;400K users affected.</div>
@@ -822,7 +885,7 @@
           <div class="reading-type"><i data-lucide="code"></i></div>
           <div class="reading-content">
             <div class="reading-title">
-              <a href="https://github.com/qwibitai/nanoclaw" target="_blank">NanoClaw on GitHub</a>
+              <a href="https://github.com/nanocoai/nanoclaw" target="_blank">NanoClaw on GitHub</a>
             </div>
             <div class="reading-meta">The source code: ~500 lines, Anthropic's Agents SDK, Apple container isolation, auditable in an afternoon.</div>
           </div>
@@ -1002,14 +1065,51 @@
         </p>
       </div>
 
+      <div class="callout callout-warning">
+        <div class="callout-title">June 2026 Update: New Defenses, New Attacks, and a Government Recall</div>
+        <p>
+          <strong>OpenAI Lockdown Mode (June 6).</strong> OpenAI shipped a mode that restricts a
+          model&rsquo;s access to stored memory&mdash;an architectural counter to exactly the
+          prompt-injection and context-poisoning vectors described in this module. Worth knowing the
+          category of defense now exists, even if you never toggle it yourself.
+        </p>
+        <p>
+          <strong>Clinical AI can be hijacked at the prescription level.</strong> Researchers
+          <a href="https://www.penligent.ai/hackinglabs/ai-doctors-can-be-hijacked-at-will-altering-patient-prescription-dosages-and-giving-wrong-medical-advice/" target="_blank">demonstrated</a>
+          hijacking a clinical AI to alter a prescription&mdash;tripling an OxyContin dose&mdash;then
+          passing the tampered order to a human clinician for routine approval. Related work shows
+          <strong>embedding-level RAG poisoning</strong>: false clinical assumptions planted in a
+          knowledge base can persist into future patient encounters, making later answers look
+          internally consistent while built on tainted context. The takeaway for any AI-in-the-loop
+          order: the human approval step is a real control, not a formality.
+        </p>
+        <p>
+          <strong>OWASP, June 11.</strong> A new OWASP report reaffirmed that prompt injection still
+          drives the majority of agentic-AI security failures in production, reporting a sharp
+          year-over-year rise in prompt-injection attempts.
+          <a href="https://www.helpnetsecurity.com/2026/06/11/owasp-prompt-injection-ai-security-failures/" target="_blank">[Source]</a>
+        </p>
+        <p class="mb-0">
+          <strong>A model-level safety story you can point to.</strong> Anthropic publicly released
+          <strong>Claude Fable 5</strong> and the cybersecurity-focused <strong>Mythos 5</strong> on
+          June 9 with added cyber/bio/chem safeguards&mdash;then, on June 12, a US government
+          export-control directive forced Anthropic to suspend both models over a demonstrated
+          jailbreak technique (Anthropic
+          <a href="https://www.anthropic.com/news/fable-mythos-access" target="_blank">disagreed</a>
+          that a narrow jailbreak warranted a recall). A vivid real-world case study in
+          frontier-model risk&mdash;and in how fast the controls, and the politics, around these
+          models can change.
+        </p>
+      </div>
+
       <div class="callout callout-info">
         <div class="callout-title">A Note on This Module</div>
         <p class="mb-0">
           This module was written with AI assistance and verified by human review.
-          All linked sources were checked at time of publication. Last updated April 2026
-          with Claude Code and Copilot CVEs, the Meta internal AI data leak, and MCP
-          ecosystem maturation. The OpenClaw story is still unfolding&mdash;some details
-          may have evolved since writing.
+          All linked sources were checked at time of publication. Last updated June 2026
+          with OpenAI Lockdown Mode, clinical-AI prescription-tampering research, the June
+          OWASP report, and the Fable 5 / Mythos 5 export-control suspension. The OpenClaw
+          story is still unfolding&mdash;some details may have evolved since writing.
         </p>
       </div>
 
@@ -1052,7 +1152,7 @@
   <footer class="footer">
     <div class="footer-inner">
       <div><strong>AI 101</strong> · A Self-Paced Guide to AI in Medicine</div>
-      <div><a href="updates.html">v1.11 · 2026</a></div>
+      <div><a href="updates.html">v1.12 · 2026</a></div>
     </div>
   </footer>
 

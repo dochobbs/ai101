@@ -285,8 +285,8 @@
           <p>Moonshot AI's May 2026 update. Currently the coding leader among May 2026 open-source releases; useful when your local workflow involves building small utilities or scripts alongside clinical reasoning.</p>
         </div>
         <div class="resource-card">
-          <h4>GLM-5.1</h4>
-          <p>Zhipu AI's May 2026 release. Improved instruction-following and multilingual handling; worth a look if your patient population includes Mandarin or other non-English speakers and you want a local fallback.</p>
+          <h4>GLM-5.2</h4>
+          <p>Zhipu AI's June 13, 2026 release&mdash;the standout open-weight model of the cycle: a 744B-parameter mixture-of-experts (~40B active), 1M-token context, two thinking modes, and an MIT license. Independent ranking (Artificial Analysis) places it #1 among open weights and #4 overall, behind only Claude Fable 5, Opus 4.8, and GPT-5.5, at roughly one-sixth the cost&mdash;and strong on long-horizon coding (62.1 on SWE-bench Pro). Server-room hardware, not laptop.</p>
         </div>
         <div class="resource-card">
           <h4>OpenBioLLM-70B</h4>
@@ -313,15 +313,22 @@
           frontier side, but no MedGemma successor materialized in the weeks after I/O.
           The 2025 MedGemma models above remain Google&rsquo;s current open medical line.
         </p>
+        <p>
+          The open-weight headline came from China. <strong>GLM-5.2</strong> (Zhipu AI,
+          June 13) is the first open model to genuinely close the gap on frontier closed-source
+          performance: MIT-licensed, a 1-million-token context, and&mdash;by independent ranking
+          (Artificial Analysis)&mdash;the <strong>#1 open-weight model in the world and #4
+          overall</strong>, behind only Claude Fable 5, Opus 4.8, and GPT-5.5, at roughly
+          one-sixth the cost. <strong>MiniMax M3</strong>
+          (<a href="https://www.minimax.io/blog/minimax-m3" target="_blank">June 1</a>) rounds out
+          the cycle, adding native multimodality (image, video, and desktop computer control) to a
+          comparable 1M-token open-weight base.
+        </p>
         <p class="mb-0">
-          The open-weight headline instead came from <strong>MiniMax M3</strong>
-          (<a href="https://www.minimax.io/blog/minimax-m3" target="_blank">June 1</a>):
-          the first open-weight model combining frontier-level coding, a 1-million-token
-          context window, and native multimodality (image, video, and desktop computer
-          control). It&rsquo;s not a medical model&mdash;but for health systems weighing
-          on-prem deployment against closed APIs, it&rsquo;s the strongest evidence yet that
-          the open-weight frontier keeps pace. Hardware caveat: M3-class models need
-          serious GPU memory; this is server-room territory, not laptop territory.
+          Neither is a medical model&mdash;but for health systems weighing on-prem deployment
+          against closed APIs, they&rsquo;re the strongest evidence yet that the open-weight
+          frontier keeps pace. Hardware caveat: models in this class need serious GPU memory;
+          this is server-room territory, not laptop territory.
         </p>
       </div>
 
@@ -1027,7 +1034,7 @@ ollama run phi3 --num-predict 500</code></pre>
       <div>
         <strong>AI 101</strong> · A Self-Paced Guide to AI in Medicine
       </div>
-      <div><a href="updates.html">v1.11 · 2026</a></div>
+      <div><a href="updates.html">v1.12 · 2026</a></div>
     </div>
   </footer>
 
