@@ -3,8 +3,8 @@
 set -euo pipefail
 umask 077
 
-PINNED_URL="https://raw.githubusercontent.com/dochobbs/OC_Safe_start/bundle-v1.0.1/install-all.sh"
-EXPECTED_SHA256="6bfdffbbb1fa0da262e221919def797747593dae6151b2b6188c13fa68c849af"
+PINNED_URL="https://raw.githubusercontent.com/dochobbs/OC_Safe_start/bundle-v1.0.2/install-all.sh"
+EXPECTED_SHA256="129eaa7b735c8e32fa8f2edbcb2ea37baa81066fd985c11eeaa54b72915068ff"
 WORK_ROOT=""
 
 cleanup() {
