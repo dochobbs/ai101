@@ -1,0 +1,38 @@
+#!/bin/bash
+# AI 101 stable Claude Code starter installer.
+set -euo pipefail
+umask 077
+
+PINNED_URL="https://raw.githubusercontent.com/dochobbs/OC_Safe_start/bundle-v1.0.1/install-all.sh"
+EXPECTED_SHA256="6bfdffbbb1fa0da262e221919def797747593dae6151b2b6188c13fa68c849af"
+WORK_ROOT=""
+
+cleanup() {
+  status=$?
+  trap - EXIT HUP INT TERM
+  if [ -n "$WORK_ROOT" ] && [ -d "$WORK_ROOT" ]; then
+    /bin/rm -rf -- "$WORK_ROOT"
+  fi
+  exit "$status"
+}
+
+trap cleanup EXIT HUP INT TERM
+
+if [ ! -x /usr/bin/curl ] || [ ! -x /usr/bin/shasum ]; then
+  printf '%s\n' "AI 101 install requires curl and shasum on macOS."
+  exit 1
+fi
+
+WORK_ROOT="$(/usr/bin/mktemp -d)"
+INSTALLER="$WORK_ROOT/install-all.sh"
+
+printf '%s\n' "Fetching the pinned AI 101 starter bundle..."
+/usr/bin/curl -fsSL "$PINNED_URL" -o "$INSTALLER"
+
+ACTUAL_SHA256="$(/usr/bin/shasum -a 256 "$INSTALLER" | /usr/bin/awk '{ print $1 }')"
+if [ "$ACTUAL_SHA256" != "$EXPECTED_SHA256" ]; then
+  printf '%s\n' "AI 101 installer checksum mismatch; nothing was installed."
+  exit 1
+fi
+
+/bin/bash "$INSTALLER"
