@@ -1,10 +1,10 @@
 #!/bin/bash
-# AI 101 stable Claude Code starter installer.
+# AI 101 stable Claude Code and Codex starter installer.
 set -euo pipefail
 umask 077
 
-PINNED_URL="https://raw.githubusercontent.com/dochobbs/OC_Safe_start/bundle-v1.0.2/install-all.sh"
-EXPECTED_SHA256="129eaa7b735c8e32fa8f2edbcb2ea37baa81066fd985c11eeaa54b72915068ff"
+PINNED_URL="https://raw.githubusercontent.com/dochobbs/OC_Safe_start/bundle-v1.0.3/install-all.sh"
+EXPECTED_SHA256="d3b2488d93533b3122261dbcc7a27f2f4d91912269fb4810069040c826f90959"
 WORK_ROOT=""
 
 cleanup() {
