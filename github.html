@@ -840,6 +840,10 @@ code.inline {
 
     <div class="nav-phase">
       <div class="nav-phase-title">Phase Two · Base Camp</div>
+      <a class="nav-day" href="#day-6" data-day="6"><span class="day-dot"></span><span class="day-num">06</span><span>What Stays Behind</span></a>
+      <a class="nav-day" href="#day-7" data-day="7"><span class="day-dot"></span><span class="day-num">07</span><span>A Note for the Next Traveler</span></a>
+      <a class="nav-day" href="#day-8" data-day="8"><span class="day-dot"></span><span class="day-num">08</span><span>Base Camp</span></a>
+      <a class="nav-day" href="#day-9" data-day="9"><span class="day-dot"></span><span class="day-num">09</span><span>Bringing It Home</span></a>
     </div>
 
     <div class="nav-phase">
@@ -1010,7 +1014,7 @@ nothing added to commit but untracked files present (use "git add" to track)</pr
 
     <p>Read it in three pieces.</p>
     <ul>
-      <li><strong>On branch main.</strong> Branches are Day 10. For now it is the name of the single path you are on. If yours says <code class="inline">master</code> instead, that is an older git and nothing is wrong &mdash; just use whichever name you see.</li>
+      <li><strong>On branch main.</strong> Branches are Day 10. For now it is the name of the single path you are on. If yours says <code class="inline">master</code> instead, nothing is wrong &mdash; that is just a different default name, which depends on your version of git and on a setting called <code class="inline">init.defaultBranch</code>. Use whichever name you see.</li>
       <li><strong>No commits yet.</strong> You have never saved an entry. The journal is open to a blank page.</li>
       <li><strong>Untracked files.</strong> Git can see these three files sitting in the folder, but it has not been told to care about them. It is not watching them. It is just noticing them.</li>
     </ul>
@@ -1197,6 +1201,242 @@ nothing added to commit but untracked files present (use "git add" to track)</pr
   <p class="phase-sub">Days 6 to 9 · The work goes online.</p>
   <p class="phase-intro">This week your journal gets a home that isn&rsquo;t your hard drive. We start by deciding what should never leave the laptop, then send everything else somewhere safe.</p>
 </section>
+
+<article class="day" id="day-6">
+  <header class="day-header"><span class="day-label">Day 06</span><h3 class="day-title">What Stays Behind</h3></header>
+  <div class="day-body">
+    <p>Every expedition has things that never go in the journal. Scratch paper, receipts, the key to the cabin. You carry them and you use them, and you would not write any of them down for a stranger to read.</p>
+
+    <p>Git keeps a list for exactly this. It is a plain text file called <code class="inline">.gitignore</code>, and anything named in it becomes invisible to git &mdash; not deleted, not hidden from you, just never offered up to be committed.</p>
+
+    <p><strong>You are doing this the day before anything goes online, on purpose.</strong> Once something has been committed and pushed, taking it back is not a matter of deleting it. Far easier to decide what stays behind while the journal is still only on your laptop.</p>
+
+    <p>Start by making the exact kind of file you never want to send anywhere. This writes a pretend API key into a file called <code class="inline">secrets.txt</code>:</p>
+    <div class="codeblock"><pre>echo "sk-live-51H8xQ2ExampleKeyDoNotUse" &gt; secrets.txt</pre><button class="copy-btn">Copy</button></div>
+
+    <p>Now ask git what it can see:</p>
+    <div class="codeblock"><pre>git status</pre><button class="copy-btn">Copy</button></div>
+
+    <p>There it is, under <strong>Untracked files</strong>, with git cheerfully explaining how to include it in what will be committed. That is the whole danger in one line. Git is not being careless &mdash; it has no idea what a key is. It sees a file.</p>
+
+    <p>So tell it. First make the list:</p>
+    <div class="codeblock"><pre>touch .gitignore</pre><button class="copy-btn">Copy</button></div>
+
+    <p><code class="inline">touch</code> creates an empty file. Now put four lines in it. You know this shape from Day 2 &mdash; <code class="inline">&gt;&gt;</code> adds a line to the end of a file:</p>
+    <div class="codeblock"><pre>echo ".DS_Store" &gt;&gt; .gitignore
+echo "*.log" &gt;&gt; .gitignore
+echo ".env" &gt;&gt; .gitignore
+echo "secrets.txt" &gt;&gt; .gitignore</pre><button class="copy-btn">Copy</button></div>
+
+    <p>Those four lines are four separate decisions:</p>
+    <ul>
+      <li><code class="inline">.DS_Store</code> &mdash; a junk file macOS drops into any folder you open in Finder. It has nothing to do with your work.</li>
+      <li><code class="inline">*.log</code> &mdash; the <code class="inline">*</code> is a wildcard meaning <em>anything</em>, so this covers every file ending in <code class="inline">.log</code>. Log files are usually noise, and occasionally they are noise with a password in the middle of them.</li>
+      <li><code class="inline">.env</code> &mdash; the conventional name for the file that holds keys and passwords. If you ever build something that talks to an API, this is where its credentials will live.</li>
+      <li><code class="inline">secrets.txt</code> &mdash; the file you just made.</li>
+    </ul>
+
+    <p>Ask again:</p>
+    <div class="codeblock"><pre>git status</pre><button class="copy-btn">Copy</button></div>
+
+    <p><code class="inline">secrets.txt</code> has vanished from the output. In its place is <code class="inline">.gitignore</code> itself, listed as untracked, because it is a new file too. Your pretend key has not moved &mdash; it is still sitting on your disk exactly where you left it. Git has simply stopped offering to publish it.</p>
+
+    <div class="callout">
+      <div class="callout-label">This one matters</div>
+      The most common way people get burned by git is committing a password or an API key and then pushing it somewhere public. Git never forgets, so deleting the file afterward does not help &mdash; the key is still sitting in the history, readable by anyone who knows where to look. If it happens to you, the fix is not to delete the file. The fix is to go to whoever issued the key and revoke it. Assume it is compromised the moment it is pushed, because it is.
+    </div>
+
+    <p>Now commit the list itself. Unlike the things it names, <code class="inline">.gitignore</code> belongs in the journal &mdash; it is a decision about the project, and anyone who touches this folder later should inherit it. Pack it:</p>
+    <div class="codeblock"><pre>git add .gitignore</pre><button class="copy-btn">Copy</button></div>
+
+    <p>And file the entry:</p>
+    <div class="codeblock"><pre>git commit -m "Add gitignore"</pre><button class="copy-btn">Copy</button></div>
+
+    <p>If you want a second opinion about what else should stay behind, start Claude in the folder and ask:</p>
+    <div class="codeblock"><pre>Look at the files in this folder and tell me if any of them contain something that should never be committed to git.</pre><button class="copy-btn">Copy</button></div>
+
+    <div class="learned">
+      <div class="learned-label">What you just learned</div>
+      <code class="inline">.gitignore</code> is the list of what stays out of the journal. Write it before your first push, not after &mdash; a key that has been pushed is a key that has to be revoked.
+    </div>
+    <button class="complete-btn" data-day="6"><span class="check"></span><span class="label">Mark complete</span></button>
+  </div>
+</article>
+
+<article class="day" id="day-7">
+  <header class="day-header"><span class="day-label">Day 07</span><h3 class="day-title">A Note for the Next Traveler</h3></header>
+  <div class="day-body">
+    <p>A <strong>README</strong> is the note you leave for whoever arrives cold. Where they are, what this is for, how to start. The name is shouted because it is meant to be the file nobody can claim they missed.</p>
+
+    <p>It also has a specific job on GitHub: it is rendered on the repository&rsquo;s front page, above everything else. Tomorrow this folder goes online, and this file becomes the page. Writing it today is not busywork &mdash; it is writing tomorrow&rsquo;s landing page.</p>
+
+    <p>You could write it from scratch. It is faster to have Claude draft one and then correct what it gets wrong. Start Claude in your folder and ask:</p>
+    <div class="codeblock"><pre>Write a short README.md for this folder. Explain what it is, who it's for, and how someone would start using it. Keep it under 200 words and don't make it sound like a corporate press release.</pre><button class="copy-btn">Copy</button></div>
+
+    <p>Then read what it hands you and change it until it sounds like you. It has never met you and it does not know why this folder exists, so it will guess &mdash; usually a little grandly. Cut the parts that overclaim. A README that says <em>a practice repository I am using to learn git</em> is more useful than one that says <em>a robust framework for version control workflows</em>, because the first one is true.</p>
+
+    <div class="callout">
+      <div class="callout-label">Not using Claude?</div>
+      Make the file yourself with the same move you have used all week, then open it in any text editor and write a few sentences.
+      <div class="codeblock"><pre>echo "# github-lab" &gt; README.md</pre><button class="copy-btn">Copy</button></div>
+      The <code class="inline">#</code> makes that line a heading. That is Markdown, the same plain-text formatting your <code class="inline">.md</code> files have been using since Day 1.
+    </div>
+
+    <p>When it says what you want it to say, pack it:</p>
+    <div class="codeblock"><pre>git add README.md</pre><button class="copy-btn">Copy</button></div>
+
+    <p>And file it:</p>
+    <div class="codeblock"><pre>git commit -m "Add README"</pre><button class="copy-btn">Copy</button></div>
+
+    <div class="callout">
+      <div class="callout-label">Why bother, if it&rsquo;s just you?</div>
+      Because in four months you will be the stranger. You will open this folder with no memory of what you were doing or why, and the README is the fastest note-to-self you will ever write. Everyone who skips it learns this the same way.
+    </div>
+
+    <div class="learned">
+      <div class="learned-label">What you just learned</div>
+      A README is the difference between a folder someone can use and a folder someone abandons. On GitHub it is also the front page, so it is the first thing anyone sees.
+    </div>
+    <button class="complete-btn" data-day="7"><span class="check"></span><span class="label">Mark complete</span></button>
+  </div>
+</article>
+
+<article class="day" id="day-8">
+  <header class="day-header"><span class="day-label">Day 08</span><h3 class="day-title">Base Camp</h3></header>
+  <div class="day-body">
+    <p>A <strong>remote</strong> is another known location where a copy of the expedition lives. Your laptop holds the copy you work in. The remote holds the copy that survives your laptop.</p>
+
+    <p><strong>origin</strong> is git&rsquo;s default nickname for the remote you started from. It is not a keyword and it carries no special power &mdash; it is a name, the way you might call a shared drive &ldquo;the server.&rdquo; You will see it constantly from here on.</p>
+
+    <p>Today the journal stops being only on your laptop.</p>
+
+    <p>One command creates the repository on GitHub and sends your history up to it:</p>
+    <div class="codeblock"><pre>gh repo create github-lab --private --source=. --remote=origin --push</pre><button class="copy-btn">Copy</button></div>
+
+    <p>Four flags, and you should be able to name what each one did:</p>
+    <ul>
+      <li><code class="inline">--private</code> &mdash; only you can see it.</li>
+      <li><code class="inline">--source=.</code> &mdash; use this folder. The <code class="inline">.</code> means <em>here</em>, the same as it did on Day 3.</li>
+      <li><code class="inline">--remote=origin</code> &mdash; name the connection <code class="inline">origin</code>.</li>
+      <li><code class="inline">--push</code> &mdash; send the commits up right now, instead of creating an empty repository and leaving you to work out the rest.</li>
+    </ul>
+
+    <div class="callout">
+      <div class="callout-label">Private on purpose</div>
+      We are starting private because a practice folder is exactly where a stray phone number or a patient&rsquo;s initials ends up. When you have a project you genuinely want to share, you can flip it in the repository settings, or create the next one with <code class="inline">--public</code>. Never flip a repository public without reading its history first &mdash; remember that what is in the history stays in the history.
+    </div>
+
+    <div class="callout">
+      <div class="callout-label">No PHI, ever</div>
+      GitHub is a public-internet service and you have no BAA with it. Nothing that could identify a patient belongs in a repository, private or not. Private is a permission setting, not a safeguard.
+    </div>
+
+    <p>Confirm the connection exists:</p>
+    <div class="codeblock"><pre>git remote -v</pre><button class="copy-btn">Copy</button></div>
+
+    <p>Two lines come back, both beginning with <code class="inline">origin</code> &mdash; one marked <code class="inline">(fetch)</code> and one marked <code class="inline">(push)</code>. Git records where it reads from and where it writes to as separate settings. For everything you do here they will be the same address.</p>
+
+    <p>Now go and look at the thing you just made:</p>
+    <div class="codeblock"><pre>gh repo view --web</pre><button class="copy-btn">Copy</button></div>
+
+    <p>Your browser opens on a real GitHub repository, with your history in it and yesterday&rsquo;s README rendered on the front page. Notice what is <em>not</em> there: <code class="inline">secrets.txt</code>. It was never committed, so it had nothing to travel with. That is Day 6 paying for itself.</p>
+
+    <p><strong>One more thing, so that pushing is something you have done on its own.</strong> That single <code class="inline">gh</code> command did a lot at once, and it is worth separating the ordinary daily motion out of it. Add a line to your notes:</p>
+    <div class="codeblock"><pre>echo "Base camp established" &gt;&gt; notes.md</pre><button class="copy-btn">Copy</button></div>
+
+    <p>File the entry, using the shortcut from Day 5:</p>
+    <div class="codeblock"><pre>git commit -am "Note that the repo is live"</pre><button class="copy-btn">Copy</button></div>
+
+    <p>And send it up:</p>
+    <div class="codeblock"><pre>git push</pre><button class="copy-btn">Copy</button></div>
+
+    <p>Git reports two commit names with <code class="inline">..</code> between them &mdash; where the remote was, and where it is now. Refresh the browser tab and your new line is there. That three-step rhythm &mdash; change, commit, push &mdash; is what most days actually look like from here on.</p>
+
+    <div class="callout">
+      <div class="callout-label">If push complains about an upstream branch</div>
+      You may see <em>fatal: The current branch has no upstream branch.</em> It means git knows where the remote is but has not been told that this particular branch belongs there. Git prints the exact command to fix it on the next line, already filled in with your branch name &mdash; run that, and plain <code class="inline">git push</code> will work every time after.
+    </div>
+
+    <div class="learned">
+      <div class="learned-label">What you just learned</div>
+      Your journal now exists in two places. If the laptop dies tonight, the work does not. <code class="inline">origin</code> is just the nickname for the other place.
+    </div>
+    <button class="complete-btn" data-day="8"><span class="check"></span><span class="label">Mark complete</span></button>
+  </div>
+</article>
+
+<article class="day" id="day-9">
+  <header class="day-header"><span class="day-label">Day 09</span><h3 class="day-title">Bringing It Home</h3></header>
+  <div class="day-body">
+    <p><strong>Cloning</strong> is making a complete local copy of what is at base camp &mdash; not just the files as they stand today, but the entire journal that got them there.</p>
+
+    <p><strong>Pulling</strong> is bringing back whatever changed while you were away.</p>
+
+    <p>Those two motions are the whole of working with other people. Today you rehearse both with nobody else involved, by being both people yourself. Start from your home directory:</p>
+    <div class="codeblock"><pre>cd ~</pre><button class="copy-btn">Copy</button></div>
+
+    <p>Now make a second copy of the repository, in a new folder called <code class="inline">github-lab-copy</code>. Replace <code class="inline">YOUR-USERNAME</code> with your actual GitHub username:</p>
+    <div class="codeblock"><pre>git clone https://github.com/YOUR-USERNAME/github-lab.git github-lab-copy</pre><button class="copy-btn">Copy</button></div>
+
+    <div class="callout">
+      <div class="callout-label">Not sure of your username, or tired of typing it</div>
+      <code class="inline">gh</code> already knows who you are, so it can fill that part in for you. This does the same thing as the line above.
+      <div class="codeblock"><pre>gh repo clone github-lab github-lab-copy</pre><button class="copy-btn">Copy</button></div>
+      Worth seeing the full address at least once, though. That URL is what a clone actually is: a folder, fetched from a location.
+    </div>
+
+    <p>Move into the copy:</p>
+    <div class="codeblock"><pre>cd github-lab-copy</pre><button class="copy-btn">Copy</button></div>
+
+    <p>Look at what came down:</p>
+    <div class="codeblock"><pre>ls</pre><button class="copy-btn">Copy</button></div>
+
+    <p>All four of your files. <code class="inline">.gitignore</code> arrived too &mdash; <code class="inline">ls</code> hides it because of the leading dot, so add <code class="inline">-a</code> if you want to see it, the way you did on Day 1. And once again, no <code class="inline">secrets.txt</code>. It never left your laptop and it never will.</p>
+
+    <p>The history came with it, which is the part that makes a clone different from a downloaded folder:</p>
+    <div class="codeblock"><pre>git log --oneline</pre><button class="copy-btn">Copy</button></div>
+
+    <p>Every entry you have written, in a folder that is four minutes old. A clone is not a snapshot of the current files. It is the whole journal.</p>
+
+    <p><strong>Now be the other person.</strong> Make a change here, in the copy:</p>
+    <div class="codeblock"><pre>echo "Edited from the clone" &gt;&gt; notes.md</pre><button class="copy-btn">Copy</button></div>
+
+    <p>Commit it:</p>
+    <div class="codeblock"><pre>git commit -am "Edit from the clone"</pre><button class="copy-btn">Copy</button></div>
+
+    <p>And send it to base camp. You do not need to set anything up first &mdash; a cloned folder already knows where it came from:</p>
+    <div class="codeblock"><pre>git push</pre><button class="copy-btn">Copy</button></div>
+
+    <p>Now go back to the original folder, which has no idea any of that happened:</p>
+    <div class="codeblock"><pre>cd ~/github-lab</pre><button class="copy-btn">Copy</button></div>
+
+    <p>Bring down what changed:</p>
+    <div class="codeblock"><pre>git pull</pre><button class="copy-btn">Copy</button></div>
+
+    <p>Git reports a <em>Fast-forward</em> and tells you <code class="inline">notes.md</code> changed by one line. Read the file and see it for yourself:</p>
+    <div class="codeblock"><pre>cat notes.md</pre><button class="copy-btn">Copy</button></div>
+
+    <p>The line you wrote in the other folder is sitting there.</p>
+
+    <div class="callout">
+      <div class="callout-label">What just happened</div>
+      You edited a file in one folder and it appeared in another, because both are talking to the same base camp. That is the entire idea behind working with other people, rehearsed with only yourself involved. Replace &ldquo;the other folder&rdquo; with &ldquo;a colleague&rsquo;s laptop&rdquo; and nothing about the mechanism changes.
+    </div>
+
+    <div class="callout">
+      <div class="callout-label">If git refuses to pull</div>
+      If you made a commit in <em>both</em> folders before pulling, git stops with <em>Need to specify how to reconcile divergent branches</em> and a block of hints. It is not broken and nothing is lost &mdash; git is asking you to choose how to combine two histories, and it will not guess. Run the line below once, then run <code class="inline">git pull</code> again.
+      <div class="codeblock"><pre>git config pull.rebase false</pre><button class="copy-btn">Copy</button></div>
+      That tells git to combine them by merging, which is the behaviour most people want and the one Day 13 builds on.
+    </div>
+
+    <div class="learned">
+      <div class="learned-label">What you just learned</div>
+      Clone makes a copy, history and all. Pull brings changes home. That is the whole mechanism behind collaboration, and you have now done both halves.
+    </div>
+    <button class="complete-btn" data-day="9"><span class="check"></span><span class="label">Mark complete</span></button>
+  </div>
+</article>
 
 <section class="phase" id="phase-3">
   <div class="phase-num">Phase Three</div>
