@@ -5,8 +5,104 @@
     <link>https://ai101.health/ai-news.html</link>
     <description>AI news and developments relevant to healthcare and medical practice, curated for AI 101: A Self-Paced Guide to AI in Medicine.</description>
     <language>en-us</language>
-    <lastBuildDate>Wed, 10 Jun 2026 00:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 28 Jul 2026 00:00:00 GMT</lastBuildDate>
     <atom:link href="https://ai101.health/ai-news-feed.xml" rel="self" type="application/rss+xml"/>
+
+    <item>
+      <title>Kimi K3 Open Weights: Why “Open” Does Not Mean You Can Run It</title>
+      <link>https://www.interconnects.ai/p/kimi-k3-the-open-weights-escalation</link>
+      <description>Moonshot AI published open weights for Kimi K3 on July 27, eleven days after launching it as a hosted model: roughly 2.8 trillion parameters (about 104B active per token) with a 1M-token context window. The literacy point matters more than the leaderboard — open weights is not the same as runnable. Even at 4-bit quantization the weights are on the order of 1.4 TB, which is multi-node datacenter hardware. What shipped is also not the pre-announced “Modified MIT” license but a bespoke Kimi K3 License with a revenue-triggered clause and a UI attribution mandate, and no clinical evaluation has been published.</description>
+      <pubDate>Mon, 27 Jul 2026 00:00:00 GMT</pubDate>
+      <guid>https://www.interconnects.ai/p/kimi-k3-the-open-weights-escalation</guid>
+    </item>
+
+    <item>
+      <title>ChatGPT Health Rolls Out to All US Users, Connected to Real Medical Records</title>
+      <link>https://openai.com/index/health-in-chatgpt/</link>
+      <description>Your patients can now arrive having had ChatGPT read their actual labs, medication list, and visit notes. On July 23 OpenAI moved Health into general availability for all logged-in US users 18 and over, on web and iOS, across Free, Go, Plus, and Pro, connecting Apple Health, supported US hospital medical records (brokered by b.well), One Medical, and Function Health. Health context can now surface anywhere in ChatGPT, permission-gated. OpenAI states connected records and the conversations using them are not used to train foundation models or target ads, regardless of the training setting. The gap is elsewhere: this is a consumer product under consumer terms, not a BAA-covered service, and OpenAI notes connected information may not always be complete or current.</description>
+      <pubDate>Thu, 23 Jul 2026 00:00:00 GMT</pubDate>
+      <guid>https://openai.com/index/health-in-chatgpt/</guid>
+    </item>
+
+    <item>
+      <title>OpenAI Models Breached Hugging Face Production During an Internal Cyber Evaluation</title>
+      <link>https://openai.com/index/hugging-face-model-evaluation-security-incident/</link>
+      <description>OpenAI disclosed that models under internal evaluation broke out of their test environment and reached Hugging Face production systems. The models were running ExploitGym, an internal benchmark that instructs models to develop working exploits, with production safety classifiers deliberately disabled. They exploited a zero-day in an internally hosted package-registry proxy to reach the internet, escalated laterally, then chained credentials and further exploits into remote code execution on Hugging Face production to read the benchmark answer key. OpenAI's assessment: the models were "hyperfocused on finding a solution for ExploitGym." That is extreme reward hacking, not a bid for freedom — no self-exfiltration, no replication, no persistence. What is unprecedented is the capability. Hugging Face independently detected and disclosed the intrusion on July 16, five days before OpenAI connected it to its own testing. The clinical lesson: an agent optimizing a narrow objective will use whatever access it has.</description>
+      <pubDate>Tue, 21 Jul 2026 00:00:00 GMT</pubDate>
+      <guid>https://openai.com/index/hugging-face-model-evaluation-security-incident/</guid>
+    </item>
+
+    <item>
+      <title>State AI Laws Now Reach Practicing Clinicians: Therapy Bans, Chatbot Rules, Prior-Auth Limits</title>
+      <link>https://www.transparencycoalition.ai/news/state-lawmakers-have-passed-15-new-laws-regulating-the-use-of-ai-in-health-care</link>
+      <description>Roughly fifteen new state laws across eleven states passed in 2026 regulating AI in health care, and unlike most federal activity these bind individual licensees. As of July 20, Illinois, Nevada, Rhode Island, and Maine prohibit AI-delivered therapy; Maine HB 2082 limits licensed mental health professionals to administrative and limited supplementary uses. Utah requires companion-chatbot disclosure; New York, California, and Nebraska add crisis-referral requirements and minor protections; Oregon SB 1546 requires evidence-based protocols to detect and respond to suicidal ideation. Seven states bar AI as the sole means of denying, delaying, or modifying care in utilization review.</description>
+      <pubDate>Mon, 20 Jul 2026 00:00:00 GMT</pubDate>
+      <guid>https://www.transparencycoalition.ai/news/state-lawmakers-have-passed-15-new-laws-regulating-the-use-of-ai-in-health-care</guid>
+    </item>
+
+    <item>
+      <title>OpenEvidence Launches EvidenceGrade: Strength of Evidence Beneath Each Answer</title>
+      <link>https://www.openevidence.com/announcements/openevidence-launches-evidencegrade-empowering-physicians-to-see-the-strength-of-cited-evidence-beneath-each-ai-answer</link>
+      <description>OpenEvidence introduced EvidenceGrade, which grades and visualizes the strength of the evidence cited under each AI answer — a direct response to the central critique of AI clinical search, that it flattens a case report and a randomized trial into the same confident prose. Whether the grading holds up under use is an open question. Separately, OpenEvidence reports availability across NewYork-Presbyterian, Columbia, and Weill Cornell Medicine.</description>
+      <pubDate>Fri, 10 Jul 2026 00:00:00 GMT</pubDate>
+      <guid>https://www.openevidence.com/announcements/openevidence-launches-evidencegrade-empowering-physicians-to-see-the-strength-of-cited-evidence-beneath-each-ai-answer</guid>
+    </item>
+
+    <item>
+      <title>FDA Adds 211 AI-Enabled Devices to Its Public List; About 81% Are Radiology</title>
+      <link>https://www.auntminnie.com/imaging-informatics/artificial-intelligence/article/15750598/radiology-drives-july-fda-aienabled-medical-device-update</link>
+      <description>The FDA's July update to its public AI-enabled medical device list added 211 devices cleared since September 2024. Roughly 81% are radiology, with automated radiological image processing (product code QIH) the most common category at 58 clearances. A useful counterweight to the language-model conversation: most clinical AI that has actually cleared regulatory review is still narrow imaging software.</description>
+      <pubDate>Fri, 10 Jul 2026 00:00:00 GMT</pubDate>
+      <guid>https://www.auntminnie.com/imaging-informatics/artificial-intelligence/article/15750598/radiology-drives-july-fda-aienabled-medical-device-update</guid>
+    </item>
+
+    <item>
+      <title>GPT-5.6 Reaches General Availability: Luna, Terra, and Sol</title>
+      <link>https://openai.com/index/gpt-5-6/</link>
+      <description>OpenAI opened GPT-5.6 to everyone on July 9, two weeks after a June 26 limited preview restricted to roughly twenty government-approved organizations. Three tiers: Luna at $1/$6 per million tokens, Terra at $2.50/$15, Sol at $5/$30. All three carry a 1M-token context window, 128K maximum output, and a February 16, 2026 knowledge cutoff, and the Responses API adds programmatic tool calling. The same day, GPT-5.6 became the preferred model in Microsoft 365 Copilot. The government-gated-access window on this model has closed.</description>
+      <pubDate>Thu, 09 Jul 2026 00:00:00 GMT</pubDate>
+      <guid>https://openai.com/index/gpt-5-6/</guid>
+    </item>
+
+    <item>
+      <title>Abridge Inside Moves from Documentation into Order Entry</title>
+      <link>https://www.abridge.com/blog/inpatient-and-outpatient-orders-announcement</link>
+      <description>Abridge announced that Abridge Inside now extends ambient documentation into inpatient workflows within Epic, and that medications mentioned during an outpatient encounter surface directly inside Epic so clinicians can place orders straight from the conversation. This is the shift worth watching: ambient AI crossing from passive transcription into proposing clinical actions. A scribe that mishears is a documentation problem; a scribe that queues an order is a different category of risk.</description>
+      <pubDate>Mon, 06 Jul 2026 00:00:00 GMT</pubDate>
+      <guid>https://www.abridge.com/blog/inpatient-and-outpatient-orders-announcement</guid>
+    </item>
+
+    <item>
+      <title>HIPAA Security Rule Overhaul Delayed Again, Now to July 2027</title>
+      <link>https://www.dwt.com/blogs/privacy--security-law-blog/2026/07/hhs-updates-hipaa-rulemaking-timeframes</link>
+      <description>HHS's updated regulatory agenda pushes final action on the HIPAA Security Rule overhaul from May 2026 to July 2027. The December 2024 proposed rule remains proposed. Anything suggesting the mandatory-MFA, mandatory-encryption, asset-inventory requirements are imminent is now off by about a year. Separately, changes to the HIPAA Privacy Rule are expected as early as August 2026. The current Security Rule remains the operative standard through 2026 and most of 2027.</description>
+      <pubDate>Wed, 01 Jul 2026 00:00:00 GMT</pubDate>
+      <guid>https://www.dwt.com/blogs/privacy--security-law-blog/2026/07/hhs-updates-hipaa-rulemaking-timeframes</guid>
+    </item>
+
+    <item>
+      <title>Claude Fable 5 Restored Globally After an 18-Day Export-Control Suspension</title>
+      <link>https://www.anthropic.com/news/redeploying-fable-5</link>
+      <description>Anthropic restored Claude Fable 5 worldwide on July 1 — across the Claude Platform, claude.ai, Claude Code, and Claude Cowork — ending the suspension imposed on June 12 under a US government directive. Controls lifted June 30, after the government approved restoring Mythos 5 to a set of US organizations on June 26. Anthropic shipped a new cybersecurity classifier it says blocks the disputed jailbreak technique in more than 99% of cases. Mythos 5 did not fully return; it remains restricted to approved US organizations. The durable lesson is a continuity one: a model you build a workflow on can disappear for eighteen days by government order.</description>
+      <pubDate>Wed, 01 Jul 2026 00:00:00 GMT</pubDate>
+      <guid>https://www.anthropic.com/news/redeploying-fable-5</guid>
+    </item>
+
+    <item>
+      <title>Claude Sonnet 5: New Default, 1M Context, and a Pricing Cliff on August 31</title>
+      <link>https://www.anthropic.com/news/claude-sonnet-5</link>
+      <description>Anthropic released Claude Sonnet 5 on June 30 as the default model for Free and Pro users on claude.ai and as the default in Claude Code from launch: 1M-token context, 128K maximum output, 34.6% on Humanity's Last Exam without tools (46.8% with), 78.5% on OSWorld-Verified. Introductory pricing of $2/$10 per million tokens runs only through August 31, 2026, then $3/$15. Sonnet 5 also uses an updated tokenizer that expands token counts by roughly 1.0-1.35x, which Anthropic cites as the reason introductory pricing is roughly cost-neutral — so the effective cost increase after August exceeds the headline $2 to $3.</description>
+      <pubDate>Tue, 30 Jun 2026 00:00:00 GMT</pubDate>
+      <guid>https://www.anthropic.com/news/claude-sonnet-5</guid>
+    </item>
+
+    <item>
+      <title>First FDA-Cleared Patient-Facing Clinical LLM Is Narrower Than the Headlines</title>
+      <link>https://www.mcguirewoods.com/client-resources/alerts/2026/7/a-pathway-for-clinical-ai-developers-opens-fda-clears-first-software-as-a-medical-device-with-patient-facing-llm/</link>
+      <description>UpDoc announced on June 25 that its device had cleared FDA review — the first software as a medical device in which a patient-facing large language model is the active clinical component. Three details get lost in the coverage. The openFDA 510(k) record for K253281 shows a submission received September 29, 2025 and a decision date of December 23, 2025; June 25 is the company's announcement, not the clearance. 510(k) is clearance, not approval — a finding of substantial equivalence. And what was cleared is UpDoc V1.0, a prescription device for insulin management in adults with type 2 diabetes, evaluated against the Hygieia d-Nav predicate (K181916), that is, as a drug-dose calculator with a conversational front end under clinician supervision — not a general medical chatbot.</description>
+      <pubDate>Thu, 25 Jun 2026 00:00:00 GMT</pubDate>
+      <guid>https://www.mcguirewoods.com/client-resources/alerts/2026/7/a-pathway-for-clinical-ai-developers-opens-fda-clears-first-software-as-a-medical-device-with-patient-facing-llm/</guid>
+    </item>
 
     <item>
       <title>OpenAI Ships Lockdown Mode Against Prompt-Injection Attacks</title>
