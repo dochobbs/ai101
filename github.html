@@ -1852,7 +1852,7 @@ Route A: go around the lake
     <div class="cheat-section">
       <div class="cheat-section-label">Backing out</div>
       <dl class="cmd-list">
-        <dt>git restore --staged notes.md</dt><dd>Take a file back out of the bag</dd>
+        <dt>git restore --staged ideas.md</dt><dd>Take a file back out of the bag</dd>
         <dt>git merge --abort</dt><dd>Put everything back the way it was before the merge</dd>
       </dl>
     </div>
@@ -1862,8 +1862,8 @@ Route A: go around the lake
       <dl class="cmd-list">
         <dt>git switch -c experiment</dt><dd>Start a side road and step onto it</dd>
         <dt>git switch main</dt><dd>Go back to the main road</dd>
-        <dt>git merge experiment</dt><dd>Bring a side road into the road you are on</dd>
-        <dt>git branch -d experiment</dt><dd>Delete a road you are finished with</dd>
+        <dt>git merge route-a</dt><dd>Bring a side road into the road you are on</dd>
+        <dt>git branch -d route-a</dt><dd>Delete a road you are finished with</dd>
       </dl>
     </div>
 
@@ -1915,7 +1915,7 @@ Route A: go around the lake
       </li>
       <li>
         <div class="weird-q">It says the current branch has no upstream branch.</div>
-        <div class="weird-a">Git knows where base camp is, but has not been told this new branch belongs there. Run <code class="inline">git push -u origin BRANCH</code> once &mdash; git prints the exact line, already filled in &mdash; and plain <code class="inline">git push</code> works from then on.</div>
+        <div class="weird-a">Git knows where base camp is, but has not been told this new branch belongs there. It prints the fix on the next line, already filled in with your branch name, spelled out the long way as <code class="inline">git push --set-upstream origin experiment</code>. That is the same flag as the <code class="inline">-u</code> in the cheat sheet above. Run whichever git handed you, once, and plain <code class="inline">git push</code> works from then on.</div>
       </li>
       <li>
         <div class="weird-q">It refuses to pull and says something about divergent branches.</div>
