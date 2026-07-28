@@ -989,17 +989,19 @@ git config --global user.email "you@example.com"</pre><button class="copy-btn">C
 
     <p>Today you tell git to start watching one.</p>
 
-    <p>If you finished <a href="claude-code.html">30 Days to Claude Code</a>, use the tool you built on Day 21 or Day 27. Open your terminal and <code class="inline">cd</code> into that folder.</p>
+    <p>We are going to build a small practice folder for that, rather than use anything you care about. One line at a time, or paste the whole block:</p>
 
-    <div class="callout">
-      <div class="callout-label">Starting here?</div>
-      If you did not do the Claude Code module, make yourself a practice folder now. This one line at a time, or paste the whole block:
-      <div class="codeblock"><pre>mkdir -p ~/github-lab
+    <div class="codeblock"><pre>mkdir -p ~/github-lab
 cd ~/github-lab
 echo "Things I want to remember" &gt; notes.md
 echo "Half-formed ideas" &gt; ideas.md
 echo "Things to do" &gt; todo.md</pre><button class="copy-btn">Copy</button></div>
-      That makes a folder called <code class="inline">github-lab</code> in your home directory with three small text files in it. Every day from here uses this folder.
+
+    <p>That makes a folder called <code class="inline">github-lab</code> in your home directory with three small text files in it. <strong>Every day from here uses this folder</strong>, and the commands assume those file names &mdash; on Day 14 you will deliberately break something in <code class="inline">notes.md</code> and put it back together, which only works if the file is the one we made.</p>
+
+    <div class="callout">
+      <div class="callout-label">Why not use my real project?</div>
+      Because two weeks from now you are going to cause a merge conflict on purpose, and it is much easier to do that on a file whose contents I already know. Use the practice folder for the fourteen days. On the last day there is a note about moving what you have learned onto something you actually care about &mdash; including the tool you built in <a href="claude-code.html">30 Days to Claude Code</a>, if you did that one.
     </div>
 
     <p>Now, from inside that folder, the command that starts everything:</p>
