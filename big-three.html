@@ -325,7 +325,10 @@
         the same pricing—with 128K max output tokens, 88.6% on SWE-Bench Verified, a new
         <strong>Fast mode</strong> ($10/$50 per million tokens at ~2.5&times; speed), and
         <strong>Dynamic Workflows</strong> in Claude Code, which can orchestrate up to 1,000
-        subagents on a single task.
+        subagents on a single task. On <strong>June 30, 2026</strong>,
+        <strong>Claude Sonnet 5</strong> arrived&mdash;a one-million-token context window,
+        128K max output, and the default model both in Claude Code from launch and for Free
+        and Pro users on claude.ai.
       </p>
 
       <h3>The Current Offering</h3>
@@ -334,12 +337,12 @@
         <div class="tier-card">
           <h4>Claude Free</h4>
           <p class="tier-price">$0</p>
-          <p>Access to Claude with usage limits that reset every few hours. Good for exploration.</p>
+          <p>Claude Sonnet 5 with usage limits that reset every few hours. Good for exploration.</p>
         </div>
         <div class="tier-card">
           <h4>Claude Pro</h4>
           <p class="tier-price">$20/month</p>
-          <p>~5x usage of free tier, all models including Opus, priority access to new features.</p>
+          <p>~5x usage of the free tier. Sonnet 5 by default, with Opus 4.8 available. Priority access to new features.</p>
         </div>
         <div class="tier-card">
           <h4>Claude Max</h4>
@@ -360,8 +363,8 @@
         AI assistance for developers. The ecosystem emphasizes depth over breadth.
       </p>
       <p>
-        <strong>Features:</strong> Up to 1-million-token context window on Opus (200K on Sonnet),
-        for working with substantial documents. Projects feature for organizing related conversations.
+        <strong>Features:</strong> A one-million-token context window on both Opus 4.8 and
+        Sonnet 5, for working with substantial documents. Projects feature for organizing related conversations.
         Artifacts for generating code, documents, and other outputs. Computer use capabilities for
         agentic workflows. No native image generation, but can analyze images you provide.
       </p>
@@ -397,9 +400,11 @@
         13 of 16 major AI benchmarks, now powering NotebookLM. At Google I/O 2026 (May 19), Google
         launched <strong>Gemini 3.5 Flash</strong>—rolled out to all users and roughly 4× faster than
         peer frontier models on agentic benchmarks—alongside <strong>Gemini Omni Flash</strong>, a
-        new multimodal model for Plus/Pro/Ultra tiers. Gemini 3.5 Pro is expected later in
-        June 2026&mdash;reportedly with a 2-million-token context window and Deep Think
-        reasoning&mdash;but remained in limited Vertex preview as of June 19.
+        new multimodal model for Plus/Pro/Ultra tiers. <strong>Gemini 3.5 Pro has still not
+        shipped.</strong> As of late July 2026 it has missed three announced targets, and the
+        models Google released on July 21&mdash;<strong>Gemini 3.6 Flash</strong>,
+        <strong>Gemini 3.5 Flash-Lite</strong>, and <strong>Flash Cyber</strong>&mdash;did not
+        include a Pro model. Every specification circulating for 3.5 Pro is unconfirmed.
       </p>
 
       <h3>The Current Offering</h3>
@@ -418,7 +423,7 @@
         <div class="tier-card">
           <h4>Google AI Ultra</h4>
           <p class="tier-price">$249.99/month</p>
-          <p>Gemini 3.5 Flash + Gemini Omni Flash, Deep Think reasoning, highest limits, 30TB storage, Veo 3 video generation (Gemini 3.5 Pro still in limited preview as of late June 2026).</p>
+          <p>Gemini 3.5 Flash + Gemini Omni Flash, Deep Think reasoning, highest limits, 30TB storage, Veo 3 video generation (Gemini 3.5 Pro has not shipped as of late July 2026).</p>
         </div>
       </div>
 
@@ -480,7 +485,7 @@
             <tr>
               <td><strong>Context Window</strong></td>
               <td>1M tokens (GPT-5.5)</td>
-              <td>200K&ndash;1M tokens</td>
+              <td>1M tokens (Opus 4.8, Sonnet 5)</td>
               <td>1-2M tokens</td>
             </tr>
             <tr>
@@ -1138,7 +1143,52 @@
       </div>
 
       <div class="callout callout-info">
-        <div class="callout-title">Late-June 2026 Update &mdash; Claude Fable 5 &amp; Mythos 5 Launched, Then Suspended</div>
+        <div class="callout-title">July 2026 Update &mdash; Claude Sonnet 5, GPT-5.6 Goes Public, Still No Gemini 3.5 Pro</div>
+        <p>
+          Three things changed between the June update and the end of July&mdash;and one thing
+          conspicuously didn&rsquo;t:
+        </p>
+        <ul>
+          <li><strong>Claude Sonnet 5</strong> (June 30) shipped with a one-million-token context
+          window and 128K max output, and became the default for Free and Pro users on claude.ai
+          as well as the default in Claude Code from launch. Introductory pricing is
+          <strong>$2/$10 per million tokens through August 31, 2026</strong>, after which it moves
+          to <strong>$3/$15</strong>. A detail almost nobody reports: Sonnet 5 uses an updated
+          tokenizer that expands token counts by roughly <strong>1.0&ndash;1.35&times;</strong> for
+          the same text. Anthropic describes the introductory rate as roughly cost-neutral
+          <em>because of</em> that expansion&mdash;which means that when the introductory period
+          ends, your real cost rises by more than the headline $2&rarr;$3 suggests. If you are
+          budgeting an API workflow past August, price it on tokens counted by the new tokenizer,
+          not on the old count.
+          <a href="https://www.anthropic.com/news/claude-sonnet-5" target="_blank" rel="noopener">[Source]</a></li>
+          <li><strong>GPT-5.6 became generally available</strong> on July 9, after the limited June
+          preview. Three tiers, priced per million tokens: <strong>Luna $1/$6</strong>,
+          <strong>Terra $2.50/$15</strong>, and <strong>Sol $5/$30</strong>. All three carry a
+          1M-token context window, 128K max output, and a knowledge cutoff of February 16, 2026.
+          The same day, GPT-5.6 became the preferred model in Microsoft 365 Copilot.
+          <a href="https://openai.com/index/gpt-5-6/" target="_blank" rel="noopener">[Source]</a></li>
+          <li><strong>Gemini 3.5 Pro still does not exist.</strong> It has now missed three
+          announced targets. Bloomberg reported on July 16 that Google delayed it again after it
+          fell short of the company&rsquo;s own internal quality bars on hallucination rates and
+          real-world reliability, with DeepMind said to have scrapped and rebuilt the base model.
+          On July 21 Google shipped Gemini 3.6 Flash, Gemini 3.5 Flash-Lite, and Flash
+          Cyber&mdash;no Pro. Treat any 3.5 Pro specification you see quoted as unconfirmed until
+          Google announces one.
+          <a href="https://techcrunch.com/2026/07/21/google-releases-three-new-gemini-models-but-no-3-5-pro/" target="_blank" rel="noopener">[Source]</a></li>
+        </ul>
+        <p class="mb-0">
+          This also corrects a framing in the June update below. When GPT-5.6 first appeared as a
+          preview restricted to roughly 20 pre-approved organizations, it looked like the start of
+          a pattern&mdash;government sitting between clinicians and the frontier. Two weeks later
+          it was on sale to anyone with an API key. The gate turned out to be a release stage, not
+          a new structure. The lesson that survives is narrower and more useful: <strong>access to
+          a specific model can change on short notice in either direction</strong>, so keep a
+          fallback rather than hard-wiring one vendor and version into a clinical workflow.
+        </p>
+      </div>
+
+      <div class="callout callout-info">
+        <div class="callout-title">June&ndash;July 2026 Update &mdash; Claude Fable 5 Suspended, Then Restored</div>
         <p>
           The biggest story of the month is a governance one. On <strong>June 9</strong>, Anthropic
           publicly released its most capable models yet&mdash;<strong>Claude Fable 5</strong> and the
@@ -1158,18 +1208,27 @@
           <a href="https://fortune.com/2026/06/13/anthropic-disables-fable-mythos-export-controls-national-security-threat/" target="_blank">[Fortune]</a>
         </p>
         <p>
-          It wasn&rsquo;t the only government touch on frontier access this month.
-          <strong>GPT-5.6</strong> (Sol, Terra, and Luna) launched June 26 not as a public release
-          but as a limited preview to about 20 pre-approved organizations &ldquo;shared with the
-          government,&rdquo; API and Codex only. Meanwhile the strongest <em>open</em> challenger
-          arrived from outside the US entirely: <strong>GLM-5.2</strong> (Zhipu AI, June 13), an
-          MIT-licensed model that independent rankings put #1 among open weights and #4
-          overall&mdash;at roughly one-sixth the cost of GPT-5.5.
+          The suspension ended on <strong>June 30</strong>, when the export controls were lifted.
+          Anthropic restored <strong>Fable 5 globally</strong> on <strong>July 1</strong>&mdash;across
+          the Claude Platform, claude.ai, Claude Code, and Claude Cowork&mdash;after an
+          <strong>18-day</strong> outage, shipping alongside it a new cybersecurity classifier the
+          company says blocks the disputed jailbreak technique in more than 99% of cases. One part
+          of the story did not close the same way: <strong>Mythos 5 did not fully return.</strong>
+          It was partially restored to a set of US organizations on June 26 and remains restricted
+          to them.
+          <a href="https://www.anthropic.com/news/redeploying-fable-5" target="_blank" rel="noopener">[Anthropic]</a>
+        </p>
+        <p>
+          Separately, the strongest <em>open</em> challenger of the cycle arrived from outside the
+          US entirely: <strong>GLM-5.2</strong> (Zhipu AI, June 13), an MIT-licensed model that
+          independent rankings put #1 among open weights and #4 overall&mdash;at roughly one-sixth
+          the cost of GPT-5.5.
         </p>
         <p class="mb-0">
-          <strong>Why it matters for clinicians:</strong> the frontier models you build on can now be
-          recalled by government order on short notice. If a clinical workflow depends on one specific
-          model, keep a fallback&mdash;don&rsquo;t hard-wire a single vendor or version.
+          <strong>Why it matters for clinicians:</strong> a frontier model you build on can be pulled
+          by government order on short notice, and it may not come back on the same terms&mdash;Fable
+          5 returned in full, Mythos 5 did not. If a clinical workflow depends on one specific model,
+          keep a fallback. Don&rsquo;t hard-wire a single vendor or version.
         </p>
       </div>
 
@@ -1190,9 +1249,8 @@
           preview for Max/Team/Enterprise: one task can orchestrate up to 1,000 subagents. If
           you use Claude Code heavily, the Max plan is the intended home for this.
           <a href="https://claude.com/blog/introducing-dynamic-workflows-in-claude-code" target="_blank">[Source]</a></li>
-          <li><strong>Gemini 3.5 Pro</strong> remained in limited Vertex preview as of June 19&mdash;reports
-          point to a late-June general availability with a 2-million-token context window and
-          Deep Think reasoning. Meanwhile <strong>Google Health Coach</strong> (May 19,
+          <li><strong>Gemini 3.5 Pro</strong> had not shipped as of June 19, and still had not as
+          of late July&mdash;see the July update above. Meanwhile <strong>Google Health Coach</strong> (May 19,
           $9.99/month) became the first Gemini-powered consumer health product with US EHR
           integration&mdash;the most clinically consequential Gemini release this cycle.</li>
         </ul>

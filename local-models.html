@@ -281,8 +281,8 @@
           <p>Alibaba's May 2026 release. Scores 77.2% on SWE-bench&mdash;competitive with much larger models for code-adjacent medical tasks (clinical pipeline scripts, EHR data wrangling). Strong tool-use and JSON-mode support.</p>
         </div>
         <div class="resource-card">
-          <h4>Kimi K2.6</h4>
-          <p>Moonshot AI's May 2026 update. Currently the coding leader among May 2026 open-source releases; useful when your local workflow involves building small utilities or scripts alongside clinical reasoning.</p>
+          <h4>Kimi K3</h4>
+          <p>Moonshot AI's July 16, 2026 flagship; open weights published July 27. Roughly 2.8 trillion parameters (mixture-of-experts, ~104B active per token) with a 1M-token context. Independent indices place it just behind the closed frontier&mdash;but at this scale the weights are datacenter infrastructure, not something you run locally. See the callout below. Its predecessor, <strong>Kimi K2.6</strong> (May 2026), remains the more practical option for coding-adjacent local work.</p>
         </div>
         <div class="resource-card">
           <h4>GLM-5.2</h4>
@@ -329,6 +329,50 @@
           against closed APIs, they&rsquo;re the strongest evidence yet that the open-weight
           frontier keeps pace. Hardware caveat: models in this class need serious GPU memory;
           this is server-room territory, not laptop territory.
+        </p>
+      </div>
+
+      <div class="callout callout-warning">
+        <div class="callout-title">July 2026 Update: Kimi K3, and Why &ldquo;Open Weights&rdquo; Doesn&rsquo;t Mean You Can Run It</div>
+        <p>
+          Moonshot AI released <strong>Kimi K3</strong> on July 16, 2026 and published its full
+          open weights on July 27. Independent aggregate indices rank it near the top of all
+          models, open or closed&mdash;the closest an open-weight release has come to the
+          frontier. Most of the coverage that followed amounted to some version of &ldquo;the
+          best model in the world is now a free download.&rdquo; That framing is wrong in three
+          specific ways, and all three generalize well past this one model.
+        </p>
+        <p>
+          <strong>First, you cannot run it.</strong> K3 is roughly <strong>2.8 trillion
+          parameters</strong>. Even quantized down to 4 bits, the weights alone come to
+          <strong>on the order of 1.4 TB</strong>&mdash;before any context or activation memory.
+          This is a multi-node datacenter model. It will not run on a MacBook, on a workstation
+          with a good GPU, or on a single server. &ldquo;Open weights&rdquo; describes a license
+          and a download, not a hardware requirement, and the gap between the two has widened
+          fast: the models in this section you can genuinely run at home are three orders of
+          magnitude smaller.
+        </p>
+        <p>
+          <strong>Second, it is not MIT-licensed</strong>, despite a great deal of reporting that
+          says it is. Moonshot pre-announced a &ldquo;Modified MIT&rdquo; license and many outlets
+          repeated that. What actually shipped is a bespoke <strong>Kimi K3 License</strong>
+          (tagged <code>license: other</code> on Hugging Face) carrying a revenue-triggered
+          separate-agreement clause and a user-interface attribution mandate. That is open-weight
+          with commercial strings attached, not OSI-approved open source. If you are evaluating a
+          model for anything your compliance office will eventually read, read the license that
+          shipped rather than the one that was announced. GLM-5.2 above is genuinely MIT; this
+          one is not.
+        </p>
+        <p class="mb-0">
+          <strong>Third, and the one that matters most here: the hosted API is not an option for
+          PHI.</strong> Using Kimi through Moonshot&rsquo;s API sends your data to a Chinese
+          company. There is no BAA and no HIPAA pathway. There is also no published medical
+          evaluation of K3&mdash;none of its headline benchmarks are clinical. The real
+          significance of this release is structural rather than practical: the open-weight
+          frontier now sits roughly one tier behind the closed frontier, which over the next year
+          or two pressures pricing and makes self-hosted clinical models more plausible. That is
+          a trend worth watching, not a tool to adopt.
+          <a href="https://www.interconnects.ai/p/kimi-k3-the-open-weights-escalation" target="_blank" rel="noopener">[Analysis]</a>
         </p>
       </div>
 
