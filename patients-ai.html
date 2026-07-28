@@ -287,6 +287,136 @@
         prepared; the clinician can address specific concerns rather than starting from zero.
       </p>
 
+      <h3 id="chatgpt-health">The Patient Whose AI Has Read the Chart</h3>
+
+      <p>
+        On <strong>July 23, 2026</strong>, OpenAI began rolling
+        <a href="https://openai.com/index/health-in-chatgpt/" target="_blank" rel="noopener">Health in ChatGPT</a>
+        out of its limited January pilot and toward the general US user base. OpenAI&rsquo;s own
+        wording is worth keeping: it is <em>&ldquo;beginning to roll out Health to logged-in
+        ChatGPT users 18 and older in the U.S. on web and iOS across Free, Go, Plus, and Pro
+        plans.&rdquo;</em> A staged rollout, not a switch thrown for everyone at once&mdash;so
+        assume some of your patients have it and some do not. Connectable sources are Apple
+        Health, supported medical records from US hospital systems (brokered through b.well,
+        the same pipe behind Perplexity Health), One Medical, and Function Health.
+      </p>
+
+      <p>
+        The consequence for your next visit is direct: the patient in front of you may have
+        arrived having had ChatGPT read their <em>actual</em> labs, medication list, and visit
+        notes&mdash;yours included&mdash;and explain them. That is a different encounter from
+        &ldquo;I pasted a lab value into a chatbot,&rdquo; and a very different one from
+        &ldquo;I read something online.&rdquo; The model is no longer reasoning about a
+        hypothetical patient with these symptoms. It is reasoning about this one, with a
+        plausible-looking rendering of your own documentation in front of it.
+      </p>
+
+      <p>
+        One design detail governs how often this comes up. Among pilot users,
+        <strong>more than 70% of health-related conversations took place outside</strong> the
+        dedicated health experience, which OpenAI concluded had &ldquo;added an unnecessary
+        step.&rdquo; The space itself did not go away&mdash;Health &ldquo;remains your home base
+        for connecting and managing your information&rdquo; in the left sidebar. What was
+        removed is the <em>requirement to start there</em>. Connected health context can now be
+        drawn on anywhere in ChatGPT, permission-gated: ask-each-time by default, with an
+        &ldquo;always allow&rdquo; option. Patients are not making a deliberate trip to a health
+        product. The health product reaches into wherever they already were.
+      </p>
+
+      <p>
+        OpenAI is explicit about the boundary, and the language is worth knowing verbatim
+        because patients rarely read it. From the July launch post:
+        <em>&ldquo;ChatGPT can still make mistakes and does not replace the care and judgment
+        of qualified medical professionals.&rdquo;</em> And on the record itself:
+        <em>&ldquo;Connected information may not always be complete or current, for example, a
+        medication may remain listed after you stop taking it.&rdquo;</em> The blunter
+        formulation&mdash;<em>&ldquo;It is not intended for diagnosis or treatment&rdquo;</em>&mdash;comes
+        from the earlier
+        <a href="https://openai.com/index/introducing-chatgpt-health/" target="_blank" rel="noopener">January 2026 announcement</a>,
+        not the July one. OpenAI says it worked with hundreds of physicians worldwide on the
+        evaluation rubrics, and that every GPT-5.6 model outperformed GPT-5.5 on HealthBench
+        Professional. The Free tier runs on GPT-5.5 Instant, paid tiers on GPT-5.6 Sol.
+      </p>
+
+      <p>
+        That second caveat is the one with teeth, and it is the failure mode most likely to
+        reach you. A portal-derived medication list looks reconciled whether or not it is. A
+        discontinued anticoagulant that never came off, a resolved problem still coded active,
+        a potassium drawn mid-gastroenteritis presented without that context&mdash;the model
+        will reason fluently and confidently from all of it. This is not hallucination in the
+        usual sense. It is competent reasoning over an incomplete record, which is harder to
+        spot and more persuasive when it is wrong.
+      </p>
+
+      <p>
+        On privacy, be precise rather than reflexive. OpenAI states that connected medical
+        records and Apple Health data, and the conversations that use them, are <em>&ldquo;not
+        used to train our foundation models or target ads, regardless of the model-training
+        setting you choose for ChatGPT&rdquo;</em>&mdash;while conversations that do
+        <em>not</em> use connected data follow whatever training setting the account already
+        has. As written, that carve-out is unusually broad. It is also a vendor commitment
+        rather than an audited one, so report it to patients as what OpenAI states, not as
+        something anyone has verified. OpenAI further says disconnecting a source deletes
+        synced data within 30 days, though anything already in conversation history persists
+        until those conversations are deleted. What none of it does is make the arrangement
+        HIPAA-regulated.
+      </p>
+
+      <div class="callout callout-warning">
+        <div class="callout-title">Whose Choice It Is: The Business Associate Line</div>
+        <p>
+          A patient who connects their own records to a consumer product is exercising control
+          over their own information. HIPAA constrains covered entities and their business
+          associates; it does not constrain a patient handling their own record. That choice is
+          theirs, and it is not yours to police.
+        </p>
+        <p>
+          <strong>Directing them to do it is a different act.</strong> Consumer
+          ChatGPT&mdash;including Health&mdash;is not offered under a business associate
+          agreement. If you recommend from the exam room that patients route their chart
+          through it, or if you paste a patient&rsquo;s record into it yourself, you have moved
+          from observing a patient&rsquo;s decision to making a workflow decision about PHI
+          with no BAA behind it. Those are separate questions with separate answers.
+        </p>
+        <p class="mb-0">
+          The workable middle: answer honestly about what the tool does well and badly, stop
+          short of an implicit endorsement, and keep your own handling of patient data inside
+          tools your organization has actually contracted for. See
+          <a href="phi-hipaa.html">PHI &amp; HIPAA</a> for the agreement landscape.
+        </p>
+      </div>
+
+      <div class="callout callout-info">
+        <div class="callout-title">Three Questions Before You Argue With It</div>
+        <p>
+          When a patient opens with &ldquo;the AI said my TSH is low,&rdquo; the useful move is
+          not to rebut the interpretation. It is to find out what the model was looking at.
+        </p>
+        <ol>
+          <li>
+            <strong>&ldquo;What did it have access to?&rdquo;</strong> Connected portal records,
+            a screenshot, or nothing but their own description? Those produce very different
+            answers, and patients often cannot tell which one they got.
+          </li>
+          <li>
+            <strong>&ldquo;How current was what it read?&rdquo;</strong> This is a natural
+            opening to walk the medication and problem lists together&mdash;worth doing on its
+            own merits, and frequently the most useful thing to come out of the conversation.
+          </li>
+          <li>
+            <strong>&ldquo;What worried you most about what it said?&rdquo;</strong> A model
+            can produce a well-organized, accurate explanation and still have no idea which
+            sentence landed. That part is yours.
+          </li>
+        </ol>
+        <p class="mb-0">
+          Dismissiveness (&ldquo;those things are useless&rdquo;) is both inaccurate and
+          costly&mdash;the patient simply stops telling you. Deference (&ldquo;well, if that
+          is what it said&rdquo;) gives away the things it does not have: the exam, the
+          trajectory, and the reason the test was ordered in the first place.
+        </p>
+      </div>
+
       <h3>The Worried Well (Now More Worried)</h3>
 
       <p>
@@ -535,6 +665,18 @@
         Consumer AI tools are not HIPAA-compliant. Data entered into ChatGPT, Claude, or similar tools
         goes to companies that may use it for training or other purposes. Patients should avoid including
         identifying information (name, date of birth, Social Security number) in health queries.
+      </p>
+
+      <p>
+        This needs one refinement as of mid-2026, because the blanket version is no longer
+        accurate. OpenAI states that records connected through ChatGPT Health, and the
+        conversations that use them, are not used to train its foundation models or target ads
+        regardless of the account&rsquo;s general training setting&mdash;a narrower and stronger
+        commitment than applies to ordinary typed conversations, which still follow whatever
+        setting the user has chosen. But &ldquo;not used for training&rdquo; is not the same as
+        &ldquo;covered by HIPAA.&rdquo; The consumer product carries a consumer contract, not a
+        business associate agreement, and that is the distinction that matters when a patient
+        asks whether they should connect their chart.
       </p>
 
       <h4>4. AI Can Hallucinate</h4>
@@ -831,6 +973,7 @@
       <!-- Quick Reference -->
       <h2>Quick Reference: When Patients Bring AI to the Visit</h2>
 
+      <div class="comparison-table-wrapper">
       <table class="comparison-table">
         <thead>
           <tr>
@@ -842,6 +985,10 @@
           <tr>
             <td><strong>Patient is prepared and informed</strong></td>
             <td>Acknowledge their preparation; use as foundation for discussion; identify areas needing clarification</td>
+          </tr>
+          <tr>
+            <td><strong>Patient&rsquo;s AI has read their actual chart</strong></td>
+            <td>Ask what it had access to and how current that information was; walk the medication and problem lists together; expect stale record data, not hallucination, as the likely source of error</td>
           </tr>
           <tr>
             <td><strong>Patient is anxious about AI findings</strong></td>
@@ -861,13 +1008,14 @@
           </tr>
         </tbody>
       </table>
+      </div>
 
       <h3>Key Messages for Patients</h3>
 
       <ol>
         <li>AI is a starting point, not a diagnosis.</li>
         <li>Better prompts yield better information.</li>
-        <li>Your data isn't private—avoid identifying information.</li>
+        <li>Consumer AI isn't covered by HIPAA—even the versions that connect to your records.</li>
         <li>AI can hallucinate—verify important claims.</li>
         <li>Emergency symptoms need emergency care, not AI.</li>
       </ol>
@@ -991,6 +1139,24 @@
           <strong>Disclosure is the open question.</strong> The 2026 AMA Physician Survey added new
           questions on how patients use AI and how often they disclose it&mdash;a reminder that much
           patient AI use never surfaces in the visit unless you ask.
+        </p>
+      </div>
+
+      <div class="callout callout-info">
+        <div class="callout-title">July 2026 Update: ChatGPT Health Opens to US Users</div>
+        <p>
+          <strong>July 23, 2026.</strong> OpenAI began rolling
+          <a href="https://openai.com/index/health-in-chatgpt/" target="_blank" rel="noopener">Health in ChatGPT</a>
+          out of the limited January pilot noted above to logged-in US users 18 and over&mdash;web
+          and iOS, Free, Go, Plus, and Pro. It is a staged rollout in OpenAI&rsquo;s own words
+          (&ldquo;beginning to roll out&rdquo;), so patient access will be uneven for a while.
+          The company says more than <strong>300 million people per week</strong> already bring
+          health questions to ChatGPT, up from over 230 million when the pilot opened in January.
+        </p>
+        <p class="mb-0">
+          What changes inside the visit&mdash;connected portal records, the stale-medication-list
+          failure mode, and where the business associate line falls&mdash;is covered in
+          <a href="#chatgpt-health">The Patient Whose AI Has Read the Chart</a> in Part 2.
         </p>
       </div>
 
@@ -1402,7 +1568,7 @@
   <footer class="footer">
     <div class="footer-inner">
       <div><strong>AI 101</strong> · A Self-Paced Guide to AI in Medicine</div>
-      <div><a href="updates.html">v1.12 · 2026</a></div>
+      <div><a href="updates.html">v1.13 · 2026</a></div>
     </div>
   </footer>
 

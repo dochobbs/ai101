@@ -1469,21 +1469,22 @@ claude</pre><button class="copy-btn">Copy</button></div>
 </article>
 
 <article class="day" id="day-19">
-  <header class="day-header"><span class="day-label">Day 19</span><h3 class="day-title">A Time Machine for Your Files (Git)</h3></header>
+  <header class="day-header"><span class="day-label">Day 19</span><h3 class="day-title">A Travel Journal for Your Files (Git)</h3></header>
   <div class="day-body">
-    <p>Git is a tool that lets you save snapshots of your work and go back if you mess up. It has a reputation for being confusing. Claude makes it easy.</p>
-
-    <p>If you’ve used an EHR, you already understand the idea: every version of the chart is kept, every change has a name and a timestamp on it, and nothing is ever really gone. Git is that, for your files.</p>
+    <p>Git keeps a travel journal for your project. It records the important places the work has reached, what changed along the way, and how to get back if you take a wrong turn. Each entry is dated and labeled: this is what the project looked like at this moment. You can return to any of them, which is the sense in which people call git a time machine. It has a reputation for being confusing. Claude makes it easy.</p>
 
     <p>Three words you’ll hear, translated:</p>
     <ul>
-      <li><strong>Repository</strong> (or “repo”) &mdash; a folder git is watching.</li>
-      <li><strong>Commit</strong> &mdash; one labeled snapshot. The label is yours to write.</li>
-      <li><strong>Diff</strong> &mdash; what changed between two snapshots.</li>
+      <li><strong>Repository</strong> (or “repo”) &mdash; the whole expedition folder git is watching.</li>
+      <li><strong>Commit</strong> &mdash; one dated entry. The label is yours to write.</li>
+      <li><strong>Diff</strong> &mdash; comparing today’s map against the last entry.</li>
     </ul>
     <p>That’s the whole vocabulary you need. Claude handles the actual commands.</p>
 
-    <div class="codeblock"><pre>cd ~/claude-lab
+    <p>We’ll use your lab folder. If you’ve landed here without doing the earlier days, this makes one for you &mdash; the folder is created only if it isn’t already there, and <code class="inline">notes.md</code> gives you something to save. Nothing you already have is changed.</p>
+
+    <div class="codeblock"><pre>mkdir -p ~/claude-lab &amp;&amp; cd ~/claude-lab
+touch notes.md
 claude</pre><button class="copy-btn">Copy</button></div>
 
     <div class="codeblock"><pre>Set up git in this folder. I've never used git before, so explain what you're doing as you go.</pre><button class="copy-btn">Copy</button></div>
@@ -1491,7 +1492,7 @@ claude</pre><button class="copy-btn">Copy</button></div>
     <p>Then:</p>
     <div class="codeblock"><pre>Save a snapshot of everything we have right now, and label it "end of week 3 setup."</pre><button class="copy-btn">Copy</button></div>
 
-    <p>Change something in reflections.md. Then:</p>
+    <p>Change something in one of your files. Then:</p>
     <div class="codeblock"><pre>What's changed since my last snapshot?</pre><button class="copy-btn">Copy</button></div>
 
     <div class="codeblock"><pre>Save another snapshot with a label that describes what changed.</pre><button class="copy-btn">Copy</button></div>
@@ -1507,15 +1508,22 @@ claude</pre><button class="copy-btn">Copy</button></div>
 <article class="day" id="day-20">
   <header class="day-header"><span class="day-label">Day 20</span><h3 class="day-title">Undoing Mistakes</h3></header>
   <div class="day-body">
-    <p>In your lab folder, do something “bad.” Delete a section of reflections.md, mess up the formatting, whatever.</p>
+    <p>Sooner or later you take a wrong turn. Recovering means going back to the last place you knew the map was right &mdash; the last entry in the journal.</p>
+
+    <p>So take one on purpose. In your lab folder, do something “bad.” Delete a section of one of your files, mess up the formatting, whatever.</p>
 
     <p>Then:</p>
-    <div class="codeblock"><pre>I just messed up reflections.md. Use git to get it back to the way it was at the last snapshot.</pre><button class="copy-btn">Copy</button></div>
+    <div class="codeblock"><pre>I just messed up a file in this folder. Use git to get it back to the way it was at the last snapshot.</pre><button class="copy-btn">Copy</button></div>
 
     <p>See how quickly you can recover. Then look at the trail you’ve built:</p>
     <div class="codeblock"><pre>Show me the history of snapshots in this folder, in plain language.</pre><button class="copy-btn">Copy</button></div>
 
     <p>One honest caveat: git can only restore what was in a snapshot. A file you never committed, or a folder git isn’t watching, has no time machine. The habit that protects you is cheap &mdash; when something feels worth keeping, say <em>“save a snapshot.”</em> Takes five seconds.</p>
+
+    <div class="callout">
+      <div class="callout-label">Where this goes next</div>
+      Git is your memory. GitHub is your meeting place. Everything you just did lives only on this laptop &mdash; when you want the journal backed up somewhere safe, readable by someone else, and able to hold two versions of an idea at once, that’s <a href="github.html">14 Days to GitHub</a>.
+    </div>
 
     <div class="learned">
       <div class="learned-label">What you just learned</div>
@@ -1948,8 +1956,8 @@ claude</pre><button class="copy-btn">Copy</button></div>
 
 <footer class="site-footer">
   <div><strong>AI 101</strong> · <a href="index.html">A Self-Paced Guide to AI in Medicine</a></div>
-  <div><a href="vibe-coding.html">Vibe Coding module</a> · <a href="https://code.claude.com/docs/en/overview" target="_blank" rel="noopener">Official Claude Code docs</a></div>
-  <div><a href="updates.html">v1.12 · 2026</a></div>
+  <div><a href="github.html">14 Days to GitHub</a> · <a href="vibe-coding.html">Vibe Coding module</a> · <a href="https://code.claude.com/docs/en/overview" target="_blank" rel="noopener">Official Claude Code docs</a></div>
+  <div><a href="updates.html">v1.13 · 2026</a></div>
 </footer>
 <script src="https://studio.pickaxe.co/api/embed/bundle.js" defer></script>
 </body></html>

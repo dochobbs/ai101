@@ -1,0 +1,2065 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>14 Days to GitHub · Where Your Work Lives</title>
+<meta name="description" content="A 14-day, 10-minutes-a-day module that takes clinicians from a folder on their laptop to a backed-up GitHub repository they can branch, review, merge, and recover.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://ai101.health/github.html">
+  <meta property="og:title" content="14 Days to GitHub · Where Your Work Lives">
+  <meta property="og:description" content="A 14-day, 10-minutes-a-day module that takes clinicians from a folder on their laptop to a backed-up GitHub repository they can branch, review, merge, and recover.">
+  <meta property="og:image" content="https://ai101.health/og-image.png">
+  <meta property="og:site_name" content="AI 101">
+  <meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://ai101.health/github.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500&family=Source+Sans+3:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+</style>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%231e293b'/%3E%3Ctext x='16' y='23' font-family='ui-monospace,monospace' font-size='17' font-weight='700' fill='%23fb923c' text-anchor='middle'%3E14%3C/text%3E%3C/svg%3E">
+<meta name="theme-color" content="#0f172a">
+
+<style>
+:root {
+  /* AI 101 design system — slate palette */
+  --bg: #f8fafc;            /* slate-100 */
+  --bg-elevated: #ffffff;   /* white cards */
+  --bg-code: #f1f5f9;       /* light slate — inline code */
+  --ink: #334155;           /* slate-800 — body text */
+  --ink-soft: #475569;      /* slate-700 */
+  --ink-muted: #64748b;     /* slate-600 */
+  --heading: #1e293b;       /* slate-900 — headings */
+  --accent: #ea580c;        /* orange — brand default, cycled per phase */
+  --accent-hover: #c2410c;
+  --accent-soft: #fed7aa;
+  --accent-faint: #ffedd5;
+  --line: #e2e8f0;          /* slate-300 */
+  --line-strong: #cbd5e1;   /* slate-400 */
+  --success: #16a34a;
+
+  --serif: "Fraunces", Georgia, serif;
+  --sans: "Source Sans 3", -apple-system, BlinkMacSystemFont, sans-serif;
+  --mono: "JetBrains Mono", "SF Mono", Menlo, ui-monospace, monospace;
+
+  --measure: 62ch;
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--serif);
+  font-feature-settings: "ss01", "ss02";
+  font-variation-settings: "opsz" 14, "SOFT" 40, "WONK" 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-size: 18px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+::selection { background: var(--accent-soft); color: var(--ink); }
+
+.shell {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  max-width: 1400px;
+  margin: 0 auto;
+  min-height: 100vh;
+}
+
+/* ───── Sidebar ───── */
+aside.sidebar {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow-y: auto;
+  padding: 2.5rem 1.5rem 3rem;
+  border-right: 1px solid var(--line);
+  background: oklch(0.955 0.013 72);
+  scrollbar-width: thin;
+  scrollbar-color: var(--line-strong) transparent;
+}
+
+aside.sidebar::-webkit-scrollbar { width: 6px; }
+aside.sidebar::-webkit-scrollbar-thumb { background: var(--line-strong); border-radius: 3px; }
+aside.sidebar::-webkit-scrollbar-track { background: transparent; }
+
+.brand {
+  font-variation-settings: "opsz" 60, "SOFT" 100, "WONK" 1;
+  font-size: 1.7rem;
+  line-height: 1.05;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.35rem;
+}
+
+.brand-sub {
+  font-size: 0.72rem;
+  color: var(--ink-muted);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-family: var(--mono);
+  margin-bottom: 2.25rem;
+}
+
+.progress-meter {
+  margin-bottom: 2.5rem;
+}
+
+.progress-label {
+  font-size: 0.78rem;
+  color: var(--ink-soft);
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 0.55rem;
+  font-variant-numeric: tabular-nums;
+  font-family: var(--mono);
+  letter-spacing: 0.04em;
+}
+
+.progress-label .pct { color: var(--accent); font-weight: 500; }
+
+.progress-bar {
+  height: 3px;
+  background: var(--line);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: var(--accent);
+  width: 0%;
+  transition: width 700ms var(--ease-out);
+}
+
+.nav-phase {
+  margin-bottom: 1.75rem;
+}
+
+.nav-phase-title {
+  font-family: var(--mono);
+  font-size: 0.66rem;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: var(--ink-muted);
+  font-weight: 500;
+  margin-bottom: 0.7rem;
+  padding: 0 0.4rem;
+}
+
+.nav-day {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  padding: 0.4rem 0.5rem;
+  text-decoration: none;
+  color: var(--ink-soft);
+  font-size: 0.92rem;
+  border-radius: 6px;
+  transition: background 180ms var(--ease-out), color 180ms var(--ease-out);
+  line-height: 1.3;
+}
+
+.nav-day:hover {
+  background: var(--bg);
+  color: var(--ink);
+}
+
+.nav-day.active {
+  background: var(--accent-faint);
+  color: var(--ink);
+}
+
+.day-dot {
+  width: 12px;
+  height: 12px;
+  border: 1.5px solid var(--line-strong);
+  border-radius: 50%;
+  flex-shrink: 0;
+  transition: all 220ms var(--ease-out);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.nav-day.done .day-dot {
+  background: var(--accent);
+  border-color: var(--accent);
+}
+
+.nav-day.done .day-dot::after {
+  content: "";
+  position: absolute;
+  width: 5px;
+  height: 2.5px;
+  border-left: 1.5px solid var(--bg);
+  border-bottom: 1.5px solid var(--bg);
+  transform: rotate(-45deg) translate(0.5px, -0.5px);
+}
+
+.day-num {
+  font-family: var(--mono);
+  font-variant-numeric: tabular-nums;
+  font-size: 0.72rem;
+  color: var(--ink-muted);
+  width: 18px;
+  flex-shrink: 0;
+}
+
+.nav-day.active .day-num { color: var(--accent); }
+
+/* Anchor links in the "After" group: no dot, label aligned with the day titles */
+.nav-after .day-num { width: calc(18px + 12px + 0.7rem); }
+
+.reset-link {
+  display: block;
+  margin-top: 1.5rem;
+  font-size: 0.78rem;
+  color: var(--ink-muted);
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: var(--serif);
+  text-align: left;
+  padding: 0.4rem;
+  font-style: italic;
+}
+
+.reset-link:hover { color: var(--accent); }
+
+/* ───── Main ───── */
+main {
+  padding: 4.5rem 4rem 8rem;
+  max-width: 820px;
+}
+
+/* Intro */
+.intro {
+  margin-bottom: 4rem;
+}
+
+h1.title {
+  font-size: clamp(2.75rem, 6vw, 4.75rem);
+  font-variation-settings: "opsz" 96, "SOFT" 100, "WONK" 1;
+  line-height: 1.0;
+  letter-spacing: -0.03em;
+  font-weight: 400;
+  margin-bottom: 0.6rem;
+}
+
+.subtitle {
+  font-size: 1.3rem;
+  color: var(--ink-soft);
+  font-style: italic;
+  font-variation-settings: "opsz" 20, "SOFT" 80;
+  margin-bottom: 2.5rem;
+  max-width: var(--measure);
+}
+
+.intro-body p {
+  margin-bottom: 1.15rem;
+  max-width: var(--measure);
+}
+
+.intro-body strong { font-weight: 600; }
+
+.promise-list {
+  margin: 2.5rem 0;
+  list-style: none;
+  max-width: var(--measure);
+}
+
+.promise-list li {
+  padding: 1rem 0;
+  border-top: 1px solid var(--line);
+  display: grid;
+  grid-template-columns: 1.5rem 1fr;
+  gap: 0.5rem;
+  align-items: baseline;
+}
+
+.promise-list li:last-child { border-bottom: 1px solid var(--line); }
+
+.promise-list li::before {
+  content: "→";
+  color: var(--accent);
+  font-family: var(--mono);
+  font-weight: 500;
+}
+
+.time-note {
+  font-size: 0.95rem;
+  color: var(--ink-soft);
+  font-style: italic;
+  margin-top: 1rem;
+}
+
+/* Phase */
+.phase {
+  margin: 6rem 0 3rem;
+  padding-top: 2.5rem;
+  border-top: 1.5px solid var(--ink);
+  scroll-margin-top: 1.5rem;
+}
+
+.phase-num {
+  font-family: var(--mono);
+  font-size: 0.74rem;
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  color: var(--accent);
+  font-weight: 500;
+  margin-bottom: 0.7rem;
+}
+
+h2.phase-title {
+  font-size: clamp(2rem, 4vw, 2.75rem);
+  font-variation-settings: "opsz" 48, "SOFT" 70, "WONK" 0;
+  line-height: 1.05;
+  letter-spacing: -0.025em;
+  font-weight: 400;
+  margin-bottom: 0.6rem;
+}
+
+.phase-sub {
+  font-size: 1.1rem;
+  color: var(--ink-soft);
+  font-style: italic;
+  margin-bottom: 1.75rem;
+  max-width: var(--measure);
+  font-variation-settings: "opsz" 18, "SOFT" 80;
+}
+
+.phase-intro {
+  max-width: var(--measure);
+  color: var(--ink-soft);
+  margin-bottom: 3.5rem;
+  font-size: 1.02rem;
+}
+
+/* Day */
+.day {
+  margin: 4.5rem 0;
+  scroll-margin-top: 1.5rem;
+}
+
+.day-header {
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: baseline;
+  gap: 1.1rem;
+  flex-wrap: wrap;
+}
+
+.day-label {
+  font-family: var(--mono);
+  font-size: 0.74rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--accent);
+  font-weight: 500;
+}
+
+h3.day-title {
+  font-size: 1.95rem;
+  font-variation-settings: "opsz" 32, "SOFT" 60;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+}
+
+.day-body { max-width: var(--measure); }
+
+.day-body p { margin-bottom: 1.15rem; }
+
+.day-body ul, .day-body ol {
+  margin: 1rem 0 1.3rem 0;
+  padding-left: 1.6rem;
+}
+
+.day-body li { margin-bottom: 0.5rem; }
+
+.day-body li::marker { color: var(--ink-muted); }
+
+.day-body strong { font-weight: 600; }
+.day-body em { font-style: italic; color: var(--ink); }
+
+/* Code blocks */
+.codeblock {
+  position: relative;
+  margin: 1.3rem 0;
+  background: var(--bg-code);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  font-family: var(--mono);
+  font-size: 0.86rem;
+  line-height: 1.6;
+}
+
+.codeblock pre {
+  padding: 0.95rem 1.15rem;
+  overflow-x: auto;
+  white-space: pre;
+  color: var(--ink);
+}
+
+.copy-btn {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  background: var(--bg);
+  border: 1px solid var(--line);
+  color: var(--ink-soft);
+  font-family: var(--mono);
+  font-size: 0.66rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  padding: 0.32rem 0.6rem;
+  border-radius: 5px;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 220ms var(--ease-out), color 200ms, border-color 200ms;
+}
+
+.codeblock:hover .copy-btn,
+.codeblock:focus-within .copy-btn { opacity: 1; }
+
+.copy-btn:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
+.copy-btn.copied {
+  color: var(--success);
+  border-color: var(--success);
+  opacity: 1;
+}
+
+/* Inline code */
+code.inline {
+  font-family: var(--mono);
+  font-size: 0.86em;
+  background: var(--bg-code);
+  padding: 0.12em 0.4em;
+  border-radius: 4px;
+  border: 1px solid var(--line);
+  color: var(--ink);
+  white-space: nowrap;
+}
+
+/* Learned */
+.learned {
+  margin: 1.75rem 0 0;
+  padding: 1.1rem 1.3rem;
+  background: var(--accent-faint);
+  border-radius: 8px;
+  font-size: 0.97rem;
+  max-width: var(--measure);
+}
+
+.learned-label {
+  font-size: 0.66rem;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-weight: 600;
+  color: var(--accent);
+  margin-bottom: 0.4rem;
+  font-family: var(--mono);
+}
+
+/* Mark-complete button */
+.complete-btn {
+  margin-top: 1.75rem;
+  background: transparent;
+  border: 1.5px solid var(--line-strong);
+  color: var(--ink-soft);
+  font-family: var(--serif);
+  font-size: 0.97rem;
+  padding: 0.55rem 1.2rem;
+  border-radius: 7px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  transition: all 220ms var(--ease-out);
+  font-variation-settings: "opsz" 16, "SOFT" 30;
+}
+
+.complete-btn:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.complete-btn .check {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: 1.5px solid currentColor;
+  display: inline-block;
+  position: relative;
+  transition: all 220ms var(--ease-out);
+}
+
+.complete-btn.done {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: oklch(0.97 0.012 75);
+}
+
+.complete-btn.done .check { background: transparent; border-color: currentColor; }
+
+.complete-btn.done .check::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 5px;
+  height: 2.5px;
+  border-left: 1.5px solid currentColor;
+  border-bottom: 1.5px solid currentColor;
+  transform: translate(-50%, -65%) rotate(-45deg);
+}
+
+/* Callout */
+.callout {
+  margin: 1.3rem 0;
+  padding: 1rem 1.3rem;
+  border-left: 1px solid var(--line);
+  background: var(--bg-elevated);
+  border-radius: 0 8px 8px 0;
+  font-size: 0.96rem;
+}
+
+.callout-label {
+  font-size: 0.66rem;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-weight: 600;
+  font-family: var(--mono);
+  color: var(--ink-soft);
+  margin-bottom: 0.35rem;
+}
+
+/* Afterword */
+.afterword {
+  margin-top: 7rem;
+  padding-top: 3rem;
+  border-top: 1.5px solid var(--ink);
+}
+
+.afterword h2 {
+  font-size: 2rem;
+  font-variation-settings: "opsz" 36, "SOFT" 70;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  margin-bottom: 1.25rem;
+}
+
+.afterword p { max-width: var(--measure); margin-bottom: 1.15rem; }
+
+.afterword ul {
+  max-width: var(--measure);
+  margin: 1rem 0 2rem 1.6rem;
+}
+
+.afterword ul li { margin-bottom: 0.4rem; }
+
+/* Cheat sheet */
+.cheat {
+  margin: 3.5rem 0;
+  padding: 2rem 2.25rem;
+  background: var(--bg-elevated);
+  border-radius: 12px;
+  border: 1px solid var(--line);
+}
+
+.cheat h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1.25rem;
+  font-weight: 500;
+  font-variation-settings: "opsz" 24, "SOFT" 60;
+}
+
+.cheat-section { margin-bottom: 1.75rem; }
+.cheat-section:last-child { margin-bottom: 0; }
+
+.cheat-section-label {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-weight: 500;
+  color: var(--ink-muted);
+  margin-bottom: 0.7rem;
+  font-family: var(--mono);
+}
+
+dl.cmd-list {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: 0.45rem 1.4rem;
+  font-size: 0.92rem;
+  align-items: baseline;
+}
+
+dl.cmd-list dt {
+  font-family: var(--mono);
+  font-size: 0.84rem;
+  color: var(--ink);
+  white-space: nowrap;
+}
+
+dl.cmd-list dd { color: var(--ink-soft); }
+
+/* When things go weird */
+.weird {
+  margin: 3.5rem 0;
+}
+
+.weird h3 {
+  font-size: 1.4rem;
+  font-weight: 500;
+  margin-bottom: 1.25rem;
+  font-variation-settings: "opsz" 24, "SOFT" 60;
+}
+
+.weird-list {
+  list-style: none;
+  max-width: var(--measure);
+}
+
+.weird-list li {
+  padding: 1rem 0;
+  border-top: 1px solid var(--line);
+}
+
+.weird-list li:last-child { border-bottom: 1px solid var(--line); }
+
+.weird-q {
+  font-style: italic;
+  color: var(--ink);
+  margin-bottom: 0.3rem;
+  font-variation-settings: "opsz" 18, "SOFT" 80;
+}
+
+.weird-a { color: var(--ink-soft); font-size: 0.97rem; }
+
+/* Closing */
+.closing {
+  margin-top: 5rem;
+  padding-top: 3rem;
+  border-top: 1px solid var(--line);
+  text-align: center;
+  font-size: 1.15rem;
+  font-style: italic;
+  color: var(--ink-soft);
+  font-variation-settings: "opsz" 20, "SOFT" 80;
+  max-width: var(--measure);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Mobile */
+@media (max-width: 900px) {
+  .shell { grid-template-columns: 1fr; }
+  aside.sidebar {
+    position: relative;
+    height: auto;
+    border-right: none;
+    border-bottom: 1px solid var(--line);
+    padding: 1.5rem;
+  }
+  main { padding: 2.5rem 1.5rem 4rem; }
+  body { font-size: 17px; }
+  h1.title { font-size: 2.6rem; }
+  .copy-btn { opacity: 1; }
+  .cheat { padding: 1.5rem 1.25rem; }
+  dl.cmd-list { grid-template-columns: 1fr; gap: 0.15rem 0; }
+  dl.cmd-list dd { margin-bottom: 0.5rem; }
+}
+
+/* Print-ish */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  * { transition: none !important; }
+}
+
+/* =====================================================================
+   AI 101 SKIN — body sans / heading serif split, phase color cycling,
+   dark code blocks, split-pill brand badge.
+   ===================================================================== */
+
+/* Body becomes Source Sans; headings stay Fraunces */
+body {
+  font-family: var(--sans);
+  font-feature-settings: normal;
+  font-variation-settings: normal;
+  color: var(--ink);
+}
+
+.brand,
+h1.title,
+h2.phase-title,
+h3.day-title,
+.afterword h2,
+.cheat h3,
+.weird h3 {
+  font-family: var(--serif);
+  color: var(--heading);
+}
+h1.title       { font-variation-settings: "opsz" 96; }
+h2.phase-title { font-variation-settings: "opsz" 48; }
+h3.day-title   { font-variation-settings: "opsz" 32; }
+.afterword h2, .cheat h3, .weird h3 { font-variation-settings: "opsz" 36; }
+.cheat h3 { color: var(--heading); }
+strong { color: var(--heading); }
+.day-body em { color: var(--heading); }
+
+/* Italic editorial bits keep their slant via Source Sans italic */
+.subtitle, .phase-sub, .weird-q, .closing, .reset-link, .time-note { font-style: italic; }
+
+/* Phase color system: teal -> violet -> orange -> blue.
+   Set on the phase section AND all its following day siblings so
+   labels, learned-boxes and buttons inherit the right hue. */
+#phase-1, #phase-1 ~ article.day { --accent:#0d9488; --accent-hover:#0f766e; --accent-soft:#99f6e4; --accent-faint:#ccfbf1; }
+#phase-2, #phase-2 ~ article.day { --accent:#7c3aed; --accent-hover:#6d28d9; --accent-soft:#ddd6fe; --accent-faint:#ede9fe; }
+#phase-3, #phase-3 ~ article.day { --accent:#ea580c; --accent-hover:#c2410c; --accent-soft:#fed7aa; --accent-faint:#ffedd5; }
+
+/* Links: AI 101 blue, violet on hover (sidebar/nav excluded) */
+main a { color:#2563eb; text-decoration:none; border-bottom:1px solid #bfdbfe; transition:color 150ms var(--ease-out), border-color 150ms var(--ease-out); }
+main a:hover { color:#6d28d9; border-color:#6d28d9; text-decoration:none; }
+
+/* Sidebar in white, AI 101 surface */
+aside.sidebar { background: var(--white, #ffffff); border-right:1px solid var(--line); }
+
+/* Brand split-pill badge (B4 device) */
+.brand-badge {
+  display:inline-grid;
+  grid-template-columns:auto 1px auto;
+  align-items:stretch;
+  background:#1e293b;
+  border-radius:5px;
+  overflow:hidden;
+  font-family:var(--mono);
+  font-size:0.8rem;
+  font-weight:500;
+  letter-spacing:0.09em;
+  line-height:1;
+  margin-bottom:0.75rem;
+}
+.brand-badge .bb-l { padding:0.45em 0.6em; color:#ffffff; }
+.brand-badge .bb-r { padding:0.45em 0.6em; color:#fb923c; font-weight:700; }
+.brand-badge .bb-div { background:rgba(255,255,255,0.18); }
+.brand { font-size:1.5rem; letter-spacing:-0.02em; }
+
+/* Dark code blocks — AI 101 'pre' treatment (slate-900) */
+.codeblock {
+  background:#1e293b;
+  border:1px solid #334155;
+}
+.codeblock pre { color:#e2e8f0; padding-right:4.5rem; }
+code.inline {
+  background:var(--bg-code);
+  border:1px solid var(--line);
+  color:var(--heading);
+}
+.copy-btn {
+  background:#283548;
+  border:1px solid rgba(255,255,255,0.18);
+  color:#cbd5e1;
+}
+.copy-btn:hover { color:#ffffff; border-color:rgba(255,255,255,0.55); }
+.copy-btn.copied { color:#86efac; border-color:#86efac; }
+
+/* Callout & cheat surfaces on white with subtle border */
+.callout { background:var(--bg-elevated); border-left:3px solid var(--accent); border:1px solid var(--line); border-left:3px solid var(--accent); }
+.cheat { background:var(--bg-elevated); }
+.learned { background:var(--accent-faint); }
+
+/* Phase top rule + day-title tick echo the phase hue */
+.phase { border-top:1.5px solid var(--heading); }
+.afterword { border-top:1.5px solid var(--heading); }
+
+/* --- site integration + Builder's Ladder --- */
+.home-link{display:inline-block;font-size:.78rem;letter-spacing:.04em;color:#94a3b8;text-decoration:none;margin-bottom:14px}
+.home-link:hover{color:#f8fafc}
+.ladder{border:1px solid #e2e8f0;border-radius:12px;padding:22px 24px;margin:26px 0;background:#f8fafc}
+.ladder-label{font-family:'Fraunces',serif;font-weight:600;font-size:1.05rem;margin-bottom:14px}
+.ladder-rungs{margin:0;padding-left:1.4em}
+.ladder-rungs li{margin:8px 0;line-height:1.5}
+.rung-eg{display:block;font-size:.85rem;color:#64748b}
+.ladder-note{font-size:.92rem;color:#475569;margin:14px 0 0;line-height:1.55}
+.site-footer{background:#0f172a;color:#94a3b8;padding:34px 28px;margin-top:60px;display:flex;flex-wrap:wrap;gap:10px 28px;justify-content:space-between;font-size:.88rem}
+.site-footer a{color:#cbd5e1}
+.site-footer a:hover{color:#fff}
+.site-footer strong{color:#e2e8f0}
+.sidebar-echs{margin:18px 0 10px}
+</style>
+</head>
+<body>
+
+<div class="shell">
+
+<aside class="sidebar">
+  <a class="home-link" href="index.html">&larr; ai101.health</a>
+  <div class="brand-badge"><span class="bb-l">14</span><span class="bb-div"></span><span class="bb-r">DAYS</span></div>
+  <div class="brand">to GitHub</div>
+  <div class="brand-sub">Where your work lives</div>
+
+  <div class="progress-meter">
+    <div class="progress-label">
+      <span>Progress</span>
+      <span><span class="pct" id="pct">0</span> of 15 days</span>
+    </div>
+    <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+  </div>
+
+  <div id="deployment-eac8a421-3c54-4717-bbef-54bb81b54243" class="sidebar-echs"></div>
+
+  <nav id="sidenav">
+    <div class="nav-phase">
+      <div class="nav-phase-title">Before you start</div>
+      <a class="nav-day" href="#day-0" data-day="0"><span class="day-dot"></span><span class="day-num">00</span><span>Base Camp Setup</span></a>
+    </div>
+
+    <div class="nav-phase">
+      <div class="nav-phase-title">Phase One · Your Own Journal</div>
+      <a class="nav-day" href="#day-1" data-day="1"><span class="day-dot"></span><span class="day-num">01</span><span>Start the Journal</span></a>
+      <a class="nav-day" href="#day-2" data-day="2"><span class="day-dot"></span><span class="day-num">02</span><span>Where Am I?</span></a>
+      <a class="nav-day" href="#day-3" data-day="3"><span class="day-dot"></span><span class="day-num">03</span><span>Packing the Bag</span></a>
+      <a class="nav-day" href="#day-4" data-day="4"><span class="day-dot"></span><span class="day-num">04</span><span>The Dated Entry</span></a>
+      <a class="nav-day" href="#day-5" data-day="5"><span class="day-dot"></span><span class="day-num">05</span><span>What Changed</span></a>
+    </div>
+
+    <div class="nav-phase">
+      <div class="nav-phase-title">Phase Two · Base Camp</div>
+      <a class="nav-day" href="#day-6" data-day="6"><span class="day-dot"></span><span class="day-num">06</span><span>What Stays Behind</span></a>
+      <a class="nav-day" href="#day-7" data-day="7"><span class="day-dot"></span><span class="day-num">07</span><span>A Note for the Next Traveler</span></a>
+      <a class="nav-day" href="#day-8" data-day="8"><span class="day-dot"></span><span class="day-num">08</span><span>Base Camp</span></a>
+      <a class="nav-day" href="#day-9" data-day="9"><span class="day-dot"></span><span class="day-num">09</span><span>Bringing It Home</span></a>
+    </div>
+
+    <div class="nav-phase">
+      <div class="nav-phase-title">Phase Three · Side Roads</div>
+      <a class="nav-day" href="#day-10" data-day="10"><span class="day-dot"></span><span class="day-num">10</span><span>The Side Road</span></a>
+      <a class="nav-day" href="#day-11" data-day="11"><span class="day-dot"></span><span class="day-num">11</span><span>Pin a Note to the Board</span></a>
+      <a class="nav-day" href="#day-12" data-day="12"><span class="day-dot"></span><span class="day-num">12</span><span>Presenting the Route</span></a>
+      <a class="nav-day" href="#day-13" data-day="13"><span class="day-dot"></span><span class="day-num">13</span><span>The Other Travelers</span></a>
+      <a class="nav-day" href="#day-14" data-day="14"><span class="day-dot"></span><span class="day-num">14</span><span>Two Maps, One Disagreement</span></a>
+    </div>
+
+    <div class="nav-phase">
+      <div class="nav-phase-title">After</div>
+      <a class="nav-day nav-after" href="#cheat-sheet"><span class="day-num"></span><span>Cheat sheet</span></a>
+      <a class="nav-day nav-after" href="#troubleshoot"><span class="day-num"></span><span>When things go weird</span></a>
+    </div>
+  </nav>
+
+  <button class="reset-link" id="resetBtn">Reset all progress</button>
+</aside>
+
+<main>
+
+<section class="intro">
+  <h1 class="title">14 Days to GitHub</h1>
+  <p class="subtitle">From a folder on your laptop to a repository you can branch, review, and recover.</p>
+
+  <div class="intro-body">
+    <p>If <em>git</em> and <em>GitHub</em> blur together in your head, you&rsquo;re not behind &mdash; most people who use a computer every day have never opened either one. This module assumes you&rsquo;ve never made a commit and aren&rsquo;t sure what one is. That&rsquo;s the starting line.</p>
+
+    <p>Finishing <a href="claude-code.html">30 Days to Claude Code</a> first helps &mdash; you&rsquo;ll already be comfortable in a terminal and pasting commands you didn&rsquo;t write. But it isn&rsquo;t required. If you can open a terminal and you&rsquo;re willing to type things you don&rsquo;t fully understand yet, you can start here.</p>
+
+    <div class="ladder">
+      <div class="ladder-label">Git is your memory. GitHub is your meeting place. Claude is your guide. The command line is the country you are learning to navigate.</div>
+      <p class="ladder-note">Git is a travel journal for a folder. Every commit is a dated entry: this is what the project looked like at this moment, and here&rsquo;s why it changed. GitHub is base camp &mdash; where that journal moves once it&rsquo;s ready to live online, get backed up, and be read by someone other than you.</p>
+    </div>
+
+    <p><strong>The shape of the two weeks.</strong> Three phases, each a small step up:</p>
+    <ul class="promise-list">
+      <li><span><strong>Days 1&ndash;5 · Your Own Journal.</strong> Everything stays on your laptop. You learn to keep a record of your own work.</span></li>
+      <li><span><strong>Days 6&ndash;9 · Base Camp.</strong> The journal goes online &mdash; safely, and on purpose.</span></li>
+      <li><span><strong>Days 10&ndash;14 · Side Roads.</strong> Branches, pull requests, review, and a merge conflict you cause on purpose so you stop being afraid of one.</span></li>
+    </ul>
+
+    <p class="time-note">Ten minutes a day. Some days are shorter.</p>
+  </div>
+</section>
+
+<!-- ───────────── DAY 0 ───────────── -->
+<article class="day" id="day-0">
+  <header class="day-header"><span class="day-label">Day 00</span><h3 class="day-title">Base Camp Setup</h3></header>
+  <div class="day-body">
+    <p>There are two tools here, and their names are confusingly similar. It is worth thirty seconds to separate them, because almost every muddle later starts with mixing these up.</p>
+
+    <p><strong>Git</strong> runs on your machine. It keeps the journal &mdash; the record of what your files looked like at each point in time. It works with no internet connection and no account. <strong>GitHub</strong> is a website that stores copies of those journals online. And <strong>gh</strong> is a small program that lets your terminal talk to that website without opening a browser.</p>
+
+    <p>Git is the notebook. GitHub is the filing cabinet in another building. <code class="inline">gh</code> is the courier. Today you install all three and prove they work. You will not track a single file today.</p>
+
+    <div class="callout">
+      <div class="callout-label">Before you start</div>
+      You need a free GitHub account. Sign up at <a href="https://github.com/signup" target="_blank" rel="noopener">github.com</a> first. The username you pick will be visible on anything you publish, so pick one you would put on a CV.
+    </div>
+
+    <p><strong>First, check whether you already have git.</strong> Most Macs do. Open your terminal and run:</p>
+    <div class="codeblock"><pre>git --version</pre><button class="copy-btn">Copy</button></div>
+    <p>You should see a line like <code class="inline">git version 2.50.1</code>. The exact number does not matter much &mdash; anything 2.23 or newer covers everything in these two weeks. If you see a version, git is installed and you are done with this step.</p>
+
+    <p>If instead a dialog box pops up offering to install the command line developer tools, click <strong>Install</strong> and wait. That is macOS installing git for you. When it finishes, run <code class="inline">git --version</code> again.</p>
+
+    <p><strong>Now install gh.</strong> This is the piece that talks to GitHub:</p>
+    <div class="codeblock"><pre>brew install gh</pre><button class="copy-btn">Copy</button></div>
+
+    <div class="callout">
+      <div class="callout-label">If it says &ldquo;command not found: brew&rdquo;</div>
+      Homebrew is a separate tool for installing things, and it does not come with a Mac. You have two ways forward. The simpler one: go to <a href="https://cli.github.com" target="_blank" rel="noopener">cli.github.com</a>, download the macOS installer, and double-click it &mdash; no terminal involved. The other: install Homebrew from <a href="https://brew.sh" target="_blank" rel="noopener">brew.sh</a> first, then come back and run the line above. Either gets you to the same place.
+    </div>
+
+    <div class="callout">
+      <div class="callout-label">Windows</div>
+      Use this line instead of the <code class="inline">brew</code> one. Everything after this point is identical on Windows and Mac.
+      <div class="codeblock"><pre>winget install --id GitHub.cli</pre><button class="copy-btn">Copy</button></div>
+    </div>
+
+    <p><strong>Connect gh to your GitHub account.</strong> Run:</p>
+    <div class="codeblock"><pre>gh auth login</pre><button class="copy-btn">Copy</button></div>
+
+    <div class="callout">
+      <div class="callout-label">First time only</div>
+      This asks you a short series of questions with arrow-key answers. Choose <strong>GitHub.com</strong>, then <strong>HTTPS</strong> when it asks about protocol, then yes to authenticating with your GitHub credentials. It shows you a one-time code, then opens a browser where you paste it. Approve it and come back to the terminal. You will not do this again on this computer.
+    </div>
+
+    <p>Check that it took:</p>
+    <div class="codeblock"><pre>gh auth status</pre><button class="copy-btn">Copy</button></div>
+    <p>You want a line with a checkmark saying <em>Logged in to github.com account</em> followed by your username. If you see that, the courier knows where to go.</p>
+
+    <p><strong>One last thing: sign your work.</strong> Every journal entry you make gets your name on it, so git needs to know your name. Run these two lines, with your own name and the email address on your GitHub account:</p>
+    <div class="codeblock"><pre>git config --global user.name "Your Name"
+git config --global user.email "you@example.com"</pre><button class="copy-btn">Copy</button></div>
+    <p>Skip this and git will invent something from your computer&rsquo;s hostname, and every entry you write will be signed by a stranger. Two lines now saves untangling it later. The <code class="inline">--global</code> means you are setting it once for every project on this machine, not just this one.</p>
+
+    <div class="learned">
+      <div class="learned-label">What you just learned</div>
+      Git keeps the journal on your machine. GitHub stores it online. <code class="inline">gh</code> is the phone line between them. Nothing is tracked yet.
+    </div>
+    <button class="complete-btn" data-day="0"><span class="check"></span><span class="label">Mark complete</span></button>
+  </div>
+</article>
+
+<section class="phase" id="phase-1">
+  <div class="phase-num">Phase One</div>
+  <h2 class="phase-title">Your Own Journal</h2>
+  <p class="phase-sub">Days 1 to 5 · Everything stays on your laptop.</p>
+  <p class="phase-intro">Nothing leaves your machine this week. No account, no audience, nothing to be embarrassed about. You are just learning to keep a journal of your own work &mdash; what changed, when, and why.</p>
+</section>
+
+<article class="day" id="day-1">
+  <header class="day-header"><span class="day-label">Day 01</span><h3 class="day-title">Start the Journal</h3></header>
+  <div class="day-body">
+    <p>A <strong>repository</strong> is the whole expedition folder &mdash; the maps, the journal, the supply list, and the record of the trip so far. People shorten it to <em>repo</em>. It sounds like a piece of software. It is a folder.</p>
+
+    <p>Today you tell git to start watching one.</p>
+
+    <p>If you finished <a href="claude-code.html">30 Days to Claude Code</a>, use the tool you built on Day 21 or Day 27. Open your terminal and <code class="inline">cd</code> into that folder.</p>
+
+    <div class="callout">
+      <div class="callout-label">Starting here?</div>
+      If you did not do the Claude Code module, make yourself a practice folder now. This one line at a time, or paste the whole block:
+      <div class="codeblock"><pre>mkdir -p ~/github-lab
+cd ~/github-lab
+echo "Things I want to remember" &gt; notes.md
+echo "Half-formed ideas" &gt; ideas.md
+echo "Things to do" &gt; todo.md</pre><button class="copy-btn">Copy</button></div>
+      That makes a folder called <code class="inline">github-lab</code> in your home directory with three small text files in it. Every day from here uses this folder.
+    </div>
+
+    <p>Now, from inside that folder, the command that starts everything:</p>
+    <div class="codeblock"><pre>git init</pre><button class="copy-btn">Copy</button></div>
+
+    <p>Git answers with one line: <em>Initialized empty Git repository in</em> &hellip; and the path to your folder. That is the whole ceremony.</p>
+
+    <p>Look at what it made:</p>
+    <div class="codeblock"><pre>ls -a</pre><button class="copy-btn">Copy</button></div>
+
+    <p>The <code class="inline">-a</code> means <em>show me everything, including hidden things</em>. Your three files are there, and so is something new: a folder called <code class="inline">.git</code>. The leading dot is why you never noticed folders like this before &mdash; it is how a Mac hides a file from ordinary view.</p>
+
+    <p>That <code class="inline">.git</code> folder is the journal. Everything git ever remembers about this project lives in there. Do not open it, do not edit it, and do not delete it unless you mean to throw the entire history away. You will never need to touch it directly.</p>
+
+    <p>If you want to hear it explained a second way, start Claude in that folder and ask:</p>
+    <div class="codeblock"><pre>I just ran git init in this folder. In plain English, what did that actually do?</pre><button class="copy-btn">Copy</button></div>
+
+    <div class="learned">
+      <div class="learned-label">What you just learned</div>
+      A repository is just a folder git has agreed to watch. Making one changes nothing about your files &mdash; and nothing has been saved yet.
+    </div>
+    <button class="complete-btn" data-day="1"><span class="check"></span><span class="label">Mark complete</span></button>
+  </div>
+</article>
+
+<article class="day" id="day-2">
+  <header class="day-header"><span class="day-label">Day 02</span><h3 class="day-title">Where Am I?</h3></header>
+  <div class="day-body">
+    <p>The <strong>working directory</strong> is what is spread out on the table right now &mdash; the actual files as they exist this second, including the half-finished edit you made ten minutes ago.</p>
+
+    <p>One command asks two questions at once: where am I, and what have I changed?</p>
+    <div class="codeblock"><pre>git status</pre><button class="copy-btn">Copy</button></div>
+
+    <p>You will see something close to this:</p>
+    <div class="codeblock"><pre>On branch main
+
+No commits yet
+
+Untracked files:
+  (use "git add &lt;file&gt;..." to include in what will be committed)
+	ideas.md
+	notes.md
+	todo.md
+
+nothing added to commit but untracked files present (use "git add" to track)</pre><button class="copy-btn">Copy</button></div>
+
+    <p>Read it in three pieces.</p>
+    <ul>
+      <li><strong>On branch main.</strong> Branches are Day 10. For now it is the name of the single path you are on. If yours says <code class="inline">master</code> instead, nothing is wrong &mdash; that is just a different default name, which depends on your version of git and on a setting called <code class="inline">init.defaultBranch</code>. Use whichever name you see.</li>
+      <li><strong>No commits yet.</strong> You have never saved an entry. The journal is open to a blank page.</li>
+      <li><strong>Untracked files.</strong> Git can see these three files sitting in the folder, but it has not been told to care about them. It is not watching them. It is just noticing them.</li>
+    </ul>
+
+    <p>Now change something. Add a line to one of the files:</p>
+    <div class="codeblock"><pre>echo "Blood pressure cuff sizes are a menace" &gt;&gt; notes.md</pre><button class="copy-btn">Copy</button></div>
+
+    <p>The <code class="inline">&gt;&gt;</code> means <em>add to the end</em>, as opposed to a single <code class="inline">&gt;</code>, which would wipe the file and start over. Now ask again:</p>
+    <div class="codeblock"><pre>git status</pre><button class="copy-btn">Copy</button></div>
+
+    <p><strong>It looks exactly the same.</strong> That is not a bug, and it is the most useful thing you will see today. Git is not ignoring your edit &mdash; it never agreed to watch <code class="inline">notes.md</code> in the first place. To git, that file is one undifferentiated new thing sitting on the table. It has no earlier version to compare against, so it has nothing to say about a line you added.</p>
+
+    <p>Once a file is tracked, this same command starts reporting your edits line by line. Getting files tracked is tomorrow.</p>
+
+    <p>If any part of that output is still opaque, paste it to Claude and ask:</p>
+    <div class="codeblock"><pre>Explain this git status output to me line by line, like I've never seen it before.</pre><button class="copy-btn">Copy</button></div>
+
+    <div class="learned">
+      <div class="learned-label">What you just learned</div>
+      <code class="inline">git status</code> is the question you will ask more than any other. When you are lost, it is always the right first move.
+    </div>
+    <button class="complete-btn" data-day="2"><span class="check"></span><span class="label">Mark complete</span></button>
+  </div>
+</article>
+
+<article class="day" id="day-3">
+  <header class="day-header"><span class="day-label">Day 03</span><h3 class="day-title">Packing the Bag</h3></header>
+  <div class="day-body">
+    <p>Between the table and the journal there is a third place, and it is the part of git that confuses everyone. It is called the <strong>staging area</strong>. Think of it as a bag you pack before you leave.</p>
+
+    <p>You do not have to take everything on the table. You choose what goes in this trip and what waits for the next one.</p>
+
+    <p>Put one file in the bag:</p>
+    <div class="codeblock"><pre>git add notes.md</pre><button class="copy-btn">Copy</button></div>
+
+    <p>Git says nothing back. Silence means it worked &mdash; that is a habit of these tools worth getting used to. Ask what changed:</p>
+    <div class="codeblock"><pre>git status</pre><button class="copy-btn">Copy</button></div>
+
+    <p>Now there are <em>two</em> groups where there was one. Under <strong>Changes to be committed</strong>: <code class="inline">notes.md</code>. Under <strong>Untracked files</strong>: <code class="inline">ideas.md</code> and <code class="inline">todo.md</code>.</p>
+
+    <p>That split is the whole day. One file is in the bag. Two are still on the table. Nothing has been saved yet &mdash; packing is not leaving.</p>
+
+    <p>Sit with that for a second, because it is the piece people skip. Git did not decide what goes in. You did, by naming one file and not the other two.</p>
+
+    <p>Now pack the bag for real. All three files:</p>
+    <div class="codeblock"><pre>git add .</pre><button class="copy-btn">Copy</button></div>
+
+    <p>The <code class="inline">.</code> means <em>this folder and everything in it</em>. Run <code class="inline">git status</code> one more time and all three are listed under <strong>Changes to be committed</strong>. The bag is packed. Leave it packed overnight.</p>
+
+    <div class="callout">
+      <div class="callout-label">Why not always <code class="inline">git add .</code>?</div>
+      Because a commit should be one idea. If you fixed a typo and rewrote a whole section, staging them separately gives you two clean entries instead of one confusing one. Today it does not matter &mdash; three new files, one idea. On a real project it will.
+    </div>
+
+    <div class="learned">
+      <div class="learned-label">What you just learned</div>
+      Staging is a choice, not a formality. It is the difference between &ldquo;everything I touched&rdquo; and &ldquo;the part I meant.&rdquo;
+    </div>
+    <button class="complete-btn" data-day="3"><span class="check"></span><span class="label">Mark complete</span></button>
+  </div>
+</article>
+
+<article class="day" id="day-4">
+  <header class="day-header"><span class="day-label">Day 04</span><h3 class="day-title">The Dated Entry</h3></header>
+  <div class="day-body">
+    <p>The <strong>commit</strong> is the dated journal entry. This is what the project looked like at this moment, and here is what I was doing. It is the point of everything so far.</p>
+
+    <p>Your bag has been packed since yesterday. Write the entry:</p>
+    <div class="codeblock"><pre>git commit -m "Start tracking notes, ideas, and todo"</pre><button class="copy-btn">Copy</button></div>
+
+    <p>The <code class="inline">-m</code> is for <em>message</em> &mdash; the note you are writing on this entry. Git answers with something like:</p>
+
+    <p><code class="inline">[main (root-commit) 9c1306e] Start tracking notes, ideas, and todo</code> and then <em>3 files changed, 4 insertions(+)</em>.</p>
+
+    <p><em>root-commit</em> means this is the first one, the bottom of the stack. That short jumble of letters and numbers is the commit&rsquo;s name. Every commit gets one, and no two are alike. You will never have to type one from memory.</p>
+
+    <p>Read your history back:</p>
+    <div class="codeblock"><pre>git log</pre><button class="copy-btn">Copy</button></div>
+
+    <p>One entry, with your name, the email you set on Day 0, the date and time, and your message. That is the journal. It has one page.</p>
+
+    <p>If the output fills the screen and your prompt does not come back, git has handed you a pager. Press <code class="inline">q</code> to get out. This will catch you at least once.</p>
+
+    <p>The same history, compressed:</p>
+    <div class="codeblock"><pre>git log --oneline</pre><button class="copy-btn">Copy</button></div>
+
+    <p>One line per commit &mdash; short name, then message. With one entry the difference is unimpressive. At forty entries this is the one you will use.</p>
+
+    <div class="callout">
+      <div class="callout-label">On messages</div>
+      Write the message for the version of you who reads it in six months with no memory of today. &ldquo;Fixed stuff&rdquo; tells that person nothing. &ldquo;Fix wrong cuff size in notes&rdquo; tells them everything. It takes the same four seconds.
+    </div>
+
+    <p><strong>One more thing, now that it will work.</strong> Yesterday you packed the bag. Sooner or later you will put something in it you did not mean to, and you will want it back out before you leave. You could not practice that yesterday, because taking something out of the bag means putting it back the way it was in the last entry &mdash; and there was no last entry. Now there is.</p>
+
+    <p>First, make a change you will pretend to regret. This adds the word <em>oops</em> to the end of <code class="inline">ideas.md</code>:</p>
+    <div class="codeblock"><pre>echo "oops" &gt;&gt; ideas.md</pre><button class="copy-btn">Copy</button></div>
+
+    <p>Now put it in the bag, the same way you packed files yesterday:</p>
+    <div class="codeblock"><pre>git add ideas.md</pre><button class="copy-btn">Copy</button></div>
+
+    <p>Ask where things stand:</p>
+    <div class="codeblock"><pre>git status</pre><button class="copy-btn">Copy</button></div>
+
+    <p><code class="inline">ideas.md</code> is listed under <strong>Changes to be committed</strong>. It is packed. Notice that git is also telling you how to undo it, in the line just underneath: <em>use &ldquo;git restore --staged &lt;file&gt;...&rdquo; to unstage</em>.</p>
+
+    <p>Take it at its word. This lifts the file back out of the bag:</p>
+    <div class="codeblock"><pre>git restore --staged ideas.md</pre><button class="copy-btn">Copy</button></div>
+
+    <p>Ask again:</p>
+    <div class="codeblock"><pre>git status</pre><button class="copy-btn">Copy</button></div>
+
+    <p><code class="inline">ideas.md</code> has moved to <strong>Changes not staged for commit</strong>. Out of the bag, back on the table. Read that carefully, because it is the reassuring part: <strong>your edit is not gone.</strong> The word <em>oops</em> is still sitting in the file. Unstaging only unpacks the bag &mdash; it never touches your actual work.</p>
+
+    <p>Tidy up before tomorrow, so you start Day 5 with a clean table. You know this one from Day 2: a single <code class="inline">&gt;</code> wipes the file and starts over, so this puts <code class="inline">ideas.md</code> back exactly as it was:</p>
+    <div class="codeblock"><pre>echo "Half-formed ideas" &gt; ideas.md</pre><button class="copy-btn">Copy</button></div>
+
+    <p>One last check:</p>
+    <div class="codeblock"><pre>git status</pre><button class="copy-btn">Copy</button></div>
+
+    <p>Git says <em>nothing to commit, working tree clean</em>. Nothing on the table, nothing in the bag, one entry in the journal. That sentence is what a finished day looks like.</p>
+
+    <div class="learned">
+      <div class="learned-label">What you just learned</div>
+      A commit is a dated entry with your name on it, and the history is only as useful as the messages you write. Staging is also reversible: <code class="inline">git restore --staged</code> takes a file back out of the bag without touching a word of your work.
+    </div>
+    <button class="complete-btn" data-day="4"><span class="check"></span><span class="label">Mark complete</span></button>
+  </div>
+</article>
+
+<article class="day" id="day-5">
+  <header class="day-header"><span class="day-label">Day 05</span><h3 class="day-title">What Changed</h3></header>
+  <div class="day-body">
+    <p>You have a saved entry now, which means for the first time git can answer a genuinely useful question: <em>what is different between the map on my table and the last one I filed?</em></p>
+
+    <p>Make a change worth looking at:</p>
+    <div class="codeblock"><pre>echo "Ask about the vaccine fridge alarm" &gt;&gt; todo.md</pre><button class="copy-btn">Copy</button></div>
+
+    <p>Now ask:</p>
+    <div class="codeblock"><pre>git diff</pre><button class="copy-btn">Copy</button></div>
+
+    <p>Past a few lines of bookkeeping, the part that matters:</p>
+    <div class="codeblock"><pre> Things to do
++Ask about the vaccine fridge alarm</pre><button class="copy-btn">Copy</button></div>
+
+    <p>A line with <code class="inline">+</code> in front of it is a line you added. A line with <code class="inline">-</code> would be one you removed. Lines with a space in front are unchanged, shown so you can see where the addition landed. That is the whole notation, and it is the same notation GitHub uses on every page you will look at from Day 6 onward.</p>
+
+    <p><strong>Now the part that trips everyone.</strong> Pack the change into the bag:</p>
+    <div class="codeblock"><pre>git add todo.md</pre><button class="copy-btn">Copy</button></div>
+
+    <p>And ask the same question again:</p>
+    <div class="codeblock"><pre>git diff</pre><button class="copy-btn">Copy</button></div>
+
+    <p>Nothing. Empty. Your change did not go anywhere &mdash; but the command that showed it to you ten seconds ago now has nothing to say.</p>
+
+    <p>Ask a different way:</p>
+    <div class="codeblock"><pre>git diff --staged</pre><button class="copy-btn">Copy</button></div>
+
+    <p>There it is again.</p>
+
+    <div class="callout">
+      <div class="callout-label">Why it went blank</div>
+      <code class="inline">git diff</code> compares the table to the bag. <code class="inline">git diff --staged</code> compares the bag to the last entry. Once you pack something, it is no longer on the table &mdash; so the first question has a truthful and entirely useless answer: nothing out here has changed since you packed.
+    </div>
+
+    <p>File the entry:</p>
+    <div class="codeblock"><pre>git commit -am "Add fridge alarm to todo"</pre><button class="copy-btn">Copy</button></div>
+
+    <p>That <code class="inline">-a</code> is new. It means <em>pack everything git already tracks, then commit</em>, saving you a separate <code class="inline">git add</code>. Convenient, and worth knowing exactly what it does not do: it ignores untracked files entirely. A brand-new file will sit there unnoticed no matter how many times you run it. And it sweeps up every tracked file you edited, including ones you had not thought about &mdash; which is how tidy histories turn muddy. Had you run this yesterday without tidying up, the word <em>oops</em> would now be filed under an entry about a fridge alarm. Use it when you know what is on the table.</p>
+
+    <p>Run <code class="inline">git log --oneline</code> and you have two entries. That is a history.</p>
+
+    <div class="learned">
+      <div class="learned-label">What you just learned</div>
+      <code class="inline">git diff</code> and <code class="inline">git diff --staged</code> answer two different questions. Knowing which one you are asking is most of the confusion, gone.
+    </div>
+    <button class="complete-btn" data-day="5"><span class="check"></span><span class="label">Mark complete</span></button>
+  </div>
+</article>
+
+<section class="phase" id="phase-2">
+  <div class="phase-num">Phase Two</div>
+  <h2 class="phase-title">Base Camp</h2>
+  <p class="phase-sub">Days 6 to 9 · The work goes online.</p>
+  <p class="phase-intro">This week your journal gets a home that isn&rsquo;t your hard drive. We start by deciding what should never leave the laptop, then send everything else somewhere safe.</p>
+</section>
+
+<article class="day" id="day-6">
+  <header class="day-header"><span class="day-label">Day 06</span><h3 class="day-title">What Stays Behind</h3></header>
+  <div class="day-body">
+    <p>Every expedition has things that never go in the journal. Scratch paper, receipts, the key to the cabin. You carry them and you use them, and you would not write any of them down for a stranger to read.</p>
+
+    <p>Git keeps a list for exactly this. It is a plain text file called <code class="inline">.gitignore</code>, and anything named in it becomes invisible to git &mdash; not deleted, not hidden from you, just never offered up to be committed.</p>
+
+    <p><strong>You are doing this the day before anything goes online, on purpose.</strong> Once something has been committed and pushed, taking it back is not a matter of deleting it. Far easier to decide what stays behind while the journal is still only on your laptop.</p>
+
+    <p>Start by making the exact kind of file you never want to send anywhere. This writes a pretend API key into a file called <code class="inline">secrets.txt</code>:</p>
+    <div class="codeblock"><pre>echo "sk-live-51H8xQ2ExampleKeyDoNotUse" &gt; secrets.txt</pre><button class="copy-btn">Copy</button></div>
+
+    <p>Now ask git what it can see:</p>
+    <div class="codeblock"><pre>git status</pre><button class="copy-btn">Copy</button></div>
+
+    <p>There it is, under <strong>Untracked files</strong>, with git cheerfully explaining how to include it in what will be committed. That is the whole danger in one line. Git is not being careless &mdash; it has no idea what a key is. It sees a file.</p>
+
+    <p>So tell it. First make the list:</p>
+    <div class="codeblock"><pre>touch .gitignore</pre><button class="copy-btn">Copy</button></div>
+
+    <p><code class="inline">touch</code> creates an empty file. Now put four lines in it. You know this shape from Day 2 &mdash; <code class="inline">&gt;&gt;</code> adds a line to the end of a file:</p>
+    <div class="codeblock"><pre>echo ".DS_Store" &gt;&gt; .gitignore
+echo "*.log" &gt;&gt; .gitignore
+echo ".env" &gt;&gt; .gitignore
+echo "secrets.txt" &gt;&gt; .gitignore</pre><button class="copy-btn">Copy</button></div>
+
+    <p>Those four lines are four separate decisions:</p>
+    <ul>
+      <li><code class="inline">.DS_Store</code> &mdash; a junk file macOS drops into any folder you open in Finder. It has nothing to do with your work.</li>
+      <li><code class="inline">*.log</code> &mdash; the <code class="inline">*</code> is a wildcard meaning <em>anything</em>, so this covers every file ending in <code class="inline">.log</code>. Log files are usually noise, and occasionally they are noise with a password in the middle of them.</li>
+      <li><code class="inline">.env</code> &mdash; the conventional name for the file that holds keys and passwords. If you ever build something that talks to an API, this is where its credentials will live.</li>
+      <li><code class="inline">secrets.txt</code> &mdash; the file you just made.</li>
+    </ul>
+
+    <p>Ask again:</p>
+    <div class="codeblock"><pre>git status</pre><button class="copy-btn">Copy</button></div>
+
+    <p><code class="inline">secrets.txt</code> has vanished from the output. In its place is <code class="inline">.gitignore</code> itself, listed as untracked, because it is a new file too. Your pretend key has not moved &mdash; it is still sitting on your disk exactly where you left it. Git has simply stopped offering to publish it.</p>
+
+    <div class="callout">
+      <div class="callout-label">This one matters</div>
+      The most common way people get burned by git is committing a password or an API key and then pushing it somewhere public. Git never forgets, so deleting the file afterward does not help &mdash; the key is still sitting in the history, readable by anyone who knows where to look. If it happens to you, the fix is not to delete the file. The fix is to go to whoever issued the key and revoke it. Assume it is compromised the moment it is pushed, because it is.
+    </div>
+
+    <p>Now commit the list itself. Unlike the things it names, <code class="inline">.gitignore</code> belongs in the journal &mdash; it is a decision about the project, and anyone who touches this folder later should inherit it. Pack it:</p>
+    <div class="codeblock"><pre>git add .gitignore</pre><button class="copy-btn">Copy</button></div>
+
+    <p>And file the entry:</p>
+    <div class="codeblock"><pre>git commit -m "Add gitignore"</pre><button class="copy-btn">Copy</button></div>
+
+    <p>If you want a second opinion about what else should stay behind, start Claude in the folder and ask:</p>
+    <div class="codeblock"><pre>Look at the files in this folder and tell me if any of them contain something that should never be committed to git.</pre><button class="copy-btn">Copy</button></div>
+
+    <div class="learned">
+      <div class="learned-label">What you just learned</div>
+      <code class="inline">.gitignore</code> is the list of what stays out of the journal. Write it before your first push, not after &mdash; a key that has been pushed is a key that has to be revoked.
+    </div>
+    <button class="complete-btn" data-day="6"><span class="check"></span><span class="label">Mark complete</span></button>
+  </div>
+</article>
+
+<article class="day" id="day-7">
+  <header class="day-header"><span class="day-label">Day 07</span><h3 class="day-title">A Note for the Next Traveler</h3></header>
+  <div class="day-body">
+    <p>A <strong>README</strong> is the note you leave for whoever arrives cold. Where they are, what this is for, how to start. The name is shouted because it is meant to be the file nobody can claim they missed.</p>
+
+    <p>It also has a specific job on GitHub: it is rendered on the repository&rsquo;s front page, above everything else. Tomorrow this folder goes online, and this file becomes the page. Writing it today is not busywork &mdash; it is writing tomorrow&rsquo;s landing page.</p>
+
+    <p>You could write it from scratch. It is faster to have Claude draft one and then correct what it gets wrong. Start Claude in your folder and ask:</p>
+    <div class="codeblock"><pre>Write a short README.md for this folder. Explain what it is, who it's for, and how someone would start using it. Keep it under 200 words and don't make it sound like a corporate press release.</pre><button class="copy-btn">Copy</button></div>
+
+    <p>Then read what it hands you and change it until it sounds like you. It has never met you and it does not know why this folder exists, so it will guess &mdash; usually a little grandly. Cut the parts that overclaim. A README that says <em>a practice repository I am using to learn git</em> is more useful than one that says <em>a robust framework for version control workflows</em>, because the first one is true.</p>
+
+    <div class="callout">
+      <div class="callout-label">Not using Claude?</div>
+      Make the file yourself with the same move you have used all week, then open it in any text editor and write a few sentences.
+      <div class="codeblock"><pre>echo "# github-lab" &gt; README.md</pre><button class="copy-btn">Copy</button></div>
+      The <code class="inline">#</code> makes that line a heading. That is Markdown, the same plain-text formatting your <code class="inline">.md</code> files have been using since Day 1.
+    </div>
+
+    <p>When it says what you want it to say, pack it:</p>
+    <div class="codeblock"><pre>git add README.md</pre><button class="copy-btn">Copy</button></div>
+
+    <p>And file it:</p>
+    <div class="codeblock"><pre>git commit -m "Add README"</pre><button class="copy-btn">Copy</button></div>
+
+    <div class="callout">
+      <div class="callout-label">Why bother, if it&rsquo;s just you?</div>
+      Because in four months you will be the stranger. You will open this folder with no memory of what you were doing or why, and the README is the fastest note-to-self you will ever write. Everyone who skips it learns this the same way.
+    </div>
+
+    <div class="learned">
+      <div class="learned-label">What you just learned</div>
+      A README is the difference between a folder someone can use and a folder someone abandons. On GitHub it is also the front page, so it is the first thing anyone sees.
+    </div>
+    <button class="complete-btn" data-day="7"><span class="check"></span><span class="label">Mark complete</span></button>
+  </div>
+</article>
+
+<article class="day" id="day-8">
+  <header class="day-header"><span class="day-label">Day 08</span><h3 class="day-title">Base Camp</h3></header>
+  <div class="day-body">
+    <p>A <strong>remote</strong> is another known location where a copy of the expedition lives. Your laptop holds the copy you work in. The remote holds the copy that survives your laptop.</p>
+
+    <p><strong>origin</strong> is git&rsquo;s default nickname for the remote you started from. It is not a keyword and it carries no special power &mdash; it is a name, the way you might call a shared drive &ldquo;the server.&rdquo; You will see it constantly from here on.</p>
+
+    <p>Today the journal stops being only on your laptop.</p>
+
+    <p>One command creates the repository on GitHub and sends your history up to it:</p>
+    <div class="codeblock"><pre>gh repo create github-lab --private --source=. --remote=origin --push</pre><button class="copy-btn">Copy</button></div>
+
+    <p>Four flags, and you should be able to name what each one did:</p>
+    <ul>
+      <li><code class="inline">--private</code> &mdash; only you can see it.</li>
+      <li><code class="inline">--source=.</code> &mdash; use this folder. The <code class="inline">.</code> means <em>here</em>, the same as it did on Day 3.</li>
+      <li><code class="inline">--remote=origin</code> &mdash; name the connection <code class="inline">origin</code>.</li>
+      <li><code class="inline">--push</code> &mdash; send the commits up right now, instead of creating an empty repository and leaving you to work out the rest.</li>
+    </ul>
+
+    <div class="callout">
+      <div class="callout-label">Private on purpose</div>
+      We are starting private because a practice folder is exactly where a stray phone number or a patient&rsquo;s initials ends up. When you have a project you genuinely want to share, you can flip it in the repository settings, or create the next one with <code class="inline">--public</code>. Never flip a repository public without reading its history first &mdash; remember that what is in the history stays in the history.
+    </div>
+
+    <div class="callout">
+      <div class="callout-label">No PHI, ever</div>
+      GitHub is a public-internet service and you have no BAA with it. Nothing that could identify a patient belongs in a repository, private or not. Private is a permission setting, not a safeguard.
+    </div>
+
+    <p>Confirm the connection exists:</p>
+    <div class="codeblock"><pre>git remote -v</pre><button class="copy-btn">Copy</button></div>
+
+    <p>Two lines come back, both beginning with <code class="inline">origin</code> &mdash; one marked <code class="inline">(fetch)</code> and one marked <code class="inline">(push)</code>. Git records where it reads from and where it writes to as separate settings. For everything you do here they will be the same address.</p>
+
+    <p>Now go and look at the thing you just made:</p>
+    <div class="codeblock"><pre>gh repo view --web</pre><button class="copy-btn">Copy</button></div>
+
+    <p>Your browser opens on a real GitHub repository, with your history in it and yesterday&rsquo;s README rendered on the front page. Notice what is <em>not</em> there: <code class="inline">secrets.txt</code>. It was never committed, so it had nothing to travel with. That is Day 6 paying for itself.</p>
+
+    <p><strong>One more thing, so that pushing is something you have done on its own.</strong> That single <code class="inline">gh</code> command did a lot at once, and it is worth separating the ordinary daily motion out of it. Add a line to your notes:</p>
+    <div class="codeblock"><pre>echo "Base camp established" &gt;&gt; notes.md</pre><button class="copy-btn">Copy</button></div>
+
+    <p>File the entry, using the shortcut from Day 5:</p>
+    <div class="codeblock"><pre>git commit -am "Note that the repo is live"</pre><button class="copy-btn">Copy</button></div>
+
+    <p>And send it up:</p>
+    <div class="codeblock"><pre>git push</pre><button class="copy-btn">Copy</button></div>
+
+    <p>Git reports two commit names with <code class="inline">..</code> between them &mdash; where the remote was, and where it is now. Refresh the browser tab and your new line is there. That three-step rhythm &mdash; change, commit, push &mdash; is what most days actually look like from here on.</p>
+
+    <div class="callout">
+      <div class="callout-label">If push complains about an upstream branch</div>
+      You may see <em>fatal: The current branch has no upstream branch.</em> It means git knows where the remote is but has not been told that this particular branch belongs there. Git prints the exact command to fix it on the next line, already filled in with your branch name &mdash; run that, and plain <code class="inline">git push</code> will work every time after.
+    </div>
+
+    <div class="learned">
+      <div class="learned-label">What you just learned</div>
+      Your journal now exists in two places. If the laptop dies tonight, the work does not. <code class="inline">origin</code> is just the nickname for the other place.
+    </div>
+    <button class="complete-btn" data-day="8"><span class="check"></span><span class="label">Mark complete</span></button>
+  </div>
+</article>
+
+<article class="day" id="day-9">
+  <header class="day-header"><span class="day-label">Day 09</span><h3 class="day-title">Bringing It Home</h3></header>
+  <div class="day-body">
+    <p><strong>Cloning</strong> is making a complete local copy of what is at base camp &mdash; not just the files as they stand today, but the entire journal that got them there.</p>
+
+    <p><strong>Pulling</strong> is bringing back whatever changed while you were away.</p>
+
+    <p>Those two motions are the whole of working with other people. Today you rehearse both with nobody else involved, by being both people yourself. Start from your home directory:</p>
+    <div class="codeblock"><pre>cd ~</pre><button class="copy-btn">Copy</button></div>
+
+    <p>Now make a second copy of the repository, in a new folder called <code class="inline">github-lab-copy</code>. Replace <code class="inline">YOUR-USERNAME</code> with your actual GitHub username:</p>
+    <div class="codeblock"><pre>git clone https://github.com/YOUR-USERNAME/github-lab.git github-lab-copy</pre><button class="copy-btn">Copy</button></div>
+
+    <div class="callout">
+      <div class="callout-label">Not sure of your username, or tired of typing it</div>
+      <code class="inline">gh</code> already knows who you are, so it can fill that part in for you. This does the same thing as the line above.
+      <div class="codeblock"><pre>gh repo clone github-lab github-lab-copy</pre><button class="copy-btn">Copy</button></div>
+      Worth seeing the full address at least once, though. That URL is what a clone actually is: a folder, fetched from a location.
+    </div>
+
+    <p>Move into the copy:</p>
+    <div class="codeblock"><pre>cd github-lab-copy</pre><button class="copy-btn">Copy</button></div>
+
+    <p>Look at what came down:</p>
+    <div class="codeblock"><pre>ls</pre><button class="copy-btn">Copy</button></div>
+
+    <p>All four of your files. <code class="inline">.gitignore</code> arrived too &mdash; <code class="inline">ls</code> hides it because of the leading dot, so add <code class="inline">-a</code> if you want to see it, the way you did on Day 1. And once again, no <code class="inline">secrets.txt</code>. It never left your laptop and it never will.</p>
+
+    <p>The history came with it, which is the part that makes a clone different from a downloaded folder:</p>
+    <div class="codeblock"><pre>git log --oneline</pre><button class="copy-btn">Copy</button></div>
+
+    <p>Every entry you have written, in a folder that is four minutes old. A clone is not a snapshot of the current files. It is the whole journal.</p>
+
+    <p><strong>Now be the other person.</strong> Make a change here, in the copy:</p>
+    <div class="codeblock"><pre>echo "Edited from the clone" &gt;&gt; notes.md</pre><button class="copy-btn">Copy</button></div>
+
+    <p>Commit it:</p>
+    <div class="codeblock"><pre>git commit -am "Edit from the clone"</pre><button class="copy-btn">Copy</button></div>
+
+    <p>And send it to base camp. You do not need to set anything up first &mdash; a cloned folder already knows where it came from:</p>
+    <div class="codeblock"><pre>git push</pre><button class="copy-btn">Copy</button></div>
+
+    <p>Now go back to the original folder, which has no idea any of that happened:</p>
+    <div class="codeblock"><pre>cd ~/github-lab</pre><button class="copy-btn">Copy</button></div>
+
+    <p>Bring down what changed:</p>
+    <div class="codeblock"><pre>git pull</pre><button class="copy-btn">Copy</button></div>
+
+    <p>Git reports a <em>Fast-forward</em> and tells you <code class="inline">notes.md</code> changed by one line. Read the file and see it for yourself:</p>
+    <div class="codeblock"><pre>cat notes.md</pre><button class="copy-btn">Copy</button></div>
+
+    <p>The line you wrote in the other folder is sitting there.</p>
+
+    <div class="callout">
+      <div class="callout-label">What just happened</div>
+      You edited a file in one folder and it appeared in another, because both are talking to the same base camp. That is the entire idea behind working with other people, rehearsed with only yourself involved. Replace &ldquo;the other folder&rdquo; with &ldquo;a colleague&rsquo;s laptop&rdquo; and nothing about the mechanism changes.
+    </div>
+
+    <div class="callout">
+      <div class="callout-label">If git refuses to pull</div>
+      If you made a commit in <em>both</em> folders before pulling, git stops with <em>Need to specify how to reconcile divergent branches</em> and a block of hints. It is not broken and nothing is lost &mdash; git is asking you to choose how to combine two histories, and it will not guess. Run the line below once, then run <code class="inline">git pull</code> again.
+      <div class="codeblock"><pre>git config pull.rebase false</pre><button class="copy-btn">Copy</button></div>
+      That tells git to combine them by merging rather than replaying one history on top of the other &mdash; the behaviour most people want, and the same choice you will make again on Day 13.
+    </div>
+
+    <div class="learned">
+      <div class="learned-label">What you just learned</div>
+      Clone makes a copy, history and all. Pull brings changes home. That is the whole mechanism behind collaboration, and you have now done both halves.
+    </div>
+    <button class="complete-btn" data-day="9"><span class="check"></span><span class="label">Mark complete</span></button>
+  </div>
+</article>
+
+<section class="phase" id="phase-3">
+  <div class="phase-num">Phase Three</div>
+  <h2 class="phase-title">Side Roads</h2>
+  <p class="phase-sub">Days 10 to 14 · Trying things without breaking things.</p>
+  <p class="phase-intro">The last five days are the ones people think are hard: branches, pull requests, review, and the dreaded merge conflict. You are going to cause a merge conflict on purpose and fix it, which is the fastest way to stop being afraid of one.</p>
+</section>
+
+<article class="day" id="day-10">
+  <header class="day-header"><span class="day-label">Day 10</span><h3 class="day-title">The Side Road</h3></header>
+  <div class="day-body">
+    <p>A <strong>branch</strong> is a side road. You turn off the main route, drive down it, make whatever mess you like &mdash; and the main route sits there untouched the entire time, exactly as you left it.</p>
+
+    <p>That is the whole idea, and it is why people who are good at this are not afraid to try things. They are never trying them on the main road.</p>
+
+    <p>Start where you left off:</p>
+    <div class="codeblock"><pre>cd ~/github-lab</pre><button class="copy-btn">Copy</button></div>
+
+    <p>Before you build a side road, find out what the main one is called:</p>
+    <div class="codeblock"><pre>git branch --show-current</pre><button class="copy-btn">Copy</button></div>
+
+    <div class="callout">
+      <div class="callout-label">Whichever name you see</div>
+      Almost certainly this says <code class="inline">main</code>, and you can carry on. If it says <code class="inline">master</code>, nothing is wrong &mdash; you met that on Day 2, and it just means your git was set up with the older default name. Everywhere the next five days say <code class="inline">main</code>, type <code class="inline">master</code> instead. It is the only substitution you will need.
+    </div>
+
+    <p>Now make the side road:</p>
+    <div class="codeblock"><pre>git switch -c experiment</pre><button class="copy-btn">Copy</button></div>
+
+    <p>Git answers <em>Switched to a new branch &lsquo;experiment&rsquo;</em>. The <code class="inline">-c</code> is for <em>create</em> &mdash; make this branch, then move onto it. Without it, <code class="inline">git switch</code> only moves to a branch that already exists.</p>
+
+    <p>Ask where you are:</p>
+    <div class="codeblock"><pre>git status</pre><button class="copy-btn">Copy</button></div>
+
+    <p>Two lines: <em>On branch experiment</em>, and <em>nothing to commit, working tree clean</em>. Read the second one carefully. Making a branch changed nothing about your files. Not one byte moved. All that changed is which road you are standing on.</p>
+
+    <p>Now make a mess, safely. This adds a deliberately alarming line to your notes:</p>
+    <div class="codeblock"><pre>echo "REWRITE: this whole file is different now" &gt;&gt; notes.md</pre><button class="copy-btn">Copy</button></div>
+
+    <p>File it as an entry, the same way you have all week:</p>
+    <div class="codeblock"><pre>git commit -am "Try a different approach in notes"</pre><button class="copy-btn">Copy</button></div>
+
+    <p>Git reports <code class="inline">[experiment</code> and a commit name, then <em>1 file changed, 1 insertion(+)</em>. Notice the branch name in those brackets. That entry lives on the side road, and nowhere else.</p>
+
+    <p><strong>Here is the part that teaches it.</strong> Go back to the main road:</p>
+    <div class="codeblock"><pre>git switch main</pre><button class="copy-btn">Copy</button></div>
+
+    <p>Now read the file:</p>
+    <div class="codeblock"><pre>cat notes.md</pre><button class="copy-btn">Copy</button></div>
+
+    <p>The REWRITE line is gone. Not hidden, not commented out &mdash; the file on your disk does not contain it. If you opened <code class="inline">notes.md</code> in a text editor right now, it would not be there either.</p>
+
+    <p>Go back to the side road:</p>
+    <div class="codeblock"><pre>git switch experiment</pre><button class="copy-btn">Copy</button></div>
+
+    <p>And read it again:</p>
+    <div class="codeblock"><pre>cat notes.md</pre><button class="copy-btn">Copy</button></div>
+
+    <p>It is back.</p>
+
+    <p><strong>Do that twice more.</strong> Switch, read, switch, read. This is the one thing worth being slightly repetitive about, because branches stop being confusing the moment you watch a file change under your own hands. It is a physical fact about your folder, not a concept to hold in your head.</p>
+
+    <div class="callout">
+      <div class="callout-label">Nothing is lost</div>
+      Switching branches never deletes anything. Both versions of <code class="inline">notes.md</code> exist the whole time, safe in the <code class="inline">.git</code> folder from Day 1. Git is not editing your work when you switch &mdash; it is putting one version on the table and filing the other one away. You are choosing which one is in front of you.
+    </div>
+
+    <div class="callout">
+      <div class="callout-label">If git refuses to switch</div>
+      If you have uncommitted edits that would be overwritten, git stops and says so rather than losing them. That is the tool protecting you. Commit what you have, and switch again.
+    </div>
+
+    <div class="learned">
+      <div class="learned-label">What you just learned</div>
+      A branch lets you try something risky while the working version stays exactly where it was. This is what makes experimenting safe.
+    </div>
+    <button class="complete-btn" data-day="10"><span class="check"></span><span class="label">Mark complete</span></button>
+  </div>
+</article>
+
+<article class="day" id="day-11">
+  <header class="day-header"><span class="day-label">Day 11</span><h3 class="day-title">Pin a Note to the Board</h3></header>
+  <div class="day-body">
+    <p>An <strong>issue</strong> is a note pinned to the planning board. A bug, a question, an idea, a task you keep meaning to get to. It lives on GitHub next to the code, and it stays there until someone takes it down.</p>
+
+    <p>It is not bureaucracy. It is the thing you would otherwise forget by Thursday.</p>
+
+    <p>Today is short. Make sure you are in your folder:</p>
+    <div class="codeblock"><pre>cd ~/github-lab</pre><button class="copy-btn">Copy</button></div>
+
+    <p>Now file one. This one is about your README, which you wrote on Day 7 and which almost certainly does not tell a stranger what to actually do first:</p>
+    <div class="codeblock"><pre>gh issue create --title "README doesn't say how to actually start" --body "A stranger reading this still wouldn't know the first command to run."</pre><button class="copy-btn">Copy</button></div>
+
+    <p>Git and GitHub have very little to say back. You get a URL, and the last part of it is a number &mdash; <code class="inline">/issues/1</code>, or <code class="inline">/issues/4</code>, or whatever your repository is up to. <strong>Write that number down.</strong> You need it tomorrow, and it will not be the same as anyone else&rsquo;s.</p>
+
+    <p>See what is on the board:</p>
+    <div class="codeblock"><pre>gh issue list</pre><button class="copy-btn">Copy</button></div>
+
+    <p>Your issue, with its number in the first column. This command shows open issues only, which is a detail that will matter on Day 13.</p>
+
+    <p>Now go and look at it properly. Replace <code class="inline">NUMBER</code> with your issue&rsquo;s number &mdash; the same way you replaced <code class="inline">YOUR-USERNAME</code> on Day 9:</p>
+    <div class="codeblock"><pre>gh issue view NUMBER --web</pre><button class="copy-btn">Copy</button></div>
+
+    <p>Your browser opens on the issue: a title, your description, a comment box, and a sidebar full of things you can safely ignore for now. That is the board.</p>
+
+    <div class="callout">
+      <div class="callout-label">Make it a real one</div>
+      Do not invent a fake issue for the exercise. Pick something that genuinely bothers you about this folder &mdash; the README, a file with a bad name, a note you never finished. On Day 13 you are going to close it, and closing a real one feels different from closing a prop.
+    </div>
+
+    <div class="callout">
+      <div class="callout-label">Still no PHI</div>
+      An issue is text on GitHub, exactly like a commit message. Day 8&rsquo;s rule has not moved: nothing that could identify a patient, in a private repository or any other kind.
+    </div>
+
+    <div class="learned">
+      <div class="learned-label">What you just learned</div>
+      An issue is a note to your future self that other people can also read. Note the number it was given &mdash; you will need it on Day 12.
+    </div>
+    <button class="complete-btn" data-day="11"><span class="check"></span><span class="label">Mark complete</span></button>
+  </div>
+</article>
+
+<article class="day" id="day-12">
+  <header class="day-header"><span class="day-label">Day 12</span><h3 class="day-title">Presenting the Route</h3></header>
+  <div class="day-body">
+    <p>You have been down the side road and you think it is a good route. A <strong>pull request</strong> is coming back and presenting it to the group before the official map gets redrawn.</p>
+
+    <p>The name is unhelpful and everyone agrees it is unhelpful. People say <em>PR</em>. Read it as <em>here is what I did, have a look before it becomes real</em>.</p>
+
+    <p>Get back on the side road:</p>
+    <div class="codeblock"><pre>cd ~/github-lab</pre><button class="copy-btn">Copy</button></div>
+
+    <p>And onto the branch:</p>
+    <div class="codeblock"><pre>git switch experiment</pre><button class="copy-btn">Copy</button></div>
+
+    <p>Base camp has never heard of this branch &mdash; everything you did on Day 10 stayed on your laptop. Send it up:</p>
+    <div class="codeblock"><pre>git push -u origin experiment</pre><button class="copy-btn">Copy</button></div>
+
+    <p>Git reports <code class="inline">* [new branch]</code> and then a line saying the branch is <em>set up to track</em> <code class="inline">origin/experiment</code>. That is the <code class="inline">-u</code> doing its work: it tells git that this local branch and that remote branch are the same road, so from now on a plain <code class="inline">git push</code> on this branch knows where to go with no arguments. You only ever need <code class="inline">-u</code> the first time you push a new branch.</p>
+
+    <p>Now open the pull request. Put your issue number from yesterday in place of <code class="inline">NUMBER</code>:</p>
+    <div class="codeblock"><pre>gh pr create --title "Rework the notes file" --body "Closes #NUMBER"</pre><button class="copy-btn">Copy</button></div>
+
+    <p>You do not have to tell it what to merge into. GitHub uses your repository&rsquo;s default branch, which is the main road you checked the name of on Day 10.</p>
+
+    <div class="callout">
+      <div class="callout-label">That <code class="inline">Closes</code> line is not decoration</div>
+      Put the word <code class="inline">Closes</code> and an issue number in a pull request description and GitHub will close that issue automatically the moment this is merged. <code class="inline">Fixes</code> works the same way. It is a small thing that keeps two records in sync for free, and it is the reason you wrote the number down yesterday.
+    </div>
+
+    <p>Go and look at what you made:</p>
+    <div class="codeblock"><pre>gh pr view --web</pre><button class="copy-btn">Copy</button></div>
+
+    <p><strong>Today is the day you leave the terminal, on purpose.</strong> Take a minute in the browser and find three things.</p>
+    <ul>
+      <li><strong>The Conversation tab.</strong> Your title, your description, and a note that this pull request will close your issue. That is the <code class="inline">Closes</code> line already working.</li>
+      <li><strong>The Files changed tab.</strong> Click it. Your REWRITE line, in green, with a <code class="inline">+</code> in front of it. This is the same notation you learned on Day 5 &mdash; green and <code class="inline">+</code> for added, red and <code class="inline">-</code> for removed. GitHub is showing you a <code class="inline">git diff</code> with better lighting.</li>
+      <li><strong>The comment box.</strong> At the bottom of the conversation, and beside any individual line in Files changed. That is where review actually happens.</li>
+    </ul>
+
+    <p>It is worth saying plainly why this day is in a browser at all. Reading a diff is a visual act. Colour, side-by-side columns, and the ability to click one line and say <em>this one, here</em> are genuinely better than a terminal at this particular job. Insisting otherwise would be dogma. Use the tool that fits the task.</p>
+
+    <div class="callout">
+      <div class="callout-label">Nothing has moved yet</div>
+      Look at your main branch on GitHub while the pull request is open. The REWRITE line is not there. A pull request does not change anything &mdash; it is a proposal sitting next to the repository, waiting for someone to say yes.
+    </div>
+
+    <div class="learned">
+      <div class="learned-label">What you just learned</div>
+      A pull request is a proposal, not a change. Nothing has moved yet. That gap between proposing and merging is where review happens.
+    </div>
+    <button class="complete-btn" data-day="12"><span class="check"></span><span class="label">Mark complete</span></button>
+  </div>
+</article>
+
+<article class="day" id="day-13">
+  <header class="day-header"><span class="day-label">Day 13</span><h3 class="day-title">The Other Travelers</h3></header>
+  <div class="day-body">
+    <p>On a real expedition, the other travelers look at your proposed route before anyone commits to it. Where are the cliffs, what did you miss, is there a shorter way round. That is <strong>review</strong>.</p>
+
+    <p>You are on your own here, so today Claude plays that part. This is one of the places where that substitution is genuinely useful rather than a consolation prize &mdash; a diff is a small, bounded, self-contained thing, which is exactly what a model reads well.</p>
+
+    <p>Back to the folder:</p>
+    <div class="codeblock"><pre>cd ~/github-lab</pre><button class="copy-btn">Copy</button></div>
+
+    <p>First, look at the change yourself. This asks what is different between the main road and the side road:</p>
+    <div class="codeblock"><pre>git diff main..experiment</pre><button class="copy-btn">Copy</button></div>
+
+    <p>Past the usual few lines of bookkeeping, you get your REWRITE line with a <code class="inline">+</code> in front of it &mdash; the same thing the Files changed tab showed you yesterday, in the same notation, without the colour. The two dots mean <em>from here to there</em>. If your main branch is called <code class="inline">master</code>, use that name instead, as you have been doing since Day 10.</p>
+
+    <p>Now get the second opinion. Start Claude in this folder and ask:</p>
+    <div class="codeblock"><pre>You are reviewing a pull request. Run `git diff main..experiment` and read the change. You are the other traveler checking my route: where are the cliffs, what did I miss, and is there a simpler way to do this? Be direct.</pre><button class="copy-btn">Copy</button></div>
+
+    <p>Read what comes back with the same scepticism you used on the README draft on Day 7. Some of it will be worth doing. Some of it will be a confident suggestion about a file it does not understand. You are still the one deciding &mdash; a reviewer advises, they do not approve on your behalf.</p>
+
+    <div class="callout">
+      <div class="callout-label">Why review your own work?</div>
+      Because a diff is a different view than the file. Things that looked fine while you were writing them look obviously wrong in red and green, stripped of everything around them. Solo developers open pull requests on their own repositories for exactly this reason, and it is not a ritual &mdash; it is a second pair of eyes made out of a change of format.
+    </div>
+
+    <p><strong>Now merge it.</strong> This is the moment the main route officially changes:</p>
+    <div class="codeblock"><pre>gh pr merge --merge --delete-branch</pre><button class="copy-btn">Copy</button></div>
+
+    <p>Two flags. <code class="inline">--merge</code> combines the two histories and keeps both, joining them with a single new commit &mdash; the same choice you made on Day 9 when you told git <code class="inline">pull.rebase false</code>, rather than replaying one history on top of the other. <code class="inline">--delete-branch</code> removes the side road once its contents have arrived, both on GitHub and on your laptop. The road existed to get the work somewhere. It is finished now.</p>
+
+    <p>Make sure you are back on the main road:</p>
+    <div class="codeblock"><pre>git switch main</pre><button class="copy-btn">Copy</button></div>
+
+    <p>And bring down the merge that happened up at base camp:</p>
+    <div class="codeblock"><pre>git pull</pre><button class="copy-btn">Copy</button></div>
+
+    <p>If either of those says you are already there and already up to date, nothing has gone wrong &mdash; <code class="inline">gh</code> tidies up after itself and may have moved you already. Run <code class="inline">cat notes.md</code> and your REWRITE line is now on the main road, where it was not yesterday.</p>
+
+    <p>One last thing, and it is the satisfying part:</p>
+    <div class="codeblock"><pre>gh issue list</pre><button class="copy-btn">Copy</button></div>
+
+    <p>Your issue from Day 11 is not there. Nothing broke &mdash; remember from Day 11 that this command lists open issues only. The note came off the board because the work is done, and you never had to go and take it down. That is the <code class="inline">Closes</code> line from yesterday, paying out.</p>
+
+    <div class="learned">
+      <div class="learned-label">What you just learned</div>
+      Review is reading your change as a stranger would. Merge is the moment the main route officially changes.
+    </div>
+    <button class="complete-btn" data-day="13"><span class="check"></span><span class="label">Mark complete</span></button>
+  </div>
+</article>
+
+<article class="day" id="day-14">
+  <header class="day-header"><span class="day-label">Day 14</span><h3 class="day-title">Two Maps, One Disagreement</h3></header>
+  <div class="day-body">
+    <p>Two travelers came back having edited the same stretch of the map differently. Git can show you the disagreement precisely. It cannot tell you who is right, and it will not pretend to.</p>
+
+    <p>That is a <strong>merge conflict</strong>, and it is the thing that frightens people off git entirely. So we are going to cause one on purpose, right now, and fix it.</p>
+
+    <p>In your folder:</p>
+    <div class="codeblock"><pre>cd ~/github-lab</pre><button class="copy-btn">Copy</button></div>
+
+    <p>Make a new side road:</p>
+    <div class="codeblock"><pre>git switch -c route-a</pre><button class="copy-btn">Copy</button></div>
+
+    <p>Add a line to your notes proposing one way round:</p>
+    <div class="codeblock"><pre>echo "Route A: go around the lake" &gt;&gt; notes.md</pre><button class="copy-btn">Copy</button></div>
+
+    <p>Commit it:</p>
+    <div class="codeblock"><pre>git commit -am "Route A"</pre><button class="copy-btn">Copy</button></div>
+
+    <p>Now go back to the main road, which knows nothing about Route A:</p>
+    <div class="codeblock"><pre>git switch main</pre><button class="copy-btn">Copy</button></div>
+
+    <p>And add a different answer to the very same spot &mdash; the end of the same file:</p>
+    <div class="codeblock"><pre>echo "Route B: go over the ridge" &gt;&gt; notes.md</pre><button class="copy-btn">Copy</button></div>
+
+    <p>Commit that too:</p>
+    <div class="codeblock"><pre>git commit -am "Route B"</pre><button class="copy-btn">Copy</button></div>
+
+    <p>Two branches have now written different things in the same place. Force them together:</p>
+    <div class="codeblock"><pre>git merge route-a</pre><button class="copy-btn">Copy</button></div>
+
+    <p>It fails, and the failure is the entire lesson:</p>
+    <div class="codeblock"><pre>Auto-merging notes.md
+CONFLICT (content): Merge conflict in notes.md
+Automatic merge failed; fix conflicts and then commit the result.</pre><button class="copy-btn">Copy</button></div>
+
+    <p>Open the file and look at what git did to it:</p>
+    <div class="codeblock"><pre>cat notes.md</pre><button class="copy-btn">Copy</button></div>
+
+    <p>At the bottom, underneath your ordinary lines, you will find this:</p>
+    <div class="codeblock"><pre>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
+Route B: go over the ridge
+=======
+Route A: go around the lake
+&gt;&gt;&gt;&gt;&gt;&gt;&gt; route-a</pre><button class="copy-btn">Copy</button></div>
+
+    <p>Those three rows of symbols are seven characters each, and they are just fences. Read them like this:</p>
+    <ul>
+      <li><code class="inline">&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD</code> &mdash; everything below this line is what is on the branch you are standing on. <code class="inline">HEAD</code> means <em>where you are now</em>, which is <code class="inline">main</code>.</li>
+      <li><code class="inline">=======</code> &mdash; the divider. Nothing more than that.</li>
+      <li><code class="inline">&gt;&gt;&gt;&gt;&gt;&gt;&gt; route-a</code> &mdash; everything above this line, back to the divider, is what is coming in from the branch named on the end.</li>
+    </ul>
+
+    <p>Your job is to make the file say what you want it to say, and delete all three fence lines. That is it. There is no special command and no correct answer &mdash; keep Route A, keep Route B, keep both, or write a third thing. Git genuinely does not care, which is precisely why it stopped and asked.</p>
+
+    <p>If you want it explained against your actual file rather than this example, ask Claude in that folder:</p>
+    <div class="codeblock"><pre>I have a merge conflict in notes.md. Explain what each part of the conflict is showing me, then help me decide which version to keep.</pre><button class="copy-btn">Copy</button></div>
+
+    <p><strong>Now edit the file.</strong> Open <code class="inline">notes.md</code> in a text editor &mdash; the same way you opened your README on Day 7 &mdash; delete the three fence lines and the route you do not want, and save. If you keep Route B, the last line of the file should simply read <code class="inline">Route B: go over the ridge</code>, with no symbols anywhere near it.</p>
+
+    <div class="callout">
+      <div class="callout-label">Opening a file in an editor from the terminal</div>
+      On a Mac, this opens it in TextEdit:
+      <div class="codeblock"><pre>open -e notes.md</pre><button class="copy-btn">Copy</button></div>
+      On Windows, use this instead:
+      <div class="codeblock"><pre>notepad notes.md</pre><button class="copy-btn">Copy</button></div>
+      If you already use VS Code or another editor, open it however you normally would. Nothing here depends on which editor you pick.
+    </div>
+
+    <p>When the file reads the way you want, tell git you have settled it:</p>
+    <div class="codeblock"><pre>git add notes.md</pre><button class="copy-btn">Copy</button></div>
+
+    <p>Check that git agrees:</p>
+    <div class="codeblock"><pre>git status</pre><button class="copy-btn">Copy</button></div>
+
+    <p>You want to see <em>All conflicts fixed but you are still merging</em>. If instead it still lists <code class="inline">notes.md</code> under <strong>Unmerged paths</strong>, a fence line is still in the file somewhere &mdash; open it again and look.</p>
+
+    <p>Finish the merge:</p>
+    <div class="codeblock"><pre>git commit -m "Resolve conflict between routes"</pre><button class="copy-btn">Copy</button></div>
+
+    <p>And send it to base camp:</p>
+    <div class="codeblock"><pre>git push</pre><button class="copy-btn">Copy</button></div>
+
+    <p>Tidy up the side road, which has served its purpose:</p>
+    <div class="codeblock"><pre>git branch -d route-a</pre><button class="copy-btn">Copy</button></div>
+
+    <div class="callout">
+      <div class="callout-label">The thing nobody tells you</div>
+      A merge conflict is not an error, and you have not broken anything. Git is telling you it found a decision it is not allowed to make on your behalf. That is all a conflict has ever been. The reason it looks frightening is that the symbols are ugly and nobody explains them &mdash; not because anything is wrong.
+    </div>
+
+    <div class="callout">
+      <div class="callout-label">The escape hatch</div>
+      At any point during a conflict, this puts everything back exactly as it was before you typed <code class="inline">git merge</code>:
+      <div class="codeblock"><pre>git merge --abort</pre><button class="copy-btn">Copy</button></div>
+      Git even prints it in the <code class="inline">git status</code> output while a conflict is open. You can walk away from a merge at any time, which is worth knowing before the first one you did not schedule.
+    </div>
+
+    <p><strong>That is the two weeks.</strong> You started with a folder that git had never heard of. You now have a repository with a history, a backup that survives your laptop, a README, a list of things that never leave the building, a branch you took and merged through a reviewed pull request, and an issue that closed itself when the work was done.</p>
+
+    <p>And you finished on the part everyone is most afraid of. You caused a merge conflict deliberately and resolved it in about ten minutes. The next one will arrive unannounced, in the middle of something else, and it will be the same five lines of symbols meaning the same simple thing.</p>
+
+    <p>You will not remember every command here, and you are not supposed to. What you have now is the shape of the thing &mdash; enough to know what to ask for, and enough to recognise the answer when you get it.</p>
+
+    <div class="learned">
+      <div class="learned-label">What you just learned</div>
+      Git shows the disagreement. A person decides. You are now past the thing that stops most people.
+    </div>
+    <button class="complete-btn" data-day="14"><span class="check"></span><span class="label">Mark complete</span></button>
+  </div>
+</article>
+
+<!-- ═════════ AFTER ═════════ -->
+<section class="afterword">
+  <h2>After the 14 Days</h2>
+  <p>You&rsquo;ve built:</p>
+  <ul>
+    <li><strong>A repository with a history.</strong> Every change dated, signed, and readable in one screen.</li>
+    <li><strong>A copy that outlives the laptop.</strong> Base camp holds the journal whether or not the machine does.</li>
+    <li><strong>A line between what travels and what stays.</strong> The <code class="inline">.gitignore</code> keeps <code class="inline">secrets.txt</code> at home, permanently.</li>
+    <li><strong>A full round trip.</strong> Branch, push, issue, pull request, review, merge, close.</li>
+    <li><strong>A merge conflict you are no longer afraid of,</strong> because you caused one on purpose and it took ten minutes.</li>
+  </ul>
+
+  <p><strong>One piece of housekeeping.</strong> You finished with two folders, and only one of them matters. <code class="inline">~/github-lab</code> is the real repository &mdash; that is the one to open, the one connected to base camp, the one to keep. <code class="inline">~/github-lab-copy</code> was the Day 9 rehearsal, standing in for a colleague&rsquo;s laptop so you could push from one place and pull into another. Everything that was ever in it is already at base camp. Drag it to the Trash whenever you like, or leave it sitting there &mdash; neither choice costs you anything.</p>
+
+  <p>Where to go next, when you&rsquo;re ready:</p>
+  <ul>
+    <li>Run Days 1 through 8 again on a folder of real work &mdash; a talk, a dataset, a set of notes. Private repo, README and <code class="inline">.gitignore</code> before the first push.</li>
+    <li>Clone a public repository you already use and read its <code class="inline">git log --oneline</code>. Someone else&rsquo;s journal is the fastest way to see what a good entry looks like.</li>
+    <li>Add one other person to a private repo and do Day 9 for real &mdash; two laptops instead of two folders. Nothing about the mechanism changes.</li>
+    <li>Put git around the tools you built in <a href="claude-code.html">30 Days to Claude Code</a>, so the things you wrote have a history too.</li>
+  </ul>
+
+  <div class="cheat" id="cheat-sheet">
+    <h3>The commands, in one place</h3>
+
+    <div class="cheat-section">
+      <div class="cheat-section-label">Getting your bearings</div>
+      <dl class="cmd-list">
+        <dt>cd ~/github-lab</dt><dd>Go to the folder with the journal in it</dd>
+        <dt>ls</dt><dd>What&rsquo;s here</dd>
+        <dt>ls -a</dt><dd>What&rsquo;s here, including the hidden files</dd>
+        <dt>cat notes.md</dt><dd>Read a file without opening anything</dd>
+        <dt>git status</dt><dd>Where am I, and what have I changed?</dd>
+        <dt>git branch --show-current</dt><dd>Which road am I standing on?</dd>
+        <dt>git log --oneline</dt><dd>The journal, one line per entry</dd>
+      </dl>
+    </div>
+
+    <div class="cheat-section">
+      <div class="cheat-section-label">Seeing what changed</div>
+      <dl class="cmd-list">
+        <dt>git diff</dt><dd>What have I changed and not yet packed?</dd>
+        <dt>git diff --staged</dt><dd>What is about to go into the next entry?</dd>
+        <dt>git diff main..experiment</dt><dd>How do two roads differ?</dd>
+      </dl>
+    </div>
+
+    <div class="cheat-section">
+      <div class="cheat-section-label">Saving work</div>
+      <dl class="cmd-list">
+        <dt>git add notes.md</dt><dd>Put one file in the bag</dd>
+        <dt>git add .</dt><dd>Put everything you changed in the bag</dd>
+        <dt>git commit -m "what changed"</dt><dd>Write the dated entry</dd>
+        <dt>git commit -am "what changed"</dt><dd>Pack and write in one move. Tracked files only</dd>
+        <dt>git push</dt><dd>Send the new entries to base camp</dd>
+        <dt>git pull</dt><dd>Bring back whatever changed there</dd>
+      </dl>
+    </div>
+
+    <div class="cheat-section">
+      <div class="cheat-section-label">Backing out</div>
+      <dl class="cmd-list">
+        <dt>git restore --staged ideas.md</dt><dd>Take a file back out of the bag</dd>
+        <dt>git merge --abort</dt><dd>Put everything back the way it was before the merge</dd>
+      </dl>
+    </div>
+
+    <div class="cheat-section">
+      <div class="cheat-section-label">Side roads</div>
+      <dl class="cmd-list">
+        <dt>git switch -c experiment</dt><dd>Start a side road and step onto it</dd>
+        <dt>git switch main</dt><dd>Go back to the main road</dd>
+        <dt>git merge route-a</dt><dd>Bring a side road into the road you are on</dd>
+        <dt>git branch -d route-a</dt><dd>Delete a road you are finished with</dd>
+      </dl>
+    </div>
+
+    <div class="cheat-section">
+      <div class="cheat-section-label">Base camp</div>
+      <dl class="cmd-list">
+        <dt>gh auth status</dt><dd>Is this terminal still logged in?</dd>
+        <dt>git remote -v</dt><dd>Which base camp does this folder talk to?</dd>
+        <dt>gh repo view --web</dt><dd>Open the repository in a browser</dd>
+        <dt>git push -u origin experiment</dt><dd>Send a new branch up for the first time</dd>
+        <dt>gh issue create --title "..."</dt><dd>Pin a note to the board</dd>
+        <dt>gh issue list</dt><dd>What is still open?</dd>
+        <dt>gh pr create --title "..."</dt><dd>Propose the side road</dd>
+        <dt>gh pr merge --merge --delete-branch</dt><dd>Accept it and tidy up after</dd>
+        <dt>git clone URL folder-name</dt><dd>Copy a whole repository, journal and all</dd>
+      </dl>
+    </div>
+
+    <div class="cheat-section">
+      <div class="cheat-section-label">Things to say when you&rsquo;re stuck</div>
+      <dl class="cmd-list">
+        <dt>&ldquo;Explain this git status output line by line.&rdquo;</dt><dd></dd>
+        <dt>&ldquo;What is this error actually telling me?&rdquo;</dt><dd></dd>
+        <dt>&ldquo;Is this safe to run in this folder?&rdquo;</dt><dd></dd>
+        <dt>&ldquo;Help me undo my last commit. I have not pushed it.&rdquo;</dt><dd></dd>
+        <dt>&ldquo;What would happen if I ran this?&rdquo;</dt><dd></dd>
+      </dl>
+    </div>
+  </div>
+
+  <div class="weird" id="troubleshoot">
+    <h3>When things go weird</h3>
+    <ul class="weird-list">
+      <li>
+        <div class="weird-q">It says &ldquo;fatal: not a git repository.&rdquo;</div>
+        <div class="weird-a">You are standing in the wrong folder. <code class="inline">pwd</code> prints where you currently are; <code class="inline">cd ~/github-lab</code> takes you back to the one with the journal in it.</div>
+      </li>
+      <li>
+        <div class="weird-q">It says &ldquo;Please tell me who you are.&rdquo;</div>
+        <div class="weird-a">Git will not sign an entry it cannot attribute. Run the two <code class="inline">git config --global</code> lines from Day 0, then commit again.</div>
+      </li>
+      <li>
+        <div class="weird-q">It asked me for a username and password and rejected them.</div>
+        <div class="weird-a">GitHub stopped accepting passwords for this in 2021. Run <code class="inline">gh auth login</code> again; that replaces the password entirely.</div>
+      </li>
+      <li>
+        <div class="weird-q">My push was rejected.</div>
+        <div class="weird-a">Someone pushed first &mdash; probably you, from another folder. Run <code class="inline">git pull</code>, deal with anything it flags, then push again.</div>
+      </li>
+      <li>
+        <div class="weird-q">It says the current branch has no upstream branch.</div>
+        <div class="weird-a">Git knows where base camp is, but has not been told this new branch belongs there. It prints the fix on the next line, already filled in with your branch name, spelled out the long way as <code class="inline">git push --set-upstream origin experiment</code>. That is the same flag as the <code class="inline">-u</code> in the cheat sheet above. Run whichever git handed you, once, and plain <code class="inline">git push</code> works from then on.</div>
+      </li>
+      <li>
+        <div class="weird-q">It refuses to pull and says something about divergent branches.</div>
+        <div class="weird-a">You committed in two places before pulling, and git will not guess how to combine them. Run <code class="inline">git config pull.rebase false</code> once, then pull again. Nothing is lost while you decide.</div>
+      </li>
+      <li>
+        <div class="weird-q">I committed something I shouldn&rsquo;t have.</div>
+        <div class="weird-a">If it has not been pushed, ask Claude to help you undo the last commit. If it has been pushed and it was a key or a password, go revoke the key first. Deleting the file in a later commit does not remove it from the history.</div>
+      </li>
+      <li>
+        <div class="weird-q">I committed, and my new file wasn&rsquo;t in it.</div>
+        <div class="weird-a"><code class="inline">git commit -am</code> only packs files git already tracks. A brand-new file needs <code class="inline">git add</code> first. <code class="inline">git status</code> will show it sitting there, untracked.</div>
+      </li>
+      <li>
+        <div class="weird-q">I&rsquo;m on a branch and I don&rsquo;t know how I got here.</div>
+        <div class="weird-a"><code class="inline">git status</code> tells you which branch you are on. <code class="inline">git switch main</code> takes you home, and nothing about your files changes on the way.</div>
+      </li>
+      <li>
+        <div class="weird-q">I have two folders and I don&rsquo;t know which one is real.</div>
+        <div class="weird-a"><code class="inline">~/github-lab</code> is the real one. <code class="inline">~/github-lab-copy</code> was the Day 9 rehearsal, standing in for someone else&rsquo;s laptop. Everything in it is already at base camp, so dragging it to the Trash is safe, and leaving it there is fine too.</div>
+      </li>
+      <li>
+        <div class="weird-q">It opened a text editor I don&rsquo;t recognise and I can&rsquo;t get out.</div>
+        <div class="weird-a">That is vim. Type <code class="inline">:q!</code> and press Enter. It shows up when you run <code class="inline">git commit</code> without <code class="inline">-m</code>, which is why every command here includes one. This happens to everyone exactly once.</div>
+      </li>
+      <li>
+        <div class="weird-q">My question isn&rsquo;t on this list.</div>
+        <div class="weird-a">Ask <strong>Echs</strong> &mdash; the chat button on this page. Or ask Claude in the terminal, in the folder where it happened: it can read the error and the repository at the same time, which is more than this page can do.</div>
+      </li>
+    </ul>
+  </div>
+
+  <p class="closing">The journal is yours, base camp is somewhere you can find it again, and the point was never that you would remember the commands. It is that you can now try the risky thing, because you know how to get back.</p>
+</section>
+
+</main>
+
+</div>
+
+<script>
+(function() {
+  const STORAGE_KEY = "github14-progress-v1";
+  const TOTAL = 15; // days 0–14
+
+  function loadProgress() {
+    try {
+      const raw = localStorage.getItem(STORAGE_KEY);
+      return raw ? new Set(JSON.parse(raw)) : new Set();
+    } catch { return new Set(); }
+  }
+
+  function saveProgress(set) {
+    try { localStorage.setItem(STORAGE_KEY, JSON.stringify([...set])); } catch {}
+  }
+
+  let done = loadProgress();
+
+  function render() {
+    document.querySelectorAll(".nav-day[data-day]").forEach(el => {
+      const d = el.dataset.day;
+      el.classList.toggle("done", done.has(d));
+    });
+    document.querySelectorAll(".complete-btn[data-day]").forEach(el => {
+      const d = el.dataset.day;
+      const isDone = done.has(d);
+      el.classList.toggle("done", isDone);
+      el.querySelector(".label").textContent = isDone ? "Done" : "Mark complete";
+    });
+    const count = done.size;
+    const pct = Math.round((count / TOTAL) * 100);
+    document.getElementById("pct").textContent = count;
+    document.getElementById("progressFill").style.width = pct + "%";
+  }
+
+  // Complete buttons
+  document.querySelectorAll(".complete-btn[data-day]").forEach(btn => {
+    btn.addEventListener("click", () => {
+      const d = btn.dataset.day;
+      if (done.has(d)) done.delete(d); else done.add(d);
+      saveProgress(done);
+      render();
+    });
+  });
+
+  // Reset
+  document.getElementById("resetBtn").addEventListener("click", () => {
+    if (confirm("Reset all progress? This can't be undone.")) {
+      done = new Set();
+      saveProgress(done);
+      render();
+    }
+  });
+
+  // Copy buttons
+  document.querySelectorAll(".copy-btn").forEach(btn => {
+    btn.textContent = "Copy";
+    btn.addEventListener("click", async () => {
+      const pre = btn.parentElement.querySelector("pre");
+      if (!pre) return;
+      try {
+        await navigator.clipboard.writeText(pre.textContent);
+        btn.textContent = "Copied";
+        btn.classList.add("copied");
+        setTimeout(() => {
+          btn.textContent = "Copy";
+          btn.classList.remove("copied");
+        }, 1400);
+      } catch {
+        btn.textContent = "Press ⌘C";
+        setTimeout(() => { btn.textContent = "Copy"; }, 1400);
+      }
+    });
+  });
+
+  // Scroll spy for sidebar
+  const sections = [...document.querySelectorAll("article.day, section.phase")];
+  const navLinks = new Map();
+  document.querySelectorAll(".nav-day[href]").forEach(a => {
+    const id = a.getAttribute("href").slice(1);
+    navLinks.set(id, a);
+  });
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        navLinks.forEach(a => a.classList.remove("active"));
+        const link = navLinks.get(e.target.id);
+        if (link) link.classList.add("active");
+      }
+    });
+  }, { rootMargin: "-30% 0px -60% 0px", threshold: 0 });
+
+  sections.forEach(s => observer.observe(s));
+
+  render();
+})();
+</script>
+
+
+
+<footer class="site-footer">
+  <div><strong>AI 101</strong> · <a href="index.html">A Self-Paced Guide to AI in Medicine</a></div>
+  <div><a href="claude-code.html">30 Days to Claude Code</a> · <a href="vibe-coding.html">Vibe Coding module</a> · <a href="https://docs.github.com/en/get-started" target="_blank" rel="noopener">Official GitHub docs</a></div>
+  <div><a href="updates.html">v1.13 · 2026</a></div>
+</footer>
+<script src="https://studio.pickaxe.co/api/embed/bundle.js" defer></script>
+</body></html>

@@ -314,7 +314,8 @@
 
       <p>
         Early AI prompting guides emphasized "persona" heavily—telling the AI to "act as" a specialist.
-        With modern models (GPT-5.5, Claude Opus 4.7, Gemini 3.1 Pro), this technique has become <strong>less
+        With the current generation of frontier models (as of July 2026: GPT-5.6, Claude Opus 5,
+        Gemini 3.1 Pro), this technique has become <strong>less
         essential</strong>. Today's models are much better at inferring appropriate framing from the
         task itself. If you ask a detailed clinical question, the model responds clinically without
         being told to "act as a physician."
@@ -479,7 +480,7 @@ Now create similar materials explaining what to expect during a colonoscopy."</d
         <div class="concept-card">
           <div class="concept-icon"><i data-lucide="check-circle"></i></div>
           <div class="concept-name">Over-reliance</div>
-          <td>AI models can be confident and wrong. Ask for alternatives, request critiques, verify independently.</td>
+          <div class="concept-desc">AI models can be confident and wrong. Ask for alternatives, request critiques, verify independently.</div>
         </div>
       </div>
 
@@ -531,12 +532,54 @@ Now create similar materials explaining what to expect during a colonoscopy."</d
       </p>
 
       <ul>
-        <li><strong>Knowledge cutoffs:</strong> Models are trained on data up to a certain date. Modern frontends (ChatGPT, Claude, Gemini) increasingly layer live web search on top, which softens this limit—but you still need to verify that a citation actually came from a current source rather than a memorized one.</li>
+        <li><strong>Knowledge cutoffs—less of a wall than they were:</strong> Models are trained on data up to a certain date, but every major assistant (ChatGPT, Claude, Gemini, Perplexity, Copilot) can now search the web and cite what it finds. The practical constraint has moved. See below.</li>
         <li><strong>Hallucination:</strong> AI models can generate plausible-sounding but false information. No prompt can guarantee accuracy. Verification remains essential.</li>
         <li><strong>Proprietary information:</strong> The AI doesn't have access to your hospital's protocols, your patient's chart, or your organization's policies unless you provide it.</li>
         <li><strong>Tasks requiring real-world interaction:</strong> The AI can help you plan a conversation, but it can't have it. It can suggest what to look for on exam, but it can't perform it.</li>
         <li><strong>Logical reasoning edge cases:</strong> AI models can still fail at edge cases, multi-step logic, or situations requiring common sense.</li>
       </ul>
+
+      <h3>The Cutoff Problem Became a Citation Problem</h3>
+
+      <p>
+        For the first few years, the standard warning about AI was &ldquo;it doesn&rsquo;t
+        know anything after its training cutoff.&rdquo; That warning has largely expired.
+        Every major assistant can now retrieve live pages and quote them back with links.
+        Ask about a guideline released last week and you will usually get an answer with
+        sources attached.
+      </p>
+
+      <p>
+        What replaced it is subtler and, for clinical work, more dangerous&mdash;because
+        the failure now arrives wearing a citation. Three things to check:
+      </p>
+
+      <ul>
+        <li><strong>Did it actually search?</strong> Web access is a tool the model
+          chooses to use, and on some platforms a setting you have to turn on. A model
+          that answers from memory and a model that answers from a search look identical
+          in the chat window. If currency matters, say so explicitly&mdash;&ldquo;search
+          for the current version and tell me the publication date&rdquo;&mdash;and look
+          for the links.</li>
+        <li><strong>Does the source say what the answer says it says?</strong> This is
+          the one that catches people. A link that loads is not a link that supports the
+          claim. Summaries drift, numbers get transposed, and a model will occasionally
+          attach a real citation to a sentence that source does not contain. Resolving is
+          not corroborating. Open the link.</li>
+        <li><strong>Is it the current version, and how do you know?</strong> Search
+          results are full of undated summaries, reprints, and content farms that
+          restate old material as though it were new. Check the byline date on the source
+          itself, not the date implied by the page you landed on. A 2024 finding
+          summarized by a 2026 blog post is still a 2024 finding.</li>
+      </ul>
+
+      <p>
+        The prompting move that follows from this is small and worth making a habit:
+        <em>ask for the date.</em> &ldquo;Give the publication date for each source you
+        cite&rdquo; costs you nothing and surfaces the problem immediately. So does
+        &ldquo;quote the sentence from the source that supports this.&rdquo; If the model
+        cannot produce the quote, you have learned something.
+      </p>
 
       <div class="callout callout-principle">
         <div class="callout-title">The Core Insight</div>
@@ -782,9 +825,9 @@ I typically use AI help for: drafting patient education materials, summarizing c
           <div class="reading-type"><i data-lucide="file-text"></i></div>
           <div class="reading-content">
             <div class="reading-title">
-              <a href="https://platform.claude.com/docs/en/docs/build-with-claude/prompt-engineering/overview" target="_blank">Anthropic Prompting Guide</a>
+              <a href="https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/claude-prompting-best-practices" target="_blank">Anthropic: Prompting Best Practices</a>
             </div>
-            <div class="reading-meta">Anthropic · The best technical guide on system prompts and structuring complex asks.</div>
+            <div class="reading-meta">Anthropic · The best technical guide on system prompts and structuring complex asks. Anthropic has since consolidated its separate technique pages—clarity, examples, XML structuring, role prompting, thinking, and prompt chaining—into this single living reference. Start here rather than at the older overview page.</div>
           </div>
         </div>
 
@@ -932,7 +975,7 @@ I typically use AI help for: drafting patient education materials, summarizing c
   <footer class="footer">
     <div class="footer-inner">
       <div><strong>AI 101</strong> · A Self-Paced Guide to AI in Medicine</div>
-      <div><a href="updates.html">v1.12 · 2026</a></div>
+      <div><a href="updates.html">v1.13 · 2026</a></div>
     </div>
   </footer>
 

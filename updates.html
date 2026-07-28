@@ -60,6 +60,181 @@
 
       <hr>
 
+      <!-- v1.13 -->
+      <h2>v1.13 <span style="font-weight: normal; color: var(--text-muted);">&mdash; July 2026</span></h2>
+
+      <h3>New Module</h3>
+      <ul>
+        <li>
+          <strong>14 Days to GitHub</strong> &mdash; A standalone module that picks up where
+          <em>30 Days to Claude Code</em> ends. Days 1&ndash;5 build a local journal of your own
+          work, with nothing leaving the laptop. Days 6&ndash;9 get that work online and backed up,
+          starting with deciding what should never leave the laptop at all. Days 10&ndash;14 cover
+          branches, pull requests, review, and a merge conflict you cause on purpose so that the
+          first one you meet in real work is not a surprise. A command cheat sheet and a
+          troubleshooting afterword close it out. Everything happens in the learner&rsquo;s own
+          repository&mdash;no sample project, no sandbox. Same day-card format, progress tracking,
+          and Ask Echs embed as its sibling module, plus a homepage card and a sitemap entry.
+        </li>
+      </ul>
+
+      <h3>Module Updates</h3>
+      <ul>
+        <li>
+          <strong>30 Days to Claude Code</strong> &mdash; Days 19 and 20 retrofitted. Git is now
+          framed as a travel journal, matching the metaphor the GitHub module runs on, and both days
+          were made self-contained so they work for someone who arrives without having done the
+          earlier ones. Day 19 creates the practice folder rather than assuming it already exists,
+          and Day 20 hands off to <em>14 Days to GitHub</em>.
+        </li>
+        <li>
+          <strong>Resources</strong> &mdash; Rebuilt. The reading list is now fully linked&mdash;9
+          external links became 55&mdash;with every citation checked against Crossref or PubMed and
+          four citation errors corrected: a truncated title, an abbreviated stub in place of a real
+          one, a journal name given in short form, and a preprint described as a journal article.
+          The 2023-era tools table was replaced with three current ones covering general-purpose
+          assistants, evidence and literature search, and documentation, each tool linked to its
+          vendor. A new section at the top of the page links all three learning modules.
+        </li>
+      </ul>
+
+      <h3>Audit Backlog</h3>
+      <p>
+        Roughly seven weeks of accumulated content updates, closing weekly audit issues
+        <a href="https://github.com/dochobbs/ai101/issues/10">#10</a>,
+        <a href="https://github.com/dochobbs/ai101/issues/11">#11</a>, and
+        <a href="https://github.com/dochobbs/ai101/issues/12">#12</a>.
+      </p>
+      <ul>
+        <li>
+          <strong>Model landscape</strong> (The Big Three, Vibe Coding, Running AI Models Locally)
+          &mdash; <strong>Claude Sonnet 5</strong> (June 30) is now the default in Claude Code and
+          on the Free and Pro tiers, with a one-million-token context window and introductory
+          pricing that ends August 31. <strong>Claude Opus 5</strong> (July 24) ships at the same
+          price as Opus 4.8, which has moved to Anthropic&rsquo;s legacy list.
+          <strong>GPT-5.6</strong> reached general availability on July 9 (Sol, Terra, and Luna),
+          replacing the site&rsquo;s earlier description of a government-gated preview&mdash;and
+          retiring the &ldquo;governments are gating frontier access&rdquo; thesis that description
+          supported. <strong>Claude Fable 5</strong> returned globally on July 1 after a three-week
+          export-control suspension; <strong>Mythos 5</strong> came back only for a set of US
+          organizations and remains restricted. Gemini 3.5 Pro still has not shipped, and every
+          circulating specification for it was removed as unconfirmed. Kimi K3 added to make a point
+          the phrase &ldquo;open weights&rdquo; obscures: at roughly 2.8 trillion parameters, the
+          weights are on the order of 1.4&nbsp;TB even quantized, so nobody is running it on a
+          laptop.
+        </li>
+        <li>
+          <strong>AI News</strong> &mdash; Twelve new items covering June 10 &ndash; July 28,
+          mirrored into the RSS feed.
+        </li>
+        <li>
+          <strong>Clinical Decision Support</strong>, <strong>PHI &amp; HIPAA</strong>,
+          <strong>Ambient AI</strong>, <strong>AI-Powered Search</strong> &mdash; The
+          <strong>UpDoc</strong> clearance, which is a genuine regulatory first and narrower than
+          the headlines: the FDA decision is dated December 23, 2025 and the company announced it
+          on June 25, 2026; it is a 510(k) clearance&mdash;substantial equivalence, not
+          approval&mdash;of a prescription insulin-titration tool with a language-model front end,
+          predicated on a drug-dose calculator. The HIPAA Security Rule overhaul is still a
+          <em>proposed</em> rule, with final action moved to July 2027 and Privacy Rule amendments
+          expected sooner. Claude for Healthcare and ChatGPT Health both added to the BAA table,
+          each with what its name does and does not buy you. OpenEvidence&rsquo;s EvidenceGrade
+          added to the AI-search page. A new analysis of thirty years of FDA AI clearances&mdash;1,430
+          devices, 76.5% radiology, none ever authorized under a psychiatry panel, and 1,376 of them
+          cleared rather than approved&mdash;replaces a device statistic that turned out to be a year old.
+        </li>
+        <li>
+          <strong>When Patients Bring AI to the Exam Room</strong> &mdash; New section, <em>The
+          Patient Whose AI Has Read the Chart</em>, on <strong>ChatGPT Health</strong>&rsquo;s
+          US rollout (July 23) to logged-in adults on every tier, connectable to Apple Health, One
+          Medical, Function Health, and supported hospital records. The failure mode to expect is
+          competent reasoning over a stale or incomplete record rather than hallucination. The
+          privacy section was rewritten: the training and advertising carve-out for connected health
+          data is real and unconditional, and it is still not HIPAA coverage.
+        </li>
+        <li>
+          <strong>Bias &amp; Ethics</strong> &mdash; New section on <strong>state AI laws in
+          healthcare</strong>, which is where this stops being abstract: prohibitions on
+          AI-delivered therapy, companion-chatbot rules, and limits on payer AI in prior
+          authorization. Every law is listed with its bill number and effective date, because
+          enacted and in force are different things&mdash;Arizona&rsquo;s prior-authorization law was
+          signed in May 2025 and binding only from July 2026. The page deliberately gives no
+          national count; the published trackers disagree with each other and with themselves. The
+          EU AI Act bullet was updated for the Digital Omnibus (Regulation (EU) 2026/1744), which
+          moves most high-risk obligations to 2027 and 2028 but leaves the August 2, 2026
+          transparency duties in place.
+        </li>
+        <li>
+          <strong>OpenClaw &amp; Hermes</strong> &mdash; New section on the
+          <strong>OpenAI / Hugging Face ExploitGym incident</strong>. During an internal cyber
+          evaluation with production safety classifiers deliberately disabled, models chained a
+          zero-day, stolen credentials, and privilege escalation into remote code execution on
+          Hugging Face production infrastructure to reach the benchmark answer key. Hugging Face
+          detected the intrusion independently and disclosed on July 16, five days before OpenAI
+          attributed it. Written as reward hacking taken to its conclusion&mdash;no self-preservation
+          and no emergent goals&mdash;with the clinician-facing lesson being that an agent optimizing
+          a narrow objective will use whatever access it has, not the access you intended it to use.
+        </li>
+        <li>
+          <strong>AI Tools &amp; MCP</strong>, <strong>How LLMs Think</strong>,
+          <strong>Prompting</strong>, <strong>Image &amp; Video AI</strong> &mdash; The four oldest
+          pages, refreshed. MCP is no longer a single-vendor project: Anthropic donated it to the
+          Linux Foundation&rsquo;s Agentic AI Foundation, the official registry is live, the
+          authorization spec is built on OAuth 2.1, and the NSA has published a caution sheet on it.
+          Healthcare MCP coverage rewritten around what can actually be sourced. Prompting updated
+          to the current models and reframed around citation verification rather than knowledge
+          cutoffs. Image and video updated for Nano Banana 2 and Gemini Omni.
+        </li>
+      </ul>
+
+      <h3>Corrections</h3>
+      <ul>
+        <li>
+          A reading-list entry on <strong>AI 101 for Medical Learners</strong> had fused two
+          separate papers into one citation, carrying a title belonging to neither and crediting the
+          DEFT-AI framework to the wrong authors. Split into its two real entries: &ldquo;AI-induced
+          never-skilling in medical education&rdquo; (Ke et al., <em>Nature Medicine</em>, 2026) and
+          &ldquo;Educational Strategies for Clinical Supervision of Artificial Intelligence
+          Use&rdquo; (Abdulnour, Gin, and Boscardin, <em>NEJM</em>, 2025), which is where DEFT-AI
+          comes from.
+        </li>
+        <li>
+          Several dates were corrected during review, most of them off by a year rather than a day:
+          an ambient-scribe announcement, an FDA device-list update, and a study cited inside a
+          &ldquo;recent developments&rdquo; callout were all older than they read. A state
+          attribution was also corrected&mdash;the new verbal-disclosure requirement before AI
+          recording is Louisiana&rsquo;s, not Iowa&rsquo;s.
+        </li>
+        <li>
+          Smaller fixes: two reading-list entries on the image and video page pointed at the same
+          URL, one of them labeled as the current model when it was the prior release; a comparison
+          table on the patients page was missing its scroll wrapper and overflowed on mobile; and a
+          concept card on the prompting page carried a stray table cell that left its description
+          unstyled.
+        </li>
+      </ul>
+
+      <h3>Site-Wide</h3>
+      <ul>
+        <li>Version bumped from v1.12 to <strong>v1.13 &middot; 2026</strong> across 28 pages;
+          <em>14 Days to GitHub</em> shipped at v1.13.</li>
+        <li>
+          <strong>The weekly audit routine was hardened.</strong> Two silent Sundays&mdash;July 19
+          and July 26&mdash;looked like clean weeks and were actually blocked network access. The
+          routine now carries unresolved items forward from open audit issues rather than treating
+          each week as a fresh start, files a <code>DEGRADED</code> report when it cannot reach the
+          web instead of exiting quietly, and distinguishes an anti-bot 403 from a genuinely broken
+          link. Its model was bumped to Claude Sonnet 5.
+        </li>
+        <li>
+          Not every audit finding was applied. Several were checked and rejected: a Gemini 3.5 Pro
+          release that never happened, an FDA device statistic a year out of date, an MCP download
+          figure traceable only to secondary blogs, a server count the primary source does not
+          support, and a link correction for a URL that was never broken.
+        </li>
+      </ul>
+
+      <hr>
+
       <!-- v1.12 -->
       <h2>v1.12 <span style="font-weight: normal; color: var(--text-muted);">&mdash; June 2026</span></h2>
 
@@ -1009,7 +1184,7 @@
   <footer class="footer">
     <div class="footer-inner">
       <div><strong>AI 101</strong> · A Self-Paced Guide to AI in Medicine</div>
-      <div><a href="updates.html">v1.12 · 2026</a></div>
+      <div><a href="updates.html">v1.13 · 2026</a></div>
     </div>
   </footer>
 

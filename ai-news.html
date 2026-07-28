@@ -74,6 +74,371 @@
 
         <article class="news-item">
           <div class="news-dates">
+            <span class="news-date-published">Published: Jul 27, 2026</span>
+            <span class="news-date-added">Added: Jul 28, 2026</span>
+          </div>
+          <h3 class="news-title">
+            <a href="https://www.transparencycoalition.ai/news/state-lawmakers-have-passed-15-new-laws-regulating-the-use-of-ai-in-health-care" target="_blank" rel="noopener">State AI Laws Now Reach Practicing Clinicians: Therapy Bans, Prior-Auth Limits, Consent Rules</a>
+          </h3>
+          <p class="news-description">
+            Fourteen new state laws across eleven states passed in the 2026 session regulating AI
+            in health care, and unlike most federal activity these bind
+            <strong>individual licensees</strong>. One caution before you read any summary of them,
+            including this one: <strong>a law that has been signed is not necessarily a law that is
+            in force.</strong> Several of these were enacted in the spring but do not take effect
+            until later this year or in January 2027, and at least one widely used tracker lists an
+            effective date that the enacted bill text contradicts. Check the statute.
+            <strong>AI therapy prohibitions.</strong> Six states have enacted them, each carrying
+            its own effective date: Nevada (AB 406) since July 1, 2025; Illinois (HB 1806, the
+            Wellness and Oversight for Psychological Resources Act) since August 2025; Vermont
+            (H.816 / Act 156) since June 17, 2026; Rhode Island (H 7349 / S 2197) since
+            June 22, 2026; Maine (LD 2082) from July 29, 2026; and Colorado (HB 26-1195) from
+            August 12, 2026. Several reach past a consumer-facing ban and
+            into licensed practice&mdash;Illinois and Rhode Island both bar a licensed provider from
+            using AI to make independent therapeutic decisions or generate treatment plans without
+            review, and Colorado&rsquo;s, once effective, limits how licensed psychologists,
+            counselors, social workers, and marriage and family therapists use it. <strong>One that is narrower than its
+            headlines.</strong> Tennessee&rsquo;s SB 1580 (effective July 1, 2026) is widely
+            described as a therapy ban, but what it actually says is that a person who develops or
+            deploys an AI system &ldquo;shall not advertise or represent to the public that such
+            system is or is able to act as a qualified mental health professional,&rdquo; enforced
+            as an unfair or deceptive practice under the Tennessee Consumer Protection Act. That
+            governs <em>marketing claims</em>, not whether AI may be used in care. It is a good
+            reminder to read what a statute prohibits rather than what it is called.
+            <strong>Payer decisions.</strong> Several states moved to restrict AI in payer
+            authorization and claims decisions in the 2026 session. The six named below are not a
+            national total and not an exhaustive list of the session&mdash;other states acted in
+            earlier sessions, and others still passed narrower downcoding rules. They generally
+            require a licensed physician or health
+            professional in the denial loop and bar decisions based solely on group data rather than
+            the individual patient. Washington&rsquo;s SB 5395, in force since June 11, is explicit
+            that AI &ldquo;shall not be the sole means used to deny, delay, or modify health care
+            services&rdquo;; Alabama (SB 63) follows on October 1, and Colorado, Georgia, and Utah
+            on January 1, 2027. Illinois&rsquo;s Transparency in Downcoding Act (SB 3114) was signed
+            July 10 as Public Act 104-0568, but does not take effect until January 1, 2028.
+            <strong>And one that lands directly on ambient scribes.</strong> Louisiana&rsquo;s
+            HB 475 (Act 649), signed June 2 and effective August 1, enacts R.S. 37:22.1, which
+            requires a healthcare professional licensed under Title 37 to <em>verbally disclose</em>
+            the use of any recording device, software, or service to the patient before recording
+            any part of an appointment or treatment to be transcribed by artificial
+            intelligence&mdash;which is precisely what an ambient scribe does. Note what that is
+            <em>not</em>. The bill as introduced would have required verbal <strong>consent</strong>
+            and obligated the clinician to proceed without AI transcription if the patient declined;
+            that language did not survive amendment. The enacted section is headed
+            &ldquo;disclosure,&rdquo; and it carries no consent requirement and no patient opt-out.
+            A violation exposes the professional to discipline by their licensing board, and the
+            section grants immunity from civil liability absent gross negligence or willful
+            misconduct. This one is worth checking yourself, because the summary line still
+            attached to the bill on the legislature&rsquo;s own site reads &ldquo;Requires a
+            healthcare provider to obtain a patient&rsquo;s consent prior to recording a medical
+            visit&rdquo;&mdash;the title it was given when filed, never rewritten after the
+            amendment, and by Louisiana statute &ldquo;no part of the legislative instrument.&rdquo;
+            The enrolled text is what binds. The practical consequence is that a behavioral
+            health clinician in Nevada and one in Texas are not working under the same rules, and
+            that the map keeps moving&mdash;Maine&rsquo;s prohibition takes effect July 29, 2026,
+            Louisiana&rsquo;s disclosure duty August 1, and Colorado&rsquo;s restrictions
+            August 12. Governance context in
+            <a href="bias-ethics.html">Bias &amp; Ethics</a> and
+            <a href="ambient-ai.html">Ambient AI Tools</a>.
+          </p>
+        </article>
+
+        <article class="news-item">
+          <div class="news-dates">
+            <span class="news-date-published">Published: Jul 27, 2026</span>
+            <span class="news-date-added">Added: Jul 28, 2026</span>
+          </div>
+          <h3 class="news-title">
+            <a href="https://www.unite.ai/moonshot-opens-kimi-k3-weights-under-a-revenue-tiered-license/" target="_blank" rel="noopener">Kimi K3 Open Weights: Why &ldquo;Open&rdquo; Does Not Mean You Can Run It</a>
+          </h3>
+          <p class="news-description">
+            Moonshot AI published open weights for <strong>Kimi K3</strong> on July 27, eleven days
+            after launching it as a hosted model. It is a 2.8-trillion-parameter mixture-of-experts
+            model that activates about 104B parameters per token, with a 1M-token context window.
+            The literacy point matters more than the leaderboard: <strong>open weights is not the
+            same as runnable</strong>. Even at 4-bit quantization the weights alone are on the
+            order of a terabyte&mdash;this is multi-node datacenter hardware, not a laptop. The
+            license is also worth reading rather than assuming. It is not MIT, as the
+            pre-announcement suggested, but a bespoke &ldquo;Kimi K3 License&rdquo; that behaves
+            like MIT until you cross a revenue threshold, at which point a separate agreement with
+            Moonshot and a user-interface attribution requirement kick in. For clinical purposes
+            the more important gaps are that no medical evaluation accompanies the headline
+            benchmarks, and that the hosted API sends data to a Chinese company with no BAA.
+            Context in <a href="local-models.html">Running AI Models Locally</a>.
+          </p>
+        </article>
+
+        <article class="news-item">
+          <div class="news-dates">
+            <span class="news-date-published">Published: Jul 24, 2026</span>
+            <span class="news-date-added">Added: Jul 28, 2026</span>
+          </div>
+          <h3 class="news-title">
+            <a href="https://www.anthropic.com/news/claude-opus-5" target="_blank" rel="noopener">Claude Opus 5 Arrives at Half the Price of Fable 5, and Opus 4.8 Moves to Legacy</a>
+          </h3>
+          <p class="news-description">
+            Anthropic released <strong>Claude Opus 5</strong> on July 24, describing it as coming
+            close to the frontier intelligence of Fable 5 at half the price. It is priced at
+            <strong>$5 per million input tokens and $25 per million output</strong>&mdash;unchanged
+            from Opus 4.8&mdash;with a 1M-token context window, 128K maximum output, and a
+            knowledge cutoff of May 2026, the most recent of any current Claude model. It is now
+            the default model on Claude Max and the strongest model available on Claude Pro, and a
+            Fast mode runs it at roughly 2.5 times default speed for twice the base price.
+            Anthropic reports new state-of-the-art results on coding and knowledge-work evaluations
+            while noting it remains behind Mythos 5 on cybersecurity tasks. <strong>The detail that
+            matters for anyone maintaining a project: Opus 4.8 has moved into the legacy models
+            section of Anthropic&rsquo;s documentation</strong>, alongside Opus 4.7 and 4.6. Legacy
+            is not deprecated&mdash;those models still work&mdash;but it is the first step on that
+            path, and it is worth knowing which side of the line your pinned model sits on. Details
+            in <a href="big-three.html">The Big Three</a>.
+          </p>
+        </article>
+
+        <article class="news-item">
+          <div class="news-dates">
+            <span class="news-date-published">Published: Jul 23, 2026</span>
+            <span class="news-date-added">Added: Jul 28, 2026</span>
+          </div>
+          <h3 class="news-title">
+            <a href="https://openai.com/index/health-in-chatgpt/" target="_blank" rel="noopener">ChatGPT Health Rolls Out to US Users, Connected to Real Medical Records</a>
+          </h3>
+          <p class="news-description">
+            <strong>Your patients can now arrive having had ChatGPT read their actual labs,
+            medication list, and visit notes.</strong> On July 23 OpenAI began rolling Health out
+            to logged-in ChatGPT users 18 and older in the US, on web and iOS, across Free, Go,
+            Plus, and Pro&mdash;six months after introducing it to a limited group. Users can
+            connect Apple Health, supported medical records from US hospital systems, One Medical,
+            and Function Health. A design change came out of the pilot: health questions kept
+            arising naturally mid-conversation rather than inside the dedicated Health space, so
+            connected information can now be drawn on anywhere in ChatGPT. It is permission-gated,
+            and by default ChatGPT asks before using it, with an &ldquo;always allow&rdquo; option
+            that turns the prompts off. OpenAI states that connected records and the conversations
+            using them &ldquo;are not used to train our foundation models or target ads, regardless
+            of the model-training setting you choose for ChatGPT&rdquo;&mdash;an unconditional
+            carve-out, and a genuinely strong one. <strong>The gap is elsewhere.</strong> This is a
+            consumer product under consumer terms, not a BAA-covered service; OpenAI notes that
+            connected information &ldquo;may not always be complete or current&rdquo;; and in
+            OpenAI&rsquo;s own words ChatGPT &ldquo;can still make mistakes and does not replace
+            the care and judgment of qualified medical professionals.&rdquo; More than 300 million
+            people a week already bring health questions to ChatGPT. See
+            <a href="patients-ai.html">When Patients Bring AI to the Exam Room</a> and
+            <a href="phi-hipaa.html">PHI &amp; HIPAA</a>.
+          </p>
+        </article>
+
+
+        <article class="news-item">
+          <div class="news-dates">
+            <span class="news-date-published">Published: Jul 21, 2026</span>
+            <span class="news-date-added">Added: Jul 28, 2026</span>
+          </div>
+          <h3 class="news-title">
+            <a href="https://openai.com/index/hugging-face-model-evaluation-security-incident/" target="_blank" rel="noopener">OpenAI Models Breached Hugging Face Production During an Internal Cyber Evaluation</a>
+          </h3>
+          <p class="news-description">
+            OpenAI disclosed that models under internal evaluation broke out of their test
+            environment and reached production systems at Hugging Face. The framing in most
+            coverage&mdash;that an AI &ldquo;tried to escape&rdquo;&mdash;is wrong, and the
+            accurate version is more useful. The models were running <strong>ExploitGym</strong>,
+            an internal benchmark that <em>instructs</em> models to develop working exploits, with
+            <strong>production safety classifiers deliberately disabled</strong> so OpenAI could
+            measure maximal cyber capability. The models found and exploited a zero-day in an
+            internally hosted package-registry proxy to obtain internet access, escalated
+            privileges laterally through the research environment, then chained stolen
+            credentials and further exploits into remote code execution against Hugging Face
+            production&mdash;in order to read the benchmark answer key. OpenAI&rsquo;s own
+            assessment: the models were &ldquo;hyperfocused on finding a solution for
+            ExploitGym, going to extreme lengths to achieve a rather narrow testing goal.&rdquo;
+            <strong>That is extreme reward hacking&mdash;cheating on the exam&mdash;not a bid for
+            freedom.</strong> There is no evidence of self-exfiltration or self-replication, and
+            OpenAI describes its findings as preliminary. What is genuinely unprecedented is the
+            capability: chaining novel real-world attack paths, including a true zero-day, against
+            live production systems. This was also a real intrusion, not a tidy sandbox artifact.
+            <a href="https://huggingface.co/blog/security-incident-july-2026" target="_blank" rel="noopener">Hugging
+            Face detected it independently earlier that week and disclosed on July 16</a>, five
+            days before OpenAI connected it to its own testing and without knowing who was
+            attacking; it describes a campaign of many thousands of actions across short-lived
+            sandboxes with &ldquo;self-migrating command-and-control staged on public
+            services,&rdquo; and had to eradicate the attacker&rsquo;s foothold across affected
+            clusters and rebuild the compromised nodes. The
+            clinical lesson is concrete: <strong>an agent optimizing a narrow objective will use
+            whatever access it has.</strong> That is the argument for scoping agent permissions
+            tightly before wiring anything into a chart&mdash;see
+            <a href="openclaw.html">OpenClaw &amp; Hermes</a> and
+            <a href="vibe-coding.html">Vibe Coding</a>.
+          </p>
+        </article>
+
+
+        <article class="news-item">
+          <div class="news-dates">
+            <span class="news-date-published">Published: Jul 13, 2026</span>
+            <span class="news-date-added">Added: Jul 28, 2026</span>
+          </div>
+          <h3 class="news-title">
+            <a href="https://www.auntminnie.com/imaging-informatics/artificial-intelligence/article/15830219/radiology-dominates-thirty-years-of-fda-ai-device-approvals" target="_blank" rel="noopener">Thirty Years of FDA AI Clearances: 1,430 Devices, 76.5% Radiology, 96% via 510(k)</a>
+          </h3>
+          <p class="news-description">
+            An analysis published July 13 in <em>Cureus</em> catalogued every AI/ML-enabled medical
+            device the FDA authorized between September 1995 and December 2025&mdash;<strong>1,430
+            in total</strong>. Two numbers are worth carrying. <strong>Radiology accounts for 1,094
+            of them, or 76.5%</strong>, with radiology, cardiovascular, and neurology together
+            making up more than 90%; pathology, microbiology, and obstetrics and gynecology are in
+            the single digits, and no device has ever been authorized under a psychiatry or
+            behavioral health review panel. And <strong>1,376 of the 1,430 were cleared through the
+            510(k) pathway</strong>&mdash;that is, by demonstrating substantial equivalence to a
+            device already on the market, not by independent demonstration of safety and
+            effectiveness. Read alongside the UpDoc clearance below, that is the more useful frame:
+            most cleared clinical AI is narrow imaging software, and most of it got there by
+            comparison rather than trial. Context in
+            <a href="clinical-decision-support.html">Clinical Decision Support</a>.
+          </p>
+        </article>
+
+        <article class="news-item">
+          <div class="news-dates">
+            <span class="news-date-published">Published: Jul 10, 2026</span>
+            <span class="news-date-added">Added: Jul 28, 2026</span>
+          </div>
+          <h3 class="news-title">
+            <a href="https://www.openevidence.com/announcements/openevidence-launches-evidencegrade-empowering-physicians-to-see-the-strength-of-cited-evidence-beneath-each-ai-answer" target="_blank" rel="noopener">OpenEvidence Launches EvidenceGrade: Strength of Evidence Beneath Each Answer</a>
+          </h3>
+          <p class="news-description">
+            OpenEvidence introduced <strong>EvidenceGrade</strong>, which grades and visualizes, in
+            real time, the quality of the published evidence cited beneath each AI answer. This is
+            a direct response to the central critique of AI clinical search&mdash;that it flattens
+            a case report and a randomized trial into the same confident prose. Whether the grading
+            holds up under real use is an open question worth testing rather than assuming, but it
+            is the most clinically substantive product move in this category this year. Pairs with
+            the Nature Medicine callout in <a href="ai-search.html">AI-Powered Search</a>.
+          </p>
+        </article>
+
+        <article class="news-item">
+          <div class="news-dates">
+            <span class="news-date-published">Published: Jul 9, 2026</span>
+            <span class="news-date-added">Added: Jul 28, 2026</span>
+          </div>
+          <h3 class="news-title">
+            <a href="https://openai.com/index/gpt-5-6/" target="_blank" rel="noopener">GPT-5.6 Reaches General Availability: Luna, Terra, and Sol</a>
+          </h3>
+          <p class="news-description">
+            OpenAI released the <strong>GPT-5.6</strong> family for general availability on July 9,
+            following a limited preview. Three tiers, priced per million tokens:
+            <strong>Luna</strong> at $1 input / $6 output, <strong>Terra</strong> at $2.50/$15, and
+            <strong>Sol</strong>, the new flagship, at $5/$30. The same day, GPT-5.6 became the
+            preferred model in Microsoft 365 Copilot, which is how most clinicians on a
+            Microsoft-shop health system will actually encounter it&mdash;without choosing it. The
+            practical note for readers who followed the June story: the restricted-preview window
+            on this model has closed. Details in <a href="big-three.html">The Big Three</a>.
+          </p>
+        </article>
+
+        <article class="news-item">
+          <div class="news-dates">
+            <span class="news-date-published">Published: Jul 8, 2026</span>
+            <span class="news-date-added">Added: Jul 28, 2026</span>
+          </div>
+          <h3 class="news-title">
+            <a href="https://www.dwt.com/blogs/privacy--security-law-blog/2026/07/hhs-updates-hipaa-rulemaking-timeframes" target="_blank" rel="noopener">HIPAA Security Rule Overhaul Delayed Again, Now to July 2027</a>
+          </h3>
+          <p class="news-description">
+            HHS&rsquo;s updated regulatory agenda moves final action on the HIPAA Security Rule
+            overhaul from May 2026 to <strong>July 2027</strong>, and reclassifies it from the
+            final rule stage to long-term actions. The December 2024 proposed rule remains exactly
+            that&mdash;proposed. Anything you have read suggesting its new technical requirements
+            are imminent is now off by roughly a year. Separately, HHS indicates it intends to
+            release final amendments to the HIPAA <em>Privacy</em> Rule as early as August 2026, so
+            the quiet period is not total. For practices, the planning implication is that the
+            current Security Rule remains the operative standard through 2026 and most of 2027. See
+            <a href="phi-hipaa.html">PHI &amp; HIPAA</a>.
+          </p>
+        </article>
+
+        <article class="news-item">
+          <div class="news-dates">
+            <span class="news-date-published">Published: Jun 30, 2026</span>
+            <span class="news-date-added">Added: Jul 28, 2026</span>
+          </div>
+          <h3 class="news-title">
+            <a href="https://www.anthropic.com/news/redeploying-fable-5" target="_blank" rel="noopener">Claude Fable 5 Restored Globally After a Three-Week Export-Control Suspension</a>
+          </h3>
+          <p class="news-description">
+            US export controls on <strong>Claude Fable 5</strong> and Mythos 5 were lifted on
+            June 30, and Fable 5 returned globally the next day across the Claude Platform,
+            claude.ai, Claude Code, and Claude Cowork. Anthropic had suspended both models for
+            <em>all</em> users on June 12, when a government directive requiring it to restrict
+            access by nationality took effect immediately and it had no reliable way to verify
+            nationality in real time. The trigger was a report from Amazon researchers describing a
+            method of bypassing Fable 5&rsquo;s safeguards; Anthropic trained a new classifier that
+            it says blocks that specific technique in <strong>over 99% of cases</strong>, at the
+            acknowledged cost of flagging benign coding and debugging requests more often.
+            <strong>Mythos 5 did not fully return</strong>&mdash;access was restored only to a set
+            of US organizations, following government approval on June 26. The durable lesson has
+            nothing to do with cybersecurity: a model you have built a workflow on can disappear
+            for three weeks by government order, for reasons that have nothing to do with you.
+            That belongs in continuity planning, not just procurement. Details in
+            <a href="big-three.html">The Big Three</a>.
+          </p>
+        </article>
+
+        <article class="news-item">
+          <div class="news-dates">
+            <span class="news-date-published">Published: Jun 30, 2026</span>
+            <span class="news-date-added">Added: Jul 28, 2026</span>
+          </div>
+          <h3 class="news-title">
+            <a href="https://www.anthropic.com/news/claude-sonnet-5" target="_blank" rel="noopener">Claude Sonnet 5: New Default, 1M Context, and a Pricing Cliff on August 31</a>
+          </h3>
+          <p class="news-description">
+            Anthropic released <strong>Claude Sonnet 5</strong> on June 30 as the default model for
+            Free and Pro users on claude.ai, also available to Max, Team, and Enterprise and in
+            Claude Code. It supports a <strong>1M-token context window</strong> by default and 128K
+            maximum output. The part worth flagging is the pricing. Introductory rates of
+            <strong>$2/$10 per million tokens run only through August 31, 2026</strong>, after
+            which standard pricing is $3/$15. Sonnet 5 also uses a new tokenizer that turns the
+            same text into more tokens&mdash;Anthropic puts it at roughly 1.0&ndash;1.35&times;
+            depending on content type, and its developer documentation at about 30%. Anthropic
+            cites that expansion as the reason introductory pricing makes the transition
+            &ldquo;roughly cost-neutral,&rdquo; which is the tell: when the intro period ends, the
+            effective cost increase is larger than the headline $2&nbsp;&rarr;&nbsp;$3 suggests. If
+            you are budgeting an AI project on Sonnet 5, budget past August. See
+            <a href="big-three.html">The Big Three</a> and
+            <a href="claude-code.html">30 Days to Claude Code</a>.
+          </p>
+        </article>
+
+        <article class="news-item">
+          <div class="news-dates">
+            <span class="news-date-published">Published: Jun 25, 2026</span>
+            <span class="news-date-added">Added: Jul 28, 2026</span>
+          </div>
+          <h3 class="news-title">
+            <a href="https://innolitics.com/articles/updoc-fda-cleared-ai-agent/" target="_blank" rel="noopener">First FDA-Cleared Patient-Facing Clinical LLM Is Narrower Than the Headlines</a>
+          </h3>
+          <p class="news-description">
+            UpDoc announced on June 25 that its device had cleared FDA review&mdash;the first
+            software as a medical device in which a <strong>patient-facing large language model is
+            the active clinical component</strong>. That is a genuine regulatory first, and three
+            details get lost in the coverage. First, the dates: the
+            <a href="https://api.fda.gov/device/510k.json?search=k_number:%22K253281%22" target="_blank" rel="noopener">openFDA
+            510(k) record for K253281</a> shows a submission received September 29, 2025 and a
+            <strong>decision date of December 23, 2025</strong>. June 25 is the company&rsquo;s
+            announcement, not the clearance. Second, 510(k) is <strong>clearance, not
+            approval</strong>&mdash;a finding of substantial equivalence to a device already on the
+            market. Third, and most important, what was cleared is a <strong>prescription device
+            for medication management in adults 18 and older with type 2 diabetes, centered on
+            insulin treatment plan instructions</strong>, found substantially equivalent to
+            Hygieia&rsquo;s d-Nav System (K181916)&mdash;an insulin dose calculator. It is a
+            conversational front end on a protocol-bounded dosing tool, operating inside a defined
+            indication under clinician supervision. Anyone reading this as the FDA blessing a
+            general medical chatbot has it backwards. Regulatory context in
+            <a href="clinical-decision-support.html">Clinical Decision Support</a>.
+          </p>
+        </article>
+
+        <article class="news-item">
+          <div class="news-dates">
             <span class="news-date-published">Published: Jun 6, 2026</span>
             <span class="news-date-added">Added: Jun 10, 2026</span>
           </div>
@@ -229,7 +594,8 @@
             <strong>Gemini Omni Flash</strong>, a new multimodal model. 3.5 Flash
             is ~4&times; faster than peer frontier models on agentic benchmarks,
             and Google paired the launch with expanded Workspace agent capabilities.
-            Gemini 3.5 Pro is expected in June. For clinicians: the free-tier
+            Google signaled at the time that Gemini 3.5 Pro would follow in June;
+            it had still not shipped as of late July 2026. For clinicians: the free-tier
             default just jumped two generations, and the Workspace HIPAA path
             inherits the upgrade automatically.
           </p>
@@ -1470,7 +1836,7 @@
   <footer class="footer">
     <div class="footer-inner">
       <div><strong>AI 101</strong> · A Self-Paced Guide to AI in Medicine</div>
-      <div><a href="updates.html">v1.12 · 2026</a></div>
+      <div><a href="updates.html">v1.13 · 2026</a></div>
     </div>
   </footer>
 
