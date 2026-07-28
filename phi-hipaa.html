@@ -334,7 +334,9 @@
         <li><strong>ChatGPT for Healthcare (enterprise tier, launched Jan 2026):</strong> BAA available; HIPAA-aligned controls including encryption keys, audit logs, and data residency. Deployed at AdventHealth, Baylor Scott &amp; White, Boston Children's, Cedars-Sinai, HCA, MSK, Stanford Children's, and UCSF.</li>
         <li><strong>ChatGPT Enterprise/Edu:</strong> BAA available through sales-managed accounts</li>
         <li><strong>Anthropic API:</strong> BAA available only for HIPAA-eligible services with zero data retention; does not cover Claude.ai, Workbench, or beta features</li>
-        <li><strong>Claude Enterprise (HIPAA-ready plan):</strong> BAA available with admin HIPAA opt-in. BAAs signed <em>before</em> Dec 2, 2025 cover the API only; BAAs signed after that date can cover both API and Enterprise under a single agreement. (<a href="https://privacy.claude.com/en/articles/8114513-business-associate-agreements-baa-for-commercial-customers" target="_blank">Anthropic Privacy Center</a>)</li>
+        <li><strong>Claude for Healthcare (launched Jan 11, 2026):</strong> Anthropic&rsquo;s healthcare offering for providers, payers, and health tech companies&mdash;connectors for the CMS Coverage Database, ICD-10, the NPI Registry, and PubMed, plus FHIR and prior-authorization Agent Skills. The name describes a set of tools; the HIPAA coverage comes from running them on a HIPAA-ready Enterprise plan with a BAA, not from the product name. (<a href="https://www.anthropic.com/news/healthcare-life-sciences" target="_blank" rel="noopener">Anthropic</a>)</li>
+        <li><strong>Claude Enterprise (HIPAA-ready plan):</strong> BAA available with admin HIPAA opt-in&mdash;Enterprise plans only, click-to-accept, and only the organization&rsquo;s Primary Owner can enable it. Enabling it is a one-way change. BAAs signed <em>before</em> Dec 2, 2025 cover the API only; BAAs signed after that date can cover both API and Enterprise under a single agreement. Note that enabling HIPAA does not automatically bring every feature under the BAA&mdash;Claude Code is covered only with Zero Data Retention on a qualified account, and Claude Cowork is not yet covered at all. (<a href="https://support.claude.com/en/articles/13296973-hipaa-ready-enterprise-plans" target="_blank" rel="noopener">Anthropic Help Center</a>)</li>
+        <li><strong>Claude personal health connectors (consumer Pro/Max):</strong> No BAA. US Pro and Max subscribers can connect lab results and health records through HealthEx, Function, Apple Health, and Android Health Connect. Anthropic says it does not use this health data to train models, and access is opt-in and revocable&mdash;but this is the consumer side of the product, explicitly distinct from the HIPAA-ready offering for providers and payers. The same rule as ChatGPT Health applies: fine for a patient reviewing their own data, not a route for your patients&rsquo; PHI.</li>
         <li><strong>Claude Code (CLI):</strong> Conditionally covered under a BAA when Zero Data Retention is enabled on the account</li>
         <li><strong>Claude (consumer Free/Pro/Max/Team):</strong> No BAA available. Cannot be used with PHI.</li>
         <li><strong>Azure OpenAI:</strong> BAA included in Microsoft Product Terms by default</li>
@@ -721,8 +723,10 @@
           training setting. The exposures that matter are different ones. This is a consumer
           product on consumer terms, with <strong>no BAA</strong>. Synced records can be stale or
           incomplete&mdash;OpenAI&rsquo;s own caveat is that &ldquo;a medication may remain listed
-          after you stop taking it.&rdquo; And no clinician is in the loop; OpenAI states plainly
-          that Health &ldquo;is not intended for diagnosis or treatment.&rdquo;
+          after you stop taking it,&rdquo; and it tells users to &ldquo;check important details
+          against the original source.&rdquo; And no clinician is in the loop; OpenAI states
+          plainly that ChatGPT &ldquo;can still make mistakes and does not replace the care and
+          judgment of qualified medical professionals.&rdquo;
         </p>
         <p>
           <strong>Why this reaches your exam room:</strong> OpenAI reports that more than 300
