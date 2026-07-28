@@ -3,12 +3,49 @@
    ========================================== */
 
 /* Import distinctive fonts */
-@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400&family=Source+Sans+3:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500;700&display=swap');
+
+/* Sharp Serif Text — self-hosted display serif, headings only.
+   Converted from the licensed OTF to woff2 and subset to Latin-1 plus the
+   typographic marks this site actually uses (curly quotes, dashes, arrows,
+   ellipsis): 453KB of OTF becomes 28KB. 264 glyphs.
+
+   Only one weight is licensed here — Medium — so it is declared across the
+   400-600 range that the site's headings ask for. `font-synthesis` is off
+   deliberately: with a single weight the browser would otherwise fake the
+   600 by smearing the strokes, which looks bad on a high-contrast serif.
+   Heading hierarchy comes from size, not weight.
+
+   The -deck and -banner variables are kept pointing at the same family so
+   the ~15 rules that reference them keep working. Sharp Serif Text has no
+   optical-size cuts; if a Display or Deck cut is licensed later, only these
+   @font-face blocks and the two variables need to change. */
+@font-face {
+  font-family: 'Sharp Serif';
+  src: url('fonts/SharpSerifText-Medium.woff2') format('woff2');
+  font-weight: 400 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Sharp Serif';
+  src: url('fonts/SharpSerifText-MediumItalic.woff2') format('woff2');
+  font-weight: 400 600;
+  font-style: italic;
+  font-display: swap;
+}
+
+h1, h2, h3, h4, h5, h6,
+.hero-ribbon, .week-title, .phase-title {
+  font-synthesis: none;
+}
 
 /* CSS Variables */
 :root {
   /* Typography */
-  --font-display: 'Fraunces', Georgia, serif;
+  --font-display: 'Sharp Serif', Georgia, serif;
+  --font-display-deck: 'Sharp Serif', Georgia, serif;
+  --font-display-banner: 'Sharp Serif', Georgia, serif;
   --font-body: 'Source Sans 3', -apple-system, BlinkMacSystemFont, sans-serif;
   --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
   
@@ -114,17 +151,20 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
+  font-family: var(--font-display-banner);
   font-size: 2.75rem;
   font-weight: 600;
 }
 
 h2 {
+  font-family: var(--font-display-deck);
   font-size: 2rem;
   margin-top: var(--space-3xl);
   margin-bottom: var(--space-lg);
 }
 
 h3 {
+  font-family: var(--font-display-deck);
   font-size: 1.5rem;
   margin-top: var(--space-2xl);
   margin-bottom: var(--space-md);
@@ -1423,7 +1463,10 @@ tr:hover td {
     padding: var(--space-lg) var(--space-md);
   }
 
+  /* Headings shrink past the Banner/Deck thresholds here, so step each one
+     down an optical size to match what is actually rendered. */
   h1 {
+    font-family: var(--font-display-deck);
     font-size: 1.875rem;
   }
 
@@ -1432,6 +1475,7 @@ tr:hover td {
   }
 
   h3 {
+    font-family: var(--font-display);
     font-size: 1.25rem;
   }
 
@@ -1441,6 +1485,15 @@ tr:hover td {
     border-radius: var(--radius-lg);
   }
 
+  /* Two stacked bands reach further down the corner than one does. At this
+     width the hero is narrow enough that the inner band would otherwise cut
+     across the badge, so start the content below both. */
+  .hero-content {
+    padding-top: 2.9rem;
+  }
+
+  /* Font family comes from the h1 rule above. Do not set it here: `.hero h1`
+     outranks `.hero-mark`, which has to stay monospace. */
   .hero h1 {
     font-size: 2rem;
   }
@@ -3391,7 +3444,29 @@ blockquote.pull-quote {
   text-decoration: none;
 }
 
-@media (max-width: 600px) {
+/* Second band — 14 Days to GitHub — sits inboard of the first on the same
+   45-degree diagonal. Both bands stay centred on the corner as long as
+   halfWidth - overhang = top + halfHeight, so moving one inboard by d means
+   adding d to `top` and taking d off the overhang. The band also has to grow
+   wider as it moves in, because the corner chord it spans grows with it. */
+.hero-ribbon-next {
+  top: 7.8rem;
+  right: -5.7rem;
+  width: 30rem;
+  background: var(--phase-1-dark);
+  color: var(--white);
+}
+
+.hero-ribbon-next:hover {
+  background: var(--phase-1);
+  color: var(--white);
+}
+
+/* The bands are sized in rem, so as the hero narrows they eat further into it.
+   Below this width the full-size inner band reaches the subtitle, so both drop
+   to the compact cut. This threshold used to be 600px, when there was only one
+   band and it stayed clear on its own. */
+@media (max-width: 1000px) {
   .hero-ribbon {
     width: 16rem;
     top: 3.4rem;
@@ -3400,4 +3475,73 @@ blockquote.pull-quote {
   }
   .hero-ribbon .hr-new { display: none; }
   .hero-ribbon .hr-title { font-size: 0.55rem; letter-spacing: 0.06em; }
+
+  .hero-ribbon-next {
+    width: 21rem;
+    top: 4.95rem;
+    right: -4.7rem;
+  }
+}
+
+/* Below this the hero is too narrow for the inner band to clear the badge at
+   any sane amount of top padding, so the corner carries one track only. The
+   GitHub module is still a card away, and a clipped badge is worse than a
+   missing ribbon. The padding here clears the remaining band — at this width
+   it used to cut through the badge. */
+@media (max-width: 400px) {
+  .hero-ribbon-next {
+    display: none;
+  }
+
+  .hero-content {
+    padding-top: 3.2rem;
+  }
+}
+
+/* Phone: abandon the diagonal entirely. At this width the rotated bands are
+   unreadable — the type has to shrink to about 8px and lose its tracking to
+   fit the chord — and the inner band had to be hidden outright, which left the
+   GitHub module with no presence on the homepage at all. Both bands run
+   horizontally across the top of the hero instead. They are the first two
+   children of .hero, so dropping them into normal flow puts them in place.
+   This block must stay after the 400px rule above to win the display race. */
+@media (max-width: 600px) {
+  .hero {
+    padding-top: 0;
+    overflow: hidden;
+  }
+
+  .hero-ribbon,
+  .hero-ribbon-next {
+    display: flex;
+    position: static;
+    transform: none;
+    width: auto;
+    margin: 0 calc(-1 * var(--space-xl));
+    flex-direction: row;
+    align-items: baseline;
+    justify-content: center;
+    gap: 0.6em;
+    padding: 0.62em 1em;
+    box-shadow: none;
+    top: auto;
+    right: auto;
+  }
+
+  /* There is room for the label again once the type is horizontal. */
+  .hero-ribbon .hr-new {
+    display: inline;
+    font-size: 0.58rem;
+    letter-spacing: 0.22em;
+    opacity: 0.8;
+  }
+
+  .hero-ribbon .hr-title {
+    font-size: 0.74rem;
+    letter-spacing: 0.06em;
+  }
+
+  .hero-content {
+    padding-top: var(--space-2xl);
+  }
 }

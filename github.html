@@ -14,8 +14,25 @@
 <link rel="canonical" href="https://ai101.health/github.html">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500&family=Source+Sans+3:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Source+Sans+3:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
 <style>
+/* Sharp Serif Text — self-hosted display serif, headings only. Converted from
+   the licensed OTF to woff2 and subset to Latin-1 plus the typographic marks
+   this site uses: 453KB of OTF becomes 28KB. Only Medium is licensed, so it is
+   declared across 400-600 and font-synthesis is off — with one weight the
+   browser would otherwise fake the bold by smearing, which looks bad on a
+   high-contrast serif. Hierarchy comes from size. */
+@font-face {
+  font-family: 'Sharp Serif';
+  src: url('fonts/SharpSerifText-Medium.woff2') format('woff2');
+  font-weight: 400 600; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: 'Sharp Serif';
+  src: url('fonts/SharpSerifText-MediumItalic.woff2') format('woff2');
+  font-weight: 400 600; font-style: italic; font-display: swap;
+}
+h1, h2, h3, h4, h5, h6 { font-synthesis: none; }
 </style>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%231e293b'/%3E%3Ctext x='16' y='23' font-family='ui-monospace,monospace' font-size='17' font-weight='700' fill='%23fb923c' text-anchor='middle'%3E14%3C/text%3E%3C/svg%3E">
 <meta name="theme-color" content="#0f172a">
@@ -38,7 +55,9 @@
   --line-strong: #cbd5e1;   /* slate-400 */
   --success: #16a34a;
 
-  --serif: "Fraunces", Georgia, serif;
+  --serif: "Sharp Serif", Georgia, serif;
+  --serif-deck: "Sharp Serif", Georgia, serif;
+  --serif-banner: "Sharp Serif", Georgia, serif;
   --sans: "Source Sans 3", -apple-system, BlinkMacSystemFont, sans-serif;
   --mono: "JetBrains Mono", "SF Mono", Menlo, ui-monospace, monospace;
 
@@ -55,8 +74,6 @@ html {
 
 body {
   font-family: var(--serif);
-  font-feature-settings: "ss01", "ss02";
-  font-variation-settings: "opsz" 14, "SOFT" 40, "WONK" 0;
   background: var(--bg);
   color: var(--ink);
   font-size: 18px;
@@ -93,7 +110,6 @@ aside.sidebar::-webkit-scrollbar-thumb { background: var(--line-strong); border-
 aside.sidebar::-webkit-scrollbar-track { background: transparent; }
 
 .brand {
-  font-variation-settings: "opsz" 60, "SOFT" 100, "WONK" 1;
   font-size: 1.7rem;
   line-height: 1.05;
   font-weight: 500;
@@ -251,7 +267,6 @@ main {
 
 h1.title {
   font-size: clamp(2.75rem, 6vw, 4.75rem);
-  font-variation-settings: "opsz" 96, "SOFT" 100, "WONK" 1;
   line-height: 1.0;
   letter-spacing: -0.03em;
   font-weight: 400;
@@ -325,7 +340,6 @@ h1.title {
 
 h2.phase-title {
   font-size: clamp(2rem, 4vw, 2.75rem);
-  font-variation-settings: "opsz" 48, "SOFT" 70, "WONK" 0;
   line-height: 1.05;
   letter-spacing: -0.025em;
   font-weight: 400;
@@ -373,7 +387,6 @@ h2.phase-title {
 
 h3.day-title {
   font-size: 1.95rem;
-  font-variation-settings: "opsz" 32, "SOFT" 60;
   font-weight: 400;
   letter-spacing: -0.02em;
   line-height: 1.15;
@@ -493,7 +506,6 @@ code.inline {
   align-items: center;
   gap: 0.55rem;
   transition: all 220ms var(--ease-out);
-  font-variation-settings: "opsz" 16, "SOFT" 30;
 }
 
 .complete-btn:hover {
@@ -560,7 +572,6 @@ code.inline {
 
 .afterword h2 {
   font-size: 2rem;
-  font-variation-settings: "opsz" 36, "SOFT" 70;
   font-weight: 400;
   letter-spacing: -0.02em;
   margin-bottom: 1.25rem;
@@ -588,7 +599,6 @@ code.inline {
   font-size: 1.5rem;
   margin-bottom: 1.25rem;
   font-weight: 500;
-  font-variation-settings: "opsz" 24, "SOFT" 60;
 }
 
 .cheat-section { margin-bottom: 1.75rem; }
@@ -630,7 +640,6 @@ dl.cmd-list dd { color: var(--ink-soft); }
   font-size: 1.4rem;
   font-weight: 500;
   margin-bottom: 1.25rem;
-  font-variation-settings: "opsz" 24, "SOFT" 60;
 }
 
 .weird-list {
@@ -699,7 +708,7 @@ dl.cmd-list dd { color: var(--ink-soft); }
    dark code blocks, split-pill brand badge.
    ===================================================================== */
 
-/* Body becomes Source Sans; headings stay Fraunces */
+/* Body becomes Source Sans; headings stay Sharp Serif */
 body {
   font-family: var(--sans);
   font-feature-settings: normal;
@@ -717,10 +726,14 @@ h3.day-title,
   font-family: var(--serif);
   color: var(--heading);
 }
-h1.title       { font-variation-settings: "opsz" 96; }
-h2.phase-title { font-variation-settings: "opsz" 48; }
-h3.day-title   { font-variation-settings: "opsz" 32; }
-.afterword h2, .cheat h3, .weird h3 { font-variation-settings: "opsz" 36; }
+/* Sharp Serif has one cut here, so these all resolve to the same family. */
+h1.title { font-family: var(--serif-banner); }
+.brand,
+h2.phase-title,
+h3.day-title,
+.afterword h2,
+.cheat h3,
+.weird h3 { font-family: var(--serif-deck); }
 .cheat h3 { color: var(--heading); }
 strong { color: var(--heading); }
 .day-body em { color: var(--heading); }
@@ -794,7 +807,7 @@ code.inline {
 .home-link{display:inline-block;font-size:.78rem;letter-spacing:.04em;color:#94a3b8;text-decoration:none;margin-bottom:14px}
 .home-link:hover{color:#f8fafc}
 .ladder{border:1px solid #e2e8f0;border-radius:12px;padding:22px 24px;margin:26px 0;background:#f8fafc}
-.ladder-label{font-family:'Fraunces',serif;font-weight:600;font-size:1.05rem;margin-bottom:14px}
+.ladder-label{font-family:var(--serif);font-weight:600;font-size:1.05rem;margin-bottom:14px}
 .ladder-rungs{margin:0;padding-left:1.4em}
 .ladder-rungs li{margin:8px 0;line-height:1.5}
 .rung-eg{display:block;font-size:.85rem;color:#64748b}
@@ -946,6 +959,13 @@ code.inline {
     <div class="codeblock"><pre>git config --global user.name "Your Name"
 git config --global user.email "you@example.com"</pre><button class="copy-btn">Copy</button></div>
     <p>Skip this and git will invent something from your computer&rsquo;s hostname, and every entry you write will be signed by a stranger. Two lines now saves untangling it later. The <code class="inline">--global</code> means you are setting it once for every project on this machine, not just this one.</p>
+
+    <div class="callout">
+      <div class="callout-label">Optional: guardrails for the next two weeks</div>
+      If you came through <a href="claude-code.html">30 Days to Claude Code</a> and ran the AI 101 starter, you already have this and can move on. If not: the one-line installer at <a href="https://ai101.health/install">ai101.health/install</a> adds <code class="inline">safe-start</code> to Claude Code &mdash; a coaching skill whose hooks ask before risky git operations, offer a reviewed savepoint before destructive work, explain half-finished merges and detached HEAD states instead of leaving you stranded in one, and default a new GitHub repository to private. Much of that is what the next two weeks are about. It is guardrails, not a sandbox and not a backup.
+      <div class="codeblock"><pre>curl -fsSL https://ai101.health/install | bash</pre><button class="copy-btn">Copy</button></div>
+      Nothing in these fourteen days depends on it, and piping a script into your shell is a real trust decision. In its favor: the script is short enough to open at that URL and read first, and all it does is fetch one pinned file, check it against a SHA-256 hash written into the script, and install nothing if the hash does not match. macOS only.
+    </div>
 
     <div class="learned">
       <div class="learned-label">What you just learned</div>
