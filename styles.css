@@ -3511,3 +3511,51 @@ blockquote.pull-quote {
     padding-top: 3.2rem;
   }
 }
+
+/* Phone: abandon the diagonal entirely. At this width the rotated bands are
+   unreadable — the type has to shrink to about 8px and lose its tracking to
+   fit the chord — and the inner band had to be hidden outright, which left the
+   GitHub module with no presence on the homepage at all. Both bands run
+   horizontally across the top of the hero instead. They are the first two
+   children of .hero, so dropping them into normal flow puts them in place.
+   This block must stay after the 400px rule above to win the display race. */
+@media (max-width: 600px) {
+  .hero {
+    padding-top: 0;
+    overflow: hidden;
+  }
+
+  .hero-ribbon,
+  .hero-ribbon-next {
+    display: flex;
+    position: static;
+    transform: none;
+    width: auto;
+    margin: 0 calc(-1 * var(--space-xl));
+    flex-direction: row;
+    align-items: baseline;
+    justify-content: center;
+    gap: 0.6em;
+    padding: 0.62em 1em;
+    box-shadow: none;
+    top: auto;
+    right: auto;
+  }
+
+  /* There is room for the label again once the type is horizontal. */
+  .hero-ribbon .hr-new {
+    display: inline;
+    font-size: 0.58rem;
+    letter-spacing: 0.22em;
+    opacity: 0.8;
+  }
+
+  .hero-ribbon .hr-title {
+    font-size: 0.74rem;
+    letter-spacing: 0.06em;
+  }
+
+  .hero-content {
+    padding-top: var(--space-2xl);
+  }
+}
