@@ -1481,9 +1481,10 @@ claude</pre><button class="copy-btn">Copy</button></div>
     </ul>
     <p>That’s the whole vocabulary you need. Claude handles the actual commands.</p>
 
-    <p>We’ll use your lab folder &mdash; or any folder with a couple of files in it, if you’ve landed here without doing the earlier days.</p>
+    <p>We’ll use your lab folder. If you’ve landed here without doing the earlier days, this makes one for you &mdash; the folder is created only if it isn’t already there, and <code class="inline">notes.md</code> gives you something to save. Nothing you already have is changed.</p>
 
-    <div class="codeblock"><pre>cd ~/claude-lab
+    <div class="codeblock"><pre>mkdir -p ~/claude-lab &amp;&amp; cd ~/claude-lab
+touch notes.md
 claude</pre><button class="copy-btn">Copy</button></div>
 
     <div class="codeblock"><pre>Set up git in this folder. I've never used git before, so explain what you're doing as you go.</pre><button class="copy-btn">Copy</button></div>
