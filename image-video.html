@@ -116,10 +116,10 @@
       <div class="callout callout-tip">
         <div class="callout-title">Prioritize This!</div>
         <p>
-          If you want to start creating AI images and videos today, <strong>Google Gemini</strong>
-          with <strong>Nano Banana</strong> is your best starting point. It's free, generates the
-          most accurate text in images (critical for patient education), and now powers video
-          generation through <strong>Veo 3.1</strong>. Open <a href="https://gemini.google.com" target="_blank">gemini.google.com</a>
+          If you want to start creating AI images today, <strong>Google Gemini</strong>
+          with <strong>Nano Banana 2</strong> is still your best starting point. There is a free
+          tier, and it generates the most accurate text in images—which is the thing that matters
+          most for patient education. Open <a href="https://gemini.google.com" target="_blank">gemini.google.com</a>
           and try: <em>"Create a simple diagram showing how an inhaler delivers medication to the
           lungs, patient education style, with labels pointing to key structures."</em>
         </p>
@@ -128,11 +128,20 @@
           <strong><a href="https://canva.com" target="_blank">Canva</a></strong>—Canva now integrates
           Nano Banana Pro directly, so you can generate and design in one place.
         </p>
+        <p>
+          <strong>Video changed in May 2026.</strong> Google announced <strong>Gemini Omni</strong>
+          at I/O, a family of models that take text, images, audio, or existing video as input and
+          produce video as output—then let you revise it by describing the change in plain language
+          instead of re-prompting from scratch. The first model, <strong>Gemini Omni Flash</strong>,
+          is available to Google AI Plus, Pro, and Ultra subscribers through the Gemini app and
+          Google Flow, and at no cost through YouTube Shorts and the YouTube Create app. Veo 3.1 has
+          not gone away and remains Google DeepMind's named video model, but Omni is where the
+          conversational-editing workflow now lives.
+        </p>
         <p class="mb-0">
-          New in April 2026: <strong>Claude Design</strong> (Anthropic Labs) is a collaborative
-          visual-creation tool for designs, prototypes, slides, and one-pagers—an Anthropic-native
-          alternative for clinicians who already work in Claude. It's still early but worth
-          watching alongside Gemini and Canva.
+          <strong>Claude Design</strong>, which launched out of Anthropic Labs in April 2026, is now
+          a shipped Anthropic product—a collaborative visual-creation tool for designs, prototypes,
+          slides, and one-pagers, and a reasonable option for clinicians who already work in Claude.
         </p>
       </div>
 
@@ -235,27 +244,44 @@
         legible text.
       </p>
 
+      <p>
+        The name now covers a family rather than a single model. On February 26, 2026,
+        Google released <strong>Nano Banana 2</strong>, which replaced the original as the
+        default in the Gemini app. There are three tiers, and the practical difference is
+        speed versus care:
+      </p>
+
       <div class="tool-card">
-        <h4>Nano Banana (Fast Mode)</h4>
+        <h4>Nano Banana 2 (Fast Mode)</h4>
         <ul>
-          <li><strong>Character consistency:</strong> Maintain consistent characters across multiple images for rich storytelling—useful for patient education series.</li>
+          <li><strong>Character consistency:</strong> Maintains resemblance for up to five characters and fidelity for up to 14 objects across images—useful for patient education series.</li>
           <li><strong>Image blending:</strong> Combine multiple images into a single coherent image.</li>
           <li><strong>Natural language editing:</strong> Make targeted transformations by describing what you want changed.</li>
-          <li><strong>Top-rated editing:</strong> Currently the highest-rated image editing model in the world.</li>
+          <li><strong>Grounded in current information:</strong> Draws on real-time web search when rendering a subject it needs facts about.</li>
+          <li><strong>Resolution range:</strong> 512px through 4K, across a range of aspect ratios.</li>
         </ul>
-        <p><strong>Access:</strong> In Gemini, select "🍌Create images" from tools and "Fast" from the model menu. Free tier available.</p>
+        <p><strong>Access:</strong> In Gemini, select "🍌Create images" from tools and "Fast" from the model menu. Free tier available. Also in Google Search (AI Mode and Lens), Flow, AI Studio, and Vertex AI.</p>
       </div>
 
       <div class="tool-card">
         <h4>Nano Banana Pro (Thinking Mode)</h4>
         <ul>
-          <li><strong>Best-in-class text rendering:</strong> The best model available for generating images with correctly rendered, legible text—from short taglines to long paragraphs. Essential for infographics, menus, diagrams, and educational materials.</li>
+          <li><strong>Strongest text rendering in the family:</strong> The Nano Banana model to reach for when the image contains words that have to be correct—from short taglines to long paragraphs. Essential for infographics, menus, diagrams, and educational materials.</li>
           <li><strong>High resolution:</strong> Built-in generation at 1K, 2K, and 4K resolution.</li>
           <li><strong>Multi-person consistency:</strong> Upload up to 14 reference images and maintain resemblance of up to 5 people.</li>
           <li><strong>Real-time data:</strong> Can use Google Search to verify facts and generate imagery based on current information.</li>
           <li><strong>Platform integrations:</strong> Now integrated into Adobe, Figma, and Canva.</li>
         </ul>
         <p><strong>Access:</strong> In Gemini, select "🍌Create images" and "Thinking" from the model menu. Also available in NotebookLM, Vertex AI, and Google Workspace.</p>
+      </div>
+
+      <div class="tool-card">
+        <h4>Nano Banana 2 Lite</h4>
+        <ul>
+          <li><strong>Built for volume, not for polish:</strong> Google's fastest and cheapest image model, at roughly four seconds from prompt to image.</li>
+          <li><strong>API only:</strong> Released June 30, 2026 through AI Studio, the Gemini API, and the Gemini Enterprise Agent Platform, priced at $0.034 per 1,000 images.</li>
+        </ul>
+        <p><strong>When it matters to you:</strong> Almost never, directly. It is worth knowing about because if a vendor tells you their product "uses Nano Banana," that tells you very little—these three models differ substantially in how carefully they render text, which is the whole ballgame for patient materials.</p>
       </div>
 
       <div class="callout callout-info">
@@ -305,7 +331,7 @@
         <h4>Key Capabilities</h4>
         <ul>
           <li><strong>Available on all ChatGPT plans:</strong> Including Free—no longer gated behind Plus/Pro.</li>
-          <li><strong>#1 on Image Arena:</strong> Within 12 hours of launch, with a 242-point margin over the previous leader.</li>
+          <li><strong>Took #1 on Image Arena at launch:</strong> Within 12 hours, with a 242-point margin over the previous leader. Treat that as an April 2026 snapshot—leaderboard positions in this category turn over every few months, and both Google and OpenAI have shipped since.</li>
           <li><strong>Precise editing with consistency:</strong> Edits preserve facial likeness and stylistic continuity across iterations.</li>
           <li><strong>Stronger instruction following:</strong> Better at producing exactly what you describe.</li>
           <li><strong>Improved dense text rendering:</strong> Useful for diagrams, infographics, and patient education materials.</li>
@@ -323,12 +349,49 @@
 
       <h2>Video Generation Tools</h2>
 
+      <h3>Google Gemini Omni</h3>
+
+      <p>
+        Announced at Google I/O on May 19, 2026, <strong>Gemini Omni</strong> is a family of
+        "any-to-any" models: text, images, audio, and existing video go in, and video comes out.
+        The first release, <strong>Gemini Omni Flash</strong>, is the one you can use today.
+      </p>
+
+      <div class="tool-card">
+        <h4>Key Capabilities</h4>
+        <ul>
+          <li><strong>Conversational editing:</strong> Rather than timelines and layers, you describe the change you want and the model re-renders. This is the meaningful shift from Veo—you can iterate on a clip without rebuilding the prompt.</li>
+          <li><strong>Any input:</strong> Combine images, audio, video, and text in a single request.</li>
+          <li><strong>Physical plausibility:</strong> Google claims improved handling of gravity, kinetic energy, and fluid dynamics, and states that "your characters stay consistent, the physics hold up and the scene remembers what came before."</li>
+          <li><strong>SynthID on everything:</strong> Every Omni output carries Google's imperceptible watermark, verifiable through the Gemini app, Gemini in Chrome, and Google Search.</li>
+        </ul>
+        <p><strong>Access:</strong> Google AI Plus, Pro, and Ultra subscribers via the Gemini app and Google Flow; free on YouTube Shorts and the YouTube Create app. In the API since June 30, 2026 as <code>gemini-omni-flash-preview</code> at $0.10 per second of video output.</p>
+      </div>
+
+      <div class="callout callout-warning">
+        <div class="callout-title">Read the Limits Before You Plan Around It</div>
+        <p class="mb-0">
+          Omni Flash currently generates <strong>10-second clips</strong>; Google says longer
+          durations are coming but has not said when. Google's own model card also states that
+          "maintaining complete consistency throughout edits, generating scenes with complex motion,
+          or rendering perfectly accurate text remains a challenge." For a two-minute patient
+          education video, Veo 3.1's scene extension is still the tool that does the job.
+        </p>
+      </div>
+
       <h3>Google Veo 3.1</h3>
 
       <p>
         Veo 3.1, released October 2025, transformed AI video from an impressive tech demo
         into a production-ready tool. It generates videos with native audio—from natural
         conversations to synchronized sound effects—directly from text prompts.
+      </p>
+
+      <p>
+        Gemini Omni did not replace it. As of July 2026, Veo 3.1 is still the model Google
+        DeepMind names as its video generation model, and it remains the better choice when you
+        need length: Omni Flash caps at ten seconds, while Veo's scene extension gets you to two
+        and a half minutes.
       </p>
 
       <div class="tool-card">
@@ -361,7 +424,9 @@
         <p class="mb-0">
           OpenAI <a href="https://help.openai.com/en/articles/20001152-what-to-know-about-the-sora-discontinuation" target="_blank">shut down the Sora app on April 26, 2026</a>, and the Sora
           API will end on September 24, 2026. The capabilities below are retained for historical
-          context only—for video generation today, use <strong>Google Veo 3.1</strong> instead.
+          context only—for video generation today, use <strong>Gemini Omni Flash</strong> for short
+          clips you want to revise conversationally, or <strong>Veo 3.1</strong> when you need
+          length.
         </p>
       </div>
 
@@ -482,7 +547,7 @@
           <h4 class="example-title">Demonstrating Proper Inhaler Technique (Video)</h4>
         </div>
         <div class="prompt-example good">
-          <div class="prompt-label"><i data-lucide="video"></i> Video Prompt (Veo or Sora)</div>
+          <div class="prompt-label"><i data-lucide="video"></i> Video Prompt (Veo or Gemini Omni)</div>
           <p>"An educational video showing proper metered-dose inhaler technique. A person shakes the inhaler, exhales fully, places the inhaler at their lips, begins slow inhalation while pressing the canister, continues inhaling for 3-5 seconds, then holds breath with closed mouth. Clean clinical setting, well-lit, shot from the side to show technique clearly. No audio commentary, just ambient sound."</p>
         </div>
       </div>
@@ -629,7 +694,7 @@
       <ul>
         <li><strong>Describe motion explicitly:</strong> "Camera slowly pans left," "subject walks toward camera," "gentle zoom in."</li>
         <li><strong>Specify pacing:</strong> "Slow, contemplative motion" vs. "quick, dynamic movement."</li>
-        <li><strong>Consider audio:</strong> If using Veo or Sora with audio, describe the soundscape: "ambient office sounds," "no dialogue, just environmental audio."</li>
+        <li><strong>Consider audio:</strong> If using Veo or Gemini Omni with audio, describe the soundscape: "ambient office sounds," "no dialogue, just environmental audio."</li>
         <li><strong>Keep it simple:</strong> Current video AI handles single continuous actions better than complex multi-step sequences.</li>
       </ul>
 
@@ -814,9 +879,36 @@
           <div class="reading-type"><i data-lucide="book-open"></i></div>
           <div class="reading-content">
             <div class="reading-title">
-              <a href="https://ai.google.dev/gemini-api/docs/image-generation" target="_blank">Google: Image Generation with Gemini (Nano Banana)</a>
+              <a href="https://ai.google.dev/gemini-api/docs/image-generation" target="_blank">Google: Nano Banana Image Generation</a>
             </div>
-            <div class="reading-meta">Official Gemini API documentation for Nano Banana and Nano Banana Pro</div>
+            <div class="reading-meta">Official Gemini API documentation covering Nano Banana 2, Nano Banana 2 Lite, and Nano Banana Pro, including prompting strategies and stated limitations</div>
+          </div>
+        </div>
+        <div class="reading-item">
+          <div class="reading-type"><i data-lucide="book-open"></i></div>
+          <div class="reading-content">
+            <div class="reading-title">
+              <a href="https://blog.google/innovation-and-ai/technology/ai/nano-banana-2/" target="_blank">Google: Nano Banana 2</a>
+            </div>
+            <div class="reading-meta">Google &middot; February 2026 &middot; The announcement of the model that replaced the original Nano Banana as the Gemini default</div>
+          </div>
+        </div>
+        <div class="reading-item">
+          <div class="reading-type"><i data-lucide="book-open"></i></div>
+          <div class="reading-content">
+            <div class="reading-title">
+              <a href="https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-omni/" target="_blank">Google: Introducing Gemini Omni</a>
+            </div>
+            <div class="reading-meta">Google &middot; May 2026 &middot; The I/O announcement of the any-input-to-video model family and its conversational editing approach</div>
+          </div>
+        </div>
+        <div class="reading-item">
+          <div class="reading-type"><i data-lucide="book-open"></i></div>
+          <div class="reading-content">
+            <div class="reading-title">
+              <a href="https://deepmind.google/models/model-cards/gemini-omni-flash/" target="_blank">Gemini Omni Flash Model Card</a>
+            </div>
+            <div class="reading-meta">Google DeepMind &middot; The stated capabilities <em>and</em> limitations, in Google's own words. Worth reading before you promise anyone a finished video.</div>
           </div>
         </div>
         <div class="reading-item">
@@ -832,9 +924,9 @@
           <div class="reading-type"><i data-lucide="book-open"></i></div>
           <div class="reading-content">
             <div class="reading-title">
-              <a href="https://openai.com/index/new-chatgpt-images-is-here/" target="_blank">OpenAI: The New ChatGPT Images Is Here</a>
+              <a href="https://openai.com/index/introducing-chatgpt-images-2-0/" target="_blank">OpenAI: Introducing ChatGPT Images 2.0</a>
             </div>
-            <div class="reading-meta">Official announcement of GPT Image 1.5 (December 2025)</div>
+            <div class="reading-meta">OpenAI &middot; April 2026 &middot; Official announcement of the current ChatGPT Images model</div>
           </div>
         </div>
         <div class="reading-item">
@@ -843,7 +935,7 @@
             <div class="reading-title">
               <a href="https://openai.com/index/new-chatgpt-images-is-here/" target="_blank">OpenAI: The New ChatGPT Images Is Here</a>
             </div>
-            <div class="reading-meta">Official OpenAI announcement of the current ChatGPT Images model</div>
+            <div class="reading-meta">OpenAI &middot; December 2025 &middot; The prior release, announcing GPT Image 1.5&mdash;useful for tracing what changed</div>
           </div>
         </div>
         <div class="reading-item">

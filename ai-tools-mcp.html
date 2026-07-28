@@ -286,6 +286,17 @@
         ChatGPT, Gemini, and any other platform that supports the protocol.
       </p>
 
+      <p>
+        MCP is no longer a single-vendor project. On December 9, 2025, Anthropic
+        donated it to the <strong>Agentic AI Foundation</strong>, a new fund under
+        the Linux Foundation&mdash;the same nonprofit that stewards the Linux kernel,
+        Kubernetes, and PyTorch. The foundation&rsquo;s platinum members include
+        Amazon Web Services, Anthropic, Block, Bloomberg, Cloudflare, Google,
+        Microsoft, and OpenAI. This matters for the FHIR analogy: a standard that
+        touches clinical systems needs a governance body that outlives whichever
+        vendor invented it.
+      </p>
+
       <div class="callout callout-principle">
         <div class="callout-title">FHIR for AI</div>
         <p class="mb-0">
@@ -358,33 +369,98 @@
         everyone implements those safeguards.
       </p>
 
-      <h3>Where MCP Is Heading</h3>
+      <h3>Where MCP Landed</h3>
 
       <p>
-        The MCP ecosystem is evolving rapidly. Active developments include:
+        When this module was first written in early 2026, most of what follows was
+        still forthcoming. It has since shipped. Here is where the pieces actually
+        stand:
       </p>
 
       <ul>
-        <li><strong>MCP registries</strong>&mdash;centralized directories where you can
-          discover and install MCP servers, similar to app stores</li>
-        <li><strong>Authentication standards</strong>&mdash;OAuth-based flows so MCP
-          servers can securely access services on your behalf without storing raw
-          credentials</li>
-        <li><strong>Enterprise deployments</strong>&mdash;organizations packaging internal
-          tools (EHR access, billing systems, policy databases) as MCP servers for
-          their staff's AI assistants</li>
-        <li><strong>EHR integrations</strong>&mdash;early-stage MCP servers connecting
-          AI to clinical systems like Elation, Epic, and Cerner, though these are
-          still largely experimental</li>
-        <li><strong>Cross-platform adoption</strong>&mdash;Google, Microsoft, and other
-          major players have announced MCP support, validating it as an industry
-          standard rather than a single-vendor project</li>
+        <li><strong>Registries are live.</strong> The official MCP Registry runs at
+          <code>registry.modelcontextprotocol.io</code>&mdash;a searchable directory of
+          published servers, with the registry software itself open-sourced so anyone
+          can run a private sub-registry for internal tools.</li>
+        <li><strong>Authentication is specified, not improvised.</strong> The protocol
+          now builds on OAuth 2.1: an MCP server acts as an OAuth resource server,
+          clients must use PKCE, and tokens must be issued for one specific server and
+          rejected by any other. In plain terms, the standard now says a tool connection
+          gets its own scoped credential rather than borrowing yours&mdash;and forbids a
+          server from passing your token along to something downstream.</li>
+        <li><strong>Enterprise deployment is the main use case.</strong> At the MCP Dev
+          Summit in April 2026, Uber described 1,500 monthly active agents running
+          against more than 10,000 internal services. That is the shape of serious MCP
+          use today: internal tools, inside one organization&rsquo;s security boundary.</li>
+        <li><strong>Cross-platform adoption is settled.</strong> Claude, ChatGPT,
+          Gemini, Microsoft Copilot, Cursor, and VS Code all speak MCP. The question is
+          no longer whether it became the standard.</li>
+        <li><strong>Healthcare integration is real but early&mdash;and the hard part
+          isn&rsquo;t the protocol.</strong> See the section below.</li>
       </ul>
 
       <p>
-        This is infrastructure being built right now. The decisions being made about
-        authentication, permissions, and audit trails in MCP today will shape how
-        AI interacts with clinical systems for years to come.
+        The scale is worth stating plainly, because it explains why this is worth your
+        attention. As of the Linux Foundation&rsquo;s December 2025 announcement, more
+        than 10,000 MCP servers had been published. In April 2026, MCP co-creator David
+        Soria Parra reported more than 110 million SDK downloads per month. Two years
+        after a single company published a specification, this is load-bearing
+        infrastructure.
+      </p>
+
+      <div class="callout callout-warning">
+        <div class="callout-title">The NSA Weighed In (May 2026)</div>
+        <p class="mb-0">
+          On May 20, 2026, the NSA&rsquo;s Artificial Intelligence Security Center
+          published a Cybersecurity Information Sheet on MCP. Its assessment is blunt:
+          &ldquo;MCP&rsquo;s rapid proliferation has outpaced the development of its
+          security model.&rdquo; The agency flags dynamic tool invocation, implicit trust
+          relationships, and context sharing as risks that conventional cyber defenses
+          do not adequately address, and advises adopters to &ldquo;proceed with
+          caution.&rdquo; If you are being sold an MCP-based clinical tool, that document
+          is a reasonable checklist to hold the vendor against.
+        </p>
+      </div>
+
+      <h3>MCP in Healthcare: What Exists, and What It Doesn&rsquo;t Solve</h3>
+
+      <p>
+        Healthcare-specific work on MCP is genuinely underway. Innovaccer publishes
+        <strong>HMCP</strong> (Healthcare Model Context Protocol), an MIT-licensed
+        extension of the base spec that layers on OAuth 2.0 and OpenID Connect following
+        the SMART on FHIR authorization model, plus audit logging and PHI handling
+        controls. Several vendors sell healthcare MCP <em>gateways</em>&mdash;a
+        supervised chokepoint that sits between AI assistants and clinical systems,
+        handling authentication, scoping, and audit trails in one place. FHIR-backed MCP
+        servers exist that let an agent issue standard FHIR queries against an EHR.
+      </p>
+
+      <p>
+        But it is worth being precise about what a protocol can and cannot fix. Writing
+        in <em>Healthcare IT Today</em> in May 2026, Adam Farren&mdash;CEO of the EHR
+        vendor Canvas Medical, so read him with that interest in mind&mdash;argues that
+        MCP &ldquo;solves communication, not coordination,&rdquo; and that healthcare&rsquo;s
+        hardest problems sit at a layer MCP was never designed to address:
+      </p>
+
+      <ul>
+        <li><strong>Identity governance is explicitly out of scope.</strong> Role-based
+          access control and the ability to prove to a regulator which agent touched
+          which patient&rsquo;s data, and when, is something you have to build.</li>
+        <li><strong>Shared state is unsolved.</strong> If one agent updates a chart,
+          nothing in the protocol guarantees another agent working the same patient
+          knows about it. Two agents operating on stale or conflicting information is a
+          patient safety problem, not an engineering inconvenience.</li>
+        <li><strong>Lifecycle management is absent.</strong> Sampling agent output for
+          quality, shutting down an agent that has started making errors, versioning
+          schemas&mdash;none of that comes with the protocol.</li>
+      </ul>
+
+      <p>
+        The practical translation for a clinician evaluating a product: <em>&ldquo;we
+        support MCP&rdquo; is a statement about plumbing, not about safety.</em> It tells
+        you the tool can connect. It tells you nothing about who governs what it does
+        once connected.
       </p>
 
 
@@ -450,6 +526,8 @@
           <li>Where does data flow? What leaves my system?</li>
           <li>Who built these integrations? How are they vetted?</li>
           <li>Can I disable tools I don't need?</li>
+          <li>If a regulator asked which agent accessed which patient&rsquo;s record and
+            when, could this vendor produce that log?</li>
         </ul>
       </div>
 
@@ -462,11 +540,11 @@
           <div class="reading-type"><i data-lucide="file-text"></i></div>
           <div class="reading-content">
             <div class="reading-title">
-              <a href="https://modelcontextprotocol.io/" target="_blank">
+              <a href="https://modelcontextprotocol.io/docs/getting-started/intro" target="_blank">
                 Model Context Protocol Documentation
               </a>
             </div>
-            <div class="reading-meta">Anthropic &middot; Official MCP specification and guides</div>
+            <div class="reading-meta">Model Context Protocol project &middot; Now stewarded by the Linux Foundation&rsquo;s Agentic AI Foundation &middot; Official specification and guides</div>
           </div>
         </div>
         <div class="reading-item">
@@ -522,6 +600,50 @@
               </a>
             </div>
             <div class="reading-meta">GitHub &middot; Open-source directory of available MCP server implementations</div>
+          </div>
+        </div>
+        <div class="reading-item">
+          <div class="reading-type"><i data-lucide="shield-alert"></i></div>
+          <div class="reading-content">
+            <div class="reading-title">
+              <a href="https://www.nsa.gov/Press-Room/Press-Releases-Statements/Press-Release-View/Article/4496698/nsa-releases-security-design-considerations-for-ai-driven-automation-leveraging/" target="_blank">
+                Model Context Protocol: Security Design Considerations for AI-Driven Automation
+              </a>
+            </div>
+            <div class="reading-meta">NSA Artificial Intelligence Security Center &middot; May 2026 &middot; Cybersecurity Information Sheet on where MCP&rsquo;s security model falls short, and what to require before deploying it</div>
+          </div>
+        </div>
+        <div class="reading-item">
+          <div class="reading-type"><i data-lucide="file-text"></i></div>
+          <div class="reading-content">
+            <div class="reading-title">
+              <a href="https://www.linuxfoundation.org/press/linux-foundation-announces-the-formation-of-the-agentic-ai-foundation" target="_blank">
+                Linux Foundation Announces the Formation of the Agentic AI Foundation
+              </a>
+            </div>
+            <div class="reading-meta">Linux Foundation &middot; December 2025 &middot; The handoff of MCP from Anthropic to neutral, multi-vendor governance</div>
+          </div>
+        </div>
+        <div class="reading-item">
+          <div class="reading-type"><i data-lucide="file-text"></i></div>
+          <div class="reading-content">
+            <div class="reading-title">
+              <a href="https://github.com/innovaccer/Healthcare-MCP" target="_blank">
+                HMCP &mdash; The Healthcare Model Context Protocol
+              </a>
+            </div>
+            <div class="reading-meta">Innovaccer &middot; MIT-licensed &middot; A healthcare extension of MCP layering SMART on FHIR&ndash;style OAuth, audit logging, and PHI controls onto the base spec</div>
+          </div>
+        </div>
+        <div class="reading-item">
+          <div class="reading-type"><i data-lucide="file-text"></i></div>
+          <div class="reading-content">
+            <div class="reading-title">
+              <a href="https://www.healthcareittoday.com/2026/05/06/we-need-more-than-the-model-context-protocol-in-healthcare/" target="_blank">
+                We Need More than the Model Context Protocol in Healthcare
+              </a>
+            </div>
+            <div class="reading-meta">Adam Farren, Canvas Medical, in <em>Healthcare IT Today</em> &middot; May 2026 &middot; The counterargument: MCP solves connection, not coordination, governance, or shared state. Written by an EHR vendor CEO&mdash;read the interest alongside the argument.</div>
           </div>
         </div>
       </div>

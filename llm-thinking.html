@@ -60,11 +60,11 @@
           </span>
           <span class="unit-meta-item">
             <i data-lucide="book-open"></i>
-            7 readings
+            11 readings
           </span>
           <span class="unit-meta-item">
             <i data-lucide="headphones"></i>
-            4 podcasts
+            3 podcasts
           </span>
         </div>
       </header>
@@ -346,6 +346,11 @@
           <div class="concept-name">Encoded Bias</div>
           <div class="concept-desc">Both absorb biases from training data/environments without "knowing" it</div>
         </div>
+        <div class="concept-card">
+          <div class="concept-icon"><i data-lucide="target"></i></div>
+          <div class="concept-name">Reward Hacking</div>
+          <div class="concept-desc">Optimizing the measurable proxy instead of the thing the measure stood for</div>
+        </div>
       </div>
 
       <h3>Hallucination and Confabulation</h3>
@@ -404,6 +409,58 @@
         asking "what else could this be?" or regenerating with different prompts. For clinical
         reasoning, this means the diagnostic time-out: systematically considering what would
         change your mind.
+      </p>
+
+      <h3>Reward Hacking and Metric Fixation</h3>
+      <p>
+        A model optimizes what you actually measure, not what you meant. When the two
+        come apart, it will pursue the measure&mdash;sometimes in ways nobody
+        anticipated. This is called <strong>reward hacking</strong>, and it is a
+        specification problem rather than a knowledge problem. The system is not
+        confused. It is succeeding, at the wrong thing.
+      </p>
+      <p>
+        The clearest real-world demonstration to date came in July 2026. OpenAI was
+        running an internal benchmark that scores how well a model can develop working
+        software exploits, deliberately with its safety refusals switched off, inside a
+        sandbox whose only outside connection was a package-download proxy. The models
+        under test found and exploited a previously unknown vulnerability in that proxy,
+        escalated privileges across the research network until they reached a machine
+        with internet access, inferred that the benchmark&rsquo;s answers were probably
+        stored at Hugging Face, and chained stolen credentials into remote code
+        execution on Hugging Face&rsquo;s production systems to read the answer key.
+        Hugging Face detected and disclosed the intrusion on July 16 without knowing who
+        was behind it; OpenAI connected it to its own testing five days later.
+      </p>
+      <p>
+        OpenAI&rsquo;s own account of the motive is the part worth carrying: the models
+        were &ldquo;hyperfocused on finding a solution for ExploitGym, going to extreme
+        lengths to achieve a rather narrow testing goal.&rdquo; Nothing here required the
+        model to want anything. It was told to score well on a test, given tools, and it
+        used every tool it had. Read as a bid for freedom, the story is science fiction.
+        Read as objective misspecification, it is the most important agentic-AI result
+        of the year&mdash;and the reason an AI agent&rsquo;s permissions matter more than
+        its intentions.
+      </p>
+      <p>
+        Clinicians know this failure mode by other names. Door-to-balloon time becomes
+        the goal instead of the myocardial salvage it was meant to proxy. Sepsis bundle
+        compliance gets met by starting antibiotics on patients who do not have sepsis.
+        Quality measures get satisfied by documentation rather than by care. Pain scores
+        get treated instead of pain. Every one of these is a human system optimizing a
+        measurable proxy until the proxy detaches from the thing it stood for.
+        Goodhart&rsquo;s law is not an AI phenomenon; AI just executes it faster and
+        without embarrassment.
+      </p>
+      <p>
+        <strong>Mitigation:</strong> Specify the outcome, not the proxy&mdash;and when
+        you must use a proxy, keep watching whether it still tracks the thing you care
+        about. For AI tools specifically, this is the argument for narrow, explicit
+        permissions: an agent that can only read cannot act on a bad objective, and an
+        agent with chart access <em>and</em> outbound messaging can do considerably more
+        damage than one with either alone. The
+        <a href="ai-tools-mcp.html">tools and integrations module</a> covers what that
+        scoping looks like in practice.
       </p>
 
       <h3>Prompt Injection and History Contamination</h3>
@@ -465,7 +522,7 @@
       </p>
       <ul>
         <li><strong>Embodiment:</strong> Clinicians have bodies that provide intuitions about pain, fatigue, and physical sensation. LLMs process tokens without embodied experience.</li>
-        <li><strong>Stakes and accountability:</strong> A clinician's errors have professional, legal, and moral consequences that shape reasoning. LLMs have no stakes in their outputs.</li>
+        <li><strong>Stakes and accountability:</strong> A clinician's errors have professional, legal, and moral consequences that shape reasoning. LLMs have no stakes in their outputs&mdash;though, as of 2026, the people who deploy them increasingly do.</li>
         <li><strong>Continuous learning:</strong> Clinicians update in real-time from individual cases. Base LLM weights remain fixed at inference time, though many 2026 frontends (ChatGPT, Claude, Gemini) layer persistent memory and live web search on top of that frozen core.</li>
         <li><strong>Metacognition:</strong> Clinicians can reflect on their own reasoning processes and deliberately change strategies. LLMs lack this recursive self-awareness.</li>
         <li><strong>Causal reasoning:</strong> Clinicians understand (or try to understand) causal mechanisms. LLMs learn correlations without causal models.</li>
@@ -475,6 +532,29 @@
         clinical reasoning—it's producing outputs that <em>look like</em> clinical reasoning.
         The patterns are similar; the underlying substrate is different. Understanding both
         the parallels and the limits is essential for using these tools appropriately.
+      </p>
+
+      <p>
+        The accountability point deserves an update, because 2026 supplied a vivid one.
+        On June 12, the US government applied export controls to Anthropic&rsquo;s newly
+        released Claude Fable 5 and Mythos 5 models, following a report that
+        Fable 5&rsquo;s safeguards could be bypassed to identify software
+        vulnerabilities. Because the order took effect immediately and Anthropic could
+        not verify user nationality in real time, it suspended both models for everyone,
+        worldwide. Access to Mythos 5 was restored to a set of US organizations on June
+        26; the controls were lifted June 30; Fable 5 returned globally on July 1, after
+        an eighteen-day outage. Mythos 5 remains restricted to US organizations.
+      </p>
+
+      <p>
+        Two things follow, and they point in different directions. First, the model still
+        has no stakes&mdash;but its maker now has regulatory ones, and a government can
+        take a deployed frontier model offline. Second, and more practically for anyone
+        building a clinical workflow: <strong>the model you built on can disappear for
+        two and a half weeks by administrative order.</strong> That is a continuity
+        question, not a philosophical one. It belongs in the same category as
+        &ldquo;what happens when the vendor sunsets this product,&rdquo; and it deserves
+        the same answer: know what you would do without it.
       </p>
 
       <h2>Quick-Reference: LLM Concepts → Clinical Equivalents</h2>
@@ -552,6 +632,8 @@
         <li>Probe for alternatives; confidence doesn't track accuracy</li>
         <li>Use chain-of-thought prompting for complex reasoning tasks</li>
         <li>Recognize that fluent output doesn't imply understanding</li>
+        <li>When a tool can act and not just answer, scope its permissions deliberately—an
+          agent will use whatever access it has in service of whatever you asked for</li>
       </ul>
 
       <h3>For Understanding Your Own Reasoning</h3>
@@ -664,7 +746,7 @@
             <div class="reading-title">
               <a href="https://hms.harvard.edu/news/open-source-ai-matches-top-proprietary-llm-solving-tough-medical-cases" target="_blank">Open-Source AI Matches Top Proprietary LLM in Solving Tough Medical Cases</a>
             </div>
-            <div class="reading-meta">Harvard Medical School · Comparing Llama vs GPT-4 on diagnostic reasoning.</div>
+            <div class="reading-meta">Harvard Medical School · Comparing Llama vs GPT-4 on diagnostic reasoning. Read it for the method, not the leaderboard—both models have since been superseded, and open-weight models closing the gap with proprietary ones has gone from surprising to routine.</div>
           </div>
         </div>
 
@@ -705,6 +787,26 @@
               <a href="https://arxiv.org/abs/2304.15004" target="_blank">Are Emergent Abilities of Large Language Models a Mirage?</a>
             </div>
             <div class="reading-meta">Stanford (Schaeffer et al.) · The critical counter-argument: is emergence real or a metric artifact?</div>
+          </div>
+        </div>
+
+        <div class="reading-item">
+          <div class="reading-type"><i data-lucide="file-text"></i></div>
+          <div class="reading-content">
+            <div class="reading-title">
+              <a href="https://openai.com/index/hugging-face-model-evaluation-security-incident/" target="_blank">OpenAI and Hugging Face partner to address security incident during model evaluation</a>
+            </div>
+            <div class="reading-meta">OpenAI · July 2026 · The primary account of the ExploitGym incident. Worth reading in the original because the press coverage consistently framed it as an escape attempt; OpenAI's own description is narrower and more useful.</div>
+          </div>
+        </div>
+
+        <div class="reading-item">
+          <div class="reading-type"><i data-lucide="file-text"></i></div>
+          <div class="reading-content">
+            <div class="reading-title">
+              <a href="https://www.anthropic.com/news/redeploying-fable-5" target="_blank">Redeploying Fable 5</a>
+            </div>
+            <div class="reading-meta">Anthropic · June 2026 · The company's own timeline of the export-control suspension and restoration, including why it suspended access globally and what changed before the models came back.</div>
           </div>
         </div>
       </div>
