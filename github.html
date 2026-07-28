@@ -1106,20 +1106,30 @@ nothing added to commit but untracked files present (use "git add" to track)</pr
 
     <p><strong>One more thing, now that it will work.</strong> Yesterday you packed the bag. Sooner or later you will put something in it you did not mean to, and you will want it back out before you leave. You could not practice that yesterday, because taking something out of the bag means putting it back the way it was in the last entry &mdash; and there was no last entry. Now there is.</p>
 
-    <p>Put something in the bag by mistake, on purpose:</p>
-    <div class="codeblock"><pre>echo "oops" &gt;&gt; ideas.md
-git add ideas.md
-git status</pre><button class="copy-btn">Copy</button></div>
+    <p>First, make a change you will pretend to regret. This adds the word <em>oops</em> to the end of <code class="inline">ideas.md</code>:</p>
+    <div class="codeblock"><pre>echo "oops" &gt;&gt; ideas.md</pre><button class="copy-btn">Copy</button></div>
 
-    <p><code class="inline">ideas.md</code> is listed under <strong>Changes to be committed</strong>. It is packed. Notice that git is also telling you how to undo it, in the line just underneath: <em>use &ldquo;git restore --staged &lt;file&gt;...&rdquo; to unstage</em>. Take it at its word:</p>
-    <div class="codeblock"><pre>git restore --staged ideas.md
-git status</pre><button class="copy-btn">Copy</button></div>
+    <p>Now put it in the bag, the same way you packed files yesterday:</p>
+    <div class="codeblock"><pre>git add ideas.md</pre><button class="copy-btn">Copy</button></div>
 
-    <p>Now <code class="inline">ideas.md</code> has moved to <strong>Changes not staged for commit</strong>. Out of the bag, back on the table. Read that carefully, because it is the reassuring part: <strong>your edit is not gone.</strong> The word <em>oops</em> is still sitting in the file. Unstaging only unpacks the bag &mdash; it never touches your actual work.</p>
+    <p>Ask where things stand:</p>
+    <div class="codeblock"><pre>git status</pre><button class="copy-btn">Copy</button></div>
 
-    <p>Tidy up before tomorrow. You know this one from Day 2: a single <code class="inline">&gt;</code> wipes the file and starts over, so this puts <code class="inline">ideas.md</code> back exactly as it was:</p>
-    <div class="codeblock"><pre>echo "Half-formed ideas" &gt; ideas.md
-git status</pre><button class="copy-btn">Copy</button></div>
+    <p><code class="inline">ideas.md</code> is listed under <strong>Changes to be committed</strong>. It is packed. Notice that git is also telling you how to undo it, in the line just underneath: <em>use &ldquo;git restore --staged &lt;file&gt;...&rdquo; to unstage</em>.</p>
+
+    <p>Take it at its word. This lifts the file back out of the bag:</p>
+    <div class="codeblock"><pre>git restore --staged ideas.md</pre><button class="copy-btn">Copy</button></div>
+
+    <p>Ask again:</p>
+    <div class="codeblock"><pre>git status</pre><button class="copy-btn">Copy</button></div>
+
+    <p><code class="inline">ideas.md</code> has moved to <strong>Changes not staged for commit</strong>. Out of the bag, back on the table. Read that carefully, because it is the reassuring part: <strong>your edit is not gone.</strong> The word <em>oops</em> is still sitting in the file. Unstaging only unpacks the bag &mdash; it never touches your actual work.</p>
+
+    <p>Tidy up before tomorrow, so you start Day 5 with a clean table. You know this one from Day 2: a single <code class="inline">&gt;</code> wipes the file and starts over, so this puts <code class="inline">ideas.md</code> back exactly as it was:</p>
+    <div class="codeblock"><pre>echo "Half-formed ideas" &gt; ideas.md</pre><button class="copy-btn">Copy</button></div>
+
+    <p>One last check:</p>
+    <div class="codeblock"><pre>git status</pre><button class="copy-btn">Copy</button></div>
 
     <p>Git says <em>nothing to commit, working tree clean</em>. Nothing on the table, nothing in the bag, one entry in the journal. That sentence is what a finished day looks like.</p>
 
