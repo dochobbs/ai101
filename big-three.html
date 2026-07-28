@@ -328,7 +328,12 @@
         subagents on a single task. On <strong>June 30, 2026</strong>,
         <strong>Claude Sonnet 5</strong> arrived&mdash;a one-million-token context window,
         128K max output, and the default model both in Claude Code from launch and for Free
-        and Pro users on claude.ai.
+        and Pro users on claude.ai. On <strong>July 24, 2026</strong>,
+        <strong>Claude Opus 5</strong> replaced Opus 4.8 as the current Opus, at the same
+        $5/$25 per million tokens: a one-million-token context window, 128K max output, and
+        a knowledge cutoff of May 2026. It is now the default model on Claude Max and the
+        strongest model available on Pro. Opus 4.8 still works but has moved to Anthropic&rsquo;s
+        legacy list.
       </p>
 
       <h3>The Current Offering</h3>
@@ -342,12 +347,12 @@
         <div class="tier-card">
           <h4>Claude Pro</h4>
           <p class="tier-price">$20/month</p>
-          <p>~5x usage of the free tier. Sonnet 5 by default, with Opus 4.8 available. Priority access to new features.</p>
+          <p>~5x usage of the free tier. Sonnet 5 by default, with Opus 5&mdash;the strongest model on this tier&mdash;also available. Priority access to new features.</p>
         </div>
         <div class="tier-card">
           <h4>Claude Max</h4>
           <p class="tier-price">$100-200/month</p>
-          <p>5x-20x Pro limits. Designed for power users, especially Claude Code developers.</p>
+          <p>5x-20x Pro limits, with Claude Opus 5 as the default model. Designed for power users, especially Claude Code developers.</p>
         </div>
         <div class="tier-card">
           <h4>Claude Team</h4>
@@ -363,8 +368,9 @@
         AI assistance for developers. The ecosystem emphasizes depth over breadth.
       </p>
       <p>
-        <strong>Features:</strong> A one-million-token context window on both Opus 4.8 and
-        Sonnet 5, for working with substantial documents. Projects feature for organizing related conversations.
+        <strong>Features:</strong> A one-million-token context window across the current
+        lineup&mdash;Opus 5, Sonnet 5, and the top-end Fable 5&mdash;for working with
+        substantial documents. Projects feature for organizing related conversations.
         Artifacts for generating code, documents, and other outputs. Computer use capabilities for
         agentic workflows. No native image generation, but can analyze images you provide.
       </p>
@@ -401,7 +407,7 @@
         launched <strong>Gemini 3.5 Flash</strong>—rolled out to all users and roughly 4× faster than
         peer frontier models on agentic benchmarks—alongside <strong>Gemini Omni Flash</strong>, a
         new multimodal model for Plus/Pro/Ultra tiers. <strong>Gemini 3.5 Pro has still not
-        shipped.</strong> As of late July 2026 it has missed three announced targets, and the
+        shipped.</strong> As of late July 2026 its release has slipped more than once, and the
         models Google released on July 21&mdash;<strong>Gemini 3.6 Flash</strong>,
         <strong>Gemini 3.5 Flash-Lite</strong>, and <strong>Flash Cyber</strong>&mdash;did not
         include a Pro model. Every specification circulating for 3.5 Pro is unconfirmed.
@@ -485,7 +491,7 @@
             <tr>
               <td><strong>Context Window</strong></td>
               <td>1M tokens (GPT-5.5)</td>
-              <td>1M tokens (Opus 4.8, Sonnet 5)</td>
+              <td>1M tokens (Opus 5, Sonnet 5)</td>
               <td>1-2M tokens</td>
             </tr>
             <tr>
@@ -844,8 +850,10 @@
         Below are scores for flagship models as of April 2026 (per
         <a href="https://pricepertoken.com/leaderboards/benchmark/medqa" target="_blank" rel="noopener">pricepertoken.com</a>
         and vendor benchmark cards). <strong>These numbers will be outdated quickly</strong>—new
-        model versions release every few months, and the leaderboard constantly shifts. We include
-        them to illustrate the general landscape, not to make a definitive ranking.
+        model versions release every few months, and the leaderboard constantly shifts. This
+        table is a good example: it still lists Claude Opus 4.8 and GPT-5.5, both of which have
+        since been superseded (see the July update below). We include it to illustrate the
+        general landscape, not to make a definitive ranking.
         (pricepertoken.com is a price aggregator—handy for a rough MedQA snapshot, but not an
         authoritative medical benchmark.) For how LLMs are actually evaluated in medicine—and how
         rarely they're tested on real patient data—see the JAMA systematic review
@@ -1143,12 +1151,22 @@
       </div>
 
       <div class="callout callout-info">
-        <div class="callout-title">July 2026 Update &mdash; Claude Sonnet 5, GPT-5.6 Goes Public, Still No Gemini 3.5 Pro</div>
+        <div class="callout-title">July 2026 Update &mdash; Claude Opus 5 and Sonnet 5, GPT-5.6 Goes Public, Still No Gemini 3.5 Pro</div>
         <p>
-          Three things changed between the June update and the end of July&mdash;and one thing
+          Several things changed between the June update and the end of July&mdash;and one thing
           conspicuously didn&rsquo;t:
         </p>
         <ul>
+          <li><strong>Claude Opus 5</strong> (July 24) replaced Opus 4.8 as Anthropic&rsquo;s
+          current Opus, at the <em>same</em> price: <strong>$5/$25 per million tokens</strong>,
+          a one-million-token context window, 128K max output, and a knowledge cutoff of May
+          2026. It is the default model on Claude Max and the strongest model on Pro; Opus 4.8
+          still works but has moved to the legacy list. Anthropic positions it as approaching
+          Fable 5&rsquo;s intelligence at half the price. Two notes for clinical readers: the
+          headline gains are on coding and agentic work, and Anthropic&rsquo;s life-sciences
+          claims are its own internal evaluations, not independent clinical benchmarks&mdash;so
+          treat them the way you would any vendor&rsquo;s in-house numbers.
+          <a href="https://www.anthropic.com/news/claude-opus-5" target="_blank" rel="noopener">[Source]</a></li>
           <li><strong>Claude Sonnet 5</strong> (June 30) shipped with a one-million-token context
           window and 128K max output, and became the default for Free and Pro users on claude.ai
           as well as the default in Claude Code from launch. Introductory pricing is
@@ -1167,13 +1185,15 @@
           1M-token context window, 128K max output, and a knowledge cutoff of February 16, 2026.
           The same day, GPT-5.6 became the preferred model in Microsoft 365 Copilot.
           <a href="https://openai.com/index/gpt-5-6/" target="_blank" rel="noopener">[Source]</a></li>
-          <li><strong>Gemini 3.5 Pro still does not exist.</strong> It has now missed three
-          announced targets. Bloomberg reported on July 16 that Google delayed it again after it
-          fell short of the company&rsquo;s own internal quality bars on hallucination rates and
-          real-world reliability, with DeepMind said to have scrapped and rebuilt the base model.
-          On July 21 Google shipped Gemini 3.6 Flash, Gemini 3.5 Flash-Lite, and Flash
-          Cyber&mdash;no Pro. Treat any 3.5 Pro specification you see quoted as unconfirmed until
-          Google announces one.
+          <li><strong>Gemini 3.5 Pro still does not exist.</strong> Its release has slipped
+          more than once, and what Google itself has said is narrow: the model fell short of
+          internal performance goals. Press reporting in mid-July went further&mdash;attributing
+          the delay to hallucination and reliability problems serious enough to require
+          rebuilding the base model&mdash;but Google has not confirmed that account, so treat it
+          as reported rather than established. What <em>is</em> confirmed: on July 21 Google
+          shipped Gemini 3.6 Flash, Gemini 3.5 Flash-Lite, and Flash Cyber, with no Pro model
+          among them. Treat any 3.5 Pro specification you see quoted as unconfirmed until Google
+          announces one.
           <a href="https://techcrunch.com/2026/07/21/google-releases-three-new-gemini-models-but-no-3-5-pro/" target="_blank" rel="noopener">[Source]</a></li>
         </ul>
         <p class="mb-0">
