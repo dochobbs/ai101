@@ -1053,18 +1053,7 @@ nothing added to commit but untracked files present (use "git add" to track)</pr
 
     <p>That split is the whole day. One file is in the bag. Two are still on the table. Nothing has been saved yet &mdash; packing is not leaving.</p>
 
-    <p><strong>Take it back out.</strong> Nothing here is a commitment, and it is worth proving that to yourself now rather than believing it later. Git tells you the exact command in the status output you just read:</p>
-    <div class="codeblock"><pre>git rm --cached notes.md</pre><button class="copy-btn">Copy</button></div>
-
-    <p>Git replies <code class="inline">rm 'notes.md'</code>, which looks alarming. <strong>It did not delete your file.</strong> Run <code class="inline">ls</code> and it is right there, with the cuff-size line you added yesterday still in it. The <code class="inline">--cached</code> is doing the work: it means <em>take this out of the bag, leave it on the table</em>.</p>
-
-    <div class="codeblock"><pre>git status</pre><button class="copy-btn">Copy</button></div>
-    <p>Back to three untracked files, exactly where you were.</p>
-
-    <div class="callout">
-      <div class="callout-label">The command you will actually use</div>
-      From tomorrow on, the everyday way to unpack the bag is <code class="inline">git restore --staged notes.md</code>. It is the friendlier name and the one you will see in every tutorial. It does not work today, because it restores a file to the way it looked in the last saved entry and you do not have one yet &mdash; try it now and git says <em>could not resolve HEAD</em>, which is git for &ldquo;there is nothing to go back to.&rdquo; Once you make your first commit tomorrow, it works, and you can forget <code class="inline">git rm --cached</code> exists.
-    </div>
+    <p>Sit with that for a second, because it is the piece people skip. Git did not decide what goes in. You did, by naming one file and not the other two.</p>
 
     <p>Now pack the bag for real. All three files:</p>
     <div class="codeblock"><pre>git add .</pre><button class="copy-btn">Copy</button></div>
@@ -1094,7 +1083,7 @@ nothing added to commit but untracked files present (use "git add" to track)</pr
 
     <p>The <code class="inline">-m</code> is for <em>message</em> &mdash; the note you are writing on this entry. Git answers with something like:</p>
 
-    <p><code class="inline">[main (root-commit) 9c1306e] Start tracking notes, ideas, and todo</code> and then <em>3 files changed, 3 insertions(+)</em>.</p>
+    <p><code class="inline">[main (root-commit) 9c1306e] Start tracking notes, ideas, and todo</code> and then <em>3 files changed, 4 insertions(+)</em>.</p>
 
     <p><em>root-commit</em> means this is the first one, the bottom of the stack. That short jumble of letters and numbers is the commit&rsquo;s name. Every commit gets one, and no two are alike. You will never have to type one from memory.</p>
 
@@ -1115,9 +1104,28 @@ nothing added to commit but untracked files present (use "git add" to track)</pr
       Write the message for the version of you who reads it in six months with no memory of today. &ldquo;Fixed stuff&rdquo; tells that person nothing. &ldquo;Fix wrong cuff size in notes&rdquo; tells them everything. It takes the same four seconds.
     </div>
 
+    <p><strong>One more thing, now that it will work.</strong> Yesterday you packed the bag. Sooner or later you will put something in it you did not mean to, and you will want it back out before you leave. You could not practice that yesterday, because taking something out of the bag means putting it back the way it was in the last entry &mdash; and there was no last entry. Now there is.</p>
+
+    <p>Put something in the bag by mistake, on purpose:</p>
+    <div class="codeblock"><pre>echo "oops" &gt;&gt; ideas.md
+git add ideas.md
+git status</pre><button class="copy-btn">Copy</button></div>
+
+    <p><code class="inline">ideas.md</code> is listed under <strong>Changes to be committed</strong>. It is packed. Notice that git is also telling you how to undo it, in the line just underneath: <em>use &ldquo;git restore --staged &lt;file&gt;...&rdquo; to unstage</em>. Take it at its word:</p>
+    <div class="codeblock"><pre>git restore --staged ideas.md
+git status</pre><button class="copy-btn">Copy</button></div>
+
+    <p>Now <code class="inline">ideas.md</code> has moved to <strong>Changes not staged for commit</strong>. Out of the bag, back on the table. Read that carefully, because it is the reassuring part: <strong>your edit is not gone.</strong> The word <em>oops</em> is still sitting in the file. Unstaging only unpacks the bag &mdash; it never touches your actual work.</p>
+
+    <p>Tidy up before tomorrow. You know this one from Day 2: a single <code class="inline">&gt;</code> wipes the file and starts over, so this puts <code class="inline">ideas.md</code> back exactly as it was:</p>
+    <div class="codeblock"><pre>echo "Half-formed ideas" &gt; ideas.md
+git status</pre><button class="copy-btn">Copy</button></div>
+
+    <p>Git says <em>nothing to commit, working tree clean</em>. Nothing on the table, nothing in the bag, one entry in the journal. That sentence is what a finished day looks like.</p>
+
     <div class="learned">
       <div class="learned-label">What you just learned</div>
-      A commit is a dated entry with your name on it. The history you are building is only as useful as the messages you write.
+      A commit is a dated entry with your name on it, and the history is only as useful as the messages you write. Staging is also reversible: <code class="inline">git restore --staged</code> takes a file back out of the bag without touching a word of your work.
     </div>
     <button class="complete-btn" data-day="4"><span class="check"></span><span class="label">Mark complete</span></button>
   </div>
@@ -1161,7 +1169,7 @@ nothing added to commit but untracked files present (use "git add" to track)</pr
     <p>File the entry:</p>
     <div class="codeblock"><pre>git commit -am "Add fridge alarm to todo"</pre><button class="copy-btn">Copy</button></div>
 
-    <p>That <code class="inline">-a</code> is new. It means <em>pack everything git already tracks, then commit</em>, saving you a separate <code class="inline">git add</code>. Convenient, and worth knowing exactly what it does not do: it ignores untracked files entirely. A brand-new file will sit there unnoticed no matter how many times you run it. And it sweeps up every tracked file you edited, including ones you had not thought about &mdash; which is how tidy histories turn muddy. Use it when you know what is on the table.</p>
+    <p>That <code class="inline">-a</code> is new. It means <em>pack everything git already tracks, then commit</em>, saving you a separate <code class="inline">git add</code>. Convenient, and worth knowing exactly what it does not do: it ignores untracked files entirely. A brand-new file will sit there unnoticed no matter how many times you run it. And it sweeps up every tracked file you edited, including ones you had not thought about &mdash; which is how tidy histories turn muddy. Had you run this yesterday without tidying up, the word <em>oops</em> would now be filed under an entry about a fridge alarm. Use it when you know what is on the table.</p>
 
     <p>Run <code class="inline">git log --oneline</code> and you have two entries. That is a history.</p>
 
