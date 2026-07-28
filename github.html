@@ -825,7 +825,17 @@ code.inline {
 
   <nav id="sidenav">
     <div class="nav-phase">
+      <div class="nav-phase-title">Before you start</div>
+      <a class="nav-day" href="#day-0" data-day="0"><span class="day-dot"></span><span class="day-num">00</span><span>Base Camp Setup</span></a>
+    </div>
+
+    <div class="nav-phase">
       <div class="nav-phase-title">Phase One · Your Own Journal</div>
+      <a class="nav-day" href="#day-1" data-day="1"><span class="day-dot"></span><span class="day-num">01</span><span>Start the Journal</span></a>
+      <a class="nav-day" href="#day-2" data-day="2"><span class="day-dot"></span><span class="day-num">02</span><span>Where Am I?</span></a>
+      <a class="nav-day" href="#day-3" data-day="3"><span class="day-dot"></span><span class="day-num">03</span><span>Packing the Bag</span></a>
+      <a class="nav-day" href="#day-4" data-day="4"><span class="day-dot"></span><span class="day-num">04</span><span>The Dated Entry</span></a>
+      <a class="nav-day" href="#day-5" data-day="5"><span class="day-dot"></span><span class="day-num">05</span><span>What Changed</span></a>
     </div>
 
     <div class="nav-phase">
@@ -867,12 +877,301 @@ code.inline {
   </div>
 </section>
 
+<!-- ───────────── DAY 0 ───────────── -->
+<article class="day" id="day-0">
+  <header class="day-header"><span class="day-label">Day 00</span><h3 class="day-title">Base Camp Setup</h3></header>
+  <div class="day-body">
+    <p>There are two tools here, and their names are confusingly similar. It is worth thirty seconds to separate them, because almost every muddle later starts with mixing these up.</p>
+
+    <p><strong>Git</strong> runs on your machine. It keeps the journal &mdash; the record of what your files looked like at each point in time. It works with no internet connection and no account. <strong>GitHub</strong> is a website that stores copies of those journals online. And <strong>gh</strong> is a small program that lets your terminal talk to that website without opening a browser.</p>
+
+    <p>Git is the notebook. GitHub is the filing cabinet in another building. <code class="inline">gh</code> is the courier. Today you install all three and prove they work. You will not track a single file today.</p>
+
+    <div class="callout">
+      <div class="callout-label">Before you start</div>
+      You need a free GitHub account. Sign up at <a href="https://github.com/signup" target="_blank" rel="noopener">github.com</a> first. The username you pick will be visible on anything you publish, so pick one you would put on a CV.
+    </div>
+
+    <p><strong>First, check whether you already have git.</strong> Most Macs do. Open your terminal and run:</p>
+    <div class="codeblock"><pre>git --version</pre><button class="copy-btn">Copy</button></div>
+    <p>You should see a line like <code class="inline">git version 2.50.1</code>. The exact number does not matter much &mdash; anything 2.23 or newer covers everything in these two weeks. If you see a version, git is installed and you are done with this step.</p>
+
+    <p>If instead a dialog box pops up offering to install the command line developer tools, click <strong>Install</strong> and wait. That is macOS installing git for you. When it finishes, run <code class="inline">git --version</code> again.</p>
+
+    <p><strong>Now install gh.</strong> This is the piece that talks to GitHub:</p>
+    <div class="codeblock"><pre>brew install gh</pre><button class="copy-btn">Copy</button></div>
+
+    <div class="callout">
+      <div class="callout-label">If it says &ldquo;command not found: brew&rdquo;</div>
+      Homebrew is a separate tool for installing things, and it does not come with a Mac. You have two ways forward. The simpler one: go to <a href="https://cli.github.com" target="_blank" rel="noopener">cli.github.com</a>, download the macOS installer, and double-click it &mdash; no terminal involved. The other: install Homebrew from <a href="https://brew.sh" target="_blank" rel="noopener">brew.sh</a> first, then come back and run the line above. Either gets you to the same place.
+    </div>
+
+    <div class="callout">
+      <div class="callout-label">Windows</div>
+      Use this line instead of the <code class="inline">brew</code> one. Everything after this point is identical on Windows and Mac.
+      <div class="codeblock"><pre>winget install --id GitHub.cli</pre><button class="copy-btn">Copy</button></div>
+    </div>
+
+    <p><strong>Connect gh to your GitHub account.</strong> Run:</p>
+    <div class="codeblock"><pre>gh auth login</pre><button class="copy-btn">Copy</button></div>
+
+    <div class="callout">
+      <div class="callout-label">First time only</div>
+      This asks you a short series of questions with arrow-key answers. Choose <strong>GitHub.com</strong>, then <strong>HTTPS</strong> when it asks about protocol, then yes to authenticating with your GitHub credentials. It shows you a one-time code, then opens a browser where you paste it. Approve it and come back to the terminal. You will not do this again on this computer.
+    </div>
+
+    <p>Check that it took:</p>
+    <div class="codeblock"><pre>gh auth status</pre><button class="copy-btn">Copy</button></div>
+    <p>You want a line with a checkmark saying <em>Logged in to github.com account</em> followed by your username. If you see that, the courier knows where to go.</p>
+
+    <p><strong>One last thing: sign your work.</strong> Every journal entry you make gets your name on it, so git needs to know your name. Run these two lines, with your own name and the email address on your GitHub account:</p>
+    <div class="codeblock"><pre>git config --global user.name "Your Name"
+git config --global user.email "you@example.com"</pre><button class="copy-btn">Copy</button></div>
+    <p>Skip this and git will invent something from your computer&rsquo;s hostname, and every entry you write will be signed by a stranger. Two lines now saves untangling it later. The <code class="inline">--global</code> means you are setting it once for every project on this machine, not just this one.</p>
+
+    <div class="learned">
+      <div class="learned-label">What you just learned</div>
+      Git keeps the journal on your machine. GitHub stores it online. <code class="inline">gh</code> is the phone line between them. Nothing is tracked yet.
+    </div>
+    <button class="complete-btn" data-day="0"><span class="check"></span><span class="label">Mark complete</span></button>
+  </div>
+</article>
+
 <section class="phase" id="phase-1">
   <div class="phase-num">Phase One</div>
   <h2 class="phase-title">Your Own Journal</h2>
   <p class="phase-sub">Days 1 to 5 · Everything stays on your laptop.</p>
   <p class="phase-intro">Nothing leaves your machine this week. No account, no audience, nothing to be embarrassed about. You are just learning to keep a journal of your own work &mdash; what changed, when, and why.</p>
 </section>
+
+<article class="day" id="day-1">
+  <header class="day-header"><span class="day-label">Day 01</span><h3 class="day-title">Start the Journal</h3></header>
+  <div class="day-body">
+    <p>A <strong>repository</strong> is the whole expedition folder &mdash; the maps, the journal, the supply list, and the record of the trip so far. People shorten it to <em>repo</em>. It sounds like a piece of software. It is a folder.</p>
+
+    <p>Today you tell git to start watching one.</p>
+
+    <p>If you finished <a href="claude-code.html">30 Days to Claude Code</a>, use the tool you built on Day 21 or Day 27. Open your terminal and <code class="inline">cd</code> into that folder.</p>
+
+    <div class="callout">
+      <div class="callout-label">Starting here?</div>
+      If you did not do the Claude Code module, make yourself a practice folder now. This one line at a time, or paste the whole block:
+      <div class="codeblock"><pre>mkdir -p ~/github-lab
+cd ~/github-lab
+echo "Things I want to remember" &gt; notes.md
+echo "Half-formed ideas" &gt; ideas.md
+echo "Things to do" &gt; todo.md</pre><button class="copy-btn">Copy</button></div>
+      That makes a folder called <code class="inline">github-lab</code> in your home directory with three small text files in it. Every day from here uses this folder.
+    </div>
+
+    <p>Now, from inside that folder, the command that starts everything:</p>
+    <div class="codeblock"><pre>git init</pre><button class="copy-btn">Copy</button></div>
+
+    <p>Git answers with one line: <em>Initialized empty Git repository in</em> &hellip; and the path to your folder. That is the whole ceremony.</p>
+
+    <p>Look at what it made:</p>
+    <div class="codeblock"><pre>ls -a</pre><button class="copy-btn">Copy</button></div>
+
+    <p>The <code class="inline">-a</code> means <em>show me everything, including hidden things</em>. Your three files are there, and so is something new: a folder called <code class="inline">.git</code>. The leading dot is why you never noticed folders like this before &mdash; it is how a Mac hides a file from ordinary view.</p>
+
+    <p>That <code class="inline">.git</code> folder is the journal. Everything git ever remembers about this project lives in there. Do not open it, do not edit it, and do not delete it unless you mean to throw the entire history away. You will never need to touch it directly.</p>
+
+    <p>If you want to hear it explained a second way, start Claude in that folder and ask:</p>
+    <div class="codeblock"><pre>I just ran git init in this folder. In plain English, what did that actually do?</pre><button class="copy-btn">Copy</button></div>
+
+    <div class="learned">
+      <div class="learned-label">What you just learned</div>
+      A repository is just a folder git has agreed to watch. Making one changes nothing about your files &mdash; and nothing has been saved yet.
+    </div>
+    <button class="complete-btn" data-day="1"><span class="check"></span><span class="label">Mark complete</span></button>
+  </div>
+</article>
+
+<article class="day" id="day-2">
+  <header class="day-header"><span class="day-label">Day 02</span><h3 class="day-title">Where Am I?</h3></header>
+  <div class="day-body">
+    <p>The <strong>working directory</strong> is what is spread out on the table right now &mdash; the actual files as they exist this second, including the half-finished edit you made ten minutes ago.</p>
+
+    <p>One command asks two questions at once: where am I, and what have I changed?</p>
+    <div class="codeblock"><pre>git status</pre><button class="copy-btn">Copy</button></div>
+
+    <p>You will see something close to this:</p>
+    <div class="codeblock"><pre>On branch main
+
+No commits yet
+
+Untracked files:
+  (use "git add &lt;file&gt;..." to include in what will be committed)
+	ideas.md
+	notes.md
+	todo.md
+
+nothing added to commit but untracked files present (use "git add" to track)</pre><button class="copy-btn">Copy</button></div>
+
+    <p>Read it in three pieces.</p>
+    <ul>
+      <li><strong>On branch main.</strong> Branches are Day 10. For now it is the name of the single path you are on. If yours says <code class="inline">master</code> instead, that is an older git and nothing is wrong &mdash; just use whichever name you see.</li>
+      <li><strong>No commits yet.</strong> You have never saved an entry. The journal is open to a blank page.</li>
+      <li><strong>Untracked files.</strong> Git can see these three files sitting in the folder, but it has not been told to care about them. It is not watching them. It is just noticing them.</li>
+    </ul>
+
+    <p>Now change something. Add a line to one of the files:</p>
+    <div class="codeblock"><pre>echo "Blood pressure cuff sizes are a menace" &gt;&gt; notes.md</pre><button class="copy-btn">Copy</button></div>
+
+    <p>The <code class="inline">&gt;&gt;</code> means <em>add to the end</em>, as opposed to a single <code class="inline">&gt;</code>, which would wipe the file and start over. Now ask again:</p>
+    <div class="codeblock"><pre>git status</pre><button class="copy-btn">Copy</button></div>
+
+    <p><strong>It looks exactly the same.</strong> That is not a bug, and it is the most useful thing you will see today. Git is not ignoring your edit &mdash; it never agreed to watch <code class="inline">notes.md</code> in the first place. To git, that file is one undifferentiated new thing sitting on the table. It has no earlier version to compare against, so it has nothing to say about a line you added.</p>
+
+    <p>Once a file is tracked, this same command starts reporting your edits line by line. Getting files tracked is tomorrow.</p>
+
+    <p>If any part of that output is still opaque, paste it to Claude and ask:</p>
+    <div class="codeblock"><pre>Explain this git status output to me line by line, like I've never seen it before.</pre><button class="copy-btn">Copy</button></div>
+
+    <div class="learned">
+      <div class="learned-label">What you just learned</div>
+      <code class="inline">git status</code> is the question you will ask more than any other. When you are lost, it is always the right first move.
+    </div>
+    <button class="complete-btn" data-day="2"><span class="check"></span><span class="label">Mark complete</span></button>
+  </div>
+</article>
+
+<article class="day" id="day-3">
+  <header class="day-header"><span class="day-label">Day 03</span><h3 class="day-title">Packing the Bag</h3></header>
+  <div class="day-body">
+    <p>Between the table and the journal there is a third place, and it is the part of git that confuses everyone. It is called the <strong>staging area</strong>. Think of it as a bag you pack before you leave.</p>
+
+    <p>You do not have to take everything on the table. You choose what goes in this trip and what waits for the next one.</p>
+
+    <p>Put one file in the bag:</p>
+    <div class="codeblock"><pre>git add notes.md</pre><button class="copy-btn">Copy</button></div>
+
+    <p>Git says nothing back. Silence means it worked &mdash; that is a habit of these tools worth getting used to. Ask what changed:</p>
+    <div class="codeblock"><pre>git status</pre><button class="copy-btn">Copy</button></div>
+
+    <p>Now there are <em>two</em> groups where there was one. Under <strong>Changes to be committed</strong>: <code class="inline">notes.md</code>. Under <strong>Untracked files</strong>: <code class="inline">ideas.md</code> and <code class="inline">todo.md</code>.</p>
+
+    <p>That split is the whole day. One file is in the bag. Two are still on the table. Nothing has been saved yet &mdash; packing is not leaving.</p>
+
+    <p><strong>Take it back out.</strong> Nothing here is a commitment, and it is worth proving that to yourself now rather than believing it later. Git tells you the exact command in the status output you just read:</p>
+    <div class="codeblock"><pre>git rm --cached notes.md</pre><button class="copy-btn">Copy</button></div>
+
+    <p>Git replies <code class="inline">rm 'notes.md'</code>, which looks alarming. <strong>It did not delete your file.</strong> Run <code class="inline">ls</code> and it is right there, with the cuff-size line you added yesterday still in it. The <code class="inline">--cached</code> is doing the work: it means <em>take this out of the bag, leave it on the table</em>.</p>
+
+    <div class="codeblock"><pre>git status</pre><button class="copy-btn">Copy</button></div>
+    <p>Back to three untracked files, exactly where you were.</p>
+
+    <div class="callout">
+      <div class="callout-label">The command you will actually use</div>
+      From tomorrow on, the everyday way to unpack the bag is <code class="inline">git restore --staged notes.md</code>. It is the friendlier name and the one you will see in every tutorial. It does not work today, because it restores a file to the way it looked in the last saved entry and you do not have one yet &mdash; try it now and git says <em>could not resolve HEAD</em>, which is git for &ldquo;there is nothing to go back to.&rdquo; Once you make your first commit tomorrow, it works, and you can forget <code class="inline">git rm --cached</code> exists.
+    </div>
+
+    <p>Now pack the bag for real. All three files:</p>
+    <div class="codeblock"><pre>git add .</pre><button class="copy-btn">Copy</button></div>
+
+    <p>The <code class="inline">.</code> means <em>this folder and everything in it</em>. Run <code class="inline">git status</code> one more time and all three are listed under <strong>Changes to be committed</strong>. The bag is packed. Leave it packed overnight.</p>
+
+    <div class="callout">
+      <div class="callout-label">Why not always <code class="inline">git add .</code>?</div>
+      Because a commit should be one idea. If you fixed a typo and rewrote a whole section, staging them separately gives you two clean entries instead of one confusing one. Today it does not matter &mdash; three new files, one idea. On a real project it will.
+    </div>
+
+    <div class="learned">
+      <div class="learned-label">What you just learned</div>
+      Staging is a choice, not a formality. It is the difference between &ldquo;everything I touched&rdquo; and &ldquo;the part I meant.&rdquo;
+    </div>
+    <button class="complete-btn" data-day="3"><span class="check"></span><span class="label">Mark complete</span></button>
+  </div>
+</article>
+
+<article class="day" id="day-4">
+  <header class="day-header"><span class="day-label">Day 04</span><h3 class="day-title">The Dated Entry</h3></header>
+  <div class="day-body">
+    <p>The <strong>commit</strong> is the dated journal entry. This is what the project looked like at this moment, and here is what I was doing. It is the point of everything so far.</p>
+
+    <p>Your bag has been packed since yesterday. Write the entry:</p>
+    <div class="codeblock"><pre>git commit -m "Start tracking notes, ideas, and todo"</pre><button class="copy-btn">Copy</button></div>
+
+    <p>The <code class="inline">-m</code> is for <em>message</em> &mdash; the note you are writing on this entry. Git answers with something like:</p>
+
+    <p><code class="inline">[main (root-commit) 9c1306e] Start tracking notes, ideas, and todo</code> and then <em>3 files changed, 3 insertions(+)</em>.</p>
+
+    <p><em>root-commit</em> means this is the first one, the bottom of the stack. That short jumble of letters and numbers is the commit&rsquo;s name. Every commit gets one, and no two are alike. You will never have to type one from memory.</p>
+
+    <p>Read your history back:</p>
+    <div class="codeblock"><pre>git log</pre><button class="copy-btn">Copy</button></div>
+
+    <p>One entry, with your name, the email you set on Day 0, the date and time, and your message. That is the journal. It has one page.</p>
+
+    <p>If the output fills the screen and your prompt does not come back, git has handed you a pager. Press <code class="inline">q</code> to get out. This will catch you at least once.</p>
+
+    <p>The same history, compressed:</p>
+    <div class="codeblock"><pre>git log --oneline</pre><button class="copy-btn">Copy</button></div>
+
+    <p>One line per commit &mdash; short name, then message. With one entry the difference is unimpressive. At forty entries this is the one you will use.</p>
+
+    <div class="callout">
+      <div class="callout-label">On messages</div>
+      Write the message for the version of you who reads it in six months with no memory of today. &ldquo;Fixed stuff&rdquo; tells that person nothing. &ldquo;Fix wrong cuff size in notes&rdquo; tells them everything. It takes the same four seconds.
+    </div>
+
+    <div class="learned">
+      <div class="learned-label">What you just learned</div>
+      A commit is a dated entry with your name on it. The history you are building is only as useful as the messages you write.
+    </div>
+    <button class="complete-btn" data-day="4"><span class="check"></span><span class="label">Mark complete</span></button>
+  </div>
+</article>
+
+<article class="day" id="day-5">
+  <header class="day-header"><span class="day-label">Day 05</span><h3 class="day-title">What Changed</h3></header>
+  <div class="day-body">
+    <p>You have a saved entry now, which means for the first time git can answer a genuinely useful question: <em>what is different between the map on my table and the last one I filed?</em></p>
+
+    <p>Make a change worth looking at:</p>
+    <div class="codeblock"><pre>echo "Ask about the vaccine fridge alarm" &gt;&gt; todo.md</pre><button class="copy-btn">Copy</button></div>
+
+    <p>Now ask:</p>
+    <div class="codeblock"><pre>git diff</pre><button class="copy-btn">Copy</button></div>
+
+    <p>Past a few lines of bookkeeping, the part that matters:</p>
+    <div class="codeblock"><pre> Things to do
++Ask about the vaccine fridge alarm</pre><button class="copy-btn">Copy</button></div>
+
+    <p>A line with <code class="inline">+</code> in front of it is a line you added. A line with <code class="inline">-</code> would be one you removed. Lines with a space in front are unchanged, shown so you can see where the addition landed. That is the whole notation, and it is the same notation GitHub uses on every page you will look at from Day 6 onward.</p>
+
+    <p><strong>Now the part that trips everyone.</strong> Pack the change into the bag:</p>
+    <div class="codeblock"><pre>git add todo.md</pre><button class="copy-btn">Copy</button></div>
+
+    <p>And ask the same question again:</p>
+    <div class="codeblock"><pre>git diff</pre><button class="copy-btn">Copy</button></div>
+
+    <p>Nothing. Empty. Your change did not go anywhere &mdash; but the command that showed it to you ten seconds ago now has nothing to say.</p>
+
+    <p>Ask a different way:</p>
+    <div class="codeblock"><pre>git diff --staged</pre><button class="copy-btn">Copy</button></div>
+
+    <p>There it is again.</p>
+
+    <div class="callout">
+      <div class="callout-label">Why it went blank</div>
+      <code class="inline">git diff</code> compares the table to the bag. <code class="inline">git diff --staged</code> compares the bag to the last entry. Once you pack something, it is no longer on the table &mdash; so the first question has a truthful and entirely useless answer: nothing out here has changed since you packed.
+    </div>
+
+    <p>File the entry:</p>
+    <div class="codeblock"><pre>git commit -am "Add fridge alarm to todo"</pre><button class="copy-btn">Copy</button></div>
+
+    <p>That <code class="inline">-a</code> is new. It means <em>pack everything git already tracks, then commit</em>, saving you a separate <code class="inline">git add</code>. Convenient, and worth knowing exactly what it does not do: it ignores untracked files entirely. A brand-new file will sit there unnoticed no matter how many times you run it. And it sweeps up every tracked file you edited, including ones you had not thought about &mdash; which is how tidy histories turn muddy. Use it when you know what is on the table.</p>
+
+    <p>Run <code class="inline">git log --oneline</code> and you have two entries. That is a history.</p>
+
+    <div class="learned">
+      <div class="learned-label">What you just learned</div>
+      <code class="inline">git diff</code> and <code class="inline">git diff --staged</code> answer two different questions. Knowing which one you are asking is most of the confusion, gone.
+    </div>
+    <button class="complete-btn" data-day="5"><span class="check"></span><span class="label">Mark complete</span></button>
+  </div>
+</article>
 
 <section class="phase" id="phase-2">
   <div class="phase-num">Phase Two</div>
