@@ -219,9 +219,16 @@
 
       <p><strong>Security Rule:</strong> Requires administrative, physical, and
       technical safeguards for electronic PHI. In January 2025, HHS proposed the first
-      major update in 20 years, mandating encryption, multi-factor authentication, and
-      72-hour disaster recovery. AI systems processing ePHI will face these enhanced
-      standards.</p>
+      major update in 20 years&mdash;encryption, multi-factor authentication, and 72-hour
+      disaster recovery. <strong>It is still a proposed rule.</strong> HHS&rsquo;s updated
+      regulatory agenda, released in July 2026, pushed final action from May 2026 out to
+      <strong>July 2027</strong>. Plan on the current Security Rule governing your AI
+      systems for at least another year; the enhanced standards would reach systems
+      processing ePHI only once a final rule issues. Changes to the HIPAA <em>Privacy</em>
+      Rule are on a faster track, expected as early as August 2026.
+      (<a href="https://www.dwt.com/blogs/privacy--security-law-blog/2026/07/hhs-updates-hipaa-rulemaking-timeframes" target="_blank" rel="noopener">Davis Wright Tremaine</a>
+      &middot;
+      <a href="https://www.hipaajournal.com/hipaa-security-rule-update-postponed/" target="_blank" rel="noopener">HIPAA Journal</a>)</p>
 
       <p><strong>Breach Notification Rule:</strong> Requires notification within 60
       days of discovering a breach of unsecured PHI. From 2018-2023, large breaches
@@ -322,6 +329,7 @@
       <ul>
         <li><strong>OpenAI API:</strong> BAA available for zero-retention endpoints (contact baa@openai.com)</li>
         <li><strong>ChatGPT (consumer Free/Plus/Pro/Team):</strong> No BAA available. Cannot be used with PHI.</li>
+        <li><strong>ChatGPT Health (consumer; US general rollout July 23, 2026):</strong> No BAA&mdash;it runs inside the consumer Free/Go/Plus/Pro tiers. Patients can connect Apple Health, supported US hospital medical records (brokered by b.well), One Medical, and Function Health. OpenAI states that connected records and the conversations using them are <em>not</em> used to train its foundation models or target ads, regardless of the account&rsquo;s training setting. That commitment is real, but it is a consumer contract, not a business associate relationship.</li>
         <li><strong>ChatGPT for Clinicians (free verified-clinician tier, launched 2026):</strong> No BAA. Free for verified US physicians/NPs/PAs/pharmacists, but explicitly not for PHI.</li>
         <li><strong>ChatGPT for Healthcare (enterprise tier, launched Jan 2026):</strong> BAA available; HIPAA-aligned controls including encryption keys, audit logs, and data residency. Deployed at AdventHealth, Baylor Scott &amp; White, Boston Children's, Cedars-Sinai, HCA, MSK, Stanford Children's, and UCSF.</li>
         <li><strong>ChatGPT Enterprise/Edu:</strong> BAA available through sales-managed accounts</li>
@@ -695,6 +703,42 @@
       </p>
 
       <div class="callout callout-warning">
+        <div class="callout-title">ChatGPT Health Opens to Every US User (Jul 2026)</div>
+        <p>
+          On <strong>July 23, 2026</strong>, OpenAI moved Health out of a waitlist and into
+          <a href="https://openai.com/index/health-in-chatgpt/" target="_blank" rel="noopener">general availability for all logged-in US users 18 and older</a>,
+          on web and iOS, across the Free, Go, Plus, and Pro tiers. Patients can connect Apple
+          Health, supported US hospital medical records (brokered by b.well), One Medical, and
+          Function Health. Pilot data showed more than 70% of health-related conversations
+          happening outside the dedicated Health space, so OpenAI removed the separate space
+          entirely&mdash;health context can now surface anywhere in ChatGPT, permission-gated.
+        </p>
+        <p>
+          <strong>Get the privacy risk right.</strong> The obvious worry&mdash;&ldquo;OpenAI is
+          training on my patient&rsquo;s labs&rdquo;&mdash;is the one OpenAI has addressed most
+          directly: connected records and the conversations that use them are excluded from
+          foundation-model training and ad targeting <em>regardless</em> of the account&rsquo;s
+          training setting. The exposures that matter are different ones. This is a consumer
+          product on consumer terms, with <strong>no BAA</strong>. Synced records can be stale or
+          incomplete&mdash;OpenAI&rsquo;s own caveat is that &ldquo;a medication may remain listed
+          after you stop taking it.&rdquo; And no clinician is in the loop; OpenAI states plainly
+          that Health &ldquo;is not intended for diagnosis or treatment.&rdquo;
+        </p>
+        <p>
+          <strong>Why this reaches your exam room:</strong> OpenAI reports that more than 300
+          million people a week bring health questions to ChatGPT. A patient who arrives having
+          had an AI read their actual lab values, visit notes, and medication list is a different
+          conversation from &ldquo;I looked it up online.&rdquo; See
+          <a href="patients-ai.html">When Patients Bring AI to the Exam Room</a> for how to work
+          with it.
+        </p>
+        <p class="mb-0">
+          <strong>Source:</strong>
+          <a href="https://openai.com/index/health-in-chatgpt/" target="_blank" rel="noopener">OpenAI</a>
+        </p>
+      </div>
+
+      <div class="callout callout-warning">
         <div class="callout-title">Doctronic SOAP Note Injection Risk (Mar 2026)</div>
         <p>
           Utah&rsquo;s first-in-nation AI prescription bot,
@@ -791,7 +835,7 @@
             <div class="reading-title">
               <a href="https://www.federalregister.gov/documents/2025/01/06/2024-30983/hipaa-security-rule-to-strengthen-the-cybersecurity-of-electronic-protected-health-information" target="_blank">HHS Proposed HIPAA Security Rule Update (Jan 2025 NPRM)</a>
             </div>
-            <div class="reading-meta">Federal Register · The primary source behind the page's "first major update in 20 years" reference—the actual proposed encryption, MFA, and 72-hour requirements.</div>
+            <div class="reading-meta">Federal Register · The primary source behind the page's "first major update in 20 years" reference—the actual proposed encryption, MFA, and 72-hour requirements. Still a proposed rule; final action is now scheduled for July 2027.</div>
           </div>
         </div>
 
