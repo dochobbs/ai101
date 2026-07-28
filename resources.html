@@ -52,9 +52,40 @@
         </p>
       </header>
 
+      <h2>AI 101 Learning Tracks</h2>
+      <p>
+        The guide&rsquo;s hands-on tracks. Each is self-paced, assumes no programming
+        background, and can be started and stopped without losing your place.
+      </p>
+
+      <div class="resource-grid">
+        <div class="resource-card">
+          <h4><a href="claude-code.html">30 Days to Claude Code</a></h4>
+          <p>
+            Thirty short daily steps from &ldquo;what even is the terminal?&rdquo; to
+            running an AI coding agent against real work. Written for clinicians,
+            not engineers.
+          </p>
+        </div>
+        <div class="resource-card">
+          <h4><a href="github.html">14 Days to GitHub</a></h4>
+          <p>
+            The sequel: fourteen days from &ldquo;my work lives in a folder&rdquo; to a
+            backed-up repository you can branch, review, merge, and recover.
+          </p>
+        </div>
+        <div class="resource-card">
+          <h4><a href="vibe-coding.html">Vibe Coding</a></h4>
+          <p>
+            What building software by describing it actually looks like &mdash; where it
+            works well, and where it fails badly enough to matter.
+          </p>
+        </div>
+      </div>
+
       <h2>Key Frameworks</h2>
       <p>
-        These frameworks are referenced throughout the course and serve as 
+        These frameworks are referenced throughout the course and serve as
         practical tools for evaluating and governing clinical AI.
       </p>
 
@@ -86,7 +117,7 @@
           <div class="reading-content">
             <div class="reading-title">DEFT-AI Supervision Framework</div>
             <div class="reading-meta">
-              Diagnosis, Evidence, Feedback, Teaching—structured approach to
+              Diagnosis, Evidence, Feedback, Teaching&mdash;structured approach to
               supervising AI use by medical learners. Abdulnour, Gin, and Boscardin, NEJM 2025.
               <br><a href="https://www.nejm.org/doi/full/10.1056/NEJMra2503232" target="_blank" rel="noopener">Read paper →</a>
             </div>
@@ -107,10 +138,14 @@
 
       <h2>AI Tools for Clinicians</h2>
       <p>
-        These tools are referenced in the course and may be useful for 
-        clinical AI exploration and practice.
+        Tools referenced in the course, current as of July 2026. Model names move
+        fast; the categories and the cautions do not. Check the vendor&rsquo;s own page
+        before relying on any capability claim below.
       </p>
 
+      <h3>General-Purpose Assistants</h3>
+
+      <div class="table-responsive">
       <table>
         <thead>
           <tr>
@@ -121,32 +156,100 @@
         </thead>
         <tbody>
           <tr>
-            <td><strong>NotebookLM</strong></td>
-            <td>Document-grounded AI assistant for summarizing guidelines, papers</td>
-            <td>Limited to uploaded sources; useful for controlled exploration</td>
+            <td><strong><a href="https://claude.ai/" target="_blank" rel="noopener">Claude</a></strong> (Anthropic)</td>
+            <td>Reading long documents, drafting, working through a reasoning problem step by step</td>
+            <td>Opus 5 and Sonnet 5 are the current tiers as of July 2026. Consumer plans carry no BAA</td>
           </tr>
           <tr>
-            <td><strong>Claude</strong></td>
-            <td>General-purpose AI assistant with strong reasoning</td>
-            <td>Check institutional policies; avoid PHI in consumer version</td>
+            <td><strong><a href="https://chatgpt.com/" target="_blank" rel="noopener">ChatGPT</a></strong> (OpenAI)</td>
+            <td>General drafting, summarizing, and question answering</td>
+            <td>Runs the GPT-5.6 family (Sol, Terra, Luna), generally available since July 2026. Verify every clinical claim</td>
           </tr>
           <tr>
-            <td><strong>GPT-4</strong></td>
-            <td>General-purpose AI with medical knowledge</td>
-            <td>May hallucinate; verify all clinical information</td>
+            <td><strong><a href="https://gemini.google.com/" target="_blank" rel="noopener">Gemini</a></strong> (Google)</td>
+            <td>Multimodal work &mdash; images, audio, documents &mdash; and anything already inside Google Workspace</td>
+            <td>Google&rsquo;s 3-series models. The 3.5 Pro flagship was still unreleased in late July 2026, so what you get depends on the model picker</td>
           </tr>
           <tr>
-            <td><strong>Perplexity</strong></td>
-            <td>AI search with citations</td>
-            <td>Good for research; citations help verification</td>
-          </tr>
-          <tr>
-            <td><strong>Elicit</strong></td>
-            <td>Research assistant for literature review</td>
-            <td>Helpful for rapid evidence synthesis</td>
+            <td><strong><a href="https://notebooklm.google.com/" target="_blank" rel="noopener">NotebookLM</a></strong> (Google)</td>
+            <td>Document-grounded assistant for guidelines and papers you upload yourself</td>
+            <td>Answers stay inside your uploaded sources, which makes them easy to check. Still not a place for PHI on a consumer account</td>
           </tr>
         </tbody>
       </table>
+      </div>
+
+      <h3>Evidence and Literature Search</h3>
+
+      <div class="table-responsive">
+      <table>
+        <thead>
+          <tr>
+            <th>Tool</th>
+            <th>Use Case</th>
+            <th>Key Considerations</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong><a href="https://www.openevidence.com/" target="_blank" rel="noopener">OpenEvidence</a></strong></td>
+            <td>Point-of-care clinical answers with citations</td>
+            <td>Free to NPI-verified US clinicians; ad-supported. Open the cited source rather than trusting the summary</td>
+          </tr>
+          <tr>
+            <td><strong><a href="https://www.perplexity.ai/" target="_blank" rel="noopener">Perplexity</a></strong></td>
+            <td>General web search with inline citations</td>
+            <td>Citations make verification fast, but the underlying sources are ordinary web pages of mixed quality</td>
+          </tr>
+          <tr>
+            <td><strong><a href="https://consensus.app/" target="_blank" rel="noopener">Consensus</a></strong></td>
+            <td>Search across peer-reviewed literature with a summary of where studies agree</td>
+            <td>Good for &ldquo;what does the literature say&rdquo; questions. The agreement meter is a starting point, not a meta-analysis</td>
+          </tr>
+          <tr>
+            <td><strong><a href="https://elicit.com/" target="_blank" rel="noopener">Elicit</a></strong></td>
+            <td>Structured literature review &mdash; screening papers and extracting findings into tables</td>
+            <td>Useful for triaging a large search. Check extracted values against the paper before citing them</td>
+          </tr>
+        </tbody>
+      </table>
+      </div>
+
+      <h3>Documentation and Administrative Work</h3>
+
+      <div class="table-responsive">
+      <table>
+        <thead>
+          <tr>
+            <th>Tool</th>
+            <th>Use Case</th>
+            <th>Key Considerations</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong><a href="https://www.abridge.com/" target="_blank" rel="noopener">Abridge</a></strong></td>
+            <td>Ambient documentation from the visit conversation, written back into the EHR</td>
+            <td>Named #1 for ambient AI in Best in KLAS 2026. Bought at the institution level; the BAA comes through that contract</td>
+          </tr>
+          <tr>
+            <td><strong><a href="https://www.microsoft.com/en-us/health-solutions/clinical-workflow/dragon-copilot" target="_blank" rel="noopener">Dragon Copilot</a></strong> (Microsoft)</td>
+            <td>Ambient documentation; the successor to Nuance DAX</td>
+            <td>The deepest native Epic and Oracle Health integration. Institutional purchase</td>
+          </tr>
+          <tr>
+            <td><strong><a href="https://www.suki.ai/" target="_blank" rel="noopener">Suki</a></strong></td>
+            <td>Voice-first ambient documentation, including on mobile</td>
+            <td>Institutional purchase. Often chosen by smaller groups and specialty practices</td>
+          </tr>
+          <tr>
+            <td><strong><a href="https://www.doximity.com/gpt" target="_blank" rel="noopener">Doximity GPT</a></strong></td>
+            <td>Prior authorization letters, patient instructions, referral and appeal drafts</td>
+            <td>Free to verified US clinicians. Doximity states the tool is HIPAA-compliant for members &mdash; confirm against your own institution&rsquo;s policy before entering PHI</td>
+          </tr>
+        </tbody>
+      </table>
+      </div>
 
       <div class="callout callout-warning">
         <div class="callout-title">PHI Warning</div>
@@ -176,8 +279,12 @@
           <div class="reading-content">
             <div class="reading-title">FDA: Artificial Intelligence and Machine Learning in Software as a Medical Device</div>
             <div class="reading-meta">
-              Regulatory framework for AI-based medical devices.
+              Regulatory framework for AI-based medical devices. The January 2025 draft
+              guidance on AI-enabled device software functions extends this to the whole
+              product lifecycle &mdash; retraining, performance drift, and post-market
+              monitoring, not just clearance. Still draft as of mid-2026.
               <br><a href="https://www.fda.gov/medical-devices/software-medical-device-samd/artificial-intelligence-software-medical-device" target="_blank" rel="noopener">View Guidance →</a>
+              <br><a href="https://www.fda.gov/regulatory-information/search-fda-guidance-documents/artificial-intelligence-enabled-device-software-functions-lifecycle-management-and-marketing" target="_blank" rel="noopener">2025 lifecycle draft guidance →</a>
             </div>
           </div>
         </div>
@@ -186,8 +293,34 @@
           <div class="reading-content">
             <div class="reading-title">WHO: Ethics and Governance of Artificial Intelligence for Health</div>
             <div class="reading-meta">
-              World Health Organization guidance on ethical AI deployment in healthcare.
+              World Health Organization guidance on ethical AI deployment in healthcare (2021).
               <br><a href="https://www.who.int/publications/i/item/9789240029200" target="_blank" rel="noopener">View Report →</a>
+            </div>
+          </div>
+        </div>
+        <div class="reading-item">
+          <div class="reading-type required"><i data-lucide="file-text"></i></div>
+          <div class="reading-content">
+            <div class="reading-title">WHO: Guidance on Large Multi-Modal Models</div>
+            <div class="reading-meta">
+              The January 2024 update to the report above, rewritten for generative AI.
+              Over 40 recommendations covering governments, developers, and health systems.
+              <br><a href="https://www.who.int/publications/i/item/9789240084759" target="_blank" rel="noopener">View Report →</a>
+            </div>
+          </div>
+        </div>
+        <div class="reading-item">
+          <div class="reading-type required"><i data-lucide="file-text"></i></div>
+          <div class="reading-content">
+            <div class="reading-title">Joint Commission &amp; CHAI: Responsible Use of AI in Healthcare</div>
+            <div class="reading-meta">
+              Guidance issued in September 2025 with the Coalition for Health AI, covering
+              governance, risk and bias assessment, data protection, ongoing monitoring, and
+              patient transparency. In 2026 the Joint Commission opened a voluntary
+              certification built on it &mdash; the closest thing yet to an accreditation
+              standard for how a health system uses AI.
+              <br><a href="https://www.jointcommission.org/en-us/certification/responsible-use-of-ai-in-healthcare" target="_blank" rel="noopener">View Certification →</a>
+              <br><a href="https://www.chai.org/news/joint-commission-and-coalition-for-health-ai-chai-release-initial-guidance" target="_blank" rel="noopener">Read the 2025 guidance announcement →</a>
             </div>
           </div>
         </div>
@@ -195,33 +328,45 @@
 
       <h2>Complete Reading List</h2>
       <p>
-        All required and optional readings from the course, organized by topic.
+        All required and optional readings from the course, organized by topic. Every
+        entry links to the publisher&rsquo;s page. Some are paywalled; abstracts are free,
+        and most institutions have access.
       </p>
 
       <h3>Foundations</h3>
       <ul>
-        <li>Topol, E. "High-performance medicine: the convergence of human and artificial intelligence" <em>Nature Medicine</em>, 2019</li>
-        <li>Rajpurkar, P. et al. "AI in health and medicine" <em>Nature Medicine</em>, 2022</li>
-        <li>Obermeyer, Z. et al. "Dissecting racial bias in an algorithm used to manage the health of populations" <em>Science</em>, 2019</li>
-        <li>Wong, A. et al. "External Validation of a Widely Implemented Proprietary Sepsis Prediction Model" <em>JAMA Internal Medicine</em>, 2021</li>
-        <li>Mongan, J. et al. "Checklist for Artificial Intelligence in Medical Imaging (CLAIM)" <em>Radiology: AI</em>, 2020</li>
-        <li>Correa Soto, R.A. et al. <a href="https://www.bmj.com/content/391/bmj.r2570" target="_blank">"Parallel pressures: the common roots of doctor bullshit and large language model hallucinations"</a> <em>BMJ</em>, 2025</li>
+        <li>Topol, E. <a href="https://www.nature.com/articles/s41591-018-0300-7" target="_blank" rel="noopener">&ldquo;High-performance medicine: the convergence of human and artificial intelligence&rdquo;</a> <em>Nature Medicine</em>, 2019 &mdash; the paper that framed the field for clinicians, and still the best single place to start.</li>
+        <li>Rajpurkar, P. et al. <a href="https://www.nature.com/articles/s41591-021-01614-0" target="_blank" rel="noopener">&ldquo;AI in health and medicine&rdquo;</a> <em>Nature Medicine</em>, 2022 &mdash; a survey of where clinical AI actually works, specialty by specialty, and what keeps blocking deployment.</li>
+        <li>Obermeyer, Z. et al. <a href="https://www.science.org/doi/10.1126/science.aax2342" target="_blank" rel="noopener">&ldquo;Dissecting racial bias in an algorithm used to manage the health of populations&rdquo;</a> <em>Science</em>, 2019 &mdash; how using cost as a proxy for illness built racial bias into a system covering millions of patients.</li>
+        <li>Omiye, J.A. et al. <a href="https://www.nature.com/articles/s41746-023-00939-z" target="_blank" rel="noopener">&ldquo;Large language models propagate race-based medicine&rdquo;</a> <em>npj Digital Medicine</em>, 2023 &mdash; the LLM-era companion to Obermeyer: commercial chatbots reproduced debunked race-based claims when asked directly.</li>
+        <li>Wong, A. et al. <a href="https://jamanetwork.com/journals/jamainternalmedicine/fullarticle/2781307" target="_blank" rel="noopener">&ldquo;External Validation of a Widely Implemented Proprietary Sepsis Prediction Model in Hospitalized Patients&rdquo;</a> <em>JAMA Internal Medicine</em>, 2021 &mdash; a model deployed at hundreds of hospitals performed far worse in practice than the vendor reported.</li>
+        <li>Mongan, J. et al. <a href="https://pubs.rsna.org/doi/full/10.1148/ryai.2020200029" target="_blank" rel="noopener">&ldquo;Checklist for Artificial Intelligence in Medical Imaging (CLAIM)&rdquo;</a> <em>Radiology: Artificial Intelligence</em>, 2020 &mdash; the checklist itself, with the reasoning behind each item.</li>
+        <li>Budzyń, K. et al. <a href="https://www.thelancet.com/journals/langas/article/PIIS2468-1253(25)00133-5/abstract" target="_blank" rel="noopener">&ldquo;Endoscopist deskilling risk after exposure to artificial intelligence in colonoscopy&rdquo;</a> <em>Lancet Gastroenterology &amp; Hepatology</em>, 2025 &mdash; unassisted adenoma detection fell after endoscopists had been working with AI. Observational and before-and-after, so a signal rather than proof, but the first of its kind.</li>
+        <li>Ke, Y. et al. <a href="https://www.nature.com/articles/s41591-026-04438-y" target="_blank" rel="noopener">&ldquo;AI-induced never-skilling in medical education&rdquo;</a> <em>Nature Medicine</em>, 2026 &mdash; names the risk that trainees never build reasoning skills they would otherwise have developed. A Perspective; the authors are explicit that direct evidence from medical training does not yet exist.</li>
+        <li>Correa Soto, R.A. et al. <a href="https://www.bmj.com/content/391/bmj.r2570" target="_blank" rel="noopener">&ldquo;Parallel pressures: the common roots of doctor bullshit and large language model hallucinations&rdquo;</a> <em>BMJ</em>, 2025 &mdash; why clinicians and language models both produce confident filler under the same incentives.</li>
       </ul>
 
       <h3>Generative AI</h3>
       <ul>
-        <li>Singhal, K. et al. "Large language models encode clinical knowledge" <em>Nature</em>, 2023</li>
-        <li>Nori, H. et al. "Capabilities of GPT-4 on Medical Challenge Problems" <em>Microsoft Research</em>, 2023</li>
-        <li>Lee, P. et al. "Benefits, Limits, and Risks of GPT-4 as an AI Chatbot for Medicine" <em>NEJM</em>, 2023</li>
-        <li>Wei, J. et al. "Chain-of-Thought Prompting Elicits Reasoning in Large Language Models" <em>NeurIPS</em>, 2022</li>
+        <li>Singhal, K. et al. <a href="https://www.nature.com/articles/s41586-023-06291-2" target="_blank" rel="noopener">&ldquo;Large language models encode clinical knowledge&rdquo;</a> <em>Nature</em>, 2023 &mdash; the Med-PaLM paper; introduced MultiMedQA and showed where model answers still fell short of clinician answers.</li>
+        <li>Nori, H. et al. <a href="https://arxiv.org/abs/2303.13375" target="_blank" rel="noopener">&ldquo;Capabilities of GPT-4 on Medical Challenge Problems&rdquo;</a> <em>Microsoft Research (arXiv)</em>, 2023 &mdash; the source of most &ldquo;AI passed the boards&rdquo; coverage. Read it to see exactly what was and was not tested.</li>
+        <li>Lee, P. et al. <a href="https://www.nejm.org/doi/full/10.1056/NEJMsr2214184" target="_blank" rel="noopener">&ldquo;Benefits, Limits, and Risks of GPT-4 as an AI Chatbot for Medicine&rdquo;</a> <em>NEJM</em>, 2023 &mdash; a readable tour of what these models do well and badly in clinical work.</li>
+        <li>Wei, J. et al. <a href="https://arxiv.org/abs/2201.11903" target="_blank" rel="noopener">&ldquo;Chain-of-Thought Prompting Elicits Reasoning in Large Language Models&rdquo;</a> <em>NeurIPS</em>, 2022 &mdash; the result behind &ldquo;show your reasoning,&rdquo; and why that instruction changes output quality.</li>
+        <li>Goh, E. et al. <a href="https://jamanetwork.com/journals/jamanetworkopen/fullarticle/2825395" target="_blank" rel="noopener">&ldquo;Large Language Model Influence on Diagnostic Reasoning: A Randomized Clinical Trial&rdquo;</a> <em>JAMA Network Open</em>, 2024 &mdash; giving 50 physicians an LLM did not improve their diagnostic reasoning scores, while the LLM working alone scored 16 points higher than the conventional-resources group. The uncomfortable finding is about how clinicians use the tool.</li>
+        <li>Goh, E. et al. <a href="https://www.nature.com/articles/s41591-024-03456-y" target="_blank" rel="noopener">&ldquo;GPT-4 assistance for improvement of physician performance on patient care tasks: a randomized controlled trial&rdquo;</a> <em>Nature Medicine</em>, 2025 &mdash; the follow-up, on management rather than diagnostic reasoning, where assistance did improve physician performance. Read it alongside the 2024 trial.</li>
+        <li>Tu, T. et al. <a href="https://www.nature.com/articles/s41586-025-08866-7" target="_blank" rel="noopener">&ldquo;Towards conversational diagnostic artificial intelligence&rdquo;</a> <em>Nature</em>, 2025 &mdash; Google&rsquo;s AMIE outperformed 20 primary care physicians across most rated axes in text consultations with patient-actors. The authors are candid that synchronous text chat is not how medicine is practiced.</li>
+        <li>Bedi, S. et al. <a href="https://jamanetwork.com/journals/jama/fullarticle/2825147" target="_blank" rel="noopener">&ldquo;Testing and Evaluation of Health Care Applications of Large Language Models: A Systematic Review&rdquo;</a> <em>JAMA</em>, 2025 &mdash; how these tools are actually being evaluated, and why exam-style benchmarks keep standing in for clinical outcomes.</li>
+        <li>Chen, S.F. et al. <a href="https://www.nature.com/articles/s41591-026-04229-5" target="_blank" rel="noopener">&ldquo;LLM-assisted systematic review of large language models in clinical medicine&rdquo;</a> <em>Nature Medicine</em>, 2026 &mdash; 4,609 studies published between 2022 and 2025, of which 19 were prospective randomized trials. The clearest answer available to &ldquo;what is the evidence base?&rdquo;</li>
       </ul>
 
       <h3>Governance</h3>
       <ul>
-        <li>Price, W.N. et al. "Potential Liability for Physicians Using Artificial Intelligence" <em>JAMA</em>, 2019</li>
-        <li>Liu, X. et al. "CONSORT-AI extension" <em>Lancet Digital Health</em>, 2020</li>
-        <li>Cohen, I.G. "Informed Consent and Medical Artificial Intelligence" <em>Georgetown Law Journal</em>, 2020</li>
-        <li>Reddy, S. et al. "A governance model for the application of AI in health care" <em>JAMIA</em>, 2020</li>
+        <li>Price, W.N. et al. <a href="https://jamanetwork.com/journals/jama/fullarticle/2752750" target="_blank" rel="noopener">&ldquo;Potential Liability for Physicians Using Artificial Intelligence&rdquo;</a> <em>JAMA</em>, 2019 &mdash; short, and the clearest explanation of why following an AI recommendation and ignoring one carry different legal exposure.</li>
+        <li>Liu, X. et al. <a href="https://www.thelancet.com/journals/landig/article/PIIS2589-7500(20)30218-1/fulltext" target="_blank" rel="noopener">&ldquo;Reporting guidelines for clinical trial reports for interventions involving artificial intelligence: the CONSORT-AI extension&rdquo;</a> <em>Lancet Digital Health</em>, 2020 &mdash; what an AI trial report has to disclose that a conventional one does not.</li>
+        <li>Cohen, I.G. <a href="https://www.law.georgetown.edu/georgetown-law-journal/in-print/volume-108/volume-108-issue-6-june-2020/informed-consent-and-medical-artificial-intelligence-what-to-tell-the-patient/" target="_blank" rel="noopener">&ldquo;Informed Consent and Medical Artificial Intelligence: What to Tell the Patient?&rdquo;</a> <em>Georgetown Law Journal</em>, 2020 &mdash; the first sustained treatment of whether, and how, AI use has to be disclosed to patients.</li>
+        <li>Reddy, S. et al. <a href="https://academic.oup.com/jamia/article/27/3/491/5612169" target="_blank" rel="noopener">&ldquo;A governance model for the application of AI in health care&rdquo;</a> <em>JAMIA</em>, 2020 &mdash; a practical governance structure for a health system rather than a set of principles.</li>
+        <li>Collins, G.S. et al. <a href="https://www.bmj.com/content/385/bmj-2023-078378" target="_blank" rel="noopener">&ldquo;TRIPOD+AI statement: updated guidance for reporting clinical prediction models that use regression or machine learning methods&rdquo;</a> <em>BMJ</em>, 2024 &mdash; the reporting standard for prediction models. Use it as a reading checklist for any risk score being sold to your institution.</li>
+        <li>Lekadir, K. et al. <a href="https://www.bmj.com/content/388/bmj-2024-081554" target="_blank" rel="noopener">&ldquo;FUTURE-AI: international consensus guideline for trustworthy and deployable artificial intelligence in healthcare&rdquo;</a> <em>BMJ</em>, 2025 &mdash; consensus guidance covering the whole lifecycle, including what happens after go-live. The natural next read after CLAIM and TRIPOD+AI.</li>
       </ul>
 
       <h2>Ongoing Learning</h2>
@@ -229,12 +374,13 @@
         Stay current with these resources:
       </p>
       <ul>
-        <li><strong>Nature Medicine</strong> — AI and digital health section</li>
-        <li><strong>NEJM AI</strong> — New journal dedicated to AI in medicine</li>
-        <li><strong>The Medical Futurist</strong> — Accessible analysis of healthcare technology</li>
-        <li><strong>STAT News</strong> — Healthcare industry and policy coverage</li>
-        <li><strong>AI in Healthcare Newsletter</strong> (Ronald Gosselin) — Weekly digest</li>
-        <li><strong>This Week in Health IT</strong> — Podcast covering health tech developments</li>
+        <li><strong><a href="https://www.nature.com/nm/" target="_blank" rel="noopener">Nature Medicine</a></strong> &mdash; publishes much of the primary clinical AI literature, including several papers above.</li>
+        <li><strong><a href="https://ai.nejm.org/" target="_blank" rel="noopener">NEJM AI</a></strong> &mdash; the NEJM Group journal dedicated to AI in medicine.</li>
+        <li><strong><a href="https://erictopol.substack.com/" target="_blank" rel="noopener">Ground Truths</a></strong> (Eric Topol) &mdash; the author of the 2019 paper above, writing regularly on new clinical AI results.</li>
+        <li><strong><a href="https://medicalfuturist.com/" target="_blank" rel="noopener">The Medical Futurist</a></strong> &mdash; accessible analysis of healthcare technology.</li>
+        <li><strong><a href="https://www.statnews.com/category/health-tech/" target="_blank" rel="noopener">STAT News health tech</a></strong> &mdash; reporting on the industry and policy side, including the parts vendors would rather not discuss.</li>
+        <li><strong><a href="https://aiin.healthcare/" target="_blank" rel="noopener">AI in Healthcare</a></strong> &mdash; trade coverage of deployments, vendors, and regulation, with free newsletters.</li>
+        <li><strong><a href="https://thisweekhealth.com/" target="_blank" rel="noopener">This Week Health</a></strong> &mdash; podcast network on health IT, formerly This Week in Health IT.</li>
       </ul>
 
       <h2>Glossary</h2>
@@ -246,7 +392,7 @@
       <p>The tendency to over-rely on automated systems and accept their outputs uncritically, even when contradicted by other information.</p>
 
       <h4>Centaur</h4>
-      <p>A human-AI collaboration model with clear division of labor—human handles strategy and judgment, AI handles calculation and data processing.</p>
+      <p>A human-AI collaboration model with clear division of labor&mdash;human handles strategy and judgment, AI handles calculation and data processing.</p>
 
       <h4>Chain-of-Thought Prompting</h4>
       <p>A prompting technique that asks AI to show its reasoning step-by-step before providing a final answer, making its logic visible for evaluation.</p>
@@ -264,10 +410,10 @@
       <p>When an AI generates plausible but factually incorrect information.</p>
 
       <h4>Label Bias</h4>
-      <p>Bias introduced through the outcome variable being predicted—when the "ground truth" itself encodes discrimination.</p>
+      <p>Bias introduced through the outcome variable being predicted&mdash;when the &ldquo;ground truth&rdquo; itself encodes discrimination.</p>
 
       <h4>Proxy Variable</h4>
-      <p>A measurable variable used as a stand-in for something difficult to measure directly—can encode hidden biases.</p>
+      <p>A measurable variable used as a stand-in for something difficult to measure directly&mdash;can encode hidden biases.</p>
 
       <h4>Shadow AI</h4>
       <p>Use of AI tools outside institutional oversight and governance, often consumer products used for clinical work.</p>
@@ -276,7 +422,7 @@
       <p>Testing an AI model on data from a different time period than the training data.</p>
 
       <h4>Zero-Shot Prompting</h4>
-      <p>Asking an AI to perform a task without providing examples—relying on its pre-training.</p>
+      <p>Asking an AI to perform a task without providing examples&mdash;relying on its pre-training.</p>
 
     </article>
   </main>
