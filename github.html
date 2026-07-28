@@ -848,6 +848,11 @@ code.inline {
 
     <div class="nav-phase">
       <div class="nav-phase-title">Phase Three · Side Roads</div>
+      <a class="nav-day" href="#day-10" data-day="10"><span class="day-dot"></span><span class="day-num">10</span><span>The Side Road</span></a>
+      <a class="nav-day" href="#day-11" data-day="11"><span class="day-dot"></span><span class="day-num">11</span><span>Pin a Note to the Board</span></a>
+      <a class="nav-day" href="#day-12" data-day="12"><span class="day-dot"></span><span class="day-num">12</span><span>Presenting the Route</span></a>
+      <a class="nav-day" href="#day-13" data-day="13"><span class="day-dot"></span><span class="day-num">13</span><span>The Other Travelers</span></a>
+      <a class="nav-day" href="#day-14" data-day="14"><span class="day-dot"></span><span class="day-num">14</span><span>Two Maps, One Disagreement</span></a>
     </div>
   </nav>
 
@@ -1427,7 +1432,7 @@ echo "secrets.txt" &gt;&gt; .gitignore</pre><button class="copy-btn">Copy</butto
       <div class="callout-label">If git refuses to pull</div>
       If you made a commit in <em>both</em> folders before pulling, git stops with <em>Need to specify how to reconcile divergent branches</em> and a block of hints. It is not broken and nothing is lost &mdash; git is asking you to choose how to combine two histories, and it will not guess. Run the line below once, then run <code class="inline">git pull</code> again.
       <div class="codeblock"><pre>git config pull.rebase false</pre><button class="copy-btn">Copy</button></div>
-      That tells git to combine them by merging, which is the behaviour most people want and the one Day 13 builds on.
+      That tells git to combine them by merging rather than replaying one history on top of the other &mdash; the behaviour most people want, and the same choice you will make again on Day 13.
     </div>
 
     <div class="learned">
@@ -1444,6 +1449,337 @@ echo "secrets.txt" &gt;&gt; .gitignore</pre><button class="copy-btn">Copy</butto
   <p class="phase-sub">Days 10 to 14 · Trying things without breaking things.</p>
   <p class="phase-intro">The last five days are the ones people think are hard: branches, pull requests, review, and the dreaded merge conflict. You are going to cause a merge conflict on purpose and fix it, which is the fastest way to stop being afraid of one.</p>
 </section>
+
+<article class="day" id="day-10">
+  <header class="day-header"><span class="day-label">Day 10</span><h3 class="day-title">The Side Road</h3></header>
+  <div class="day-body">
+    <p>A <strong>branch</strong> is a side road. You turn off the main route, drive down it, make whatever mess you like &mdash; and the main route sits there untouched the entire time, exactly as you left it.</p>
+
+    <p>That is the whole idea, and it is why people who are good at this are not afraid to try things. They are never trying them on the main road.</p>
+
+    <p>Start where you left off:</p>
+    <div class="codeblock"><pre>cd ~/github-lab</pre><button class="copy-btn">Copy</button></div>
+
+    <p>Before you build a side road, find out what the main one is called:</p>
+    <div class="codeblock"><pre>git branch --show-current</pre><button class="copy-btn">Copy</button></div>
+
+    <div class="callout">
+      <div class="callout-label">Whichever name you see</div>
+      Almost certainly this says <code class="inline">main</code>, and you can carry on. If it says <code class="inline">master</code>, nothing is wrong &mdash; you met that on Day 2, and it just means your git was set up with the older default name. Everywhere the next five days say <code class="inline">main</code>, type <code class="inline">master</code> instead. It is the only substitution you will need.
+    </div>
+
+    <p>Now make the side road:</p>
+    <div class="codeblock"><pre>git switch -c experiment</pre><button class="copy-btn">Copy</button></div>
+
+    <p>Git answers <em>Switched to a new branch &lsquo;experiment&rsquo;</em>. The <code class="inline">-c</code> is for <em>create</em> &mdash; make this branch, then move onto it. Without it, <code class="inline">git switch</code> only moves to a branch that already exists.</p>
+
+    <p>Ask where you are:</p>
+    <div class="codeblock"><pre>git status</pre><button class="copy-btn">Copy</button></div>
+
+    <p>Two lines: <em>On branch experiment</em>, and <em>nothing to commit, working tree clean</em>. Read the second one carefully. Making a branch changed nothing about your files. Not one byte moved. All that changed is which road you are standing on.</p>
+
+    <p>Now make a mess, safely. This adds a deliberately alarming line to your notes:</p>
+    <div class="codeblock"><pre>echo "REWRITE: this whole file is different now" &gt;&gt; notes.md</pre><button class="copy-btn">Copy</button></div>
+
+    <p>File it as an entry, the same way you have all week:</p>
+    <div class="codeblock"><pre>git commit -am "Try a different approach in notes"</pre><button class="copy-btn">Copy</button></div>
+
+    <p>Git reports <code class="inline">[experiment</code> and a commit name, then <em>1 file changed, 1 insertion(+)</em>. Notice the branch name in those brackets. That entry lives on the side road, and nowhere else.</p>
+
+    <p><strong>Here is the part that teaches it.</strong> Go back to the main road:</p>
+    <div class="codeblock"><pre>git switch main</pre><button class="copy-btn">Copy</button></div>
+
+    <p>Now read the file:</p>
+    <div class="codeblock"><pre>cat notes.md</pre><button class="copy-btn">Copy</button></div>
+
+    <p>The REWRITE line is gone. Not hidden, not commented out &mdash; the file on your disk does not contain it. If you opened <code class="inline">notes.md</code> in a text editor right now, it would not be there either.</p>
+
+    <p>Go back to the side road:</p>
+    <div class="codeblock"><pre>git switch experiment</pre><button class="copy-btn">Copy</button></div>
+
+    <p>And read it again:</p>
+    <div class="codeblock"><pre>cat notes.md</pre><button class="copy-btn">Copy</button></div>
+
+    <p>It is back.</p>
+
+    <p><strong>Do that twice more.</strong> Switch, read, switch, read. This is the one thing worth being slightly repetitive about, because branches stop being confusing the moment you watch a file change under your own hands. It is a physical fact about your folder, not a concept to hold in your head.</p>
+
+    <div class="callout">
+      <div class="callout-label">Nothing is lost</div>
+      Switching branches never deletes anything. Both versions of <code class="inline">notes.md</code> exist the whole time, safe in the <code class="inline">.git</code> folder from Day 1. Git is not editing your work when you switch &mdash; it is putting one version on the table and filing the other one away. You are choosing which one is in front of you.
+    </div>
+
+    <div class="callout">
+      <div class="callout-label">If git refuses to switch</div>
+      If you have uncommitted edits that would be overwritten, git stops and says so rather than losing them. That is the tool protecting you. Commit what you have, and switch again.
+    </div>
+
+    <div class="learned">
+      <div class="learned-label">What you just learned</div>
+      A branch lets you try something risky while the working version stays exactly where it was. This is what makes experimenting safe.
+    </div>
+    <button class="complete-btn" data-day="10"><span class="check"></span><span class="label">Mark complete</span></button>
+  </div>
+</article>
+
+<article class="day" id="day-11">
+  <header class="day-header"><span class="day-label">Day 11</span><h3 class="day-title">Pin a Note to the Board</h3></header>
+  <div class="day-body">
+    <p>An <strong>issue</strong> is a note pinned to the planning board. A bug, a question, an idea, a task you keep meaning to get to. It lives on GitHub next to the code, and it stays there until someone takes it down.</p>
+
+    <p>It is not bureaucracy. It is the thing you would otherwise forget by Thursday.</p>
+
+    <p>Today is short. Make sure you are in your folder:</p>
+    <div class="codeblock"><pre>cd ~/github-lab</pre><button class="copy-btn">Copy</button></div>
+
+    <p>Now file one. This one is about your README, which you wrote on Day 7 and which almost certainly does not tell a stranger what to actually do first:</p>
+    <div class="codeblock"><pre>gh issue create --title "README doesn't say how to actually start" --body "A stranger reading this still wouldn't know the first command to run."</pre><button class="copy-btn">Copy</button></div>
+
+    <p>Git and GitHub have very little to say back. You get a URL, and the last part of it is a number &mdash; <code class="inline">/issues/1</code>, or <code class="inline">/issues/4</code>, or whatever your repository is up to. <strong>Write that number down.</strong> You need it tomorrow, and it will not be the same as anyone else&rsquo;s.</p>
+
+    <p>See what is on the board:</p>
+    <div class="codeblock"><pre>gh issue list</pre><button class="copy-btn">Copy</button></div>
+
+    <p>Your issue, with its number in the first column. This command shows open issues only, which is a detail that will matter on Day 13.</p>
+
+    <p>Now go and look at it properly. Replace <code class="inline">NUMBER</code> with your issue&rsquo;s number &mdash; the same way you replaced <code class="inline">YOUR-USERNAME</code> on Day 9:</p>
+    <div class="codeblock"><pre>gh issue view NUMBER --web</pre><button class="copy-btn">Copy</button></div>
+
+    <p>Your browser opens on the issue: a title, your description, a comment box, and a sidebar full of things you can safely ignore for now. That is the board.</p>
+
+    <div class="callout">
+      <div class="callout-label">Make it a real one</div>
+      Do not invent a fake issue for the exercise. Pick something that genuinely bothers you about this folder &mdash; the README, a file with a bad name, a note you never finished. On Day 13 you are going to close it, and closing a real one feels different from closing a prop.
+    </div>
+
+    <div class="callout">
+      <div class="callout-label">Still no PHI</div>
+      An issue is text on GitHub, exactly like a commit message. Day 8&rsquo;s rule has not moved: nothing that could identify a patient, in a private repository or any other kind.
+    </div>
+
+    <div class="learned">
+      <div class="learned-label">What you just learned</div>
+      An issue is a note to your future self that other people can also read. Note the number it was given &mdash; you will need it on Day 12.
+    </div>
+    <button class="complete-btn" data-day="11"><span class="check"></span><span class="label">Mark complete</span></button>
+  </div>
+</article>
+
+<article class="day" id="day-12">
+  <header class="day-header"><span class="day-label">Day 12</span><h3 class="day-title">Presenting the Route</h3></header>
+  <div class="day-body">
+    <p>You have been down the side road and you think it is a good route. A <strong>pull request</strong> is coming back and presenting it to the group before the official map gets redrawn.</p>
+
+    <p>The name is unhelpful and everyone agrees it is unhelpful. People say <em>PR</em>. Read it as <em>here is what I did, have a look before it becomes real</em>.</p>
+
+    <p>Get back on the side road:</p>
+    <div class="codeblock"><pre>cd ~/github-lab</pre><button class="copy-btn">Copy</button></div>
+
+    <p>And onto the branch:</p>
+    <div class="codeblock"><pre>git switch experiment</pre><button class="copy-btn">Copy</button></div>
+
+    <p>Base camp has never heard of this branch &mdash; everything you did on Day 10 stayed on your laptop. Send it up:</p>
+    <div class="codeblock"><pre>git push -u origin experiment</pre><button class="copy-btn">Copy</button></div>
+
+    <p>Git reports <code class="inline">* [new branch]</code> and then a line saying the branch is <em>set up to track</em> <code class="inline">origin/experiment</code>. That is the <code class="inline">-u</code> doing its work: it tells git that this local branch and that remote branch are the same road, so from now on a plain <code class="inline">git push</code> on this branch knows where to go with no arguments. You only ever need <code class="inline">-u</code> the first time you push a new branch.</p>
+
+    <p>Now open the pull request. Put your issue number from yesterday in place of <code class="inline">NUMBER</code>:</p>
+    <div class="codeblock"><pre>gh pr create --title "Rework the notes file" --body "Closes #NUMBER"</pre><button class="copy-btn">Copy</button></div>
+
+    <p>You do not have to tell it what to merge into. GitHub uses your repository&rsquo;s default branch, which is the main road you checked the name of on Day 10.</p>
+
+    <div class="callout">
+      <div class="callout-label">That <code class="inline">Closes</code> line is not decoration</div>
+      Put the word <code class="inline">Closes</code> and an issue number in a pull request description and GitHub will close that issue automatically the moment this is merged. <code class="inline">Fixes</code> works the same way. It is a small thing that keeps two records in sync for free, and it is the reason you wrote the number down yesterday.
+    </div>
+
+    <p>Go and look at what you made:</p>
+    <div class="codeblock"><pre>gh pr view --web</pre><button class="copy-btn">Copy</button></div>
+
+    <p><strong>Today is the day you leave the terminal, on purpose.</strong> Take a minute in the browser and find three things.</p>
+    <ul>
+      <li><strong>The Conversation tab.</strong> Your title, your description, and a note that this pull request will close your issue. That is the <code class="inline">Closes</code> line already working.</li>
+      <li><strong>The Files changed tab.</strong> Click it. Your REWRITE line, in green, with a <code class="inline">+</code> in front of it. This is the same notation you learned on Day 5 &mdash; green and <code class="inline">+</code> for added, red and <code class="inline">-</code> for removed. GitHub is showing you a <code class="inline">git diff</code> with better lighting.</li>
+      <li><strong>The comment box.</strong> At the bottom of the conversation, and beside any individual line in Files changed. That is where review actually happens.</li>
+    </ul>
+
+    <p>It is worth saying plainly why this day is in a browser at all. Reading a diff is a visual act. Colour, side-by-side columns, and the ability to click one line and say <em>this one, here</em> are genuinely better than a terminal at this particular job. Insisting otherwise would be dogma. Use the tool that fits the task.</p>
+
+    <div class="callout">
+      <div class="callout-label">Nothing has moved yet</div>
+      Look at your main branch on GitHub while the pull request is open. The REWRITE line is not there. A pull request does not change anything &mdash; it is a proposal sitting next to the repository, waiting for someone to say yes.
+    </div>
+
+    <div class="learned">
+      <div class="learned-label">What you just learned</div>
+      A pull request is a proposal, not a change. Nothing has moved yet. That gap between proposing and merging is where review happens.
+    </div>
+    <button class="complete-btn" data-day="12"><span class="check"></span><span class="label">Mark complete</span></button>
+  </div>
+</article>
+
+<article class="day" id="day-13">
+  <header class="day-header"><span class="day-label">Day 13</span><h3 class="day-title">The Other Travelers</h3></header>
+  <div class="day-body">
+    <p>On a real expedition, the other travelers look at your proposed route before anyone commits to it. Where are the cliffs, what did you miss, is there a shorter way round. That is <strong>review</strong>.</p>
+
+    <p>You are on your own here, so today Claude plays that part. This is one of the places where that substitution is genuinely useful rather than a consolation prize &mdash; a diff is a small, bounded, self-contained thing, which is exactly what a model reads well.</p>
+
+    <p>Back to the folder:</p>
+    <div class="codeblock"><pre>cd ~/github-lab</pre><button class="copy-btn">Copy</button></div>
+
+    <p>First, look at the change yourself. This asks what is different between the main road and the side road:</p>
+    <div class="codeblock"><pre>git diff main..experiment</pre><button class="copy-btn">Copy</button></div>
+
+    <p>Past the usual few lines of bookkeeping, you get your REWRITE line with a <code class="inline">+</code> in front of it &mdash; the same thing the Files changed tab showed you yesterday, in the same notation, without the colour. The two dots mean <em>from here to there</em>. If your main branch is called <code class="inline">master</code>, use that name instead, as you have been doing since Day 10.</p>
+
+    <p>Now get the second opinion. Start Claude in this folder and ask:</p>
+    <div class="codeblock"><pre>You are reviewing a pull request. Run `git diff main..experiment` and read the change. You are the other traveler checking my route: where are the cliffs, what did I miss, and is there a simpler way to do this? Be direct.</pre><button class="copy-btn">Copy</button></div>
+
+    <p>Read what comes back with the same scepticism you used on the README draft on Day 7. Some of it will be worth doing. Some of it will be a confident suggestion about a file it does not understand. You are still the one deciding &mdash; a reviewer advises, they do not approve on your behalf.</p>
+
+    <div class="callout">
+      <div class="callout-label">Why review your own work?</div>
+      Because a diff is a different view than the file. Things that looked fine while you were writing them look obviously wrong in red and green, stripped of everything around them. Solo developers open pull requests on their own repositories for exactly this reason, and it is not a ritual &mdash; it is a second pair of eyes made out of a change of format.
+    </div>
+
+    <p><strong>Now merge it.</strong> This is the moment the main route officially changes:</p>
+    <div class="codeblock"><pre>gh pr merge --merge --delete-branch</pre><button class="copy-btn">Copy</button></div>
+
+    <p>Two flags. <code class="inline">--merge</code> combines the two histories and keeps both, joining them with a single new commit &mdash; the same choice you made on Day 9 when you told git <code class="inline">pull.rebase false</code>, rather than replaying one history on top of the other. <code class="inline">--delete-branch</code> removes the side road once its contents have arrived, both on GitHub and on your laptop. The road existed to get the work somewhere. It is finished now.</p>
+
+    <p>Make sure you are back on the main road:</p>
+    <div class="codeblock"><pre>git switch main</pre><button class="copy-btn">Copy</button></div>
+
+    <p>And bring down the merge that happened up at base camp:</p>
+    <div class="codeblock"><pre>git pull</pre><button class="copy-btn">Copy</button></div>
+
+    <p>If either of those says you are already there and already up to date, nothing has gone wrong &mdash; <code class="inline">gh</code> tidies up after itself and may have moved you already. Run <code class="inline">cat notes.md</code> and your REWRITE line is now on the main road, where it was not yesterday.</p>
+
+    <p>One last thing, and it is the satisfying part:</p>
+    <div class="codeblock"><pre>gh issue list</pre><button class="copy-btn">Copy</button></div>
+
+    <p>Your issue from Day 11 is not there. Nothing broke &mdash; remember from Day 11 that this command lists open issues only. The note came off the board because the work is done, and you never had to go and take it down. That is the <code class="inline">Closes</code> line from yesterday, paying out.</p>
+
+    <div class="learned">
+      <div class="learned-label">What you just learned</div>
+      Review is reading your change as a stranger would. Merge is the moment the main route officially changes.
+    </div>
+    <button class="complete-btn" data-day="13"><span class="check"></span><span class="label">Mark complete</span></button>
+  </div>
+</article>
+
+<article class="day" id="day-14">
+  <header class="day-header"><span class="day-label">Day 14</span><h3 class="day-title">Two Maps, One Disagreement</h3></header>
+  <div class="day-body">
+    <p>Two travelers came back having edited the same stretch of the map differently. Git can show you the disagreement precisely. It cannot tell you who is right, and it will not pretend to.</p>
+
+    <p>That is a <strong>merge conflict</strong>, and it is the thing that frightens people off git entirely. So we are going to cause one on purpose, right now, and fix it.</p>
+
+    <p>In your folder:</p>
+    <div class="codeblock"><pre>cd ~/github-lab</pre><button class="copy-btn">Copy</button></div>
+
+    <p>Make a new side road:</p>
+    <div class="codeblock"><pre>git switch -c route-a</pre><button class="copy-btn">Copy</button></div>
+
+    <p>Add a line to your notes proposing one way round:</p>
+    <div class="codeblock"><pre>echo "Route A: go around the lake" &gt;&gt; notes.md</pre><button class="copy-btn">Copy</button></div>
+
+    <p>Commit it:</p>
+    <div class="codeblock"><pre>git commit -am "Route A"</pre><button class="copy-btn">Copy</button></div>
+
+    <p>Now go back to the main road, which knows nothing about Route A:</p>
+    <div class="codeblock"><pre>git switch main</pre><button class="copy-btn">Copy</button></div>
+
+    <p>And add a different answer to the very same spot &mdash; the end of the same file:</p>
+    <div class="codeblock"><pre>echo "Route B: go over the ridge" &gt;&gt; notes.md</pre><button class="copy-btn">Copy</button></div>
+
+    <p>Commit that too:</p>
+    <div class="codeblock"><pre>git commit -am "Route B"</pre><button class="copy-btn">Copy</button></div>
+
+    <p>Two branches have now written different things in the same place. Force them together:</p>
+    <div class="codeblock"><pre>git merge route-a</pre><button class="copy-btn">Copy</button></div>
+
+    <p>It fails, and the failure is the entire lesson:</p>
+    <div class="codeblock"><pre>Auto-merging notes.md
+CONFLICT (content): Merge conflict in notes.md
+Automatic merge failed; fix conflicts and then commit the result.</pre><button class="copy-btn">Copy</button></div>
+
+    <p>Open the file and look at what git did to it:</p>
+    <div class="codeblock"><pre>cat notes.md</pre><button class="copy-btn">Copy</button></div>
+
+    <p>At the bottom, underneath your ordinary lines, you will find this:</p>
+    <div class="codeblock"><pre>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
+Route B: go over the ridge
+=======
+Route A: go around the lake
+&gt;&gt;&gt;&gt;&gt;&gt;&gt; route-a</pre><button class="copy-btn">Copy</button></div>
+
+    <p>Those three rows of symbols are seven characters each, and they are just fences. Read them like this:</p>
+    <ul>
+      <li><code class="inline">&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD</code> &mdash; everything below this line is what is on the branch you are standing on. <code class="inline">HEAD</code> means <em>where you are now</em>, which is <code class="inline">main</code>.</li>
+      <li><code class="inline">=======</code> &mdash; the divider. Nothing more than that.</li>
+      <li><code class="inline">&gt;&gt;&gt;&gt;&gt;&gt;&gt; route-a</code> &mdash; everything above this line, back to the divider, is what is coming in from the branch named on the end.</li>
+    </ul>
+
+    <p>Your job is to make the file say what you want it to say, and delete all three fence lines. That is it. There is no special command and no correct answer &mdash; keep Route A, keep Route B, keep both, or write a third thing. Git genuinely does not care, which is precisely why it stopped and asked.</p>
+
+    <p>If you want it explained against your actual file rather than this example, ask Claude in that folder:</p>
+    <div class="codeblock"><pre>I have a merge conflict in notes.md. Explain what each part of the conflict is showing me, then help me decide which version to keep.</pre><button class="copy-btn">Copy</button></div>
+
+    <p><strong>Now edit the file.</strong> Open <code class="inline">notes.md</code> in a text editor &mdash; the same way you opened your README on Day 7 &mdash; delete the three fence lines and the route you do not want, and save. If you keep Route B, the last line of the file should simply read <code class="inline">Route B: go over the ridge</code>, with no symbols anywhere near it.</p>
+
+    <div class="callout">
+      <div class="callout-label">Opening a file in an editor from the terminal</div>
+      On a Mac, this opens it in TextEdit:
+      <div class="codeblock"><pre>open -e notes.md</pre><button class="copy-btn">Copy</button></div>
+      On Windows, use this instead:
+      <div class="codeblock"><pre>notepad notes.md</pre><button class="copy-btn">Copy</button></div>
+      If you already use VS Code or another editor, open it however you normally would. Nothing here depends on which editor you pick.
+    </div>
+
+    <p>When the file reads the way you want, tell git you have settled it:</p>
+    <div class="codeblock"><pre>git add notes.md</pre><button class="copy-btn">Copy</button></div>
+
+    <p>Check that git agrees:</p>
+    <div class="codeblock"><pre>git status</pre><button class="copy-btn">Copy</button></div>
+
+    <p>You want to see <em>All conflicts fixed but you are still merging</em>. If instead it still lists <code class="inline">notes.md</code> under <strong>Unmerged paths</strong>, a fence line is still in the file somewhere &mdash; open it again and look.</p>
+
+    <p>Finish the merge:</p>
+    <div class="codeblock"><pre>git commit -m "Resolve conflict between routes"</pre><button class="copy-btn">Copy</button></div>
+
+    <p>And send it to base camp:</p>
+    <div class="codeblock"><pre>git push</pre><button class="copy-btn">Copy</button></div>
+
+    <p>Tidy up the side road, which has served its purpose:</p>
+    <div class="codeblock"><pre>git branch -d route-a</pre><button class="copy-btn">Copy</button></div>
+
+    <div class="callout">
+      <div class="callout-label">The thing nobody tells you</div>
+      A merge conflict is not an error, and you have not broken anything. Git is telling you it found a decision it is not allowed to make on your behalf. That is all a conflict has ever been. The reason it looks frightening is that the symbols are ugly and nobody explains them &mdash; not because anything is wrong.
+    </div>
+
+    <div class="callout">
+      <div class="callout-label">The escape hatch</div>
+      At any point during a conflict, this puts everything back exactly as it was before you typed <code class="inline">git merge</code>:
+      <div class="codeblock"><pre>git merge --abort</pre><button class="copy-btn">Copy</button></div>
+      Git even prints it in the <code class="inline">git status</code> output while a conflict is open. You can walk away from a merge at any time, which is worth knowing before the first one you did not schedule.
+    </div>
+
+    <p><strong>That is the two weeks.</strong> You started with a folder that git had never heard of. You now have a repository with a history, a backup that survives your laptop, a README, a list of things that never leave the building, a branch you took and merged through a reviewed pull request, and an issue that closed itself when the work was done.</p>
+
+    <p>And you finished on the part everyone is most afraid of. You caused a merge conflict deliberately and resolved it in about ten minutes. The next one will arrive unannounced, in the middle of something else, and it will be the same five lines of symbols meaning the same simple thing.</p>
+
+    <p>You will not remember every command here, and you are not supposed to. What you have now is the shape of the thing &mdash; enough to know what to ask for, and enough to recognise the answer when you get it.</p>
+
+    <div class="learned">
+      <div class="learned-label">What you just learned</div>
+      Git shows the disagreement. A person decides. You are now past the thing that stops most people.
+    </div>
+    <button class="complete-btn" data-day="14"><span class="check"></span><span class="label">Mark complete</span></button>
+  </div>
+</article>
 
 </main>
 
