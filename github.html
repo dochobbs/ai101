@@ -219,6 +219,9 @@ aside.sidebar::-webkit-scrollbar-track { background: transparent; }
 
 .nav-day.active .day-num { color: var(--accent); }
 
+/* Anchor links in the "After" group: no dot, label aligned with the day titles */
+.nav-after .day-num { width: calc(18px + 12px + 0.7rem); }
+
 .reset-link {
   display: block;
   margin-top: 1.5rem;
@@ -853,6 +856,12 @@ code.inline {
       <a class="nav-day" href="#day-12" data-day="12"><span class="day-dot"></span><span class="day-num">12</span><span>Presenting the Route</span></a>
       <a class="nav-day" href="#day-13" data-day="13"><span class="day-dot"></span><span class="day-num">13</span><span>The Other Travelers</span></a>
       <a class="nav-day" href="#day-14" data-day="14"><span class="day-dot"></span><span class="day-num">14</span><span>Two Maps, One Disagreement</span></a>
+    </div>
+
+    <div class="nav-phase">
+      <div class="nav-phase-title">After</div>
+      <a class="nav-day nav-after" href="#cheat-sheet"><span class="day-num"></span><span>Cheat sheet</span></a>
+      <a class="nav-day nav-after" href="#troubleshoot"><span class="day-num"></span><span>When things go weird</span></a>
     </div>
   </nav>
 
@@ -1780,6 +1789,167 @@ Route A: go around the lake
     <button class="complete-btn" data-day="14"><span class="check"></span><span class="label">Mark complete</span></button>
   </div>
 </article>
+
+<!-- ═════════ AFTER ═════════ -->
+<section class="afterword">
+  <h2>After the 14 Days</h2>
+  <p>You&rsquo;ve built:</p>
+  <ul>
+    <li><strong>A repository with a history.</strong> Every change dated, signed, and readable in one screen.</li>
+    <li><strong>A copy that outlives the laptop.</strong> Base camp holds the journal whether or not the machine does.</li>
+    <li><strong>A line between what travels and what stays.</strong> The <code class="inline">.gitignore</code> keeps <code class="inline">secrets.txt</code> at home, permanently.</li>
+    <li><strong>A full round trip.</strong> Branch, push, issue, pull request, review, merge, close.</li>
+    <li><strong>A merge conflict you are no longer afraid of,</strong> because you caused one on purpose and it took ten minutes.</li>
+  </ul>
+
+  <p><strong>One piece of housekeeping.</strong> You finished with two folders, and only one of them matters. <code class="inline">~/github-lab</code> is the real repository &mdash; that is the one to open, the one connected to base camp, the one to keep. <code class="inline">~/github-lab-copy</code> was the Day 9 rehearsal, standing in for a colleague&rsquo;s laptop so you could push from one place and pull into another. Everything that was ever in it is already at base camp. Drag it to the Trash whenever you like, or leave it sitting there &mdash; neither choice costs you anything.</p>
+
+  <p>Where to go next, when you&rsquo;re ready:</p>
+  <ul>
+    <li>Run Days 1 through 8 again on a folder of real work &mdash; a talk, a dataset, a set of notes. Private repo, README and <code class="inline">.gitignore</code> before the first push.</li>
+    <li>Clone a public repository you already use and read its <code class="inline">git log --oneline</code>. Someone else&rsquo;s journal is the fastest way to see what a good entry looks like.</li>
+    <li>Add one other person to a private repo and do Day 9 for real &mdash; two laptops instead of two folders. Nothing about the mechanism changes.</li>
+    <li>Put git around the tools you built in <a href="claude-code.html">30 Days to Claude Code</a>, so the things you wrote have a history too.</li>
+  </ul>
+
+  <div class="cheat" id="cheat-sheet">
+    <h3>The commands, in one place</h3>
+
+    <div class="cheat-section">
+      <div class="cheat-section-label">Getting your bearings</div>
+      <dl class="cmd-list">
+        <dt>cd ~/github-lab</dt><dd>Go to the folder with the journal in it</dd>
+        <dt>ls</dt><dd>What&rsquo;s here</dd>
+        <dt>ls -a</dt><dd>What&rsquo;s here, including the hidden files</dd>
+        <dt>cat notes.md</dt><dd>Read a file without opening anything</dd>
+        <dt>git status</dt><dd>Where am I, and what have I changed?</dd>
+        <dt>git branch --show-current</dt><dd>Which road am I standing on?</dd>
+        <dt>git log --oneline</dt><dd>The journal, one line per entry</dd>
+      </dl>
+    </div>
+
+    <div class="cheat-section">
+      <div class="cheat-section-label">Seeing what changed</div>
+      <dl class="cmd-list">
+        <dt>git diff</dt><dd>What have I changed and not yet packed?</dd>
+        <dt>git diff --staged</dt><dd>What is about to go into the next entry?</dd>
+        <dt>git diff main..experiment</dt><dd>How do two roads differ?</dd>
+      </dl>
+    </div>
+
+    <div class="cheat-section">
+      <div class="cheat-section-label">Saving work</div>
+      <dl class="cmd-list">
+        <dt>git add notes.md</dt><dd>Put one file in the bag</dd>
+        <dt>git add .</dt><dd>Put everything you changed in the bag</dd>
+        <dt>git commit -m "what changed"</dt><dd>Write the dated entry</dd>
+        <dt>git commit -am "what changed"</dt><dd>Pack and write in one move. Tracked files only</dd>
+        <dt>git push</dt><dd>Send the new entries to base camp</dd>
+        <dt>git pull</dt><dd>Bring back whatever changed there</dd>
+      </dl>
+    </div>
+
+    <div class="cheat-section">
+      <div class="cheat-section-label">Backing out</div>
+      <dl class="cmd-list">
+        <dt>git restore --staged notes.md</dt><dd>Take a file back out of the bag</dd>
+        <dt>git merge --abort</dt><dd>Put everything back the way it was before the merge</dd>
+      </dl>
+    </div>
+
+    <div class="cheat-section">
+      <div class="cheat-section-label">Side roads</div>
+      <dl class="cmd-list">
+        <dt>git switch -c experiment</dt><dd>Start a side road and step onto it</dd>
+        <dt>git switch main</dt><dd>Go back to the main road</dd>
+        <dt>git merge experiment</dt><dd>Bring a side road into the road you are on</dd>
+        <dt>git branch -d experiment</dt><dd>Delete a road you are finished with</dd>
+      </dl>
+    </div>
+
+    <div class="cheat-section">
+      <div class="cheat-section-label">Base camp</div>
+      <dl class="cmd-list">
+        <dt>gh auth status</dt><dd>Is this terminal still logged in?</dd>
+        <dt>git remote -v</dt><dd>Which base camp does this folder talk to?</dd>
+        <dt>gh repo view --web</dt><dd>Open the repository in a browser</dd>
+        <dt>git push -u origin experiment</dt><dd>Send a new branch up for the first time</dd>
+        <dt>gh issue create --title "..."</dt><dd>Pin a note to the board</dd>
+        <dt>gh issue list</dt><dd>What is still open?</dd>
+        <dt>gh pr create --title "..."</dt><dd>Propose the side road</dd>
+        <dt>gh pr merge --merge --delete-branch</dt><dd>Accept it and tidy up after</dd>
+        <dt>git clone URL folder-name</dt><dd>Copy a whole repository, journal and all</dd>
+      </dl>
+    </div>
+
+    <div class="cheat-section">
+      <div class="cheat-section-label">Things to say when you&rsquo;re stuck</div>
+      <dl class="cmd-list">
+        <dt>&ldquo;Explain this git status output line by line.&rdquo;</dt><dd></dd>
+        <dt>&ldquo;What is this error actually telling me?&rdquo;</dt><dd></dd>
+        <dt>&ldquo;Is this safe to run in this folder?&rdquo;</dt><dd></dd>
+        <dt>&ldquo;Help me undo my last commit. I have not pushed it.&rdquo;</dt><dd></dd>
+        <dt>&ldquo;What would happen if I ran this?&rdquo;</dt><dd></dd>
+      </dl>
+    </div>
+  </div>
+
+  <div class="weird" id="troubleshoot">
+    <h3>When things go weird</h3>
+    <ul class="weird-list">
+      <li>
+        <div class="weird-q">It says &ldquo;fatal: not a git repository.&rdquo;</div>
+        <div class="weird-a">You are standing in the wrong folder. <code class="inline">pwd</code> prints where you currently are; <code class="inline">cd ~/github-lab</code> takes you back to the one with the journal in it.</div>
+      </li>
+      <li>
+        <div class="weird-q">It says &ldquo;Please tell me who you are.&rdquo;</div>
+        <div class="weird-a">Git will not sign an entry it cannot attribute. Run the two <code class="inline">git config --global</code> lines from Day 0, then commit again.</div>
+      </li>
+      <li>
+        <div class="weird-q">It asked me for a username and password and rejected them.</div>
+        <div class="weird-a">GitHub stopped accepting passwords for this in 2021. Run <code class="inline">gh auth login</code> again; that replaces the password entirely.</div>
+      </li>
+      <li>
+        <div class="weird-q">My push was rejected.</div>
+        <div class="weird-a">Someone pushed first &mdash; probably you, from another folder. Run <code class="inline">git pull</code>, deal with anything it flags, then push again.</div>
+      </li>
+      <li>
+        <div class="weird-q">It says the current branch has no upstream branch.</div>
+        <div class="weird-a">Git knows where base camp is, but has not been told this new branch belongs there. Run <code class="inline">git push -u origin BRANCH</code> once &mdash; git prints the exact line, already filled in &mdash; and plain <code class="inline">git push</code> works from then on.</div>
+      </li>
+      <li>
+        <div class="weird-q">It refuses to pull and says something about divergent branches.</div>
+        <div class="weird-a">You committed in two places before pulling, and git will not guess how to combine them. Run <code class="inline">git config pull.rebase false</code> once, then pull again. Nothing is lost while you decide.</div>
+      </li>
+      <li>
+        <div class="weird-q">I committed something I shouldn&rsquo;t have.</div>
+        <div class="weird-a">If it has not been pushed, ask Claude to help you undo the last commit. If it has been pushed and it was a key or a password, go revoke the key first. Deleting the file in a later commit does not remove it from the history.</div>
+      </li>
+      <li>
+        <div class="weird-q">I committed, and my new file wasn&rsquo;t in it.</div>
+        <div class="weird-a"><code class="inline">git commit -am</code> only packs files git already tracks. A brand-new file needs <code class="inline">git add</code> first. <code class="inline">git status</code> will show it sitting there, untracked.</div>
+      </li>
+      <li>
+        <div class="weird-q">I&rsquo;m on a branch and I don&rsquo;t know how I got here.</div>
+        <div class="weird-a"><code class="inline">git status</code> tells you which branch you are on. <code class="inline">git switch main</code> takes you home, and nothing about your files changes on the way.</div>
+      </li>
+      <li>
+        <div class="weird-q">I have two folders and I don&rsquo;t know which one is real.</div>
+        <div class="weird-a"><code class="inline">~/github-lab</code> is the real one. <code class="inline">~/github-lab-copy</code> was the Day 9 rehearsal, standing in for someone else&rsquo;s laptop. Everything in it is already at base camp, so dragging it to the Trash is safe, and leaving it there is fine too.</div>
+      </li>
+      <li>
+        <div class="weird-q">It opened a text editor I don&rsquo;t recognise and I can&rsquo;t get out.</div>
+        <div class="weird-a">That is vim. Type <code class="inline">:q!</code> and press Enter. It shows up when you run <code class="inline">git commit</code> without <code class="inline">-m</code>, which is why every command here includes one. This happens to everyone exactly once.</div>
+      </li>
+      <li>
+        <div class="weird-q">My question isn&rsquo;t on this list.</div>
+        <div class="weird-a">Ask <strong>Echs</strong> &mdash; the chat button on this page. Or ask Claude in the terminal, in the folder where it happened: it can read the error and the repository at the same time, which is more than this page can do.</div>
+      </li>
+    </ul>
+  </div>
+
+  <p class="closing">The journal is yours, base camp is somewhere you can find it again, and the point was never that you would remember the commands. It is that you can now try the risky thing, because you know how to get back.</p>
+</section>
 
 </main>
 
