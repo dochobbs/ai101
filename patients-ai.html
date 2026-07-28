@@ -290,13 +290,15 @@
       <h3 id="chatgpt-health">The Patient Whose AI Has Read the Chart</h3>
 
       <p>
-        On <strong>July 23, 2026</strong>, OpenAI moved
+        On <strong>July 23, 2026</strong>, OpenAI began rolling
         <a href="https://openai.com/index/health-in-chatgpt/" target="_blank" rel="noopener">Health in ChatGPT</a>
-        out of the limited January waitlist and into general availability for every logged-in
-        US user 18 and over, on web and iOS, across the Free, Go, Plus, and Pro tiers. Patients
-        can connect Apple Health, supported US hospital medical records (brokered through
-        b.well, the same pipe behind Perplexity Health), One Medical, and Function Health,
-        alongside consumer apps like MyFitnessPal and Peloton.
+        out of its limited January pilot and toward the general US user base. OpenAI&rsquo;s own
+        wording is worth keeping: it is <em>&ldquo;beginning to roll out Health to logged-in
+        ChatGPT users 18 and older in the U.S. on web and iOS across Free, Go, Plus, and Pro
+        plans.&rdquo;</em> A staged rollout, not a switch thrown for everyone at once&mdash;so
+        assume some of your patients have it and some do not. Connectable sources are Apple
+        Health, supported medical records from US hospital systems (brokered through b.well,
+        the same pipe behind Perplexity Health), One Medical, and Function Health.
       </p>
 
       <p>
@@ -310,23 +312,30 @@
       </p>
 
       <p>
-        One design detail governs how often this comes up. In the pilot, OpenAI found that
-        <strong>more than 70% of health-related conversations happened outside</strong> the
-        dedicated Health space, so the separate space was dropped. Health context can now
-        surface anywhere in ChatGPT, permission-gated&mdash;ask-each-time by default, with an
-        &ldquo;always allow&rdquo; option. Patients are not making a deliberate trip to a
-        health product. The health product is wherever they already were.
+        One design detail governs how often this comes up. Among pilot users,
+        <strong>more than 70% of health-related conversations took place outside</strong> the
+        dedicated health experience, which OpenAI concluded had &ldquo;added an unnecessary
+        step.&rdquo; The space itself did not go away&mdash;Health &ldquo;remains your home base
+        for connecting and managing your information&rdquo; in the left sidebar. What was
+        removed is the <em>requirement to start there</em>. Connected health context can now be
+        drawn on anywhere in ChatGPT, permission-gated: ask-each-time by default, with an
+        &ldquo;always allow&rdquo; option. Patients are not making a deliberate trip to a health
+        product. The health product reaches into wherever they already were.
       </p>
 
       <p>
         OpenAI is explicit about the boundary, and the language is worth knowing verbatim
-        because patients rarely read it: <em>&ldquo;Health is designed to support, not replace,
-        medical care. It is not intended for diagnosis or treatment.&rdquo;</em> The company
-        also states that <em>&ldquo;connected information may not always be complete or
-        current, for example, a medication may remain listed after you stop taking
-        it.&rdquo;</em> The product was built over roughly two years with input from more than
-        260 physicians in 60 countries and evaluated on HealthBench and HealthBench
-        Professional; the Free tier runs on GPT-5.5 Instant, paid tiers on GPT-5.6 Sol.
+        because patients rarely read it. From the July launch post:
+        <em>&ldquo;ChatGPT can still make mistakes and does not replace the care and judgment
+        of qualified medical professionals.&rdquo;</em> And on the record itself:
+        <em>&ldquo;Connected information may not always be complete or current, for example, a
+        medication may remain listed after you stop taking it.&rdquo;</em> The blunter
+        formulation&mdash;<em>&ldquo;It is not intended for diagnosis or treatment&rdquo;</em>&mdash;comes
+        from the earlier
+        <a href="https://openai.com/index/introducing-chatgpt-health/" target="_blank" rel="noopener">January 2026 announcement</a>,
+        not the July one. OpenAI says it worked with hundreds of physicians worldwide on the
+        evaluation rubrics, and that every GPT-5.6 model outperformed GPT-5.5 on HealthBench
+        Professional. The Free tier runs on GPT-5.5 Instant, paid tiers on GPT-5.6 Sol.
       </p>
 
       <p>
@@ -343,10 +352,14 @@
         On privacy, be precise rather than reflexive. OpenAI states that connected medical
         records and Apple Health data, and the conversations that use them, are <em>&ldquo;not
         used to train our foundation models or target ads, regardless of the model-training
-        setting you choose for ChatGPT&rdquo;</em>&mdash;an unconditional carve-out, and a real
-        one. Disconnecting a source deletes synced data within 30 days, though anything already
-        in conversation history persists until those conversations are deleted. What none of
-        that does is make the arrangement HIPAA-regulated.
+        setting you choose for ChatGPT&rdquo;</em>&mdash;while conversations that do
+        <em>not</em> use connected data follow whatever training setting the account already
+        has. As written, that carve-out is unusually broad. It is also a vendor commitment
+        rather than an audited one, so report it to patients as what OpenAI states, not as
+        something anyone has verified. OpenAI further says disconnecting a source deletes
+        synced data within 30 days, though anything already in conversation history persists
+        until those conversations are deleted. What none of it does is make the arrangement
+        HIPAA-regulated.
       </p>
 
       <div class="callout callout-warning">
@@ -1130,14 +1143,15 @@
       </div>
 
       <div class="callout callout-info">
-        <div class="callout-title">July 2026 Update: ChatGPT Health Reaches General Availability</div>
+        <div class="callout-title">July 2026 Update: ChatGPT Health Opens to US Users</div>
         <p>
-          <strong>July 23, 2026.</strong> OpenAI moved
+          <strong>July 23, 2026.</strong> OpenAI began rolling
           <a href="https://openai.com/index/health-in-chatgpt/" target="_blank" rel="noopener">Health in ChatGPT</a>
-          out of the limited January waitlist noted above and into general availability for all
-          logged-in US users 18 and over&mdash;web and iOS, Free, Go, Plus, and Pro. The company
-          says more than <strong>300 million people per week</strong> already bring health
-          questions to ChatGPT, up from over 230 million when the pilot opened in January.
+          out of the limited January pilot noted above to logged-in US users 18 and over&mdash;web
+          and iOS, Free, Go, Plus, and Pro. It is a staged rollout in OpenAI&rsquo;s own words
+          (&ldquo;beginning to roll out&rdquo;), so patient access will be uneven for a while.
+          The company says more than <strong>300 million people per week</strong> already bring
+          health questions to ChatGPT, up from over 230 million when the pilot opened in January.
         </p>
         <p class="mb-0">
           What changes inside the visit&mdash;connected portal records, the stale-medication-list
