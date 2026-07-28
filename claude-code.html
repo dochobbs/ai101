@@ -16,40 +16,23 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
 <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Source+Sans+3:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
 <style>
-/* VC Honey — self-hosted display serif, three optical sizes. Banner is drawn
-   for hero-scale type, Deck for section headings, plain Honey for anything at
-   or below about 1.25rem. Weight 500 resolves to Regular by design (Honey has
-   no Medium); 600 resolves to SemiBold. */
+/* Sharp Serif Text — self-hosted display serif, headings only. Converted from
+   the licensed OTF to woff2 and subset to Latin-1 plus the typographic marks
+   this site uses: 453KB of OTF becomes 28KB. Only Medium is licensed, so it is
+   declared across 400-600 and font-synthesis is off — with one weight the
+   browser would otherwise fake the bold by smearing, which looks bad on a
+   high-contrast serif. Hierarchy comes from size. */
 @font-face {
-  font-family: 'Honey';
-  src: url('fonts/Honey-Regular.woff2') format('woff2');
-  font-weight: 400 500; font-style: normal; font-display: swap;
+  font-family: 'Sharp Serif';
+  src: url('fonts/SharpSerifText-Medium.woff2') format('woff2');
+  font-weight: 400 600; font-style: normal; font-display: swap;
 }
 @font-face {
-  font-family: 'Honey';
-  src: url('fonts/Honey-SemiBold.woff2') format('woff2');
-  font-weight: 600; font-style: normal; font-display: swap;
+  font-family: 'Sharp Serif';
+  src: url('fonts/SharpSerifText-MediumItalic.woff2') format('woff2');
+  font-weight: 400 600; font-style: italic; font-display: swap;
 }
-@font-face {
-  font-family: 'Honey Deck';
-  src: url('fonts/Honey-RegularDeck.woff2') format('woff2');
-  font-weight: 400 500; font-style: normal; font-display: swap;
-}
-@font-face {
-  font-family: 'Honey Deck';
-  src: url('fonts/Honey-SemiBoldDeck.woff2') format('woff2');
-  font-weight: 600; font-style: normal; font-display: swap;
-}
-@font-face {
-  font-family: 'Honey Banner';
-  src: url('fonts/Honey-RegularBanner.woff2') format('woff2');
-  font-weight: 400 500; font-style: normal; font-display: swap;
-}
-@font-face {
-  font-family: 'Honey Banner';
-  src: url('fonts/Honey-SemiBoldBanner.woff2') format('woff2');
-  font-weight: 600; font-style: normal; font-display: swap;
-}
+h1, h2, h3, h4, h5, h6 { font-synthesis: none; }
 </style>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%231e293b'/%3E%3Ctext x='16' y='23' font-family='ui-monospace,monospace' font-size='17' font-weight='700' fill='%23fb923c' text-anchor='middle'%3E30%3C/text%3E%3C/svg%3E">
 <meta name="theme-color" content="#0f172a">
@@ -72,9 +55,9 @@
   --line-strong: #cbd5e1;   /* slate-400 */
   --success: #16a34a;
 
-  --serif: "Honey", Georgia, serif;
-  --serif-deck: "Honey Deck", "Honey", Georgia, serif;
-  --serif-banner: "Honey Banner", "Honey", Georgia, serif;
+  --serif: "Sharp Serif", Georgia, serif;
+  --serif-deck: "Sharp Serif", Georgia, serif;
+  --serif-banner: "Sharp Serif", Georgia, serif;
   --sans: "Source Sans 3", -apple-system, BlinkMacSystemFont, sans-serif;
   --mono: "JetBrains Mono", "SF Mono", Menlo, ui-monospace, monospace;
 
@@ -722,7 +705,7 @@ dl.cmd-list dd { color: var(--ink-soft); }
    dark code blocks, split-pill brand badge.
    ===================================================================== */
 
-/* Body becomes Source Sans; headings stay Honey */
+/* Body becomes Source Sans; headings stay Sharp Serif */
 body {
   font-family: var(--sans);
   font-feature-settings: normal;
@@ -740,7 +723,7 @@ h3.day-title,
   font-family: var(--serif);
   color: var(--heading);
 }
-/* Honey optical sizes, matched to the size each heading actually renders at. */
+/* Sharp Serif has one cut here, so these all resolve to the same family. */
 h1.title { font-family: var(--serif-banner); }
 .brand,
 h2.phase-title,

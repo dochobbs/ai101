@@ -5,61 +5,47 @@
 /* Import distinctive fonts */
 @import url('https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500;700&display=swap');
 
-/* VC Honey — self-hosted display serif, three optical sizes.
-   Honey Banner is drawn for hero-scale type, Honey Deck for section
-   headings, and plain Honey for anything at or below 1.25rem. Pick the
-   family that matches the rendered size; do not stretch one cut across
-   the whole range. Weight 500 resolves to Regular by design — Honey has
-   no Medium — and 600 resolves to SemiBold. */
+/* Sharp Serif Text — self-hosted display serif, headings only.
+   Converted from the licensed OTF to woff2 and subset to Latin-1 plus the
+   typographic marks this site actually uses (curly quotes, dashes, arrows,
+   ellipsis): 453KB of OTF becomes 28KB. 264 glyphs.
+
+   Only one weight is licensed here — Medium — so it is declared across the
+   400-600 range that the site's headings ask for. `font-synthesis` is off
+   deliberately: with a single weight the browser would otherwise fake the
+   600 by smearing the strokes, which looks bad on a high-contrast serif.
+   Heading hierarchy comes from size, not weight.
+
+   The -deck and -banner variables are kept pointing at the same family so
+   the ~15 rules that reference them keep working. Sharp Serif Text has no
+   optical-size cuts; if a Display or Deck cut is licensed later, only these
+   @font-face blocks and the two variables need to change. */
 @font-face {
-  font-family: 'Honey';
-  src: url('fonts/Honey-Regular.woff2') format('woff2');
-  font-weight: 400 500;
+  font-family: 'Sharp Serif';
+  src: url('fonts/SharpSerifText-Medium.woff2') format('woff2');
+  font-weight: 400 600;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
-  font-family: 'Honey';
-  src: url('fonts/Honey-SemiBold.woff2') format('woff2');
-  font-weight: 600;
-  font-style: normal;
+  font-family: 'Sharp Serif';
+  src: url('fonts/SharpSerifText-MediumItalic.woff2') format('woff2');
+  font-weight: 400 600;
+  font-style: italic;
   font-display: swap;
 }
-@font-face {
-  font-family: 'Honey Deck';
-  src: url('fonts/Honey-RegularDeck.woff2') format('woff2');
-  font-weight: 400 500;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: 'Honey Deck';
-  src: url('fonts/Honey-SemiBoldDeck.woff2') format('woff2');
-  font-weight: 600;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: 'Honey Banner';
-  src: url('fonts/Honey-RegularBanner.woff2') format('woff2');
-  font-weight: 400 500;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: 'Honey Banner';
-  src: url('fonts/Honey-SemiBoldBanner.woff2') format('woff2');
-  font-weight: 600;
-  font-style: normal;
-  font-display: swap;
+
+h1, h2, h3, h4, h5, h6,
+.hero-ribbon, .week-title, .phase-title {
+  font-synthesis: none;
 }
 
 /* CSS Variables */
 :root {
   /* Typography */
-  --font-display: 'Honey', Georgia, serif;
-  --font-display-deck: 'Honey Deck', 'Honey', Georgia, serif;
-  --font-display-banner: 'Honey Banner', 'Honey', Georgia, serif;
+  --font-display: 'Sharp Serif', Georgia, serif;
+  --font-display-deck: 'Sharp Serif', Georgia, serif;
+  --font-display-banner: 'Sharp Serif', Georgia, serif;
   --font-body: 'Source Sans 3', -apple-system, BlinkMacSystemFont, sans-serif;
   --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
   
