@@ -565,6 +565,146 @@
 
       <hr>
 
+      <!-- Beyond the Big Three -->
+      <h2 id="beyond-big-three">Beyond the Big Three</h2>
+
+      <p>
+        This page covers three platforms because they are the ones with mature
+        clinical-privacy pathways and the longest safety track records. But two things
+        outside them now generate more hallway and exam-room questions than anything in the
+        tables above: <strong>Grok</strong>, and <strong>the Chinese AI labs</strong>.
+        Neither changes the practical recommendation on this page. Both are worth
+        understanding&mdash;for different reasons.
+      </p>
+
+      <h3>Grok: The AI Your Patients Are Using</h3>
+
+      <p>
+        <strong>Grok</strong> is the model built by xAI&mdash;folded into SpaceX in February
+        2026&mdash;and it lives where its users live: inside X, in a standalone app, and
+        behind an API. The current flagship is <strong>Grok 4.6</strong> (August 12, 2026).
+        Notably, xAI has no healthcare product and no medical vertical; its named enterprise
+        markets are customer support, legal, security, and government. The medical story is
+        entirely organic&mdash;and promoted from the very top. Elon Musk has repeatedly told
+        X&rsquo;s users to upload their medical imaging: &ldquo;you can upload your X-rays or
+        MRI images to Grok and it will give you a medical diagnosis&rdquo; in late 2024, and
+        again in February 2026&mdash;&ldquo;just take a picture of your medical data or upload
+        the file to get a second opinion from Grok.&rdquo;
+        <a href="https://www.forbes.com/sites/maryroeloffs/2026/02/18/elon-musk-keeps-telling-people-to-use-ai-for-medical-advice-but-grok-says-not-to/" target="_blank" rel="noopener">[Forbes]</a>
+      </p>
+
+      <p>
+        Two facts to hold at once. <strong>First: the popularity is real, but it is your
+        patients, not your colleagues.</strong> Roughly one in six US adults now asks a
+        chatbot health questions at least monthly&mdash;yet no physician survey measures any
+        Grok adoption at all. The
+        <a href="https://www.ama-assn.org/practice-management/digital-health/more-80-physicians-use-ai-professionally-ama-survey" target="_blank" rel="noopener">AMA&rsquo;s 2026 survey</a>
+        found 81% of physicians using AI professionally and named exactly one tool
+        (OpenEvidence); Doximity&rsquo;s and Sermo&rsquo;s physician surveys never mention
+        Grok. <strong>Second: the capability picture whiplashes with the task.</strong> On a
+        public USMLE Step 1 question set, Grok scored best of the five models tested
+        (91.6%)&mdash;<a href="https://ai.jmir.org/2026/1/e76928" target="_blank" rel="noopener">the study its fans cite</a>.
+        On fifty expert-level radiology spot diagnoses&mdash;the exact use being
+        promoted&mdash;Grok-4 answered <strong>12% correctly against radiologists&rsquo;
+        83%</strong>, near the bottom of the frontier pack.
+        <a href="https://arxiv.org/abs/2509.25559" target="_blank" rel="noopener">[Preprint]</a>
+        Physician tests of real uploaded scans have found it mistaking tuberculosis for a
+        herniated disk.
+        <a href="https://fortune.com/2024/11/20/elon-musk-x-user-medical-information-privacy-ai-grok" target="_blank" rel="noopener">[Fortune]</a>
+      </p>
+
+      <p>
+        The PHI posture is the part to be able to recite. Consumer Grok <strong>trains on
+        your conversations by default</strong> (opt-out in settings), and
+        <a href="https://x.ai/legal/privacy-policy" target="_blank" rel="noopener">xAI&rsquo;s own privacy policy</a>
+        asks users not to submit health information at all. In August 2025, roughly
+        <strong>370,000 shared Grok conversations&mdash;medical questions
+        included&mdash;were indexed by Google</strong> because share links carried no
+        search-engine protection; shareable links remain a promoted feature. Asked directly
+        on X, Grok itself answered that it is &ldquo;not a medical professional or HIPAA
+        compliant.&rdquo; A BAA path does exist&mdash;but it is API-only, by application,
+        and requires xAI&rsquo;s zero-data-retention tier. It does not cover the Grok app,
+        grok.com, or Grok inside X, which are precisely the surfaces patients are being
+        pointed at. So the takeaway matches
+        <a href="patients-ai.html">When Patients Bring AI to the Exam Room</a>: expect Grok
+        readings of labs and imaging to walk in the door, engage with them the way you would
+        any patient research, and keep PHI out of it on your side of the encounter.
+      </p>
+
+      <h3>The Chinese Labs: Convergence, Price, and Open Weights</h3>
+
+      <p>
+        The other question&mdash;<em>should I care about DeepSeek, Kimi, GLM,
+        Qwen?</em>&mdash;got louder in July 2026, when Moonshot&rsquo;s <strong>Kimi
+        K3</strong> release knocked roughly a percent off the Nasdaq in a day and had
+        commentators declaring a second DeepSeek moment.
+        <a href="https://fortune.com/2026/07/17/china-moonshot-kimi-k3-markets-china-ai/" target="_blank" rel="noopener">[Fortune]</a>
+        The convergence is real: on Artificial Analysis&rsquo;s
+        <a href="https://artificialanalysis.ai/models" target="_blank" rel="noopener">independent index</a>,
+        K3 scores 60 against Claude Opus 5&rsquo;s 63, Fable 5&rsquo;s 62, and GPT-5.6
+        Sol&rsquo;s 61&mdash;the closest an open-weight model has ever sat to the closed
+        frontier&mdash;and in nearly every month of 2026 the best open-weight model in the
+        world has been Chinese.
+        <a href="https://huggingface.co/blog/state-of-open-models-summer-2026" target="_blank" rel="noopener">[Hugging Face]</a>
+        &ldquo;China has taken the lead&rdquo; overstates it for the closed frontier; for
+        open weights it is simply true. Look at who is actually paying, though, and the
+        adoption is <strong>price, not preference</strong>: on one major developer gateway,
+        DeepSeek&rsquo;s share of tokens jumped from under 1% to 17% in a single month while
+        its share of <em>revenue</em> stayed near 1%&mdash;teams route cheap, low-stakes
+        work to it and keep the frontier models for what matters.
+        <a href="https://restofworld.org/2026/when-americans-choose-chinese-ai/" target="_blank" rel="noopener">[Rest of World]</a>
+      </p>
+
+      <p>
+        For clinical use, six facts do most of the work:
+      </p>
+
+      <ul>
+        <li><strong>The hosted APIs send your data to China.</strong> DeepSeek&rsquo;s own
+        privacy policy says it plainly: data is collected, processed, and stored
+        &ldquo;in People&rsquo;s Republic of China.&rdquo; No Chinese lab offers a BAA.
+        Patient information into any of these apps or APIs is an impermissible disclosure,
+        full stop.
+        <a href="https://cdn.deepseek.com/policies/en-US/deepseek-privacy-policy.html" target="_blank" rel="noopener">[Policy]</a></li>
+        <li><strong>The model is not the API.</strong> The same open weights are served
+        US-hosted by American clouds&mdash;Amazon Bedrock, Azure AI Foundry, Google
+        Vertex&mdash;where the BAA is with the cloud provider and data stays in the US
+        cloud. A platform BAA makes a service HIPAA-<em>eligible</em>, not a deployment
+        compliant, and model catalogs churn&mdash;verify the specific pairing before
+        building on one.</li>
+        <li><strong>Open does not mean runnable.</strong> K3 is 2.8 trillion parameters of
+        multi-node datacenter hardware. The realistic self-host tier is
+        Qwen3.8-27B (plain Apache 2.0) or DeepSeek V4-Flash&mdash;see
+        <a href="local-models.html">Running AI Models Locally</a>.</li>
+        <li><strong>Open no longer reliably means MIT.</strong> Kimi K3 and Qwen&rsquo;s
+        flagship carry bespoke licenses with revenue-triggered terms; GLM-5.2 is genuinely
+        MIT. Read the license that shipped.</li>
+        <li><strong>The medical evidence is China-centric and a generation old.</strong>
+        DeepSeek-R1 scored 96% on the Chinese National Medical Licensing Exam&mdash;in
+        Chinese, against GPT-4o&rsquo;s 75%&mdash;a language-and-training asymmetry that
+        cuts both ways.
+        <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC12663704/" target="_blank" rel="noopener">[JMIR Med Educ]</a>
+        No physician-rubric evaluation of the current generation exists in either
+        direction.</li>
+        <li><strong>No enacted rule restricts your use of them.</strong> The US bans are
+        public-sector device and procurement rules (Navy, NASA, Commerce bureaus; Texas,
+        New York, Virginia state devices). Zhipu&rsquo;s Entity List placement restricts US
+        exports <em>to</em> Zhipu&mdash;it does not prohibit Americans from using GLM
+        models. Bills that would go further have not passed.</li>
+      </ul>
+
+      <p>
+        And the adoption reality-check: <strong>no documented US health system runs any of
+        these models</strong>, while DeepSeek was deployed locally in roughly 90 Chinese
+        tertiary hospitals by mid-2025. American clinicians are reading about these models,
+        not practicing with them. The reasons to watch anyway are the two that compound:
+        price pressure on the frontier vendors you do use, and a self-host trajectory that
+        makes on-prem clinical AI more plausible every quarter.
+        <a href="https://restofworld.org/2026/silicon-valley-debate-chinese-open-weight-ai-models/" target="_blank" rel="noopener">[Rest of World]</a>
+      </p>
+
+      <hr>
+
       <!-- Just Pick One -->
       <h2>Just Pick One and Start</h2>
 
@@ -680,7 +820,7 @@
       </p>
       <ul>
         <li>A clinical note format that one model version struggled with might work perfectly in the next</li>
-        <li>A type of analysis that frustrated you might become seamless after an upgrade</li>
+        <li>A type of analysis that frustrated you might work smoothly after an upgrade</li>
         <li>Conversely, a workflow you'd perfected might break when the model changes</li>
       </ul>
       <p>
@@ -1339,30 +1479,30 @@
         <h4>Notes</h4>
         <ol class="footnote-list">
           <li id="fn1">
-            <strong>Why not Grok?</strong> You may wonder why xAI's Grok isn't included here.
-            While Grok has some capable underlying technology, we don't recommend it for clinical
-            use due to significant concerns about accuracy and safety guardrails.
+            <strong>Why not Grok?</strong> You may wonder why xAI&rsquo;s Grok isn&rsquo;t
+            one of the platforms covered here. The current picture is in
+            <a href="#beyond-big-three">Beyond the Big Three</a> above; the short version is
+            that the technology is capable but there is no clinical-privacy pathway on any
+            surface people actually use.
             <p>
-              In early 2025, Grok generated and spread false information about prominent public
-              figures, including fabricated claims about an NBA owner that were widely amplified
-              on X (formerly Twitter). The system was also found to produce misleading election-related
-              content and struggled with basic factual queries where other models performed reliably.
-              Independent evaluations have noted that Grok's safety measures are notably weaker than
-              those of ChatGPT, Claude, or Gemini—the model is more likely to generate harmful content
-              when prompted.
-            </p>
-            <p>
-              For clinical applications where accuracy and appropriate guardrails matter, these
-              issues are disqualifying. The three platforms covered in this module have demonstrated
-              more robust approaches to safety and factual accuracy—though as we discuss throughout,
-              all AI outputs require verification.
+              When this page was first written, the disqualifiers were 2024&ndash;2025
+              misinformation incidents and independent evaluations finding weaker guardrails
+              than ChatGPT, Claude, or Gemini. As of August 2026 the sharper reasons are
+              different: consumer Grok trains on conversations by default and xAI&rsquo;s own
+              privacy policy asks users not to submit health information; roughly 370,000
+              shared conversations&mdash;medical content included&mdash;were indexed by
+              Google in August 2025; the only BAA path is API-only with a zero-data-retention
+              tier, covering none of the consumer surfaces; and on expert-level diagnostic
+              imaging&mdash;the use its owner promotes&mdash;Grok-4 scored 12% against
+              radiologists&rsquo; 83%, near the bottom of the frontier pack.
             </p>
             <p class="footnote-refs">
               <strong>References:</strong><br>
-              Newsweek. "<a href="https://www.newsweek.com/mark-cuban-elon-musk-ai-bot-1944043">Mark Cuban Confronts Elon Musk Using His Own AI Bot</a>." 2025.<br>
-              Axios. "<a href="https://www.axios.com/2024/08/05/elon-musk-grok-2024-election-ballot-misinformation">Musk's AI chatbot spread election misinformation, secretaries of state say</a>." August 2024.<br>
-              Center for Countering Digital Hate. "<a href="https://counterhate.com/research/grok-ai-election-disinformation/">Grok AI Election Disinformation</a>." 2024.<br>
-              Palo Alto Networks Unit 42. "<a href="https://unit42.paloaltonetworks.com/comparing-llm-guardrails-across-genai-platforms/">How Good Are the LLM Guardrails on the Market?</a>." 2024.
+              Forbes. "<a href="https://www.forbes.com/sites/maryroeloffs/2026/02/18/elon-musk-keeps-telling-people-to-use-ai-for-medical-advice-but-grok-says-not-to/">Elon Musk Keeps Telling People To Use AI For Medical Advice&mdash;But Grok Says Not To</a>." February 2026.<br>
+              xAI. "<a href="https://x.ai/legal/privacy-policy">Privacy Policy</a>." Effective April 2026.<br>
+              JMIR AI. "<a href="https://ai.jmir.org/2026/1/e76928">Performance of 5 Large Language Models on the NBME Free 120</a>." 2026.<br>
+              arXiv. "<a href="https://arxiv.org/abs/2509.25559">RadLE: Radiology Last Exam&mdash;Benchmarking Frontier Multimodal AI Against Human Experts</a>." September 2025 (preprint).<br>
+              Axios. "<a href="https://www.axios.com/2024/08/05/elon-musk-grok-2024-election-ballot-misinformation">Musk's AI chatbot spread election misinformation, secretaries of state say</a>." August 2024.
             </p>
             <a href="#fnref1" class="footnote-back">↩</a>
           </li>
@@ -1393,7 +1533,7 @@
   <footer class="footer">
     <div class="footer-inner">
       <div><strong>AI 101</strong> · A Self-Paced Guide to AI in Medicine</div>
-      <div><a href="updates.html">v1.14 · 2026</a></div>
+      <div><a href="updates.html">v1.14.1 · 2026</a></div>
     </div>
   </footer>
 
