@@ -30,7 +30,7 @@ The site is organized into four sections driven by [index.html](index.html):
 - [whats-next.html](whats-next.html) — So...What Next?
 - [vibe-coding.html](vibe-coding.html) — Vibe Coding
 - [ai-tools-mcp.html](ai-tools-mcp.html) — How AI Talks to Your Tools (APIs, MCP)
-- [openclaw.html](openclaw.html) — OpenClaw (autonomous agent risk)
+- [openclaw.html](openclaw.html) — AI agents introduction and OpenClaw/Hermes security case studies
 
 **Resources** — supporting content
 - [ai-news.html](ai-news.html) — Ongoing news feed (+ [ai-news-feed.xml](ai-news-feed.xml) RSS)

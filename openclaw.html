@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>OpenClaw, Hermes, and AI Agents—What's Running on Your Machine | AI 101</title>
-  <meta name="description" content="OpenClaw and Hermes Agent: autonomous-agent risk, supply-chain attacks, memory poisoning, and why your API keys, credentials, and PHI are at risk from agentic AI.">
+  <title>AI Agents: From Answers to Actions | AI 101</title>
+  <meta name="description" content="What AI agents do, why Muse, Instinct, Hermes, and OpenClaw are attracting attention, and how clinicians can use agents with appropriate oversight and data boundaries.">
   <link rel="canonical" href="https://ai101.health/openclaw.html">
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://ai101.health/openclaw.html">
-  <meta property="og:title" content="OpenClaw, Hermes, and AI Agents—What's Running on Your Machine | AI 101">
-  <meta property="og:description" content="OpenClaw and Hermes Agent: autonomous-agent risk, supply-chain attacks, memory poisoning, and why your API keys, credentials, and PHI are at risk from agentic AI.">
+  <meta property="og:title" content="AI Agents: From Answers to Actions | AI 101">
+  <meta property="og:description" content="What AI agents do, why Muse, Instinct, Hermes, and OpenClaw are attracting attention, and how clinicians can use agents with appropriate oversight and data boundaries.">
   <meta property="og:image" content="https://ai101.health/og-image.png">
   <meta property="og:site_name" content="AI 101">
   <meta name="twitter:card" content="summary_large_image">
@@ -49,13 +49,12 @@
     <article class="content content-wide">
 
       <header class="unit-header">
-        <span class="unit-label bonus">USING AI</span>
-        <h1 class="unit-title">OpenClaw &amp; Hermes</h1>
+        <span class="unit-label bonus">WHAT'S NEXT</span>
+        <h1 class="unit-title">AI Agents: From Answers to Actions</h1>
         <p class="unit-subtitle">
-          The two AI agent frameworks that defined 2026&mdash;OpenClaw&rsquo;s viral rise from
-          Clawdbot to Moltbot, and Hermes Agent&rsquo;s persistent cross-session memory&mdash;and
-          why autonomous agents running on your machine put API keys, credentials, and patient
-          data at risk.
+          An agent can pursue a goal across steps, use tools, remember context, and sometimes
+          act while you are away. Learn why that is useful, what access it requires, and where
+          clinicians should keep a human decision-maker in the loop.
         </p>
         <div class="unit-meta">
           <span class="unit-meta-item">
@@ -63,14 +62,109 @@
             ~40 min read
           </span>
           <span class="unit-meta-item">
-            <i data-lucide="shield-alert"></i>
-            Security Focus
+            <i data-lucide="bot"></i>
+            Agents &amp; Safety
           </span>
         </div>
       </header>
 
+      <h2>From Chat to Action</h2>
+
+      <p>
+        A chatbot responds to a prompt. An <strong>AI agent</strong> can take a goal,
+        choose steps, use tools, inspect the results, and continue until it reaches a stopping
+        point or needs your approval. It may have memory, access to apps, or a schedule that
+        lets it work after you close the conversation. There is no single industry definition:
+        products use the word <em>agent</em> for different levels of independence.
+      </p>
+
+      <p>
+        Imagine asking for a briefing on a new clinical guideline. A chat assistant might
+        draft one answer. An agent could search for the original publication, open it,
+        compare it with your existing teaching handout, draft proposed changes, and bring
+        you a list of citations and unresolved questions. Each extra step can save time.
+        Each tool and permission also creates another way for an error to travel.
+      </p>
+
+      <div class="callout callout-info">
+        <div class="callout-title">A useful mental model</div>
+        <p class="mb-0">
+          Look at five things: <strong>the goal</strong> it is given,
+          <strong>the information</strong> it can read, <strong>the tools</strong> it can use,
+          <strong>the actions</strong> it can take without approval, and
+          <strong>the record</strong> it leaves for review. The model name alone tells you
+          little about those boundaries.
+        </p>
+      </div>
+
+      <h2>Why People Want Agents</h2>
+
+      <p>
+        The appeal is delegation. Agents can combine several small tasks, work across apps,
+        resume recurring work, and bring back a finished draft instead of another set of
+        instructions. Memory can spare you from repeating preferences or project context.
+        Proactive agents can notice a change and suggest a next step. These are product
+        capabilities and aspirations, not evidence that an agent is reliable in clinical care.
+      </p>
+
+      <p>
+        The names describe different approaches. <a href="https://about.fb.com/news/2026/09/introducing-muse-personal-ai-agent/" target="_blank" rel="noopener noreferrer"><strong>Muse</strong></a>
+        is Meta's personal agent, designed to use a dedicated cloud computer and connected
+        apps to work on a person's behalf. <a href="https://instinct.com/" target="_blank" rel="noopener noreferrer"><strong>Instinct</strong></a>
+        describes an assistant that can use context from email, messages, a screen, audio,
+        and location. <a href="https://hermes-agent.nousresearch.com/docs/user-guide/features/overview" target="_blank" rel="noopener noreferrer"><strong>Hermes</strong></a>
+        is an open-source agent with memory, skills, browser tools, and scheduled tasks.
+        <a href="https://openclaw.ai/" target="_blank" rel="noopener noreferrer"><strong>OpenClaw</strong></a>
+        is an open-source personal automation platform with broad messaging and tool
+        connections. Their current features and availability may change; none of these
+        descriptions establishes suitability for patient data or clinical use.
+      </p>
+
+      <h2>Where the Stakes Change in Healthcare</h2>
+
+      <p>
+        An agent can be useful for public literature research, lesson planning, or
+        reorganizing synthetic examples. The stakes change when it sees patient information,
+        drafts a patient message, accesses an EHR, or suggests a clinical action. A plausible
+        result can hide a missed source, a wrong patient, outdated memory, or an instruction
+        planted in a web page or document. An agent that can also send, order, or write can
+        turn that mistake into a durable action.
+      </p>
+
       <div class="callout callout-warning">
-        <div class="callout-title">Why This Matters Now</div>
+        <div class="callout-title">Before connecting patient data</div>
+        <p class="mb-0">
+          Use your organization's approved tools and access process. For a cloud service
+          handling electronic PHI on behalf of a covered entity or business associate,
+          <a href="https://www.hhs.gov/hipaa/for-professionals/special-topics/health-information-technology/cloud-computing/index.html" target="_blank" rel="noopener noreferrer">HHS describes the need for a HIPAA-compliant business associate agreement</a>
+          and other HIPAA safeguards. A vendor's privacy claims or an agent's ability to
+          connect to an EHR do not by themselves establish approval for clinical use.
+        </p>
+      </div>
+
+      <h2>How to Try One Thoughtfully</h2>
+
+      <ol>
+        <li><strong>Pick a bounded task.</strong> Start with public sources or synthetic data, and define what a good result would include.</li>
+        <li><strong>Grant only needed access.</strong> Prefer read access and a small workspace over broad email, filesystem, or EHR permissions.</li>
+        <li><strong>Require approval for consequential actions.</strong> Review messages, purchases, records, orders, and code changes before they are sent or committed.</li>
+        <li><strong>Inspect its work.</strong> Ask for source links, a list of actions taken, and the information it could not verify. Open the underlying sources yourself for clinical decisions.</li>
+        <li><strong>Know how to stop it.</strong> Check scheduled tasks, connected accounts, memory, logs, and how to revoke access.</li>
+      </ol>
+
+      <p>
+        The risk below is often called <em>excessive agency</em>: an agent has more
+        permissions or freedom to act than its task needs. <a href="https://genai.owasp.org/llmrisk/llm062025-excessive-agency/" target="_blank" rel="noopener noreferrer">OWASP's guidance</a>
+        describes how errors and manipulated inputs can exploit that gap. The OpenClaw and
+        Hermes examples that follow show how those general risks appear in real systems.
+      </p>
+
+      <hr>
+
+      <h2>Case Study: OpenClaw and Broad Access</h2>
+
+      <div class="callout callout-warning">
+        <div class="callout-title">Why OpenClaw Drew Attention</div>
         <p class="mb-0">
           OpenClaw became one of the most popular open-source projects in the world
           in a matter of weeks. Within 48 hours of going viral, security researchers
@@ -610,8 +704,8 @@
 
       <hr>
 
-      <!-- The Other Framework: Hermes Agent -->
-      <h2>The Other Framework: Hermes Agent</h2>
+      <!-- Case study: Hermes Agent -->
+      <h2>Case Study: Hermes and Persistent Memory</h2>
 
       <p>
         OpenClaw isn&rsquo;t the only agent framework worth understanding. The other one
@@ -626,18 +720,13 @@
       </p>
 
       <p>
-        That learning loop is genuinely useful&mdash;and it is also Hermes&rsquo;s defining
-        security problem. Because persistent memory is injected into the system prompt as a frozen
-        snapshot at the start of every session, <strong>anything that poisons that memory once
-        persists into every future session</strong>. And the skill-creation pathway writes new
-        procedural-memory files <strong>with no content inspection</strong>: if the agent can be
-        convinced to synthesize a malicious instruction into a skill, that instruction is committed
-        directly to memory and silently re-applied later. Security researchers have formalized this
-        as <strong>memory poisoning</strong>&mdash;a systemic architectural risk for any agent that
-        &ldquo;remembers you,&rdquo; not a one-off coding bug&mdash;and Nous Research now tracks the
-        class in its own open issue queue. On the conventional-vulnerability side, the project drew
-        a <strong>&ldquo;9 CVEs in 4 days&rdquo;</strong> disclosure run as enterprise interest
-        spiked, including a symlink-following flaw in its file tools (CVE-2026-7397).
+        That learning loop is useful, and it makes memory review important. Incorrect facts or
+        instructions saved for future sessions can shape later work. Researchers call deliberate
+        versions of this <strong>memory poisoning</strong>. Hermes now documents ways to inspect
+        and approve proposed skills, so the practical question is how those controls are configured
+        and used in a particular installation. On the conventional-vulnerability side, the project
+        has also had reported security disclosures, including a symlink-following flaw in its file
+        tools (CVE-2026-7397). Review the current version and advisories before deployment.
       </p>
 
       <div class="callout callout-warning">
@@ -1157,37 +1246,31 @@
       <hr>
 
       <!-- Conclusion -->
-      <h2>Conclusion: The OpenClaw Lesson</h2>
+      <h2>Conclusion: Match Access to the Task</h2>
 
       <p>
-        OpenClaw isn't a cautionary tale about a bad product. It's a well-built platform
-        created by an experienced developer that attracted 250,000 stars for good reasons.
-        The problem isn't OpenClaw specifically&mdash;it's what OpenClaw represents: a new
-        category of tool that blurs the line between "software you use" and "software that
-        acts on your behalf with your credentials."
+        Agents make a different promise from chatbots: they can pursue work across steps and
+        systems on your behalf. OpenClaw's broad integrations, Hermes's memory, and newer
+        personal assistants show why the category is appealing. They also show why the
+        permissions and approval points matter as much as the quality of the model's answers.
       </p>
 
       <p>
-        Steinberger shipping code he didn't read was a choice about his own risk tolerance.
-        But when 250,000 people install that same agent&mdash;many of them less technical,
-        some of them handling sensitive data&mdash;the risk calculus changes. The agent that's
-        a productivity miracle for one person is a security incident waiting to happen for another.
+        A useful first experiment has a small goal, limited data, and a reviewable result.
+        Clinical use needs a much stronger path: approved data handling, bounded access,
+        source and action logs, and a qualified person responsible for consequential decisions.
       </p>
 
       <p>
-        The answer isn't avoidance. AI agents are genuinely useful, and they're not going
-        away. The answer is choosing tools with appropriate guardrails for your situation.
-        If you're a clinician experimenting with AI tools, the question isn't "should I use
-        agents?" It's "does this agent have the security controls my situation demands?"
+        As products change, revisit what each agent can read, remember, send, and modify.
+        A familiar interface does not mean the underlying authority has stayed the same.
       </p>
 
       <div class="callout callout-principle">
-        <div class="callout-title">The Bottom Line</div>
+        <div class="callout-title">A question to ask before every connection</div>
         <p class="mb-0">
-          OpenClaw showed the world what AI agents can do. It also showed what can go wrong
-          when powerful tools ship without adequate security for their most vulnerable users.
-          Before you install any agent on your machine, ask: what can it access, who audited
-          the code, and what happens if it's compromised? <strong>Trust, but verify.</strong>
+          What can this agent reach, what can it change without my approval, and how will I
+          inspect or stop its work? Narrow those boundaries before giving it a larger task.
         </p>
       </div>
 
@@ -1271,11 +1354,10 @@
       <div class="callout callout-info">
         <div class="callout-title">A Note on This Module</div>
         <p class="mb-0">
-          This module was written with AI assistance and verified by human review.
-          All linked sources were checked at time of publication. Last updated June 2026
-          with OpenAI Lockdown Mode, clinical-AI prescription-tampering research, the June
-          OWASP report, and the Fable 5 / Mythos 5 export-control suspension. The OpenClaw
-          story is still unfolding&mdash;some details may have evolved since writing.
+          The agents introduction was updated in September 2026. The OpenClaw security
+          chronology below it contains earlier reporting, last broadly revised in June 2026;
+          product details and incident counts may have changed. Follow the linked primary
+          sources and current advisories before making a security or clinical decision.
         </p>
       </div>
 
@@ -1283,8 +1365,10 @@
       <div class="objectives phase-2">
         <h4 class="objectives-title">Learning Objectives</h4>
         <ul class="objectives-list">
+          <li>Explain how AI agents differ from chatbots in goals, tool use, memory, and ability to act</li>
+          <li>Describe why personal agents appeal to users and compare Muse, Instinct, Hermes, and OpenClaw as examples</li>
+          <li>Identify clinical tasks that require approved data handling and human review</li>
           <li>Describe OpenClaw's rise and why it exposed critical security concerns</li>
-          <li>Explain how AI agents differ from browser-based chatbots in terms of system access</li>
           <li>Identify how agents can access API keys, credentials, and sensitive files on your machine</li>
           <li>Recognize specific attack vectors including prompt injection, slopsquatting, and credential exfiltration</li>
           <li>Describe how supply chain attacks through AI agent marketplaces (e.g., ClawHavoc) use the agent as a trusted intermediary to deploy malware</li>
