@@ -65,7 +65,7 @@ tools). Serves on `localhost:5050`.
 - Pure HTML/CSS — no framework, no build step
 - Google Fonts + Lucide loaded via CDN
 - All internal links relative — works locally or hosted
-- Current version: **v1.11 · 2026** (bumped each release; the footer version on
+- Current version: **v1.15 · 2026** (bumped each release; the footer version on
   every page links to [updates.html](updates.html))
 - Deployment: GitHub Pages via [dochobbs/ai101](https://github.com/dochobbs/ai101)
 - Custom domain: ai101.health (CNAME configured)
@@ -77,21 +77,24 @@ was retired in favor of topic-based, self-paced navigation. The old drafts live
 in [archive/](archive/) and are not linked from any live page.
 
 ## Operational Workflow
-- **Weekly audit**: a scheduled remote agent (claude.ai routine
-  `trig_01KvbzVEe51SjAHdzHhwSMqQ`) scans the AI landscape every Sunday at
-  17:00 UTC (12:00 PM CT / 10:00 AM PT) and files a GitHub issue on
-  `dochobbs/ai101` with the `audit` label containing a punch list of pages
-  needing updates, link-check results, and a ready-to-paste
-  [updates.html](updates.html) entry. The routine has an empty-week failsafe:
-  if no pages are flagged and no broken links are found, no issue is created
-  — issue creation is the signal that work is pending. Because the issue is
-  filed with the owner's own credentials, GitHub does NOT send a notification
-  for it; the routine therefore also creates a Google Calendar alert event
-  ("⚠️ AI 101 audit: review issue #N", 2 PM Central the same Sunday) whenever
-  it files an issue. See
-  [docs/PROJECT_CHANGELOG.md](docs/PROJECT_CHANGELOG.md) for history.
+- **Sunday research:** Claude routine `trig_01KvbzVEe51SjAHdzHhwSMqQ`, at
+  17:00 UTC (noon CDT / 11 AM CST). Future changes are to be prepared as a PR
+  for owner review. Research, delivery, and publication are separate outcomes.
+  `CLAUDE.md` points to [the maintenance instructions](docs/operations/weekly-audit.md)
+  and [persistent audit ledger](docs/audits/latest.json). Carry calendar-only
+  findings forward; an empty issue list does not mean no backlog.
+- **Independent check:** GitHub Actions `Weekly maintenance check`, Sundays at
+  19:37 UTC, plus manual dispatch. Checks freshness, local targets, XML, bounded
+  primary-source reachability, and the live release. Bot-authored issue delivery
+  is separate from Claude's credential. Outstanding work stays in one assigned
+  issue; failed or incomplete checks fail the workflow. Receipts are artifacts.
+- **Known boundary (November 1):** Claude's own GitHub issue credential returns
+  403; its cloud source egress has been restricted. Reports have been delivered
+  to Calendar since July, with a risk of losing findings between weeks. The
+  [recovery report](docs/audits/2026-11-01.md) records fixes and what still needs
+  a live research-run check. A platform Succeeded badge is not publication proof.
 - **Version bumps** happen in the footer of every page at release time
-  (currently `v1.11 · 2026`). One-liner:
+  (currently `v1.15 · 2026`). One-liner:
   `perl -pi -e 's/v1\.OLD · 2026/v1.NEW · 2026/g' *.html`
 - **ai-news.html** is the lightweight running log; `updates.html` is the
   formal changelog for readers.

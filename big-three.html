@@ -221,7 +221,7 @@
       </p>
 
       <h3>The Current Offering</h3>
-      <p>As of early 2026, ChatGPT operates across several tiers:</p>
+      <p>Checked November 1, 2026. ChatGPT subscriptions and model access vary by surface (Chat, Work, or Codex), workspace, and rollout:</p>
 
       <div class="tier-grid">
         <div class="tier-card">
@@ -232,16 +232,16 @@
         <div class="tier-card">
           <h4>ChatGPT Plus</h4>
           <p class="tier-price">$20/month</p>
-          <p>Higher limits, priority access, GPT-5.5 reasoning, image generation, advanced voice mode.</p>
+          <p>Higher usage limits and access to additional models and tools. Check the model picker for the surface you use; a model available in Work or Codex is not necessarily available in Chat.</p>
         </div>
         <div class="tier-card">
           <h4>ChatGPT Pro</h4>
-          <p class="tier-price">$200/month</p>
-          <p>For power users. GPT-5.5 Pro, extended features, essentially unlimited usage.</p>
+          <p class="tier-price">From $100/month</p>
+          <p>Higher-usage plans at $100, $200, or $500/month. Allowances depend on model and workload; do not read a subscription as unlimited use.</p>
         </div>
         <div class="tier-card">
-          <h4>ChatGPT Team</h4>
-          <p class="tier-price">$25-30/user/month</p>
+          <h4>ChatGPT Business</h4>
+          <p class="tier-price">Per seat</p>
           <p>Collaborative workspace. Data not used for training. Still not HIPAA-compliant without additional measures.</p>
         </div>
         <div class="tier-card">
@@ -273,6 +273,11 @@
           your account. Check with your organization whether a BAA-backed deployment is in place
           before entering anything that could be PHI.
         </p>
+      </div>
+
+      <div class="callout callout-info">
+        <div class="callout-title">November 2026: Check the Surface, Not Just the Model Name</div>
+        <p>OpenAI&rsquo;s current API catalog lists <strong>GPT-6 Astra, GPT-6.1 Sol, GPT-6.1 Terra, and GPT-6 Luna</strong>. Its Work/Codex guidance makes the same distinction between demanding work and faster, less costly tasks. This is not a promise that each model is selectable in ordinary Chat. In particular, the current pricing documentation places GPT-6.1 Sol in Work and Codex, not Chat. Verify the model picker and workspace permissions before choosing a plan. <a href="https://developers.openai.com/api/docs/models" target="_blank" rel="noopener">[API catalog]</a> <a href="https://learn.chatgpt.com/docs/models" target="_blank" rel="noopener">[Work/Codex models]</a> <a href="https://learn.chatgpt.com/docs/pricing" target="_blank" rel="noopener">[Access and pricing]</a></p>
       </div>
 
       <h3>What You Get</h3>
@@ -331,35 +336,44 @@
         <strong>Claude Sonnet 5</strong> arrived&mdash;a one-million-token context window,
         128K max output, and the default model both in Claude Code from launch and for Free
         and Pro users on claude.ai. On <strong>July 24, 2026</strong>,
-        <strong>Claude Opus 5</strong> replaced Opus 4.8 as the current Opus, at the same
+        <strong>Claude Opus 5</strong> replaced Opus 4.8 at the time, at the same
         $5/$25 per million tokens: a one-million-token context window, 128K max output, and
-        a knowledge cutoff of May 2026. It is now the default model on Claude Max and the
-        strongest model available on Pro. Opus 4.8 still works but has moved to Anthropic&rsquo;s
-        legacy list.
+        a knowledge cutoff of May 2026. Those July defaults are historical. <strong>Opus 5.5</strong> followed on September 22,
+        <strong>Sonnet 5.5</strong> on September 28, and <strong>Haiku 5.5</strong> on October 7.
+        The current catalog also includes <strong>Fable 5.1</strong>. Opus 5 and Sonnet 5 now sit
+        in the legacy list. Opus 5.5 standard API pricing is $4/$20 per million input/output
+        tokens, 20% below Opus 5; Sonnet 5.5 is $2/$10. These are API prices, not subscription fees.
+        <a href="https://platform.claude.com/docs/en/about-claude/pricing" target="_blank" rel="noopener">[Current pricing]</a>
       </p>
 
       <h3>The Current Offering</h3>
+      <p>Checked November 1, 2026. Subscription allowances and model availability can change.</p>
 
       <div class="tier-grid">
         <div class="tier-card">
           <h4>Claude Free</h4>
           <p class="tier-price">$0</p>
-          <p>Claude Sonnet 5 with usage limits that reset every few hours. Good for exploration.</p>
+          <p>Limited usage every five hours and each week. Good for exploration; check the current model picker rather than assuming a fixed model.</p>
         </div>
         <div class="tier-card">
           <h4>Claude Pro</h4>
           <p class="tier-price">$20/month</p>
-          <p>~5x usage of the free tier. Sonnet 5 by default, with Opus 5&mdash;the strongest model on this tier&mdash;also available. Priority access to new features.</p>
+          <p>More usage and model choices, Claude Code, Projects, and scheduled tasks. $20 billed monthly, or $200 billed annually. Model availability and limits can change.</p>
         </div>
         <div class="tier-card">
           <h4>Claude Max</h4>
-          <p class="tier-price">$100-200/month</p>
-          <p>5x-20x Pro limits, with Claude Opus 5 as the default model. Designed for power users, especially Claude Code developers.</p>
+          <p class="tier-price">$100/month</p>
+          <p>5x Pro usage, with five-hour and weekly limits. Fable access is included within a separate allowance. Designed for sustained work.</p>
+        </div>
+        <div class="tier-card">
+          <h4>Claude Ultra</h4>
+          <p class="tier-price">$200/month</p>
+          <p>10x Pro weekly usage; no five-hour limit for verified accounts. Weekly limits still apply.</p>
         </div>
         <div class="tier-card">
           <h4>Claude Team</h4>
-          <p class="tier-price">$25-30/user/month</p>
-          <p>Collaborative features, admin controls. Data not used for training. Min 5 seats.</p>
+          <p class="tier-price">Per seat</p>
+          <p>Collaborative features and admin controls for teams of 2 to 150. Data not used for training by default. Confirm current seat pricing with Anthropic.</p>
         </div>
       </div>
 
@@ -371,10 +385,10 @@
       </p>
       <p>
         <strong>Features:</strong> A one-million-token context window across the current
-        lineup&mdash;Opus 5, Sonnet 5, and the top-end Fable 5&mdash;for working with
+        lineup&mdash;Opus 5.5, Sonnet 5.5, Haiku 5.5, and Fable 5.1&mdash;for working with
         substantial documents. Projects feature for organizing related conversations.
         Artifacts for generating code, documents, and other outputs. Computer use capabilities for
-        agentic workflows. No native image generation, but can analyze images you provide.
+        agentic workflows. Can analyze images you provide. Compare current plans on <a href="https://claude.com/pricing" target="_blank" rel="noopener">Anthropic&rsquo;s pricing page</a>; plan limits and model access are separate questions.
       </p>
       <p>
         <strong>HIPAA pathway:</strong> BAAs available through the API with Zero Data Retention (ZDR)
@@ -405,15 +419,16 @@
         2025, Google announced Gemini 3, positioned as "our most intelligent model" with significant
         improvements in reasoning, multimodal understanding, and agent capabilities. In February
         2026, Gemini 3.1 Pro doubled the reasoning performance of its predecessor and dominated
-        13 of 16 major AI benchmarks, now powering NotebookLM. At Google I/O 2026 (May 19), Google
-        launched <strong>Gemini 3.5 Flash</strong>—rolled out to all users and roughly 4× faster than
-        peer frontier models on agentic benchmarks—alongside <strong>Gemini Omni Flash</strong>, a
-        new multimodal model for Plus/Pro/Ultra tiers. <strong>Gemini 3.5 Pro has still not
-        shipped.</strong> As of late August 2026 its release has slipped more than once, and
-        Google&rsquo;s releases since&mdash;<strong>Gemini 3.6 Flash</strong>,
-        <strong>Gemini 3.5 Flash-Lite</strong>, and <strong>Flash Cyber</strong> on July 21,
-        then <strong>Gemini 3.7 Flash</strong> on August 13&mdash;still did not include a Pro
-        model. Every specification circulating for 3.5 Pro is unconfirmed.
+        13 of 16 major AI benchmarks. By November 1, 2026, Google&rsquo;s public API catalog
+        lists <strong>Gemini 3.8 Flash</strong>, <strong>Gemini 3.8 Live</strong>, and
+        <strong>Gemini 3.1 Pro (preview)</strong> among its models. Google&rsquo;s public model
+        page also advertises <strong>Gemini 4 Argon</strong> for AI Pro and Ultra subscribers;
+        its September launch had a restricted rollout. Do not use that launch-stage restriction
+        as a statement of current access, or assume an API model is the one running in your app.
+        Check the model picker and your administrator&rsquo;s controls. We found no Gemini 3.5 Pro
+        entry in the current API catalog; speculation about its release is not useful buying advice.
+        <a href="https://ai.google.dev/gemini-api/docs/models" target="_blank" rel="noopener">[API catalog]</a>
+        <a href="https://deepmind.google/models/gemini/" target="_blank" rel="noopener">[Google model page]</a>
       </p>
 
       <h3>The Current Offering</h3>
@@ -422,19 +437,26 @@
         <div class="tier-card">
           <h4>Gemini Free</h4>
           <p class="tier-price">$0</p>
-          <p>Access to Gemini 3.5 Flash, basic features, limited Deep Research access.</p>
+          <p>Entry-level access with usage limits. Check the current model picker; Google updates the available models frequently.</p>
+        </div>
+        <div class="tier-card">
+          <h4>Google AI Plus</h4>
+          <p class="tier-price">$4.99/month (US)</p>
+          <p>Entry paid tier with Gemini 3.6 Flash, more Notebook features, and 400 GB storage.</p>
         </div>
         <div class="tier-card">
           <h4>Google AI Pro</h4>
           <p class="tier-price">$19.99/month</p>
-          <p>Gemini 3.1 Pro, 1M-token context, Gemini Omni Flash, Deep Research, Workspace integration, 2TB storage.</p>
+          <p>Higher limits, Deep Research, Workspace features, and 5 TB storage in the US plan. Google advertises Gemini 4 Argon access for Pro; confirm the rollout in your account.</p>
         </div>
         <div class="tier-card">
           <h4>Google AI Ultra</h4>
-          <p class="tier-price">$249.99/month</p>
-          <p>Gemini 3.5 Flash + Gemini Omni Flash, Deep Think reasoning, highest limits, 30TB storage, Veo 3 video generation (Gemini 3.5 Pro has not shipped as of late August 2026).</p>
+          <p class="tier-price">See current plans</p>
+          <p>Higher access limits and advanced features across Google&rsquo;s AI products, including advertised Gemini 4 Argon access. Check the current plan and account rollout before purchasing.</p>
         </div>
       </div>
+
+      <p>US plan details checked November 1. <a href="https://one.google.com/intl/en_us/about/google-ai-plans/" target="_blank" rel="noopener">Google&rsquo;s current plans</a> list access, storage, country restrictions, and pricing at purchase.</p>
 
       <h3>What You Get</h3>
       <p>
@@ -445,7 +467,7 @@
         don't use Google Workspace, much of this advantage disappears.
       </p>
       <p>
-        <strong>Features:</strong> 1-2 million token context window—the largest available—for working
+        <strong>Features:</strong> Large context windows, varying by model and product, for working
         with enormous documents or entire codebases. Strong multimodal capabilities including video
         analysis. Image generation through Imagen. Gemini Live for voice interaction.
       </p>
@@ -487,15 +509,15 @@
             </tr>
             <tr>
               <td><strong>Premium Tier</strong></td>
-              <td>$200/month (Pro)</td>
-              <td>$200/month (Max 20x)</td>
-              <td>$249.99/month (Ultra)</td>
+              <td>From $100/month (Pro)</td>
+              <td>$200/month (Ultra)</td>
+              <td>Ultra: check current country-specific price</td>
             </tr>
             <tr>
               <td><strong>Context Window</strong></td>
-              <td>1M tokens (GPT-5.5)</td>
-              <td>1M tokens (Opus 5, Sonnet 5)</td>
-              <td>1-2M tokens</td>
+              <td>1.05M in current flagship API models; app limits vary</td>
+              <td>1M in current Claude API models; app limits vary</td>
+              <td>Varies by model and product; check the catalog</td>
             </tr>
             <tr>
               <td><strong>Native Image Gen</strong></td>
@@ -1230,7 +1252,7 @@
           <a href="https://www.anthropic.com/news/claude-sonnet-4-6" target="_blank">[Source]</a></li>
           <li><strong>Gemini 3.1 Pro</strong> (February 19) doubles reasoning performance over
           Gemini 3 Pro, dominates 13 of 16 major benchmarks, maintains a 1M-token context window,
-          and now powers NotebookLM.
+          and now powers Gemini Notebook.
           <a href="https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-1-pro/" target="_blank">[Source]</a></li>
           <li><strong>Meta Llama 4</strong> (February 15) introduced Scout (with a remarkable
           10-million-token context window) and Maverick models, both open-weight. A major development
@@ -1533,7 +1555,7 @@
   <footer class="footer">
     <div class="footer-inner">
       <div><strong>AI 101</strong> · A Self-Paced Guide to AI in Medicine</div>
-      <div><a href="updates.html">v1.14.1 · 2026</a></div>
+      <div><a href="updates.html">v1.15 · 2026</a></div>
     </div>
   </footer>
 

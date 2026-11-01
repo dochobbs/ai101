@@ -5,8 +5,72 @@
     <link>https://ai101.health/ai-news.html</link>
     <description>AI news and developments relevant to healthcare and medical practice, curated for AI 101: A Self-Paced Guide to AI in Medicine.</description>
     <language>en-us</language>
-    <lastBuildDate>Sun, 23 Aug 2026 00:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Sun, 01 Nov 2026 18:00:00 GMT</lastBuildDate>
     <atom:link href="https://ai101.health/ai-news-feed.xml" rel="self" type="application/rss+xml"/>
+
+    <item>
+      <title>Cancer AI Assistance Improved Chart Review; Patient Benefit Was Not Tested</title>
+      <link>https://www.nature.com/articles/s43018-026-01264-6</link>
+      <description>A Nature Cancer study evaluated an agentic system for six immune-related adverse-event types. A randomized crossover study of clinical-trial staff found 2.71 minutes less annotation time and higher complete-match accuracy with assistance. A three-month silent deployment showed lower performance than retrospective testing. The result supports a bounded chart-review workflow with human verification; it does not demonstrate earlier treatment, fewer hospitalizations, or better patient outcomes.</description>
+      <pubDate>Thu, 29 Oct 2026 00:00:00 GMT</pubDate>
+      <guid>https://www.nature.com/articles/s43018-026-01264-6</guid>
+    </item>
+
+    <item>
+      <title>Clinician Review Improved AI Drafts; This Pilot Did Not Establish Time Savings</title>
+      <link>https://journals.plos.org/digitalhealth/article?id=10.1371/journal.pdig.0001799</link>
+      <description>In a single-center ophthalmology pilot, 21 physicians were randomized and 17 completed documentation tasks using six simulated patient records. Clinician-edited LLM drafts generally scored better on document quality than clinician-only drafting. Neither discharge-summary nor referral creation time differed significantly. Unedited LLM drafts were fastest and lowest quality. This is evidence about supervised document production in simulation, not proof of faster clinical care or patient benefit.</description>
+      <pubDate>Mon, 26 Oct 2026 00:00:00 GMT</pubDate>
+      <guid>https://journals.plos.org/digitalhealth/article?id=10.1371/journal.pdig.0001799</guid>
+    </item>
+
+    <item>
+      <title>Gemini Notebook Can Now Be Used From a Gemini Conversation</title>
+      <link>https://workspaceupdates.googleblog.com/2026/10/take-actions-on-your-notebooks-from-Gemini-Notebook-directly-in-the-Gemini-app.html</link>
+      <description>The product formerly called NotebookLM is now a Connected App in Gemini. Users can query notebooks, add sources, and manage notes from chat. Google says the feature is available to personal and Workspace accounts, subject to account and administrator controls; it is on by default outside the EEA. Connecting a source collection changes where it can be used. Check organizational approval and data handling before connecting clinical material.</description>
+      <pubDate>Fri, 23 Oct 2026 00:00:00 GMT</pubDate>
+      <guid>https://workspaceupdates.googleblog.com/2026/10/take-actions-on-your-notebooks-from-Gemini-Notebook-directly-in-the-Gemini-app.html</guid>
+    </item>
+
+    <item>
+      <title>Ambient AI Produced More Patient Instructions—and More Complex Language</title>
+      <link>https://academic.oup.com/jamia/advance-article/doi/10.1093/jamia/ocag177/8979832</link>
+      <description>A retrospective study of 391,061 adult encounters at one center associated ambient-scribe availability with a 10.5 percentage-point increase in patient-instruction documentation. AI instructions were longer and more linguistically complex than clinician-authored text, and editing did not close the complexity gap. The study did not measure patient comprehension or health outcomes. A useful local evaluation should inspect patient-facing instructions, not just documentation volume or clinician satisfaction.</description>
+      <pubDate>Thu, 22 Oct 2026 00:00:00 GMT</pubDate>
+      <guid>https://academic.oup.com/jamia/advance-article/doi/10.1093/jamia/ocag177/8979832</guid>
+    </item>
+
+    <item>
+      <title>Claude Haiku 5.5 Extends the New Family to High-Volume Work</title>
+      <link>https://platform.claude.com/docs/en/release-notes/overview</link>
+      <description>Anthropic added Haiku 5.5 to its API family on October 7, following Opus 5.5 and Sonnet 5.5. Current pricing is $0.10/$0.50 per million input/output tokens for prompts up to 100,000 tokens, with higher rates above that threshold. A lower per-token price can matter for repeated extraction or classification, but it does not establish reliability on your clinical task. Test the model on the intended workflow and keep human review where errors matter.</description>
+      <pubDate>Wed, 07 Oct 2026 00:00:00 GMT</pubDate>
+      <guid>https://platform.claude.com/docs/en/release-notes/overview</guid>
+    </item>
+
+    <item>
+      <title>Claude Opus 5.5 and Sonnet 5.5 Replace the July Model Advice</title>
+      <link>https://www.anthropic.com/claude-sonnet-5-5</link>
+      <description>Opus 5.5 launched September 22 and Sonnet 5.5 followed September 28. Standard API input/output prices are $4/$20 and $2/$10 per million tokens respectively; Opus list prices are 20% below Opus 5. Claimed per-task savings also depend on token use and caching. The current catalog includes Fable 5.1, while subscription plans now distinguish Max and Ultra. These changes supersede this guide’s July model and tier descriptions; vendor capability claims remain separate from clinical validation.</description>
+      <pubDate>Mon, 28 Sep 2026 00:00:00 GMT</pubDate>
+      <guid>https://www.anthropic.com/claude-sonnet-5-5</guid>
+    </item>
+
+    <item>
+      <title>OpenEvidence Adds Three Search Depths; Darwin Remains a Restricted Preview</title>
+      <link>https://www.openevidence.com/announcements/introducing-the-openevidence-model-family</link>
+      <description>OpenEvidence announced Osler for rapid answers, Sackett for deeper evidence review, and Snow for longer investigations, succeeding Deep Consult. All three were announced free to verified clinicians. A fourth model, Darwin, is application-only for selected institutional and research partners. Its headline benchmark scores are vendor reports, not evidence that an ordinary clinician has access or that it improves patient care. Choose a production search mode for the time and question at hand, then inspect the cited evidence.</description>
+      <pubDate>Thu, 03 Sep 2026 00:00:00 GMT</pubDate>
+      <guid>https://www.openevidence.com/announcements/introducing-the-openevidence-model-family</guid>
+    </item>
+
+    <item>
+      <title>Gemini 3.8 Flash Is Generally Available; App Access Is a Separate Question</title>
+      <link>https://ai.google.dev/gemini-api/docs/changelog</link>
+      <description>Google’s API release notes mark Gemini 3.8 Flash generally available on September 2. Its current catalog also lists 3.8 Live and 3.1 Pro preview. Model availability in an API is not a guarantee of the model selected in a consumer app or an institution’s Workspace deployment. Check the actual model and approved service rather than purchasing from an old comparison chart. This guide’s current offering sections have been refreshed; historical release notes retain their dates.</description>
+      <pubDate>Wed, 02 Sep 2026 00:00:00 GMT</pubDate>
+      <guid>https://ai.google.dev/gemini-api/docs/changelog</guid>
+    </item>
 
     <item>
       <title>FDA Authorizes the First Autonomous Robotic Blood Draw</title>

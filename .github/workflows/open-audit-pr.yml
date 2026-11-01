@@ -1,0 +1,43 @@
+name: Open audit update PR
+
+on:
+  push:
+    branches:
+      - 'claude/ai101-audit-*'
+      - 'maintenance/ai101-audit-*'
+
+permissions:
+  contents: read
+  pull-requests: write
+
+concurrency:
+  group: audit-pr-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  open-review:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      # No checkout or execution of branch content is needed to open a PR.
+      - name: Open a reviewable pull request for the audit branch
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+          AUDIT_BRANCH: ${{ github.ref_name }}
+          DEFAULT_BRANCH: ${{ github.event.repository.default_branch }}
+        run: |
+          set -eu
+          existing="$(gh pr list --head "$AUDIT_BRANCH" --base "$DEFAULT_BRANCH" --state open --json url --jq '.[0].url // empty')"
+          if [ -n "$existing" ]; then
+            echo "Existing audit PR: $existing"
+            exit 0
+          fi
+          cat > /tmp/audit-pr-body.md <<'BODY'
+          This audit branch is ready for owner review. Check the committed audit report, primary-source citations, proposed content changes, and unresolved findings before merging.
+
+          The owner requested pull requests for Sunday updates. This workflow only opens the review; publication follows a reviewed merge to the default branch.
+          BODY
+          gh pr create --head "$AUDIT_BRANCH" --base "$DEFAULT_BRANCH" \
+            --title "AI 101 audit update: ${AUDIT_BRANCH#*/}" \
+            --body-file /tmp/audit-pr-body.md
