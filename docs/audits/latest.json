@@ -1,6 +1,6 @@
 {
   "content_reviewed_at": "2026-11-01",
-  "content_published_at": "2026-09-23",
+  "content_published_at": "2026-11-01",
   "version": "v1.15",
   "review_scope": "Primary-source catch-up for the previously flagged model/product sections and selected September-October clinician-facing developments; not a complete legal or clinical revalidation of the site.",
   "publication_policy": "Prepare future Sunday content updates as a pull request for owner review.",
@@ -53,5 +53,7 @@
       "disposition": "October 19 FDA discussion-paper deadline is described as past; paper is not presented as binding policy."
     }
   ],
-  "publication_verified": false
+  "publication_verified": true,
+  "deployed_content_commit": "9ab8102f817541ef4aa13a79c36141a91e1adcfa",
+  "deployment_receipt": "https://github.com/dochobbs/ai101/actions/runs/41337667594"
 }
