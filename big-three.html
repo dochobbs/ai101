@@ -25,6 +25,7 @@
   <script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "aee6310cb71e4b55b02d4e681c4eb7ab"}'></script>
 </head>
 <body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
 
   <nav class="nav">
     <div class="nav-inner">
@@ -32,10 +33,10 @@
         <span class="nav-badge"><span class="b-ai">AI</span><span class="b-num">101</span></span>
         <span class="nav-title">A Self-Paced Guide to AI in Medicine</span>
       </a>
-      <button class="nav-toggle" aria-label="Toggle menu">
-        <i data-lucide="menu"></i>
+      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="site-menu">
+        <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 5h16M4 12h16M4 19h16"/></svg>
       </button>
-      <div class="nav-links">
+      <div class="nav-links" id="site-menu">
         <a href="index.html" class="nav-link">Topics</a>
         <a href="resources.html" class="nav-link">Resources</a>
         <a href="about.html" class="nav-link">About</a>
@@ -45,7 +46,7 @@
     </div>
   </nav>
 
-  <main class="main">
+  <main id="main-content" tabindex="-1" class="main">
     <article class="content content-wide">
 
       <header class="unit-header">
@@ -391,9 +392,13 @@
         agentic workflows. Can analyze images you provide. Compare current plans on <a href="https://claude.com/pricing" target="_blank" rel="noopener">Anthropic&rsquo;s pricing page</a>; plan limits and model access are separate questions.
       </p>
       <p>
-        <strong>HIPAA pathway:</strong> BAAs available through the API with Zero Data Retention (ZDR)
-        agreement. Consumer chat interface (Claude.ai) is not covered. AWS Bedrock provides the
-        most straightforward enterprise pathway.
+        <strong>HIPAA pathway:</strong> Anthropic offers HIPAA-ready Enterprise plans with an
+        accepted BAA and required configuration, alongside eligible API arrangements. Individual
+        and Team plans do not gain coverage from the Claude name. Code and Cowork have additional
+        feature-specific conditions, and cloud/local modes differ. AWS Bedrock is another
+        enterprise route under the applicable AWS agreement. Verify the actual service and
+        configured features before entering PHI.
+        <a href="https://support.claude.com/en/articles/13296973-hipaa-ready-enterprise-plans" target="_blank" rel="noopener">[Enterprise scope]</a>
       </p>
 
       <hr>
@@ -521,7 +526,7 @@
             </tr>
             <tr>
               <td><strong>Native Image Gen</strong></td>
-              <td>Yes (DALL-E)</td>
+              <td>Yes (GPT Image)</td>
               <td>No</td>
               <td>Yes (Imagen)</td>
             </tr>
@@ -548,7 +553,7 @@
           <thead>
             <tr>
               <th>Platform</th>
-              <th>Consumer Chat BAA</th>
+              <th>Chat / Enterprise BAA pathway</th>
               <th>API BAA</th>
               <th>Easiest Path</th>
             </tr>
@@ -557,13 +562,13 @@
             <tr>
               <td><strong>ChatGPT</strong></td>
               <td>Enterprise/Edu and ChatGPT for Healthcare</td>
-              <td>Yes, via application</td>
+              <td>Eligible account + covered endpoints/tools; verify retention configuration</td>
               <td>Azure OpenAI Service or ChatGPT for Healthcare</td>
             </tr>
             <tr>
               <td><strong>Claude</strong></td>
-              <td>No</td>
-              <td>Yes, with ZDR agreement</td>
+              <td>HIPAA-ready Enterprise with BAA; individual/Team plans excluded</td>
+              <td>Eligible API arrangement; verify feature scope</td>
               <td>AWS Bedrock</td>
             </tr>
             <tr>
@@ -1555,22 +1560,17 @@
   <footer class="footer">
     <div class="footer-inner">
       <div><strong>AI 101</strong> · A Self-Paced Guide to AI in Medicine</div>
-      <div><a href="updates.html">v1.15 · 2026</a></div>
+      <div><a href="updates.html">v1.16 · 2026</a></div>
     </div>
   </footer>
 
   <script>
-    lucide.createIcons();
-    const navToggle = document.querySelector('.nav-toggle');
-    const navLinks = document.querySelector('.nav-links');
-    if (navToggle) {
-      navToggle.addEventListener('click', () => {
-        navLinks.classList.toggle('nav-open');
-      });
-    }
+    if (window.lucide) window.lucide.createIcons();
+
   </script>
 
   <script src="https://studio.pickaxe.co/api/embed/bundle.js" defer></script>
 
+  <script src="site-nav.js"></script>
 </body>
 </html>

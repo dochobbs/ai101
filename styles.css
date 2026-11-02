@@ -855,7 +855,7 @@ hr {
 
 .page-nav-label {
   font-size: 0.8125rem;
-  color: var(--slate-500);
+  color: var(--slate-700);
   text-transform: uppercase;
   letter-spacing: 0.05em;
 }
@@ -1148,7 +1148,7 @@ hr {
 .week-card.phase-1 .week-number { color: var(--phase-1); }
 .week-card.phase-2 .week-number { color: var(--phase-2); }
 .week-card.phase-3 .week-number { color: var(--phase-3); }
-.week-card.appendix .week-number { color: var(--slate-500); }
+.week-card.appendix .week-number { color: var(--slate-700); }
 
 .week-title {
   font-family: var(--font-display);
@@ -1172,7 +1172,7 @@ hr {
   padding-top: var(--space-md);
   border-top: 1px solid var(--slate-200);
   font-size: 0.8125rem;
-  color: var(--slate-500);
+  color: var(--slate-700);
 }
 
 .week-updated {
@@ -1659,7 +1659,7 @@ tr:hover td {
   gap: var(--space-lg);
   margin-bottom: var(--space-sm);
   font-size: 0.8125rem;
-  color: var(--slate-500);
+  color: var(--slate-700);
 }
 
 .news-date-published {
@@ -2277,7 +2277,7 @@ tr:hover td {
 
 .footnote-refs {
   font-size: 0.875rem;
-  color: var(--slate-500);
+  color: var(--slate-700);
   margin-top: var(--space-md) !important;
   padding-top: var(--space-sm);
   border-top: 1px solid var(--slate-200);
@@ -2628,7 +2628,7 @@ sup a:hover {
 
 .consent-examples {
   font-size: 0.875rem;
-  color: var(--slate-500);
+  color: var(--slate-700);
 }
 
 /* Consent script */
@@ -3199,7 +3199,7 @@ blockquote.pull-quote {
 .form-hint {
   display: block;
   font-size: 0.8125rem;
-  color: var(--slate-500);
+  color: var(--slate-700);
   margin-top: var(--space-xs);
 }
 
@@ -3545,3 +3545,11 @@ blockquote.pull-quote {
     padding-top: var(--space-2xl);
   }
 }
+
+/* Audit repairs: keyboard access and contained comparison tables. */
+.skip-link { position:fixed; top:8px; left:8px; z-index:10000; transform:translateY(-200%); padding:12px 18px; background:var(--white); color:var(--slate-900); border:2px solid var(--slate-900); }
+.skip-link:focus { transform:none; }
+:focus-visible { outline:3px solid #2563eb; outline-offset:4px; }
+div.comparison-table { min-width:0; max-width:100%; overflow-x:auto; }
+div.comparison-table > table { min-width:600px; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior:auto; } }

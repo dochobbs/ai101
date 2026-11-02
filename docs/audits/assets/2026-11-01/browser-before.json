@@ -1,0 +1,853 @@
+[
+  {
+    "name": "about.html",
+    "device": "desktop",
+    "width": 1440,
+    "scrollWidth": 1440,
+    "iframes": [],
+    "skip": false,
+    "bodyFont": "\"Source Sans 3\", -apple-system, \"system-ui\", sans-serif",
+    "errors": [],
+    "heading_count": 19
+  },
+  {
+    "name": "ai-news.html",
+    "device": "desktop",
+    "width": 1440,
+    "scrollWidth": 1440,
+    "iframes": [],
+    "skip": false,
+    "bodyFont": "\"Source Sans 3\", -apple-system, \"system-ui\", sans-serif",
+    "errors": [],
+    "screenshot": "ai-news.html-desktop.png",
+    "heading_count": 113
+  },
+  {
+    "name": "ai-search.html",
+    "device": "desktop",
+    "width": 1440,
+    "scrollWidth": 1440,
+    "iframes": [],
+    "skip": false,
+    "bodyFont": "\"Source Sans 3\", -apple-system, \"system-ui\", sans-serif",
+    "errors": [],
+    "heading_count": 31
+  },
+  {
+    "name": "ai-tools-mcp.html",
+    "device": "desktop",
+    "width": 1440,
+    "scrollWidth": 1440,
+    "iframes": [],
+    "skip": false,
+    "bodyFont": "\"Source Sans 3\", -apple-system, \"system-ui\", sans-serif",
+    "errors": [],
+    "heading_count": 16
+  },
+  {
+    "name": "ambient-ai.html",
+    "device": "desktop",
+    "width": 1440,
+    "scrollWidth": 1440,
+    "iframes": [],
+    "skip": false,
+    "bodyFont": "\"Source Sans 3\", -apple-system, \"system-ui\", sans-serif",
+    "errors": [],
+    "heading_count": 49
+  },
+  {
+    "name": "bias-ethics.html",
+    "device": "desktop",
+    "width": 1440,
+    "scrollWidth": 1440,
+    "iframes": [],
+    "skip": false,
+    "bodyFont": "\"Source Sans 3\", -apple-system, \"system-ui\", sans-serif",
+    "errors": [],
+    "heading_count": 36
+  },
+  {
+    "name": "big-three.html",
+    "device": "desktop",
+    "width": 1440,
+    "scrollWidth": 1440,
+    "iframes": [],
+    "skip": false,
+    "bodyFont": "\"Source Sans 3\", -apple-system, \"system-ui\", sans-serif",
+    "errors": [],
+    "screenshot": "big-three.html-desktop.png",
+    "heading_count": 41
+  },
+  {
+    "name": "claude-code.html",
+    "device": "desktop",
+    "width": 1440,
+    "scrollWidth": 1440,
+    "iframes": [],
+    "skip": false,
+    "bodyFont": "\"Source Sans 3\", -apple-system, \"system-ui\", sans-serif",
+    "errors": [],
+    "screenshot": "claude-code.html-desktop.png",
+    "progress": "Done",
+    "progressPersisted": "Done",
+    "heading_count": 39
+  },
+  {
+    "name": "clinical-decision-support.html",
+    "device": "desktop",
+    "width": 1440,
+    "scrollWidth": 1440,
+    "iframes": [],
+    "skip": false,
+    "bodyFont": "\"Source Sans 3\", -apple-system, \"system-ui\", sans-serif",
+    "errors": [],
+    "heading_count": 55
+  },
+  {
+    "name": "contribute.html",
+    "device": "desktop",
+    "width": 1440,
+    "scrollWidth": 1440,
+    "iframes": [
+      {
+        "title": "",
+        "src": "https://docs.google.com/forms/d/e/1FAIpQLSc3qPCR5gyR8tg2Qg41bt1xVEIlZl3kXkDLm50h4uvJcFbAaw/viewform?embedded=true"
+      }
+    ],
+    "skip": false,
+    "bodyFont": "\"Source Sans 3\", -apple-system, \"system-ui\", sans-serif",
+    "errors": [],
+    "screenshot": "contribute.html-desktop.png",
+    "heading_count": 7
+  },
+  {
+    "name": "environmental-footprint.html",
+    "device": "desktop",
+    "width": 1440,
+    "scrollWidth": 1440,
+    "iframes": [],
+    "skip": false,
+    "bodyFont": "\"Source Sans 3\", -apple-system, \"system-ui\", sans-serif",
+    "errors": [],
+    "heading_count": 19
+  },
+  {
+    "name": "everyday-ai.html",
+    "device": "desktop",
+    "width": 1440,
+    "scrollWidth": 1440,
+    "iframes": [],
+    "skip": false,
+    "bodyFont": "\"Source Sans 3\", -apple-system, \"system-ui\", sans-serif",
+    "errors": [],
+    "heading_count": 27
+  },
+  {
+    "name": "github.html",
+    "device": "desktop",
+    "width": 1440,
+    "scrollWidth": 1440,
+    "iframes": [],
+    "skip": false,
+    "bodyFont": "\"Source Sans 3\", -apple-system, \"system-ui\", sans-serif",
+    "errors": [],
+    "screenshot": "github.html-desktop.png",
+    "progress": "Done",
+    "progressPersisted": "Done",
+    "heading_count": 22
+  },
+  {
+    "name": "glossary.html",
+    "device": "desktop",
+    "width": 1440,
+    "scrollWidth": 1440,
+    "iframes": [],
+    "skip": false,
+    "bodyFont": "\"Source Sans 3\", -apple-system, \"system-ui\", sans-serif",
+    "errors": [],
+    "heading_count": 19
+  },
+  {
+    "name": "image-video.html",
+    "device": "desktop",
+    "width": 1440,
+    "scrollWidth": 1440,
+    "iframes": [],
+    "skip": false,
+    "bodyFont": "\"Source Sans 3\", -apple-system, \"system-ui\", sans-serif",
+    "errors": [],
+    "heading_count": 42
+  },
+  {
+    "name": "index.html",
+    "device": "desktop",
+    "width": 1440,
+    "scrollWidth": 1440,
+    "iframes": [],
+    "skip": false,
+    "bodyFont": "\"Source Sans 3\", -apple-system, \"system-ui\", sans-serif",
+    "errors": [],
+    "screenshot": "index.html-desktop.png",
+    "firstTab": {
+      "tag": "A",
+      "text": "AI101\n        A Self-Paced Guide to AI in Medicine",
+      "href": "index.html"
+    },
+    "heading_count": 30
+  },
+  {
+    "name": "llm-thinking.html",
+    "device": "desktop",
+    "width": 1440,
+    "scrollWidth": 1440,
+    "iframes": [],
+    "skip": false,
+    "bodyFont": "\"Source Sans 3\", -apple-system, \"system-ui\", sans-serif",
+    "errors": [],
+    "heading_count": 32
+  },
+  {
+    "name": "local-models.html",
+    "device": "desktop",
+    "width": 1440,
+    "scrollWidth": 1440,
+    "iframes": [],
+    "skip": false,
+    "bodyFont": "\"Source Sans 3\", -apple-system, \"system-ui\", sans-serif",
+    "errors": [],
+    "heading_count": 49
+  },
+  {
+    "name": "medical-learners.html",
+    "device": "desktop",
+    "width": 1440,
+    "scrollWidth": 1440,
+    "iframes": [],
+    "skip": false,
+    "bodyFont": "\"Source Sans 3\", -apple-system, \"system-ui\", sans-serif",
+    "errors": [],
+    "heading_count": 38
+  },
+  {
+    "name": "openclaw.html",
+    "device": "desktop",
+    "width": 1440,
+    "scrollWidth": 1440,
+    "iframes": [],
+    "skip": false,
+    "bodyFont": "\"Source Sans 3\", -apple-system, \"system-ui\", sans-serif",
+    "errors": [],
+    "heading_count": 39
+  },
+  {
+    "name": "patients-ai.html",
+    "device": "desktop",
+    "width": 1440,
+    "scrollWidth": 1440,
+    "iframes": [],
+    "skip": false,
+    "bodyFont": "\"Source Sans 3\", -apple-system, \"system-ui\", sans-serif",
+    "errors": [],
+    "heading_count": 50
+  },
+  {
+    "name": "phi-hipaa.html",
+    "device": "desktop",
+    "width": 1440,
+    "scrollWidth": 1440,
+    "iframes": [],
+    "skip": false,
+    "bodyFont": "\"Source Sans 3\", -apple-system, \"system-ui\", sans-serif",
+    "errors": [],
+    "screenshot": "phi-hipaa.html-desktop.png",
+    "heading_count": 28
+  },
+  {
+    "name": "prompting-exercise.html",
+    "device": "desktop",
+    "width": 1440,
+    "scrollWidth": 1440,
+    "iframes": [],
+    "skip": false,
+    "bodyFont": "\"Source Sans 3\", -apple-system, \"system-ui\", sans-serif",
+    "errors": [],
+    "heading_count": 14
+  },
+  {
+    "name": "prompting.html",
+    "device": "desktop",
+    "width": 1440,
+    "scrollWidth": 1440,
+    "iframes": [],
+    "skip": false,
+    "bodyFont": "\"Source Sans 3\", -apple-system, \"system-ui\", sans-serif",
+    "errors": [],
+    "heading_count": 28
+  },
+  {
+    "name": "resources.html",
+    "device": "desktop",
+    "width": 1440,
+    "scrollWidth": 1440,
+    "iframes": [],
+    "skip": false,
+    "bodyFont": "\"Source Sans 3\", -apple-system, \"system-ui\", sans-serif",
+    "errors": [],
+    "heading_count": 14
+  },
+  {
+    "name": "start-here.html",
+    "device": "desktop",
+    "width": 1440,
+    "scrollWidth": 1440,
+    "iframes": [],
+    "skip": false,
+    "bodyFont": "\"Source Sans 3\", -apple-system, \"system-ui\", sans-serif",
+    "errors": [],
+    "screenshot": "start-here.html-desktop.png",
+    "heading_count": 17
+  },
+  {
+    "name": "updates.html",
+    "device": "desktop",
+    "width": 1440,
+    "scrollWidth": 1440,
+    "iframes": [],
+    "skip": false,
+    "bodyFont": "\"Source Sans 3\", -apple-system, \"system-ui\", sans-serif",
+    "errors": [],
+    "heading_count": 64
+  },
+  {
+    "name": "vibe-coding.html",
+    "device": "desktop",
+    "width": 1440,
+    "scrollWidth": 1440,
+    "iframes": [],
+    "skip": false,
+    "bodyFont": "\"Source Sans 3\", -apple-system, \"system-ui\", sans-serif",
+    "errors": [],
+    "heading_count": 85
+  },
+  {
+    "name": "whats-next.html",
+    "device": "desktop",
+    "width": 1440,
+    "scrollWidth": 1440,
+    "iframes": [],
+    "skip": false,
+    "bodyFont": "\"Source Sans 3\", -apple-system, \"system-ui\", sans-serif",
+    "errors": [],
+    "heading_count": 35
+  },
+  {
+    "name": "about.html",
+    "device": "mobile",
+    "width": 390,
+    "scrollWidth": 390,
+    "iframes": [],
+    "skip": false,
+    "bodyFont": "\"Source Sans 3\", -apple-system, \"system-ui\", sans-serif",
+    "errors": [],
+    "menu": {
+      "before": null,
+      "after": null,
+      "open": true,
+      "escapeCloses": false
+    },
+    "heading_count": 19
+  },
+  {
+    "name": "ai-news.html",
+    "device": "mobile",
+    "width": 390,
+    "scrollWidth": 390,
+    "iframes": [],
+    "skip": false,
+    "bodyFont": "\"Source Sans 3\", -apple-system, \"system-ui\", sans-serif",
+    "errors": [],
+    "screenshot": "ai-news.html-mobile.png",
+    "menu": {
+      "before": null,
+      "after": null,
+      "open": true,
+      "escapeCloses": false
+    },
+    "heading_count": 113
+  },
+  {
+    "name": "ai-search.html",
+    "device": "mobile",
+    "width": 390,
+    "scrollWidth": 616,
+    "iframes": [],
+    "skip": false,
+    "bodyFont": "\"Source Sans 3\", -apple-system, \"system-ui\", sans-serif",
+    "errors": [],
+    "menu": {
+      "before": null,
+      "after": null,
+      "open": true,
+      "escapeCloses": false
+    },
+    "heading_count": 31
+  },
+  {
+    "name": "ai-tools-mcp.html",
+    "device": "mobile",
+    "width": 390,
+    "scrollWidth": 390,
+    "iframes": [],
+    "skip": false,
+    "bodyFont": "\"Source Sans 3\", -apple-system, \"system-ui\", sans-serif",
+    "errors": [],
+    "menu": {
+      "before": null,
+      "after": null,
+      "open": true,
+      "escapeCloses": false
+    },
+    "heading_count": 16
+  },
+  {
+    "name": "ambient-ai.html",
+    "device": "mobile",
+    "width": 390,
+    "scrollWidth": 390,
+    "iframes": [],
+    "skip": false,
+    "bodyFont": "\"Source Sans 3\", -apple-system, \"system-ui\", sans-serif",
+    "errors": [],
+    "menu": {
+      "before": null,
+      "after": null,
+      "open": true,
+      "escapeCloses": false
+    },
+    "heading_count": 49
+  },
+  {
+    "name": "bias-ethics.html",
+    "device": "mobile",
+    "width": 390,
+    "scrollWidth": 390,
+    "iframes": [],
+    "skip": false,
+    "bodyFont": "\"Source Sans 3\", -apple-system, \"system-ui\", sans-serif",
+    "errors": [],
+    "menu": {
+      "before": null,
+      "after": null,
+      "open": true,
+      "escapeCloses": false
+    },
+    "heading_count": 36
+  },
+  {
+    "name": "big-three.html",
+    "device": "mobile",
+    "width": 390,
+    "scrollWidth": 390,
+    "iframes": [],
+    "skip": false,
+    "bodyFont": "\"Source Sans 3\", -apple-system, \"system-ui\", sans-serif",
+    "errors": [],
+    "screenshot": "big-three.html-mobile.png",
+    "menu": {
+      "before": null,
+      "after": null,
+      "open": true,
+      "escapeCloses": false
+    },
+    "heading_count": 41
+  },
+  {
+    "name": "claude-code.html",
+    "device": "mobile",
+    "width": 390,
+    "scrollWidth": 652,
+    "iframes": [],
+    "skip": false,
+    "bodyFont": "\"Source Sans 3\", -apple-system, \"system-ui\", sans-serif",
+    "errors": [],
+    "screenshot": "claude-code.html-mobile.png",
+    "progress": "Done",
+    "progressPersisted": "Done",
+    "heading_count": 39
+  },
+  {
+    "name": "clinical-decision-support.html",
+    "device": "mobile",
+    "width": 390,
+    "scrollWidth": 390,
+    "iframes": [],
+    "skip": false,
+    "bodyFont": "\"Source Sans 3\", -apple-system, \"system-ui\", sans-serif",
+    "errors": [],
+    "menu": {
+      "before": null,
+      "after": null,
+      "open": true,
+      "escapeCloses": false
+    },
+    "heading_count": 55
+  },
+  {
+    "name": "contribute.html",
+    "device": "mobile",
+    "width": 390,
+    "scrollWidth": 390,
+    "iframes": [
+      {
+        "title": "",
+        "src": "https://docs.google.com/forms/d/e/1FAIpQLSc3qPCR5gyR8tg2Qg41bt1xVEIlZl3kXkDLm50h4uvJcFbAaw/viewform?embedded=true"
+      }
+    ],
+    "skip": false,
+    "bodyFont": "\"Source Sans 3\", -apple-system, \"system-ui\", sans-serif",
+    "errors": [],
+    "screenshot": "contribute.html-mobile.png",
+    "menu": {
+      "before": null,
+      "after": null,
+      "open": true,
+      "escapeCloses": false
+    },
+    "heading_count": 7
+  },
+  {
+    "name": "environmental-footprint.html",
+    "device": "mobile",
+    "width": 390,
+    "scrollWidth": 390,
+    "iframes": [],
+    "skip": false,
+    "bodyFont": "\"Source Sans 3\", -apple-system, \"system-ui\", sans-serif",
+    "errors": [],
+    "menu": {
+      "before": null,
+      "after": null,
+      "open": true,
+      "escapeCloses": false
+    },
+    "heading_count": 19
+  },
+  {
+    "name": "everyday-ai.html",
+    "device": "mobile",
+    "width": 390,
+    "scrollWidth": 390,
+    "iframes": [],
+    "skip": false,
+    "bodyFont": "\"Source Sans 3\", -apple-system, \"system-ui\", sans-serif",
+    "errors": [],
+    "menu": {
+      "before": null,
+      "after": null,
+      "open": true,
+      "escapeCloses": false
+    },
+    "heading_count": 27
+  },
+  {
+    "name": "github.html",
+    "device": "mobile",
+    "width": 390,
+    "scrollWidth": 617,
+    "iframes": [],
+    "skip": false,
+    "bodyFont": "\"Source Sans 3\", -apple-system, \"system-ui\", sans-serif",
+    "errors": [],
+    "screenshot": "github.html-mobile.png",
+    "progress": "Done",
+    "progressPersisted": "Done",
+    "heading_count": 22
+  },
+  {
+    "name": "glossary.html",
+    "device": "mobile",
+    "width": 390,
+    "scrollWidth": 390,
+    "iframes": [],
+    "skip": false,
+    "bodyFont": "\"Source Sans 3\", -apple-system, \"system-ui\", sans-serif",
+    "errors": [],
+    "menu": {
+      "before": null,
+      "after": null,
+      "open": true,
+      "escapeCloses": false
+    },
+    "heading_count": 19
+  },
+  {
+    "name": "image-video.html",
+    "device": "mobile",
+    "width": 390,
+    "scrollWidth": 390,
+    "iframes": [],
+    "skip": false,
+    "bodyFont": "\"Source Sans 3\", -apple-system, \"system-ui\", sans-serif",
+    "errors": [],
+    "menu": {
+      "before": null,
+      "after": null,
+      "open": true,
+      "escapeCloses": false
+    },
+    "heading_count": 42
+  },
+  {
+    "name": "index.html",
+    "device": "mobile",
+    "width": 390,
+    "scrollWidth": 390,
+    "iframes": [],
+    "skip": false,
+    "bodyFont": "\"Source Sans 3\", -apple-system, \"system-ui\", sans-serif",
+    "errors": [],
+    "screenshot": "index.html-mobile.png",
+    "menu": {
+      "before": null,
+      "after": null,
+      "open": true,
+      "escapeCloses": false
+    },
+    "firstTab": {
+      "tag": "A",
+      "text": "Topics",
+      "href": "index.html"
+    },
+    "heading_count": 30
+  },
+  {
+    "name": "llm-thinking.html",
+    "device": "mobile",
+    "width": 390,
+    "scrollWidth": 390,
+    "iframes": [],
+    "skip": false,
+    "bodyFont": "\"Source Sans 3\", -apple-system, \"system-ui\", sans-serif",
+    "errors": [],
+    "menu": {
+      "before": null,
+      "after": null,
+      "open": true,
+      "escapeCloses": false
+    },
+    "heading_count": 32
+  },
+  {
+    "name": "local-models.html",
+    "device": "mobile",
+    "width": 390,
+    "scrollWidth": 390,
+    "iframes": [],
+    "skip": false,
+    "bodyFont": "\"Source Sans 3\", -apple-system, \"system-ui\", sans-serif",
+    "errors": [],
+    "menu": {
+      "before": null,
+      "after": null,
+      "open": true,
+      "escapeCloses": false
+    },
+    "heading_count": 49
+  },
+  {
+    "name": "medical-learners.html",
+    "device": "mobile",
+    "width": 390,
+    "scrollWidth": 390,
+    "iframes": [],
+    "skip": false,
+    "bodyFont": "\"Source Sans 3\", -apple-system, \"system-ui\", sans-serif",
+    "errors": [],
+    "menu": {
+      "before": null,
+      "after": null,
+      "open": true,
+      "escapeCloses": false
+    },
+    "heading_count": 38
+  },
+  {
+    "name": "openclaw.html",
+    "device": "mobile",
+    "width": 390,
+    "scrollWidth": 390,
+    "iframes": [],
+    "skip": false,
+    "bodyFont": "\"Source Sans 3\", -apple-system, \"system-ui\", sans-serif",
+    "errors": [],
+    "menu": {
+      "before": null,
+      "after": null,
+      "open": true,
+      "escapeCloses": false
+    },
+    "heading_count": 39
+  },
+  {
+    "name": "patients-ai.html",
+    "device": "mobile",
+    "width": 390,
+    "scrollWidth": 390,
+    "iframes": [],
+    "skip": false,
+    "bodyFont": "\"Source Sans 3\", -apple-system, \"system-ui\", sans-serif",
+    "errors": [],
+    "menu": {
+      "before": null,
+      "after": null,
+      "open": true,
+      "escapeCloses": false
+    },
+    "heading_count": 50
+  },
+  {
+    "name": "phi-hipaa.html",
+    "device": "mobile",
+    "width": 390,
+    "scrollWidth": 390,
+    "iframes": [],
+    "skip": false,
+    "bodyFont": "\"Source Sans 3\", -apple-system, \"system-ui\", sans-serif",
+    "errors": [],
+    "screenshot": "phi-hipaa.html-mobile.png",
+    "menu": {
+      "before": null,
+      "after": null,
+      "open": true,
+      "escapeCloses": false
+    },
+    "heading_count": 28
+  },
+  {
+    "name": "prompting-exercise.html",
+    "device": "mobile",
+    "width": 390,
+    "scrollWidth": 390,
+    "iframes": [],
+    "skip": false,
+    "bodyFont": "\"Source Sans 3\", -apple-system, \"system-ui\", sans-serif",
+    "errors": [],
+    "menu": {
+      "before": null,
+      "after": null,
+      "open": true,
+      "escapeCloses": false
+    },
+    "heading_count": 14
+  },
+  {
+    "name": "prompting.html",
+    "device": "mobile",
+    "width": 390,
+    "scrollWidth": 390,
+    "iframes": [],
+    "skip": false,
+    "bodyFont": "\"Source Sans 3\", -apple-system, \"system-ui\", sans-serif",
+    "errors": [],
+    "menu": {
+      "before": null,
+      "after": null,
+      "open": true,
+      "escapeCloses": false
+    },
+    "heading_count": 28
+  },
+  {
+    "name": "resources.html",
+    "device": "mobile",
+    "width": 390,
+    "scrollWidth": 390,
+    "iframes": [],
+    "skip": false,
+    "bodyFont": "\"Source Sans 3\", -apple-system, \"system-ui\", sans-serif",
+    "errors": [],
+    "menu": {
+      "before": null,
+      "after": null,
+      "open": true,
+      "escapeCloses": false
+    },
+    "heading_count": 14
+  },
+  {
+    "name": "start-here.html",
+    "device": "mobile",
+    "width": 390,
+    "scrollWidth": 390,
+    "iframes": [],
+    "skip": false,
+    "bodyFont": "\"Source Sans 3\", -apple-system, \"system-ui\", sans-serif",
+    "errors": [],
+    "screenshot": "start-here.html-mobile.png",
+    "menu": {
+      "before": null,
+      "after": null,
+      "open": true,
+      "escapeCloses": false
+    },
+    "heading_count": 17
+  },
+  {
+    "name": "updates.html",
+    "device": "mobile",
+    "width": 390,
+    "scrollWidth": 390,
+    "iframes": [],
+    "skip": false,
+    "bodyFont": "\"Source Sans 3\", -apple-system, \"system-ui\", sans-serif",
+    "errors": [],
+    "menu": {
+      "before": null,
+      "after": null,
+      "open": true,
+      "escapeCloses": false
+    },
+    "heading_count": 64
+  },
+  {
+    "name": "vibe-coding.html",
+    "device": "mobile",
+    "width": 390,
+    "scrollWidth": 390,
+    "iframes": [],
+    "skip": false,
+    "bodyFont": "\"Source Sans 3\", -apple-system, \"system-ui\", sans-serif",
+    "errors": [],
+    "menu": {
+      "before": null,
+      "after": null,
+      "open": true,
+      "escapeCloses": false
+    },
+    "heading_count": 85
+  },
+  {
+    "name": "whats-next.html",
+    "device": "mobile",
+    "width": 390,
+    "scrollWidth": 390,
+    "iframes": [],
+    "skip": false,
+    "bodyFont": "\"Source Sans 3\", -apple-system, \"system-ui\", sans-serif",
+    "errors": [],
+    "menu": {
+      "before": null,
+      "after": null,
+      "open": true,
+      "escapeCloses": false
+    },
+    "heading_count": 35
+  },
+  {
+    "case": "icons-blocked",
+    "errors": [
+      "lucide is not defined"
+    ],
+    "menuOpen": false
+  }
+]

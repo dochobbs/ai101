@@ -26,6 +26,7 @@
   <script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "aee6310cb71e4b55b02d4e681c4eb7ab"}'></script>
 </head>
 <body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
 
   <nav class="nav">
     <div class="nav-inner">
@@ -33,10 +34,10 @@
         <span class="nav-badge"><span class="b-ai">AI</span><span class="b-num">101</span></span>
         <span class="nav-title">A Self-Paced Guide to AI in Medicine</span>
       </a>
-      <button class="nav-toggle" aria-label="Toggle menu">
-        <i data-lucide="menu"></i>
+      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="site-menu">
+        <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 5h16M4 12h16M4 19h16"/></svg>
       </button>
-      <div class="nav-links">
+      <div class="nav-links" id="site-menu">
         <a href="index.html" class="nav-link">Topics</a>
         <a href="resources.html" class="nav-link">Resources</a>
         <a href="about.html" class="nav-link">About</a>
@@ -46,7 +47,7 @@
     </div>
   </nav>
 
-  <main class="main">
+  <main id="main-content" tabindex="-1" class="main">
     <article class="content">
 
       <header class="unit-header">
@@ -112,6 +113,15 @@
 
         <article class="news-item">
           <div class="news-dates">
+            <span class="news-date-published">Published: Oct 8, 2026</span>
+            <span class="news-date-added">Added: Nov 1, 2026</span>
+          </div>
+          <h3 class="news-title"><a href="https://www.thelancet.com/journals/lancet/article/PIIS0140-6736%2826%2901535-7/abstract" target="_blank" rel="noopener">AMIE Reached Real Primary-Care Patients—with Physician Safety Supervision</a></h3>
+          <p class="news-description">In a single-center, single-arm feasibility study, 114 adults enrolled and 98 completed an AMIE conversation plus an urgent primary-care visit. Physicians monitored every conversation; no prespecified safety stops were required, but supervisors noted one hallucination and added information in five interactions. Clinicians found the transcript helpful in 33 of 44 reviewed cases. This supports supervised feasibility and visit preparation, not replacement of clinicians or improved patient outcomes. The publisher gives October 8 as the publication-history date, despite later issue/index metadata.</p>
+        </article>
+
+        <article class="news-item">
+          <div class="news-dates">
             <span class="news-date-published">Published: Oct 7, 2026</span>
             <span class="news-date-added">Added: Nov 1, 2026</span>
           </div>
@@ -121,11 +131,56 @@
 
         <article class="news-item">
           <div class="news-dates">
+            <span class="news-date-published">Published: Oct 5, 2026</span>
+            <span class="news-date-added">Added: Nov 1, 2026</span>
+          </div>
+          <h3 class="news-title"><a href="https://developers.openai.com/api/docs/changelog" target="_blank" rel="noopener">OpenAI Adds Eligible-Organization API BAA Setup—Feature Scope Still Matters</a></h3>
+          <p class="news-description">OpenAI’s October 5 API changelog adds an in-product HIPAA support and BAA acceptance flow for eligible organizations. This does not make every model, endpoint, hosted tool, or retention mode suitable for PHI. Its data-controls documentation excludes live internet web search from BAA coverage and describes specific conditions for offline/cache-only search. Verify the executed agreement, account configuration, and exact feature boundary before using patient data.</p>
+        </article>
+
+        <article class="news-item">
+          <div class="news-dates">
+            <span class="news-date-published">Published: Oct 5, 2026</span>
+            <span class="news-date-added">Added: Nov 1, 2026</span>
+          </div>
+          <h3 class="news-title"><a href="https://www.nature.com/articles/s41746-026-03232-x" target="_blank" rel="noopener">An Ophthalmic History-Taking Agent Scored Better—and Took Much Longer</a></h3>
+          <p class="news-description">A single-center randomized trial assigned 172 non-emergency ophthalmology patients to an engineered LLM history-taking agent or residents. The agent’s history-quality score was 17.7 points higher, with higher patience/empathy ratings, but interactions lasted a median 11.2 versus 3.1 minutes. Exploratory history-only diagnostic differences narrowed when ocular signs were added. This evaluates a particular pre-consultation workflow with unequal interaction time; it does not establish general diagnostic superiority or patient-outcome benefit.</p>
+        </article>
+
+        <article class="news-item">
+          <div class="news-dates">
+            <span class="news-date-published">Published: Oct 1, 2026</span>
+            <span class="news-date-added">Added: Nov 1, 2026</span>
+          </div>
+          <h3 class="news-title"><a href="https://doi.org/10.1016/j.langlo.2026.104062" target="_blank" rel="noopener">Immediate AI Screening Plus Counseling Improved Retinopathy Referral Attendance</a></h3>
+          <p class="news-description">Across 24 Tanzanian hospitals, a randomized trial enrolled 2,378 adults with diabetes. Among those with true referable retinopathy, 35.9% in the AI pathway attended the referral clinic within eight weeks versus 18.2% with standard care. The intervention bundled immediate AI results with face-to-face counseling; the comparator used deferred human grading and telephone counseling. This is a measured pathway benefit, not proof that AI image grading alone caused it, and most referred patients still did not attend.</p>
+        </article>
+
+        <article class="news-item">
+          <div class="news-dates">
             <span class="news-date-published">Published: Sep 28, 2026</span>
             <span class="news-date-added">Added: Nov 1, 2026</span>
           </div>
           <h3 class="news-title"><a href="https://www.anthropic.com/claude-sonnet-5-5" target="_blank" rel="noopener">Claude Opus 5.5 and Sonnet 5.5 Replace the July Model Advice</a></h3>
           <p class="news-description">Opus 5.5 launched September 22 and Sonnet 5.5 followed September 28. Standard API input/output prices are $4/$20 and $2/$10 per million tokens respectively; Opus list prices are 20% below Opus 5. Claimed per-task savings also depend on token use and caching. The current catalog includes Fable 5.1, while subscription plans now distinguish Max and Ultra. These changes supersede this guide’s July model and tier descriptions; vendor capability claims remain separate from clinical validation.</p>
+        </article>
+
+        <article class="news-item">
+          <div class="news-dates">
+            <span class="news-date-published">Published: Sep 24, 2026</span>
+            <span class="news-date-added">Added: Nov 1, 2026</span>
+          </div>
+          <h3 class="news-title"><a href="https://developers.openai.com/api/docs/guides/video-generation" target="_blank" rel="noopener">Sora’s Models and Videos API Have Shut Down</a></h3>
+          <p class="news-description">OpenAI’s official guide now states that Sora 2 and the Videos API shut down on September 24 and that no one-to-one replacement API is available. Existing code examples remain in the guide as historical reference. A tutorial or integration built around that endpoint now needs a replacement workflow, rather than an unchanged model string. This guide’s video section has been corrected from future shutdown language to the completed retirement.</p>
+        </article>
+
+        <article class="news-item">
+          <div class="news-dates">
+            <span class="news-date-published">Published: Sep 8, 2026</span>
+            <span class="news-date-added">Added: Nov 1, 2026</span>
+          </div>
+          <h3 class="news-title"><a href="https://developers.openai.com/api/docs/guides/image-generation" target="_blank" rel="noopener">GPT Image 2.5 Adds New Generation and Editing Options</a></h3>
+          <p class="news-description">OpenAI’s September 8 changelog released GPT Image 2.5 Sunburst and Flare through the Image API and the Responses image-generation tool. Sunburst targets demanding quality and precise edits; Flare targets faster generation. Both support transparent backgrounds and new quality settings. These are image-production capabilities, not validated medical illustration: independently check anatomy, labels, and instructions before sharing clinical teaching or patient-facing materials.</p>
         </article>
 
         <article class="news-item">
@@ -146,6 +201,23 @@
           <p class="news-description">Google’s API release notes mark Gemini 3.8 Flash generally available on September 2. Its current catalog also lists 3.8 Live and 3.1 Pro preview. Model availability in an API is not a guarantee of the model selected in a consumer app or an institution’s Workspace deployment. Check the actual model and approved service rather than purchasing from an old comparison chart. This guide’s current offering sections have been refreshed; historical release notes retain their dates.</p>
         </article>
 
+        <article class="news-item">
+          <div class="news-dates">
+            <span class="news-date-published">Published: Sep 1, 2026</span>
+            <span class="news-date-added">Added: Nov 1, 2026</span>
+          </div>
+          <h3 class="news-title"><a href="https://doi.org/10.1136/bmjcdh-2026-000008" target="_blank" rel="noopener">A Multisite Ambient-Scribe Study Found Time Savings, With Before-and-After Limits</a></h3>
+          <p class="news-description">A prospective before-and-after study across four Australian hospitals involved 58 clinicians, 621 non-scribe encounters, and 338 scribe encounters. Median total encounter time was two minutes shorter overall, with larger differences in mental health and allied health. Clinicians and patients reported favorable experiences. The nonrandomized design limits causal attribution, and the authors call for longer-term evaluation of efficiency, well-being, and patient outcomes. It adds workflow evidence without establishing better clinical outcomes.</p>
+        </article>
+
+        <article class="news-item">
+          <div class="news-dates">
+            <span class="news-date-published">Published: Aug 26, 2026</span>
+            <span class="news-date-added">Added: Nov 1, 2026</span>
+          </div>
+          <h3 class="news-title"><a href="https://z.ai/blog/glm-5.3-flash" target="_blank" rel="noopener">GLM-5.3-Flash Weights Shipped; Availability Is Not Clinical Readiness</a></h3>
+          <p class="news-description">Z.ai released GLM-5.3-Flash on August 26, with downloadable weights and an MIT license in the publisher’s Hugging Face repository. It is a separate 320B-parameter release from the full GLM-5.3 whose earlier announcement promised future weights. The release makes local deployment possible on suitable infrastructure; it does not make it a laptop model, establish clinical validation, or provide a BAA for the vendor’s hosted API.</p>
+        </article>
 
         <article class="news-item">
           <div class="news-dates">
@@ -249,25 +321,7 @@
           <h3 class="news-title">
             <a href="https://www.fda.gov/news-events/press-announcements/fda-seeks-public-feedback-inform-regulatory-approach-generative-ai-enabled-medical-devices" target="_blank" rel="noopener">FDA Asks How to Regulate Generative-AI Devices&mdash;and Clinicians Can Answer Until October 19</a>
           </h3>
-          <p class="news-description">
-            The FDA&rsquo;s Digital Health Center of Excellence issued
-            &ldquo;Considerations for the Regulation of Generative AI-Enabled Medical
-            Devices&rdquo; on August 18&mdash;the agency&rsquo;s first regulatory-framework
-            proposal specific to the category it entered in June by clearing UpDoc. The paper
-            proposes a two-axis risk framework, a premarket <strong>&ldquo;competency
-            assessment&rdquo;</strong> approach the agency says is inspired at a high level by
-            how physicians are trained and evaluated (non-clinical benchmarking plus clinical
-            confirmation), risk-proportionate postmarket monitoring, and dedicated treatment of
-            foundation models and agentic AI systems. Be clear about what this is:
-            <strong>a discussion paper and request for feedback, not guidance and not a
-            rule</strong>&mdash;it binds nobody. The reason it earns a card anyway is the one
-            concrete action attached: clinicians are explicitly named among the invited
-            commenters, and the docket (<strong>FDA-2026-N-7874</strong> on Regulations.gov) is
-            open through <strong>October 19, 2026</strong>. If you use or are evaluating LLM-based
-            clinical tools, this is the window in which the people who will regulate them are
-            asking what you think. Context in
-            <a href="clinical-decision-support.html">Clinical Decision Support</a>.
-          </p>
+          <p class="news-description">Correction checked November 1: the FDA issued a discussion paper on August 18, not a binding rule or draft/final guidance. It seeks input on risk assessment, premarket evaluation, postmarket monitoring, foundation models, and agentic systems. The stated October 19, 2026 comment deadline has passed. The original entry also incorrectly placed UpDoc clearance in June; the FDA clearance letter is dated December 23, 2025, while the company announced it in June 2026.</p>
         </article>
 
         <article class="news-item">
@@ -721,7 +775,6 @@
           </p>
         </article>
 
-
         <article class="news-item">
           <div class="news-dates">
             <span class="news-date-published">Published: Jul 21, 2026</span>
@@ -763,7 +816,6 @@
             <a href="vibe-coding.html">Vibe Coding</a>.
           </p>
         </article>
-
 
         <article class="news-item">
           <div class="news-dates">
@@ -909,27 +961,9 @@
             <span class="news-date-added">Added: Jul 28, 2026</span>
           </div>
           <h3 class="news-title">
-            <a href="https://innolitics.com/articles/updoc-fda-cleared-ai-agent/" target="_blank" rel="noopener">First FDA-Cleared Patient-Facing Clinical LLM Is Narrower Than the Headlines</a>
+            <a href="https://innolitics.com/articles/updoc-fda-cleared-ai-agent/" target="_blank" rel="noopener">UpDoc’s Clearance Covers Provider-Directed Insulin Management</a>
           </h3>
-          <p class="news-description">
-            UpDoc announced on June 25 that its device had cleared FDA review&mdash;the first
-            software as a medical device in which a <strong>patient-facing large language model is
-            the active clinical component</strong>. That is a genuine regulatory first, and three
-            details get lost in the coverage. First, the dates: the
-            <a href="https://api.fda.gov/device/510k.json?search=k_number:%22K253281%22" target="_blank" rel="noopener">openFDA
-            510(k) record for K253281</a> shows a submission received September 29, 2025 and a
-            <strong>decision date of December 23, 2025</strong>. June 25 is the company&rsquo;s
-            announcement, not the clearance. Second, 510(k) is <strong>clearance, not
-            approval</strong>&mdash;a finding of substantial equivalence to a device already on the
-            market. Third, and most important, what was cleared is a <strong>prescription device
-            for medication management in adults 18 and older with type 2 diabetes, centered on
-            insulin treatment plan instructions</strong>, found substantially equivalent to
-            Hygieia&rsquo;s d-Nav System (K181916)&mdash;an insulin dose calculator. It is a
-            conversational front end on a protocol-bounded dosing tool, operating inside a defined
-            indication under clinician supervision. Anyone reading this as the FDA blessing a
-            general medical chatbot has it backwards. Regulatory context in
-            <a href="clinical-decision-support.html">Clinical Decision Support</a>.
-          </p>
+          <p class="news-description">UpDoc announced its product on June 25, 2026, after FDA 510(k) clearance K253281 on December 23, 2025. The company described it as the first SaMD using a patient-facing LLM. FDA records establish a narrower indication: provider-directed insulin management for adults with type 2 diabetes, using a conversational interface and a separate clinical service. The predicate was Hygieia’s d-Nav System. Clearance is substantial equivalence, not approval of a general autonomous medical chatbot. Correction checked November 1: the broader first/active-clinical-LLM claim is attributed to the company.</p>
         </article>
 
         <article class="news-item">
@@ -1059,24 +1093,6 @@
 
         <article class="news-item">
           <div class="news-dates">
-            <span class="news-date-published">Published: May 7, 2026</span>
-            <span class="news-date-added">Added: Jun 10, 2026</span>
-          </div>
-          <h3 class="news-title">
-            <a href="https://techcrunch.com/2026/05/07/googles-9-99-per-month-ai-health-coach-launches-may-19/" target="_blank" rel="noopener">Google Health Coach Launches: $9.99/month Gemini Companion with EHR Integration</a>
-          </h3>
-          <p class="news-description">
-            Google&rsquo;s <strong>Health Coach</strong> went live May 19: a $9.99/month
-            consumer AI health companion powered by Gemini, integrating Fitbit data and US EHR
-            medical records, explicitly positioned as coaching rather than diagnosis. The
-            clinical reality: patients will increasingly arrive with AI-synthesized trends from
-            their own records. Framing in <a href="patients-ai.html">When Patients Use AI
-            Too</a>.
-          </p>
-        </article>
-
-        <article class="news-item">
-          <div class="news-dates">
             <span class="news-date-published">Published: May 19, 2026</span>
             <span class="news-date-added">Added: May 25, 2026</span>
           </div>
@@ -1173,6 +1189,24 @@
             scribe vendors (Abridge, Nuance/DAX, Suki, Nabla) now compete with
             a free EHR-bundled option for athena-shop practices. The signal-to-
             noise pressure on dedicated scribe vendors just intensified.
+          </p>
+        </article>
+
+        <article class="news-item">
+          <div class="news-dates">
+            <span class="news-date-published">Published: May 7, 2026</span>
+            <span class="news-date-added">Added: Jun 10, 2026</span>
+          </div>
+          <h3 class="news-title">
+            <a href="https://techcrunch.com/2026/05/07/googles-9-99-per-month-ai-health-coach-launches-may-19/" target="_blank" rel="noopener">Google Health Coach Launches: $9.99/month Gemini Companion with EHR Integration</a>
+          </h3>
+          <p class="news-description">
+            Google&rsquo;s <strong>Health Coach</strong> went live May 19: a $9.99/month
+            consumer AI health companion powered by Gemini, integrating Fitbit data and US EHR
+            medical records, explicitly positioned as coaching rather than diagnosis. The
+            clinical reality: patients will increasingly arrive with AI-synthesized trends from
+            their own records. Framing in <a href="patients-ai.html">When Patients Use AI
+            Too</a>.
           </p>
         </article>
 
@@ -1289,15 +1323,113 @@
             <span class="news-date-added">Added: May 11, 2026</span>
           </div>
           <h3 class="news-title">
-            <a href="https://openai.com/index/chatgpt-images-2/" target="_blank">OpenAI Launches ChatGPT Images 2.0</a>
+            <a href="https://developers.openai.com/api/docs/guides/image-generation" target="_blank">ChatGPT Images: Use the Current Image-Generation Guide</a>
+          </h3>
+          <p class="news-description">This April entry described ChatGPT Images 2.0. Correction checked November 1: its original announcement URL no longer resolves, and the current API family is GPT Image 2.5 Sunburst and Flare. Consult the current official image-generation guide for supported generation/editing features. The historical leaderboard position and consumer-plan rollout are not current availability guidance; neither establishes medical accuracy.</p>
+        </article>
+
+        <article class="news-item">
+          <div class="news-dates">
+            <span class="news-date-published">Published: Apr 16, 2026</span>
+            <span class="news-date-added">Added: Apr 21, 2026</span>
+          </div>
+          <h3 class="news-title">
+            <a href="https://www.anthropic.com/news/claude-opus-4-7" target="_blank">Claude Opus 4.7 Launches with Same-Day GPT-5.4 and Gemini 3 Releases</a>
           </h3>
           <p class="news-description">
-            ChatGPT Images 2.0 launched Apr 21 and hit #1 on Image Arena within 12 hours. Available on
-            all plans including Free. Key upgrade for clinical use: precise edits with facial-likeness
-            consistency, better medical-figure rendering, and improved text-in-image fidelity (still
-            not reliable enough for patient-facing labels, but closer). See the
-            <a href="image-video.html">AI Image and Video Creation</a> module for the full tier
-            breakdown.
+            Anthropic, OpenAI, and Google all shipped flagship model updates within hours of each
+            other on April 16. Opus 4.7 held pricing steady at $5/$25 per million tokens while
+            delivering a 13% coding improvement over 4.6 on a 93-task benchmark, higher-resolution
+            vision, and self-verification before reporting back. Available on API, Bedrock, Vertex AI,
+            and Microsoft Foundry. The coordinated release is the clearest sign yet that the frontier
+            has become a weekly moving target&mdash;re-test your personal workflows quarterly.
+          </p>
+        </article>
+
+        <article class="news-item">
+          <div class="news-dates">
+            <span class="news-date-published">Published: Apr 16, 2026</span>
+            <span class="news-date-added">Added: Apr 21, 2026</span>
+          </div>
+          <h3 class="news-title">
+            <a href="https://blog.google/products/gemini/gemini-3/" target="_blank">Gemini 3 Arrives: Flash as Default, Plus Agent and Deep Think</a>
+          </h3>
+          <p class="news-description">
+            Google made Gemini 3 Flash the default model in the Gemini app, with Gemini Agent
+            (multi-step task execution across Workspace, Deep Research, Canvas, and live web) and
+            Gemini 3 Deep Think available to Google AI Ultra subscribers. Grounding with Google Maps
+            is now supported. Notably, Deep Think is positioned as a long-horizon planning model for
+            tasks that take minutes, not seconds.
+          </p>
+        </article>
+
+        <article class="news-item">
+          <div class="news-dates">
+            <span class="news-date-published">Published: Apr 16, 2026</span>
+            <span class="news-date-added">Added: Apr 21, 2026</span>
+          </div>
+          <h3 class="news-title">
+            <a href="https://ai.nejm.org/" target="_blank">NEJM AI Publishes ChexGen: Generative Foundation Model for Chest Radiographs</a>
+          </h3>
+          <p class="news-description">
+            A vision-language foundation model for chest radiographs supporting text-, mask-, and
+            bounding-box&ndash;guided image synthesis. Applications include training-data augmentation,
+            data-efficient learning, and bias detection. A pointer to where imaging decision support
+            is heading&mdash;not just classifiers, but generative models that can produce plausible
+            controlled images on demand for training and evaluation.
+          </p>
+        </article>
+
+        <article class="news-item">
+          <div class="news-dates">
+            <span class="news-date-published">Published: Apr 15, 2026</span>
+            <span class="news-date-added">Added: Apr 21, 2026</span>
+          </div>
+          <h3 class="news-title">
+            <a href="https://hitconsultant.net/2026/04/15/abridge-nejm-jama-partnership-clinical-decision-support-ehr/" target="_blank">Abridge Embeds NEJM and JAMA Content Directly into Clinical Decision Support</a>
+          </h3>
+          <p class="news-description">
+            Abridge announced content partnerships with NEJM Group and the AMA covering
+            <em>JAMA plus 11 specialty journals and JAMA Network Open</em>. The peer-reviewed content
+            now feeds Abridge's CDS engine grounded in the actual patient conversation happening in
+            the room. First time a clinical AI company has wired first-tier peer-reviewed journals
+            directly into CDS at the point of care.
+          </p>
+        </article>
+
+        <article class="news-item">
+          <div class="news-dates">
+            <span class="news-date-published">Published: Apr 14&ndash;16, 2026</span>
+            <span class="news-date-added">Added: Apr 21, 2026</span>
+          </div>
+          <h3 class="news-title">
+            <a href="https://openai.com/index/introducing-gpt-rosalind/" target="_blank">OpenAI Ships GPT-5.4, GPT-5.4-Cyber, and GPT-Rosalind</a>
+          </h3>
+          <p class="news-description">
+            OpenAI released GPT-5.4 (Apr 16) as its most capable frontier model for professional work,
+            GPT-5.4-Cyber (Apr 14) for vetted security professionals, and GPT-Rosalind&mdash;a
+            life-sciences reasoning model optimized for molecules, proteins, genes, pathways, and
+            disease biology. Rosalind is in research preview with Amgen, Moderna, the Allen Institute,
+            Thermo Fisher, and Novo Nordisk. A specialist biomedical model from a frontier lab is new
+            territory worth watching.
+          </p>
+        </article>
+
+        <article class="news-item warning">
+          <div class="news-dates">
+            <span class="news-date-published">Published: Apr 14, 2026</span>
+            <span class="news-date-added">Added: Apr 21, 2026</span>
+          </div>
+          <h3 class="news-title">
+            <a href="https://www.scworld.com/brief/claude-code-vulnerable-to-prompt-injection-due-to-subcommand-limit" target="_blank">Claude Code Prompt-Injection CVE After Source Leak</a>
+          </h3>
+          <p class="news-description">
+            After Claude Code's source was leaked, security firm Adversa found its deny rules can be
+            bypassed via prompt injection&mdash;letting attackers execute tool calls Claude Code was
+            configured to refuse. Combined with GitHub Copilot CVE-2025-53773 (CVSS 9.6, PR-description
+            prompt injection enabling RCE) earlier in the month, a clear message for health-system
+            engineering teams: agent-side guardrails are only as strong as the inputs they reason about.
+            Ask explicitly what prompt-injection controls are in place.
           </p>
         </article>
 
@@ -1316,6 +1448,40 @@
             on unmediated chatbot advice, clinicians relying on chatbot output without source review,
             and health systems deploying patient-facing chatbots without governance. ECRI carries
             weight with hospital safety committees; expect this to drive 2026 AI procurement reviews.
+          </p>
+        </article>
+
+        <article class="news-item">
+          <div class="news-dates">
+            <span class="news-date-published">Published: Apr 13, 2026</span>
+            <span class="news-date-added">Added: Apr 21, 2026</span>
+          </div>
+          <h3 class="news-title">
+            <a href="https://www.statnews.com/2026/04/13/hospitals-launch-chatbots-creating-new-funnel-for-patients/" target="_blank">Hartford Rolls Out PatientGPT; Sutter and Reid Pilot Epic&rsquo;s Emmie</a>
+          </h3>
+          <p class="news-description">
+            Hartford HealthCare launched PatientGPT (built by K Health) for Connecticut patients.
+            Sutter Health and Reid Health are piloting Epic's Emmie. Health systems are increasingly
+            treating patient-facing AI as an intake funnel&mdash;a new layer of triage before the
+            appointment rather than after. Worth reading critically for what questions the AI is
+            being asked to resolve on its own.
+          </p>
+        </article>
+
+        <article class="news-item">
+          <div class="news-dates">
+            <span class="news-date-published">Published: Apr 9, 2026</span>
+            <span class="news-date-added">Added: Apr 21, 2026</span>
+          </div>
+          <h3 class="news-title">
+            <a href="https://pricepertoken.com/leaderboards/benchmark/medqa" target="_blank">MedQA Leaderboard Snapshot: Top Models Clear 95%</a>
+          </h3>
+          <p class="news-description">
+            April 9 snapshot of the medical-question benchmark: <em>o4 Mini High 95.2%, Gemini 2.5 Pro
+            94.6%, Claude 3.7 Sonnet 92.3%</em>. Average across all 34 evaluated models is 79.4%.
+            MedQA alone isn't a clinical validation, but it's a useful sanity check when comparing
+            models. The narrow spread at the top of the leaderboard reinforces the Big Three modules'
+            takeaway: the gap between frontier models on text medical reasoning is closing fast.
           </p>
         </article>
 
@@ -1375,128 +1541,6 @@
 
         <article class="news-item">
           <div class="news-dates">
-            <span class="news-date-published">Published: Apr 16, 2026</span>
-            <span class="news-date-added">Added: Apr 21, 2026</span>
-          </div>
-          <h3 class="news-title">
-            <a href="https://www.anthropic.com/news/claude-opus-4-7" target="_blank">Claude Opus 4.7 Launches with Same-Day GPT-5.4 and Gemini 3 Releases</a>
-          </h3>
-          <p class="news-description">
-            Anthropic, OpenAI, and Google all shipped flagship model updates within hours of each
-            other on April 16. Opus 4.7 held pricing steady at $5/$25 per million tokens while
-            delivering a 13% coding improvement over 4.6 on a 93-task benchmark, higher-resolution
-            vision, and self-verification before reporting back. Available on API, Bedrock, Vertex AI,
-            and Microsoft Foundry. The coordinated release is the clearest sign yet that the frontier
-            has become a weekly moving target&mdash;re-test your personal workflows quarterly.
-          </p>
-        </article>
-
-        <article class="news-item">
-          <div class="news-dates">
-            <span class="news-date-published">Published: Apr 14&ndash;16, 2026</span>
-            <span class="news-date-added">Added: Apr 21, 2026</span>
-          </div>
-          <h3 class="news-title">
-            <a href="https://openai.com/index/introducing-gpt-rosalind/" target="_blank">OpenAI Ships GPT-5.4, GPT-5.4-Cyber, and GPT-Rosalind</a>
-          </h3>
-          <p class="news-description">
-            OpenAI released GPT-5.4 (Apr 16) as its most capable frontier model for professional work,
-            GPT-5.4-Cyber (Apr 14) for vetted security professionals, and GPT-Rosalind&mdash;a
-            life-sciences reasoning model optimized for molecules, proteins, genes, pathways, and
-            disease biology. Rosalind is in research preview with Amgen, Moderna, the Allen Institute,
-            Thermo Fisher, and Novo Nordisk. A specialist biomedical model from a frontier lab is new
-            territory worth watching.
-          </p>
-        </article>
-
-        <article class="news-item">
-          <div class="news-dates">
-            <span class="news-date-published">Published: Apr 16, 2026</span>
-            <span class="news-date-added">Added: Apr 21, 2026</span>
-          </div>
-          <h3 class="news-title">
-            <a href="https://blog.google/products/gemini/gemini-3/" target="_blank">Gemini 3 Arrives: Flash as Default, Plus Agent and Deep Think</a>
-          </h3>
-          <p class="news-description">
-            Google made Gemini 3 Flash the default model in the Gemini app, with Gemini Agent
-            (multi-step task execution across Workspace, Deep Research, Canvas, and live web) and
-            Gemini 3 Deep Think available to Google AI Ultra subscribers. Grounding with Google Maps
-            is now supported. Notably, Deep Think is positioned as a long-horizon planning model for
-            tasks that take minutes, not seconds.
-          </p>
-        </article>
-
-        <article class="news-item">
-          <div class="news-dates">
-            <span class="news-date-published">Published: Apr 16, 2026</span>
-            <span class="news-date-added">Added: Apr 21, 2026</span>
-          </div>
-          <h3 class="news-title">
-            <a href="https://ai.nejm.org/" target="_blank">NEJM AI Publishes ChexGen: Generative Foundation Model for Chest Radiographs</a>
-          </h3>
-          <p class="news-description">
-            A vision-language foundation model for chest radiographs supporting text-, mask-, and
-            bounding-box&ndash;guided image synthesis. Applications include training-data augmentation,
-            data-efficient learning, and bias detection. A pointer to where imaging decision support
-            is heading&mdash;not just classifiers, but generative models that can produce plausible
-            controlled images on demand for training and evaluation.
-          </p>
-        </article>
-
-        <article class="news-item">
-          <div class="news-dates">
-            <span class="news-date-published">Published: Apr 15, 2026</span>
-            <span class="news-date-added">Added: Apr 21, 2026</span>
-          </div>
-          <h3 class="news-title">
-            <a href="https://hitconsultant.net/2026/04/15/abridge-nejm-jama-partnership-clinical-decision-support-ehr/" target="_blank">Abridge Embeds NEJM and JAMA Content Directly into Clinical Decision Support</a>
-          </h3>
-          <p class="news-description">
-            Abridge announced content partnerships with NEJM Group and the AMA covering
-            <em>JAMA plus 11 specialty journals and JAMA Network Open</em>. The peer-reviewed content
-            now feeds Abridge's CDS engine grounded in the actual patient conversation happening in
-            the room. First time a clinical AI company has wired first-tier peer-reviewed journals
-            directly into CDS at the point of care.
-          </p>
-        </article>
-
-        <article class="news-item warning">
-          <div class="news-dates">
-            <span class="news-date-published">Published: Apr 14, 2026</span>
-            <span class="news-date-added">Added: Apr 21, 2026</span>
-          </div>
-          <h3 class="news-title">
-            <a href="https://www.scworld.com/brief/claude-code-vulnerable-to-prompt-injection-due-to-subcommand-limit" target="_blank">Claude Code Prompt-Injection CVE After Source Leak</a>
-          </h3>
-          <p class="news-description">
-            After Claude Code's source was leaked, security firm Adversa found its deny rules can be
-            bypassed via prompt injection&mdash;letting attackers execute tool calls Claude Code was
-            configured to refuse. Combined with GitHub Copilot CVE-2025-53773 (CVSS 9.6, PR-description
-            prompt injection enabling RCE) earlier in the month, a clear message for health-system
-            engineering teams: agent-side guardrails are only as strong as the inputs they reason about.
-            Ask explicitly what prompt-injection controls are in place.
-          </p>
-        </article>
-
-        <article class="news-item">
-          <div class="news-dates">
-            <span class="news-date-published">Published: Apr 13, 2026</span>
-            <span class="news-date-added">Added: Apr 21, 2026</span>
-          </div>
-          <h3 class="news-title">
-            <a href="https://www.statnews.com/2026/04/13/hospitals-launch-chatbots-creating-new-funnel-for-patients/" target="_blank">Hartford Rolls Out PatientGPT; Sutter and Reid Pilot Epic&rsquo;s Emmie</a>
-          </h3>
-          <p class="news-description">
-            Hartford HealthCare launched PatientGPT (built by K Health) for Connecticut patients.
-            Sutter Health and Reid Health are piloting Epic's Emmie. Health systems are increasingly
-            treating patient-facing AI as an intake funnel&mdash;a new layer of triage before the
-            appointment rather than after. Worth reading critically for what questions the AI is
-            being asked to resolve on its own.
-          </p>
-        </article>
-
-        <article class="news-item">
-          <div class="news-dates">
             <span class="news-date-published">Published: Apr 2026</span>
             <span class="news-date-added">Added: Apr 21, 2026</span>
           </div>
@@ -1509,23 +1553,6 @@
             <a href="https://www.medicaleconomics.com/view/openai-launches-chatgpt-health-directly-linking-patient-portals-to-the-ai-chatbot" target="_blank">ChatGPT Health</a>,
             which now connects directly to patient portals. Expect patients to arrive with synthesized
             records, trend charts, and differential diagnoses they didn't have three months ago.
-          </p>
-        </article>
-
-        <article class="news-item">
-          <div class="news-dates">
-            <span class="news-date-published">Published: Apr 9, 2026</span>
-            <span class="news-date-added">Added: Apr 21, 2026</span>
-          </div>
-          <h3 class="news-title">
-            <a href="https://pricepertoken.com/leaderboards/benchmark/medqa" target="_blank">MedQA Leaderboard Snapshot: Top Models Clear 95%</a>
-          </h3>
-          <p class="news-description">
-            April 9 snapshot of the medical-question benchmark: <em>o4 Mini High 95.2%, Gemini 2.5 Pro
-            94.6%, Claude 3.7 Sonnet 92.3%</em>. Average across all 34 evaluated models is 79.4%.
-            MedQA alone isn't a clinical validation, but it's a useful sanity check when comparing
-            models. The narrow spread at the top of the leaderboard reinforces the Big Three modules'
-            takeaway: the gap between frontier models on text medical reasoning is closing fast.
           </p>
         </article>
 
@@ -1786,6 +1813,23 @@
 
         <article class="news-item">
           <div class="news-dates">
+            <span class="news-date-published">Published: Feb 16, 2026</span>
+            <span class="news-date-added">Added: Feb 16, 2026</span>
+          </div>
+          <h3 class="news-title">
+            <a href="https://www.bloomberg.com/news/articles/2026-02-16/alibaba-unveils-major-ai-model-upgrade-ahead-of-deepseek-release" target="_blank">February Model Rush: Seven Major Releases in One Month</a>
+          </h3>
+          <p class="news-description">
+            An unprecedented month for AI model releases. Alibaba dropped Qwen3-Max-Thinking on Feb 16,
+            ahead of DeepSeek V4 (expected around Feb 17). These join Claude Opus 4.6 (Feb 5),
+            GPT-5.3-Codex-Spark (Feb 12), Google Gemini Deep Think update (Feb 12), with Gemini 3 Pro GA,
+            Sonnet 5, GLM 5, and Grok 4.20 all expected by month's end. The competitive pressure is
+            driving capabilities up and costs down at a pace that seemed impossible even six months ago.
+          </p>
+        </article>
+
+        <article class="news-item">
+          <div class="news-dates">
             <span class="news-date-published">Published: Feb 15, 2026</span>
             <span class="news-date-added">Added: Mar 8, 2026</span>
           </div>
@@ -1797,89 +1841,6 @@
             both open-weight. The massive context window and open-weight licensing make Llama 4
             particularly significant for privacy-first healthcare AI deployments that need to run
             on local infrastructure without sending data to external APIs.
-          </p>
-        </article>
-
-        <article class="news-item">
-          <div class="news-dates">
-            <span class="news-date-published">Published: Feb 2026</span>
-            <span class="news-date-added">Added: Mar 8, 2026</span>
-          </div>
-          <h3 class="news-title">
-            <a href="https://www.newsweek.com/athenahealth-throws-its-hat-in-ambient-scribe-ai-assistant-rings-access-health-10991353" target="_blank">athenahealth Launches Free Ambient Scribe</a>
-          </h3>
-          <p class="news-description">
-            athenahealth is offering a free AI scribe to all athenaOne customers, disrupting the
-            $200&ndash;$600/month ambient scribe market. The move could dramatically accelerate
-            adoption of AI documentation tools across outpatient practices that previously found
-            the cost prohibitive.
-          </p>
-        </article>
-
-        <article class="news-item">
-          <div class="news-dates">
-            <span class="news-date-published">Published: Feb 2026</span>
-            <span class="news-date-added">Added: Mar 8, 2026</span>
-          </div>
-          <h3 class="news-title">
-            <a href="https://pubmed.ncbi.nlm.nih.gov/40672471/" target="_blank">Nabla Beats DAX Copilot in Randomized Trial</a>
-          </h3>
-          <p class="news-description">
-            A 72,000-encounter randomized controlled trial found that Nabla&rsquo;s AI scribe reduced
-            documentation time by 9.5%, while Microsoft&rsquo;s DAX Copilot showed no significant
-            improvement versus the control group. One of the largest head-to-head AI scribe studies
-            to date&mdash;a reminder that rigorous evidence matters more than marketing claims when
-            evaluating clinical AI tools.
-          </p>
-        </article>
-
-        <article class="news-item warning">
-          <div class="news-dates">
-            <span class="news-date-published">Published: Feb 9, 2026</span>
-            <span class="news-date-added">Added: Mar 8, 2026</span>
-          </div>
-          <h3 class="news-title">
-            <a href="https://www.mountsinai.org/about/newsroom/2026/can-medical-ai-lie-large-study-maps-how-llms-handle-health-misinformation" target="_blank">Mount Sinai: LLMs Accept False Medical Claims 32&ndash;46% of the Time</a>
-          </h3>
-          <p class="news-description">
-            Published in The Lancet Digital Health, Mount Sinai researchers tested 9 large language
-            models with over 1 million prompts containing false medical claims. Models accepted
-            the false claims 32&ndash;46% of the time&mdash;a sobering finding for anyone relying on
-            AI for medical information. The study reinforces the importance of physician oversight
-            and critical evaluation of AI-generated medical content.
-          </p>
-        </article>
-
-        <article class="news-item">
-          <div class="news-dates">
-            <span class="news-date-published">Published: Feb 2026</span>
-            <span class="news-date-added">Added: Mar 8, 2026</span>
-          </div>
-          <h3 class="news-title">
-            <a href="https://blogs.nvidia.com/blog/ai-in-healthcare-survey-2026/" target="_blank">NVIDIA: 70% of Healthcare Organizations Now Deploy AI</a>
-          </h3>
-          <p class="news-description">
-            NVIDIA&rsquo;s 2026 healthcare survey finds that 70% of healthcare organizations have
-            deployed AI in some capacity, up from 63% in 2024. Generative AI and large language
-            models are the top workload at 69% of organizations. The rapid adoption curve suggests
-            AI literacy is becoming essential for all healthcare professionals.
-          </p>
-        </article>
-
-        <article class="news-item warning">
-          <div class="news-dates">
-            <span class="news-date-published">Published: Feb 2026</span>
-            <span class="news-date-added">Added: Mar 8, 2026</span>
-          </div>
-          <h3 class="news-title">
-            <a href="https://www.healthcaredive.com/news/astp-onc-hti5-ai-model-cards-health-it-certification-proposed-rule/808582/" target="_blank">HHS Proposes Gutting AI Transparency Rules (HTI-5)</a>
-          </h3>
-          <p class="news-description">
-            The proposed HTI-5 rule would eliminate model card requirements for health IT
-            certification&mdash;the primary mechanism for ensuring transparency about how AI models
-            in clinical software are trained, tested, and validated. The comment period closed
-            February 27. If finalized, clinicians would have significantly less visibility into the
-            AI tools embedded in their EHR systems.
           </p>
         </article>
 
@@ -1899,23 +1860,6 @@
             the military operation to capture Venezuelan President Maduro. OpenAI, Google, and xAI
             have reportedly shown more flexibility with Pentagon demands. A landmark moment for
             AI ethics in government contracting.
-          </p>
-        </article>
-
-        <article class="news-item">
-          <div class="news-dates">
-            <span class="news-date-published">Published: Feb 16, 2026</span>
-            <span class="news-date-added">Added: Feb 16, 2026</span>
-          </div>
-          <h3 class="news-title">
-            <a href="https://www.bloomberg.com/news/articles/2026-02-16/alibaba-unveils-major-ai-model-upgrade-ahead-of-deepseek-release" target="_blank">February Model Rush: Seven Major Releases in One Month</a>
-          </h3>
-          <p class="news-description">
-            An unprecedented month for AI model releases. Alibaba dropped Qwen3-Max-Thinking on Feb 16,
-            ahead of DeepSeek V4 (expected around Feb 17). These join Claude Opus 4.6 (Feb 5),
-            GPT-5.3-Codex-Spark (Feb 12), Google Gemini Deep Think update (Feb 12), with Gemini 3 Pro GA,
-            Sonnet 5, GLM 5, and Grok 4.20 all expected by month's end. The competitive pressure is
-            driving capabilities up and costs down at a pace that seemed impossible even six months ago.
           </p>
         </article>
 
@@ -2026,6 +1970,23 @@
           </p>
         </article>
 
+        <article class="news-item warning">
+          <div class="news-dates">
+            <span class="news-date-published">Published: Feb 9, 2026</span>
+            <span class="news-date-added">Added: Mar 8, 2026</span>
+          </div>
+          <h3 class="news-title">
+            <a href="https://www.mountsinai.org/about/newsroom/2026/can-medical-ai-lie-large-study-maps-how-llms-handle-health-misinformation" target="_blank">Mount Sinai: LLMs Accept False Medical Claims 32&ndash;46% of the Time</a>
+          </h3>
+          <p class="news-description">
+            Published in The Lancet Digital Health, Mount Sinai researchers tested 9 large language
+            models with over 1 million prompts containing false medical claims. Models accepted
+            the false claims 32&ndash;46% of the time&mdash;a sobering finding for anyone relying on
+            AI for medical information. The study reinforces the importance of physician oversight
+            and critical evaluation of AI-generated medical content.
+          </p>
+        </article>
+
         <article class="news-item">
           <div class="news-dates">
             <span class="news-date-published">Published: Feb 9, 2026</span>
@@ -2099,19 +2060,62 @@
         <article class="news-item">
           <div class="news-dates">
             <span class="news-date-published">Published: Feb 2026</span>
+            <span class="news-date-added">Added: Mar 8, 2026</span>
+          </div>
+          <h3 class="news-title">
+            <a href="https://pubmed.ncbi.nlm.nih.gov/40672471/" target="_blank">Nabla Beats DAX Copilot in Randomized Trial</a>
+          </h3>
+          <p class="news-description">
+            A 72,000-encounter randomized controlled trial found that Nabla&rsquo;s AI scribe reduced
+            documentation time by 9.5%, while Microsoft&rsquo;s DAX Copilot showed no significant
+            improvement versus the control group. One of the largest head-to-head AI scribe studies
+            to date&mdash;a reminder that rigorous evidence matters more than marketing claims when
+            evaluating clinical AI tools.
+          </p>
+        </article>
+
+        <article class="news-item">
+          <div class="news-dates">
+            <span class="news-date-published">Published: Feb 2026</span>
+            <span class="news-date-added">Added: Mar 8, 2026</span>
+          </div>
+          <h3 class="news-title">
+            <a href="https://blogs.nvidia.com/blog/ai-in-healthcare-survey-2026/" target="_blank">NVIDIA: 70% of Healthcare Organizations Now Deploy AI</a>
+          </h3>
+          <p class="news-description">
+            NVIDIA&rsquo;s 2026 healthcare survey finds that 70% of healthcare organizations have
+            deployed AI in some capacity, up from 63% in 2024. Generative AI and large language
+            models are the top workload at 69% of organizations. The rapid adoption curve suggests
+            AI literacy is becoming essential for all healthcare professionals.
+          </p>
+        </article>
+
+        <article class="news-item warning">
+          <div class="news-dates">
+            <span class="news-date-published">Published: Feb 2026</span>
+            <span class="news-date-added">Added: Mar 8, 2026</span>
+          </div>
+          <h3 class="news-title">
+            <a href="https://www.healthcaredive.com/news/astp-onc-hti5-ai-model-cards-health-it-certification-proposed-rule/808582/" target="_blank">HHS Proposes Gutting AI Transparency Rules (HTI-5)</a>
+          </h3>
+          <p class="news-description">
+            The proposed HTI-5 rule would eliminate model card requirements for health IT
+            certification&mdash;the primary mechanism for ensuring transparency about how AI models
+            in clinical software are trained, tested, and validated. The comment period closed
+            February 27. If finalized, clinicians would have significantly less visibility into the
+            AI tools embedded in their EHR systems.
+          </p>
+        </article>
+
+        <article class="news-item">
+          <div class="news-dates">
+            <span class="news-date-published">Published: Feb 2026</span>
             <span class="news-date-added">Added: Feb 16, 2026</span>
           </div>
           <h3 class="news-title">
-            <a href="https://openai.com/index/chatgpt-for-healthcare/" target="_blank">OpenAI Launches Lockdown Mode for Healthcare</a>
+            <a href="https://learn.chatgpt.com/docs/enterprise/chatgpt-work-cloud-security" target="_blank">ChatGPT Security Controls Require Workspace-Specific Verification</a>
           </h3>
-          <p class="news-description">
-            OpenAI introduced Lockdown Mode and Elevated Risk labels across ChatGPT for
-            Healthcare, adding controls to curb data exfiltration and boost admin oversight
-            for high-security healthcare environments. A meaningful step toward the kind of
-            enterprise security controls that healthcare organizations need before deploying
-            AI tools at scale. See our <a href="phi-hipaa.html">PHI, HIPAA, and AI</a>
-            module for context on why these controls matter.
-          </p>
+          <p class="news-description">Correction checked November 1: the original release URL no longer resolves. Current OpenAI enterprise documentation describes workspace, role, network, tool, and Lockdown Mode controls with separate scopes. Do not assume a healthcare product name enables every control or that a local restriction automatically governs cloud execution. Use the current security documentation and the organization’s effective settings before deployment.</p>
         </article>
 
         <article class="news-item">
@@ -2133,6 +2137,39 @@
 
         <article class="news-item">
           <div class="news-dates">
+            <span class="news-date-published">Published: Jan 8, 2026</span>
+            <span class="news-date-added">Added: Feb 1, 2026</span>
+          </div>
+          <h3 class="news-title">
+            <a href="https://www.axios.com/2026/01/08/openai-chatgpt-doctors-patients-health-tab" target="_blank">OpenAI Unveils ChatGPT Healthcare Tool for Physicians</a>
+          </h3>
+          <p class="news-description">
+            OpenAI announced a dedicated ChatGPT Healthcare tool where physicians can review patient data
+            with HIPAA-compliant encryption options. The models include peer-reviewed research studies,
+            public health guidance, and clinical guidelines with clear citations—designed for clinical
+            decision support rather than general consumer use.
+          </p>
+        </article>
+
+        <article class="news-item">
+          <div class="news-dates">
+            <span class="news-date-published">Published: Jan 6, 2026</span>
+            <span class="news-date-added">Added: Jan 15, 2026</span>
+          </div>
+          <h3 class="news-title">
+            <a href="https://www.fda.gov/regulatory-information/search-fda-guidance-documents/clinical-decision-support-software" target="_blank">FDA Updates Clinical Decision Support Software Guidance</a>
+          </h3>
+          <p class="news-description">
+            The FDA released updated guidance clarifying how AI and generative AI clinical decision support (CDS)
+            tools can qualify as Non-Device CDS. Key criteria: clinicians must be able to independently review
+            and understand the underlying logic and data inputs, and the tool should provide a single, clinically
+            appropriate recommendation. Tools meeting these criteria fall outside FDA medical device oversight,
+            while AI that drives diagnosis or clinical action without adequate human oversight remains regulated.
+          </p>
+        </article>
+
+        <article class="news-item">
+          <div class="news-dates">
             <span class="news-date-published">Published: Jan 2026</span>
             <span class="news-date-added">Added: Feb 1, 2026</span>
           </div>
@@ -2146,22 +2183,6 @@
             use it to quickly look up clinical information, 55% to consolidate lab and imaging results into a
             single view, and many to surface recent clinical evidence. A shift from documentation-only to
             real-time clinical assistance.
-          </p>
-        </article>
-
-        <article class="news-item">
-          <div class="news-dates">
-            <span class="news-date-published">Published: Jan 8, 2026</span>
-            <span class="news-date-added">Added: Feb 1, 2026</span>
-          </div>
-          <h3 class="news-title">
-            <a href="https://www.axios.com/2026/01/08/openai-chatgpt-doctors-patients-health-tab" target="_blank">OpenAI Unveils ChatGPT Healthcare Tool for Physicians</a>
-          </h3>
-          <p class="news-description">
-            OpenAI announced a dedicated ChatGPT Healthcare tool where physicians can review patient data
-            with HIPAA-compliant encryption options. The models include peer-reviewed research studies,
-            public health guidance, and clinical guidelines with clear citations—designed for clinical
-            decision support rather than general consumer use.
           </p>
         </article>
 
@@ -2216,23 +2237,6 @@
 
         <article class="news-item">
           <div class="news-dates">
-            <span class="news-date-published">Published: Jan 6, 2026</span>
-            <span class="news-date-added">Added: Jan 15, 2026</span>
-          </div>
-          <h3 class="news-title">
-            <a href="https://www.fda.gov/regulatory-information/search-fda-guidance-documents/clinical-decision-support-software" target="_blank">FDA Updates Clinical Decision Support Software Guidance</a>
-          </h3>
-          <p class="news-description">
-            The FDA released updated guidance clarifying how AI and generative AI clinical decision support (CDS)
-            tools can qualify as Non-Device CDS. Key criteria: clinicians must be able to independently review
-            and understand the underlying logic and data inputs, and the tool should provide a single, clinically
-            appropriate recommendation. Tools meeting these criteria fall outside FDA medical device oversight,
-            while AI that drives diagnosis or clinical action without adequate human oversight remains regulated.
-          </p>
-        </article>
-
-        <article class="news-item">
-          <div class="news-dates">
             <span class="news-date-published">Published: Jan 2026</span>
             <span class="news-date-added">Added: Jan 15, 2026</span>
           </div>
@@ -2249,7 +2253,7 @@
           </p>
         </article>
 
-        <article class="news-item warning">
+        <article class="news-item warning" id="grok-warning">
           <div class="news-dates">
             <span class="news-date-published">Published: Jan 2026</span>
             <span class="news-date-added">Added: Jan 15, 2026</span>
@@ -2331,22 +2335,17 @@
   <footer class="footer">
     <div class="footer-inner">
       <div><strong>AI 101</strong> · A Self-Paced Guide to AI in Medicine</div>
-      <div><a href="updates.html">v1.15 · 2026</a></div>
+      <div><a href="updates.html">v1.16 · 2026</a></div>
     </div>
   </footer>
 
   <script>
-    lucide.createIcons();
-    const navToggle = document.querySelector('.nav-toggle');
-    const navLinks = document.querySelector('.nav-links');
-    if (navToggle) {
-      navToggle.addEventListener('click', () => {
-        navLinks.classList.toggle('nav-open');
-      });
-    }
+    if (window.lucide) window.lucide.createIcons();
+
   </script>
 
   <script src="https://studio.pickaxe.co/api/embed/bundle.js" defer></script>
 
+  <script src="site-nav.js"></script>
 </body>
 </html>

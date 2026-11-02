@@ -25,6 +25,7 @@
   <script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "aee6310cb71e4b55b02d4e681c4eb7ab"}'></script>
 </head>
 <body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
 
   <nav class="nav">
     <div class="nav-inner">
@@ -32,10 +33,10 @@
         <span class="nav-badge"><span class="b-ai">AI</span><span class="b-num">101</span></span>
         <span class="nav-title">A Self-Paced Guide to AI in Medicine</span>
       </a>
-      <button class="nav-toggle" aria-label="Toggle menu">
-        <i data-lucide="menu"></i>
+      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="site-menu">
+        <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 5h16M4 12h16M4 19h16"/></svg>
       </button>
-      <div class="nav-links">
+      <div class="nav-links" id="site-menu">
         <a href="index.html" class="nav-link">Topics</a>
         <a href="resources.html" class="nav-link">Resources</a>
         <a href="about.html" class="nav-link">About</a>
@@ -45,7 +46,7 @@
     </div>
   </nav>
 
-  <main class="main">
+  <main id="main-content" tabindex="-1" class="main">
     <article class="content">
 
       <header class="unit-header">
@@ -60,6 +61,17 @@
         new modules, and significant revisions. Check back periodically to see what's changed.
       </p>
 
+      <hr>
+
+      <!-- v1.16: proposed; publication follows owner review -->
+      <h2>v1.16 <span style="font-weight: normal; color: var(--text-muted);">&mdash; November 1, 2026</span></h2>
+      <h3>Full Site Audit and Second Content Pass</h3>
+      <ul>
+        <li>Eight additional primary-source news items: prospective AMIE feasibility, ophthalmic history-taking, Tanzanian screening referrals, ambient-scribe workflow evidence, API BAA setup, image generation, Sora API retirement, and GLM weights. Study limitations remain explicit.</li>
+        <li>Corrected HIPAA distinctions and vendor-specific BAA scope, UpDoc clearance chronology and attribution, EU AI Act territorial scope, MedGemma release history, and stale product examples.</li>
+        <li>Repaired five dead source links. Reconciled the complete RSS feed with the news page, removed a duplicate story, and added a reproducibility check to weekly maintenance.</li>
+        <li>Repaired mobile course and table overflow; added resilient menus with expanded state and Escape support, keyboard skip links, clearer metadata, and a labeled contribution form with its privacy warning before entry.</li>
+      </ul>
       <hr>
 
       <!-- v1.15 -->
@@ -1280,22 +1292,17 @@
   <footer class="footer">
     <div class="footer-inner">
       <div><strong>AI 101</strong> · A Self-Paced Guide to AI in Medicine</div>
-      <div><a href="updates.html">v1.15 · 2026</a></div>
+      <div><a href="updates.html">v1.16 · 2026</a></div>
     </div>
   </footer>
 
   <script>
-    lucide.createIcons();
-    const navToggle = document.querySelector('.nav-toggle');
-    const navLinks = document.querySelector('.nav-links');
-    if (navToggle) {
-      navToggle.addEventListener('click', () => {
-        navLinks.classList.toggle('nav-open');
-      });
-    }
+    if (window.lucide) window.lucide.createIcons();
+
   </script>
 
   <script src="https://studio.pickaxe.co/api/embed/bundle.js" defer></script>
 
+  <script src="site-nav.js"></script>
 </body>
 </html>

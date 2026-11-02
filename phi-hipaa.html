@@ -25,6 +25,7 @@
   <script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "aee6310cb71e4b55b02d4e681c4eb7ab"}'></script>
 </head>
 <body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
 
   <nav class="nav">
     <div class="nav-inner">
@@ -32,10 +33,10 @@
         <span class="nav-badge"><span class="b-ai">AI</span><span class="b-num">101</span></span>
         <span class="nav-title">A Self-Paced Guide to AI in Medicine</span>
       </a>
-      <button class="nav-toggle" aria-label="Toggle menu">
-        <i data-lucide="menu"></i>
+      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="site-menu">
+        <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 5h16M4 12h16M4 19h16"/></svg>
       </button>
-      <div class="nav-links">
+      <div class="nav-links" id="site-menu">
         <a href="index.html" class="nav-link">Topics</a>
         <a href="resources.html" class="nav-link">Resources</a>
         <a href="about.html" class="nav-link">About</a>
@@ -45,7 +46,7 @@
     </div>
   </nav>
 
-  <main class="main">
+  <main id="main-content" tabindex="-1" class="main">
     <article class="content">
 
       <header class="unit-header">
@@ -205,11 +206,16 @@
       </div>
 
       <p>
-        <strong>The gap this creates:</strong> When a patient enters symptoms into a
-        consumer health app, or a clinician pastes notes into ChatGPT without a BAA,
-        that data isn't protected by HIPAA. The FTC has stepped into some of this gap
-        with the Health Breach Notification Rule, but enforcement is inconsistent and
-        the protections are narrower.
+        <strong>Two different situations:</strong> A consumer health app may fall outside HIPAA when
+        it is not acting for a covered entity or business associate. A clinician disclosing
+        patient information through an unapproved cloud service is different: <strong>HIPAA
+        obligations do not disappear because a BAA is missing</strong>. HHS says using a cloud
+        provider to maintain ePHI on an entity&rsquo;s behalf without the required BAA violates
+        HIPAA; a provider meeting the business-associate definition can also have direct
+        obligations without a signed agreement. Some consumer services instead fall under
+        the FTC&rsquo;s Health Breach Notification Rule. Determine the relationship and the
+        applicable duties rather than treating disclosure as an escape from regulation.
+        <a href="https://www.hhs.gov/hipaa/for-professionals/faq/2079/what-if-a-hipaa-covered-entity-or-business-associate-uses-a-csp-to-maintain-ephi-without-first-executing-a-business-associate-agreement-with-that-csp/index.html" target="_blank" rel="noopener">[HHS guidance]</a>
       </p>
 
       <h3>The Three HIPAA Rules That Matter for AI</h3>
@@ -219,18 +225,16 @@
       without explicit patient authorization. Using PHI to train commercial AI models
       typically requires either authorization or de-identification.</p>
 
-      <p><strong>Security Rule:</strong> Requires administrative, physical, and
-      technical safeguards for electronic PHI. In January 2025, HHS proposed the first
-      major update in 20 years&mdash;encryption, multi-factor authentication, and 72-hour
-      disaster recovery. <strong>It is still a proposed rule.</strong> HHS&rsquo;s updated
-      regulatory agenda, released in July 2026, pushed final action from May 2026 out to
-      <strong>July 2027</strong>. Plan on the current Security Rule governing your AI
-      systems for at least another year; the enhanced standards would reach systems
-      processing ePHI only once a final rule issues. Changes to the HIPAA <em>Privacy</em>
-      Rule are on a faster track, expected as early as August 2026.
-      (<a href="https://www.dwt.com/blogs/privacy--security-law-blog/2026/07/hhs-updates-hipaa-rulemaking-timeframes" target="_blank" rel="noopener">Davis Wright Tremaine</a>
-      &middot;
-      <a href="https://www.hipaajournal.com/hipaa-security-rule-update-postponed/" target="_blank" rel="noopener">HIPAA Journal</a>)</p>
+      <p>
+        <strong>Security Rule:</strong> Requires administrative, physical, and technical
+        safeguards for electronic PHI. The January 2025 strengthening proposal remains a
+        proposal in the reviewed regulatory agenda, which lists July 2027 for final action.
+        <strong>An agenda date is a forecast, not a compliance deadline or a guarantee that
+        the rule cannot change sooner.</strong> Apply the rules currently in force and check
+        actual final-rule publications and effective dates before changing a compliance plan.
+        The earlier prediction of Privacy Rule action in August 2026 has been removed.
+        <a href="https://www.reginfo.gov/public/do/eAgendaViewRule?RIN=0945-AA22&amp;pubId=202510" target="_blank" rel="noopener">[Official rulemaking agenda]</a>
+      </p>
 
       <p><strong>Breach Notification Rule:</strong> Requires notification within 60
       days of discovering a breach of unsecured PHI. From 2018-2023, large breaches
@@ -329,7 +333,14 @@
 
       <h3>Current BAA Availability by Platform</h3>
       <ul>
-        <li><strong>OpenAI API:</strong> BAA available for zero-retention endpoints (contact baa@openai.com)</li>
+        <li><strong>OpenAI API:</strong> Eligible organizations can enable HIPAA support and accept
+        a BAA through API organization settings. Coverage depends on the executed agreement,
+        provisioned account, endpoint, tool, model, and retention configuration. ZDR alone
+        is not a blanket HIPAA authorization, and some expressly provisioned retained-data
+        modes can remain BAA-eligible. Live internet web search is not covered; the documented
+        offline/cache-only search exception has additional requirements.
+        <a href="https://developers.openai.com/api/docs/guides/your-data" target="_blank" rel="noopener">[Data controls]</a>
+        <a href="https://developers.openai.com/api/docs/changelog" target="_blank" rel="noopener">[October 5 setup update]</a></li>
         <li><strong>ChatGPT (consumer Free/Plus/Pro/Team):</strong> No BAA available. Cannot be used with PHI.</li>
         <li><strong>ChatGPT Health (consumer; US general rollout July 23, 2026):</strong> No BAA&mdash;it runs inside the consumer Free/Go/Plus/Pro tiers. Patients can connect Apple Health, supported US hospital medical records (brokered by b.well), One Medical, and Function Health. OpenAI states that connected records and the conversations using them are <em>not</em> used to train its foundation models or target ads, regardless of the account&rsquo;s training setting. That commitment is real, but it is a consumer contract, not a business associate relationship.</li>
         <li><strong>ChatGPT for Clinicians (free verified-clinician tier, launched 2026):</strong> No BAA. Free for verified US physicians/NPs/PAs/pharmacists, but explicitly not for PHI.</li>
@@ -337,13 +348,19 @@
         <li><strong>ChatGPT Enterprise/Edu:</strong> BAA available through sales-managed accounts</li>
         <li><strong>Anthropic API:</strong> BAA available only for HIPAA-eligible services with zero data retention; does not cover Claude.ai, Workbench, or beta features</li>
         <li><strong>Claude for Healthcare (launched Jan 11, 2026):</strong> Anthropic&rsquo;s healthcare offering for providers, payers, and health tech companies&mdash;connectors for the CMS Coverage Database, ICD-10, the NPI Registry, and PubMed, plus FHIR and prior-authorization Agent Skills. The name describes a set of tools; the HIPAA coverage comes from running them on a HIPAA-ready Enterprise plan with a BAA, not from the product name. (<a href="https://www.anthropic.com/news/healthcare-life-sciences" target="_blank" rel="noopener">Anthropic</a>)</li>
-        <li><strong>Claude Enterprise (HIPAA-ready plan):</strong> BAA available with admin HIPAA opt-in&mdash;Enterprise plans only, click-to-accept, and only the organization&rsquo;s Primary Owner can enable it. Enabling it is a one-way change. BAAs signed <em>before</em> Dec 2, 2025 cover the API only; BAAs signed after that date can cover both API and Enterprise under a single agreement. Note that enabling HIPAA does not automatically bring every feature under the BAA&mdash;Claude Code is covered only with Zero Data Retention on a qualified account, and Claude Cowork is not yet covered at all. (<a href="https://support.claude.com/en/articles/13296973-hipaa-ready-enterprise-plans" target="_blank" rel="noopener">Anthropic Help Center</a>)</li>
+        <li><strong>Claude Enterprise (HIPAA-ready plan):</strong> BAA available with admin HIPAA opt-in&mdash;Enterprise plans only, click-to-accept, and only the organization&rsquo;s Primary Owner can enable it. Enabling it is a one-way change. BAAs signed <em>before</em> Dec 2, 2025 cover the API only; BAAs signed after that date can cover both API and Enterprise under a single agreement. Note that enabling HIPAA does not automatically bring every feature under the BAA&mdash;Claude Code is covered only with Zero Data Retention on a qualified account, and Cowork and Claude Code local modes can be covered after the Primary Owner applies a separate HIPAA configuration available through an account team. Before that configuration, Cowork is not covered, and Code requires qualifying ZDR coverage. The configured offering excludes the listed cloud/Remote Control features. Check the current implementation guide rather than assuming all Enterprise features are covered. (<a href="https://support.claude.com/en/articles/13296973-hipaa-ready-enterprise-plans" target="_blank" rel="noopener">Anthropic Help Center</a>)</li>
         <li><strong>Claude personal health connectors (consumer Pro/Max):</strong> No BAA. US Pro and Max subscribers can connect lab results and health records through HealthEx, Function, Apple Health, and Android Health Connect. Anthropic says it does not use this health data to train models, and access is opt-in and revocable&mdash;but this is the consumer side of the product, explicitly distinct from the HIPAA-ready offering for providers and payers. The same rule as ChatGPT Health applies: fine for a patient reviewing their own data, not a route for your patients&rsquo; PHI.</li>
-        <li><strong>Claude Code (CLI):</strong> Conditionally covered under a BAA when Zero Data Retention is enabled on the account</li>
+        <li><strong>Claude Code (CLI):</strong> Coverage depends on the applicable Enterprise local-mode HIPAA configuration or qualifying ZDR arrangement. Cloud sessions and Remote Control are separate features; confirm coverage before use. <a href="https://support.claude.com/en/articles/13296973-hipaa-ready-enterprise-plans" target="_blank" rel="noopener">[Current Enterprise feature scope]</a></li>
         <li><strong>Claude (consumer Free/Pro/Max/Team):</strong> No BAA available. Cannot be used with PHI.</li>
         <li><strong>Azure OpenAI:</strong> BAA included in Microsoft Product Terms by default</li>
         <li><strong>Google Vertex AI:</strong> BAA available for healthcare customers</li>
-        <li><strong>Google Workspace (Gemini):</strong> BAA available via Admin console; requires configuration. Note: NotebookLM is NOT covered.</li>
+        <li><strong>Google Workspace and Gemini Notebook:</strong> Workspace requires an accepted BAA
+        and included functionality configured by the administrator. Ordinary Gemini Notebook
+        is not listed in the reviewed Workspace included-functionality list. <strong>Gemini
+        Notebook Enterprise is separately listed under the Google Cloud BAA.</strong> These
+        are different services; connecting a notebook through Gemini does not establish that
+        its source service or every connected feature is covered.
+        <a href="https://docs.cloud.google.com/docs/security/compliance/hipaa" target="_blank" rel="noopener">[Google service lists]</a></li>
         <li><strong>AWS Bedrock:</strong> HIPAA-eligible service; BAA available through AWS Business Associate Addendum</li>
         <li><strong>AWS HealthScribe:</strong> HIPAA-eligible service with BAA coverage</li>
         <li><strong>OpenEvidence:</strong> HIPAA compliant; free BAA available for covered entities</li>
@@ -979,7 +996,7 @@
           <div class="reading-type"><i data-lucide="file-text"></i></div>
           <div class="reading-content">
             <div class="reading-title">
-              <a href="https://www.ftc.gov/business-guidance/resources/health-breach-notification-rule-basics-business" target="_blank">FTC Health Breach Notification Rule</a>
+              <a href="https://www.ftc.gov/business-guidance/resources/complying-ftcs-health-breach-notification-rule-0" target="_blank">FTC Health Breach Notification Rule</a>
             </div>
             <div class="reading-meta">FTC · The rules that apply to non-HIPAA entities (like many AI health apps). Updated in 2024 to explicitly cover health apps.</div>
           </div>
@@ -1063,22 +1080,17 @@
   <footer class="footer">
     <div class="footer-inner">
       <div><strong>AI 101</strong> · A Self-Paced Guide to AI in Medicine</div>
-      <div><a href="updates.html">v1.15 · 2026</a></div>
+      <div><a href="updates.html">v1.16 · 2026</a></div>
     </div>
   </footer>
 
   <script>
-    lucide.createIcons();
-    const navToggle = document.querySelector('.nav-toggle');
-    const navLinks = document.querySelector('.nav-links');
-    if (navToggle) {
-      navToggle.addEventListener('click', () => {
-        navLinks.classList.toggle('nav-open');
-      });
-    }
+    if (window.lucide) window.lucide.createIcons();
+
   </script>
 
   <script src="https://studio.pickaxe.co/api/embed/bundle.js" defer></script>
 
+  <script src="site-nav.js"></script>
 </body>
 </html>

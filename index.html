@@ -25,6 +25,7 @@
   <script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "aee6310cb71e4b55b02d4e681c4eb7ab"}'></script>
 </head>
 <body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
 
   <!-- Navigation -->
   <nav class="nav">
@@ -33,10 +34,10 @@
         <span class="nav-badge"><span class="b-ai">AI</span><span class="b-num">101</span></span>
         <span class="nav-title">A Self-Paced Guide to AI in Medicine</span>
       </a>
-      <button class="nav-toggle" aria-label="Toggle menu">
-        <i data-lucide="menu"></i>
+      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="site-menu">
+        <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 5h16M4 12h16M4 19h16"/></svg>
       </button>
-      <div class="nav-links">
+      <div class="nav-links" id="site-menu">
         <a href="index.html" class="nav-link active">Topics</a>
         <a href="resources.html" class="nav-link">Resources</a>
         <a href="about.html" class="nav-link">About</a>
@@ -47,7 +48,7 @@
   </nav>
 
   <!-- Main Content -->
-  <main class="main">
+  <main id="main-content" tabindex="-1" class="main">
 
     <!-- Hero Section -->
     <section class="hero">
@@ -110,7 +111,7 @@
             <span><i data-lucide="clock"></i> ~25 min read</span>
             <span><i data-lucide="book-open"></i> 7 readings</span>
           </div>
-          <span class="week-updated">Updated Jun 2026</span>
+          <span class="week-updated">Updated Nov 2026</span>
         </a>
 
         <a href="prompting.html" class="week-card phase-1">
@@ -124,7 +125,7 @@
             <span><i data-lucide="book-open"></i> 6 readings</span>
             <span><i data-lucide="headphones"></i> 4 podcasts</span>
           </div>
-          <span class="week-updated">Updated Apr 2026</span>
+          <span class="week-updated">Updated Nov 2026</span>
         </a>
 
         <a href="big-three.html" class="week-card phase-1">
@@ -151,7 +152,7 @@
             <span><i data-lucide="book-open"></i> 12 readings</span>
             <span><i data-lucide="headphones"></i> 3 podcasts</span>
           </div>
-          <span class="week-updated">Updated May 2026</span>
+          <span class="week-updated">Updated Nov 2026</span>
         </a>
 
         <a href="medical-learners.html" class="week-card learner">
@@ -234,7 +235,7 @@
             <span><i data-lucide="book-open"></i> 6 readings</span>
             <span><i data-lucide="video"></i> 4 video tutorials</span>
           </div>
-          <span class="week-updated">Updated Apr 2026</span>
+          <span class="week-updated">Updated Nov 2026</span>
         </a>
 
         <a href="everyday-ai.html" class="week-card phase-2">
@@ -248,7 +249,7 @@
             <span><i data-lucide="book-open"></i> 7 readings</span>
             <span><i data-lucide="headphones"></i> 3 podcasts</span>
           </div>
-          <span class="week-updated">Updated May 2026</span>
+          <span class="week-updated">Updated Nov 2026</span>
         </a>
 
         <a href="patients-ai.html" class="week-card phase-2">
@@ -262,7 +263,7 @@
             <span><i data-lucide="book-open"></i> 8 readings</span>
             <span><i data-lucide="headphones"></i> 4 podcasts</span>
           </div>
-          <span class="week-updated">Updated Jun 2026</span>
+          <span class="week-updated">Updated Nov 2026</span>
         </a>
 
       </div>
@@ -292,7 +293,7 @@
             <span><i data-lucide="rocket"></i> Action-Oriented</span>
             <span><i data-lucide="graduation-cap"></i> 4 courses</span>
           </div>
-          <span class="week-updated">Updated Jul 2026</span>
+          <span class="week-updated">Updated Nov 2026</span>
         </a>
 
         <a href="vibe-coding.html" class="week-card bonus">
@@ -417,7 +418,7 @@
             <span><i data-lucide="clock"></i> ~45 min read</span>
             <span><i data-lucide="hard-drive"></i> Technical guide</span>
           </div>
-          <span class="week-updated">Updated Jun 2026</span>
+          <span class="week-updated">Updated Nov 2026</span>
         </a>
 
         <a href="glossary.html" class="week-card appendix">
@@ -491,25 +492,18 @@
       <div>
         <strong>AI 101</strong> · A Self-Paced Guide to AI in Medicine
       </div>
-      <div><a href="updates.html">v1.15 · 2026</a></div>
+      <div><a href="updates.html">v1.16 · 2026</a></div>
     </div>
   </footer>
 
   <script>
-    lucide.createIcons();
+    if (window.lucide) window.lucide.createIcons();
 
-    // Mobile nav toggle
-    const navToggle = document.querySelector('.nav-toggle');
-    const navLinks = document.querySelector('.nav-links');
-    if (navToggle) {
-      navToggle.addEventListener('click', () => {
-        navLinks.classList.toggle('nav-open');
-        navToggle.classList.toggle('nav-toggle-active');
-      });
-    }
+
   </script>
 
   <script src="https://studio.pickaxe.co/api/embed/bundle.js" defer></script>
 
+  <script src="site-nav.js"></script>
 </body>
 </html>

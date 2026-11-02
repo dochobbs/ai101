@@ -25,6 +25,7 @@
   <script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "aee6310cb71e4b55b02d4e681c4eb7ab"}'></script>
 </head>
 <body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
 
   <nav class="nav">
     <div class="nav-inner">
@@ -32,10 +33,10 @@
         <span class="nav-badge"><span class="b-ai">AI</span><span class="b-num">101</span></span>
         <span class="nav-title">A Self-Paced Guide to AI in Medicine</span>
       </a>
-      <button class="nav-toggle" aria-label="Toggle menu">
-        <i data-lucide="menu"></i>
+      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="site-menu">
+        <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 5h16M4 12h16M4 19h16"/></svg>
       </button>
-      <div class="nav-links">
+      <div class="nav-links" id="site-menu">
         <a href="index.html" class="nav-link">Topics</a>
         <a href="resources.html" class="nav-link">Resources</a>
         <a href="about.html" class="nav-link">About</a>
@@ -45,7 +46,7 @@
     </div>
   </nav>
 
-  <main class="main">
+  <main id="main-content" tabindex="-1" class="main">
     <article class="content content-wide">
 
       <header class="unit-header">
@@ -723,13 +724,14 @@
           <h4>For Large Health Systems</h4>
           <div class="vendor-card">
             <h5>Microsoft Dragon Copilot (formerly Nuance DAX)</h5>
-            <p>Deep Epic integration, enterprise focus. Pricing restructured May 2026: the
-            Physician Practice offer (~$600/month) reached end-of-sale May 1; current
-            per-user enterprise licensing runs
-            <a href="https://secureframe.com/marketplace/microsoft/microsoft-dragon-copilot/commercial" target="_blank">~$1,512/month</a>
-            (down ~57% from the prior $3,528 list), with a Flex tier near $605/month.
-            Now integrating OpenEvidence for real-time literature access, and UpToDate
-            content embeds directly at the point of documentation (March 2026).</p>
+            <p>
+        Deep Epic integration and an enterprise focus. Microsoft&rsquo;s current licensing
+        guidance distinguishes a per-user physician subscription from a Flex subscription
+        plus metered ambient/AI sessions. Check the applicable agreement and quote rather than
+        relying on the former reseller list prices. The Flex session allowance and consumption
+        meter are separate from the base license.
+        <a href="https://www.microsoft.com/licensing/guidance/Dragon-Copilot" target="_blank" rel="noopener">[Microsoft licensing guidance]</a>
+      </p>
           </div>
           <div class="vendor-card">
             <h5>Abridge</h5>
@@ -1626,22 +1628,17 @@
   <footer class="footer">
     <div class="footer-inner">
       <div><strong>AI 101</strong> · A Self-Paced Guide to AI in Medicine</div>
-      <div><a href="updates.html">v1.15 · 2026</a></div>
+      <div><a href="updates.html">v1.16 · 2026</a></div>
     </div>
   </footer>
 
   <script>
-    lucide.createIcons();
-    const navToggle = document.querySelector('.nav-toggle');
-    const navLinks = document.querySelector('.nav-links');
-    if (navToggle) {
-      navToggle.addEventListener('click', () => {
-        navLinks.classList.toggle('nav-open');
-      });
-    }
+    if (window.lucide) window.lucide.createIcons();
+
   </script>
 
   <script src="https://studio.pickaxe.co/api/embed/bundle.js" defer></script>
 
+  <script src="site-nav.js"></script>
 </body>
 </html>

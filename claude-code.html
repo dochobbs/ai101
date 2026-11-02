@@ -86,7 +86,7 @@ body {
 
 .shell {
   display: grid;
-  grid-template-columns: 260px 1fr;
+  grid-template-columns: 260px minmax(0, 1fr);
   max-width: 1400px;
   margin: 0 auto;
   min-height: 100vh;
@@ -677,7 +677,7 @@ dl.cmd-list dd { color: var(--ink-soft); }
 
 /* Mobile */
 @media (max-width: 900px) {
-  .shell { grid-template-columns: 1fr; }
+  .shell { grid-template-columns: minmax(0, 1fr); }
   aside.sidebar {
     position: relative;
     height: auto;
@@ -815,11 +815,25 @@ code.inline {
 .site-footer a:hover{color:#fff}
 .site-footer strong{color:#e2e8f0}
 .sidebar-echs{margin:18px 0 10px}
+
+/* Keyboard access and narrow-screen content containment. */
+.skip-link { position:fixed; top:8px; left:8px; z-index:10000; transform:translateY(-200%); padding:12px 18px; background:#fff; color:#1e293b; border:2px solid #1e293b; }
+.skip-link:focus { transform:none; }
+:focus-visible { outline:3px solid #2563eb; outline-offset:4px; }
+main, aside.sidebar { min-width:0; }
+main { overflow-wrap:anywhere; }
+.codeblock { min-width:0; }
+.codeblock pre { overflow-x:auto; }
+code.inline { white-space:pre-wrap; overflow-wrap:anywhere; }
+@media (max-width:900px) { dl.cmd-list { grid-template-columns:minmax(0, 1fr); } dl.cmd-list dt { white-space:normal; overflow-wrap:anywhere; } }
+.home-link { color:#475569; }
+.home-link:hover { color:#1e293b; }
 </style>
   <!-- Cloudflare Web Analytics -->
   <script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "aee6310cb71e4b55b02d4e681c4eb7ab"}'></script>
 </head>
 <body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
 
 <div class="shell">
 
@@ -901,7 +915,7 @@ code.inline {
   <button class="reset-link" id="resetBtn">Reset all progress</button>
 </aside>
 
-<main>
+<main id="main-content" tabindex="-1">
 
 <section class="intro">
   <h1 class="title">30 Days to Claude Code</h1>
@@ -1979,7 +1993,7 @@ claude</pre><button class="copy-btn">Copy</button></div>
 <footer class="site-footer">
   <div><strong>AI 101</strong> · <a href="index.html">A Self-Paced Guide to AI in Medicine</a></div>
   <div><a href="github.html">14 Days to GitHub</a> · <a href="vibe-coding.html">Vibe Coding module</a> · <a href="https://code.claude.com/docs/en/overview" target="_blank" rel="noopener">Official Claude Code docs</a></div>
-  <div><a href="updates.html">v1.15 · 2026</a></div>
+  <div><a href="updates.html">v1.16 · 2026</a></div>
 </footer>
 <script src="https://studio.pickaxe.co/api/embed/bundle.js" defer></script>
 </body></html>

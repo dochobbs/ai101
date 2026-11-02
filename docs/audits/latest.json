@@ -55,5 +55,12 @@
   ],
   "publication_verified": true,
   "deployed_content_commit": "9ab8102f817541ef4aa13a79c36141a91e1adcfa",
-  "deployment_receipt": "https://github.com/dochobbs/ai101/actions/runs/41337667594"
+  "deployment_receipt": "https://github.com/dochobbs/ai101/actions/runs/41337667594",
+  "pending_review": {
+    "version": "v1.16",
+    "prepared_at": "2026-11-01",
+    "publication_verified": false,
+    "report": "docs/audits/full-site-audit-2026-11-01.md",
+    "additional_news_items": 8
+  }
 }

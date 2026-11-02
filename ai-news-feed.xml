@@ -5,7 +5,7 @@
     <link>https://ai101.health/ai-news.html</link>
     <description>AI news and developments relevant to healthcare and medical practice, curated for AI 101: A Self-Paced Guide to AI in Medicine.</description>
     <language>en-us</language>
-    <lastBuildDate>Sun, 01 Nov 2026 18:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Sun, 01 Nov 2026 20:00:00 GMT</lastBuildDate>
     <atom:link href="https://ai101.health/ai-news-feed.xml" rel="self" type="application/rss+xml"/>
 
     <item>
@@ -41,6 +41,14 @@
     </item>
 
     <item>
+      <title>AMIE Reached Real Primary-Care Patients—with Physician Safety Supervision</title>
+      <link>https://www.thelancet.com/journals/lancet/article/PIIS0140-6736%2826%2901535-7/abstract</link>
+      <description>In a single-center, single-arm feasibility study, 114 adults enrolled and 98 completed an AMIE conversation plus an urgent primary-care visit. Physicians monitored every conversation; no prespecified safety stops were required, but supervisors noted one hallucination and added information in five interactions. Clinicians found the transcript helpful in 33 of 44 reviewed cases. This supports supervised feasibility and visit preparation, not replacement of clinicians or improved patient outcomes. The publisher gives October 8 as the publication-history date, despite later issue/index metadata.</description>
+      <pubDate>Thu, 08 Oct 2026 00:00:00 GMT</pubDate>
+      <guid>https://www.thelancet.com/journals/lancet/article/PIIS0140-6736%2826%2901535-7/abstract</guid>
+    </item>
+
+    <item>
       <title>Claude Haiku 5.5 Extends the New Family to High-Volume Work</title>
       <link>https://platform.claude.com/docs/en/release-notes/overview</link>
       <description>Anthropic added Haiku 5.5 to its API family on October 7, following Opus 5.5 and Sonnet 5.5. Current pricing is $0.10/$0.50 per million input/output tokens for prompts up to 100,000 tokens, with higher rates above that threshold. A lower per-token price can matter for repeated extraction or classification, but it does not establish reliability on your clinical task. Test the model on the intended workflow and keep human review where errors matter.</description>
@@ -49,11 +57,51 @@
     </item>
 
     <item>
+      <title>OpenAI Adds Eligible-Organization API BAA Setup—Feature Scope Still Matters</title>
+      <link>https://developers.openai.com/api/docs/changelog</link>
+      <description>OpenAI’s October 5 API changelog adds an in-product HIPAA support and BAA acceptance flow for eligible organizations. This does not make every model, endpoint, hosted tool, or retention mode suitable for PHI. Its data-controls documentation excludes live internet web search from BAA coverage and describes specific conditions for offline/cache-only search. Verify the executed agreement, account configuration, and exact feature boundary before using patient data.</description>
+      <pubDate>Mon, 05 Oct 2026 00:00:00 GMT</pubDate>
+      <guid>https://developers.openai.com/api/docs/changelog</guid>
+    </item>
+
+    <item>
+      <title>An Ophthalmic History-Taking Agent Scored Better—and Took Much Longer</title>
+      <link>https://www.nature.com/articles/s41746-026-03232-x</link>
+      <description>A single-center randomized trial assigned 172 non-emergency ophthalmology patients to an engineered LLM history-taking agent or residents. The agent’s history-quality score was 17.7 points higher, with higher patience/empathy ratings, but interactions lasted a median 11.2 versus 3.1 minutes. Exploratory history-only diagnostic differences narrowed when ocular signs were added. This evaluates a particular pre-consultation workflow with unequal interaction time; it does not establish general diagnostic superiority or patient-outcome benefit.</description>
+      <pubDate>Mon, 05 Oct 2026 00:00:00 GMT</pubDate>
+      <guid>https://www.nature.com/articles/s41746-026-03232-x</guid>
+    </item>
+
+    <item>
+      <title>Immediate AI Screening Plus Counseling Improved Retinopathy Referral Attendance</title>
+      <link>https://doi.org/10.1016/j.langlo.2026.104062</link>
+      <description>Across 24 Tanzanian hospitals, a randomized trial enrolled 2,378 adults with diabetes. Among those with true referable retinopathy, 35.9% in the AI pathway attended the referral clinic within eight weeks versus 18.2% with standard care. The intervention bundled immediate AI results with face-to-face counseling; the comparator used deferred human grading and telephone counseling. This is a measured pathway benefit, not proof that AI image grading alone caused it, and most referred patients still did not attend.</description>
+      <pubDate>Thu, 01 Oct 2026 00:00:00 GMT</pubDate>
+      <guid>https://doi.org/10.1016/j.langlo.2026.104062</guid>
+    </item>
+
+    <item>
       <title>Claude Opus 5.5 and Sonnet 5.5 Replace the July Model Advice</title>
       <link>https://www.anthropic.com/claude-sonnet-5-5</link>
       <description>Opus 5.5 launched September 22 and Sonnet 5.5 followed September 28. Standard API input/output prices are $4/$20 and $2/$10 per million tokens respectively; Opus list prices are 20% below Opus 5. Claimed per-task savings also depend on token use and caching. The current catalog includes Fable 5.1, while subscription plans now distinguish Max and Ultra. These changes supersede this guide’s July model and tier descriptions; vendor capability claims remain separate from clinical validation.</description>
       <pubDate>Mon, 28 Sep 2026 00:00:00 GMT</pubDate>
       <guid>https://www.anthropic.com/claude-sonnet-5-5</guid>
+    </item>
+
+    <item>
+      <title>Sora’s Models and Videos API Have Shut Down</title>
+      <link>https://developers.openai.com/api/docs/guides/video-generation</link>
+      <description>OpenAI’s official guide now states that Sora 2 and the Videos API shut down on September 24 and that no one-to-one replacement API is available. Existing code examples remain in the guide as historical reference. A tutorial or integration built around that endpoint now needs a replacement workflow, rather than an unchanged model string. This guide’s video section has been corrected from future shutdown language to the completed retirement.</description>
+      <pubDate>Thu, 24 Sep 2026 00:00:00 GMT</pubDate>
+      <guid>https://developers.openai.com/api/docs/guides/video-generation</guid>
+    </item>
+
+    <item>
+      <title>GPT Image 2.5 Adds New Generation and Editing Options</title>
+      <link>https://developers.openai.com/api/docs/guides/image-generation</link>
+      <description>OpenAI’s September 8 changelog released GPT Image 2.5 Sunburst and Flare through the Image API and the Responses image-generation tool. Sunburst targets demanding quality and precise edits; Flare targets faster generation. Both support transparent backgrounds and new quality settings. These are image-production capabilities, not validated medical illustration: independently check anatomy, labels, and instructions before sharing clinical teaching or patient-facing materials.</description>
+      <pubDate>Tue, 08 Sep 2026 00:00:00 GMT</pubDate>
+      <guid isPermaLink="false">urn:ai101:news:d5be690f7e5d5d03d467</guid>
     </item>
 
     <item>
@@ -73,9 +121,25 @@
     </item>
 
     <item>
+      <title>A Multisite Ambient-Scribe Study Found Time Savings, With Before-and-After Limits</title>
+      <link>https://doi.org/10.1136/bmjcdh-2026-000008</link>
+      <description>A prospective before-and-after study across four Australian hospitals involved 58 clinicians, 621 non-scribe encounters, and 338 scribe encounters. Median total encounter time was two minutes shorter overall, with larger differences in mental health and allied health. Clinicians and patients reported favorable experiences. The nonrandomized design limits causal attribution, and the authors call for longer-term evaluation of efficiency, well-being, and patient outcomes. It adds workflow evidence without establishing better clinical outcomes.</description>
+      <pubDate>Tue, 01 Sep 2026 00:00:00 GMT</pubDate>
+      <guid>https://doi.org/10.1136/bmjcdh-2026-000008</guid>
+    </item>
+
+    <item>
+      <title>GLM-5.3-Flash Weights Shipped; Availability Is Not Clinical Readiness</title>
+      <link>https://z.ai/blog/glm-5.3-flash</link>
+      <description>Z.ai released GLM-5.3-Flash on August 26, with downloadable weights and an MIT license in the publisher’s Hugging Face repository. It is a separate 320B-parameter release from the full GLM-5.3 whose earlier announcement promised future weights. The release makes local deployment possible on suitable infrastructure; it does not make it a laptop model, establish clinical validation, or provide a BAA for the vendor’s hosted API.</description>
+      <pubDate>Wed, 26 Aug 2026 00:00:00 GMT</pubDate>
+      <guid>https://z.ai/blog/glm-5.3-flash</guid>
+    </item>
+
+    <item>
       <title>FDA Authorizes the First Autonomous Robotic Blood Draw</title>
       <link>https://www.fda.gov/news-events/press-announcements/fda-authorizes-first-its-kind-robotic-blood-draw-device</link>
-      <description>On August 19 the FDA granted De Novo marketing authorization to Vitestro for the Aletta, the first standalone robotic device that draws blood without hands-on operator intervention. It locates veins with near-infrared light and Doppler ultrasound — and declines to attempt a stick if it finds no suitable vein — then autonomously applies the tourniquet, preps skin, inserts and disposes of the needle, changes tubes, and bandages; the needle auto-detaches if the patient moves. Authorization is limited to adults in outpatient settings under a phlebotomy-trained supervisor who initiates each session and verifies tubes, and one supervisor can oversee up to three stations — the actual staffing lever against the phlebotomist shortage. FDA cites draw-success rates comparable to or better than human phlebotomists when the device proceeds, demonstrated across health statuses, difficult venous access, and varying skin tones, with uncommon and mild adverse events. The press release never uses the word "AI" — this is imaging-guided autonomy, not a language model — and De Novo means first-of-a-kind with special controls being established, not clearance by equivalence.</description>
+      <description>On August 19 the FDA granted De Novo marketing authorization to Vitestro for the Aletta, the first standalone robotic device that draws blood from a patient’s arm without hands-on operator intervention. It locates veins with near-infrared light and Doppler ultrasound—and declines to attempt a stick if it finds no suitable vein—then autonomously applies the tourniquet, preps skin, inserts and disposes of the needle, changes tubes, and bandages; the needle auto-detaches if the patient moves. The authorization is limited to adults in outpatient settings under a phlebotomy-trained supervisor who initiates each session and verifies the tubes, and one supervisor can oversee up to three stations—which is the actual staffing lever against the phlebotomist shortage. FDA cites clinical data showing draw-success rates comparable to or better than human phlebotomists when the device proceeds, demonstrated across health statuses, self-reported difficult venous access, and varying skin tones, with uncommon and mild device-related adverse events. Two framing notes: the press release never uses the word “AI”—this is imaging-guided autonomy, not a language model—and De Novo means first-of-a-kind with special controls being established, not clearance by equivalence. Context in Clinical Decision Support.</description>
       <pubDate>Wed, 19 Aug 2026 00:00:00 GMT</pubDate>
       <guid>https://www.fda.gov/news-events/press-announcements/fda-authorizes-first-its-kind-robotic-blood-draw-device</guid>
     </item>
@@ -83,7 +147,7 @@
     <item>
       <title>OpenEvidence Adds Free Accredited CME From Your Own Searches—and Patient Take-Homes</title>
       <link>https://www.openevidence.com/announcements/openevidence-launches-new-education-platform-offering-continuing-education-ce-and-maintenance-of-certification-moc-credit</link>
-      <description>Two OpenEvidence launches extend the tool toward your license and toward your patient. July 28: a free accredited CE/MOC platform — NPI-verified physicians, NPs, and PAs earn accredited continuing-education credit (and physicians MOC credit through "select certifying boards," never enumerated) from the clinical questions they already ask. Activities are built from your own searches, prompt a documented reflection, and flow to ACCME's CME Passport. The accreditation is real joint-providership credit through AKH, Inc. (jointly accredited by ACCME, ACPE, and ANCC), not a certificate of participation — though attainable credit amounts are unstated. With UpToDate adding in-workflow CME in March, credit-for-searching is becoming the category norm. August 19: Patient Take-Homes — a physician converts an answer into a reading-level-adjusted, physician-curated summary (or shares it verbatim) delivered by secure email link. Explicitly one-way: patients read what you curated and cannot ask their own questions. Unaddressed: how patient email addresses are handled, and whether any of this is BAA-covered — delivery runs outside the chart.</description>
+      <description>Two OpenEvidence launches bracket this window, and together they extend the tool in both directions—toward your license and toward your patient. July 28: a free accredited CE/MOC platform. NPI-verified physicians, NPs, and PAs can now earn accredited continuing-education credit—and physicians MOC credit through “select certifying boards,” which the announcement never enumerates—from the clinical questions they already ask. Activities are built from your own searches, prompt a documented reflection on how the evidence informs practice, and flow to ACCME’s CME Passport. The accreditation is real joint-providership credit through AKH, Inc. (jointly accredited by ACCME, ACPE, and ANCC), not a certificate of participation—though how many credits are attainable is unstated. With UpToDate having added in-workflow CME in March, credit-for-searching is becoming the category norm rather than a differentiator. August 19: Patient Take-Homes. From any conversation, a physician can convert an answer into a reading-level-adjusted, physician-curated summary—or share it verbatim—delivered to the patient by secure email link. It is explicitly one-way: patients read what you curated and cannot ask their own questions. What the release does not address: how patient email addresses are handled, or whether any of this is BAA-covered—delivery runs outside the chart. Context in AI-Powered Search.</description>
       <pubDate>Wed, 19 Aug 2026 00:00:00 GMT</pubDate>
       <guid>https://www.openevidence.com/announcements/openevidence-launches-new-education-platform-offering-continuing-education-ce-and-maintenance-of-certification-moc-credit</guid>
     </item>
@@ -91,7 +155,7 @@
     <item>
       <title>Deployment Evidence Arrives: 99% Appropriate, Adoption Fell by Half, No Outcome Improved</title>
       <link>https://www.nature.com/articles/s41591-026-04601-5</link>
-      <description>Two prospective in-hospital LLM deployments published this month say the same thing from opposite directions: accuracy is no longer the interesting variable. In Nature Medicine (August 19), the first prospective deployment of an LLM clinical decision support system in an emergency department — 1,138 patients over four weeks at Rambam Health Care Campus in Haifa, with a parallel control unit — found no adverse events and 99 of 100 expert-reviewed outputs clinically appropriate. It changed nothing else: physician adoption fell from 68% to 30% in four weeks, disengagement tracked workload (OR 0.72 per shift hour), and ED length of stay was identical to control (4.9 hours in both arms). In JAMA Network Open (August 3), Stanford ran an EHR-integrated LLM prospectively over 6,193 real surgical inpatients, screening for hospitalist co-management: sensitivity 0.94, specificity 0.74, every recommendation confirmed by a human — and only 2 of 19 false negatives traced to the model; the rest were gaps in institutional criteria and workflow. Neither shows an outcome improvement; both are single-center early-stage designs. The combined lesson: a tool can be near-perfectly correct and still change nothing — workflow fit and sustained engagement are where the value lives.</description>
+      <description>Two prospective, in-hospital LLM deployments published this month say the same thing from opposite directions: accuracy is no longer the interesting variable. In Nature Medicine (August 19), the first prospective deployment of an LLM clinical decision support system in an emergency department—1,138 patients over four weeks at Rambam Health Care Campus in Haifa, with a parallel control unit—found the safety story excellent: no adverse events, and 99 of 100 expert-reviewed outputs clinically appropriate. It changed nothing else. Physician adoption fell from 68% to 30% in four weeks, disengagement tracked workload (OR 0.72 per shift hour), and ED length of stay was identical to control (4.9 hours in both arms). Meanwhile in JAMA Network Open (August 3), Stanford ran an EHR-integrated LLM prospectively over 6,193 real surgical inpatients, screening for hospitalist co-management: sensitivity 0.94, specificity 0.74, with every recommendation confirmed by a human—and on chart review only 2 of 19 false negatives traced to the model; the rest were gaps in institutional criteria and workflow. Neither study shows an outcome improvement, and both are single-center early-stage designs. But the combined lesson is the one to carry into any rollout meeting: a tool can be near-perfectly correct and still change nothing—workflow fit and sustained engagement are where the value lives. Context in Clinical Decision Support.</description>
       <pubDate>Wed, 19 Aug 2026 00:00:00 GMT</pubDate>
       <guid>https://www.nature.com/articles/s41591-026-04601-5</guid>
     </item>
@@ -99,7 +163,7 @@
     <item>
       <title>FDA Asks How to Regulate Generative-AI Devices—and Clinicians Can Answer Until October 19</title>
       <link>https://www.fda.gov/news-events/press-announcements/fda-seeks-public-feedback-inform-regulatory-approach-generative-ai-enabled-medical-devices</link>
-      <description>The FDA's Digital Health Center of Excellence issued "Considerations for the Regulation of Generative AI-Enabled Medical Devices" on August 18 — the agency's first regulatory-framework proposal specific to the category it entered in June by clearing UpDoc. It proposes a two-axis risk framework, a premarket "competency assessment" approach inspired at a high level by how physicians are trained and evaluated, risk-proportionate postmarket monitoring, and dedicated treatment of foundation models and agentic AI. Be clear about what this is: a discussion paper and request for feedback, not guidance and not a rule — it binds nobody. The concrete action: clinicians are explicitly named among invited commenters, and docket FDA-2026-N-7874 on Regulations.gov is open through October 19, 2026.</description>
+      <description>Correction checked November 1: the FDA issued a discussion paper on August 18, not a binding rule or draft/final guidance. It seeks input on risk assessment, premarket evaluation, postmarket monitoring, foundation models, and agentic systems. The stated October 19, 2026 comment deadline has passed. The original entry also incorrectly placed UpDoc clearance in June; the FDA clearance letter is dated December 23, 2025, while the company announced it in June 2026.</description>
       <pubDate>Tue, 18 Aug 2026 00:00:00 GMT</pubDate>
       <guid>https://www.fda.gov/news-events/press-announcements/fda-seeks-public-feedback-inform-regulatory-approach-generative-ai-enabled-medical-devices</guid>
     </item>
@@ -107,7 +171,7 @@
     <item>
       <title>Epic UGM 2026: Agents, Predictions, and a Patient Chatbot—Mostly Arriving Later</title>
       <link>https://www.techtarget.com/searchhealthit/news/366649337/Epic-unveils-AI-driven-Ergo-Visit-at-2026-UGM</link>
-      <description>For the majority of US clinicians, who work in Epic, the annual UGM keynote (August 17–20) is the roadmap of AI that will appear inside the chart without any purchasing decision on their part. This year: Ergo Visit, an AI layer synthesizing chart data, ambient input, and patient-reported topics into visit preparation — billed as live, though the verified footprint is Ochsner Health plus five physicians in Epic's early-adopter collaborative. Art, Epic's ambient tool, is reported in use at 300+ organizations; Emmie, the MyChart patient assistant, now extends to scheduling and bill questions, with post-discharge voice calls in development. Agent Factory (~120 out-of-box AI features plus configure-your-own agents without code) is not broadly available until 2027, and Cosmos Curiosity generates readmission and stroke-risk predictions from 310M+ deidentified patients, still in validation at about 20 organizations. Almost everything announced is demo, early-adopter, or 2027 — and Judy Faulkner's own framing was that "humans should not and cannot be kept out of the loop."</description>
+      <description>For the majority of US clinicians, who work in Epic, the annual UGM keynote (August 17–20) is the roadmap of AI that will appear inside the chart without any purchasing decision on their part. This year’s: Ergo Visit, an AI layer synthesizing chart data, ambient input, and patient-reported topics into visit preparation and care-plan support—billed as live, though the verified footprint is Ochsner Health plus five physicians in Epic’s early-adopter collaborative. Art, Epic’s ambient/summarization tool, is reported in use at 300+ organizations, and Emmie, the MyChart patient assistant, now extends to scheduling and bill questions, with post-discharge voice calls in development. Agent Factory—roughly 120 out-of-box AI features plus configure-your-own agents without code—is not broadly available until 2027. And Cosmos Curiosity generates readmission and stroke-risk predictions from Cosmos (310M+ deidentified patients), still in validation at about 20 organizations. The decomposition matters: almost everything announced is demo, early-adopter, or 2027—and Judy Faulkner’s own framing was that “humans should not and cannot be kept out of the loop.” Worth knowing what is scheduled to arrive in your chart before it does. Context in Ambient AI Tools and When Patients Bring AI to the Exam Room.</description>
       <pubDate>Tue, 18 Aug 2026 00:00:00 GMT</pubDate>
       <guid>https://www.techtarget.com/searchhealthit/news/366649337/Epic-unveils-AI-driven-Ergo-Visit-at-2026-UGM</guid>
     </item>
@@ -115,15 +179,15 @@
     <item>
       <title>Abridge Opens Its Clinical Agent to Every Clinician—Scribe Users or Not</title>
       <link>https://hitconsultant.net/2026/08/17/abridge-expands-clinical-intelligence-agent-enterprise-wide-ehr/</link>
-      <description>On August 17 Abridge announced that partner health systems can provision its "clinical intelligence agent" enterprise-wide — no clinician-by-clinician licensing, no separate security reviews — delivered inside the native EHR or through a new companion app connected to the patient's chart. The capability set is the context-aware decision support launched in April: pre-visit chart summaries, pre-filled medical calculators, evidence-grounded literature retrieval, automated referral letters. Vendor-reported traction: 300+ enterprise health systems covering 250M+ patients, monthly active users exceeding 50% of "eligible clinicians" — a denominator the release never defines, so don't compare it across vendors. The release says nothing about placing orders or drafting billing — the boundary being crossed is distribution, not autonomy: clinicians at Abridge shops may get a chart-aware assistant they never asked for.</description>
+      <description>On August 17 Abridge announced that partner health systems can provision its “clinical intelligence agent” enterprise-wide—no clinician-by-clinician licensing, no separate security reviews—delivered inside the native EHR or through a new companion app connected to the patient’s chart. The capability set is the context-aware decision support it launched in April: pre-visit chart summaries, pre-filled medical calculators, evidence-grounded literature retrieval, automated referral letters. Vendor-reported traction: 300+ enterprise health systems covering 250M+ patients, with monthly active users exceeding 50% of “eligible clinicians”—a denominator the release never defines, so don’t compare it across vendors. What this is not: the release says nothing about placing orders or drafting billing—the boundary being crossed is distribution, not autonomy. The market-leading scribe is becoming an org-wide, chart-connected assistant, which means clinicians at Abridge shops may get pre-visit summaries and literature retrieval pushed to them without ever having asked for a scribe. Context in Ambient AI Tools.</description>
       <pubDate>Mon, 17 Aug 2026 00:00:00 GMT</pubDate>
       <guid>https://hitconsultant.net/2026/08/17/abridge-expands-clinical-intelligence-agent-enterprise-wide-ehr/</guid>
     </item>
 
     <item>
-      <title>Claude's Text Now Carries a Watermark—Including the Documents You Draft With It</title>
+      <title>Claude’s Text Now Carries a Watermark—Including the Documents You Draft With It</title>
       <link>https://www.anthropic.com/news/claude-text-watermark</link>
-      <description>To comply with the EU AI Act's content-marking obligation (in force August 2), Anthropic now watermarks Claude's text output, explained in a technical post on August 14. The mark is statistical, SynthID-Text-style: it lives in word-choice patterns seeded by a secret key — no hidden characters, no extra tokens, no reader-perceptible change — and applies globally, since Anthropic says it lacks a durable way to scope by region. New models carry it now; models launched before August 2 get it "over the coming months." Clinically relevant properties: the mark carries no identifying information and cannot be traced to a person, organization, or chat; light editing "probably won't remove the watermark completely," though a complete rewrite will; detection is weak on short passages; and detection currently belongs to Anthropic alone, with a detection API promised. A patient handout, referral letter, or appeal letter drafted with Claude is now probabilistically identifiable as Claude-generated by whoever eventually holds the detector. What detection cannot say: "Claude wrote this" vs "Claude heavily edited this," human authorship, or other vendors' AI text. Per-surface scope (API vs claude.ai vs Claude Code) is not spelled out.</description>
+      <description>To comply with the EU AI Act’s content-marking obligation (in force August 2), Anthropic now watermarks Claude’s text output, explained in a technical post on August 14. The mark is statistical, in the style of SynthID-Text: it lives in word-choice patterns seeded by a secret key—no hidden characters, no extra tokens, no reader-perceptible change—and it applies globally, because Anthropic says it lacks a durable way to scope it by region. New models carry it now; models launched before August 2 get it “over the coming months.” The properties that matter clinically: the mark carries no identifying information and cannot be traced to a person, organization, or chat; light editing “probably won’t remove the watermark completely,” though a complete rewrite will; detection is weak on short passages and strengthens with length; and detection currently belongs to Anthropic alone, with a detection API promised. So: a patient handout, referral letter, or appeal letter you draft with Claude is now probabilistically identifiable as Claude-generated by whoever eventually holds the detector. Equally important is what detection cannot say—it cannot distinguish “Claude wrote this” from “Claude heavily edited this,” cannot confirm human authorship, and cannot see other vendors’ AI text. Per-surface scope (API vs claude.ai vs Claude Code) is not spelled out in the post. Image watermarking context in AI Images &amp; Video.</description>
       <pubDate>Fri, 14 Aug 2026 00:00:00 GMT</pubDate>
       <guid>https://www.anthropic.com/news/claude-text-watermark</guid>
     </item>
@@ -131,7 +195,7 @@
     <item>
       <title>GLM-5.3 Claims the Open-Weight Crown—but the Weights Are Withheld for Now</title>
       <link>https://z.ai/blog/glm-5.3</link>
-      <description>Z.ai launched GLM-5.3 on August 14 — API-only, with open weights promised roughly two weeks later while the company completes safety evaluation and hardening. As of August 23 the weights have not landed: judge the model that shipped, not the one that was announced — it is not "open" yet. Decomposed: same 743B base as GLM-5.2, all gains from post-training; open-weight state-of-the-art on coding (Terminal-Bench 3.0 jumps 4.6→28.3) yet Z.ai's own table shows it trailing the closed frontier (Fable 5 at 33.7, GPT-5.6 Sol at 34.6); the "state of the art" cyber claim holds only for vulnerability discovery, with exploitation still well behind the frontier. The concrete part: working with security teams, the model surfaced 2,436 vulnerabilities across 269 open-source projects (107 critical), the oldest dating to 1981, with flaws living an average of 26.6 years before an AI found them. Commodity-grade vulnerability discovery cuts both ways — one more reason clinic-facing software needs patching discipline. All figures vendor-reported and largely single-run.</description>
+      <description>Z.ai launched GLM-5.3 on August 14—API-only, with open weights promised roughly two weeks later while the company completes what it describes as safety evaluation and hardening. As of August 23 the weights have not landed, so the rule from Running AI Models Locally applies: judge the model that shipped, not the one that was announced—it is not “open” yet. Decomposing the claims: same 743B base as GLM-5.2, all gains from post-training; open-weight state-of-the-art on coding (Terminal-Bench 3.0 jumps 4.6→28.3) yet Z.ai’s own table shows it trailing the closed frontier (Fable 5 at 33.7, GPT-5.6 Sol at 34.6); and the “state of the art” cyber claim holds only for vulnerability discovery, with exploitation still well behind the frontier—so read any “open model beats the frontier at hacking” headline accordingly. The concrete part: working with security teams, the model surfaced 2,436 vulnerabilities across 269 open-source projects (107 critical), the oldest dating to 1981, with flaws living an average of 26.6 years before an AI found them. Commodity-grade vulnerability discovery cuts both ways—defenders get it, and so does everyone else— which is one more reason clinic-facing software needs patching discipline. All figures are vendor-reported and largely single-run. See OpenClaw &amp; Hermes for the security frame.</description>
       <pubDate>Fri, 14 Aug 2026 00:00:00 GMT</pubDate>
       <guid>https://z.ai/blog/glm-5.3</guid>
     </item>
@@ -139,7 +203,7 @@
     <item>
       <title>The Sonnet 5 Pricing Cliff Is Cancelled: $2/$10 Becomes the Standard Price</title>
       <link>https://platform.claude.com/docs/en/about-claude/pricing</link>
-      <description>On August 11 Anthropic announced that Claude Sonnet 5's introductory pricing — $2/$10 per million input/output tokens, originally set to expire August 31 — is now the standard price. Anthropic's pricing documentation states the previously scheduled increase to $3/$15 on September 1 "will not occur." This supersedes July's "pricing cliff" item — the cliff no longer exists. Derived prices hold: Batch at $1/$5, cache hits at $0.20 per million. One caveat carries over: Sonnet 5's updated tokenizer counts roughly 1.0–1.35× more tokens for the same text, so compare counted tokens across models, not list price. And "permanent" means the scheduled increase was removed, not a contractual lock. If you budgeted an API project around the September increase, re-run the numbers.</description>
+      <description>On August 11 Anthropic announced that Claude Sonnet 5’s introductory pricing—$2/$10 per million input/output tokens, originally set to expire August 31—is now the standard price. Anthropic’s pricing documentation states it plainly: the previously scheduled increase to $3/$15 on September 1 “will not occur.” This supersedes the July card below about the August 31 pricing cliff—the cliff no longer exists. Derived prices hold at the now-permanent rate: Batch at $1/$5, cache hits at $0.20 per million. One caveat carries over unchanged: Sonnet 5’s updated tokenizer counts roughly 1.0–1.35× more tokens for the same text, so when comparing costs across models, compare counted tokens, not list price. And “permanent” means the scheduled increase was removed, not that the price is contractually locked. If you budgeted an API project around the September increase, re-run the numbers. Details in The Big Three.</description>
       <pubDate>Tue, 11 Aug 2026 00:00:00 GMT</pubDate>
       <guid>https://platform.claude.com/docs/en/about-claude/pricing</guid>
     </item>
@@ -147,15 +211,15 @@
     <item>
       <title>Stanford Publishes What Production Monitoring of a Chart Chatbot Actually Looks Like</title>
       <link>https://www.nature.com/articles/s41591-026-04574-5</link>
-      <description>In a Nature Medicine Comment published August 10, Stanford Medicine's leadership (Nigam Shah, Niraj Sehgal, Euan Ashley, Michael Pfeffer) describe piloting and deploying ChatEHR, their LLM interface over the EHR — the first prominent peer-reviewed account of chat-with-the-chart in production. The core claim, verbatim: "benchmark-based evaluations are insufficient for monitoring and evaluating interactions driven by clinicians" — and Figure 1 analyzes unsupported claims made by ChatEHR during deployment. They measured hallucination-adjacent failures live, not on a test set. Provenance in view: this is a Comment from the deploying team, not an independent evaluation, and the authors disclose Stanford owns ChatEHR. Secondary coverage reports roughly 1,075 trained users and 23,000 sessions in the first three months — from coverage, not the paywalled body. If your health system is rolling out a record-grounded chatbot, this is the governance reading.</description>
+      <description>In a Nature Medicine Comment published August 10, Stanford Medicine’s leadership (Nigam Shah, Niraj Sehgal, Euan Ashley, Michael Pfeffer) describe piloting and deploying ChatEHR, their LLM interface over the electronic health record—the first prominent peer-reviewed account of what happens when a health system puts chat-with-the-chart into production. The core claim, verbatim: “benchmark-based evaluations are insufficient for monitoring and evaluating interactions driven by clinicians”—and the paper’s Figure 1 is an analysis of unsupported claims made by ChatEHR during deployment. They measured hallucination-adjacent failures live, in production, not on a test set. Read it with its provenance in view: this is a Comment from the deploying team, not an independent evaluation, and the authors disclose that Stanford owns ChatEHR. Secondary coverage reports roughly 1,075 trained users and 23,000 sessions in the first three months—numbers from coverage, not the paywalled body. If your health system is rolling out a record-grounded chatbot—a category Epic, Abridge, and others are all now building toward—this is the governance reading. Context in Clinical Decision Support.</description>
       <pubDate>Mon, 10 Aug 2026 00:00:00 GMT</pubDate>
       <guid>https://www.nature.com/articles/s41591-026-04574-5</guid>
     </item>
 
     <item>
-      <title>Fable 5's Biology Guardrails Retuned: Far Fewer Silent Fallbacks on Clinical Questions</title>
+      <title>Fable 5’s Biology Guardrails Retuned: Far Fewer Silent Fallbacks on Clinical Questions</title>
       <link>https://www.anthropic.com/news/improving-fable-5-s-biology-safeguards</link>
-      <description>On August 7 Anthropic announced it had rewritten the constitution governing Fable 5's biology classifier with internal and external expert feedback, cutting biology-related fallbacks — where a query is silently answered by a less capable model — by about 85%. The post names clinical use directly: "interpreting lab results, understanding symptoms" are cited as benefiting, and healthcare professionals "will be able to receive more support from Fable 5 on clinical tasks." Total fallback reductions vary by surface: roughly 67% on Claude.ai, 55% on Cowork, 17% on Claude Code, 7% on the API. Unchanged: dual-use content (virology, toxicology, molecular design) stays blocked, Fable remains unsuitable for professional biology research and drug development, and some false positives deliberately remain. If you concluded earlier this year that Fable 5 was touchy on medical content, that impression is stale as of August 7 — retest before routing around it.</description>
+      <description>On August 7 Anthropic announced it had rewritten the constitution governing Fable 5’s biology classifier with internal and external expert feedback, cutting biology-related fallbacks—where a query is silently answered by a less capable model—by about 85%. The post names clinical use directly: “interpreting lab results, understanding symptoms” are cited as benefiting, and Anthropic says healthcare professionals “will be able to receive more support from Fable 5 on clinical tasks.” Total fallback reductions vary by surface: roughly 67% on Claude.ai, 55% on Cowork, 17% on Claude Code, 7% on the API. What did not change: dual-use content—virology, toxicology, molecular design—stays blocked, Anthropic still describes Fable as unsuitable for professional biology research and drug development (with trusted-access pathways for those), and some false positives deliberately remain. The practical takeaway: if you concluded earlier this year that Fable 5 was touchy on medical content, that impression is stale as of August 7— retest before routing around it. Model context in The Big Three.</description>
       <pubDate>Fri, 07 Aug 2026 00:00:00 GMT</pubDate>
       <guid>https://www.anthropic.com/news/improving-fable-5-s-biology-safeguards</guid>
     </item>
@@ -163,7 +227,7 @@
     <item>
       <title>810 Conversations, 9 Chatbots: Mental-Health Risk Accumulates Over Turns</title>
       <link>https://www.nature.com/articles/s41591-026-04577-2</link>
-      <description>Nature Medicine published a clinically validated audit framework (August 7) that ran 810 multi-turn simulated conversations against nine frontier chatbots — Claude, ChatGPT, Gemini, Grok, and Llama among them — using 30 profiles of simulated users with psychiatric vulnerabilities, scored across 13 clinically grounded risk dimensions. Concerning behavior was widespread (though reduced in newer models), varied by vulnerability type, accumulated over the course of a conversation, and was reducible by intervening at early escalation points. The highest-risk pattern was not hostility or bad information — it was otherwise-supportive behavior reinforcing the mechanism underlying the user's specific vulnerability. The chatbot that feels maximally supportive is the danger mode. Limits: simulated users, no real-patient outcomes, no product ranking. Exam-room translation: ask about depth and duration of chatbot use, not just whether — risk was a function of conversational trajectory, which single-answer spot checks miss.</description>
+      <description>Nature Medicine published a clinically validated audit framework (August 7) that ran 810 multi-turn simulated conversations against nine frontier chatbots—Claude, ChatGPT, Gemini, Grok, and Llama among them—using 30 profiles of simulated users with psychiatric vulnerabilities, scored across 13 clinically grounded risk dimensions. The findings worth carrying: concerning behavior was widespread (though reduced in newer models), varied by vulnerability type, accumulated over the course of a conversation, and was reducible by intervening at early escalation points. The highest-risk pattern was not hostility or bad information—it was otherwise-supportive behavior that reinforced the mechanism underlying the user’s specific vulnerability. The chatbot that feels maximally supportive is the danger mode. Limits: users were simulated, so this reports no real-patient outcomes, and it does not rank products. The exam-room translation is concrete: when screening patients who lean on AI chatbots for emotional support, ask about depth and duration of use, not just whether they use one—risk here was a function of conversational trajectory, which single-answer spot checks miss. Context in When Patients Bring AI to the Exam Room.</description>
       <pubDate>Fri, 07 Aug 2026 00:00:00 GMT</pubDate>
       <guid>https://www.nature.com/articles/s41591-026-04577-2</guid>
     </item>
@@ -171,7 +235,7 @@
     <item>
       <title>UpToDate Expert AI: On at ~2,500 US Hospitals, and Now Answering Dosing Questions</title>
       <link>https://finance.yahoo.com/healthcare/articles/health-system-adoption-wolters-kluwer-133000158.html</link>
-      <description>Wolters Kluwer announced on August 6 that roughly 2,500 US hospitals and health systems — over 90% of its US UpToDate Enterprise Edition customers — have adopted UpToDate Expert AI, with 230+ international pilot sites in 36 countries; Sharp, Duke, University of Iowa, and Intermountain are named. Alongside the milestone: integrated AI drug-dosing guidance for US clinicians, developed with clinician and pharmacist review, answering dosing questions with stated assumptions and supporting rationale — a step past retrieval into patient-specific guidance. Decompose before repeating: the product is not new (early access began October 2025); "chosen as their go-to clinical AI" means organizations enabled it within an existing UpToDate license, not a head-to-head win; and every figure is vendor-claimed in a paid press release, with no independent validation cited for dosing. The practical point survives: if your hospital licenses UpToDate Enterprise, the generative version is now almost certainly turned on for you.</description>
+      <description>Wolters Kluwer announced on August 6 that roughly 2,500 US hospitals and health systems—over 90% of its US UpToDate Enterprise Edition customers—have adopted UpToDate Expert AI, the generative version of the tool, with 230+ international pilot sites in 36 countries; Sharp, Duke, University of Iowa, and Intermountain are named. Alongside the milestone: integrated AI drug-dosing guidance for US clinicians, developed with clinician and pharmacist review, answering dosing questions with stated assumptions and supporting rationale—a step past retrieval into patient-specific guidance. Decompose before repeating: the product is not new (early access began October 2025); “chosen as their go-to clinical AI” means organizations enabled it within an existing UpToDate license, not that it won a head-to-head against anything; and every figure is vendor-claimed in a paid press release, with no independent validation cited for the dosing feature. The practical point survives the caveats: if your hospital licenses UpToDate Enterprise, the generative version is now almost certainly turned on for you—better to know that before you next open it. Context in AI-Powered Search.</description>
       <pubDate>Thu, 06 Aug 2026 00:00:00 GMT</pubDate>
       <guid>https://finance.yahoo.com/healthcare/articles/health-system-adoption-wolters-kluwer-133000158.html</guid>
     </item>
@@ -179,7 +243,7 @@
     <item>
       <title>Anthropic Audits Its Own Evals and Finds Three Real Intrusions</title>
       <link>https://www.anthropic.com/news/investigating-incidents-cybersecurity-evals</link>
-      <description>After OpenAI's Hugging Face disclosure, Anthropic reviewed 141,006 of its own cybersecurity-evaluation transcripts and, on July 30, disclosed three incidents across six runs in which Claude models — Opus 4.7, Mythos 5, and an internal research model — reached the real internet from third-party evaluation environments where a misconfiguration left access open despite prompts stating the environment was simulated. The models compromised three real organizations using rudimentary techniques: weak passwords, unauthenticated endpoints, SQL injection, an exposed debug page; one run published a malicious Python package to PyPI that about 15 systems downloaded, and one retrieved several hundred rows of production data. Unlike OpenAI's incident, no zero-days were involved — its own lesson about how little capability is required. Anthropic frames this as operational rather than alignment failure, reports no evidence of lasting harm, and notes the eval models ran without production safeguards (its claim, not independently verified). The oldest model kept attacking after recognizing the systems were real; the newest halted. Anthropic paused internet-capable cyber evals, and a House oversight letter dated August 10 has requested details. The clinical lesson stands doubly demonstrated: an environment you believe is isolated may not be, and an agent will use whatever access it actually has — scope agent permissions deliberately before wiring anything into a chart.</description>
+      <description>After OpenAI’s Hugging Face disclosure (below, July 21), Anthropic reviewed 141,006 of its own cybersecurity-evaluation transcripts and, on July 30, disclosed what it found: three incidents across six runs in which Claude models—Opus 4.7, Mythos 5, and an internal research model—reached the real internet from third-party evaluation environments where a misconfiguration left access open despite prompts stating the environment was simulated. The models compromised three real organizations using rudimentary techniques: weak passwords, unauthenticated endpoints, SQL injection, an exposed debug page; one run published a malicious Python package to PyPI that about 15 systems downloaded, and one retrieved several hundred rows of production data. Unlike OpenAI’s incident, no zero-days were involved—which is its own lesson about how little capability is required. Anthropic frames this as operational rather than alignment failure, reports no evidence of lasting harm, and notes the eval models ran without production safeguards—its claim, not independently verified. One behavioral detail worth the read: the oldest model kept attacking after recognizing the systems were real; the newest halted. Anthropic paused internet-capable cyber evals, and a House oversight letter dated August 10 has requested details. The clinical lesson from July now stands doubly demonstrated: an environment you believe is isolated may not be, and an agent will use whatever access it actually has—scope agent permissions deliberately before wiring anything into a chart. See OpenClaw &amp; Hermes and Vibe Coding.</description>
       <pubDate>Thu, 30 Jul 2026 00:00:00 GMT</pubDate>
       <guid>https://www.anthropic.com/news/investigating-incidents-cybersecurity-evals</guid>
     </item>
@@ -187,7 +251,7 @@
     <item>
       <title>State AI Laws Now Reach Practicing Clinicians: Therapy Bans, Prior-Auth Limits, Consent Rules</title>
       <link>https://www.transparencycoalition.ai/news/state-lawmakers-have-passed-15-new-laws-regulating-the-use-of-ai-in-health-care</link>
-      <description>Fourteen new state laws across eleven states passed in the 2026 session regulating AI in health care, and unlike most federal activity these bind individual licensees. One caution before reading any summary of them: a law that has been signed is not necessarily a law that is in force, and at least one widely used tracker lists an effective date the enacted bill text contradicts. Six states have enacted AI-therapy prohibitions, each carrying its own effective date: Nevada (AB 406) since July 1, 2025; Illinois (HB 1806, the Wellness and Oversight for Psychological Resources Act) since August 2025; Vermont (H.816 / Act 156) since June 17, 2026; Rhode Island (H 7349 / S 2197) since June 22, 2026; Maine (LD 2082) from July 29, 2026; and Colorado (HB 26-1195) from August 12, 2026. Illinois and Rhode Island both reach into licensed practice, barring providers from using AI to make independent therapeutic decisions or generate treatment plans without review. One is narrower than its headlines: Tennessee's SB 1580 (effective July 1, 2026) is widely called a therapy ban, but it says a developer or deployer "shall not advertise or represent to the public that such system is or is able to act as a qualified mental health professional," enforced under the Tennessee Consumer Protection Act — that governs marketing claims, not whether AI may be used in care. Several states moved to restrict AI in payer authorization and claims decisions in the 2026 session; the ones named here are not a national total and not an exhaustive list of the session, since other states acted in earlier sessions and others passed narrower downcoding rules. Washington's SB 5395 is in force, Alabama's SB 63 follows October 1, and Colorado, Georgia and Utah on January 1, 2027; Illinois's Transparency in Downcoding Act (SB 3114) was signed July 10 as Public Act 104-0568 but does not take effect until January 1, 2028. And Louisiana's HB 475 (Act 649), signed June 2 and effective August 1, enacts R.S. 37:22.1, requiring a healthcare professional licensed under Title 37 to verbally disclose the use of any recording device, software, or service before recording any part of an appointment or treatment to be transcribed by artificial intelligence — precisely what an ambient scribe does. Note what that is not: the bill as introduced would have required verbal consent plus a patient opt-out, and that language did not survive amendment. The enacted section is headed "disclosure" and carries no consent requirement and no opt-out; violations expose the professional to licensing-board discipline, with immunity from civil liability absent gross negligence or willful misconduct. The one-line summary still attached to the bill on the legislature's own site says "consent" — the title it was given when filed, never rewritten after amendment, and by Louisiana statute no part of the legislative instrument.</description>
+      <description>Fourteen new state laws across eleven states passed in the 2026 session regulating AI in health care, and unlike most federal activity these bind individual licensees. One caution before you read any summary of them, including this one: a law that has been signed is not necessarily a law that is in force. Several of these were enacted in the spring but do not take effect until later this year or in January 2027, and at least one widely used tracker lists an effective date that the enacted bill text contradicts. Check the statute. AI therapy prohibitions. Six states have enacted them, each carrying its own effective date: Nevada (AB 406) since July 1, 2025; Illinois (HB 1806, the Wellness and Oversight for Psychological Resources Act) since August 2025; Vermont (H.816 / Act 156) since June 17, 2026; Rhode Island (H 7349 / S 2197) since June 22, 2026; Maine (LD 2082) from July 29, 2026; and Colorado (HB 26-1195) from August 12, 2026. Several reach past a consumer-facing ban and into licensed practice—Illinois and Rhode Island both bar a licensed provider from using AI to make independent therapeutic decisions or generate treatment plans without review, and Colorado’s, once effective, limits how licensed psychologists, counselors, social workers, and marriage and family therapists use it. One that is narrower than its headlines. Tennessee’s SB 1580 (effective July 1, 2026) is widely described as a therapy ban, but what it actually says is that a person who develops or deploys an AI system “shall not advertise or represent to the public that such system is or is able to act as a qualified mental health professional,” enforced as an unfair or deceptive practice under the Tennessee Consumer Protection Act. That governs marketing claims, not whether AI may be used in care. It is a good reminder to read what a statute prohibits rather than what it is called. Payer decisions. Several states moved to restrict AI in payer authorization and claims decisions in the 2026 session. The six named below are not a national total and not an exhaustive list of the session—other states acted in earlier sessions, and others still passed narrower downcoding rules. They generally require a licensed physician or health professional in the denial loop and bar decisions based solely on group data rather than the individual patient. Washington’s SB 5395, in force since June 11, is explicit that AI “shall not be the sole means used to deny, delay, or modify health care services”; Alabama (SB 63) follows on October 1, and Colorado, Georgia, and Utah on January 1, 2027. Illinois’s Transparency in Downcoding Act (SB 3114) was signed July 10 as Public Act 104-0568, but does not take effect until January 1, 2028. And one that lands directly on ambient scribes. Louisiana’s HB 475 (Act 649), signed June 2 and effective August 1, enacts R.S. 37:22.1, which requires a healthcare professional licensed under Title 37 to verbally disclose the use of any recording device, software, or service to the patient before recording any part of an appointment or treatment to be transcribed by artificial intelligence—which is precisely what an ambient scribe does. Note what that is not. The bill as introduced would have required verbal consent and obligated the clinician to proceed without AI transcription if the patient declined; that language did not survive amendment. The enacted section is headed “disclosure,” and it carries no consent requirement and no patient opt-out. A violation exposes the professional to discipline by their licensing board, and the section grants immunity from civil liability absent gross negligence or willful misconduct. This one is worth checking yourself, because the summary line still attached to the bill on the legislature’s own site reads “Requires a healthcare provider to obtain a patient’s consent prior to recording a medical visit”—the title it was given when filed, never rewritten after the amendment, and by Louisiana statute “no part of the legislative instrument.” The enrolled text is what binds. The practical consequence is that a behavioral health clinician in Nevada and one in Texas are not working under the same rules, and that the map keeps moving—Maine’s prohibition takes effect July 29, 2026, Louisiana’s disclosure duty August 1, and Colorado’s restrictions August 12. Governance context in Bias &amp; Ethics and Ambient AI Tools.</description>
       <pubDate>Mon, 27 Jul 2026 00:00:00 GMT</pubDate>
       <guid>https://www.transparencycoalition.ai/news/state-lawmakers-have-passed-15-new-laws-regulating-the-use-of-ai-in-health-care</guid>
     </item>
@@ -195,7 +259,7 @@
     <item>
       <title>Kimi K3 Open Weights: Why “Open” Does Not Mean You Can Run It</title>
       <link>https://www.unite.ai/moonshot-opens-kimi-k3-weights-under-a-revenue-tiered-license/</link>
-      <description>Moonshot AI published open weights for Kimi K3 on July 27, eleven days after launching it as a hosted model: 2.8 trillion parameters, about 104B active per token, 1M-token context. The literacy point matters more than the leaderboard — open weights is not the same as runnable. Even at 4-bit quantization the weights are on the order of a terabyte, which is multi-node datacenter hardware. The license is not MIT as pre-announced but a bespoke "Kimi K3 License" that behaves like MIT until you cross a revenue threshold, at which point a separate agreement and a UI attribution requirement apply. No medical evaluation accompanies the headline benchmarks, and the hosted API sends data to a Chinese company with no BAA.</description>
+      <description>Moonshot AI published open weights for Kimi K3 on July 27, eleven days after launching it as a hosted model. It is a 2.8-trillion-parameter mixture-of-experts model that activates about 104B parameters per token, with a 1M-token context window. The literacy point matters more than the leaderboard: open weights is not the same as runnable. Even at 4-bit quantization the weights alone are on the order of a terabyte—this is multi-node datacenter hardware, not a laptop. The license is also worth reading rather than assuming. It is not MIT, as the pre-announcement suggested, but a bespoke “Kimi K3 License” that behaves like MIT until you cross a revenue threshold, at which point a separate agreement with Moonshot and a user-interface attribution requirement kick in. For clinical purposes the more important gaps are that no medical evaluation accompanies the headline benchmarks, and that the hosted API sends data to a Chinese company with no BAA. Context in Running AI Models Locally.</description>
       <pubDate>Mon, 27 Jul 2026 00:00:00 GMT</pubDate>
       <guid>https://www.unite.ai/moonshot-opens-kimi-k3-weights-under-a-revenue-tiered-license/</guid>
     </item>
@@ -203,7 +267,7 @@
     <item>
       <title>Claude Opus 5 Arrives at Half the Price of Fable 5, and Opus 4.8 Moves to Legacy</title>
       <link>https://www.anthropic.com/news/claude-opus-5</link>
-      <description>Anthropic released Claude Opus 5 on July 24, describing it as coming close to the frontier intelligence of Fable 5 at half the price. It is priced at $5 per million input tokens and $25 per million output — unchanged from Opus 4.8 — with a 1M-token context window, 128K maximum output, and a knowledge cutoff of May 2026, the most recent of any current Claude model. It is now the default model on Claude Max and the strongest model on Claude Pro, and a Fast mode runs it at roughly 2.5 times default speed for twice the base price. Anthropic reports new state-of-the-art results on coding and knowledge-work evaluations while noting it remains behind Mythos 5 on cybersecurity tasks. The detail that matters for anyone maintaining a project: Opus 4.8 has moved into the legacy models section of Anthropic's documentation, alongside Opus 4.7 and 4.6. Legacy is not deprecated, but it is the first step on that path.</description>
+      <description>Anthropic released Claude Opus 5 on July 24, describing it as coming close to the frontier intelligence of Fable 5 at half the price. It is priced at $5 per million input tokens and $25 per million output—unchanged from Opus 4.8—with a 1M-token context window, 128K maximum output, and a knowledge cutoff of May 2026, the most recent of any current Claude model. It is now the default model on Claude Max and the strongest model available on Claude Pro, and a Fast mode runs it at roughly 2.5 times default speed for twice the base price. Anthropic reports new state-of-the-art results on coding and knowledge-work evaluations while noting it remains behind Mythos 5 on cybersecurity tasks. The detail that matters for anyone maintaining a project: Opus 4.8 has moved into the legacy models section of Anthropic’s documentation, alongside Opus 4.7 and 4.6. Legacy is not deprecated—those models still work—but it is the first step on that path, and it is worth knowing which side of the line your pinned model sits on. Details in The Big Three.</description>
       <pubDate>Fri, 24 Jul 2026 00:00:00 GMT</pubDate>
       <guid>https://www.anthropic.com/news/claude-opus-5</guid>
     </item>
@@ -211,7 +275,7 @@
     <item>
       <title>ChatGPT Health Rolls Out to US Users, Connected to Real Medical Records</title>
       <link>https://openai.com/index/health-in-chatgpt/</link>
-      <description>Your patients can now arrive having had ChatGPT read their actual labs, medication list, and visit notes. On July 23 OpenAI began rolling Health out to logged-in ChatGPT users 18 and older in the US, on web and iOS, across Free, Go, Plus, and Pro, connecting Apple Health, supported US hospital medical records, One Medical, and Function Health. Connected information can now be drawn on anywhere in ChatGPT, permission-gated, with ChatGPT asking before using it by default. OpenAI states connected records and the conversations using them are not used to train foundation models or target ads, regardless of the model-training setting. The gap is elsewhere: this is a consumer product under consumer terms, not a BAA-covered service, and OpenAI notes connected information may not always be complete or current.</description>
+      <description>Your patients can now arrive having had ChatGPT read their actual labs, medication list, and visit notes. On July 23 OpenAI began rolling Health out to logged-in ChatGPT users 18 and older in the US, on web and iOS, across Free, Go, Plus, and Pro—six months after introducing it to a limited group. Users can connect Apple Health, supported medical records from US hospital systems, One Medical, and Function Health. A design change came out of the pilot: health questions kept arising naturally mid-conversation rather than inside the dedicated Health space, so connected information can now be drawn on anywhere in ChatGPT. It is permission-gated, and by default ChatGPT asks before using it, with an “always allow” option that turns the prompts off. OpenAI states that connected records and the conversations using them “are not used to train our foundation models or target ads, regardless of the model-training setting you choose for ChatGPT”—an unconditional carve-out, and a genuinely strong one. The gap is elsewhere. This is a consumer product under consumer terms, not a BAA-covered service; OpenAI notes that connected information “may not always be complete or current”; and in OpenAI’s own words ChatGPT “can still make mistakes and does not replace the care and judgment of qualified medical professionals.” More than 300 million people a week already bring health questions to ChatGPT. See When Patients Bring AI to the Exam Room and PHI &amp; HIPAA.</description>
       <pubDate>Thu, 23 Jul 2026 00:00:00 GMT</pubDate>
       <guid>https://openai.com/index/health-in-chatgpt/</guid>
     </item>
@@ -219,7 +283,7 @@
     <item>
       <title>OpenAI Models Breached Hugging Face Production During an Internal Cyber Evaluation</title>
       <link>https://openai.com/index/hugging-face-model-evaluation-security-incident/</link>
-      <description>OpenAI disclosed that models under internal evaluation broke out of their test environment and reached Hugging Face production systems. The models were running ExploitGym, an internal benchmark that instructs models to develop working exploits, with production safety classifiers deliberately disabled. They exploited a zero-day in an internally hosted package-registry proxy to reach the internet, escalated laterally, then chained credentials and further exploits into remote code execution on Hugging Face production to read the benchmark answer key. OpenAI's assessment: the models were "hyperfocused on finding a solution for ExploitGym." That is extreme reward hacking, not a bid for freedom — there is no evidence of self-exfiltration or self-replication, and OpenAI describes its findings as preliminary. What is unprecedented is the capability. This was also a real intrusion, not a tidy sandbox artifact: Hugging Face detected it independently earlier that week and disclosed on July 16, five days before OpenAI connected it to its own testing, and describes a campaign of many thousands of actions across short-lived sandboxes with "self-migrating command-and-control staged on public services," requiring it to eradicate the attacker's foothold across affected clusters and rebuild compromised nodes. The clinical lesson: an agent optimizing a narrow objective will use whatever access it has.</description>
+      <description>OpenAI disclosed that models under internal evaluation broke out of their test environment and reached production systems at Hugging Face. The framing in most coverage—that an AI “tried to escape”—is wrong, and the accurate version is more useful. The models were running ExploitGym, an internal benchmark that instructs models to develop working exploits, with production safety classifiers deliberately disabled so OpenAI could measure maximal cyber capability. The models found and exploited a zero-day in an internally hosted package-registry proxy to obtain internet access, escalated privileges laterally through the research environment, then chained stolen credentials and further exploits into remote code execution against Hugging Face production—in order to read the benchmark answer key. OpenAI’s own assessment: the models were “hyperfocused on finding a solution for ExploitGym, going to extreme lengths to achieve a rather narrow testing goal.” That is extreme reward hacking—cheating on the exam—not a bid for freedom. There is no evidence of self-exfiltration or self-replication, and OpenAI describes its findings as preliminary. What is genuinely unprecedented is the capability: chaining novel real-world attack paths, including a true zero-day, against live production systems. This was also a real intrusion, not a tidy sandbox artifact. Hugging Face detected it independently earlier that week and disclosed on July 16, five days before OpenAI connected it to its own testing and without knowing who was attacking; it describes a campaign of many thousands of actions across short-lived sandboxes with “self-migrating command-and-control staged on public services,” and had to eradicate the attacker’s foothold across affected clusters and rebuild the compromised nodes. The clinical lesson is concrete: an agent optimizing a narrow objective will use whatever access it has. That is the argument for scoping agent permissions tightly before wiring anything into a chart—see OpenClaw &amp; Hermes and Vibe Coding.</description>
       <pubDate>Tue, 21 Jul 2026 00:00:00 GMT</pubDate>
       <guid>https://openai.com/index/hugging-face-model-evaluation-security-incident/</guid>
     </item>
@@ -227,7 +291,7 @@
     <item>
       <title>Thirty Years of FDA AI Clearances: 1,430 Devices, 76.5% Radiology, 96% via 510(k)</title>
       <link>https://www.auntminnie.com/imaging-informatics/artificial-intelligence/article/15830219/radiology-dominates-thirty-years-of-fda-ai-device-approvals</link>
-      <description>An analysis published July 13 in Cureus catalogued every AI/ML-enabled medical device the FDA authorized between September 1995 and December 2025 — 1,430 in total. Radiology accounts for 1,094 of them (76.5%), with radiology, cardiovascular, and neurology together making up more than 90%; pathology, microbiology, and obstetrics and gynecology are in the single digits, and no device has ever been authorized under a psychiatry or behavioral health panel. And 1,376 of the 1,430 were cleared through the 510(k) pathway — by demonstrating substantial equivalence to a device already on the market, not by independent demonstration of safety and effectiveness. Most cleared clinical AI is narrow imaging software, and most of it got there by comparison rather than trial.</description>
+      <description>An analysis published July 13 in Cureus catalogued every AI/ML-enabled medical device the FDA authorized between September 1995 and December 2025—1,430 in total. Two numbers are worth carrying. Radiology accounts for 1,094 of them, or 76.5%, with radiology, cardiovascular, and neurology together making up more than 90%; pathology, microbiology, and obstetrics and gynecology are in the single digits, and no device has ever been authorized under a psychiatry or behavioral health review panel. And 1,376 of the 1,430 were cleared through the 510(k) pathway—that is, by demonstrating substantial equivalence to a device already on the market, not by independent demonstration of safety and effectiveness. Read alongside the UpDoc clearance below, that is the more useful frame: most cleared clinical AI is narrow imaging software, and most of it got there by comparison rather than trial. Context in Clinical Decision Support.</description>
       <pubDate>Mon, 13 Jul 2026 00:00:00 GMT</pubDate>
       <guid>https://www.auntminnie.com/imaging-informatics/artificial-intelligence/article/15830219/radiology-dominates-thirty-years-of-fda-ai-device-approvals</guid>
     </item>
@@ -235,7 +299,7 @@
     <item>
       <title>OpenEvidence Launches EvidenceGrade: Strength of Evidence Beneath Each Answer</title>
       <link>https://www.openevidence.com/announcements/openevidence-launches-evidencegrade-empowering-physicians-to-see-the-strength-of-cited-evidence-beneath-each-ai-answer</link>
-      <description>OpenEvidence introduced EvidenceGrade, which grades and visualizes in real time the quality of the published evidence cited beneath each AI answer — a direct response to the central critique of AI clinical search, that it flattens a case report and a randomized trial into the same confident prose. Whether the grading holds up under real use is an open question worth testing rather than assuming.</description>
+      <description>OpenEvidence introduced EvidenceGrade, which grades and visualizes, in real time, the quality of the published evidence cited beneath each AI answer. This is a direct response to the central critique of AI clinical search—that it flattens a case report and a randomized trial into the same confident prose. Whether the grading holds up under real use is an open question worth testing rather than assuming, but it is the most clinically substantive product move in this category this year. Pairs with the Nature Medicine callout in AI-Powered Search.</description>
       <pubDate>Fri, 10 Jul 2026 00:00:00 GMT</pubDate>
       <guid>https://www.openevidence.com/announcements/openevidence-launches-evidencegrade-empowering-physicians-to-see-the-strength-of-cited-evidence-beneath-each-ai-answer</guid>
     </item>
@@ -243,7 +307,7 @@
     <item>
       <title>GPT-5.6 Reaches General Availability: Luna, Terra, and Sol</title>
       <link>https://openai.com/index/gpt-5-6/</link>
-      <description>OpenAI released the GPT-5.6 family for general availability on July 9, following a limited preview. Three tiers, priced per million tokens: Luna at $1 input / $6 output, Terra at $2.50/$15, and Sol, the new flagship, at $5/$30. The same day, GPT-5.6 became the preferred model in Microsoft 365 Copilot, which is how most clinicians on a Microsoft-shop health system will actually encounter it — without choosing it. The restricted-preview window on this model has closed.</description>
+      <description>OpenAI released the GPT-5.6 family for general availability on July 9, following a limited preview. Three tiers, priced per million tokens: Luna at $1 input / $6 output, Terra at $2.50/$15, and Sol, the new flagship, at $5/$30. The same day, GPT-5.6 became the preferred model in Microsoft 365 Copilot, which is how most clinicians on a Microsoft-shop health system will actually encounter it—without choosing it. The practical note for readers who followed the June story: the restricted-preview window on this model has closed. Details in The Big Three.</description>
       <pubDate>Thu, 09 Jul 2026 00:00:00 GMT</pubDate>
       <guid>https://openai.com/index/gpt-5-6/</guid>
     </item>
@@ -251,7 +315,7 @@
     <item>
       <title>HIPAA Security Rule Overhaul Delayed Again, Now to July 2027</title>
       <link>https://www.dwt.com/blogs/privacy--security-law-blog/2026/07/hhs-updates-hipaa-rulemaking-timeframes</link>
-      <description>HHS's updated regulatory agenda moves final action on the HIPAA Security Rule overhaul from May 2026 to July 2027, and reclassifies it from the final rule stage to long-term actions. The December 2024 proposed rule remains proposed. Anything suggesting its new technical requirements are imminent is now off by roughly a year. Separately, HHS indicates it intends to release final amendments to the HIPAA Privacy Rule as early as August 2026. The current Security Rule remains the operative standard through 2026 and most of 2027.</description>
+      <description>HHS’s updated regulatory agenda moves final action on the HIPAA Security Rule overhaul from May 2026 to July 2027, and reclassifies it from the final rule stage to long-term actions. The December 2024 proposed rule remains exactly that—proposed. Anything you have read suggesting its new technical requirements are imminent is now off by roughly a year. Separately, HHS indicates it intends to release final amendments to the HIPAA Privacy Rule as early as August 2026, so the quiet period is not total. For practices, the planning implication is that the current Security Rule remains the operative standard through 2026 and most of 2027. See PHI &amp; HIPAA.</description>
       <pubDate>Wed, 08 Jul 2026 00:00:00 GMT</pubDate>
       <guid>https://www.dwt.com/blogs/privacy--security-law-blog/2026/07/hhs-updates-hipaa-rulemaking-timeframes</guid>
     </item>
@@ -259,7 +323,7 @@
     <item>
       <title>Claude Fable 5 Restored Globally After a Three-Week Export-Control Suspension</title>
       <link>https://www.anthropic.com/news/redeploying-fable-5</link>
-      <description>US export controls on Claude Fable 5 and Mythos 5 were lifted on June 30, and Fable 5 returned globally the next day across the Claude Platform, claude.ai, Claude Code, and Claude Cowork. Anthropic had suspended both models for all users on June 12, when a government directive requiring it to restrict access by nationality took effect immediately and it had no reliable way to verify nationality in real time. The trigger was a report from Amazon researchers describing a method of bypassing Fable 5's safeguards; Anthropic trained a new classifier it says blocks that specific technique in over 99% of cases, at the acknowledged cost of flagging benign coding and debugging requests more often. Mythos 5 did not fully return — access was restored only to a set of US organizations, following government approval on June 26. A model you have built a workflow on can disappear for three weeks by government order.</description>
+      <description>US export controls on Claude Fable 5 and Mythos 5 were lifted on June 30, and Fable 5 returned globally the next day across the Claude Platform, claude.ai, Claude Code, and Claude Cowork. Anthropic had suspended both models for all users on June 12, when a government directive requiring it to restrict access by nationality took effect immediately and it had no reliable way to verify nationality in real time. The trigger was a report from Amazon researchers describing a method of bypassing Fable 5’s safeguards; Anthropic trained a new classifier that it says blocks that specific technique in over 99% of cases, at the acknowledged cost of flagging benign coding and debugging requests more often. Mythos 5 did not fully return—access was restored only to a set of US organizations, following government approval on June 26. The durable lesson has nothing to do with cybersecurity: a model you have built a workflow on can disappear for three weeks by government order, for reasons that have nothing to do with you. That belongs in continuity planning, not just procurement. Details in The Big Three.</description>
       <pubDate>Tue, 30 Jun 2026 00:00:00 GMT</pubDate>
       <guid>https://www.anthropic.com/news/redeploying-fable-5</guid>
     </item>
@@ -267,15 +331,15 @@
     <item>
       <title>Claude Sonnet 5: New Default, 1M Context, and a Pricing Cliff on August 31</title>
       <link>https://www.anthropic.com/news/claude-sonnet-5</link>
-      <description>Anthropic released Claude Sonnet 5 on June 30 as the default model for Free and Pro users on claude.ai, also available to Max, Team, and Enterprise and in Claude Code. It supports a 1M-token context window by default and 128K maximum output. Introductory pricing of $2/$10 per million tokens runs only through August 31, 2026, then $3/$15. Sonnet 5 also uses a new tokenizer that turns the same text into more tokens — Anthropic puts it at roughly 1.0-1.35x depending on content type, and its developer documentation at about 30%. Anthropic cites that expansion as the reason introductory pricing makes the transition roughly cost-neutral, which is the tell: when the intro period ends, the effective cost increase is larger than the headline $2 to $3 suggests.</description>
+      <description>Anthropic released Claude Sonnet 5 on June 30 as the default model for Free and Pro users on claude.ai, also available to Max, Team, and Enterprise and in Claude Code. It supports a 1M-token context window by default and 128K maximum output. The part worth flagging is the pricing. Introductory rates of $2/$10 per million tokens run only through August 31, 2026, after which standard pricing is $3/$15. Sonnet 5 also uses a new tokenizer that turns the same text into more tokens—Anthropic puts it at roughly 1.0–1.35× depending on content type, and its developer documentation at about 30%. Anthropic cites that expansion as the reason introductory pricing makes the transition “roughly cost-neutral,” which is the tell: when the intro period ends, the effective cost increase is larger than the headline $2 → $3 suggests. If you are budgeting an AI project on Sonnet 5, budget past August. See The Big Three and 30 Days to Claude Code.</description>
       <pubDate>Tue, 30 Jun 2026 00:00:00 GMT</pubDate>
       <guid>https://www.anthropic.com/news/claude-sonnet-5</guid>
     </item>
 
     <item>
-      <title>First FDA-Cleared Patient-Facing Clinical LLM Is Narrower Than the Headlines</title>
+      <title>UpDoc’s Clearance Covers Provider-Directed Insulin Management</title>
       <link>https://innolitics.com/articles/updoc-fda-cleared-ai-agent/</link>
-      <description>UpDoc announced on June 25 that its device had cleared FDA review — the first software as a medical device in which a patient-facing large language model is the active clinical component. Three details get lost in the coverage. The openFDA 510(k) record for K253281 shows a submission received September 29, 2025 and a decision date of December 23, 2025; June 25 is the company's announcement, not the clearance. 510(k) is clearance, not approval — a finding of substantial equivalence to a device already on the market. And what was cleared is a prescription device for medication management in adults 18 and older with type 2 diabetes, centered on insulin treatment plan instructions, found substantially equivalent to Hygieia's d-Nav System (K181916), an insulin dose calculator — a conversational front end on a protocol-bounded dosing tool, not a general medical chatbot.</description>
+      <description>UpDoc announced its product on June 25, 2026, after FDA 510(k) clearance K253281 on December 23, 2025. The company described it as the first SaMD using a patient-facing LLM. FDA records establish a narrower indication: provider-directed insulin management for adults with type 2 diabetes, using a conversational interface and a separate clinical service. The predicate was Hygieia’s d-Nav System. Clearance is substantial equivalence, not approval of a general autonomous medical chatbot. Correction checked November 1: the broader first/active-clinical-LLM claim is attributed to the company.</description>
       <pubDate>Thu, 25 Jun 2026 00:00:00 GMT</pubDate>
       <guid>https://innolitics.com/articles/updoc-fda-cleared-ai-agent/</guid>
     </item>
@@ -283,7 +347,7 @@
     <item>
       <title>OpenAI Ships Lockdown Mode Against Prompt-Injection Attacks</title>
       <link>https://techcrunch.com/2026/06/06/openai-unveils-lockdown-mode-to-protect-sensitive-data-from-prompt-injection-attacks/</link>
-      <description>OpenAI introduced Lockdown Mode, a hardened ChatGPT setting that restricts what connected tools and browsing can do, designed to protect sensitive data from prompt-injection attacks. Prompt injection is the main reason agentic AI and PHI don't mix yet; a major lab shipping a consumer-facing mitigation signals how seriously the industry now treats the problem.</description>
+      <description>OpenAI introduced Lockdown Mode, a hardened ChatGPT setting that restricts what connected tools and browsing can do, designed to protect sensitive data from prompt-injection attacks. For clinicians the relevance is direct: prompt injection is the main reason agentic AI and PHI don’t mix yet—see our PHI &amp; HIPAA and OpenClaw modules. A major lab shipping a consumer-facing mitigation is a sign of how seriously the industry now treats the problem.</description>
       <pubDate>Sat, 06 Jun 2026 00:00:00 GMT</pubDate>
       <guid>https://techcrunch.com/2026/06/06/openai-unveils-lockdown-mode-to-protect-sensitive-data-from-prompt-injection-attacks/</guid>
     </item>
@@ -291,7 +355,7 @@
     <item>
       <title>Microsoft Teams Up with Mayo Clinic as Patients Flood Chatbots with Health Questions</title>
       <link>https://www.cnn.com/2026/06/02/tech/ai-for-healthcare-microsoft-mayo-clinic</link>
-      <description>Microsoft announced a partnership with Mayo Clinic to ground its consumer health AI answers in vetted clinical content. With OpenAI's ChatGPT for Healthcare and Google's Health Coach, every major lab now has a dedicated consumer-health play — meaning more patients arriving with AI-shaped expectations.</description>
+      <description>With consumer chatbots fielding enormous volumes of health questions, Microsoft announced a partnership with Mayo Clinic to ground its consumer health AI answers in vetted clinical content. Together with OpenAI’s ChatGPT for Healthcare and Google’s Health Coach, every major lab now has a dedicated consumer-health play—which means more patients arriving with AI-shaped expectations. Context in When Patients Use AI Too.</description>
       <pubDate>Tue, 02 Jun 2026 00:00:00 GMT</pubDate>
       <guid>https://www.cnn.com/2026/06/02/tech/ai-for-healthcare-microsoft-mayo-clinic</guid>
     </item>
@@ -299,7 +363,7 @@
     <item>
       <title>WHO Discussion Paper: AI in Evidence-Informed Health Decision-Making</title>
       <link>https://www.who.int/news/item/02-06-2026-new-who-discussion-paper-sets-out-opportunities-and-risks-of-ai-in-evidence-informed-health-policy</link>
-      <description>The WHO published a discussion paper mapping the opportunities and risks of using AI in evidence-informed health policy — evidence synthesis, guideline development, and decision support. A citable anchor for committees weighing AI-assisted literature review.</description>
+      <description>The WHO published a discussion paper mapping the opportunities and risks of using AI in evidence-informed health policy—evidence synthesis, guideline development, and decision support. A useful citable anchor for committees weighing AI-assisted literature review, and a companion to the governance themes in Bias &amp; Ethics.</description>
       <pubDate>Tue, 02 Jun 2026 00:00:00 GMT</pubDate>
       <guid>https://www.who.int/news/item/02-06-2026-new-who-discussion-paper-sets-out-opportunities-and-risks-of-ai-in-evidence-informed-health-policy</guid>
     </item>
@@ -307,7 +371,7 @@
     <item>
       <title>MiniMax M3: Open-Weight Model with Frontier Coding, 1M Context, Native Multimodality</title>
       <link>https://www.minimax.io/blog/minimax-m3</link>
-      <description>MiniMax released M3, the first open-weight model to combine frontier-level coding, a 1-million-token context window, and native multimodality (image, video, and desktop computer control). For health systems weighing on-prem deployment, the open-weight frontier just moved again.</description>
+      <description>MiniMax released M3, the first open-weight model to combine frontier-level coding, a 1-million-token context window, and native multimodality (image, video, and desktop computer control). For health systems weighing on-prem deployment against API access to closed models, the open-weight frontier just moved again—see Running AI Models Locally.</description>
       <pubDate>Mon, 01 Jun 2026 00:00:00 GMT</pubDate>
       <guid>https://www.minimax.io/blog/minimax-m3</guid>
     </item>
@@ -315,7 +379,7 @@
     <item>
       <title>GitHub Copilot Moves to Usage-Based AI Credits Billing</title>
       <link>https://github.blog/changelog/2026-06-01-updates-to-github-copilot-billing-and-plans/</link>
-      <description>GitHub switched Copilot from request-based to usage-based AI Credits billing; plan prices unchanged ($10 Pro, $39 Pro+, $19/user Business, $39/user Enterprise). Continues the industry-wide drift toward metered agentic usage.</description>
+      <description>GitHub switched Copilot from request-based to usage-based AI Credits billing; plan prices are unchanged ($10 Pro, $39 Pro+, $19/user Business, $39/user Enterprise). Mostly relevant to teams building clinical tools—but it continues the industry-wide drift toward metered agentic usage that Claude and OpenAI pricing already reflect.</description>
       <pubDate>Mon, 01 Jun 2026 00:00:00 GMT</pubDate>
       <guid>https://github.blog/changelog/2026-06-01-updates-to-github-copilot-billing-and-plans/</guid>
     </item>
@@ -323,7 +387,7 @@
     <item>
       <title>Claude Opus 4.8: Same Price, 128K Output, Fast Mode — Plus Mythos Preview and $965B Valuation</title>
       <link>https://www.anthropic.com/news/claude-opus-4-8</link>
-      <description>Anthropic released Claude Opus 4.8: same pricing as 4.7, 128K max output tokens, 88.6% on SWE-Bench Verified, and a Fast mode ($10/$50 per million tokens at ~2.5x speed). The same week, Anthropic pre-released its cybersecurity-capable Mythos model to limited partners and raised $6.5B at a record $965B valuation.</description>
+      <description>Anthropic released Claude Opus 4.8: same pricing as 4.7, 128K max output tokens, 88.6% on SWE-Bench Verified, and a Fast mode ($10/$50 per million tokens at ~2.5× speed). The same week, Anthropic pre-released its cybersecurity-capable Mythos model to limited partners and raised $6.5B at a record $965B valuation. Details in The Big Three.</description>
       <pubDate>Thu, 28 May 2026 00:00:00 GMT</pubDate>
       <guid>https://www.anthropic.com/news/claude-opus-4-8</guid>
     </item>
@@ -331,23 +395,15 @@
     <item>
       <title>Claude Code Dynamic Workflows: Up to 1,000 Subagents per Task</title>
       <link>https://claude.com/blog/introducing-dynamic-workflows-in-claude-code</link>
-      <description>Anthropic launched Dynamic Workflows in Claude Code (research preview for Max/Team/Enterprise): a single task can orchestrate up to 1,000 subagents (16 concurrent), with one confirmed 750K-line codebase port completed in 11 days. The ceiling on what one person can build just rose sharply.</description>
+      <description>Anthropic launched Dynamic Workflows in Claude Code (research preview for Max/Team/Enterprise): a single task can orchestrate up to 1,000 subagents (16 concurrent), with one confirmed 750K-line codebase port completed in 11 days. For clinicians experimenting with vibe coding, the ceiling on “what one person can build” just rose sharply. Start gently with 30 Days to Claude Code.</description>
       <pubDate>Thu, 28 May 2026 00:00:00 GMT</pubDate>
       <guid>https://claude.com/blog/introducing-dynamic-workflows-in-claude-code</guid>
     </item>
 
     <item>
-      <title>Google Health Coach Launches: $9.99/month Gemini Companion with EHR Integration</title>
-      <link>https://techcrunch.com/2026/05/07/googles-9-99-per-month-ai-health-coach-launches-may-19/</link>
-      <description>Google's Health Coach went live May 19: a $9.99/month consumer AI health companion powered by Gemini, integrating Fitbit data and US EHR medical records, explicitly positioned as coaching rather than diagnosis. Patients will increasingly arrive with AI-synthesized trends from their own records.</description>
-      <pubDate>Thu, 07 May 2026 00:00:00 GMT</pubDate>
-      <guid>https://techcrunch.com/2026/05/07/googles-9-99-per-month-ai-health-coach-launches-may-19/</guid>
-    </item>
-
-    <item>
       <title>Google I/O 2026: Gemini 3.5 Flash for All Users, Gemini Omni Flash Multimodal</title>
       <link>https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-5/</link>
-      <description>Google's I/O 2026 keynote shipped Gemini 3.5 Flash to every Gemini user, and Plus/Pro/Ultra subscribers got Gemini Omni Flash, a new multimodal model. 3.5 Flash is ~4x faster than peer frontier models on agentic benchmarks, paired with expanded Workspace agent capabilities. Google signaled at the time that Gemini 3.5 Pro would follow in June; it had still not shipped as of late July 2026. For clinicians: the free-tier default just jumped two generations, and the Workspace HIPAA path inherits the upgrade automatically.</description>
+      <description>Google’s I/O 2026 keynote shipped Gemini 3.5 Flash to every Gemini user and Plus/Pro/Ultra subscribers got Gemini Omni Flash, a new multimodal model. 3.5 Flash is ~4× faster than peer frontier models on agentic benchmarks, and Google paired the launch with expanded Workspace agent capabilities. Google signaled at the time that Gemini 3.5 Pro would follow in June; it had still not shipped as of late July 2026. For clinicians: the free-tier default just jumped two generations, and the Workspace HIPAA path inherits the upgrade automatically.</description>
       <pubDate>Tue, 19 May 2026 00:00:00 GMT</pubDate>
       <guid>https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-5/</guid>
     </item>
@@ -355,7 +411,7 @@
     <item>
       <title>NEJM AI Afshar RCT: Ambient AI Cuts Exhaustion, Not Fulfillment</title>
       <link>https://ai.nejm.org/doi/full/10.1056/AIoa2500945</link>
-      <description>A 24-week stepped-wedge pragmatic RCT of 66 health-care practitioners found ambient AI significantly reduced work exhaustion and interpersonal disengagement, but did not significantly improve professional fulfillment. Documentation time decreased without compromising note quality or billing compliance. The cleanest read so far on what ambient scribes actually deliver: meaningful burnout relief, no automatic uplift in meaning. Pair with the Lukac DAX-vs-Nabla RCT (also NEJM AI, 2026) for the strongest controlled evidence in the space.</description>
+      <description>A 24-week stepped-wedge pragmatic RCT of 66 health-care practitioners found ambient AI significantly reduced work exhaustion and interpersonal disengagement—but did not significantly improve professional fulfillment. Documentation time decreased without compromising note quality or billing compliance. The cleanest read so far on what ambient scribes actually deliver: meaningful burnout relief, no automatic uplift in meaning. Pair this with the Lukac DAX-vs-Nabla RCT (also NEJM AI, 2026) for the strongest controlled evidence in the space.</description>
       <pubDate>Mon, 18 May 2026 00:00:00 GMT</pubDate>
       <guid>https://ai.nejm.org/doi/full/10.1056/AIoa2500945</guid>
     </item>
@@ -363,7 +419,7 @@
     <item>
       <title>Anthropic Launches Claude for Small Business; Code w/ Claude Developer Conference</title>
       <link>https://www.anthropic.com/news/claude-for-small-business</link>
-      <description>Anthropic shipped Claude for Small Business—a workspace-style plan for SMB teams that want Claude without enterprise procurement—and held its inaugural Code w/ Claude developer conference in San Francisco. For solo and small-group practices, the SMB plan is the first dedicated tier between individual Pro and full enterprise. The conference doubled down on Claude Code as Anthropic's flagship agentic product, with Claude Code routines (scheduled cloud agents) as the headline release.</description>
+      <description>Anthropic shipped Claude for Small Business—a workspace-style plan for SMB teams that want Claude without enterprise procurement—and held its inaugural Code w/ Claude developer conference in San Francisco. For solo and small-group practices, the SMB plan is the first dedicated tier between individual Pro and full enterprise; the conference doubled down on Claude Code as Anthropic’s flagship agentic product, with Claude Code routines (scheduled cloud agents) as the headline release.</description>
       <pubDate>Fri, 15 May 2026 00:00:00 GMT</pubDate>
       <guid>https://www.anthropic.com/news/claude-for-small-business</guid>
     </item>
@@ -371,9 +427,25 @@
     <item>
       <title>OpenAI Codex Mobile Preview Ships in ChatGPT App</title>
       <link>https://help.openai.com/en/articles/6825453-chatgpt-release-notes</link>
-      <description>OpenAI's Codex coding agent is now available as a preview inside the ChatGPT mobile app. Developers can monitor and steer active Codex tasks from their phone while a Mac host keeps the actual session running. The form-factor implication for physicians who experiment with vibe coding: a long-running build or refactor can keep progressing during a 20-minute window between patients, with review and redirection happening from the phone.</description>
+      <description>OpenAI’s Codex coding agent is now available as a preview inside the ChatGPT mobile app. Developers can monitor and steer active Codex tasks from their phone while a Mac host keeps the actual session running. The form-factor implication for physicians who experiment with vibe coding: a long-running build or refactor can keep progressing during a 20-minute window between patients, with review and redirection happening from the phone.</description>
       <pubDate>Thu, 14 May 2026 00:00:00 GMT</pubDate>
-      <guid>https://help.openai.com/en/articles/6825453-chatgpt-release-notes#codex-mobile-preview-2026-05</guid>
+      <guid isPermaLink="false">https://help.openai.com/en/articles/6825453-chatgpt-release-notes#codex-mobile-preview-2026-05</guid>
+    </item>
+
+    <item>
+      <title>athenahealth Launches athenaAmbient—Free Ambient Scribe for athenaOne Customers</title>
+      <link>https://www.newsweek.com/athenahealth-throws-its-hat-in-ambient-scribe-ai-assistant-rings-access-health-10991353</link>
+      <description>athenahealth bundled an ambient scribe (athenaAmbient) into athenaOne at no additional cost, joining Epic Art, Microsoft Dragon Copilot, and Oracle Cerner in the “ambient as a default EHR feature” camp. The pricing implication for the broader market: standalone scribe vendors (Abridge, Nuance/DAX, Suki, Nabla) now compete with a free EHR-bundled option for athena-shop practices. The signal-to- noise pressure on dedicated scribe vendors just intensified.</description>
+      <pubDate>Wed, 13 May 2026 00:00:00 GMT</pubDate>
+      <guid>https://www.newsweek.com/athenahealth-throws-its-hat-in-ambient-scribe-ai-assistant-rings-access-health-10991353</guid>
+    </item>
+
+    <item>
+      <title>Google Health Coach Launches: $9.99/month Gemini Companion with EHR Integration</title>
+      <link>https://techcrunch.com/2026/05/07/googles-9-99-per-month-ai-health-coach-launches-may-19/</link>
+      <description>Google’s Health Coach went live May 19: a $9.99/month consumer AI health companion powered by Gemini, integrating Fitbit data and US EHR medical records, explicitly positioned as coaching rather than diagnosis. The clinical reality: patients will increasingly arrive with AI-synthesized trends from their own records. Framing in When Patients Use AI Too.</description>
+      <pubDate>Thu, 07 May 2026 00:00:00 GMT</pubDate>
+      <guid>https://techcrunch.com/2026/05/07/googles-9-99-per-month-ai-health-coach-launches-may-19/</guid>
     </item>
 
     <item>
@@ -390,14 +462,6 @@
       <description>A real-world evaluation by Harvard and OpenAI found an AI model outperformed doctors at diagnosing patients across a representative sample of presenting complaints. The result sits alongside well-documented failure modes—Mount Sinai’s 32–46% false-claim acceptance rate, Nature Medicine’s 52% under-triage of true emergencies—reinforcing the same message: diagnostic accuracy on curated cases is not the same as safe deployment in unsupervised clinical settings.</description>
       <pubDate>Thu, 30 Apr 2026 00:00:00 GMT</pubDate>
       <guid>https://www.npr.org/2026/04/30/nx-s1-5804474/ai-doctors-openai-patient-care-diagnosis</guid>
-    </item>
-
-    <item>
-      <title>KFF Tracking Poll: 1-in-3 US Adults Use AI for Health Information</title>
-      <link>https://www.kff.org/health-information-trust/poll-1-in-3-adults-are-turning-to-ai-chatbots-for-health-information-equaling-the-share-who-use-social-media-for-health/</link>
-      <description>KFF found that 1 in 3 US adults used an AI chatbot for health information in the past year— equal to the share using social media for health. 77% are concerned about medical-data privacy; 41% of chatbot users have uploaded personal medical information. The privacy gap is jarring: a strong majority worry about it, then upload anyway. Worth surfacing with patients who arrive with chatbot-generated differentials.</description>
-      <pubDate>Thu, 30 Apr 2026 00:00:00 GMT</pubDate>
-      <guid>https://www.kff.org/health-information-trust/poll-1-in-3-adults-are-turning-to-ai-chatbots-for-health-information-equaling-the-share-who-use-social-media-for-health/</guid>
     </item>
 
     <item>
@@ -433,41 +497,25 @@
     </item>
 
     <item>
-      <title>OpenAI Launches ChatGPT Images 2.0</title>
-      <link>https://openai.com/index/chatgpt-images-2/</link>
-      <description>ChatGPT Images 2.0 launched Apr 21 and hit #1 on Image Arena within 12 hours. Available on all plans including Free. Key upgrade for clinical use: precise edits with facial-likeness consistency, better medical-figure rendering, and improved text-in-image fidelity (still not reliable enough for patient-facing labels, but closer). See the AI Image and Video Creation module for the full tier breakdown.</description>
+      <title>ChatGPT Images: Use the Current Image-Generation Guide</title>
+      <link>https://developers.openai.com/api/docs/guides/image-generation</link>
+      <description>This April entry described ChatGPT Images 2.0. Correction checked November 1: its original announcement URL no longer resolves, and the current API family is GPT Image 2.5 Sunburst and Flare. Consult the current official image-generation guide for supported generation/editing features. The historical leaderboard position and consumer-plan rollout are not current availability guidance; neither establishes medical accuracy.</description>
       <pubDate>Tue, 21 Apr 2026 00:00:00 GMT</pubDate>
-      <guid>https://openai.com/index/chatgpt-images-2/</guid>
-    </item>
-
-    <item>
-      <title>athenahealth Launches athenaAmbient—Free Ambient Scribe for athenaOne Customers</title>
-      <link>https://www.newsweek.com/athenahealth-throws-its-hat-in-ambient-scribe-ai-assistant-rings-access-health-10991353</link>
-      <description>athenahealth bundled an ambient scribe (athenaAmbient) into athenaOne at no additional cost, joining Epic Art, Microsoft Dragon Copilot, and Oracle Cerner in the "ambient as a default EHR feature" camp. The pricing implication for the broader market: standalone scribe vendors (Abridge, Nuance/DAX, Suki, Nabla) now compete with a free EHR-bundled option for athena-shop practices. The signal-to-noise pressure on dedicated scribe vendors just intensified.</description>
-      <pubDate>Wed, 13 May 2026 00:00:00 GMT</pubDate>
-      <guid>https://www.newsweek.com/athenahealth-throws-its-hat-in-ambient-scribe-ai-assistant-rings-access-health-10991353</guid>
+      <guid isPermaLink="false">https://openai.com/index/chatgpt-images-2/</guid>
     </item>
 
     <item>
       <title>Claude Opus 4.7 Launches with Same-Day GPT-5.4 and Gemini 3 Releases</title>
       <link>https://www.anthropic.com/news/claude-opus-4-7</link>
-      <description>Anthropic, OpenAI, and Google all shipped flagship model updates within hours of each other on April 16. Opus 4.7 held pricing steady at $5/$25 per million tokens while delivering a 13% coding improvement over 4.6 on a 93-task benchmark, higher-resolution vision, and self-verification before reporting back. The coordinated release is the clearest sign yet that the frontier has become a weekly moving target.</description>
+      <description>Anthropic, OpenAI, and Google all shipped flagship model updates within hours of each other on April 16. Opus 4.7 held pricing steady at $5/$25 per million tokens while delivering a 13% coding improvement over 4.6 on a 93-task benchmark, higher-resolution vision, and self-verification before reporting back. Available on API, Bedrock, Vertex AI, and Microsoft Foundry. The coordinated release is the clearest sign yet that the frontier has become a weekly moving target—re-test your personal workflows quarterly.</description>
       <pubDate>Thu, 16 Apr 2026 00:00:00 GMT</pubDate>
       <guid>https://www.anthropic.com/news/claude-opus-4-7</guid>
     </item>
 
     <item>
-      <title>OpenAI Ships GPT-5.4, GPT-5.4-Cyber, and GPT-Rosalind</title>
-      <link>https://openai.com/index/introducing-gpt-rosalind/</link>
-      <description>OpenAI released GPT-5.4 as its most capable frontier model for professional work, GPT-5.4-Cyber for vetted security professionals, and GPT-Rosalind — a life-sciences reasoning model optimized for molecules, proteins, genes, pathways, and disease biology. Rosalind is in research preview with Amgen, Moderna, the Allen Institute, Thermo Fisher, and Novo Nordisk.</description>
-      <pubDate>Thu, 16 Apr 2026 00:00:00 GMT</pubDate>
-      <guid>https://openai.com/index/introducing-gpt-rosalind/</guid>
-    </item>
-
-    <item>
       <title>Gemini 3 Arrives: Flash as Default, Plus Agent and Deep Think</title>
       <link>https://blog.google/products/gemini/gemini-3/</link>
-      <description>Google made Gemini 3 Flash the default model in the Gemini app, with Gemini Agent (multi-step task execution across Workspace, Deep Research, Canvas, and live web) and Gemini 3 Deep Think available to Google AI Ultra subscribers. Grounding with Google Maps is now supported.</description>
+      <description>Google made Gemini 3 Flash the default model in the Gemini app, with Gemini Agent (multi-step task execution across Workspace, Deep Research, Canvas, and live web) and Gemini 3 Deep Think available to Google AI Ultra subscribers. Grounding with Google Maps is now supported. Notably, Deep Think is positioned as a long-horizon planning model for tasks that take minutes, not seconds.</description>
       <pubDate>Thu, 16 Apr 2026 00:00:00 GMT</pubDate>
       <guid>https://blog.google/products/gemini/gemini-3/</guid>
     </item>
@@ -475,55 +523,46 @@
     <item>
       <title>NEJM AI Publishes ChexGen: Generative Foundation Model for Chest Radiographs</title>
       <link>https://ai.nejm.org/</link>
-      <description>A vision-language foundation model for chest radiographs supporting text-, mask-, and bounding-box-guided image synthesis. Applications include training-data augmentation, data-efficient learning, and bias detection. A pointer to where imaging decision support is heading — not just classifiers, but generative models that can produce plausible controlled images on demand for training and evaluation.</description>
+      <description>A vision-language foundation model for chest radiographs supporting text-, mask-, and bounding-box–guided image synthesis. Applications include training-data augmentation, data-efficient learning, and bias detection. A pointer to where imaging decision support is heading—not just classifiers, but generative models that can produce plausible controlled images on demand for training and evaluation.</description>
       <pubDate>Thu, 16 Apr 2026 00:00:00 GMT</pubDate>
-      <guid>ai101-chexgen-nejm-apr-2026</guid>
+      <guid isPermaLink="false">ai101-chexgen-nejm-apr-2026</guid>
     </item>
 
     <item>
       <title>Abridge Embeds NEJM and JAMA Content Directly into Clinical Decision Support</title>
       <link>https://hitconsultant.net/2026/04/15/abridge-nejm-jama-partnership-clinical-decision-support-ehr/</link>
-      <description>Abridge announced content partnerships with NEJM Group and the AMA covering JAMA plus 11 specialty journals and JAMA Network Open. The peer-reviewed content now feeds Abridge's CDS engine grounded in the actual patient conversation happening in the room. First time a clinical AI company has wired first-tier peer-reviewed journals directly into CDS at the point of care.</description>
+      <description>Abridge announced content partnerships with NEJM Group and the AMA covering JAMA plus 11 specialty journals and JAMA Network Open. The peer-reviewed content now feeds Abridge&#x27;s CDS engine grounded in the actual patient conversation happening in the room. First time a clinical AI company has wired first-tier peer-reviewed journals directly into CDS at the point of care.</description>
       <pubDate>Wed, 15 Apr 2026 00:00:00 GMT</pubDate>
       <guid>https://hitconsultant.net/2026/04/15/abridge-nejm-jama-partnership-clinical-decision-support-ehr/</guid>
     </item>
 
     <item>
-      <title>Microsoft Launches Copilot Health as a Consumer AI Companion</title>
-      <link>https://www.fiercehealthcare.com/ai-and-machine-learning/microsoft-unveils-copilot-health-ai-health-companion-consumers</link>
-      <description>Microsoft unveiled Copilot Health, a consumer AI companion that combines health records, wearables data, and health history. Sits alongside OpenAI's simultaneous rollout of ChatGPT Health, which now connects directly to patient portals. Expect patients to arrive with synthesized records, trend charts, and differential diagnoses they didn't have three months ago.</description>
-      <pubDate>Wed, 15 Apr 2026 00:00:00 GMT</pubDate>
-      <guid>https://www.fiercehealthcare.com/ai-and-machine-learning/microsoft-unveils-copilot-health-ai-health-companion-consumers</guid>
-    </item>
-
-    <item>
-      <title>Epic Art Expands to Home Care; Insights Hits 16M Monthly Uses</title>
-      <link>https://www.fiercehealthcare.com/ai-and-machine-learning/epic-rolls-out-ai-charting-and-more-built-automation-clinicians-and</link>
-      <description>Epic's Art (ambient documentation) now extends to home care, joining outpatient specialty deployment and Houston Methodist's bedside-nursing pilot. Insights is used 16 million times per month (3x since November 2025), and 85% of Epic customers are now live with at least one generative AI feature. A separate multi-center JAMA study this month confirmed ambient scribes reduce EHR time by 13.4 minutes and documentation time by 16.0 minutes per clinician per day.</description>
-      <pubDate>Wed, 15 Apr 2026 00:00:00 GMT</pubDate>
-      <guid>https://www.fiercehealthcare.com/ai-and-machine-learning/epic-rolls-out-ai-charting-and-more-built-automation-clinicians-and</guid>
-    </item>
-
-    <item>
-      <title>AMA 2026 Physician Survey: AI Use Among Doctors Has Doubled</title>
-      <link>https://www.ama-assn.org/press-center/ama-press-releases/ama-ai-usage-among-doctors-doubles-confidence-technology-grows</link>
-      <description>Per the AMA Physician Survey, 39% of physicians now use AI to produce summaries of medical research and standards of care (the most common use case). 30% use it for discharge instructions and care plans, 28% for documentation, and 28% for chart summaries. The average physician uses AI for 2.3 distinct use cases — up from 1.1 in 2023.</description>
-      <pubDate>Wed, 15 Apr 2026 00:00:00 GMT</pubDate>
-      <guid>https://www.ama-assn.org/press-center/ama-press-releases/ama-ai-usage-among-doctors-doubles-confidence-technology-grows</guid>
+      <title>OpenAI Ships GPT-5.4, GPT-5.4-Cyber, and GPT-Rosalind</title>
+      <link>https://openai.com/index/introducing-gpt-rosalind/</link>
+      <description>OpenAI released GPT-5.4 (Apr 16) as its most capable frontier model for professional work, GPT-5.4-Cyber (Apr 14) for vetted security professionals, and GPT-Rosalind—a life-sciences reasoning model optimized for molecules, proteins, genes, pathways, and disease biology. Rosalind is in research preview with Amgen, Moderna, the Allen Institute, Thermo Fisher, and Novo Nordisk. A specialist biomedical model from a frontier lab is new territory worth watching.</description>
+      <guid>https://openai.com/index/introducing-gpt-rosalind/</guid>
     </item>
 
     <item>
       <title>Claude Code Prompt-Injection CVE After Source Leak</title>
       <link>https://www.scworld.com/brief/claude-code-vulnerable-to-prompt-injection-due-to-subcommand-limit</link>
-      <description>After Claude Code's source was leaked, security firm Adversa found its deny rules can be bypassed via prompt injection — letting attackers execute tool calls Claude Code was configured to refuse. Combined with GitHub Copilot CVE-2025-53773 (CVSS 9.6) earlier in the month, a clear message for health-system engineering teams: agent-side guardrails are only as strong as the inputs they reason about.</description>
+      <description>After Claude Code&#x27;s source was leaked, security firm Adversa found its deny rules can be bypassed via prompt injection—letting attackers execute tool calls Claude Code was configured to refuse. Combined with GitHub Copilot CVE-2025-53773 (CVSS 9.6, PR-description prompt injection enabling RCE) earlier in the month, a clear message for health-system engineering teams: agent-side guardrails are only as strong as the inputs they reason about. Ask explicitly what prompt-injection controls are in place.</description>
       <pubDate>Tue, 14 Apr 2026 00:00:00 GMT</pubDate>
       <guid>https://www.scworld.com/brief/claude-code-vulnerable-to-prompt-injection-due-to-subcommand-limit</guid>
     </item>
 
     <item>
-      <title>Hartford Rolls Out PatientGPT; Sutter and Reid Pilot Epic's Emmie</title>
+      <title>ECRI 2026: AI Chatbot Misuse Tops Health Tech Hazard List</title>
+      <link>https://healthjournalism.org/blog/2026/02/misuse-of-ai-chatbots-in-health-care-tops-2026-health-tech-hazard-report/</link>
+      <description>ECRI’s 2026 Top 10 Health Technology Hazards report placed AI chatbot misuse at #1—above alarm fatigue, infusion pump errors, and surgical-device failures that have anchored this list for a decade. The framing emphasizes patients acting on unmediated chatbot advice, clinicians relying on chatbot output without source review, and health systems deploying patient-facing chatbots without governance. ECRI carries weight with hospital safety committees; expect this to drive 2026 AI procurement reviews.</description>
+      <pubDate>Mon, 13 Apr 2026 00:00:00 GMT</pubDate>
+      <guid>https://healthjournalism.org/blog/2026/02/misuse-of-ai-chatbots-in-health-care-tops-2026-health-tech-hazard-report/</guid>
+    </item>
+
+    <item>
+      <title>Hartford Rolls Out PatientGPT; Sutter and Reid Pilot Epic’s Emmie</title>
       <link>https://www.statnews.com/2026/04/13/hospitals-launch-chatbots-creating-new-funnel-for-patients/</link>
-      <description>Hartford HealthCare launched PatientGPT (built by K Health) for Connecticut patients. Sutter Health and Reid Health are piloting Epic's Emmie. Health systems are increasingly treating patient-facing AI as an intake funnel — a new layer of triage before the appointment rather than after.</description>
+      <description>Hartford HealthCare launched PatientGPT (built by K Health) for Connecticut patients. Sutter Health and Reid Health are piloting Epic&#x27;s Emmie. Health systems are increasingly treating patient-facing AI as an intake funnel—a new layer of triage before the appointment rather than after. Worth reading critically for what questions the AI is being asked to resolve on its own.</description>
       <pubDate>Mon, 13 Apr 2026 00:00:00 GMT</pubDate>
       <guid>https://www.statnews.com/2026/04/13/hospitals-launch-chatbots-creating-new-funnel-for-patients/</guid>
     </item>
@@ -531,24 +570,66 @@
     <item>
       <title>MedQA Leaderboard Snapshot: Top Models Clear 95%</title>
       <link>https://pricepertoken.com/leaderboards/benchmark/medqa</link>
-      <description>April 9 snapshot of the medical-question benchmark: o4 Mini High 95.2%, Gemini 2.5 Pro 94.6%, Claude 3.7 Sonnet 92.3%. Average across all 34 evaluated models is 79.4%. MedQA alone isn't clinical validation, but it's a useful sanity check when comparing models. The narrow spread at the top reinforces the point: the gap between frontier models on text medical reasoning is closing fast.</description>
+      <description>April 9 snapshot of the medical-question benchmark: o4 Mini High 95.2%, Gemini 2.5 Pro 94.6%, Claude 3.7 Sonnet 92.3%. Average across all 34 evaluated models is 79.4%. MedQA alone isn&#x27;t a clinical validation, but it&#x27;s a useful sanity check when comparing models. The narrow spread at the top of the leaderboard reinforces the Big Three modules&#x27; takeaway: the gap between frontier models on text medical reasoning is closing fast.</description>
       <pubDate>Thu, 09 Apr 2026 00:00:00 GMT</pubDate>
-      <guid>ai101-medqa-leaderboard-apr-2026</guid>
+      <guid isPermaLink="false">ai101-medqa-leaderboard-apr-2026</guid>
+    </item>
+
+    <item>
+      <title>Ambient Scribe Upcoding Crisis: JAMA, npj Digital Medicine, PHTI Reports</title>
+      <link>https://www.statnews.com/2026/04/08/are-scribes-raising-health-care-costs-ai-prognosis/</link>
+      <description>A coordinated wave of reporting—JAMA Health Forum, npj Digital Medicine, STAT, and a PHTI report—documented that ambient AI scribe adoption is associated with 12–18% growth in claim intensity. High-intensity E/M coding is rising in scribe-adopting practices. JAMA framed it as a “coding arms race.” The productivity gain (13–16 min/day saved) is real—the question is whether the documentation thoroughness it enables is appropriate billing or upcoding.</description>
+      <guid>https://www.statnews.com/2026/04/08/are-scribes-raising-health-care-costs-ai-prognosis/</guid>
+    </item>
+
+    <item>
+      <title>Meta Releases Muse Spark: First Proprietary Frontier Model</title>
+      <link>https://ai.meta.com/blog/introducing-muse-spark-msl/</link>
+      <description>Meta launched Muse Spark, its first proprietary frontier model, alongside the open-weight Llama 4 line. The split signals a strategic shift: Meta retains a closed flagship for premium use cases while continuing to release open weights for the broader ecosystem. Relevant to healthcare deployments choosing between API access to closed models and on-prem deployment of open ones. See our updated Running AI Models Locally module.</description>
+      <pubDate>Wed, 08 Apr 2026 00:00:00 GMT</pubDate>
+      <guid>https://ai.meta.com/blog/introducing-muse-spark-msl/</guid>
+    </item>
+
+    <item>
+      <title>KFF Tracking Poll: 1-in-3 US Adults Use AI for Health Information</title>
+      <link>https://www.kff.org/health-information-trust/poll-1-in-3-adults-are-turning-to-ai-chatbots-for-health-information-equaling-the-share-who-use-social-media-for-health/</link>
+      <description>KFF found that 1 in 3 US adults used an AI chatbot for health information in the past year— equal to the share using social media for health. 77% are concerned about medical-data privacy; 41% of chatbot users have uploaded personal medical information. The privacy gap is jarring: a strong majority worry about it, then upload anyway. Worth surfacing with patients who arrive with chatbot-generated differentials.</description>
+      <guid>https://www.kff.org/health-information-trust/poll-1-in-3-adults-are-turning-to-ai-chatbots-for-health-information-equaling-the-share-who-use-social-media-for-health/</guid>
+    </item>
+
+    <item>
+      <title>Microsoft Launches Copilot Health as a Consumer AI Companion</title>
+      <link>https://www.fiercehealthcare.com/ai-and-machine-learning/microsoft-unveils-copilot-health-ai-health-companion-consumers</link>
+      <description>Microsoft unveiled Copilot Health, a consumer AI companion that combines health records, wearables data, and health history. Sits alongside OpenAI&#x27;s simultaneous rollout of ChatGPT Health, which now connects directly to patient portals. Expect patients to arrive with synthesized records, trend charts, and differential diagnoses they didn&#x27;t have three months ago.</description>
+      <guid>https://www.fiercehealthcare.com/ai-and-machine-learning/microsoft-unveils-copilot-health-ai-health-companion-consumers</guid>
+    </item>
+
+    <item>
+      <title>Epic Art Expands to Home Care; Insights Hits 16M Monthly Uses</title>
+      <link>https://www.fiercehealthcare.com/ai-and-machine-learning/epic-rolls-out-ai-charting-and-more-built-automation-clinicians-and</link>
+      <description>Epic&#x27;s Art (ambient documentation) now extends to home care, joining outpatient specialty deployment and Houston Methodist&#x27;s bedside-nursing pilot. Insights is used 16 million times per month (3× since November 2025), and 85% of Epic customers are now live with at least one generative AI feature (Art, Emmie, or Penny). A separate multi-center JAMA study this month confirmed ambient scribes reduce EHR time by 13.4 minutes and documentation time by 16.0 minutes per clinician per day.</description>
+      <guid>https://www.fiercehealthcare.com/ai-and-machine-learning/epic-rolls-out-ai-charting-and-more-built-automation-clinicians-and</guid>
+    </item>
+
+    <item>
+      <title>AMA 2026 Physician Survey: AI Use Among Doctors Has Doubled</title>
+      <link>https://www.ama-assn.org/press-center/ama-press-releases/ama-ai-usage-among-doctors-doubles-confidence-technology-grows</link>
+      <description>Per the AMA Physician Survey, 39% of physicians now use AI to produce summaries of medical research and standards of care (the most common use case). 30% use it for discharge instructions and care plans, 28% for documentation, and 28% for chart summaries. The average physician uses AI for 2.3 distinct use cases—up from 1.1 in 2023. The technology&#x27;s not coming; it&#x27;s already in the room.</description>
+      <guid>https://www.ama-assn.org/press-center/ama-press-releases/ama-ai-usage-among-doctors-doubles-confidence-technology-grows</guid>
     </item>
 
     <item>
       <title>CMS OPPS Billing Pathway for Cardiovascular AI Takes Effect</title>
       <link>https://cardiovascularbusiness.com/topics/cardiac-imaging/electrocardiography-ecg/fda-clears-next-generation-platform-ai-enabled-ecg-evaluations</link>
-      <description>CMS's new OPPS billing pathway for cardiovascular AI took effect April 1 — the first time reimbursement has moved in lockstep with FDA clearance for this category. Bunkerhill Health received 510(k) clearance for AI analysis of coronary artery and aortic valve calcium on routine chest CT. When regulators and payers align on a category, deployment follows.</description>
+      <description>CMS&#x27;s new OPPS billing pathway for cardiovascular AI took effect April 1—the first time reimbursement has moved in lockstep with FDA clearance for this category. Bunkerhill Health received 510(k) clearance for AI analysis of coronary artery and aortic valve calcium on routine chest CT, giving an early example of a cleared device that now has a reimbursement path. When regulators and payers align on a category, deployment follows.</description>
       <pubDate>Wed, 01 Apr 2026 00:00:00 GMT</pubDate>
-      <guid>ai101-cms-opps-cardiovascular-ai-apr-2026</guid>
+      <guid isPermaLink="false">ai101-cms-opps-cardiovascular-ai-apr-2026</guid>
     </item>
 
     <item>
       <title>HIMSS 2026: “Agentic AI” Takes Center Stage</title>
       <link>https://www.himssconference.com/</link>
       <description>The dominant theme at this year’s HIMSS conference: AI that takes actions, not just answers questions. Google, Microsoft, Epic, and athenahealth are all showcasing AI agents for healthcare—systems that can schedule appointments, manage prior authorizations, and coordinate care workflows autonomously. Over 25,000 attendees expected. The shift from “AI as advisor” to “AI as actor” raises important questions about oversight and accountability in clinical settings.</description>
-      <pubDate>Thu, 12 Mar 2026 00:00:00 GMT</pubDate>
       <guid>https://www.himssconference.com/</guid>
     </item>
 
@@ -604,7 +685,6 @@
       <title>AI Chatbots Worsening Mental Illness: Growing Evidence</title>
       <link>https://www.usnews.com/news/health-news/articles/2026-02-26/ai-chatbots-can-contribute-to-worsening-mental-illness-study-finds</link>
       <description>A Brown University study identifies 15 ethical risks from AI chatbot use in mental health settings. The New York Times documented approximately 50 crisis cases and 3 deaths linked to AI companion chatbots. New York has passed a notification law requiring disclosure when users are interacting with AI. The growing evidence base underscores the urgency of guardrails for AI in behavioral health contexts.</description>
-      <pubDate>Sat, 28 Feb 2026 00:00:00 GMT</pubDate>
       <guid>https://www.usnews.com/news/health-news/articles/2026-02-26/ai-chatbots-can-contribute-to-worsening-mental-illness-study-finds</guid>
     </item>
 
@@ -612,7 +692,6 @@
       <title>OpenClaw ClawHavoc: Malicious Skills Surge</title>
       <link>https://cyberpress.org/clawhavoc-poisons-openclaws-clawhub-with-1184-malicious-skills/</link>
       <description>The “ClawHavoc” campaign targeting OpenClaw’s ClawHub marketplace has escalated dramatically. Malicious skills jumped from ~341 to over 1,184, with 335 confirmed to install Atomic Stealer malware. Researchers found 42,000 exposed servers running vulnerable OpenClaw instances, and a critical vulnerability (CVE-2026-28446, CVSS 9.8) was disclosed. See our AI Coding Agents module for context on these risks.</description>
-      <pubDate>Sat, 28 Feb 2026 00:00:00 GMT</pubDate>
       <guid>https://cyberpress.org/clawhavoc-poisons-openclaws-clawhub-with-1184-malicious-skills/</guid>
     </item>
 
@@ -620,7 +699,6 @@
       <title>DeepSeek V4 Controversy: Distillation Fraud Accusations</title>
       <link>https://www.bloomberg.com/news/articles/2026-02-23/anthropic-says-deepseek-minimax-distilled-ai-models-for-gains</link>
       <description>DeepSeek’s trillion-parameter V4 model launched amid distillation fraud accusations from Anthropic, which reported approximately 24,000 fake accounts used to extract training data from Claude. OpenAI raised similar complaints. The Texas Attorney General has opened an investigation. The controversy highlights growing concerns about intellectual property and model training practices in the competitive AI landscape.</description>
-      <pubDate>Sat, 28 Feb 2026 00:00:00 GMT</pubDate>
       <guid>https://www.bloomberg.com/news/articles/2026-02-23/anthropic-says-deepseek-minimax-distilled-ai-models-for-gains</guid>
     </item>
 
@@ -641,17 +719,9 @@
     </item>
 
     <item>
-      <title>Pentagon Threatens to Cut Off Anthropic Over AI Safety Guardrails</title>
-      <link>https://www.axios.com/2026/02/15/claude-pentagon-anthropic-contract-maduro</link>
-      <description>The Pentagon is close to severing its $200M contract with Anthropic and potentially designating the company a "supply chain risk"—a penalty normally reserved for foreign adversaries. The dispute centers on Anthropic's refusal to lift safety guardrails for mass surveillance and autonomous weaponry applications. Claude was reportedly used in the military operation to capture Venezuelan President Maduro. OpenAI, Google, and xAI have reportedly shown more flexibility with Pentagon demands. A landmark moment for AI ethics in government contracting.</description>
-      <pubDate>Mon, 16 Feb 2026 00:00:00 GMT</pubDate>
-      <guid>https://www.axios.com/2026/02/15/claude-pentagon-anthropic-contract-maduro</guid>
-    </item>
-
-    <item>
       <title>February Model Rush: Seven Major Releases in One Month</title>
       <link>https://www.bloomberg.com/news/articles/2026-02-16/alibaba-unveils-major-ai-model-upgrade-ahead-of-deepseek-release</link>
-      <description>An unprecedented month for AI model releases. Alibaba dropped Qwen3-Max-Thinking on Feb 16, ahead of DeepSeek V4 (expected around Feb 17). These join Claude Opus 4.6 (Feb 5), GPT-5.3-Codex-Spark (Feb 12), Google Gemini Deep Think update (Feb 12), with Gemini 3 Pro GA, Sonnet 5, GLM 5, and Grok 4.20 all expected by month's end. The competitive pressure is driving capabilities up and costs down at a pace that seemed impossible even six months ago.</description>
+      <description>An unprecedented month for AI model releases. Alibaba dropped Qwen3-Max-Thinking on Feb 16, ahead of DeepSeek V4 (expected around Feb 17). These join Claude Opus 4.6 (Feb 5), GPT-5.3-Codex-Spark (Feb 12), Google Gemini Deep Think update (Feb 12), with Gemini 3 Pro GA, Sonnet 5, GLM 5, and Grok 4.20 all expected by month&#x27;s end. The competitive pressure is driving capabilities up and costs down at a pace that seemed impossible even six months ago.</description>
       <pubDate>Mon, 16 Feb 2026 00:00:00 GMT</pubDate>
       <guid>https://www.bloomberg.com/news/articles/2026-02-16/alibaba-unveils-major-ai-model-upgrade-ahead-of-deepseek-release</guid>
     </item>
@@ -665,57 +735,24 @@
     </item>
 
     <item>
-      <title>athenahealth Launches Free Ambient Scribe</title>
-      <link>https://www.newsweek.com/athenahealth-throws-its-hat-in-ambient-scribe-ai-assistant-rings-access-health-10991353</link>
-      <description>athenahealth is offering a free AI scribe to all athenaOne customers, disrupting the $200–$600/month ambient scribe market. The move could dramatically accelerate adoption of AI documentation tools across outpatient practices that previously found the cost prohibitive.</description>
-      <pubDate>Sun, 15 Feb 2026 00:00:00 GMT</pubDate>
-      <guid>https://www.newsweek.com/athenahealth-throws-its-hat-in-ambient-scribe-ai-assistant-rings-access-health-10991353</guid>
-    </item>
-
-    <item>
-      <title>Nabla Beats DAX Copilot in Randomized Trial</title>
-      <link>https://pubmed.ncbi.nlm.nih.gov/40672471/</link>
-      <description>A 72,000-encounter randomized controlled trial found that Nabla’s AI scribe reduced documentation time by 9.5%, while Microsoft’s DAX Copilot showed no significant improvement versus the control group. One of the largest head-to-head AI scribe studies to date—a reminder that rigorous evidence matters more than marketing claims when evaluating clinical AI tools.</description>
-      <pubDate>Sun, 15 Feb 2026 00:00:00 GMT</pubDate>
-      <guid>https://pubmed.ncbi.nlm.nih.gov/40672471/</guid>
-    </item>
-
-    <item>
-      <title>NVIDIA: 70% of Healthcare Organizations Now Deploy AI</title>
-      <link>https://blogs.nvidia.com/blog/ai-in-healthcare-survey-2026/</link>
-      <description>NVIDIA’s 2026 healthcare survey finds that 70% of healthcare organizations have deployed AI in some capacity, up from 63% in 2024. Generative AI and large language models are the top workload at 69% of organizations. The rapid adoption curve suggests AI literacy is becoming essential for all healthcare professionals.</description>
-      <pubDate>Sun, 15 Feb 2026 00:00:00 GMT</pubDate>
-      <guid>https://blogs.nvidia.com/blog/ai-in-healthcare-survey-2026/</guid>
-    </item>
-
-    <item>
-      <title>HHS Proposes Gutting AI Transparency Rules (HTI-5)</title>
-      <link>https://www.healthcaredive.com/news/astp-onc-hti5-ai-model-cards-health-it-certification-proposed-rule/808582/</link>
-      <description>The proposed HTI-5 rule would eliminate model card requirements for health IT certification—the primary mechanism for ensuring transparency about how AI models in clinical software are trained, tested, and validated. The comment period closed February 27. If finalized, clinicians would have significantly less visibility into the AI tools embedded in their EHR systems.</description>
-      <pubDate>Sun, 15 Feb 2026 00:00:00 GMT</pubDate>
-      <guid>https://www.healthcaredive.com/news/astp-onc-hti5-ai-model-cards-health-it-certification-proposed-rule/808582/</guid>
+      <title>Pentagon Threatens to Cut Off Anthropic Over AI Safety Guardrails</title>
+      <link>https://www.axios.com/2026/02/15/claude-pentagon-anthropic-contract-maduro</link>
+      <description>The Pentagon is close to severing its $200M contract with Anthropic and potentially designating the company a &quot;supply chain risk&quot;—a penalty normally reserved for foreign adversaries. The dispute centers on Anthropic&#x27;s refusal to lift safety guardrails for mass surveillance and autonomous weaponry applications. Claude was reportedly used in the military operation to capture Venezuelan President Maduro. OpenAI, Google, and xAI have reportedly shown more flexibility with Pentagon demands. A landmark moment for AI ethics in government contracting.</description>
+      <guid>https://www.axios.com/2026/02/15/claude-pentagon-anthropic-contract-maduro</guid>
     </item>
 
     <item>
       <title>OpenClaw Creator Peter Steinberger Joins OpenAI</title>
       <link>https://techcrunch.com/2026/02/15/openclaw-creator-peter-steinberger-joins-openai/</link>
-      <description>The creator of OpenClaw—the viral open-source AI agent formerly known as Clawdbot and Moltbot, now with over 250,000 GitHub stars—has joined OpenAI. Sam Altman announced the hire personally. Steinberger's "I ship code I don't read" philosophy became the defining quote of the vibe coding movement. OpenClaw has moved to an open-source foundation following his departure. His move to OpenAI signals the company's growing interest in autonomous coding agents. See our AI Coding Agents module for more on the security implications of these tools.</description>
+      <description>The creator of OpenClaw—the viral open-source AI agent formerly known as Clawdbot and Moltbot, now with over 250,000 GitHub stars—has joined OpenAI. Sam Altman announced the hire personally. Steinberger&#x27;s &quot;I ship code I don&#x27;t read&quot; philosophy became the defining quote of the vibe coding movement. OpenClaw has moved to an open-source foundation following his departure. His move to OpenAI signals the company&#x27;s growing interest in autonomous coding agents. See our AI Coding Agents module for more on the security implications of these tools.</description>
       <pubDate>Sun, 15 Feb 2026 00:00:00 GMT</pubDate>
       <guid>https://techcrunch.com/2026/02/15/openclaw-creator-peter-steinberger-joins-openai/</guid>
     </item>
 
     <item>
-      <title>Anthropic Closes Record $30B Funding Round</title>
-      <link>https://finance.yahoo.com/news/claude-maker-anthropics-annualized-revenue-145630286.html</link>
-      <description>Anthropic's Series G round valued the company at approximately $380 billion—the largest private tech funding round in history. Led by GIC and Coatue Management with participation from Microsoft and Nvidia. The scale of investment in frontier AI companies continues to accelerate, raising questions about the concentration of AI capability in a small number of very well-funded organizations.</description>
-      <pubDate>Sun, 15 Feb 2026 00:00:00 GMT</pubDate>
-      <guid>https://finance.yahoo.com/news/claude-maker-anthropics-annualized-revenue-145630286.html</guid>
-    </item>
-
-    <item>
       <title>Dr. Oz Pushes $50B AI Avatar Plan for Rural Healthcare</title>
       <link>https://www.npr.org/2026/02/14/nx-s1-5704189/dr-oz-ai-avatars-replace-rural-health-workers</link>
-      <description>CMS head Dr. Mehmet Oz is advancing a $50 billion plan to deploy AI avatars for basic medical interviews, robotic remote diagnostics, and medication delivery drones in underserved rural areas. Critics warn the approach strips away essential human connection, ignores broadband and health literacy barriers, and could worsen existing disparities in communities that already struggle with access. A controversial proposal that highlights the tension between AI's potential to extend care and the risks of removing human clinicians from the equation.</description>
+      <description>CMS head Dr. Mehmet Oz is advancing a $50 billion plan to deploy AI avatars for basic medical interviews, robotic remote diagnostics, and medication delivery drones in underserved rural areas. Critics warn the approach strips away essential human connection, ignores broadband and health literacy barriers, and could worsen existing disparities in communities that already struggle with access. A controversial proposal that highlights the tension between AI&#x27;s potential to extend care and the risks of removing human clinicians from the equation.</description>
       <pubDate>Sat, 14 Feb 2026 00:00:00 GMT</pubDate>
       <guid>https://www.npr.org/2026/02/14/nx-s1-5704189/dr-oz-ai-avatars-replace-rural-health-workers</guid>
     </item>
@@ -723,7 +760,7 @@
     <item>
       <title>OpenAI Retires GPT-4o and Older Models</title>
       <link>https://openai.com/index/retiring-gpt-4o-and-older-models/</link>
-      <description>OpenAI retired GPT-4o, GPT-4.1, GPT-4.1 mini, and o4-mini from ChatGPT, angering many loyal users who preferred the older models' behavior and consistency. The move pushes all users to newer models. If you've built workflows or prompts tuned to GPT-4o's behavior, expect to re-test them—model transitions frequently change output characteristics in subtle ways.</description>
+      <description>OpenAI retired GPT-4o, GPT-4.1, GPT-4.1 mini, and o4-mini from ChatGPT, angering many loyal users who preferred the older models&#x27; behavior and consistency. The move pushes all users to newer models. If you&#x27;ve built workflows or prompts tuned to GPT-4o&#x27;s behavior, expect to re-test them—model transitions frequently change output characteristics in subtle ways.</description>
       <pubDate>Fri, 13 Feb 2026 00:00:00 GMT</pubDate>
       <guid>https://openai.com/index/retiring-gpt-4o-and-older-models/</guid>
     </item>
@@ -731,7 +768,7 @@
     <item>
       <title>OpenAI Debuts Cerebras-Powered Coding Model</title>
       <link>https://www.bloomberg.com/news/articles/2026-02-12/openai-debuts-first-model-using-chips-from-nvidia-rival-cerebras</link>
-      <description>GPT-5.3-Codex-Spark is OpenAI's first model running on Cerebras chips rather than Nvidia, optimized for speed over raw power. Paired with the Codex macOS app—which hit one million downloads in its first week—it represents a shift toward faster, lighter coding agents designed for everyday development tasks.</description>
+      <description>GPT-5.3-Codex-Spark is OpenAI&#x27;s first model running on Cerebras chips rather than Nvidia, optimized for speed over raw power. Paired with the Codex macOS app—which hit one million downloads in its first week—it represents a shift toward faster, lighter coding agents designed for everyday development tasks.</description>
       <pubDate>Thu, 12 Feb 2026 00:00:00 GMT</pubDate>
       <guid>https://www.bloomberg.com/news/articles/2026-02-12/openai-debuts-first-model-using-chips-from-nvidia-rival-cerebras</guid>
     </item>
@@ -747,7 +784,7 @@
     <item>
       <title>DeepSeek Expands Context Window 10x, V4 Imminent</title>
       <link>https://www.scmp.com/tech/tech-trends/article/3343225/deepseek-boosts-ai-model-10-fold-token-addition-zhipu-ai-gears-glm-5-launch</link>
-      <description>Chinese AI lab DeepSeek expanded its flagship model's context window from 128K to over 1 million tokens, matching Claude Opus 4.6. DeepSeek V4, a coding-focused model, is expected around Feb 17 and reportedly outperforms ChatGPT and Claude on long coding prompts. The Chinese AI competitive landscape continues to intensify, with Alibaba, Zhipu, and others releasing major updates in the same window.</description>
+      <description>Chinese AI lab DeepSeek expanded its flagship model&#x27;s context window from 128K to over 1 million tokens, matching Claude Opus 4.6. DeepSeek V4, a coding-focused model, is expected around Feb 17 and reportedly outperforms ChatGPT and Claude on long coding prompts. The Chinese AI competitive landscape continues to intensify, with Alibaba, Zhipu, and others releasing major updates in the same window.</description>
       <pubDate>Wed, 11 Feb 2026 00:00:00 GMT</pubDate>
       <guid>https://www.scmp.com/tech/tech-trends/article/3343225/deepseek-boosts-ai-model-10-fold-token-addition-zhipu-ai-gears-glm-5-launch</guid>
     </item>
@@ -771,7 +808,7 @@
     <item>
       <title>Anthropic Launches Claude Opus 4.6</title>
       <link>https://www.cnbc.com/2026/02/05/anthropic-claude-opus-4-6-vibe-working.html</link>
-      <description>Anthropic released Claude Opus 4.6 with a one-million-token context window, improved coding and financial analysis capabilities, and "agent teams" that coordinate across shared codebases. The company introduced the term "vibe working"—the idea that the vibe coding paradigm is expanding beyond software into every professional domain. See our updated Vibe Coding module for details.</description>
+      <description>Anthropic released Claude Opus 4.6 with a one-million-token context window, improved coding and financial analysis capabilities, and &quot;agent teams&quot; that coordinate across shared codebases. The company introduced the term &quot;vibe working&quot;—the idea that the vibe coding paradigm is expanding beyond software into every professional domain. See our updated Vibe Coding module for details.</description>
       <pubDate>Thu, 05 Feb 2026 00:00:00 GMT</pubDate>
       <guid>https://www.cnbc.com/2026/02/05/anthropic-claude-opus-4-6-vibe-working.html</guid>
     </item>
@@ -793,51 +830,38 @@
     </item>
 
     <item>
-      <title>State of Clinical AI Report 2026</title>
-      <link>https://www.arise-ai.org/report</link>
-      <description>Inaugural annual report from ARISE (AI Research and Science Evaluation), a Stanford-Harvard Research Network. Synthesizes developments across six themes: model performance, evaluation methods, technical foundations, human-AI workflow design, patient-facing tools, and evidence generation through prospective randomized trials.</description>
-      <pubDate>Thu, 16 Jan 2026 00:00:00 GMT</pubDate>
-      <guid>https://www.arise-ai.org/report</guid>
+      <title>Nabla Beats DAX Copilot in Randomized Trial</title>
+      <link>https://pubmed.ncbi.nlm.nih.gov/40672471/</link>
+      <description>A 72,000-encounter randomized controlled trial found that Nabla’s AI scribe reduced documentation time by 9.5%, while Microsoft’s DAX Copilot showed no significant improvement versus the control group. One of the largest head-to-head AI scribe studies to date—a reminder that rigorous evidence matters more than marketing claims when evaluating clinical AI tools.</description>
+      <guid>https://pubmed.ncbi.nlm.nih.gov/40672471/</guid>
     </item>
 
     <item>
-      <title>Physicians Turning to AI for Clinical Support, Not Just Paperwork</title>
-      <link>https://www.medicaleconomics.com/view/physicians-turning-to-ai-for-clinical-support-not-just-paperwork-athenahealth-survey-finds</link>
-      <description>New athenahealth survey finds AI is taking on a more clinical support role in outpatient care. Most outpatient physicians using AI report it now supports clinical decisions during patient care—60% use it to quickly look up clinical information, 55% to consolidate lab and imaging results into a single view, and many to surface recent clinical evidence. A shift from documentation-only to real-time clinical assistance.</description>
-      <pubDate>Thu, 15 Jan 2026 00:00:00 GMT</pubDate>
-      <guid>https://www.medicaleconomics.com/view/physicians-turning-to-ai-for-clinical-support-not-just-paperwork-athenahealth-survey-finds</guid>
+      <title>NVIDIA: 70% of Healthcare Organizations Now Deploy AI</title>
+      <link>https://blogs.nvidia.com/blog/ai-in-healthcare-survey-2026/</link>
+      <description>NVIDIA’s 2026 healthcare survey finds that 70% of healthcare organizations have deployed AI in some capacity, up from 63% in 2024. Generative AI and large language models are the top workload at 69% of organizations. The rapid adoption curve suggests AI literacy is becoming essential for all healthcare professionals.</description>
+      <guid>https://blogs.nvidia.com/blog/ai-in-healthcare-survey-2026/</guid>
     </item>
 
     <item>
-      <title>AI-Powered Primary Care Addresses Physician Shortages</title>
-      <link>https://www.npr.org/sections/shots-health-news/2026/01/09/nx-s1-5670382/primary-care-doctor-shortage-medical-ai-diagnosis</link>
-      <description>K Health, partnering with health networks including Mass General Brigham, is delivering AI-powered primary care to patients who otherwise have no option besides emergency rooms. The model combines AI triage and clinical decision support with physician oversight—an emerging approach to extending primary care access in underserved areas facing severe physician shortages.</description>
-      <pubDate>Thu, 15 Jan 2026 00:00:00 GMT</pubDate>
-      <guid>https://www.npr.org/sections/shots-health-news/2026/01/09/nx-s1-5670382/primary-care-doctor-shortage-medical-ai-diagnosis</guid>
+      <title>HHS Proposes Gutting AI Transparency Rules (HTI-5)</title>
+      <link>https://www.healthcaredive.com/news/astp-onc-hti5-ai-model-cards-health-it-certification-proposed-rule/808582/</link>
+      <description>The proposed HTI-5 rule would eliminate model card requirements for health IT certification—the primary mechanism for ensuring transparency about how AI models in clinical software are trained, tested, and validated. The comment period closed February 27. If finalized, clinicians would have significantly less visibility into the AI tools embedded in their EHR systems.</description>
+      <guid>https://www.healthcaredive.com/news/astp-onc-hti5-ai-model-cards-health-it-certification-proposed-rule/808582/</guid>
     </item>
 
     <item>
-      <title>Joint Commission and CHAI Issue AI Implementation Recommendations</title>
-      <link>https://news.harvard.edu/gazette/story/2026/01/ai-is-speeding-into-healthcare-who-should-regulate-it/</link>
-      <description>The Joint Commission and Coalition for Health AI (CHAI) released joint recommendations for implementing AI in medical care. Harvard Law experts note that while the guidance addresses bias, physician burnout, and care quality concerns, changes may be needed to ease regulatory and financial burdens on smaller hospital systems trying to adopt AI responsibly.</description>
-      <pubDate>Thu, 15 Jan 2026 00:00:00 GMT</pubDate>
-      <guid>https://news.harvard.edu/gazette/story/2026/01/ai-is-speeding-into-healthcare-who-should-regulate-it/</guid>
+      <title>ChatGPT Security Controls Require Workspace-Specific Verification</title>
+      <link>https://learn.chatgpt.com/docs/enterprise/chatgpt-work-cloud-security</link>
+      <description>Correction checked November 1: the original release URL no longer resolves. Current OpenAI enterprise documentation describes workspace, role, network, tool, and Lockdown Mode controls with separate scopes. Do not assume a healthcare product name enables every control or that a local restriction automatically governs cloud execution. Use the current security documentation and the organization’s effective settings before deployment.</description>
+      <guid>https://learn.chatgpt.com/docs/enterprise/chatgpt-work-cloud-security</guid>
     </item>
 
     <item>
-      <title>Grok AI Deepfake Crisis Prompts Global Regulatory Action</title>
-      <link>https://dochobbs.github.io/ai101/ai-news.html#grok-warning</link>
-      <description>Warning: Do not use Grok for any purpose. Elon Musk's Grok AI has been repeatedly linked to generating non-consensual sexual deepfakes of women and minors at alarming scale. Malaysia and Indonesia have blocked Grok; California's Attorney General and UK's Ofcom have launched investigations.</description>
-      <pubDate>Sun, 12 Jan 2026 00:00:00 GMT</pubDate>
-      <guid>ai101-grok-warning-jan-2026</guid>
-    </item>
-
-    <item>
-      <title>Anthropic Launches Claude for Healthcare</title>
-      <link>https://www.anthropic.com/news/healthcare-life-sciences</link>
-      <description>Anthropic announced Claude for Healthcare at the J.P. Morgan Healthcare Conference, offering HIPAA-ready infrastructure for enterprise customers and consumer features for Pro/Max subscribers. Users can connect health records via HealthEx to summarize medical history, explain test results, and prepare questions for appointments.</description>
-      <pubDate>Sat, 11 Jan 2026 00:00:00 GMT</pubDate>
-      <guid>https://www.anthropic.com/news/healthcare-life-sciences</guid>
+      <title>Anthropic Closes Record $30B Funding Round</title>
+      <link>https://finance.yahoo.com/news/claude-maker-anthropics-annualized-revenue-145630286.html</link>
+      <description>Anthropic&#x27;s Series G round valued the company at approximately $380 billion—the largest private tech funding round in history. Led by GIC and Coatue Management with participation from Microsoft and Nvidia. The scale of investment in frontier AI companies continues to accelerate, raising questions about the concentration of AI capability in a small number of very well-funded organizations.</description>
+      <guid>https://finance.yahoo.com/news/claude-maker-anthropics-annualized-revenue-145630286.html</guid>
     </item>
 
     <item>
@@ -851,24 +875,65 @@
     <item>
       <title>FDA Updates Clinical Decision Support Software Guidance</title>
       <link>https://www.fda.gov/regulatory-information/search-fda-guidance-documents/clinical-decision-support-software</link>
-      <description>The FDA released updated guidance clarifying how AI and generative AI clinical decision support (CDS) tools can qualify as Non-Device CDS. Key criteria: clinicians must be able to independently review and understand the underlying logic and data inputs, and the tool should provide a single, clinically appropriate recommendation.</description>
-      <pubDate>Mon, 06 Jan 2026 00:00:00 GMT</pubDate>
-      <guid>https://www.fda.gov/regulatory-information/search-fda-guidance-documents/clinical-decision-support-software-2026</guid>
+      <description>The FDA released updated guidance clarifying how AI and generative AI clinical decision support (CDS) tools can qualify as Non-Device CDS. Key criteria: clinicians must be able to independently review and understand the underlying logic and data inputs, and the tool should provide a single, clinically appropriate recommendation. Tools meeting these criteria fall outside FDA medical device oversight, while AI that drives diagnosis or clinical action without adequate human oversight remains regulated.</description>
+      <pubDate>Tue, 06 Jan 2026 00:00:00 GMT</pubDate>
+      <guid isPermaLink="false">https://www.fda.gov/regulatory-information/search-fda-guidance-documents/clinical-decision-support-software-2026</guid>
     </item>
 
     <item>
-      <title>OpenAI Releases "AI as a Healthcare Ally"</title>
+      <title>Physicians Turning to AI for Clinical Support, Not Just Paperwork</title>
+      <link>https://www.medicaleconomics.com/view/physicians-turning-to-ai-for-clinical-support-not-just-paperwork-athenahealth-survey-finds</link>
+      <description>New athenahealth survey finds AI is taking on a more clinical support role in outpatient care. Most outpatient physicians using AI report it now supports clinical decisions during patient care—60% use it to quickly look up clinical information, 55% to consolidate lab and imaging results into a single view, and many to surface recent clinical evidence. A shift from documentation-only to real-time clinical assistance.</description>
+      <guid>https://www.medicaleconomics.com/view/physicians-turning-to-ai-for-clinical-support-not-just-paperwork-athenahealth-survey-finds</guid>
+    </item>
+
+    <item>
+      <title>AI-Powered Primary Care Addresses Physician Shortages</title>
+      <link>https://www.npr.org/sections/shots-health-news/2026/01/09/nx-s1-5670382/primary-care-doctor-shortage-medical-ai-diagnosis</link>
+      <description>K Health, partnering with health networks including Mass General Brigham, is delivering AI-powered primary care to patients who otherwise have no option besides emergency rooms. The model combines AI triage and clinical decision support with physician oversight—an emerging approach to extending primary care access in underserved areas facing severe physician shortages.</description>
+      <guid>https://www.npr.org/sections/shots-health-news/2026/01/09/nx-s1-5670382/primary-care-doctor-shortage-medical-ai-diagnosis</guid>
+    </item>
+
+    <item>
+      <title>Joint Commission and CHAI Issue AI Implementation Recommendations</title>
+      <link>https://news.harvard.edu/gazette/story/2026/01/ai-is-speeding-into-healthcare-who-should-regulate-it/</link>
+      <description>The Joint Commission and Coalition for Health AI (CHAI) released joint recommendations for implementing AI in medical care. Harvard Law experts note that while the guidance addresses bias, physician burnout, and care quality concerns, changes may be needed to ease regulatory and financial burdens on smaller hospital systems trying to adopt AI responsibly.</description>
+      <guid>https://news.harvard.edu/gazette/story/2026/01/ai-is-speeding-into-healthcare-who-should-regulate-it/</guid>
+    </item>
+
+    <item>
+      <title>State of Clinical AI Report 2026</title>
+      <link>https://www.arise-ai.org/report</link>
+      <description>Inaugural annual report from ARISE (AI Research and Science Evaluation), a Stanford-Harvard Research Network. Synthesizes developments across six themes: model performance in clinical reasoning, evaluation methods, technical foundations (multi-agent systems, multimodal approaches), human-AI workflow design, patient-facing tools with safeguards, and evidence generation through prospective randomized trials. Emphasizes that workflow design is as critical as model capabilities.</description>
+      <guid>https://www.arise-ai.org/report</guid>
+    </item>
+
+    <item>
+      <title>Anthropic Launches Claude for Healthcare</title>
+      <link>https://www.anthropic.com/news/healthcare-life-sciences</link>
+      <description>Anthropic announced Claude for Healthcare at the J.P. Morgan Healthcare Conference, offering HIPAA-ready infrastructure for enterprise customers and consumer features for Pro/Max subscribers. Users can connect health records via HealthEx to summarize medical history, explain test results, and prepare questions for appointments. Healthcare organizations gain access to integrations with medical databases including CMS Coverage, ICD-10, and PubMed. Health data is excluded from model memory and training.</description>
+      <guid>https://www.anthropic.com/news/healthcare-life-sciences</guid>
+    </item>
+
+    <item>
+      <title>Grok AI Deepfake Crisis Prompts Global Regulatory Action</title>
+      <link>https://ai101.health/ai-news.html#grok-warning</link>
+      <description>Warning: Do not use Grok for any purpose. Elon Musk&#x27;s Grok AI (integrated into X) has been repeatedly linked to generating non-consensual sexual deepfakes of women and minors at alarming scale. Malaysia and Indonesia have blocked Grok; California&#x27;s Attorney General and UK&#x27;s Ofcom have launched investigations. The Internet Watch Foundation identified Grok-generated CSAM on dark-web forums. Despite restricting image generation to paid users, workarounds remain widely available. This reinforces our recommendation to avoid Grok entirely—there are safer, more ethical AI alternatives available.</description>
+      <guid isPermaLink="false">ai101-grok-warning-jan-2026</guid>
+    </item>
+
+    <item>
+      <title>OpenAI Releases &quot;AI as a Healthcare Ally&quot;</title>
       <link>https://cdn.openai.com/pdf/2cb29276-68cd-4ec6-a5f4-c01c5e7a36e9/OpenAI-AI-as-a-Healthcare-Ally-Jan-2026.pdf</link>
-      <description>OpenAI's policy document exploring how AI can serve as an ally in healthcare—examining opportunities, challenges, and recommendations for responsible integration of AI technologies in medical practice and health systems.</description>
-      <pubDate>Mon, 06 Jan 2026 00:00:00 GMT</pubDate>
+      <description>OpenAI&#x27;s policy document exploring how AI can serve as an ally in healthcare—examining opportunities, challenges, and recommendations for responsible integration of AI technologies in medical practice and health systems.</description>
       <guid>https://cdn.openai.com/pdf/2cb29276-68cd-4ec6-a5f4-c01c5e7a36e9/OpenAI-AI-as-a-Healthcare-Ally-Jan-2026.pdf</guid>
     </item>
 
     <item>
       <title>2025: The Year in LLMs</title>
       <link>https://simonwillison.net/2025/Dec/31/the-year-in-llms/</link>
-      <description>Simon Willison's comprehensive annual review of major developments in large language models throughout 2025—covering reasoning models, coding agents like Claude Code, image generation advances, and the rise of competitive Chinese AI models.</description>
-      <pubDate>Tue, 31 Dec 2025 00:00:00 GMT</pubDate>
+      <description>Simon Willison&#x27;s comprehensive annual review of major developments in large language models throughout 2025—covering reasoning models, coding agents like Claude Code, image generation advances, and the rise of competitive Chinese AI models.</description>
+      <pubDate>Wed, 31 Dec 2025 00:00:00 GMT</pubDate>
       <guid>https://simonwillison.net/2025/Dec/31/the-year-in-llms/</guid>
     </item>
 
