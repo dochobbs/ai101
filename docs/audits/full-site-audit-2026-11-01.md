@@ -1,8 +1,8 @@
 # Full site audit and second content pass — November 1, 2026
 
-**Prepared for owner review as v1.16. Not a publication receipt.** The baseline
-was live v1.15, repository main `c663696`. The deployed content receipt remains
-unchanged in `latest.json`; proposed changes are recorded separately.
+**v1.16 merged and publication verified after owner approval.** The audit below
+records the pre-merge findings against live v1.15 / main `c663696`. See the
+publication addendum for deployment and live-file evidence.
 
 ## Coverage and evidence
 
@@ -30,8 +30,9 @@ unchanged in `latest.json`; proposed changes are recorded separately.
 ## Findings and proposed repairs
 
 P1 means high consequence for privacy or regulatory interpretation. P2 means
-material usability, freshness or maintenance risk. All repairs below are in the
-review branch; they have not been verified in production.
+material usability, freshness or maintenance risk. Repairs below were prepared in the
+review branch and subsequently merged. Interactive checks used the local proposed
+site; the publication addendum verifies that deployed files match that source.
 
 | Priority | Finding | Proposed disposition |
 | --- | --- | --- |
@@ -134,6 +135,15 @@ The HHS FAQ and remaining publisher references are linked at the corrected text.
    research/vendor claim were not independently revalidated. Keep dated history
    distinct from current advice; this report does not provide blanket legal or
    clinical approval.
-6. Production must be checked after an owner-approved merge. The v1.16 footer,
-   changelog and pending-review record in this branch are proposed release
-   content, not evidence that publication already occurred.
+6. Publication was subsequently verified after owner approval, as recorded below.
+   Future release preparation must continue to distinguish review, merge and
+   observed production state.
+
+## Publication addendum
+
+The owner authorized push/merge. [PR #15](https://github.com/dochobbs/ai101/pull/15)
+merged at 2026-11-02 02:02:37 UTC (November 1 in America/Chicago), commit
+`d3f45ac4375897b01d3a6ad2806e6728bece910b`. The [Pages deployment](https://github.com/dochobbs/ai101/actions/runs/41375573848) succeeded.
+At 2026-11-02T02:03:29.256306+00:00, all 30 live root HTML responses plus CSS, navigation JavaScript and RSS
+matched repository bytes exactly (33/33). [Hashes and observations](assets/2026-11-01/deployment-v1.16.json).
+The publication receipt now records v1.16; earlier research/cloud-access and broader audit limitations remain open.

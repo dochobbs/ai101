@@ -1,4 +1,5 @@
 import datetime as dt
+import json
 import unittest
 from unittest.mock import patch
 import weekly_maintenance as audit
@@ -34,12 +35,14 @@ class MaintenanceTest(unittest.TestCase):
         self.assertNotIn('\nold\n', updated)
 
     def test_historical_changelog_version_cannot_clear_a_different_release(self):
-        with patch.object(audit, 'fetch', return_value={'status': 200, 'body': '<h2>v1.15</h2><footer>v1.16 · 2026</footer>'}):
+        version = json.loads((audit.ROOT / "docs/audits/latest.json").read_text())["version"]
+        with patch.object(audit, 'fetch', return_value={'status': 200, 'body': f'<h2>{version}</h2><footer>v99.0 · 2026</footer>'}):
             report = audit.check(dt.date(2026, 11, 1), check_live=True)
-        self.assertTrue(any('live footer release is v1.16' in p for p in report['problems']))
+        self.assertTrue(any('live footer release is v99.0' in p for p in report['problems']))
 
     def test_footer_release_matches_publication_receipt(self):
-        with patch.object(audit, 'fetch', return_value={'status': 200, 'body': '<h2>v1.14</h2><footer>v1.15 · 2026</footer>'}):
+        version = json.loads((audit.ROOT / "docs/audits/latest.json").read_text())["version"]
+        with patch.object(audit, 'fetch', return_value={'status': 200, 'body': f'<h2>v0.0</h2><footer>{version} · 2026</footer>'}):
             report = audit.check(dt.date(2026, 11, 1), check_live=True)
         self.assertFalse(any('Deployment UNVERIFIED' in p for p in report['problems']))
 

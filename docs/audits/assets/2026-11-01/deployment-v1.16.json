@@ -1,0 +1,206 @@
+{
+  "verified_at_utc": "2026-11-02T02:03:29.256306+00:00",
+  "version": "v1.16",
+  "deployed_content_commit": "d3f45ac4375897b01d3a6ad2806e6728bece910b",
+  "deployment": "https://github.com/dochobbs/ai101/actions/runs/41375573848",
+  "files": [
+    {
+      "path": "30-days.html",
+      "status": 200,
+      "matches_source": true,
+      "sha256": "ea4c1e3a03b9f70194c9fdaadcaeba20f9f3026f25f4c3ca3c656fe9dc8a8ba6"
+    },
+    {
+      "path": "about.html",
+      "status": 200,
+      "matches_source": true,
+      "sha256": "2a951e753639249493672c4ae121f6da42455d09177c10f08d7f7dd9ec6a52d6"
+    },
+    {
+      "path": "ai-news.html",
+      "status": 200,
+      "matches_source": true,
+      "sha256": "5a63af268e3cdc93a4cc83f9c377728d11b203e076dabdab28fe93d142c1c2fe"
+    },
+    {
+      "path": "ai-search.html",
+      "status": 200,
+      "matches_source": true,
+      "sha256": "9fd984dcd5dea3a188532ef9c3ae89bc622b31e9b33bb9608d0b3bd877f17ad8"
+    },
+    {
+      "path": "ai-tools-mcp.html",
+      "status": 200,
+      "matches_source": true,
+      "sha256": "ddec84bc85704b9e00c0e661091df2fdf4c50579dbe98b9d1218846d1e75007c"
+    },
+    {
+      "path": "ambient-ai.html",
+      "status": 200,
+      "matches_source": true,
+      "sha256": "b5709ab28ef11ce5e13ec79b5417873bd067acd13fb008d8a7a56c637afbe0ea"
+    },
+    {
+      "path": "bias-ethics.html",
+      "status": 200,
+      "matches_source": true,
+      "sha256": "d5f2f32568359a7246f32ab580f1bf0095d761b0684a52bd709ed477761db371"
+    },
+    {
+      "path": "big-three.html",
+      "status": 200,
+      "matches_source": true,
+      "sha256": "e9d40924ef8a8ffc8a55250ee4e0fd9d4bf7c98bf94d360fae81f197283c4acc"
+    },
+    {
+      "path": "claude-code.html",
+      "status": 200,
+      "matches_source": true,
+      "sha256": "0e5f51de2b3e569a194ce68fa97bc1d125f3e0debf1b2cacb8ba133c61289d55"
+    },
+    {
+      "path": "clinical-decision-support.html",
+      "status": 200,
+      "matches_source": true,
+      "sha256": "bbc7243d94977f4c1682432e734af3724ab21f1608d174d0cc98df589d8ecefb"
+    },
+    {
+      "path": "contribute.html",
+      "status": 200,
+      "matches_source": true,
+      "sha256": "fc6980956708279ddd8d17da1fe98a2e53013bd2090def114915db84399e193f"
+    },
+    {
+      "path": "environmental-footprint.html",
+      "status": 200,
+      "matches_source": true,
+      "sha256": "dbf0533300fba939410846bf615932168b894b9ee9e73d8a228ab6e1ba993549"
+    },
+    {
+      "path": "everyday-ai.html",
+      "status": 200,
+      "matches_source": true,
+      "sha256": "254817c4ee96e8fd1564650c5ed14cd4503e1672161a33cfbfd9c2a7321a9ed2"
+    },
+    {
+      "path": "github.html",
+      "status": 200,
+      "matches_source": true,
+      "sha256": "b7a11b0a00ad9039028b87c7fa86f61d9bd74be8eece4e1b82dea44811a83aaa"
+    },
+    {
+      "path": "glossary.html",
+      "status": 200,
+      "matches_source": true,
+      "sha256": "e7062ecc6a8ef1990cfe3ce9b0e7f3cf6df8dda60d8f29f2fd13c6625d8e676c"
+    },
+    {
+      "path": "image-video.html",
+      "status": 200,
+      "matches_source": true,
+      "sha256": "57c0e2fa9dc6a35183a236db1b342c1dee6a9362abb37f694af8fdf7ca209897"
+    },
+    {
+      "path": "index.html",
+      "status": 200,
+      "matches_source": true,
+      "sha256": "a58ae1043e743203b034b4c40a6c2d495b39a3762136d8098c9ed2cfe8767f9f"
+    },
+    {
+      "path": "llm-thinking.html",
+      "status": 200,
+      "matches_source": true,
+      "sha256": "08896e5a5a0d1db9eabb4136c55fa3fc1b36e96f93dec7a8913fc47bf4014948"
+    },
+    {
+      "path": "local-models.html",
+      "status": 200,
+      "matches_source": true,
+      "sha256": "3425ba658bf61b127bf23107066871feacdf91e0771919bfb2c5a782cfb44e3f"
+    },
+    {
+      "path": "medical-learners.html",
+      "status": 200,
+      "matches_source": true,
+      "sha256": "6df526a4774ca463e6be03299cfa53a3edb1395e25a8c2c13a302fa566b04e10"
+    },
+    {
+      "path": "openclaw.html",
+      "status": 200,
+      "matches_source": true,
+      "sha256": "8abcbe24734e179cf289656506e1d511db460cee1899d0e426ce472501d64906"
+    },
+    {
+      "path": "patients-ai.html",
+      "status": 200,
+      "matches_source": true,
+      "sha256": "e9d9ac7500a89e8aa0e7f3ea016b01a08d7be979cdce3fa2853f199e2dedea83"
+    },
+    {
+      "path": "phi-hipaa.html",
+      "status": 200,
+      "matches_source": true,
+      "sha256": "54d6c78d90803ce214c3a3f56d3611af595455068b8e05b02be4913a21ed3b08"
+    },
+    {
+      "path": "prompting-exercise.html",
+      "status": 200,
+      "matches_source": true,
+      "sha256": "112f6e61d316a80e2271e7408ab94ecc570af8744064fc888c064d9d6c00ebdf"
+    },
+    {
+      "path": "prompting.html",
+      "status": 200,
+      "matches_source": true,
+      "sha256": "91a58f478f4be59b345dca086608238b6b2902f6e809b1dddbd5decfc7048a94"
+    },
+    {
+      "path": "resources.html",
+      "status": 200,
+      "matches_source": true,
+      "sha256": "a958ea3e378fabb0b6ea010bbf4f5e692ccc7731795ad365400041f6a1b1b00b"
+    },
+    {
+      "path": "start-here.html",
+      "status": 200,
+      "matches_source": true,
+      "sha256": "dd1f7a4260865c213d7fe90d70cdfc23fa1be902d9f46536db28058852423fa9"
+    },
+    {
+      "path": "updates.html",
+      "status": 200,
+      "matches_source": true,
+      "sha256": "c5f0881cb80afee7376df5f3092c30df52a8515c4d84db1b90fd0efdfc21a9b6"
+    },
+    {
+      "path": "vibe-coding.html",
+      "status": 200,
+      "matches_source": true,
+      "sha256": "8949e826d58384671412e660323a858162fbc730afb103cfa807261c92941ca3"
+    },
+    {
+      "path": "whats-next.html",
+      "status": 200,
+      "matches_source": true,
+      "sha256": "247ac3b526d73470ea06e414ba76cff62e6bd8cf5f1a5abf6ffba7e79c8e548e"
+    },
+    {
+      "path": "styles.css",
+      "status": 200,
+      "matches_source": true,
+      "sha256": "38d1fcd47b9ac7e2526dbff4f4e3acb493ce0e51a362d7abaf1119eb707f8ed6"
+    },
+    {
+      "path": "site-nav.js",
+      "status": 200,
+      "matches_source": true,
+      "sha256": "aad5c22f627b14c3a4ec8d48a0b41ed223845902c110ae5e632dcd4471e04cc3"
+    },
+    {
+      "path": "ai-news-feed.xml",
+      "status": 200,
+      "matches_source": true,
+      "sha256": "aeaa60cb89fea59af5804a48764c2d17cf708dde48011fa07ed05b8eff8e3c38"
+    }
+  ]
+}

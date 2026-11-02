@@ -1,8 +1,8 @@
 {
   "content_reviewed_at": "2026-11-01",
   "content_published_at": "2026-11-01",
-  "version": "v1.15",
-  "review_scope": "Primary-source catch-up for the previously flagged model/product sections and selected September-October clinician-facing developments; not a complete legal or clinical revalidation of the site.",
+  "version": "v1.16",
+  "review_scope": "Full technical pass across all 30 root pages, desktop/mobile browser checks, and risk-prioritized primary-source corrections and eight additional news items; not blanket clinical, legal, privacy or accessibility certification.",
   "publication_policy": "Prepare future Sunday content updates as a pull request for owner review.",
   "primary_sources": [
     "https://developers.openai.com/api/docs/models",
@@ -54,13 +54,16 @@
     }
   ],
   "publication_verified": true,
-  "deployed_content_commit": "9ab8102f817541ef4aa13a79c36141a91e1adcfa",
-  "deployment_receipt": "https://github.com/dochobbs/ai101/actions/runs/41337667594",
-  "pending_review": {
+  "deployed_content_commit": "d3f45ac4375897b01d3a6ad2806e6728bece910b",
+  "deployment_receipt": "https://github.com/dochobbs/ai101/actions/runs/41375573848",
+  "publication_verified_at_utc": "2026-11-02T02:03:29.256306+00:00",
+  "latest_full_site_audit": {
     "version": "v1.16",
     "prepared_at": "2026-11-01",
-    "publication_verified": false,
+    "publication_verified": true,
     "report": "docs/audits/full-site-audit-2026-11-01.md",
-    "additional_news_items": 8
+    "additional_news_items": 8,
+    "merged_pr": "https://github.com/dochobbs/ai101/pull/15",
+    "deployment_verification": "docs/audits/assets/2026-11-01/deployment-v1.16.json"
   }
 }

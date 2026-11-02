@@ -65,7 +65,7 @@ tools). Serves on `localhost:5050`.
 - Pure HTML/CSS — no framework, no build step
 - Google Fonts + Lucide loaded via CDN
 - All internal links relative — works locally or hosted
-- Published version: **v1.15 · 2026**; this review branch prepares **v1.16** (bumped each release; the footer version on
+- Published version: **v1.16 · 2026** (bumped each release; the footer version on
   every page links to [updates.html](updates.html))
 - Deployment: GitHub Pages via [dochobbs/ai101](https://github.com/dochobbs/ai101)
 - Custom domain: ai101.health (CNAME configured)
@@ -94,9 +94,9 @@ in [archive/](archive/) and are not linked from any live page.
   [recovery report](docs/audits/2026-11-01.md) records fixes and what still needs
   a live research-run check. A platform Succeeded badge is not publication proof.
 - **Version bumps** happen in the footer of every page at release time
-  (currently `v1.15 · 2026`). One-liner:
+  (currently `v1.16 · 2026`). One-liner:
   `perl -pi -e 's/v1\.OLD · 2026/v1.NEW · 2026/g' *.html`
 - **ai-news.html** is the lightweight running log; `updates.html` is the
   formal changelog for readers.
 
-The second November 1 pass is documented in [the full site audit](docs/audits/full-site-audit-2026-11-01.md). Its prepared changes are not a deployment receipt. `scripts/sync_news_feed.py` maintains the complete RSS mirror from canonical news HTML.
+The second November 1 pass is documented in [the full site audit](docs/audits/full-site-audit-2026-11-01.md). PR #15 was owner-approved and merged; the live file hashes and deployment receipt are recorded in the audit addendum. `scripts/sync_news_feed.py` maintains the complete RSS mirror from canonical news HTML.
