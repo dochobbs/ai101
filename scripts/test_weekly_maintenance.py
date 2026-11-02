@@ -33,6 +33,16 @@ class MaintenanceTest(unittest.TestCase):
         self.assertIn('Owner note', updated)
         self.assertNotIn('\nold\n', updated)
 
+    def test_historical_changelog_version_cannot_clear_a_different_release(self):
+        with patch.object(audit, 'fetch', return_value={'status': 200, 'body': '<h2>v1.15</h2><footer>v1.16 · 2026</footer>'}):
+            report = audit.check(dt.date(2026, 11, 1), check_live=True)
+        self.assertTrue(any('live footer release is v1.16' in p for p in report['problems']))
+
+    def test_footer_release_matches_publication_receipt(self):
+        with patch.object(audit, 'fetch', return_value={'status': 200, 'body': '<h2>v1.14</h2><footer>v1.15 · 2026</footer>'}):
+            report = audit.check(dt.date(2026, 11, 1), check_live=True)
+        self.assertFalse(any('Deployment UNVERIFIED' in p for p in report['problems']))
+
 
 if __name__ == '__main__':
     unittest.main()

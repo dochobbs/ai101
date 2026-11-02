@@ -25,6 +25,7 @@
   <script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "aee6310cb71e4b55b02d4e681c4eb7ab"}'></script>
 </head>
 <body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
 
   <nav class="nav">
     <div class="nav-inner">
@@ -32,10 +33,10 @@
         <span class="nav-badge"><span class="b-ai">AI</span><span class="b-num">101</span></span>
         <span class="nav-title">A Self-Paced Guide to AI in Medicine</span>
       </a>
-      <button class="nav-toggle" aria-label="Toggle menu">
-        <i data-lucide="menu"></i>
+      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="site-menu">
+        <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 5h16M4 12h16M4 19h16"/></svg>
       </button>
-      <div class="nav-links">
+      <div class="nav-links" id="site-menu">
         <a href="index.html" class="nav-link">Topics</a>
         <a href="resources.html" class="nav-link">Resources</a>
         <a href="about.html" class="nav-link">About</a>
@@ -45,7 +46,7 @@
     </div>
   </nav>
 
-  <main class="main">
+  <main id="main-content" tabindex="-1" class="main">
     <article class="content content-wide">
 
       <header class="unit-header">
@@ -70,7 +71,7 @@
       <div class="callout callout-warning">
         <div class="callout-title">Important Disclaimer</div>
         <p class="mb-0">
-          No current open-source medical model is validated for clinical decision-making.
+          The developer checkpoints listed here do not establish validation for your clinical use case.
           This guide is for educational and development purposes. Nothing here constitutes
           medical, legal, or compliance advice. Consult appropriate professionals before
           deploying AI systems in clinical settings.
@@ -78,6 +79,11 @@
       </div>
 
       <!-- Why Local Models Matter -->
+      <div class="callout callout-info">
+        <div class="callout-title">November 2026 Check: GLM-5.3-Flash Weights Are Available</div>
+        <p>Z.ai released <strong>GLM-5.3-Flash on August 26</strong>, and its publisher-hosted repository contains weights and an MIT license. This supersedes the impression that GLM-5.2 is the only locally available 5.x option. The full GLM-5.3 and GLM-5.3-Flash are distinct releases; do not transfer a promised weights date from one to the other. Flash is still a 320B-parameter model, not an ordinary laptop download. A shipped license establishes availability, not clinical validation or a HIPAA-compliant deployment. <a href="https://z.ai/blog/glm-5.3-flash" target="_blank" rel="noopener">[Release]</a> <a href="https://huggingface.co/zai-org/GLM-5.3-Flash" target="_blank" rel="noopener">[Weights and license]</a></p>
+      </div>
+
       <h2>Why Local Models Matter for Healthcare</h2>
 
       <p>
@@ -157,9 +163,14 @@
       <h3>MedGemma</h3>
 
       <p>
-        Released by Google DeepMind in May 2025, MedGemma represents the current state-of-the-art
-        for open medical models. Built on Google's Gemma 3 architecture, these models underwent
-        continued pre-training on diverse medical data while preserving general capabilities.
+        Google&rsquo;s MedGemma family is a set of open medical developer checkpoints, not a
+        clinically validated finished application. The May 2025 release was followed by
+        <strong>MedGemma 1.5 4B on January 13, 2026</strong>, with expanded support for
+        volumetric CT/MRI, whole-slide pathology, longitudinal imaging, and medical-document
+        understanding. Google also provides MedASR for medical dictation. Match the checkpoint
+        and evaluation to your task instead of inferring clinical readiness from a family name.
+        <a href="https://developers.google.com/health-ai-developer-foundations/medgemma/model-card" target="_blank" rel="noopener">[Model card]</a>
+        <a href="https://research.google/blog/next-generation-medical-image-interpretation-with-medgemma-15-and-medical-speech-to-text-with-medasr/" target="_blank" rel="noopener">[Release]</a>
       </p>
 
       <div class="table-responsive">
@@ -174,7 +185,7 @@
           </thead>
           <tbody>
             <tr>
-              <td>MedGemma 4B Multimodal</td>
+              <td>MedGemma 1.5 4B Multimodal</td>
               <td>4 billion</td>
               <td>Text + Images</td>
               <td>Radiology, dermatology, ophthalmology, histopathology</td>
@@ -311,10 +322,8 @@
       <div class="callout callout-info">
         <div class="callout-title">June 2026 Update: No MedGemma 2 &mdash; the Open-Weight Action Is Elsewhere</div>
         <p>
-          Google I/O 2026 (May 19) shipped Gemini 3.5 Flash and Gemini Omni Flash on the
-          frontier side, but no MedGemma successor materialized in the weeks after I/O.
-          The 2025 MedGemma models above remain Google&rsquo;s current open medical line.
-        </p>
+        The original 2025 family is no longer the whole story: MedGemma 1.5 4B shipped in January 2026. Its model card still requires use-case-specific validation and does not establish safe autonomous clinical use. The historical benchmark figures above refer to the original variants; they are not an evaluation of a deployed local application.
+      </p>
         <p>
           The open-weight headline came from China. <strong>GLM-5.2</strong> (Zhipu AI,
           June 13) was the first open model to genuinely close the gap on frontier closed-source
@@ -391,8 +400,7 @@
           not been published. The rule from the Kimi item above applies in a new form:
           <strong>read the license that shipped, and count only the weights that
           shipped</strong>. Until they land, GLM-5.3 is a hosted Chinese API with no BAA&mdash;the
-          same PHI posture as Kimi&rsquo;s hosted API&mdash;and <strong>GLM-5.2 remains the
-          current open-weight release in this family</strong>.
+          same PHI posture as Kimi&rsquo;s hosted API&mdash;and <strong>GLM-5.2 was the available full-size release at that August checkpoint</strong>. See the November note above for the separately released GLM-5.3-Flash; the original promise alone does not establish full GLM-5.3 weight availability.
           <a href="https://z.ai/blog/glm-5.3" target="_blank" rel="noopener">[Source]</a>
         </p>
       </div>
@@ -936,7 +944,7 @@ ollama run phi3 --num-predict 500</code></pre>
       <div class="callout callout-warning">
         <div class="callout-title">These Models Are Not Clinical Grade</div>
         <p class="mb-0">
-          No current open-source medical model is validated for clinical decision-making.
+          The listed model cards do not establish validation for your clinical use case.
           MedGemma's documentation explicitly states it requires "appropriate validation,
           adaptation and/or meaningful modification" before any clinical use. Meditron's
           team "recommends against using Meditron in medical applications without extensive
@@ -1099,25 +1107,18 @@ ollama run phi3 --num-predict 500</code></pre>
       <div>
         <strong>AI 101</strong> · A Self-Paced Guide to AI in Medicine
       </div>
-      <div><a href="updates.html">v1.15 · 2026</a></div>
+      <div><a href="updates.html">v1.16 · 2026</a></div>
     </div>
   </footer>
 
   <script>
-    lucide.createIcons();
+    if (window.lucide) window.lucide.createIcons();
 
-    // Mobile nav toggle
-    const navToggle = document.querySelector('.nav-toggle');
-    const navLinks = document.querySelector('.nav-links');
-    if (navToggle) {
-      navToggle.addEventListener('click', () => {
-        navLinks.classList.toggle('nav-open');
-        navToggle.classList.toggle('nav-toggle-active');
-      });
-    }
+
   </script>
 
   <script src="https://studio.pickaxe.co/api/embed/bundle.js" defer></script>
 
+  <script src="site-nav.js"></script>
 </body>
 </html>

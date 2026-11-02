@@ -89,3 +89,7 @@ gh run list --repo dochobbs/ai101 --workflow weekly-maintenance.yml --limit 3
 ```
 
 Do not infer deployed state from a local commit or a completed research run.
+
+News HTML is canonical. After editing stories, run `python3 scripts/sync_news_feed.py`, then `python3 scripts/sync_news_feed.py --check`. Preserve published dates and stable story identifiers; do not invent a day for month-only source dates. The maintenance check reports any HTML/RSS drift.
+
+After an approved release is merged, verify the deployed footer and content, then update the publication receipt in `docs/audits/latest.json`. The independent checker compares the actual footer release, not historical changelog headings; a pending review record never clears publication.

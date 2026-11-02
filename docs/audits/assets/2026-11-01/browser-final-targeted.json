@@ -1,0 +1,43 @@
+[
+  {
+    "name": "claude-code.html",
+    "device": "mobile",
+    "width": 390,
+    "scrollWidth": 390,
+    "firstTab": "Skip to content",
+    "skipFocused": true
+  },
+  {
+    "name": "github.html",
+    "device": "mobile",
+    "width": 390,
+    "scrollWidth": 390,
+    "firstTab": "Skip to content",
+    "skipFocused": true
+  },
+  {
+    "name": "ai-search.html",
+    "device": "mobile",
+    "width": 390,
+    "scrollWidth": 390,
+    "firstTab": "Skip to content",
+    "skipFocused": true
+  },
+  {
+    "name": "contribute.html",
+    "device": "mobile",
+    "width": 390,
+    "scrollWidth": 390,
+    "firstTab": "Skip to content",
+    "skipFocused": true,
+    "frameTitle": "AI 101 resource contribution form"
+  },
+  {
+    "name": "index.html",
+    "device": "mobile",
+    "width": 390,
+    "scrollWidth": 390,
+    "firstTab": "Skip to content",
+    "skipFocused": true
+  }
+]

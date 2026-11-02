@@ -25,6 +25,7 @@
   <script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "aee6310cb71e4b55b02d4e681c4eb7ab"}'></script>
 </head>
 <body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
 
   <nav class="nav">
     <div class="nav-inner">
@@ -32,10 +33,10 @@
         <span class="nav-badge"><span class="b-ai">AI</span><span class="b-num">101</span></span>
         <span class="nav-title">A Self-Paced Guide to AI in Medicine</span>
       </a>
-      <button class="nav-toggle" aria-label="Toggle menu">
-        <i data-lucide="menu"></i>
+      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="site-menu">
+        <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 5h16M4 12h16M4 19h16"/></svg>
       </button>
-      <div class="nav-links">
+      <div class="nav-links" id="site-menu">
         <a href="index.html" class="nav-link">Topics</a>
         <a href="resources.html" class="nav-link">Resources</a>
         <a href="about.html" class="nav-link">About</a>
@@ -45,7 +46,7 @@
     </div>
   </nav>
 
-  <main class="main">
+  <main id="main-content" tabindex="-1" class="main">
     <article class="content content-wide">
 
       <header class="unit-header">
@@ -1291,8 +1292,7 @@
       <div class="callout callout-info">
         <div class="callout-title">July 2026 Update: A Patient-Facing LLM Clears the FDA &mdash; Narrowly</div>
         <p>
-          <strong>UpDoc is the first device where a patient-facing LLM is the active clinical
-          component.</strong> The FDA cleared the device it lists as <strong>UpDoc</strong> under
+          <strong>UpDoc is a cleared, provider-directed insulin-management device with a conversational interface.</strong> The FDA cleared the device it lists as <strong>UpDoc</strong> under
           <a href="https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfpmn/pmn.cfm?ID=K253281" target="_blank" rel="noopener">510(k) K253281</a>
           on <strong>December 23, 2025</strong> (submission received September 29, 2025). The
           company announced the product, as UpDoc V1.0, on June 25, 2026&mdash;which is the date
@@ -1314,13 +1314,14 @@
           </li>
         </ul>
         <p>
-          The regulatory first is real: this is the first time a language model talking directly to
-          a patient has been the active clinical component of a Software as a Medical Device, and
-          it opens a pathway others will follow. But what cleared is a tightly scoped insulin
-          titration calculator with a language-model front end&mdash;not a general medical chatbot,
-          and not a regulator&rsquo;s blessing for one.
-          <a href="https://www.mcguirewoods.com/client-resources/alerts/2026/7/a-pathway-for-clinical-ai-developers-opens-fda-clears-first-software-as-a-medical-device-with-patient-facing-llm/" target="_blank" rel="noopener">[Regulatory analysis]</a>
-        </p>
+        The company described UpDoc as the first cleared SaMD using a patient-facing LLM.
+        The FDA records establish the narrower fact: provider-specified insulin management
+        for adults with type 2 diabetes, with separate conversational and clinical services.
+        They do not establish a general authorization for an autonomous medical chatbot or
+        independently substantiate every part of the company&rsquo;s &ldquo;first&rdquo; claim.
+        <a href="https://www.accessdata.fda.gov/cdrh_docs/pdf25/K253281.pdf" target="_blank" rel="noopener">[FDA clearance and indications]</a>
+        <a href="https://www.accessdata.fda.gov/cdrh_docs/reviews/K253281.pdf" target="_blank" rel="noopener">[FDA decision summary]</a>
+      </p>
         <p>
           <strong>The regulatory follow-on arrived August 18, 2026.</strong> The FDA&rsquo;s
           Digital Health Center of Excellence issued its first framework proposal specific to
@@ -1723,22 +1724,17 @@
   <footer class="footer">
     <div class="footer-inner">
       <div><strong>AI 101</strong> · A Self-Paced Guide to AI in Medicine</div>
-      <div><a href="updates.html">v1.15 · 2026</a></div>
+      <div><a href="updates.html">v1.16 · 2026</a></div>
     </div>
   </footer>
 
   <script>
-    lucide.createIcons();
-    const navToggle = document.querySelector('.nav-toggle');
-    const navLinks = document.querySelector('.nav-links');
-    if (navToggle) {
-      navToggle.addEventListener('click', () => {
-        navLinks.classList.toggle('nav-open');
-      });
-    }
+    if (window.lucide) window.lucide.createIcons();
+
   </script>
 
   <script src="https://studio.pickaxe.co/api/embed/bundle.js" defer></script>
 
+  <script src="site-nav.js"></script>
 </body>
 </html>

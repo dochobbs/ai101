@@ -1,0 +1,623 @@
+{
+  "baseline": "v1.15 / c663696",
+  "date": "2026-11-01",
+  "pages": {
+    "30-days.html": {
+      "status": 200,
+      "lang": "en",
+      "canonical": [
+        "https://ai101.health/claude-code.html"
+      ],
+      "missing_alt": [],
+      "duplicate_ids": [],
+      "same_as_local": true
+    },
+    "about.html": {
+      "status": 200,
+      "lang": "en",
+      "canonical": [
+        "https://ai101.health/about.html"
+      ],
+      "missing_alt": [],
+      "duplicate_ids": [],
+      "same_as_local": true
+    },
+    "ai-news.html": {
+      "status": 200,
+      "lang": "en",
+      "canonical": [
+        "https://ai101.health/ai-news.html"
+      ],
+      "missing_alt": [],
+      "duplicate_ids": [],
+      "same_as_local": true
+    },
+    "ai-search.html": {
+      "status": 200,
+      "lang": "en",
+      "canonical": [
+        "https://ai101.health/ai-search.html"
+      ],
+      "missing_alt": [],
+      "duplicate_ids": [],
+      "same_as_local": true
+    },
+    "ai-tools-mcp.html": {
+      "status": 200,
+      "lang": "en",
+      "canonical": [
+        "https://ai101.health/ai-tools-mcp.html"
+      ],
+      "missing_alt": [],
+      "duplicate_ids": [],
+      "same_as_local": true
+    },
+    "ambient-ai.html": {
+      "status": 200,
+      "lang": "en",
+      "canonical": [
+        "https://ai101.health/ambient-ai.html"
+      ],
+      "missing_alt": [],
+      "duplicate_ids": [],
+      "same_as_local": true
+    },
+    "bias-ethics.html": {
+      "status": 200,
+      "lang": "en",
+      "canonical": [
+        "https://ai101.health/bias-ethics.html"
+      ],
+      "missing_alt": [],
+      "duplicate_ids": [],
+      "same_as_local": true
+    },
+    "big-three.html": {
+      "status": 200,
+      "lang": "en",
+      "canonical": [
+        "https://ai101.health/big-three.html"
+      ],
+      "missing_alt": [],
+      "duplicate_ids": [],
+      "same_as_local": true
+    },
+    "claude-code.html": {
+      "status": 200,
+      "lang": "en",
+      "canonical": [
+        "https://ai101.health/claude-code.html"
+      ],
+      "missing_alt": [],
+      "duplicate_ids": [],
+      "same_as_local": true
+    },
+    "clinical-decision-support.html": {
+      "status": 200,
+      "lang": "en",
+      "canonical": [
+        "https://ai101.health/clinical-decision-support.html"
+      ],
+      "missing_alt": [],
+      "duplicate_ids": [],
+      "same_as_local": true
+    },
+    "contribute.html": {
+      "status": 200,
+      "lang": "en",
+      "canonical": [
+        "https://ai101.health/contribute.html"
+      ],
+      "missing_alt": [],
+      "duplicate_ids": [],
+      "same_as_local": true
+    },
+    "environmental-footprint.html": {
+      "status": 200,
+      "lang": "en",
+      "canonical": [
+        "https://ai101.health/environmental-footprint.html"
+      ],
+      "missing_alt": [],
+      "duplicate_ids": [],
+      "same_as_local": true
+    },
+    "everyday-ai.html": {
+      "status": 200,
+      "lang": "en",
+      "canonical": [
+        "https://ai101.health/everyday-ai.html"
+      ],
+      "missing_alt": [],
+      "duplicate_ids": [],
+      "same_as_local": true
+    },
+    "github.html": {
+      "status": 200,
+      "lang": "en",
+      "canonical": [
+        "https://ai101.health/github.html"
+      ],
+      "missing_alt": [],
+      "duplicate_ids": [],
+      "same_as_local": true
+    },
+    "glossary.html": {
+      "status": 200,
+      "lang": "en",
+      "canonical": [
+        "https://ai101.health/glossary.html"
+      ],
+      "missing_alt": [],
+      "duplicate_ids": [],
+      "same_as_local": true
+    },
+    "image-video.html": {
+      "status": 200,
+      "lang": "en",
+      "canonical": [
+        "https://ai101.health/image-video.html"
+      ],
+      "missing_alt": [],
+      "duplicate_ids": [],
+      "same_as_local": true
+    },
+    "index.html": {
+      "status": 200,
+      "lang": "en",
+      "canonical": [
+        "https://ai101.health/"
+      ],
+      "missing_alt": [],
+      "duplicate_ids": [],
+      "same_as_local": true
+    },
+    "llm-thinking.html": {
+      "status": 200,
+      "lang": "en",
+      "canonical": [
+        "https://ai101.health/llm-thinking.html"
+      ],
+      "missing_alt": [],
+      "duplicate_ids": [],
+      "same_as_local": true
+    },
+    "local-models.html": {
+      "status": 200,
+      "lang": "en",
+      "canonical": [
+        "https://ai101.health/local-models.html"
+      ],
+      "missing_alt": [],
+      "duplicate_ids": [],
+      "same_as_local": true
+    },
+    "medical-learners.html": {
+      "status": 200,
+      "lang": "en",
+      "canonical": [
+        "https://ai101.health/medical-learners.html"
+      ],
+      "missing_alt": [],
+      "duplicate_ids": [],
+      "same_as_local": true
+    },
+    "openclaw.html": {
+      "status": 200,
+      "lang": "en",
+      "canonical": [
+        "https://ai101.health/openclaw.html"
+      ],
+      "missing_alt": [],
+      "duplicate_ids": [],
+      "same_as_local": true
+    },
+    "patients-ai.html": {
+      "status": 200,
+      "lang": "en",
+      "canonical": [
+        "https://ai101.health/patients-ai.html"
+      ],
+      "missing_alt": [],
+      "duplicate_ids": [],
+      "same_as_local": true
+    },
+    "phi-hipaa.html": {
+      "status": 200,
+      "lang": "en",
+      "canonical": [
+        "https://ai101.health/phi-hipaa.html"
+      ],
+      "missing_alt": [],
+      "duplicate_ids": [],
+      "same_as_local": true
+    },
+    "prompting-exercise.html": {
+      "status": 200,
+      "lang": "en",
+      "canonical": [
+        "https://ai101.health/prompting-exercise.html"
+      ],
+      "missing_alt": [],
+      "duplicate_ids": [],
+      "same_as_local": true
+    },
+    "prompting.html": {
+      "status": 200,
+      "lang": "en",
+      "canonical": [
+        "https://ai101.health/prompting.html"
+      ],
+      "missing_alt": [],
+      "duplicate_ids": [],
+      "same_as_local": true
+    },
+    "resources.html": {
+      "status": 200,
+      "lang": "en",
+      "canonical": [
+        "https://ai101.health/resources.html"
+      ],
+      "missing_alt": [],
+      "duplicate_ids": [],
+      "same_as_local": true
+    },
+    "start-here.html": {
+      "status": 200,
+      "lang": "en",
+      "canonical": [
+        "https://ai101.health/start-here.html"
+      ],
+      "missing_alt": [],
+      "duplicate_ids": [],
+      "same_as_local": true
+    },
+    "updates.html": {
+      "status": 200,
+      "lang": "en",
+      "canonical": [
+        "https://ai101.health/updates.html"
+      ],
+      "missing_alt": [],
+      "duplicate_ids": [],
+      "same_as_local": true
+    },
+    "vibe-coding.html": {
+      "status": 200,
+      "lang": "en",
+      "canonical": [
+        "https://ai101.health/vibe-coding.html"
+      ],
+      "missing_alt": [],
+      "duplicate_ids": [],
+      "same_as_local": true
+    },
+    "whats-next.html": {
+      "status": 200,
+      "lang": "en",
+      "canonical": [
+        "https://ai101.health/whats-next.html"
+      ],
+      "missing_alt": [],
+      "duplicate_ids": [],
+      "same_as_local": true
+    }
+  },
+  "internal_issues": [],
+  "external_status_counts": {
+    "200": 484,
+    "999": 3,
+    "403": 52,
+    "404": 7,
+    "None": 7,
+    "202": 4,
+    "307": 1,
+    "429": 2
+  },
+  "external_unverified": [
+    {
+      "url": "https://www.linkedin.com/in/michaelhobbsmd/",
+      "status": 999
+    },
+    {
+      "url": "https://www.linkedin.com/in/davidhardinmd/",
+      "status": 999
+    },
+    {
+      "url": "https://www.linkedin.com/in/graham-walker-md/",
+      "status": 999
+    },
+    {
+      "url": "https://academic.oup.com/jamia/advance-article/doi/10.1093/jamia/ocag177/8979832",
+      "status": 403
+    },
+    {
+      "url": "https://www.auntminnie.com/imaging-informatics/artificial-intelligence/article/15830219/radiology-dominates-thirty-years-of-fda-ai-device-approvals",
+      "status": 403
+    },
+    {
+      "url": "https://ai.nejm.org/doi/full/10.1056/AIoa2500945",
+      "status": 403
+    },
+    {
+      "url": "https://openai.com/index/chatgpt-images-2/",
+      "status": 404
+    },
+    {
+      "url": "https://jamanetwork.com/journals/jama-health-forum/fullarticle/2843723",
+      "status": 403
+    },
+    {
+      "url": "https://ai.nejm.org/",
+      "status": 403
+    },
+    {
+      "url": "https://www.axios.com/2026/03/04/doctronic-utah-prescriptions-ai-jailbreak",
+      "status": 403
+    },
+    {
+      "url": "https://www.usnews.com/news/health-news/articles/2026-02-26/ai-chatbots-can-contribute-to-worsening-mental-illness-study-finds",
+      "status": null
+    },
+    {
+      "url": "https://cyberpress.org/clawhavoc-poisons-openclaws-clawhub-with-1184-malicious-skills/",
+      "status": null
+    },
+    {
+      "url": "https://www.mountsinai.org/about/newsroom/2026/can-medical-ai-lie-large-study-maps-how-llms-handle-health-misinformation",
+      "status": 403
+    },
+    {
+      "url": "https://openai.com/index/chatgpt-for-healthcare/",
+      "status": 404
+    },
+    {
+      "url": "https://www.axios.com/2026/01/08/openai-chatgpt-doctors-patients-health-tab",
+      "status": 403
+    },
+    {
+      "url": "https://www.perplexity.ai/hub/blog/introducing-perplexity-health",
+      "status": 403
+    },
+    {
+      "url": "https://layerxsecurity.com/blog/cometjacking-how-one-click-can-turn-perplexitys-comet-ai-browser-against-you/",
+      "status": 403
+    },
+    {
+      "url": "https://www.nejm.org/doi/abs/10.1056/NEJMsb2503956",
+      "status": 403
+    },
+    {
+      "url": "https://www.openevidence.com/",
+      "status": 403
+    },
+    {
+      "url": "https://www.nsa.gov/Press-Room/Press-Releases-Statements/Press-Release-View/Article/4496698/nsa-releases-security-design-considerations-for-ai-driven-automation-leveraging/",
+      "status": 403
+    },
+    {
+      "url": "https://openevidence.com",
+      "status": 403
+    },
+    {
+      "url": "https://secureframe.com/marketplace/microsoft/microsoft-dragon-copilot/commercial",
+      "status": 404
+    },
+    {
+      "url": "https://ai.nejm.org/doi/full/10.1056/AIoa2501000",
+      "status": 403
+    },
+    {
+      "url": "https://catalyst.nejm.org/doi/full/10.1056/CAT.25.0040",
+      "status": 403
+    },
+    {
+      "url": "https://thecurbsiders.com/cribsiders-podcast/135",
+      "status": null
+    },
+    {
+      "url": "https://catalyst.nejm.org/doi/full/10.1056/CAT.23.0404",
+      "status": 403
+    },
+    {
+      "url": "https://academic.oup.com/jamia/advance-article/doi/10.1093/jamia/ocaf214/8364687",
+      "status": 403
+    },
+    {
+      "url": "https://eur-lex.europa.eu/eli/reg/2026/1744/oj/eng",
+      "status": 202
+    },
+    {
+      "url": "https://www.science.org/doi/10.1126/science.aax2342",
+      "status": 403
+    },
+    {
+      "url": "https://www.science.org/doi/10.1126/sciadv.abq6147",
+      "status": 403
+    },
+    {
+      "url": "https://learn.hms.harvard.edu/insights/all-insights/confronting-mirror-reflecting-our-biases-through-ai-health-care",
+      "status": 403
+    },
+    {
+      "url": "https://www.cdc.gov/pcd/issues/2024/24_0245.htm",
+      "status": 403
+    },
+    {
+      "url": "https://doi.org/10.1136/bmj-2024-081554",
+      "status": 403
+    },
+    {
+      "url": "https://www.forbes.com/sites/maryroeloffs/2026/02/18/elon-musk-keeps-telling-people-to-use-ai-for-medical-advice-but-grok-says-not-to/",
+      "status": 403
+    },
+    {
+      "url": "https://ai.jmir.org/2026/1/e76928",
+      "status": 202
+    },
+    {
+      "url": "https://arena.ai/leaderboard",
+      "status": 403
+    },
+    {
+      "url": "https://jamanetwork.com/journals/jama/fullarticle/2825147",
+      "status": 403
+    },
+    {
+      "url": "https://www.axios.com/2024/08/05/elon-musk-grok-2024-election-ballot-misinformation",
+      "status": 403
+    },
+    {
+      "url": "https://fonts.googleapis.com",
+      "status": 404
+    },
+    {
+      "url": "https://fonts.gstatic.com",
+      "status": 404
+    },
+    {
+      "url": "https://www.mountsinai.org/about/newsroom/2026/mount-sinai-health-system-collaborates-with-openevidence-to-provide-evidence-based-knowledge-within-electronic-medical-record",
+      "status": 403
+    },
+    {
+      "url": "https://medium.com/@olivia.milgrom/a-semantic-drift-perfect-storm-in-medical-ai-f0e9cd1b0f03",
+      "status": 403
+    },
+    {
+      "url": "https://jamanetwork.com/journals/jamanetworkopen/fullarticle/2825395",
+      "status": 403
+    },
+    {
+      "url": "https://youreverydayai.com/",
+      "status": null
+    },
+    {
+      "url": "https://github.com/signup",
+      "status": 403
+    },
+    {
+      "url": "https://thecurbsiders.com/teach-podcast",
+      "status": null
+    },
+    {
+      "url": "https://lmstudio.ai/docs",
+      "status": 307
+    },
+    {
+      "url": "https://www.nejm.org/doi/full/10.1056/NEJMra2503232",
+      "status": 403
+    },
+    {
+      "url": "https://www.hhs.gov/hipaa/for-professionals/special-topics/health-information-technology/cloud-computing/index.html",
+      "status": 403
+    },
+    {
+      "url": "https://venturebeat.com/orchestration/nanoclaw-solves-one-of-openclaws-biggest-security-issues-and-its-already",
+      "status": 429
+    },
+    {
+      "url": "https://open.spotify.com/episode/5Ie6QtG7V0KLK4BZBtiT7j",
+      "status": 404
+    },
+    {
+      "url": "https://jamanetwork.com/journals/jamainternalmedicine/fullarticle/2804309",
+      "status": 403
+    },
+    {
+      "url": "https://www.usnews.com/news/health-news/articles/2026-04-07/americans-may-be-losing-trust-for-ai-in-health-care-survey",
+      "status": null
+    },
+    {
+      "url": "https://www.mountsinai.org/about/newsroom/2025/ai-chatbots-can-run-with-medical-misinformation-study-finds-highlighting-the-need-for-stronger-safeguards",
+      "status": 403
+    },
+    {
+      "url": "https://www.washingtonpost.com/opinions/2025/10/14/ai-chatbots-health-care-diagnoses/",
+      "status": null
+    },
+    {
+      "url": "https://www.hhs.gov/hipaa/for-professionals/special-topics/de-identification/index.html",
+      "status": 403
+    },
+    {
+      "url": "https://www.ftc.gov/business-guidance/resources/health-breach-notification-rule-basics-business",
+      "status": 404
+    },
+    {
+      "url": "https://www.jmir.org/2025/1/e72644",
+      "status": 202
+    },
+    {
+      "url": "https://pubs.rsna.org/doi/full/10.1148/ryai.2020200029",
+      "status": 403
+    },
+    {
+      "url": "https://claude.ai/",
+      "status": 403
+    },
+    {
+      "url": "https://www.jointcommission.org/en-us/certification/responsible-use-of-ai-in-healthcare",
+      "status": 403
+    },
+    {
+      "url": "https://jamanetwork.com/journals/jamainternalmedicine/fullarticle/2781307",
+      "status": 403
+    },
+    {
+      "url": "https://www.thelancet.com/journals/langas/article/PIIS2468-1253(25)00133-5/abstract",
+      "status": 403
+    },
+    {
+      "url": "https://www.nejm.org/doi/full/10.1056/NEJMsr2214184",
+      "status": 403
+    },
+    {
+      "url": "https://jamanetwork.com/journals/jama/fullarticle/2752750",
+      "status": 403
+    },
+    {
+      "url": "https://www.thelancet.com/journals/landig/article/PIIS2589-7500(20)30218-1/fulltext",
+      "status": 403
+    },
+    {
+      "url": "https://academic.oup.com/jamia/article/27/3/491/5612169",
+      "status": 403
+    },
+    {
+      "url": "https://aiin.healthcare/",
+      "status": 403
+    },
+    {
+      "url": "https://thisweekhealth.com/",
+      "status": 429
+    },
+    {
+      "url": "https://mededu.jmir.org/2024/1/e54793",
+      "status": 202
+    },
+    {
+      "url": "https://ai.nejm.org/doi/full/10.1056/AIoa2300068",
+      "status": 403
+    },
+    {
+      "url": "https://lovable.dev",
+      "status": 403
+    },
+    {
+      "url": "https://claude.ai",
+      "status": 403
+    },
+    {
+      "url": "https://www.udemy.com/course/vibe-coding-for-beginners-ai-programming-for-non-developers/",
+      "status": 403
+    },
+    {
+      "url": "https://lovable.dev/",
+      "status": 403
+    },
+    {
+      "url": "https://www.perplexity.ai/comet",
+      "status": 403
+    }
+  ]
+}

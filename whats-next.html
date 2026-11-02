@@ -25,6 +25,7 @@
   <script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "aee6310cb71e4b55b02d4e681c4eb7ab"}'></script>
 </head>
 <body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
 
   <nav class="nav">
     <div class="nav-inner">
@@ -32,10 +33,10 @@
         <span class="nav-badge"><span class="b-ai">AI</span><span class="b-num">101</span></span>
         <span class="nav-title">A Self-Paced Guide to AI in Medicine</span>
       </a>
-      <button class="nav-toggle" aria-label="Toggle menu">
-        <i data-lucide="menu"></i>
+      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="site-menu">
+        <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 5h16M4 12h16M4 19h16"/></svg>
       </button>
-      <div class="nav-links">
+      <div class="nav-links" id="site-menu">
         <a href="index.html" class="nav-link">Topics</a>
         <a href="resources.html" class="nav-link">Resources</a>
         <a href="about.html" class="nav-link">About</a>
@@ -45,7 +46,7 @@
     </div>
   </nav>
 
-  <main class="main">
+  <main id="main-content" tabindex="-1" class="main">
     <article class="content content-wide">
 
       <header class="unit-header">
@@ -78,6 +79,11 @@
       </div>
 
       <!-- Introduction -->
+      <div class="callout callout-info">
+        <div class="callout-title">November 2026: Use Current Catalogs for Today&rsquo;s Choice</div>
+        <p>The release timeline below is historical. Current catalogs now include Claude 5.5 models, GPT-6 Astra and GPT-6.1 Sol/Terra, and newer Google models. Availability differs between a consumer app, a coding surface, and an API. Use <a href="big-three.html">the refreshed comparison</a> and the actual model picker before choosing a plan or assuming which model answered you.</p>
+      </div>
+
       <h2>Congratulations—Now the Real Work Begins</h2>
 
       <p>
@@ -118,13 +124,13 @@
       <h2>Accept the Speed (Or Get Left Behind)</h2>
 
       <p>
-        Let's be honest about what you're up against. From 2025 through June 2026:
+        Let's be honest about what you're up against. The releases below summarize 2025 through July 2026, rather than a current model recommendation:
       </p>
 
       <ul>
         <li>OpenAI released o3, o4-mini, GPT-5 (with Mini and Nano variants), GPT-5.1, GPT-5.2, then GPT-5.3, GPT-5.4 (March 2026), <strong>GPT-5.5 Instant</strong> (May 5, 2026)&mdash;which became the default ChatGPT model with ~52% fewer hallucinations than GPT-5.3 on high-stakes prompts&mdash;and <strong>GPT-5.6</strong> (generally available July 9, 2026)</li>
-        <li>Anthropic shipped Claude Opus 4 and Sonnet 4 in May 2025, Sonnet 4.5 in September, Opus 4.5 in November; then in 2026 Opus 4.6 and Sonnet 4.6 (February), <strong>Claude Opus 4.7</strong> (April 16)&mdash;higher-resolution vision and +13% coding gains over 4.6&mdash;and <strong>Claude Opus 4.8</strong> (May 28); <strong>Claude Fable 5</strong> arrived June 9, and <strong>Claude Opus 5</strong> (July 24) and <strong>Claude Sonnet 5</strong> now lead the line at a 1M-token context and 128K max output</li>
-        <li>Google launched Gemini 2.5 Pro and Flash, then Gemini 3 Pro and Deep Think by November 2025, Gemini 3.1 Pro in February 2026, and at Google I/O 2026 (May 19) <strong>Gemini 3.5 Flash</strong> (rolled out to all users) plus <strong>Gemini Omni Flash</strong> multimodal; on July 21, 2026 it shipped <strong>Gemini 3.6 Flash</strong> and <strong>Gemini 3.5 Flash-Lite</strong>&mdash;but no new Pro model, leaving Gemini 3.1 Pro as its top-end reasoning option</li>
+        <li>Anthropic shipped Claude Opus 4 and Sonnet 4 in May 2025, Sonnet 4.5 in September, Opus 4.5 in November; then in 2026 Opus 4.6 and Sonnet 4.6 (February), <strong>Claude Opus 4.7</strong> (April 16)&mdash;higher-resolution vision and +13% coding gains over 4.6&mdash;and <strong>Claude Opus 4.8</strong> (May 28); <strong>Claude Fable 5</strong> arrived June 9, and <strong>Claude Opus 5</strong> (July 24) and <strong>Claude Sonnet 5</strong> led the July line at a 1M-token context and 128K max output</li>
+        <li>Google launched Gemini 2.5 Pro and Flash, then Gemini 3 Pro and Deep Think by November 2025, Gemini 3.1 Pro in February 2026, and at Google I/O 2026 (May 19) <strong>Gemini 3.5 Flash</strong> (rolled out to all users) plus <strong>Gemini Omni Flash</strong> multimodal; on July 21, 2026 it shipped <strong>Gemini 3.6 Flash</strong> and <strong>Gemini 3.5 Flash-Lite</strong>&mdash;but no new Pro model, leaving Gemini 3.1 Pro as the Pro option at that July checkpoint</li>
         <li>DeepSeek released R1 in January 2025 (rivaling GPT-4 at a fraction of the cost), V3.1 and V3.2 through the fall, and <strong>DeepSeek V4 Flash</strong> in 2026 (MIT-license, 1M-token context, ~$1.74/M tokens)</li>
         <li>AI agents went from demos to production&mdash;computer use, coding assistants, research tools that actually work; by mid-2026, Cursor crossed <strong>$2B ARR</strong> and entered talks at a <strong>$50B valuation</strong></li>
         <li>Every major EHR vendor shipped or expanded AI documentation features; Epic now reports 85% of customers live with generative AI</li>
@@ -1659,22 +1665,17 @@ print(message.content)</code></pre>
   <footer class="footer">
     <div class="footer-inner">
       <div><strong>AI 101</strong> · A Self-Paced Guide to AI in Medicine</div>
-      <div><a href="updates.html">v1.15 · 2026</a></div>
+      <div><a href="updates.html">v1.16 · 2026</a></div>
     </div>
   </footer>
 
   <script>
-    lucide.createIcons();
-    const navToggle = document.querySelector('.nav-toggle');
-    const navLinks = document.querySelector('.nav-links');
-    if (navToggle) {
-      navToggle.addEventListener('click', () => {
-        navLinks.classList.toggle('nav-open');
-      });
-    }
+    if (window.lucide) window.lucide.createIcons();
+
   </script>
 
   <script src="https://studio.pickaxe.co/api/embed/bundle.js" defer></script>
 
+  <script src="site-nav.js"></script>
 </body>
 </html>

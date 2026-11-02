@@ -14,6 +14,7 @@ import urllib.parse
 import urllib.request
 import xml.etree.ElementTree as ET
 from html.parser import HTMLParser
+from sync_news_feed import generate as generate_rss
 
 ROOT = Path(__file__).resolve().parents[1]
 MARKER = '<!-- ai101-maintenance -->'
@@ -89,7 +90,13 @@ def check(today, check_external=False, check_live=False):
         ET.parse(ROOT / 'ai-news-feed.xml')
         ET.parse(ROOT / 'sitemap.xml')
         checks.append('RSS and sitemap: parse successfully.')
-    except ET.ParseError as exc:
+        rss = (ROOT / 'ai-news-feed.xml').read_text()
+        build_date = ET.fromstring(rss).findtext('./channel/lastBuildDate')
+        if generate_rss(news, rss, build_date) != rss:
+            problems.append('RSS content differs from the HTML news page. Run scripts/sync_news_feed.py and review the changes.')
+        else:
+            checks.append('RSS is a complete, reproducible mirror of HTML news, with unique story identifiers.')
+    except (ET.ParseError, ValueError) as exc:
         problems.append(f'RSS/sitemap XML error: {exc}')
 
     sources = state['primary_sources']
@@ -106,10 +113,13 @@ def check(today, check_external=False, check_live=False):
         checks.append('External source reachability: NOT RUN.')
     if check_live:
         live = fetch('https://ai101.health/updates.html')
-        if live.get('status') != 200 or state['version'] not in live.get('body', ''):
-            problems.append(f'Deployment UNVERIFIED: live updates.html does not confirm {state["version"]}, or was unreachable.')
+        footer = re.search(r'<footer\b[^>]*>(.*?)</footer>', live.get('body', ''), re.S)
+        release = re.search(r'\bv\d+(?:\.\d+)+\b', footer.group(1)) if footer else None
+        if live.get('status') != 200 or not release or release.group(0) != state['version']:
+            observed = release.group(0) if release else 'unavailable'
+            problems.append(f'Deployment UNVERIFIED: live footer release is {observed}; published receipt expects {state["version"]}.')
         else:
-            checks.append(f'Live site: updates.html contains {state["version"]}.')
+            checks.append(f'Live site: updates.html footer confirms {state["version"]}.')
     else:
         checks.append('Live deployment: NOT RUN.')
     for item in state.get('outstanding_operations', []):

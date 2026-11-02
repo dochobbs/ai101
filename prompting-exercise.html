@@ -25,6 +25,7 @@
   <script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "aee6310cb71e4b55b02d4e681c4eb7ab"}'></script>
 </head>
 <body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
 
   <nav class="nav">
     <div class="nav-inner">
@@ -32,10 +33,10 @@
         <span class="nav-badge"><span class="b-ai">AI</span><span class="b-num">101</span></span>
         <span class="nav-title">A Self-Paced Guide to AI in Medicine</span>
       </a>
-      <button class="nav-toggle" aria-label="Toggle menu">
-        <i data-lucide="menu"></i>
+      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="site-menu">
+        <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 5h16M4 12h16M4 19h16"/></svg>
       </button>
-      <div class="nav-links">
+      <div class="nav-links" id="site-menu">
         <a href="index.html" class="nav-link">Topics</a>
         <a href="resources.html" class="nav-link">Resources</a>
         <a href="about.html" class="nav-link">About</a>
@@ -45,7 +46,7 @@
     </div>
   </nav>
 
-  <main class="main">
+  <main id="main-content" tabindex="-1" class="main">
     <article class="content">
 
       <header class="unit-header">
@@ -397,10 +398,10 @@
       <hr>
 
       <!-- Connection to Modules -->
-      <h2>Connection to Module 2: Why This Matters for Safety</h2>
+      <h2>Why This Matters for Safety</h2>
 
       <p>
-        Remember from Module 2 that AI hallucinations aren't random—they're more likely
+        As discussed in <a href="llm-thinking.html">How LLMs Think Like Clinicians</a>, AI hallucinations aren't random—they're more likely
         under certain conditions. Vague prompts create those conditions:
       </p>
 
@@ -424,9 +425,9 @@
 
       <div class="callout callout-info">
         <div class="callout-title">Key Principles Reinforced</div>
-        <p><strong>From Module 1:</strong> AI tools are most useful when you understand what they actually do—predict likely text given input. Better input = better predictions.</p>
-        <p><strong>From Module 2:</strong> Hallucinations are more likely with vague, open-ended prompts. Specificity is a risk-reduction strategy.</p>
-        <p class="mb-0"><strong>From Module 3:</strong> The principles of good clinical communication—context, specificity, clear questions—apply directly to AI interaction. You already have these skills; now apply them to a new medium.</p>
+        <p><strong>From How LLMs Think:</strong> AI tools are most useful when you understand what they actually do—predict likely text given input. Better input = better predictions.</p>
+        <p><strong>From AI Safety:</strong> Hallucinations are more likely with vague, open-ended prompts. Specificity is a risk-reduction strategy.</p>
+        <p class="mb-0"><strong>From The Art of the Ask:</strong> The principles of good clinical communication—context, specificity, clear questions—apply directly to AI interaction. You already have these skills; now apply them to a new medium.</p>
       </div>
 
       <hr>
@@ -440,7 +441,7 @@
           <li class="activity-step">
             <span class="step-number">1</span>
             <div class="step-content">
-              <p><strong>Run both prompts</strong> through a clinical AI tool you have access to (Open Evidence, Glass AI, or a general tool like Claude or ChatGPT).</p>
+              <p>Use invented cases or an institution-approved workflow for patient information. <strong>Run both prompts</strong> through a clinical AI tool you have access to (Open Evidence, Glass AI, or a general tool like Claude or ChatGPT).</p>
             </div>
           </li>
           <li class="activity-step">
@@ -513,22 +514,17 @@
   <footer class="footer">
     <div class="footer-inner">
       <div><strong>AI 101</strong> · A Self-Paced Guide to AI in Medicine</div>
-      <div><a href="updates.html">v1.15 · 2026</a></div>
+      <div><a href="updates.html">v1.16 · 2026</a></div>
     </div>
   </footer>
 
   <script>
-    lucide.createIcons();
-    const navToggle = document.querySelector('.nav-toggle');
-    const navLinks = document.querySelector('.nav-links');
-    if (navToggle) {
-      navToggle.addEventListener('click', () => {
-        navLinks.classList.toggle('nav-open');
-      });
-    }
+    if (window.lucide) window.lucide.createIcons();
+
   </script>
 
   <script src="https://studio.pickaxe.co/api/embed/bundle.js" defer></script>
 
+  <script src="site-nav.js"></script>
 </body>
 </html>

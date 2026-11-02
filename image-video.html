@@ -25,6 +25,7 @@
   <script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "aee6310cb71e4b55b02d4e681c4eb7ab"}'></script>
 </head>
 <body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
 
   <nav class="nav">
     <div class="nav-inner">
@@ -32,10 +33,10 @@
         <span class="nav-badge"><span class="b-ai">AI</span><span class="b-num">101</span></span>
         <span class="nav-title">A Self-Paced Guide to AI in Medicine</span>
       </a>
-      <button class="nav-toggle" aria-label="Toggle menu">
-        <i data-lucide="menu"></i>
+      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="site-menu">
+        <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 5h16M4 12h16M4 19h16"/></svg>
       </button>
-      <div class="nav-links">
+      <div class="nav-links" id="site-menu">
         <a href="index.html" class="nav-link">Topics</a>
         <a href="resources.html" class="nav-link">Resources</a>
         <a href="about.html" class="nav-link">About</a>
@@ -45,7 +46,7 @@
     </div>
   </nav>
 
-  <main class="main">
+  <main id="main-content" tabindex="-1" class="main">
     <article class="content content-wide">
 
       <header class="unit-header">
@@ -310,7 +311,12 @@
         </figcaption>
       </figure>
 
-      <h3>ChatGPT Images 2.0</h3>
+      <div class="callout callout-info">
+        <div class="callout-title">November 2026: GPT Image 2.5 Is the Current API Family</div>
+        <p>OpenAI released <strong>GPT Image 2.5 Sunburst and Flare on September 8</strong>. Sunburst targets more demanding image/editing work; Flare targets faster generation. Both support generation, editing, and transparent backgrounds. The April ChatGPT Images 2.0 discussion below is historical, and API model availability does not establish a consumer plan&rsquo;s limits. Inspect anatomy, labels, and any patient-facing material independently; better image quality is not medical validation. <a href="https://developers.openai.com/api/docs/guides/image-generation" target="_blank" rel="noopener">[Current guide]</a> <a href="https://developers.openai.com/api/docs/changelog" target="_blank" rel="noopener">[Release history]</a></p>
+      </div>
+
+      <h3>ChatGPT Images 2.0 (April 2026)</h3>
 
       <p>
         On April 21, 2026, OpenAI released <strong>ChatGPT Images 2.0</strong>—superseding GPT Image 1.5
@@ -424,8 +430,7 @@
       <div class="callout callout-warning">
         <div class="callout-title">Sora Has Been Discontinued</div>
         <p class="mb-0">
-          OpenAI <a href="https://help.openai.com/en/articles/20001152-what-to-know-about-the-sora-discontinuation" target="_blank">shut down the Sora app on April 26, 2026</a>, and the Sora
-          API will end on September 24, 2026. The capabilities below are retained for historical
+          OpenAI <a href="https://help.openai.com/en/articles/20001152-what-to-know-about-the-sora-discontinuation" target="_blank">shut down the Sora app on April 26, 2026</a>, and the Sora models and Videos API shut down on September 24, 2026. <a href="https://developers.openai.com/api/docs/guides/video-generation" target="_blank" rel="noopener">[Retirement notice]</a> The capabilities below are retained for historical
           context only—for video generation today, use <strong>Gemini Omni Flash</strong> for short
           clips you want to revise conversationally, or <strong>Veo 3.1</strong> when you need
           length.
@@ -447,7 +452,7 @@
           <li><strong>Multi-shot control:</strong> Type instructions for camera movement and composition; maintains visual consistency across shot sequences.</li>
           <li><strong>Extended duration:</strong> Up to 60 seconds while maintaining quality and coherence.</li>
         </ul>
-        <p><strong>Access:</strong> No longer available—OpenAI discontinued Sora. The app closed April 26, 2026 and the API ends September 24, 2026.</p>
+        <p><strong>Access:</strong> No longer available—OpenAI discontinued Sora. The app closed April 26, 2026 and the API shut down September 24, 2026.</p>
       </div>
 
       <h2>Canva: The Accessible Middle Ground</h2>
@@ -946,7 +951,7 @@
             <div class="reading-title">
               <a href="https://help.openai.com/en/articles/20001152-what-to-know-about-the-sora-discontinuation" target="_blank">OpenAI: What to Know About the Sora Discontinuation</a>
             </div>
-            <div class="reading-meta">Official OpenAI notice — the Sora app shut down April 26, 2026; the API ends Sept 24, 2026</div>
+            <div class="reading-meta">Official OpenAI notice — the Sora app shut down April 26, 2026; the API shut down September 24, 2026</div>
           </div>
         </div>
         <div class="reading-item">
@@ -1113,22 +1118,17 @@
   <footer class="footer">
     <div class="footer-inner">
       <div><strong>AI 101</strong> · A Self-Paced Guide to AI in Medicine</div>
-      <div><a href="updates.html">v1.15 · 2026</a></div>
+      <div><a href="updates.html">v1.16 · 2026</a></div>
     </div>
   </footer>
 
   <script>
-    lucide.createIcons();
-    const navToggle = document.querySelector('.nav-toggle');
-    const navLinks = document.querySelector('.nav-links');
-    if (navToggle) {
-      navToggle.addEventListener('click', () => {
-        navLinks.classList.toggle('nav-open');
-      });
-    }
+    if (window.lucide) window.lucide.createIcons();
+
   </script>
 
   <script src="https://studio.pickaxe.co/api/embed/bundle.js" defer></script>
 
+  <script src="site-nav.js"></script>
 </body>
 </html>
