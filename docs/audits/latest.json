@@ -106,10 +106,10 @@
       "disposition": "Weekly check fails on future or content-less home-card date labels; full-history checkout."
     }
   ],
-  "publication_verified": false,
-  "deployed_content_commit": "6e532d2b6bd43714ea804a705aa58c5b24106b8f",
-  "deployment_receipt": "https://github.com/dochobbs/ai101/actions/runs/42420896377",
-  "publication_verified_at_utc": "2026-11-07T22:31:13.527391+00:00",
+  "publication_verified": true,
+  "deployed_content_commit": "56df0a76416138df42c336ab4256ee59bc5792cf",
+  "deployment_receipt": "https://github.com/dochobbs/ai101/actions/runs/42424037304",
+  "publication_verified_at_utc": "2026-11-07T23:11:35.865996+00:00",
   "latest_full_site_audit": {
     "version": "v1.16",
     "prepared_at": "2026-11-01",
@@ -124,6 +124,7 @@
     "report": "docs/audits/2026-11-07-content-audit.md",
     "batch": "2-3 of 3",
     "additional_news_items": 13,
-    "publication_verified": false
+    "publication_verified": true,
+    "merged_pr": "https://github.com/dochobbs/ai101/pull/17"
   }
 }
