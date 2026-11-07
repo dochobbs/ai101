@@ -631,12 +631,15 @@
         by ingredient."
       </p>
 
-      <h3>The Supabase Connection</h3>
+      <h3>Where Your App's Data Lives</h3>
 
       <p>
-        For applications that need to save data (most useful apps), Lovable integrates
-        with <a href="https://supabase.com" target="_blank">Supabase</a>—a
-        backend-as-a-service platform. This connection handles:
+        For applications that need to save data (most useful apps), Lovable now includes a
+        <a href="https://docs.lovable.dev/features/cloud" target="_blank" rel="noopener">built-in backend</a>
+        (called Cloud in the product), hosted by Lovable and built on Supabase&rsquo;s open-source
+        foundation. When you ask for a feature that needs it, Lovable turns it on or asks you in the
+        project chat first; no separate Supabase account is needed. That means your app&rsquo;s data
+        sits on Lovable&rsquo;s infrastructure by default. The backend handles:
       </p>
 
       <ul>
@@ -646,9 +649,8 @@
       </ul>
 
       <p>
-        Setting this up requires creating a Supabase account (free tier available)
-        and connecting it to your Lovable project. The first time, this feels
-        complicated. The second time, it takes five minutes.
+        You can still connect your own <a href="https://supabase.com" target="_blank">Supabase</a>
+        project as an external backend instead, if you want the data in an account you control.
       </p>
 
       <h3>Pricing Reality</h3>
@@ -685,10 +687,11 @@
           </p>
         </div>
         <div class="practice-card">
-          <h4>Connect Supabase Early</h4>
+          <h4>Decide on the Backend Early</h4>
           <p>
-            If your app needs to save data, set up the Supabase connection before
-            building features. Retrofitting is harder than building with it from the start.
+            If your app needs to save data, decide up front whether it uses Lovable&rsquo;s
+            built-in backend or your own Supabase project. Retrofitting is harder than
+            building with it from the start.
           </p>
         </div>
         <div class="practice-card">
@@ -732,7 +735,7 @@
         inspect or change it; do not assume the model from your subscription name.
         <a href="https://code.claude.com/docs/en/model-config" target="_blank" rel="noopener">[Model configuration]</a>
         Claude Code runs across three
-        environments: the web interface at claude.ai, the
+        environments: the web at <a href="https://claude.ai/code" target="_blank" rel="noopener">claude.ai/code</a>, the
         <a href="https://claude.com/download" target="_blank">Claude Desktop app</a>,
         and a powerful <a href="https://github.com/anthropics/claude-code" target="_blank">command-line interface (CLI)</a>
         for your terminal. Current Sonnet and Opus models offer a one-million-token context
@@ -751,12 +754,14 @@
 
       <div class="workflow-phases">
         <div class="workflow-phase">
-          <h4><i data-lucide="globe"></i> Web Interface (claude.ai)</h4>
+          <h4><i data-lucide="globe"></i> Web (claude.ai/code)</h4>
           <p>
-            The most accessible option. Go to <a href="https://claude.ai" target="_blank">claude.ai</a>,
-            start a conversation, and describe what you want to build. Claude generates
-            code in "Artifacts"—sandboxed previews you can see and interact with immediately.
-            Perfect for beginners who want to experiment safely.
+            Claude Code on the web lives at <a href="https://claude.ai/code" target="_blank" rel="noopener">claude.ai/code</a>
+            and needs a paid plan (Pro or above). Don&rsquo;t confuse it with Artifacts in the
+            ordinary claude.ai chat: Artifacts are sandboxed previews, available on the Free plan,
+            and they are a good way for beginners to experiment safely. But that is chat, not
+            Claude Code, and it has very different file and command access.
+            <a href="https://claude.com/pricing" target="_blank" rel="noopener">[Plans]</a>
           </p>
         </div>
         <div class="workflow-phase">
@@ -792,10 +797,11 @@
 
       <div class="best-practices-grid">
         <div class="practice-card">
-          <h4>Start on the Web</h4>
+          <h4>Start with Artifacts</h4>
           <p>
-            If you're new to vibe coding, start at claude.ai. The Artifacts feature
-            lets you see working previews instantly without any setup.
+            If you're new to vibe coding, start in claude.ai chat. Artifacts let you see
+            working previews instantly without any setup, even on the Free plan. Move to
+            Claude Code when you want it to work with real files.
           </p>
         </div>
         <div class="practice-card">
@@ -862,9 +868,9 @@
       <h3>OpenAI Codex App is Better When:</h3>
 
       <ul>
-        <li><strong>You want parallel agents.</strong> The Codex macOS app lets you run multiple coding agents simultaneously, each working on a different task—useful when you have several ideas to prototype at once.</li>
+        <li><strong>You want parallel agents.</strong> Codex, now part of the ChatGPT desktop app, lets you run multiple coding agents simultaneously, each working on a different task—useful when you have several ideas to prototype at once.</li>
         <li><strong>You're already in the OpenAI ecosystem.</strong> If ChatGPT is your daily driver, Codex integrates naturally with your existing workflow.</li>
-        <li><strong>You want a desktop-native experience.</strong> The standalone app (macOS with Apple Silicon) is purpose-built for coding, not a browser tab.</li>
+        <li><strong>You want a desktop-native experience.</strong> Codex now lives inside the <a href="https://learn.chatgpt.com/docs/app" target="_blank" rel="noopener">ChatGPT desktop app</a> (macOS, Windows, or Linux), alongside Chat and Work, rather than in a browser tab.</li>
       </ul>
 
       <h3>The Honest Answer</h3>
@@ -1253,7 +1259,10 @@
         <p class="mb-0">
           <strong>The critical caveat:</strong> consumer vibe coding platforms
           (Replit, Lovable, Claude.ai) are not HIPAA-compliant. Never enter
-          real patient data. The recommended pattern for healthcare: use vibe
+          real patient data. For Lovable this isn't just a consumer-plan limit:
+          Lovable says it
+          <a href="https://docs.lovable.dev/introduction/lovable-for-enterprise" target="_blank" rel="noopener">does not sign Business Associate Agreements</a>
+          and asks users not to upload protected health information, on Enterprise too. The recommended pattern for healthcare: use vibe
           coding to prototype and test ideas, then engage your compliance team
           with something tangible before any production deployment.
         </p>
@@ -1280,7 +1289,7 @@
       <p><strong>Why it's good for learning:</strong></p>
 
       <ul>
-        <li>It's immediately useful in your practice</li>
+        <li>It's useful in your practice, as long as you review every generated instruction before it reaches a patient</li>
         <li>It teaches you how to work with AI text generation</li>
         <li>It involves forms, dropdowns, and text output (core UI patterns)</li>
         <li>It doesn't need a database for a basic version (simpler)</li>
@@ -1328,7 +1337,7 @@
       <ul>
         <li>Add more conditions specific to your specialty</li>
         <li>Include Spanish (or other language) translations</li>
-        <li>Add a "custom instructions" text field for patient-specific notes</li>
+        <li>Add a "standard add-ons" field for reusable, non-identifying text (your clinic's callback number, your usual return precautions), never a specific patient's details</li>
         <li>Create a printable PDF format</li>
         <li>Save your most-used templates for quick access</li>
       </ul>
@@ -1819,6 +1828,8 @@
           competes with paid IDE subscriptions. <strong>Practical advice for heavy Claude Code
           users:</strong> the Max plan ($100/mo or $200/mo) is the safer bet if your daily
           workflow depends on Claude Code, since it&rsquo;s unlikely to be silently downgraded.
+          <em>(November 2026: Max is now $100/month; the $200 tier is called
+          <a href="https://claude.com/pricing" target="_blank" rel="noopener">Ultra</a>.)</em>
         </p>
       </div>
 
@@ -1915,7 +1926,7 @@
   <footer class="footer">
     <div class="footer-inner">
       <div><strong>AI 101</strong> · A Self-Paced Guide to AI in Medicine</div>
-      <div><a href="updates.html">v1.17 · 2026</a></div>
+      <div><a href="updates.html">v1.18 · 2026</a></div>
     </div>
   </footer>
 

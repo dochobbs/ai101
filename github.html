@@ -950,13 +950,14 @@ code.inline { white-space:pre-wrap; overflow-wrap:anywhere; }
 
     <div class="callout">
       <div class="callout-label">If it says &ldquo;command not found: brew&rdquo;</div>
-      Homebrew is a separate tool for installing things, and it does not come with a Mac. You have two ways forward. The simpler one: go to <a href="https://cli.github.com" target="_blank" rel="noopener">cli.github.com</a>, download the macOS installer, and double-click it &mdash; no terminal involved. The other: install Homebrew from <a href="https://brew.sh" target="_blank" rel="noopener">brew.sh</a> first, then come back and run the line above. Either gets you to the same place.
+      Homebrew is a separate tool for installing things, and it does not come with a Mac. You have two ways forward. The simpler one: go to gh’s <a href="https://github.com/cli/cli/releases/latest" target="_blank" rel="noopener">latest release page</a>, scroll to <strong>Assets</strong>, download the file ending in <code class="inline">_macOS_universal.pkg</code>, and double-click it &mdash; no terminal involved. (The download button on cli.github.com gives you a <code class="inline">.zip</code> instead, which doesn’t install anything on its own.) Open a new terminal window afterward. The other: install Homebrew from <a href="https://brew.sh" target="_blank" rel="noopener">brew.sh</a> first, then come back and run the line above. Either gets you to the same place.
     </div>
 
     <div class="callout">
       <div class="callout-label">Windows</div>
-      Use this line instead of the <code class="inline">brew</code> one. Everything after this point is identical on Windows and Mac.
+      Windows needs two installs. First, git itself: download <a href="https://git-scm.com/downloads/win" target="_blank" rel="noopener">Git for Windows</a> and click through the installer with its defaults. It also gives you <strong>Git Bash</strong>, a terminal that understands the same commands a Mac does. Then install gh with this line instead of the <code class="inline">brew</code> one:
       <div class="codeblock"><pre>winget install --id GitHub.cli</pre><button class="copy-btn">Copy</button></div>
+      From here on, open <strong>Git Bash</strong> from the Start menu and do every day of this course in it, not in PowerShell. Several commands in these two weeks (<code class="inline">ls -a</code>, <code class="inline">touch</code>) aren’t valid PowerShell, and in Windows PowerShell 5.1, <code class="inline">echo ... &gt;&gt; notes.md</code> <a href="https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_character_encoding?view=powershell-5.1" target="_blank" rel="noopener">writes a different text encoding</a> that git can treat as a binary file, which breaks the Day 5 lesson. In Git Bash, everything after this point matches the Mac steps, except where a day gives a separate Windows line.
     </div>
 
     <p><strong>Connect gh to your GitHub account.</strong> Run:</p>
@@ -2097,7 +2098,7 @@ Route A: go around the lake
 <footer class="site-footer">
   <div><strong>AI 101</strong> · <a href="index.html">A Self-Paced Guide to AI in Medicine</a></div>
   <div><a href="claude-code.html">30 Days to Claude Code</a> · <a href="vibe-coding.html">Vibe Coding module</a> · <a href="https://docs.github.com/en/get-started" target="_blank" rel="noopener">Official GitHub docs</a></div>
-  <div><a href="updates.html">v1.17 · 2026</a></div>
+  <div><a href="updates.html">v1.18 · 2026</a></div>
 </footer>
 <script src="https://studio.pickaxe.co/api/embed/bundle.js" defer></script>
 </body></html>

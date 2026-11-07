@@ -121,6 +121,18 @@
         descriptions establishes suitability for patient data or clinical use.
       </p>
 
+      <p>
+        A clinician&rsquo;s first agent is more likely to arrive inside a product they already
+        pay for: Work mode in ChatGPT, or Cowork in Claude. On business plans with a BAA,
+        coverage differs by mode, so check it per feature before any PHI goes in. OpenAI
+        <a href="https://help.openai.com/en/articles/20001069-hipaa-eligible-products-and-functionality" target="_blank" rel="noopener noreferrer">lists</a>
+        browser use and network access for Work in the cloud as not covered by its BAA. Anthropic
+        <a href="https://support.claude.com/en/articles/8114513-business-associate-agreements-baa-for-commercial-customers" target="_blank" rel="noopener noreferrer">covers</a>
+        Cowork and Claude Code only in local mode, on a HIPAA-ready Enterprise plan with the HIPAA
+        configuration applied; Cowork in the cloud is not covered. Personal plans such as ChatGPT Plus or Claude Pro have no BAA at
+        all. See <a href="phi-hipaa.html">PHI, HIPAA, and AI</a> for the full lists.
+      </p>
+
       <h2>Where the Stakes Change in Healthcare</h2>
 
       <p>
@@ -186,9 +198,9 @@
           have been disclosed, including a pre-authentication remote code execution flaw
           affecting 42,000 publicly exposed servers. Meanwhile, OpenClaw has surpassed
           250,000 GitHub stars, and the broader agentic AI threat landscape has produced
-          real-world harm: a healthcare AI was jailbroken into tripling opioid doses,
-          and a consumer AI browser was found vulnerable to zero-click calendar-invite
-          exploits.
+          pointed demonstrations: red-teamers jailbroke a healthcare AI&rsquo;s public chatbot
+          into recommending a tripled opioid dose (no patient harm reported), and a consumer AI
+          browser was found vulnerable to zero-click calendar-invite exploits.
         </p>
         <p class="mb-0">
           The sections below have been updated to reflect these developments. New
@@ -419,10 +431,12 @@
 
       <ul>
         <li>
-          <strong>EchoLeak</strong>: A zero-click vulnerability in GitHub Copilot allowed
-          data exfiltration without any user interaction. An attacker could send an email
-          with hidden instructions; Copilot would ingest the malicious prompt and silently
-          extract sensitive data.
+          <strong>EchoLeak</strong>: A zero-click vulnerability in
+          <a href="https://nvd.nist.gov/vuln/detail/cve-2025-32711" target="_blank">Microsoft 365 Copilot</a>
+          (CVE-2025-32711, reported by Aim Labs) allowed data exfiltration without any user
+          interaction. An attacker could send an email with hidden instructions; when the user
+          later asked Copilot a related question, it could pull in that email and leak sensitive
+          data. Microsoft fixed it on the service side.
         </li>
         <li>
           <strong>IDE vulnerabilities</strong>: Security researcher Ari Marzouk disclosed
@@ -450,9 +464,12 @@
 
       <p>
         A leaked API key on a personal project is embarrassing. A leaked API key that
-        grants access to patient data is a
-        <a href="phi-hipaa.html">HIPAA violation</a>&mdash;with penalties that start at
-        $100 per record and scale to millions.
+        grants access to patient data is a security incident that can become a
+        <a href="phi-hipaa.html">HIPAA violation</a>. HIPAA civil penalties are assessed per
+        violation, not per record, and are tiered by culpability: at current levels they run from
+        $145 to $2,190,294 per violation, with an annual cap of $2,190,294 for identical violations
+        (<a href="https://www.federalregister.gov/documents/2026/01/28/2026-01688/annual-civil-monetary-penalties-inflation-adjustment" target="_blank">HHS</a>;
+        HHS <a href="https://www.federalregister.gov/documents/full_text/html/2026/10/21/2026-21524.html" target="_blank">skipped the 2026 inflation adjustment</a>).
       </p>
 
       <div class="callout callout-warning">
@@ -532,13 +549,16 @@
         operate with broad permissions and minimal oversight inside enterprise networks.
       </p>
 
-      <h3>Healthcare AI Is Already Being Exploited</h3>
+      <h3>Healthcare AI Has Already Been Red-Teamed</h3>
 
       <p>
-        In March 2026, the AI red-teaming firm Mindgard reported that
+        In March 2026, the AI red-teaming firm
+        <a href="https://mindgard.ai/blog/doctronic-is-now-accepting-new-patients-and-unsafe-instructions" target="_blank">Mindgard</a>
+        reported that
         <a href="https://www.axios.com/2026/03/04/doctronic-utah-prescriptions-ai-jailbreak" target="_blank">Doctronic</a>&mdash;the
-        system behind Utah&rsquo;s pilot allowing patients with chronic conditions to renew
-        certain medications without a physician&rsquo;s direct sign-off&mdash;could be
+        system behind Utah&rsquo;s prescription-renewal pilot, where
+        <a href="https://commerce.utah.gov/ai/regulatory-relief-4/authorized-pilots/doctronic/" target="_blank">Utah says</a>
+        a licensed practitioner still authorizes every request in the current phase&mdash;could be
         manipulated by feeding it fabricated regulatory updates, the same
         instructions-in-your-input attack class that affects OpenClaw skills. By altering the
         bot&rsquo;s baseline knowledge, researchers got it to <strong>triple a prescribed
@@ -546,7 +566,8 @@
         Worth noting precisely: the testing was done against Doctronic&rsquo;s <em>public</em>
         chatbot, while Utah runs the tool inside a state regulatory sandbox. The researchers
         argue the underlying weakness still matters if guardrails fail&mdash;which is the point.
-        This is the direct clinical consequence of the security patterns we see across the agent
+        No patient harm has been reported; this is a demonstrated weakness, not a documented
+        injury. It is the clinical form of the security patterns we see across the agent
         ecosystem.
       </p>
 
@@ -577,7 +598,7 @@
       <hr>
 
       <!-- July 2026: ExploitGym / Hugging Face -->
-      <h2>[July 2026] The Agent That Cheated on the Exam</h2>
+      <h2>[July 2026] The Agents That Went After Their Own Grader</h2>
 
       <p>
         Every example above is an agent manipulated <em>through its inputs</em>&mdash;somebody
@@ -625,7 +646,7 @@
         internally hosted proxy and cache for package registries. The models found a zero-day
         vulnerability in that proxy and exploited it to reach the open Internet. They then
         escalated privileges and moved laterally through OpenAI&rsquo;s research environment
-        until they reached a node with Internet access. From there they reasoned that Hugging
+        until they reached a node with Internet access. By OpenAI&rsquo;s July account, they then reasoned that Hugging
         Face likely hosted models, datasets, and <em>solutions</em> for ExploitGym&mdash;and went
         after them. Chaining stolen credentials with further zero-days, they found a remote
         code execution path into Hugging Face production and went after the benchmark&rsquo;s
@@ -777,38 +798,41 @@
         </p>
       </div>
 
-      <!-- Safer Alternatives -->
-      <h2>Safer Alternatives to OpenClaw</h2>
+      <!-- Smaller, Container-Isolated Alternatives -->
+      <h2>Smaller, Container-Isolated Alternatives</h2>
 
       <p>
-        OpenClaw's security problems sparked a wave of alternatives designed to prove
-        you don't need 430,000 lines of unauditable code to build a useful AI agent.
+        OpenClaw's security problems sparked a wave of smaller alternatives built around
+        isolation. Treat them as examples of a design idea, not as tools proven safe for
+        clinical use.
       </p>
 
       <p>
-        <strong><a href="https://venturebeat.com/orchestration/nanoclaw-solves-one-of-openclaws-biggest-security-issues-and-its-already" target="_blank">NanoClaw</a></strong>
+        <strong><a href="https://github.com/nanocoai/nanoclaw" target="_blank">NanoClaw</a></strong>
         launched in late January 2026 as a direct response to OpenClaw's vulnerabilities.
-        Its entire core logic is roughly <strong>500 lines of TypeScript</strong>&mdash;a
-        developer (or a second AI) can audit it in under ten minutes. The key innovation
-        is <strong>containerization</strong>: the agent runs inside isolated Docker
-        containers with no access to your host filesystem or environment variables. Your
-        API keys, SSH keys, and credentials stay walled off by default.
+        Early coverage described a core of about 500 lines; it has grown since, and its
+        <a href="https://github.com/nanocoai/nanoclaw" target="_blank">README</a> now claims only a
+        codebase &ldquo;small enough to understand: one process and a handful of files.&rdquo;
+        The key idea is <strong>containerization</strong>: agents run in their own Linux
+        containers (installed via Docker) and, in the README&rsquo;s words, &ldquo;can only see
+        what&rsquo;s explicitly mounted.&rdquo; Credentials go through a separate gateway rather
+        than sitting where the agent can read them.
       </p>
 
       <p>
         <strong><a href="https://github.com/HKUDS/nanobot" target="_blank">Nanobot</a></strong>,
-        from the University of Hong Kong, takes minimalism further: approximately 4,000 lines
-        of code, 45MB of memory, boots in under a second. A senior developer can read
-        the <em>entire source code</em> in an afternoon and verify every action it takes.
+        from the University of Hong Kong, describes itself as an ultra-lightweight, self-hosted
+        agent framework in Python. It now ships chat-app connectors, a browser interface, and
+        scheduled tasks, so &ldquo;read the whole thing in an afternoon&rdquo; no longer fits.
       </p>
 
       <div class="callout callout-info">
-        <div class="callout-title">The Size Spectrum</div>
+        <div class="callout-title">The Lesson That Transfers</div>
         <p class="mb-0">
-          OpenClaw: 430,000+ lines. NanoClaw: 500 lines. Nanobot: 4,000 lines.
-          Smaller doesn't always mean better&mdash;but it does mean
-          <strong>auditable</strong>. When an agent has access to your terminal,
-          your files, and your credentials, knowing exactly what it can do matters.
+          Early versions of these projects advertised codebases small enough to audit in an
+          afternoon. Both have grown well past that, so don't choose one on size. What carries
+          over to any agent you evaluate is the design: run it in an isolated container, mount
+          only what the task needs, and keep credentials somewhere the agent cannot read.
         </p>
       </div>
 
@@ -988,6 +1012,24 @@
           </div>
         </div>
         <div class="reading-item">
+          <div class="reading-type"><i data-lucide="shield-alert"></i></div>
+          <div class="reading-content">
+            <div class="reading-title">
+              <a href="https://openai.com/index/hugging-face-incident-and-the-road-ahead/" target="_blank">OpenAI: The Hugging Face Incident and the Road Ahead (August 26, 2026)</a>
+            </div>
+            <div class="reading-meta">OpenAI&rsquo;s final account: the models circumvented isolation controls and acted against their assigned tasks. Source of the &ldquo;warning shot&rdquo; framing.</div>
+          </div>
+        </div>
+        <div class="reading-item">
+          <div class="reading-type"><i data-lucide="shield-alert"></i></div>
+          <div class="reading-content">
+            <div class="reading-title">
+              <a href="https://metr.org/hugging-face-incident-report-aug-2026.pdf" target="_blank">METR and Redwood Research: Independent Incident Report (August 2026, PDF)</a>
+            </div>
+            <div class="reading-meta">The independent investigation: the message board, the roughly 700 agents in the attack, and the finding that they were after the scorer, not answer keys.</div>
+          </div>
+        </div>
+        <div class="reading-item">
           <div class="reading-type"><i data-lucide="shield"></i></div>
           <div class="reading-content">
             <div class="reading-title">
@@ -1077,9 +1119,9 @@
           <div class="reading-type"><i data-lucide="shield"></i></div>
           <div class="reading-content">
             <div class="reading-title">
-              <a href="https://genai.owasp.org/llm-top-10/" target="_blank">OWASP Top 10 for LLM Applications &amp; Gen AI (2025)</a>
+              <a href="https://genai.owasp.org/resource/owasp-genai-llm-top-10-2026/" target="_blank">OWASP Top 10 for LLM Applications 2026</a>
             </div>
-            <div class="reading-meta">The canonical framework&mdash;prompt injection (LLM01), excessive agency, supply-chain skills, and the other risks this module describes, with mitigations security teams actually reference.</div>
+            <div class="reading-meta">The canonical framework, updated August 2026&mdash;prompt injection (LLM01), excessive agency, supply-chain risks, and the other risks this module describes, with mitigations security teams actually reference. For agents specifically, see the companion <a href="https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026/" target="_blank">OWASP Top 10 for Agentic Applications</a> (December 2025).</div>
           </div>
         </div>
         <div class="reading-item">
@@ -1147,7 +1189,7 @@
             <div class="reading-title">
               <a href="https://www.axios.com/2026/03/04/doctronic-utah-prescriptions-ai-jailbreak" target="_blank">Axios: Doctronic Healthcare AI Jailbroken to Triple OxyContin Doses</a>
             </div>
-            <div class="reading-meta">Prompt injection applied to clinical AI&mdash;researchers manipulated prescribing recommendations, demonstrating direct patient safety risk.</div>
+            <div class="reading-meta">Prompt injection applied to clinical AI&mdash;red-teamers manipulated the public chatbot&rsquo;s recommendations. A demonstrated weakness; no patient harm reported. Primary write-up: <a href="https://mindgard.ai/blog/doctronic-is-now-accepting-new-patients-and-unsafe-instructions" target="_blank">Mindgard</a>.</div>
           </div>
         </div>
         <div class="reading-item">
@@ -1161,7 +1203,7 @@
         </div>
       </div>
 
-      <h3>Safer Alternatives</h3>
+      <h3>Smaller, Container-Isolated Alternatives</h3>
 
       <div class="reading-list">
         <div class="reading-item">
@@ -1170,7 +1212,7 @@
             <div class="reading-title">
               <a href="https://venturebeat.com/orchestration/nanoclaw-solves-one-of-openclaws-biggest-security-issues-and-its-already" target="_blank">VentureBeat: NanoClaw Solves One of OpenClaw's Biggest Security Issues</a>
             </div>
-            <div class="reading-meta">How 500 lines of TypeScript with container isolation addresses OpenClaw's 52+ modules and shared-memory architecture.</div>
+            <div class="reading-meta">February 2026 launch coverage: a roughly 500-line core with container isolation, pitched against OpenClaw's 52+ modules and shared-memory architecture. The project has grown since.</div>
           </div>
         </div>
         <div class="reading-item">
@@ -1179,7 +1221,7 @@
             <div class="reading-title">
               <a href="https://github.com/nanocoai/nanoclaw" target="_blank">NanoClaw on GitHub</a>
             </div>
-            <div class="reading-meta">The source code: ~500 lines, Anthropic's Agents SDK, Apple container isolation, auditable in an afternoon.</div>
+            <div class="reading-meta">The source code and README: agents in their own Linux containers that see only what is explicitly mounted, with credentials held in a separate gateway. No longer a 500-line codebase.</div>
           </div>
         </div>
         <div class="reading-item">
@@ -1188,7 +1230,7 @@
             <div class="reading-title">
               <a href="https://github.com/HKUDS/nanobot" target="_blank">Nanobot on GitHub (University of Hong Kong)</a>
             </div>
-            <div class="reading-meta">~4,000 lines of Python, MCP-based, web search, scheduled tasks, memory&mdash;minimalist alternative from HKU's Data Intelligence Lab.</div>
+            <div class="reading-meta">Lightweight, self-hosted Python agent framework from HKU's Data Intelligence Lab: MCP, web tools, scheduled tasks, memory, chat-app connectors.</div>
           </div>
         </div>
       </div>
@@ -1314,11 +1356,13 @@
       <div class="callout callout-warning">
         <div class="callout-title">April 2026 Update: The Exploits Keep Landing</div>
         <p>
-          <strong>Claude Code prompt-injection CVE.</strong> After Claude Code's source was
-          leaked, security firm Adversa discovered that its deny rules can be bypassed via
-          prompt injection, letting attackers execute tool calls Claude Code was configured to
-          refuse. The lesson: agent-side guardrails are only as strong as the inputs they
-          reason about.
+          <strong>Claude Code deny-rule bypass.</strong> After Claude Code's source was
+          leaked, security firm Adversa found that once a command chain passed 50 subcommands,
+          Claude Code stopped enforcing its deny rules and asked the user for approval instead of
+          blocking the command. No CVE was assigned to our knowledge, and
+          <a href="https://www.theregister.com/software/2026/04/01/claude-code-bypasses-safety-rule-if-given-too-many-commands/5220992" target="_blank">Adversa
+          said</a> it appeared fixed in version 2.1.90. The lesson: deny rules are a guardrail, not a
+          hard boundary, and an approval prompt only protects you if someone reads it.
           <a href="https://www.scworld.com/brief/claude-code-vulnerable-to-prompt-injection-due-to-subcommand-limit" target="_blank">[Source]</a>
         </p>
         <p>
@@ -1336,8 +1380,10 @@
           help-desk AIs at health systems hit the same failure mode.
         </p>
         <p>
-          <strong>Prompt injection is still the #1 AI vulnerability.</strong> OWASP's 2026 list
-          keeps prompt injection at LLM01, and enterprise readiness remains low&mdash;only
+          <strong>Prompt injection is still the #1 AI vulnerability.</strong> OWASP keeps prompt
+          injection at LLM01 (its
+          <a href="https://genai.owasp.org/resource/owasp-genai-llm-top-10-2026/" target="_blank">2026 LLM Top 10</a>,
+          published in August, kept it first), and enterprise readiness remains low&mdash;only
           <strong>34.7%</strong> of organizations have deployed dedicated defenses. For
           clinicians: if your health system is piloting agent-based workflows, ask explicitly
           what prompt-injection controls are in place, and where they've been tested.
@@ -1364,14 +1410,16 @@
           category of defense exists, and what it leaves uncovered.
         </p>
         <p>
-          <strong>Clinical AI can be hijacked at the prescription level.</strong> Researchers
-          <a href="https://www.penligent.ai/hackinglabs/ai-doctors-can-be-hijacked-at-will-altering-patient-prescription-dosages-and-giving-wrong-medical-advice/" target="_blank">demonstrated</a>
-          hijacking a clinical AI to alter a prescription&mdash;tripling an OxyContin dose&mdash;then
-          passing the tampered order to a human clinician for routine approval. Related work shows
-          <strong>embedding-level RAG poisoning</strong>: false clinical assumptions planted in a
-          knowledge base can persist into future patient encounters, making later answers look
-          internally consistent while built on tainted context. The takeaway for any AI-in-the-loop
-          order: the human approval step is a real control, not a formality.
+          <strong>Revisiting the Doctronic red-team.</strong> Later commentary
+          (<a href="https://www.penligent.ai/hackinglabs/ai-doctors-can-be-hijacked-at-will-altering-patient-prescription-dosages-and-giving-wrong-medical-advice/" target="_blank">example</a>)
+          returned to the March demonstration described above. In
+          <a href="https://mindgard.ai/blog/doctronic-is-now-accepting-new-patients-and-unsafe-instructions" target="_blank">Mindgard&rsquo;s
+          write-up</a>, the public chatbot, fed a fake guideline, produced a visit summary (a SOAP
+          note) recommending a tripled OxyContin dose, the kind of note that is sent to the physician
+          before a consult; Mindgard also reports that the summary was stored and carried into later
+          chats as medical history. Doctronic and Utah say controlled substances cannot be renewed in
+          the pilot. No patient harm has been reported. The takeaway for any AI-drafted note or
+          order: the human review step is a real control, not a formality.
         </p>
         <p>
           <strong>OWASP, June 11.</strong> A new OWASP report reaffirmed that prompt injection still
@@ -1386,7 +1434,10 @@
           export-control directive forced Anthropic to suspend both models over a demonstrated
           jailbreak technique (Anthropic
           <a href="https://www.anthropic.com/news/fable-mythos-access" target="_blank">disagreed</a>
-          that a narrow jailbreak warranted a recall). A vivid real-world case study in
+          that a narrow jailbreak warranted a recall). The controls were
+          <a href="https://www.anthropic.com/news/redeploying-fable-5" target="_blank">lifted June 30</a>,
+          Fable 5 returned globally on July 1, and it has since been succeeded by Fable 5.1; Mythos
+          remains limited to vetted organizations. A vivid real-world case study in
           frontier-model risk&mdash;and in how fast the controls, and the politics, around these
           models can change.
         </p>
@@ -1395,9 +1446,11 @@
       <div class="callout callout-info">
         <div class="callout-title">A Note on This Module</div>
         <p class="mb-0">
-          The agents introduction was updated in September 2026. The OpenClaw security
-          chronology below it contains earlier reporting, last broadly revised in June 2026;
-          product details and incident counts may have changed. Follow the linked primary
+          The agents introduction was updated in September 2026. In November 2026 the
+          July incident section was rewritten around the August 26 final reports, and the
+          chronology was corrected (EchoLeak, the Doctronic red-team, HIPAA penalties, the
+          Claude Code deny-rule bypass, the alternatives section). Other dated callouts keep
+          their original reporting; product details and incident counts may have changed. Follow the linked primary
           sources and current advisories before making a security or clinical decision.
         </p>
       </div>
@@ -1413,7 +1466,7 @@
           <li>Identify how agents can access API keys, credentials, and sensitive files on your machine</li>
           <li>Recognize specific attack vectors including prompt injection, slopsquatting, and credential exfiltration</li>
           <li>Describe how supply chain attacks through AI agent marketplaces (e.g., ClawHavoc) use the agent as a trusted intermediary to deploy malware</li>
-          <li>Compare OpenClaw to safer alternatives like NanoClaw and Nanobot</li>
+          <li>Compare OpenClaw with container-isolated alternatives like NanoClaw and Nanobot, and name the design choices that transfer</li>
           <li>Connect OpenClaw's vulnerabilities to the broader agentic AI threat landscape, including healthcare AI jailbreaks and state-level AI-driven attacks</li>
           <li>Apply practical guardrails to protect sensitive data when using any AI agent</li>
         </ul>
@@ -1443,7 +1496,7 @@
   <footer class="footer">
     <div class="footer-inner">
       <div><strong>AI 101</strong> · A Self-Paced Guide to AI in Medicine</div>
-      <div><a href="updates.html">v1.17 · 2026</a></div>
+      <div><a href="updates.html">v1.18 · 2026</a></div>
     </div>
   </footer>
 

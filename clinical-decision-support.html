@@ -125,13 +125,14 @@
         <p>
           If you have an NPI number, registration takes 2 minutes and gives you free access
           to the platform used by 40% of U.S. physicians. It's the fastest way to experience
-          what AI-powered clinical decision support actually feels like in practice.
+          what AI-powered clinical decision support actually feels like in practice. Free
+          here means advertising-funded: see the note on ads under OpenEvidence below.
         </p>
         <p class="mb-0">
           <strong>Medical students:</strong> OpenEvidence now accepts student registration.
           You'll need to upload proof of enrollment (student ID, transcript, or enrollment letter).
           If that's not available yet, <a href="https://glass.health" target="_blank">Glass Health</a>
-          offers free accounts without NPI verification—start there.
+          offers a limited free plan without NPI verification—start there.
         </p>
       </div>
 
@@ -294,8 +295,9 @@
       <p>
         We're in the early innings of this transformation. The tools are imperfect, the
         appropriate use cases are still being defined, and the integration with clinical
-        workflows remains clunky. But the trajectory is clear: AI-powered clinical decision
-        support is becoming part of the standard of care.
+        workflows remains clunky. AI-powered clinical decision support is increasingly common,
+        but prospective evidence that it improves care is still thin (see the
+        <a href="#prospective-evidence">August 2026 emergency department study</a> below).
       </p>
 
       <hr>
@@ -371,9 +373,20 @@
           to provide sourced, cited answers to point-of-care questions—essentially a
           "curbside consult" with instant access to the literature.
         </p>
-        <p class="mb-0">
+        <p>
           The platform is <strong>free for physicians with an NPI number</strong> and
           has recently expanded access to medical students.
+        </p>
+        <p class="mb-0">
+          <strong>Free because advertisers pay.</strong> OpenEvidence's
+          <a href="https://ads.openevidence.com/" target="_blank" rel="noopener">advertiser site</a>
+          offers drug and device companies &ldquo;query-relevant, full-screen interstitial
+          engagements&rdquo; shown to clinicians when they search about the advertiser's disease
+          state. Its <a href="https://www.openevidence.com/policies/ads-policies" target="_blank" rel="noopener">ad policy</a>
+          (updated March 4, 2026) requires ads to be clearly labeled, to include fair balance and
+          safety information, and not to promote off-label use. Neither document shows whether ads
+          affect answers. Treat an ad as separate from the cited answer, and open the citations
+          when a branded therapy is in play.
         </p>
       </div>
 
@@ -390,12 +403,21 @@
       </div>
 
       <div class="cds-tool-card">
-        <h4>Doximity GPT</h4>
+        <h4>Doximity Ask (formerly Doximity GPT)</h4>
         <p>
           Represents the "network effect" approach. Doximity, the LinkedIn of medicine,
           acquired Pathway Medical and integrated AI clinical decision support into its
-          existing platform. Since over 80% of U.S. physicians already have Doximity
-          accounts, the tool is available at no additional cost to this built-in user base.
+          existing platform. <a href="https://www.doximity.com/ask/overview" target="_blank" rel="noopener">Doximity Ask</a>
+          gives cited answers and drafts letters and patient materials, and it is
+          <a href="https://support.doximity.com/hc/en-us/articles/55381817186195-Doximity-Ask-FAQs" target="_blank" rel="noopener">free for anyone with a verified Doximity account</a>.
+          Doximity describes Ask as HIPAA-compliant; check its terms with your compliance office
+          before entering PHI.
+        </p>
+        <p class="mb-0">
+          In October 2026 Doximity and Wolters Kluwer
+          <a href="https://www.wolterskluwer.com/en/news/doximity-wolters-kluwer-uptodate-doximity-ask" target="_blank" rel="noopener">announced UpToDate content inside Ask</a>,
+          but only for clinicians at health systems that use both Doximity and UpToDate. It is
+          not free UpToDate for every Doximity user.
         </p>
       </div>
 
@@ -410,11 +432,22 @@
       </p>
 
       <p>
-        The disadvantage is that they're <strong>not optimized for medicine</strong>. They
-        lack the curated knowledge bases and citation infrastructure of purpose-built clinical
-        tools. They're more likely to hallucinate on specialized clinical questions. And as
+        The disadvantage is that the general consumer versions are <strong>not optimized for
+        medicine</strong>. They lack the curated knowledge bases of purpose-built clinical
+        tools, and their citations come from general web search. They're more likely to hallucinate on specialized clinical questions. And as
         you learned in the PHI module, using them with patient data requires careful attention
         to privacy and compliance.
+      </p>
+
+      <p>
+        The line is blurring. In April 2026 OpenAI launched
+        <a href="https://openai.com/index/making-chatgpt-better-for-clinicians/" target="_blank" rel="noopener">ChatGPT for Clinicians</a>,
+        free for verified US physicians, NPs, PAs, and pharmacists. It is a separate workspace
+        with what OpenAI calls trusted clinical search, which cites medical sources, plus deep
+        research and documentation help. An eligible clinician can sign an individual BAA, but
+        only if authorized to sign for their account; see the
+        <a href="phi-hipaa.html">PHI &amp; HIPAA module</a> for what that BAA does and does not
+        cover. The verification step does not by itself make it safe for PHI.
       </p>
 
       <p>
@@ -444,8 +477,8 @@
           <p>
             Go to <strong>openevidence.com</strong> and register with your NPI number.
             The platform will verify your credentials automatically. Once verified, you
-            have unlimited access to the full platform at no cost. CME credits are also
-            available for verified NPI users. Enterprise deployments are arriving too:
+            have unlimited access to the full platform at no cost. Accredited CE credit is
+            also available (see the note on CME below). Enterprise deployments are arriving too:
             in March 2026 <a href="https://www.mountsinai.org/about/newsroom/2026/mount-sinai-health-system-collaborates-with-openevidence-to-provide-evidence-based-knowledge-within-electronic-medical-record" target="_blank">Mount Sinai began rolling OpenEvidence out system-wide</a>
             inside its Epic EHR&mdash;physicians, nurses, and pharmacists across its
             hospitals.
@@ -455,9 +488,11 @@
         <div class="access-card">
           <h4><i data-lucide="external-link"></i> Glass Health</h4>
           <p>
-            Visit <strong>glass.health</strong> and sign up for a free account. Glass
-            verifies healthcare professional status but has a somewhat broader eligibility
-            than OpenEvidence.
+            Visit <strong>glass.health</strong> and sign up. Glass
+            <a href="https://glass.health/resources/best-ai-medical-scribe" target="_blank" rel="noopener">lists</a>
+            free use for NPI-verified US clinicians, a limited free Lite plan without
+            verification, and paid plans from $20 to $200 a month. Its pages describe the free
+            tiers differently, so confirm what the current plan includes before you rely on it.
           </p>
         </div>
 
@@ -494,9 +529,16 @@
       <div class="callout callout-tip">
         <div class="callout-title">A Note on CME</div>
         <p class="mb-0">
-          OpenEvidence now offers free AMA PRA Category 1 Credits for verified NPI users.
-          This represents genuine value—many CDS tools charge for CME. If you're going to
-          look things up anyway, you might as well earn credit for it.
+          Since July 28, 2026, OpenEvidence's
+          <a href="https://www.openevidence.com/announcements/openevidence-launches-new-education-platform-offering-continuing-education-ce-and-maintenance-of-certification-moc-credit" target="_blank" rel="noopener">education platform</a>
+          offers free accredited CE to NPI-verified physicians, NPs, and PAs, with AKH, Inc. as
+          the accredited provider. Credit comes from your own searches, but only when you
+          document a reflection on what you learned and how it informs your care. Physicians can
+          also earn MOC through &ldquo;select certifying boards&rdquo; and track credit in the
+          ACCME's CME Passport. Check that your board participates and that the credit type
+          meets your state's licensure rules before counting on it. Details are at
+          openevidence.com/cme (login required). If you're going to look things up anyway, you
+          might as well earn credit for it.
         </p>
       </div>
 
@@ -544,15 +586,21 @@
           <li>
             <strong>Never enter identifiable patient information into consumer AI platforms.</strong>
             This includes ChatGPT, Claude (web interface), and Gemini consumer versions.
-            None of these have BAAs that would make them HIPAA-compliant for PHI.
+            None of these have BAAs that would make them HIPAA-compliant for PHI. (ChatGPT for
+            Clinicians is a separate workspace with an individual BAA option; see the table
+            below.)
           </li>
           <li>
-            <strong>OpenEvidence requires an organizational BAA for PHI.</strong> As of April 2025,
-            OpenEvidence is HIPAA-compliant—but to input protected health information, your
-            organization must sign a (free) Business Associate Agreement. An authorized signatory
-            (physician-owner, CMIO, or compliance officer) can complete this online at
-            openevidence.com. Individual clinicians without an organizational BAA should use
-            de-identified queries only.
+            <strong>OpenEvidence handles PHI under its own BAA.</strong> OpenEvidence's
+            <a href="https://www.openevidence.com/security" target="_blank" rel="noopener">security page</a>
+            says HIPAA covered entities &ldquo;may choose to transmit&rdquo; PHI, which it handles
+            under its &ldquo;standard Business Associate Agreement or other customer-specific
+            agreements.&rdquo; Its
+            <a href="https://www.openevidence.com/announcements/openevidence-is-now-hipaa-compliant" target="_blank" rel="noopener">April 2025 announcement</a>
+            says covered entities who input PHI agree it will be handled under that BAA. Whether
+            you, as an individual clinician, can bind your practice or employer to those terms is
+            a question for your compliance office. Until you have that answer, use de-identified
+            queries only.
           </li>
           <li>
             <strong>De-identification works for everyone.</strong> You can safely ask about "a 4-year-old
@@ -579,7 +627,7 @@
         tool represents a potential HIPAA violation.
       </p>
 
-      <p>Here's the current landscape as of mid-2026:</p>
+      <p>Here's the current landscape as of November 2026:</p>
 
       <div class="comparison-table-wrapper">
         <table class="comparison-table">
@@ -600,6 +648,11 @@
               <td><strong>ChatGPT for Healthcare</strong></td>
               <td>Yes (Enterprise tier)</td>
               <td>BAA plus customer-managed encryption keys, audit logs, and data residency. Organizational procurement, not individual signup.</td>
+            </tr>
+            <tr>
+              <td><strong>ChatGPT for Clinicians</strong></td>
+              <td>Yes (individual)</td>
+              <td>Free for verified US physicians, NPs, PAs, and pharmacists. An eligible clinician can sign a BAA for their own workspace, but only if authorized to sign for their account. Not every feature is covered. A BAA covering multiple users requires ChatGPT for Healthcare. See the <a href="phi-hipaa.html">PHI &amp; HIPAA module</a> and <a href="https://help.openai.com/en/articles/20001202-chatgpt-for-clinicians" target="_blank" rel="noopener">OpenAI's help page</a>.</td>
             </tr>
             <tr>
               <td><strong>Anthropic (Claude)</strong></td>
@@ -1243,8 +1296,8 @@
           content partnerships with NEJM Group and the AMA covering <em>JAMA plus 11 specialty
           journals and JAMA Network Open</em>. The peer-reviewed content now feeds Abridge's
           Clinical Decision Support system&mdash;grounded in the actual patient conversation
-          happening in the room. This is the first time a clinical AI company has wired
-          first-tier peer-reviewed journals directly into a CDS engine at the point of care.
+          happening in the room. OpenEvidence already had NEJM and JAMA content partnerships;
+          what is new here is grounding that content in the ambient conversation.
         </p>
         <p>
           <strong>NEJM AI publishes ChexGen (April 16).</strong> A generative vision-language
@@ -1387,7 +1440,11 @@
       </p>
 
       <p>
-        Some health systems are already piloting these integrations. The challenge is ensuring
+        Some of this has already shipped. Epic's
+        <a href="https://www.epic.com/epic/post/real-results-right-now-how-epic-ai-is-reducing-costs-improving-care-and-helping-patients/" target="_blank" rel="noopener">Chart with Art</a>,
+        launched in February 2026, listens during visits, drafts the note, and queues up orders
+        for the clinician to review, and OpenEvidence runs inside Epic at Mount Sinai. If your
+        system is on Epic, ask IT what is already available. The challenge is ensuring
         that "helpful" doesn't become "intrusive"—alert fatigue is already a major problem
         with current CDSS implementations.
       </p>
@@ -1398,8 +1455,10 @@
         The next generation of CDS may not require you to type anything. Ambient listening
         technology can capture the patient encounter and generate CDS prompts automatically.
         <em>"Based on the symptoms discussed, consider the following differential..."</em>
-        This is already emerging in documentation tools like Nuance DAX and AWS HealthScribe;
-        extending it to decision support is a natural progression.
+        Ambient scribes such as Microsoft Dragon Copilot (formerly Nuance DAX), Abridge, and
+        Epic's Chart with Art already capture the conversation, and Abridge has begun feeding
+        journal content into decision support grounded in it (see the April 2026 update above).
+        See the <a href="ambient-ai.html">Ambient AI module</a> for where that stands.
       </p>
 
       <h3>Patient-Facing AI</h3>
@@ -1438,7 +1497,7 @@
           <h4>OpenEvidence</h4>
           <p>
             <strong>Website:</strong> openevidence.com<br>
-            <strong>Access:</strong> Free for NPI holders; student registration available<br>
+            <strong>Access:</strong> Free (ad-supported) for NPI holders; student registration available<br>
             <strong>Mobile:</strong> iOS and Android apps<br>
             <strong>Strength:</strong> Evidence synthesis with NEJM/JAMA partnerships
           </p>
@@ -1448,7 +1507,7 @@
           <h4>Glass Health</h4>
           <p>
             <strong>Website:</strong> glass.health<br>
-            <strong>Access:</strong> Free account registration<br>
+            <strong>Access:</strong> Free for NPI-verified US clinicians; limited free Lite plan; paid plans from $20/month<br>
             <strong>Strength:</strong> Differential diagnosis and clinical plan generation
           </p>
         </div>
@@ -1545,6 +1604,15 @@
               <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC11326321/" target="_blank">"Large Language Model Influence on Management Reasoning: A Randomized Controlled Trial"</a>
             </div>
             <div class="reading-meta">Companion to Goh et al. · On management reasoning, GPT-4 showed a significant ~6.5% improvement—a useful contrast to the null diagnostic-reasoning result for understanding what CDS does well.</div>
+          </div>
+        </div>
+        <div class="reading-item" id="prospective-evidence">
+          <div class="reading-type"><i data-lucide="file-text"></i></div>
+          <div class="reading-content">
+            <div class="reading-title">
+              <a href="https://doi.org/10.1038/s41591-026-04601-5" target="_blank" rel="noopener">"Prospective evaluation of a large language model clinical decision support system in the emergency department"</a>
+            </div>
+            <div class="reading-meta">Nature Medicine, August 19, 2026 · Leibovitch et al. An observational, non-randomized DECIDE-AI stage 1 study of 1,138 patients over 4 weeks in one tertiary ED. Expert review rated 99 of 100 sampled outputs appropriate, but physician use fell from 68% to 30% as shifts wore on, and length of stay did not differ (4.9 h in both arms). The authors say the results inform trial design but &ldquo;do not justify clinical deployment&rdquo; yet.</div>
           </div>
         </div>
         <div class="reading-item">
@@ -1735,7 +1803,7 @@
   <footer class="footer">
     <div class="footer-inner">
       <div><strong>AI 101</strong> · A Self-Paced Guide to AI in Medicine</div>
-      <div><a href="updates.html">v1.17 · 2026</a></div>
+      <div><a href="updates.html">v1.18 · 2026</a></div>
     </div>
   </footer>
 

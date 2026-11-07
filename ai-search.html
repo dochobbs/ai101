@@ -343,9 +343,9 @@
       </p>
 
       <ul>
-        <li><strong>Still hallucinates:</strong> A 2025 Wordstream study found a 13% error rate
-        (better than Google AI Overviews at 26%, but not zero). That's roughly 1 in 8 responses
-        containing some inaccuracy.</li>
+        <li><strong>Still hallucinates:</strong> A 2025 comparison by Wordstream, a marketing
+        firm, found a 13% error rate (versus 26% for Google AI Overviews). It is not a
+        clinical study, but no answer engine's error rate is zero.</li>
         <li><strong>Source quality varies:</strong> It sometimes cites sources that plagiarize
         other articles, or relies on outdated information. One analysis found Perplexity
         occasionally citing the same underlying text multiple times through different websites,
@@ -455,7 +455,7 @@
             <tr>
               <td>Follow-up questions</td>
               <td>Conversational</td>
-              <td>New search required</td>
+              <td>&ldquo;Ask Anything&rdquo; box hands off to AI Mode</td>
             </tr>
             <tr>
               <td>Local/structured data</td>
@@ -463,7 +463,7 @@
               <td>Excellent (Maps, Flights, etc.)</td>
             </tr>
             <tr>
-              <td>Error rate (2025 studies)</td>
+              <td>Error rate (2025 Wordstream marketing comparison, not a clinical study)</td>
               <td>~13%</td>
               <td>~26%</td>
             </tr>
@@ -481,18 +481,35 @@
       <h3>The Accuracy Problem</h3>
 
       <p>
-        The higher error rate for Google AI Overviews (26% vs. Perplexity's 13% in one study)
-        deserves attention. Google's AI Overviews are optimized for speed and integration,
-        not deep research. They can be confidently wrong in ways that are hard to detect
-        without clicking through to sources.
+        Google's AI Overviews are optimized for speed and integration, not deep research.
+        They can be confidently wrong in ways that are hard to detect without clicking through
+        to sources, and for health questions the evidence is now more specific than the
+        marketing comparison above.
       </p>
 
       <p>
-        For medical queries specifically, Google has implemented additional safeguards—AI
-        Overviews for health topics often include disclaimers and may link directly to
-        authoritative sources like Mayo Clinic or CDC. But these safeguards aren't perfect,
-        and the convenience of a quick answer can discourage the verification that clinical
-        questions demand.
+        In January 2026, Google
+        <a href="https://www.theguardian.com/technology/2026/jan/11/google-ai-overviews-health-guardian-investigation" target="_blank" rel="noopener">removed some health AI Overviews</a>
+        after a <em>Guardian</em> investigation found false or misleading answers, including
+        liver-function test ranges that could reassure someone with serious liver disease.
+        Google told <a href="https://www.theverge.com/news/860356/google-pulls-alarming-dangerous-medical-ai-overviews" target="_blank" rel="noopener"><em>The Verge</em></a>
+        that its clinicians found many of the flagged answers were not inaccurate. An
+        October 2026
+        <a href="https://arxiv.org/abs/2610.39339" target="_blank" rel="noopener">preprint</a>
+        (not peer reviewed) tested Overviews on 3,611 health questions. Only 44.4% of the top
+        five traditional results were cited; commercial health publishers were
+        over-represented and academic and government sources under-represented. After
+        correction for classifier error, an estimated 56.7% of cited statements were supported
+        by the page they cited. Against physician rubrics, Overviews earned 38.2% of available
+        points, and where a rubric anticipated a specific harmful claim, 22.2% of Overviews
+        made it. The authors found accuracy unrelated to how well statements were grounded, so
+        a citation next to a sentence does not show the sentence came from it.
+      </p>
+
+      <p>
+        The convenience of a quick answer can discourage the verification that clinical
+        questions demand. When a patient brings you an Overview, open the cited page before
+        accepting or rebutting it.
       </p>
 
       <h3>When Google Still Wins</h3>
@@ -618,8 +635,8 @@
             <tr>
               <td>Access</td>
               <td>Plus/Pro subscription</td>
-              <td>Pro subscription</td>
-              <td>Advanced subscription</td>
+              <td>All plans, including free (limits vary)</td>
+              <td>Gemini app; more access on paid Google AI plans</td>
               <td>Pro subscription</td>
             </tr>
           </tbody>
@@ -661,16 +678,19 @@
         <div class="workflow-phase">
           <h4><i data-lucide="sparkles"></i> Claude</h4>
           <p>
-            Claude can search the web when you ask it to. Say "Search for recent research on X"
-            or enable web search in your conversation. The feature synthesizes across many
-            sources and cites them. Requires Pro subscription ($20/mo).
+            In the standard chat interface, turn on Web search from the &ldquo;+&rdquo; menu; in
+            Anthropic&rsquo;s newer Claude experience there is no toggle, and
+            <a href="https://support.claude.com/en/articles/10684626-enabling-and-using-web-search" target="_blank" rel="noopener">Claude searches the web when it helps</a>.
+            It synthesizes across sources and cites them. Free accounts can use it; Team and
+            Enterprise owners must first enable it for the workspace.
           </p>
         </div>
         <div class="workflow-phase">
           <h4><i data-lucide="search"></i> Gemini</h4>
           <p>
             Gemini searches Google automatically for relevant queries. For Deep Research,
-            select the feature from the model dropdown (requires Advanced subscription at $20/mo).
+            select it in the prompt bar. Paid Google AI plans (see <a href="big-three.html">The Big Three</a>)
+            raise usage limits; check the current plan before paying.
             Deep Research can also access your Gmail, Drive, and Docs for personalized research.
           </p>
         </div>
@@ -680,8 +700,9 @@
 
       <p>
         Understanding when models are searching matters for interpreting their answers.
-        By default, ChatGPT, Claude, and Gemini respond from their training data—they're
-        not searching the web unless you specifically ask them to or enable search features.
+        ChatGPT, Claude, and Gemini can each search on their own when they judge a question
+        needs it, or answer from training data alone. Don't assume either way: look for
+        citations and a search indicator in the response.
       </p>
 
       <div class="comparison-table">
@@ -894,7 +915,9 @@
         <p class="mb-0">
           If you're going to share AI-generated information with patients or use it for
           clinical decisions, <strong>always verify against authoritative sources first.</strong>
-          The 13-26% error rates in current studies are too high for unverified clinical use.
+          In the largest health-specific test of Google&rsquo;s Overviews so far, an estimated
+          57% of cited statements were supported by their cited page; that is too low for
+          unverified clinical use.
           Patients trust that you've vetted the information you share—make sure that trust is warranted.
         </p>
       </div>
@@ -956,7 +979,7 @@
           cluster so far in 2026.
           <a href="https://www.marketscale.com/industries/healthcare/openevidence-expands-clinical-ai-across-newyork-presbyterian-columbia-and-weill-cornell-as-linux-foundation-targets-open-source-health-stack" target="_blank" rel="noopener">[Report]</a>
         </p>
-        <p class="mb-0">
+        <p>
           <strong>August 2026: credit, and take-homes.</strong> On July 28 OpenEvidence added a
           <a href="https://www.openevidence.com/announcements/openevidence-launches-new-education-platform-offering-continuing-education-ce-and-maintenance-of-certification-moc-credit" target="_blank" rel="noopener">free accredited CE/MOC platform</a>:
           NPI-verified physicians, NPs, and PAs earn accredited credit from their own searches
@@ -971,6 +994,23 @@
           their own questions&mdash;and the announcement is silent on how patient email addresses
           are handled and whether delivery is BAA-covered, so treat the privacy posture as
           unknown until OpenEvidence says otherwise.
+        </p>
+        <p class="mb-0">
+          <strong>Who pays for &ldquo;free.&rdquo;</strong> OpenEvidence is funded by
+          advertising. Its <a href="https://ads.openevidence.com/" target="_blank" rel="noopener">advertiser site</a>
+          offers drug and device makers &ldquo;query-relevant, full-screen interstitial
+          engagements&rdquo; shown to clinicians when they ask about the advertiser&rsquo;s
+          disease state. Its <a href="https://www.openevidence.com/policies/ads-policies" target="_blank" rel="noopener">ad policy</a>
+          (updated March 4, 2026) requires fair balance of efficacy and risk, bars off-label
+          promotion, and says ads must not be confused with or influence clinical content.
+          Neither document shows whether ads affect answers, and neither rules it out. Usage is
+          large: a <a href="https://doi.org/10.1001/jama.2026.21868" target="_blank" rel="noopener"><em>JAMA</em> cross-sectional analysis</a>
+          (Oct 15, 2026), with OpenEvidence-affiliated co-authors, counted 271 million queries
+          from 952,008 NPI-verified US clinicians through June 2026. A third of queries (33.1%)
+          concerned treatment and management, and 35% to 88% of physicians&rsquo; queries,
+          depending on specialty, fell outside their own field. It measured use, not accuracy or
+          patient benefit. When a branded therapy is in the answer, keep the ad and the cited
+          answer separate in your head and open the citations, especially outside your specialty.
         </p>
       </div>
 
@@ -1118,7 +1158,7 @@
   <footer class="footer">
     <div class="footer-inner">
       <div><strong>AI 101</strong> · A Self-Paced Guide to AI in Medicine</div>
-      <div><a href="updates.html">v1.17 · 2026</a></div>
+      <div><a href="updates.html">v1.18 · 2026</a></div>
     </div>
   </footer>
 

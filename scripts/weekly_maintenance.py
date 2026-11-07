@@ -48,6 +48,58 @@ def fetch(url):
         return {'url': url, 'status': None, 'error': str(exc)}
 
 
+CARD = re.compile(r'<a href="([\w-]+\.html)" class="week-card[^"]*">.*?<span class="week-updated">([^<]*)</span>', re.S)
+LABEL = re.compile(r'^(?:Updated|New) ([A-Z][a-z]{2}) (\d{4})$')
+# Lines that change on every release without anyone reviewing the page.
+ROUTINE_LINE = re.compile(r'v\d+(?:\.\d+)+ · \d{4}')
+
+
+def last_content_change(page):
+    """Date of the newest commit that changed more than the release footer, or None."""
+    log = subprocess.run(['git', 'log', '--format=%H %cs', '--', page], cwd=ROOT,
+                         capture_output=True, text=True).stdout.split('\n')
+    for entry in filter(None, log):
+        sha, date = entry.split()
+        diff = subprocess.run(['git', 'show', '--format=', '-U0', sha, '--', page], cwd=ROOT,
+                              capture_output=True, text=True).stdout.splitlines()
+        changed = [x for x in diff if x[:1] in '+-' and not x.startswith(('+++', '---'))]
+        if any(not ROUTINE_LINE.search(x) for x in changed):
+            return dt.date.fromisoformat(date)
+    return None
+
+
+def check_card_dates(today, index_html=None):
+    """Home-card labels must parse, not be in the future, and not postdate the page's last content change.
+
+    This cannot tell whether a change was a real review; it only catches labels advanced
+    with no content change at all, or past the present.
+    """
+    problems, notes = [], []
+    shallow = subprocess.run(['git', 'rev-parse', '--is-shallow-repository'], cwd=ROOT,
+                             capture_output=True, text=True).stdout.strip() == 'true'
+    cards = CARD.findall(index_html if index_html is not None else (ROOT / 'index.html').read_text())
+    old = []
+    for page, label in cards:
+        match = LABEL.match(label.strip())
+        if not match:
+            problems.append(f'Home card for {page} has an unparseable date label: "{label}".')
+            continue
+        month = dt.datetime.strptime(f'{match[1]} {match[2]}', '%b %Y').date()
+        if month > today.replace(day=1):
+            problems.append(f'Home card for {page} says "{label}", which is in the future.')
+            continue
+        if not shallow:
+            changed = last_content_change(page)
+            if changed is None or month > changed.replace(day=1):
+                problems.append(f'Home card for {page} says "{label}" but the page\'s last content change is {changed or "unknown"}. Fix the label or the page.')
+        if (today.year - month.year) * 12 + today.month - month.month >= 6:
+            old.append(f'{page} ({label})')
+    notes.append(f'Home card dates: {len(cards)} cards checked' + (' (history unavailable in a shallow clone; only format and future dates checked).' if shallow else ' against each page\'s last non-footer change.') + ' A label can still overstate a small edit; that needs a human.')
+    if old:
+        notes.append('Cards not reviewed in 6+ months: ' + ', '.join(old) + '.')
+    return problems, notes
+
+
 def check(today, check_external=False, check_live=False):
     state = json.loads((ROOT / 'docs/audits/latest.json').read_text())
     problems, checks = [], []
@@ -70,6 +122,10 @@ def check(today, check_external=False, check_live=False):
         checks.append(f'Newest news addition: {latest} ({news_age} days ago).')
         if news_age > 14:
             problems.append('News review needed: latest addition is more than 14 days old. Review for real developments; do not invent filler.')
+
+    card_problems, card_notes = check_card_dates(today)
+    problems.extend(card_problems)
+    checks.extend(card_notes)
 
     tracked = subprocess.check_output(['git', 'ls-files', '*.html'], cwd=ROOT, text=True).splitlines()
     pages = [ROOT / p for p in tracked if '/' not in p]

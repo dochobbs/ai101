@@ -258,10 +258,17 @@
       <p>
         Third, AI lacks the ability to integrate the subtle contextual cues that experienced clinicians
         process automatically: the patient's affect, their living situation, their reliability as a historian,
-        the nonverbal signals that suggest whether symptoms are being minimized or amplified. A study by
-        symptom checker researchers found that even with perfect information, AI-based tools listed the
-        correct diagnosis in the top three options only 51% of the time, compared to 84% for physicians
-        given the same vignettes.
+        the nonverbal signals that suggest whether symptoms are being minimized or amplified. A
+        <a href="https://doi.org/10.1001/jamainternmed.2016.6001" target="_blank" rel="noopener">2016 study</a>
+        of pre-LLM symptom-checker apps found they listed the correct diagnosis in the top three
+        only 51% of the time, against 84% for physicians given the same written vignettes. Current
+        models do far better on paper, which makes a 2026 result more telling: in a
+        <a href="https://doi.org/10.1038/s41591-025-04074-y" target="_blank" rel="noopener">randomized
+        study in <em>Nature Medicine</em></a> of 1,298 members of the public, the LLMs tested
+        (GPT-4o, Llama 3, Command R+) identified the relevant condition in 94.9% of scenarios on
+        their own, but people using them identified it in fewer than 34.5%, no better than a
+        control group using whatever source they chose. The breakdown happens in the
+        conversation, not the model&rsquo;s knowledge.
       </p>
 
       <p>
@@ -666,7 +673,8 @@
       <h4>3. Privacy Isn't Guaranteed</h4>
 
       <p>
-        Consumer AI tools are not HIPAA-compliant. Data entered into ChatGPT, Claude, or similar tools
+        General-purpose consumer AI tools are not covered by HIPAA. (A tool offered by a patient&rsquo;s own
+        provider or health plan may be; ask which it is.) Data entered into ChatGPT, Claude, or similar tools
         goes to companies that may use it for training or other purposes. Patients should avoid including
         identifying information (name, date of birth, Social Security number) in health queries.
       </p>
@@ -697,6 +705,21 @@
         AI is not appropriate for evaluating urgent symptoms. Patients should understand that chest pain,
         severe shortness of breath, neurological changes, or other potentially serious symptoms require
         immediate professional evaluation—not an AI conversation.
+      </p>
+
+      <p>
+        This is now measured, not just assumed. A
+        <a href="https://doi.org/10.1038/s41591-026-04297-7" target="_blank" rel="noopener">February 2026
+        <em>Nature Medicine</em> stress test</a> of ChatGPT Health ran 60 clinician-written vignettes
+        under 16 conditions each (960 responses). Among gold-standard emergencies it
+        <strong>undertriaged 52%</strong>, sending diabetic ketoacidosis and impending respiratory
+        failure to 24&ndash;48-hour evaluation, while handling classic emergencies such as stroke and
+        anaphylaxis correctly. When a family member or friend in the vignette minimized the
+        symptoms, edge-case recommendations shifted, mostly toward less urgent care (odds ratio
+        11.7). Crisis messages for suicidal ideation fired inconsistently. It tested the January
+        version with vignettes, and the authors call for prospective validation. Two things to
+        tell patients: a reassuring chatbot answer doesn&rsquo;t clear a red-flag symptom, and it
+        helps to ask what they typed, not only what the AI said.
       </p>
 
       <h3>Practical Tips for Patient AI Use</h3>
@@ -746,14 +769,23 @@
         developed in this course.
       </p>
 
+      <div class="callout callout-warning">
+        <div class="callout-title">Read This Before Building Anything Patient-Facing</div>
+        <ul class="mb-0">
+          <li><strong>Education, not triage.</strong> Keep a patient-facing tool to general education from your own approved materials. Don&rsquo;t ask it to decide whether a symptom can wait; a chatbot that sorts urgency is a clinical function, and it may raise state-law and FDA device questions. Have counsel look before you launch one.</li>
+          <li><strong>Assume patients will type PHI.</strong> Telling patients not to enter identifying details does not stop them. The business associate line above applies: <em>directing</em> your patients to a tool you built is a different act from a patient choosing one. If patient data can arrive, the tool needs to run on a platform covered by a BAA. OpenAI, for example, lists publishing GPTs externally as BAA-covered only inside its HIPAA-eligible business workspaces, not on personal plans (<a href="https://help.openai.com/en/articles/20001069-hipaa-eligible-products-and-functionality" target="_blank" rel="noopener">OpenAI</a>).</li>
+          <li><strong>Check state disclosure law.</strong> In California, for example, AI-generated patient messages containing clinical information need a disclaimer and instructions for reaching a human unless a licensed provider reviews them (<a href="bias-ethics.html">see the state-law table</a>).</li>
+        </ul>
+      </div>
+
       <h3>Why Create Patient-Facing AI Tools?</h3>
 
       <ul>
         <li><strong>Control the information:</strong> Your custom GPT can only reference your approved materials, protocols, and guidance</li>
-        <li><strong>Reduce after-hours burden:</strong> Patients get immediate answers to routine questions without calling the on-call line</li>
+        <li><strong>Answer routine questions:</strong> Patients get quick answers to logistics and education questions your handouts already cover</li>
         <li><strong>Consistent messaging:</strong> Every patient gets the same accurate information, in your voice</li>
         <li><strong>Extend your care:</strong> Patients feel supported between visits</li>
-        <li><strong>Triage appropriately:</strong> Build in guidance about when to seek urgent care vs. wait for an appointment</li>
+        <li><strong>Point to a person:</strong> Every answer about symptoms should end at your office line, the on-call line, or 911, not at a judgment about whether it can wait</li>
       </ul>
 
       <h3>Ideas for Patient-Facing Custom GPTs</h3>
@@ -808,11 +840,11 @@
       </p>
 
       <ol>
-        <li><strong>Choose your platform:</strong> Custom GPTs are no longer an option for new tools. <a href="https://help.openai.com/en/articles/8554407-gpts-faq" target="_blank">OpenAI says</a> personal ChatGPT accounts (Free, Go, Plus, Pro) can no longer create or publish new GPTs, and standard custom GPTs are scheduled to retire on December 11, 2026, with OpenAI pointing builders to plugins instead. Claude Projects are another option.</li>
+        <li><strong>Choose your platform:</strong> Custom GPTs are no longer an option for new tools. <a href="https://help.openai.com/en/articles/8554407-gpts-faq" target="_blank">OpenAI says</a> personal ChatGPT accounts (Free, Go, Plus, Pro) can no longer create or publish new GPTs, and standard custom GPTs are scheduled to retire on December 11, 2026, with OpenAI pointing builders to plugins instead. Claude Projects can&rsquo;t fill the gap: they are shared only with members of the same Team or Enterprise organization, not with patients (<a href="https://support.claude.com/en/articles/9519189-manage-project-visibility-and-sharing" target="_blank">Anthropic</a>). In practice, a patient-facing tool means a vendor product or a business platform covered by a BAA.</li>
         <li><strong>Write clear instructions:</strong> Define the GPT's role, what it should and shouldn't discuss, and when to recommend professional care.</li>
         <li><strong>Upload your materials:</strong> Patient handouts, FAQs, post-procedure instructions, condition guides.</li>
         <li><strong>Test thoroughly:</strong> Try to break it. Ask questions that should trigger safety warnings.</li>
-        <li><strong>Share with patients:</strong> Provide the link at checkout, in follow-up emails, or on your patient portal.</li>
+        <li><strong>Share with patients:</strong> Only after the checks in the box above. Then link it from your patient portal or follow-up messages.</li>
       </ol>
 
       <div class="callout callout-warning">
@@ -820,7 +852,7 @@
         <ul class="mb-0">
           <li><strong>Not for emergencies:</strong> Make clear in your instructions that emergencies require 911 or the ER, not a chatbot</li>
           <li><strong>Not a replacement for care:</strong> The GPT should encourage—not replace—communication with your team</li>
-          <li><strong>Privacy:</strong> Standard ChatGPT isn't HIPAA-compliant. Instruct patients not to enter identifying information. For HIPAA-compliant options, consider enterprise healthcare AI platforms</li>
+          <li><strong>Privacy:</strong> Personal ChatGPT and Claude plans have no BAA. Instructing patients not to enter identifying information is not enough on its own, because they will. Use a platform covered by a BAA wherever patient data could arrive</li>
           <li><strong>Review and update:</strong> Medical information changes. Schedule regular reviews of your GPT's knowledge base</li>
         </ul>
       </div>
@@ -899,6 +931,17 @@
           <a href="https://www.nysenate.gov/legislation/laws/GBS/1702" target="_blank">General Business Law &sect;1702</a>
           requires AI companion operators to tell users they are not talking to a human at the
           start of an interaction and at least every 3 hours during continuing ones.
+        </p>
+        <p>
+          <strong>November 2026: the first long-term outcome trial.</strong> A
+          <a href="https://doi.org/10.1001/jamanetworkopen.2026.41062" target="_blank" rel="noopener">randomized
+          trial in <em>JAMA Network Open</em></a> gave 400 pregnant or postpartum participants from
+          racial and ethnic minoritized groups either a generative AI maternal health chatbot or
+          monthly children&rsquo;s books. At 12 months the chatbot made no difference to anxiety or
+          depression scores, emergency visits, postpartum checkups, contraception, or sleep.
+          Enrollment began in October 2023, so it tested an older generation of model, and outcomes
+          were self-reported. Don&rsquo;t count a chatbot as treatment or as a substitute for
+          perinatal mental health screening and referral.
         </p>
         <p class="mb-0">
           <strong>Clinical implication:</strong> Actively ask patients with mental health conditions
@@ -1021,7 +1064,7 @@
       <ol>
         <li>AI is a starting point, not a diagnosis.</li>
         <li>Better prompts yield better information.</li>
-        <li>Consumer AI isn't covered by HIPAA—even the versions that connect to your records.</li>
+        <li>General-purpose consumer AI isn't covered by HIPAA&mdash;even the versions that connect to your records. Tools run by a provider or health plan may differ; ask which it is.</li>
         <li>AI can hallucinate—verify important claims.</li>
         <li>Emergency symptoms need emergency care, not AI.</li>
       </ol>
@@ -1105,17 +1148,19 @@
         <p>
           <strong>Symptom-reporting quality differs by interlocutor.</strong> A
           <a href="https://www.nature.com/articles/s44360-026-00116-y" target="_blank" rel="noopener"><em>Nature Health</em> study (May 2026)</a>
-          showed that in controlled encounters, patients reported <strong>fewer and
-          lower-quality symptoms to chatbots than to physicians</strong>&mdash;a finding with
-          direct implications for chatbot triage reliability. Patients aren&rsquo;t lying to the
-          AI; they&rsquo;re editing themselves. The clinical interview is doing work the chatbot
-          can&rsquo;t replicate, even before pattern-recognition enters the picture.
+          randomized 500 participants to write <em>simulated</em> symptom reports for common
+          conditions, believing the reader was either an AI chatbot or a physician. Those who
+          thought they were writing to an AI produced <strong>lower-quality reports for
+          triage</strong>, judged by physician-validated, LLM-based metrics. It was an online
+          experiment, not observed patients, and it doesn&rsquo;t explain why. The practical
+          point still holds: a chatbot&rsquo;s triage is only as good as what people type into it,
+          and the clinical interview is doing work the chatbot can&rsquo;t replicate.
         </p>
         <p class="mb-0">
           <strong>Consumer launches keep stacking.</strong> Beyond the April patient-facing
-          rollouts, May 2026 added athenahealth&rsquo;s
-          <a href="https://www.newsweek.com/athenahealth-throws-its-hat-in-ambient-scribe-ai-assistant-rings-access-health-10991353" target="_blank" rel="noopener">athenaAmbient (free)</a>
-          and continued expansion of UnitedHealthcare&rsquo;s AI Companion. Expect patients to
+          rollouts, UnitedHealthcare&rsquo;s AI Companion continued to expand. (An earlier
+          version of this note listed athenahealth&rsquo;s athenaAmbient here; it is a clinician
+          documentation scribe, not a tool patients consult.) Expect patients to
           arrive having consulted not just ChatGPT but their insurer&rsquo;s, their hospital
           system&rsquo;s, and their EHR portal&rsquo;s AI&mdash;each with different framings of
           the same symptoms.
@@ -1240,7 +1285,7 @@
             <div class="reading-title">
               <a href="https://www.axios.com/2026/03/04/doctronic-utah-prescriptions-ai-jailbreak" target="_blank">"Utah's AI Prescription Experiment Gets Jailbroken"</a>
             </div>
-            <div class="reading-meta">Axios, March 2026 · How Doctronic's autonomous prescription AI was trivially bypassed by researchers.</div>
+            <div class="reading-meta">Axios, March 2026 · How red-teamers manipulated Doctronic's public chatbot, the system behind Utah's renewal pilot. A demonstrated weakness; no patient harm reported.</div>
           </div>
         </div>
 
@@ -1458,7 +1503,7 @@
                 <ul class="list-flush">
                   <li>Utah&rsquo;s regulatory sandbox pilot (term listed as Oct 2025&ndash;Oct 2026; renewal unconfirmed)</li>
                   <li><a href="https://commerce.utah.gov/ai/regulatory-relief-4/authorized-pilots/doctronic/" target="_blank">Still in Phase 1</a>: a licensed practitioner authorizes every renewal request; no controlled substances, no new prescriptions</li>
-                  <li><strong>Major concern:</strong> Researchers trivially jailbroke the system (March 2026), raising safety questions</li>
+                  <li><strong>Major concern:</strong> Red-teamers jailbroke its public chatbot (March 2026), raising safety questions</li>
                   <li>Illustrates the gap between regulatory approval and security readiness</li>
                 </ul>
               </td>
@@ -1487,7 +1532,11 @@
           was promptly jailbroken by researchers, raising fundamental questions about whether AI should
           make prescribing decisions without physician oversight. For now it doesn&rsquo;t: Utah
           says a licensed practitioner still authorizes every request, and removing that step
-          requires state approval. <strong>RecovryAI</strong> took the
+          requires state approval. (Utah has since
+          <a href="https://commerce.utah.gov/ai/regulatory-relief-4/authorized-pilots/" target="_blank">authorized other pilots</a>,
+          including Nolla Health, active from October 5, 2026, whose AI issues first-time and refill
+          prescriptions for topical acne treatment, and August AI for maintenance refills, approved
+          but not yet started.) <strong>RecovryAI</strong> took the
           opposite path: FDA Breakthrough Device designation, physician-prescribed use, time-limited
           to 30 days post-surgery, with structured twice-daily check-ins.
         </p>
@@ -1576,7 +1625,7 @@
   <footer class="footer">
     <div class="footer-inner">
       <div><strong>AI 101</strong> · A Self-Paced Guide to AI in Medicine</div>
-      <div><a href="updates.html">v1.17 · 2026</a></div>
+      <div><a href="updates.html">v1.18 · 2026</a></div>
     </div>
   </footer>
 

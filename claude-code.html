@@ -965,6 +965,7 @@ code.inline { white-space:pre-wrap; overflow-wrap:anywhere; }
 
     <ul class="promise-list">
       <li><span>You’re on a Mac (macOS 13 or later). Windows users — Anthropic has a parallel walkthrough at <a href="https://code.claude.com/docs/en/terminal-guide">code.claude.com/docs/en/terminal-guide</a>.</span></li>
+      <li><span>You’re willing to try the terminal. If you decide it isn’t for you, Anthropic also makes a <a href="https://code.claude.com/docs/en/desktop-quickstart">Claude Code desktop app</a> that needs no terminal. It’s a different app, so the steps here won’t match it, and its settings and data handling are worth checking on their own.</span></li>
       <li><span>If your work involves patient health information, stick to non-clinical files for this program — your own notes, drafts, downloads. Anything Claude reads is sent to Anthropic, and personal plans like Pro and Max aren’t covered by a business associate agreement, so no PHI. Anthropic’s <a href="https://support.claude.com/en/articles/8114513-business-associate-agreements-baa-for-commercial-customers">BAA coverage</a> is an Enterprise setup your organization has to turn on, a separate conversation worth having before you point Claude at patient data.</span></li>
     </ul>
 
@@ -1003,13 +1004,15 @@ code.inline { white-space:pre-wrap; overflow-wrap:anywhere; }
     <p><strong>Install Claude Code.</strong> One command, once. Like getting a passport: you do it a single time, then you just travel. Copy this line, paste it into your terminal (Cmd+V), and press Enter:</p>
     <div class="codeblock"><pre>curl -fsSL https://claude.ai/install.sh | bash</pre><button class="copy-btn">Copy</button></div>
     <p>(On Windows, open PowerShell instead and run
-    <code class="inline">curl -fsSL https://claude.ai/install.cmd -o install.cmd &amp;&amp; install.cmd</code>
-    &mdash; the rest of the program works the same.)</p>
+    <code class="inline">irm https://claude.ai/install.ps1 | iex</code>.
+    If your prompt doesn’t start with <code class="inline">PS</code>, you’re in CMD, and the command there is
+    <code class="inline">curl -fsSL https://claude.ai/install.cmd -o install.cmd &amp;&amp; install.cmd &amp;&amp; del install.cmd</code>.
+    Anthropic’s <a href="https://code.claude.com/docs/en/terminal-guide">terminal guide</a> walks through Windows step by step. The daily commands in this program are written for a Mac, so expect some to differ.)</p>
     <p>You’ll see text scroll by. When it finishes, you should see “Claude Code successfully installed!” You don’t need to install anything else first &mdash; the installer brings everything it needs. If something goes wrong, the official troubleshooting is at <a href="https://code.claude.com/docs/en/terminal-guide">code.claude.com/docs/en/terminal-guide</a>.</p>
 
     <p>To check it worked, <strong>close the Terminal window and open a new one</strong>, then type:</p>
     <div class="codeblock"><pre>claude --version</pre><button class="copy-btn">Copy</button></div>
-    <p>If you see a version number, you’re set.</p>
+    <p>If you see a version number, you’re set. If instead it says <code class="inline">command not found: claude</code>, the install worked but your terminal doesn’t know where to look yet. Scroll up to the end of the installer’s output: under <strong>Setup notes</strong> it prints the exact line to copy and run (usually one that adds <code class="inline">~/.local/bin</code> to your PATH). Run it, open a new Terminal window, and try <code class="inline">claude --version</code> again. The <a href="https://code.claude.com/docs/en/terminal-guide">terminal guide</a> has the same fix.</p>
 
     <p><strong>Log in (first run only).</strong> The first time you type <code class="inline">claude</code>, it will ask you to sign in &mdash; it opens a browser page, you approve it, and you’re back in the terminal. It uses your existing Claude account (a paid plan; Pro at $20/month is plenty for this program). You won’t be asked again.</p>
 
@@ -1017,9 +1020,9 @@ code.inline { white-space:pre-wrap; overflow-wrap:anywhere; }
     <div class="codeblock"><pre>claude --permission-mode manual</pre><button class="copy-btn">Copy</button></div>
     <p>Glance at that line each time you start a session. (If you’re comfortable editing a settings file, <code class="inline">"defaultMode": "manual"</code> under <code class="inline">"permissions"</code> in <code class="inline">~/.claude/settings.json</code> makes Manual the default. Anthropic’s <a href="https://code.claude.com/docs/en/permission-modes">permission modes guide</a> has the details.)</p>
 
-    <p><strong>If anything ever looks off</strong> &mdash; weird errors, claude not found, login loops &mdash; there’s a built-in checkup:</p>
+    <p><strong>If anything ever looks off</strong> once Claude is installed and found &mdash; weird errors, login loops, an update that didn’t take &mdash; there’s a built-in checkup:</p>
     <div class="codeblock"><pre>claude doctor</pre><button class="copy-btn">Copy</button></div>
-    <p>It checks the installation and tells you what to fix, in plain language.</p>
+    <p>It checks the installation and settings and suggests fixes. (If the terminal can’t find <code class="inline">claude</code> at all, it can’t find <code class="inline">claude doctor</code> either; use the PATH fix above.)</p>
 
     <div class="callout">
       <div class="callout-label">Optional: the AI 101 starter</div>
@@ -1999,7 +2002,7 @@ claude</pre><button class="copy-btn">Copy</button></div>
 <footer class="site-footer">
   <div><strong>AI 101</strong> · <a href="index.html">A Self-Paced Guide to AI in Medicine</a></div>
   <div><a href="github.html">14 Days to GitHub</a> · <a href="vibe-coding.html">Vibe Coding module</a> · <a href="https://code.claude.com/docs/en/overview" target="_blank" rel="noopener">Official Claude Code docs</a></div>
-  <div><a href="updates.html">v1.17 · 2026</a></div>
+  <div><a href="updates.html">v1.18 · 2026</a></div>
 </footer>
 <script src="https://studio.pickaxe.co/api/embed/bundle.js" defer></script>
 </body></html>

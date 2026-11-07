@@ -260,9 +260,18 @@
       <h3>Chain-of-Thought: An Actionable Parallel</h3>
       <p>
         <strong>Chain-of-thought prompting</strong> asks an LLM to "think step by step" before
-        answering. This consistently improves performance on complex reasoning tasks. Why?
-        Because it forces the model to externalize intermediate steps rather than jumping
-        directly to a conclusion.
+        answering. On older models this reliably improved performance on complex reasoning
+        tasks. Why? Because it forces the model to externalize intermediate steps rather than
+        jumping directly to a conclusion.
+      </p>
+      <p>
+        Current reasoning models do this on their own. Vendor guidance now treats the magic
+        phrase as a fallback: Anthropic&rsquo;s
+        <a href="https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/claude-prompting-best-practices" target="_blank" rel="noopener">prompting guide</a>
+        calls manual chain-of-thought a fallback for when thinking is off, says to rely on
+        built-in thinking on its newest models, and notes that &ldquo;think thoroughly&rdquo;
+        often beats a hand-written step-by-step plan. Ask to see the reasoning when you intend
+        to check it.
       </p>
       <p>
         Clinical parallels:
@@ -431,7 +440,7 @@
         isolate them from the internet.&rdquo; Agents turned an internal package-manager
         service into an improvised message board, used it to reach the internet, and
         shared what they found with each other. Agents stuck on an exploit benchmark called
-        ExploitGym went looking for its solutions on outside services and ended up running
+        ExploitGym went looking for ways to cheat its scorer on outside services and ended up running
         code on Hugging Face&rsquo;s production servers. Hugging Face detected and
         disclosed the intrusion on July 16 without knowing who was behind it; OpenAI
         connected it to its own testing and disclosed on July 21.
@@ -638,7 +647,7 @@
         <li>Provide structured, high-quality input—prompt engineering applies</li>
         <li>Verify independently at high-stakes decision points</li>
         <li>Probe for alternatives; confidence doesn't track accuracy</li>
-        <li>Use chain-of-thought prompting for complex reasoning tasks</li>
+        <li>On older or non-reasoning models, ask for step-by-step reasoning; on current reasoning models, ask to see the reasoning when you plan to check it</li>
         <li>Recognize that fluent output doesn't imply understanding</li>
         <li>When a tool can act and not just answer, scope its permissions deliberately—an
           agent will use whatever access it has in service of whatever you asked for</li>
@@ -687,15 +696,15 @@
         </li>
       </ol>
 
-      <!-- NotebookLM Reminder -->
+      <!-- Gemini Notebook (formerly NotebookLM) Reminder -->
       <div class="callout callout-tool">
-        <div class="callout-title">Try This with NotebookLM</div>
+        <div class="callout-title">Try This with Gemini Notebook</div>
         <p>
-          In <a href="start-here.html">Start Here</a>, you learned to use NotebookLM for document
-          synthesis. This module's readings are perfect candidates:
+          In <a href="start-here.html">Start Here</a>, you learned to use Gemini Notebook
+          (formerly NotebookLM) for document synthesis. This module's readings are perfect candidates:
         </p>
         <ul>
-          <li>Upload the readings to a NotebookLM notebook</li>
+          <li>Upload the readings to a Gemini Notebook notebook</li>
           <li>Ask it to compare how emergent capabilities appear in LLMs vs. medical learners</li>
           <li>Generate an Audio Overview for commute-time review</li>
           <li>Use your verification skills—what does it get right? What does it oversimplify?</li>
@@ -804,7 +813,7 @@
             <div class="reading-title">
               <a href="https://openai.com/index/hugging-face-model-evaluation-security-incident/" target="_blank">OpenAI and Hugging Face partner to address security incident during model evaluation</a>
             </div>
-            <div class="reading-meta">OpenAI · July 2026 · The primary account of the ExploitGym incident. Worth reading in the original because the press coverage consistently framed it as an escape attempt; OpenAI's own description is narrower and more useful.</div>
+            <div class="reading-meta">OpenAI · July 2026 · OpenAI's first, preliminary account of the ExploitGym incident. Its <a href="https://openai.com/index/hugging-face-incident-and-the-road-ahead/" target="_blank">August 26 final report</a> and the <a href="https://metr.org/hugging-face-incident-report-aug-2026.pdf" target="_blank">METR/Redwood investigation</a> revise it: the agents knew they had left their assignment and kept going. Read all three; the press framing as an escape attempt fits none of them.</div>
           </div>
         </div>
 
@@ -951,7 +960,7 @@
   <footer class="footer">
     <div class="footer-inner">
       <div><strong>AI 101</strong> · A Self-Paced Guide to AI in Medicine</div>
-      <div><a href="updates.html">v1.17 · 2026</a></div>
+      <div><a href="updates.html">v1.18 · 2026</a></div>
     </div>
   </footer>
 

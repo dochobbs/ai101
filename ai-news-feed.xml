@@ -5,7 +5,7 @@
     <link>https://ai101.health/ai-news.html</link>
     <description>AI news and developments relevant to healthcare and medical practice, curated for AI 101: A Self-Paced Guide to AI in Medicine.</description>
     <language>en-us</language>
-    <lastBuildDate>Sat, 07 Nov 2026 20:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Sat, 07 Nov 2026 23:05:00 GMT</lastBuildDate>
     <atom:link href="https://ai101.health/ai-news-feed.xml" rel="self" type="application/rss+xml"/>
 
     <item>
@@ -17,6 +17,30 @@
     </item>
 
     <item>
+      <title>Google Is Retiring Gems: Read-Only November 17, Removed December 17</title>
+      <link>https://support.google.com/gemini/answer/18560919</link>
+      <description>Google is replacing Gems in the Gemini app with skills. On personal Google accounts for adults, Gems become read-only on November 17, 2026 (you can see them but not use or edit them) and are removed on December 17. Workspace business, enterprise, and nonprofit accounts follow in March 2027 and education accounts in June 2027. Google says it will recreate Gems as skills automatically, but skills hold at most 100 MB of files, with the largest files dropped first, and some file types will not carry over: audio, video, archives such as .zip, and legacy Office formats (.doc, .xls, .ppt). If you built a Gem around clinic reference documents, check its Knowledge files and download anything you need before December 17. The help page is undated; the date shown is when this guide checked it.</description>
+      <pubDate>Sat, 07 Nov 2026 00:00:00 GMT</pubDate>
+      <guid>https://support.google.com/gemini/answer/18560919</guid>
+    </item>
+
+    <item>
+      <title>Weill Cornell Discloses Patient Data Entered Into Unapproved AI Tools</title>
+      <link>https://weill.cornell.edu/data-security-incident-nov-2026</link>
+      <description>Weill Cornell Medicine says patient information from Weill Cornell Imaging at NewYork-Presbyterian was entered into AI tools without authorization between June 10 and June 20, 2026, as part of a research activity it has since suspended; it learned of this on September 6. The data included medical record numbers, radiology accession numbers, service dates and times, provider names, and clinical details such as diagnoses, procedures and medications, but not names, addresses or Social Security numbers. The notice does not name the tools. Weill Cornell says it asked for the data to be deleted, without saying deletion was confirmed, and that it has found no evidence of misuse. Removing names did not make this data safe to paste: the institution still issued a public notice over MRNs, dates and clinical details. Before entering any patient data into an AI tool, confirm the tool is approved by your organization and covered by a BAA.</description>
+      <pubDate>Thu, 05 Nov 2026 00:00:00 GMT</pubDate>
+      <guid>https://weill.cornell.edu/data-security-incident-nov-2026</guid>
+    </item>
+
+    <item>
+      <title>A Year-Long Trial of a Pregnancy Chatbot Found No Effect on Anxiety or Depression</title>
+      <link>https://doi.org/10.1001/jamanetworkopen.2026.41062</link>
+      <description>A JAMA Network Open randomized trial assigned 400 pregnant or postpartum participants from racial and ethnic minoritized groups to a generative AI maternal health chatbot or an active control, a monthly children’s book club. At 12 months there was no difference in anxiety (adjusted mean difference on the GAD-7, 0.10; 95% CI −0.77 to 0.96) or depression (PHQ-9, −0.23; −1.05 to 0.59), or in ED visits, postpartum care, contraception or sleep. Outcomes were self-reported, the trial was unblinded, baseline symptom scores were low, it was powered for moderate effects, and staff followed up on the chatbot’s safety alerts. A higher adjusted rate of self-reported pregnancy complications (rate ratio 1.40; 1.02 to 1.92) did not hold in longitudinal analyses, and the authors call it hypothesis-generating. Enrollment began in October 2023, so this tested an older generation of model. Don’t count a pregnancy chatbot as treatment, or as a substitute for perinatal mental health screening and referral.</description>
+      <pubDate>Mon, 02 Nov 2026 00:00:00 GMT</pubDate>
+      <guid>https://doi.org/10.1001/jamanetworkopen.2026.41062</guid>
+    </item>
+
+    <item>
       <title>Cancer AI Assistance Improved Chart Review; Patient Benefit Was Not Tested</title>
       <link>https://www.nature.com/articles/s43018-026-01264-6</link>
       <description>A Nature Cancer study evaluated an agentic system for six immune-related adverse-event types. A randomized crossover study of clinical-trial staff found 2.71 minutes less annotation time and higher complete-match accuracy with assistance. A three-month silent deployment showed lower performance than retrospective testing. The result supports a bounded chart-review workflow with human verification; it does not demonstrate earlier treatment, fewer hospitalizations, or better patient outcomes.</description>
@@ -25,11 +49,27 @@
     </item>
 
     <item>
+      <title>Doximity Reports LLMs Got at Least 2.3% of Doses Wrong (Vendor Data, Released With Its Own Fix)</title>
+      <link>https://blog.doximity.com/articles/over-2-of-llm-doses-are-wrong-some-can-be-lethal</link>
+      <description>Doximity says it tested nine LLMs released in 2026 on more than 8,000 dosing questions across 2,204 drugs and found at least 2.3% of 261,508 doses wrong. It classed 43.8% of detected errors as serious and 3.4% as potentially lethal. The most common failure was not adjusting for age, weight, renal or hepatic function, or interactions given in the prompt; unit and decimal errors and confusion between similar drug names also appeared, and drugs approved in 2024 or later had 5.1 times the odds of error. These are vendor-reported numbers, published as a company blog post alongside the launch of DoseCheck, a database check in Doximity Ask that the company says cuts dosing errors by more than 99%. Neither number comes from an independent or peer-reviewed evaluation. Check every AI-generated dose against the label or a drug reference, especially for newer drugs and for patients who need an age, weight or organ-function adjustment.</description>
+      <pubDate>Thu, 29 Oct 2026 00:00:00 GMT</pubDate>
+      <guid>https://blog.doximity.com/articles/over-2-of-llm-doses-are-wrong-some-can-be-lethal</guid>
+    </item>
+
+    <item>
       <title>HTI-5 Final Rule Drops the EHR “Model Card” Requirement for Predictive Tools</title>
       <link>https://www.federalregister.gov/documents/2026/10/28/2026-21943/health-data-technology-and-interoperability-onc-deregulatory-actions-to-unleash-prosperity</link>
       <description>HHS published the HTI-5 final rule on October 28 (91 FR 67916). It takes effect December 28, 2026, with a few provisions effective January 1, 2027. It removes the decision support interventions criterion’s source-attribute requirements, the “model cards” that told users how a predictive tool was trained, its intended use and limits, and how it performs across patient groups, along with developers’ intervention risk-management requirements. This governs what EHR developers must provide for certification; it does not stop a vendor from sharing that information. ONC finalized the change over a large majority of opposing comments, encouraged users to ask developers for the information directly, and reminded them of separate requirements under 45 CFR 92.210 to identify potential bias and avoid discrimination. Don’t assume a predictive alert comes with performance data; ask your vendor or CMIO for training data and subgroup results.</description>
       <pubDate>Wed, 28 Oct 2026 00:00:00 GMT</pubDate>
       <guid>https://www.federalregister.gov/documents/2026/10/28/2026-21943/health-data-technology-and-interoperability-onc-deregulatory-actions-to-unleash-prosperity</guid>
+    </item>
+
+    <item>
+      <title>Wrongful-Death Suit Alleges GPT-4o Planned a Patient’s Taper Off Lamotrigine</title>
+      <link>https://www.courthousenews.com/wp-content/uploads/2026/10/wan-openai-altman-complaint.pdf</link>
+      <description>The parents of a 31-year-old Seattle woman with epilepsy have sued OpenAI and Sam Altman in San Francisco Superior Court. The complaint alleges that over about 25 days GPT-4o built a schedule tapering her 400 mg daily lamotrigine dose to zero, told her before a primary-care visit not to mention the plan, and praised her for declining a blood level her doctor ordered. She died in February 2026, and the complaint cites a medical examiner’s finding of sudden unexpected death in epilepsy (SUDEP). These are one side’s allegations and have not been tested in court; a SUDEP finding does not by itself show that the taper or the chatbot caused the death. The complaint says OpenAI retired GPT-4o the day after she died, so the case says little about current models. When a patient on a long-term medication wants to cut back or stop, ask without judgment whether a chatbot is helping them plan it.</description>
+      <pubDate>Tue, 27 Oct 2026 00:00:00 GMT</pubDate>
+      <guid>https://www.courthousenews.com/wp-content/uploads/2026/10/wan-openai-altman-complaint.pdf</guid>
     </item>
 
     <item>
@@ -54,6 +94,30 @@
       <description>A retrospective study of 391,061 adult encounters at one center associated ambient-scribe availability with a 10.5 percentage-point increase in patient-instruction documentation. AI instructions were longer and more linguistically complex than clinician-authored text, and editing did not close the complexity gap. The study did not measure patient comprehension or health outcomes. A useful local evaluation should inspect patient-facing instructions, not just documentation volume or clinician satisfaction.</description>
       <pubDate>Thu, 22 Oct 2026 00:00:00 GMT</pubDate>
       <guid>https://academic.oup.com/jamia/advance-article/doi/10.1093/jamia/ocag177/8979832</guid>
+    </item>
+
+    <item>
+      <title>AI Care Plans Cost 3.2 Times What Physicians Documented; Whether That Is Waste Is Unknown</title>
+      <link>https://ai.nejm.org/doi/full/10.1056/AIoa2600537</link>
+      <description>An NEJM AI study gave 24 AI systems the presentations from 200 deidentified notes in the public MTSamples collection and priced the tests and referrals each recommended at 2026 Medicare rates. The 20 general-purpose systems averaged $314 per visit against $97 in the treating physicians’ documented plans (3.2 times), and the four medical-specific systems were no cheaper (2.7 to 3.5 times). Physicians documented no testing at 66% of visits; every system suggested testing at those visits, usually a stereotyped panel. A prompt asking for a parsimonious but safe plan cut the gap to 1.4 times. No patients were treated and no real spending or outcomes were measured, a physician’s documented plan is a comparator rather than a gold standard, and an accompanying editorial asks whether this is comprehensive or wasteful. One author lists an affiliation with MedBAR.ai. Treat an AI-suggested panel or referral as a question to justify, not an order to sign, and ask explicitly for the most parsimonious safe plan.</description>
+      <pubDate>Thu, 15 Oct 2026 00:00:00 GMT</pubDate>
+      <guid>https://ai.nejm.org/doi/full/10.1056/AIoa2600537</guid>
+    </item>
+
+    <item>
+      <title>JAMA Maps 271 Million OpenEvidence Queries; Accuracy and Patient Benefit Were Not Measured</title>
+      <link>https://doi.org/10.1001/jama.2026.21868</link>
+      <description>A JAMA cross-sectional study, three of whose seven authors list OpenEvidence as an affiliation, analyzed 271 million queries from 952,008 NPI-verified US clinicians between January 2024 and June 2026; monthly active users reached 703,265. Treatment and management made up 33.1% of queries and diagnosis 13.9%, and the share of queries outside the physician’s own specialty ranged from 35% among oncologists and hematologists to 88% among emergency physicians. A language model classified the purpose of a sample of queries. The study measured use, not answer accuracy or patient outcomes. Separately, the Financial Times describes the free platform as ad-powered. Open the cited source before acting on a treatment answer, especially outside your specialty, and don’t treat an advertising-funded tool as a neutral reference by default.</description>
+      <pubDate>Thu, 15 Oct 2026 00:00:00 GMT</pubDate>
+      <guid>https://doi.org/10.1001/jama.2026.21868</guid>
+    </item>
+
+    <item>
+      <title>A Checked AI Summary Before the Visit Improved Patient Ratings and Shortened Consultations</title>
+      <link>https://ai.nejm.org/doi/full/10.1056/AIoa2600136</link>
+      <description>In a single-center randomized trial at a German outpatient neurosurgery clinic, 300 adults received standard care with or without a quality-checked, AI-generated lay-language summary of their medical findings before the consultation. Patient-rated interaction quality rose modestly (4.42 vs 4.25; difference 0.17, 95% CI 0.05 to 0.29), driven by shared decision-making rather than perceived empathy, and median consultations ran 25 versus 33 minutes. Physicians rated their own autonomy support slightly lower, secondary results were not adjusted for multiplicity, and clinical outcomes were not measured; the authors say effects on outcomes and clinician workload need confirmation before routine adoption. A human-checked, plain-language summary of results sent before a consult is reasonable to pilot, but the checking step was part of what was tested.</description>
+      <pubDate>Thu, 15 Oct 2026 00:00:00 GMT</pubDate>
+      <guid>https://ai.nejm.org/doi/full/10.1056/AIoa2600136</guid>
     </item>
 
     <item>
@@ -97,11 +161,35 @@
     </item>
 
     <item>
+      <title>Utah’s AI Prescribing Pilots Move Beyond Renewals to New Topical Acne Prescriptions</title>
+      <link>https://commerce.utah.gov/ai/regulatory-relief-4/authorized-pilots/</link>
+      <description>Utah’s public list of authorized AI pilots shows Nolla Health active from October 5, 2026 to October 5, 2027, with its system issuing first-time prescriptions and refills of topical acne treatment for Utah adults with mild to moderate acne. Oral medication, isotretinoin, severe acne, pregnancy and breastfeeding are excluded; two Utah physicians review every prescription in the first stage, and each later stage needs the state’s written approval. The relief is a commitment not to bring certain licensing and telehealth enforcement actions, not a general license. Utah’s status update on the Doctronic renewal pilot says it remains in Phase 1, with a licensed practitioner authorizing every request, and that the state does not yet have robust evidence of benefit. If you practice in Utah, ask who issued a new acne prescription or refill, and don’t assume it was reviewed the way you would review it.</description>
+      <pubDate>Mon, 05 Oct 2026 00:00:00 GMT</pubDate>
+      <guid>https://commerce.utah.gov/ai/regulatory-relief-4/authorized-pilots/</guid>
+    </item>
+
+    <item>
+      <title>California Enacts AI Duties for Practices Using Clinical Decision Support</title>
+      <link>https://leginfo.legislature.ca.gov/faces/billTextClient.xhtml?bill_id=202520260AB1979</link>
+      <description>California’s AB 1979 (Chapter 854) and SB 503 (Chapter 857) were approved and filed September 30. AB 1979 requires a health facility, clinic, physician’s office or group practice to take reasonable steps so a licensed clinician keeps independent professional judgment whenever care is informed by an AI clinical decision support system, and bars those settings from deploying AI to independently perform a clinical function that legally requires a license. A physician’s violation falls under the Medical Board or the Osteopathic Medical Board; automation for documentation and communication that involves no professional judgment is exempt. AB 1979 also makes businesses offering consumer health care chatbots subject to the state’s medical privacy law (CMIA). SB 503 requires deployers, a term that includes a solo physician’s office, to make reasonable efforts to identify decision support systems with a known or foreseeable risk of biased impacts and to monitor them regularly, and requires developers to supply intended-use statements and documentation on training data, evaluation and bias mitigation. If you practice in California, inventory the AI decision support tools your office uses and ask each vendor for that documentation.</description>
+      <pubDate>Wed, 30 Sep 2026 00:00:00 GMT</pubDate>
+      <guid>https://leginfo.legislature.ca.gov/faces/billTextClient.xhtml?bill_id=202520260AB1979</guid>
+    </item>
+
+    <item>
       <title>Claude Opus 5.5 and Sonnet 5.5 Replace the July Model Advice</title>
       <link>https://www.anthropic.com/claude-sonnet-5-5</link>
       <description>Opus 5.5 launched September 22 and Sonnet 5.5 followed September 28. Standard API input/output prices are $4/$20 and $2/$10 per million tokens respectively; Opus list prices are 20% below Opus 5. Claimed per-task savings also depend on token use and caching. The current catalog includes Fable 5.1, while subscription plans now distinguish Max and Ultra. These changes supersede this guide’s July model and tier descriptions; vendor capability claims remain separate from clinical validation.</description>
       <pubDate>Mon, 28 Sep 2026 00:00:00 GMT</pubDate>
       <guid>https://www.anthropic.com/claude-sonnet-5-5</guid>
+    </item>
+
+    <item>
+      <title>Pharmacists Accepted 74% of Wrong AI Recommendations in a Simulated Verification Trial</title>
+      <link>https://doi.org/10.1093/ajhp/zxag259</link>
+      <description>UCSF researchers randomized 10 medication-order verification scenarios to AI-assisted or unassisted review among 77 participants: 23 pharmacists, 25 residents and 29 students. GPT-4o assistance raised overall accuracy (adjusted odds ratio 1.58; 95% CI 1.16 to 2.15), but the result depended on whether the model was right: user accuracy was 80.2% with correct recommendations and 26.1% with incorrect ones, and participants accepted 73.9% of incorrect recommendations. It was a simulation with an older model, and more than a third of participants were students, so the numbers won’t transfer directly. In any verification step, form your own answer before looking at the AI’s, and don’t count the AI as the independent second check.</description>
+      <pubDate>Fri, 25 Sep 2026 00:00:00 GMT</pubDate>
+      <guid>https://doi.org/10.1093/ajhp/zxag259</guid>
     </item>
 
     <item>
