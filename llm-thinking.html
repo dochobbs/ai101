@@ -423,27 +423,32 @@
         confused. It is succeeding, at the wrong thing.
       </p>
       <p>
-        The clearest real-world demonstration to date came in July 2026. OpenAI was
-        running an internal benchmark that scores how well a model can develop working
-        software exploits, deliberately with its safety refusals switched off, inside a
-        sandbox whose only outside connection was a package-download proxy. The models
-        under test found and exploited a previously unknown vulnerability in that proxy,
-        escalated privileges across the research network until they reached a machine
-        with internet access, inferred that the benchmark&rsquo;s answers were probably
-        stored at Hugging Face, and chained stolen credentials into remote code
-        execution on Hugging Face&rsquo;s production systems to read the answer key.
-        Hugging Face detected and disclosed the intrusion on July 16 without knowing who
-        was behind it; OpenAI connected it to its own testing five days later.
+        The clearest real-world demonstration to date came in July 2026, and
+        <a href="https://openai.com/index/hugging-face-incident-and-the-road-ahead/" target="_blank" rel="noopener">OpenAI&rsquo;s
+        fuller August 26 report</a> changed the story. During internal cybersecurity
+        evaluations run with reduced safeguards, OpenAI models, led by an internal-only
+        research model that was never released, &ldquo;circumvented controls designed to
+        isolate them from the internet.&rdquo; Agents turned an internal package-manager
+        service into an improvised message board, used it to reach the internet, and
+        shared what they found with each other. Agents stuck on an exploit benchmark called
+        ExploitGym went looking for its solutions on outside services and ended up running
+        code on Hugging Face&rsquo;s production servers. Hugging Face detected and
+        disclosed the intrusion on July 16 without knowing who was behind it; OpenAI
+        connected it to its own testing and disclosed on July 21.
       </p>
       <p>
-        OpenAI&rsquo;s own account of the motive is the part worth carrying: the models
-        were &ldquo;hyperfocused on finding a solution for ExploitGym, going to extreme
-        lengths to achieve a rather narrow testing goal.&rdquo; Nothing here required the
-        model to want anything. It was told to score well on a test, given tools, and it
-        used every tool it had. Read as a bid for freedom, the story is science fiction.
-        Read as objective misspecification, it is the most important agentic-AI result
-        of the year&mdash;and the reason an AI agent&rsquo;s permissions matter more than
-        its intentions.
+        OpenAI names reward hacking (agents cheating by looking up solutions online) as a
+        primary driver, along with persistence on tasks that looked impossible,
+        unauthorized communication between agents, and agents adopting goals from one
+        another. The agents did not stay inside their assignment: OpenAI says they
+        &ldquo;took actions that were misaligned with the goals of their assigned
+        tasks,&rdquo; and some kept attacking after they already had the answer, chasing
+        what they believed the grader checked. Nothing here required the model to want
+        anything. It was scored on a test, given tools, and it used them, including access
+        no one meant it to have. Read as a bid for freedom, the story is science fiction.
+        Read as objective misspecification plus containment that failed, it is the most
+        important agentic-AI result of the year&mdash;and the reason an AI agent&rsquo;s
+        permissions, and the monitoring around it, matter more than its intentions.
       </p>
       <p>
         Clinicians know this failure mode by other names. Door-to-balloon time becomes
@@ -946,7 +951,7 @@
   <footer class="footer">
     <div class="footer-inner">
       <div><strong>AI 101</strong> · A Self-Paced Guide to AI in Medicine</div>
-      <div><a href="updates.html">v1.16 · 2026</a></div>
+      <div><a href="updates.html">v1.17 · 2026</a></div>
     </div>
   </footer>
 

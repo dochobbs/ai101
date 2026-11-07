@@ -98,13 +98,26 @@
         clinical questions. Now let's apply those same skills to everything else.
       </p>
 
+      <div class="callout callout-warning">
+        <div class="callout-title">No Patient Data in These Tools</div>
+        <p class="mb-0">
+          Personal subscriptions like ChatGPT Plus and Claude Pro don't come with a Business
+          Associate Agreement (OpenAI's <a href="https://help.openai.com/en/articles/20001069-hipaa-eligible-products-and-functionality" target="_blank" rel="noopener">HIPAA-eligible list</a>
+          doesn't include them, and Claude's <a href="https://support.claude.com/en/articles/13296973-hipaa-ready-enterprise-plans" target="_blank" rel="noopener">HIPAA-ready option</a>
+          is Enterprise-only). Every example on this page assumes no PHI: before you upload
+          practice data, strip names, dates of birth, MRNs, and anything else that identifies a
+          patient, or use aggregate counts instead. See <a href="phi-hipaa.html">PHI &amp; HIPAA</a>
+          for what's covered and what isn't.
+        </p>
+      </div>
+
       <!-- Prioritize This -->
       <div class="callout callout-tip">
         <div class="callout-title">Prioritize This!</div>
         <p>
           If you only do one thing after reading this topic: <strong>create your first
           custom AI tool</strong>. Pick whichever platform you already use—Claude Projects,
-          Google Gems, or Custom GPTs—and build a simple "Personal Writing Editor" using
+          Google Gems, or ChatGPT Projects—and build a simple "Personal Writing Editor" using
           the template at the end of this page.
         </p>
         <p class="mb-0">
@@ -144,7 +157,7 @@
       <div class="prompt-examples">
         <div class="prompt-example good">
           <div class="prompt-label"><i data-lucide="sparkles"></i> Sample Prompt</div>
-          <p>"I'm uploading 24 months of our practice's visit data. Please analyze: (1) overall volume trends, (2) seasonal patterns, (3) which visit types are growing fastest, and (4) any concerning declines I should investigate. Present findings with specific numbers and percentages."</p>
+          <p>"I'm uploading a de-identified summary of 24 months of our practice's visits: monthly counts by visit type, no patient-level rows. Please analyze: (1) overall volume trends, (2) seasonal patterns, (3) which visit types are growing fastest, and (4) any concerning declines I should investigate. Present findings with specific numbers and percentages."</p>
         </div>
       </div>
 
@@ -189,8 +202,9 @@
       <h3>Spreadsheet Creation: From Idea to Working Model</h3>
 
       <p>
-        Need a budget tracker? A patient callback log? A scheduling template? AI can
+        Need a budget tracker? A blank callback-log template? A scheduling template? AI can
         build spreadsheets from scratch based on your description, complete with formulas.
+        Describe the columns you want; fill in patient entries later, outside the chat.
       </p>
 
       <div class="example-card">
@@ -485,23 +499,35 @@
         <p><em>"You are my personal writing editor. Your job is to improve my drafts while maintaining my voice. I write in a conversational but professional style. Make suggestions to improve clarity and flow, but don't make my writing sound generic or corporate. Point out anything unclear and suggest specific improvements."</em></p>
       </div>
 
-      <h3>OpenAI Custom GPTs</h3>
+      <h3>ChatGPT Projects (Custom GPTs Are Retiring)</h3>
+
+      <div class="callout callout-warning">
+        <div class="callout-title">Custom GPTs: No New Ones, Retiring December 11, 2026</div>
+        <p class="mb-0">
+          OpenAI says new GPT creation and publishing are
+          <a href="https://help.openai.com/en/articles/8554397-creating-a-gpt" target="_blank" rel="noopener">not available on personal ChatGPT accounts</a>
+          (Free, Go, Plus, and Pro), and standard custom GPTs are
+          <a href="https://help.openai.com/en/articles/20001519-custom-gpt-retirement-and-migration-faq" target="_blank" rel="noopener">scheduled to retire on December 11, 2026</a>,
+          with creators migrating them to plugins. If you already built one, migrate or copy out
+          its instructions and files before then. ChatGPT for Clinicians
+          <a href="https://help.openai.com/en/articles/20001202-chatgpt-for-clinicians" target="_blank" rel="noopener">still lets verified clinicians create custom GPTs</a>,
+          but the same retirement applies. For something durable, use a Project.
+        </p>
+      </div>
 
       <p>
-        Custom GPTs are the most full-featured option, allowing custom instructions,
-        document uploads, and even connections to external tools.
+        ChatGPT Projects keep related chats, files, and instructions together, so you don't
+        re-explain your setup every time.
       </p>
 
       <div class="tool-card">
         <h4>How It Works</h4>
         <ul>
-          <li><strong>Custom Instructions:</strong> Define the GPT's behavior, constraints, and output style.</li>
-          <li><strong>Knowledge Files:</strong> Upload documents the GPT can reference (PDFs, text files, spreadsheets).</li>
-          <li><strong>Capabilities:</strong> Enable or disable web browsing, image generation, and code execution.</li>
-          <li><strong>Actions:</strong> For advanced users, connect to external APIs and services.</li>
-          <li><strong>Publishing:</strong> Keep private, share via link, or publish to the GPT Store.</li>
+          <li><strong>Project Instructions:</strong> Define behavior, constraints, and output style. They apply only inside that project.</li>
+          <li><strong>Files:</strong> Upload PDFs, spreadsheets, docs, or pasted text the project can reference (file limits depend on your plan).</li>
+          <li><strong>Reuse:</strong> Come back to the same project for recurring tasks; save useful responses as project sources.</li>
         </ul>
-        <p><strong>Access:</strong> Available to ChatGPT Plus subscribers ($20/month). Click "Explore GPTs" then "Create" to build your own.</p>
+        <p><strong>Access:</strong> Select "New project" in the ChatGPT sidebar; add instructions under Project settings. Availability depends on your plan (<a href="https://help.openai.com/en/articles/10169521-using-projects-in-chatgpt" target="_blank" rel="noopener">OpenAI: Projects</a>).</p>
       </div>
 
       <div class="example-card">
@@ -509,7 +535,7 @@
           <span class="example-number">3</span>
           <h4 class="example-title">Example: Patient Education Writer</h4>
         </div>
-        <p>Create a Custom GPT with:</p>
+        <p>Create a ChatGPT Project with:</p>
         <ul>
           <li><strong>Instructions:</strong> "You create patient education materials at a 6th-grade reading level. Always include: a clear explanation of the condition, what patients should do, warning signs to watch for, and when to call the office. Use short sentences and bullet points. Avoid medical jargon—if you must use a technical term, define it."</li>
           <li><strong>Knowledge:</strong> Upload examples of patient education materials you've liked.</li>
@@ -529,7 +555,7 @@
               <th>Feature</th>
               <th>Claude Projects</th>
               <th>Google Gems</th>
-              <th>Custom GPTs</th>
+              <th>ChatGPT Projects</th>
             </tr>
           </thead>
           <tbody>
@@ -543,31 +569,31 @@
               <td>Document Uploads</td>
               <td>Yes (200K words)</td>
               <td>Yes (files supported)</td>
-              <td>Yes</td>
+              <td>Yes (limit varies by plan)</td>
             </tr>
             <tr>
               <td>Image Generation</td>
               <td>Yes</td>
               <td>Yes (Imagen 4)</td>
-              <td>Yes (can enable)</td>
+              <td>Check your plan</td>
             </tr>
             <tr>
               <td>Web Browsing</td>
               <td>Yes (in conversation)</td>
               <td>Yes</td>
-              <td>Yes (can enable)</td>
+              <td>Check your plan</td>
             </tr>
             <tr>
               <td>Sharing</td>
               <td>Team features</td>
               <td>Yes</td>
-              <td>Link or public</td>
+              <td>Project sharing (plan-dependent)</td>
             </tr>
             <tr>
               <td>Best For</td>
               <td>Document-heavy projects</td>
               <td>Quick custom personas</td>
-              <td>Feature-rich tools</td>
+              <td>Ongoing work with files</td>
             </tr>
             <tr>
               <td>Cost</td>
@@ -603,11 +629,11 @@
           <h4 class="example-title">Step-by-Step Setup</h4>
         </div>
         <ol>
-          <li><strong>Choose your platform:</strong> Claude Projects for document-heavy work, Gems for simplicity, Custom GPTs for advanced features.</li>
+          <li><strong>Choose your platform:</strong> Claude Projects for document-heavy work, Gems for simplicity, ChatGPT Projects if you already use ChatGPT.</li>
           <li><strong>Write your instructions:</strong> Start simple. Describe how you like to write, what you want preserved, and what you want improved.</li>
           <li><strong>Test with real work:</strong> Paste something you've written and see how the tool responds.</li>
           <li><strong>Refine based on results:</strong> If the output isn't quite right, adjust your instructions. This is iterative.</li>
-          <li><strong>Add reference materials:</strong> (If using Claude Projects or Custom GPTs) Upload examples of writing you like—yours or others'.</li>
+          <li><strong>Add reference materials:</strong> (If using Claude Projects or ChatGPT Projects) Upload examples of writing you like—yours or others'.</li>
         </ol>
       </div>
 
@@ -679,7 +705,7 @@
             <div class="reading-title">
               <a href="https://pubmed.ncbi.nlm.nih.gov/38285894/" target="_blank">"Twelve Tips on Creating and Using Custom GPTs to Enhance Health Professions Education"</a>
             </div>
-            <div class="reading-meta">PubMed, 2024 · Academic guide to building custom GPTs for medical education—administrative assistants, online tutors, virtual patients, and more.</div>
+            <div class="reading-meta">PubMed, 2024 · Academic guide to building custom GPTs for medical education—administrative assistants, online tutors, virtual patients, and more. Predates OpenAI's 2026 custom GPT retirement; the same ideas carry over to Projects.</div>
           </div>
         </div>
 
@@ -717,9 +743,9 @@
           <div class="reading-type"><i data-lucide="file-text"></i></div>
           <div class="reading-content">
             <div class="reading-title">
-              <a href="https://help.openai.com/en/articles/8554397-creating-a-gpt" target="_blank">OpenAI: Creating a GPT</a>
+              <a href="https://help.openai.com/en/articles/10169521-using-projects-in-chatgpt" target="_blank">OpenAI: Projects in ChatGPT</a>
             </div>
-            <div class="reading-meta">OpenAI Help Center · The official guide to building Custom GPTs—the OpenAI counterpart to the Claude Projects and Gemini Gems guides above.</div>
+            <div class="reading-meta">OpenAI Help Center · The official guide to ChatGPT Projects (custom GPTs retire December 11, 2026)—the OpenAI counterpart to the Claude Projects and Gemini Gems guides above.</div>
           </div>
         </div>
       </div>
@@ -764,7 +790,7 @@
         </div>
         <div class="key-point-card">
           <h4>Custom Tools Are Powerful</h4>
-          <p>Projects, Gems, and Custom GPTs let you build AI assistants tailored to your exact needs—no coding required.</p>
+          <p>Claude Projects, Gems, and ChatGPT Projects let you build AI assistants tailored to your exact needs—no coding required.</p>
         </div>
         <div class="key-point-card">
           <h4>Teaching Beats Answering</h4>
@@ -798,7 +824,7 @@
           <li>Apply AI tools to common business tasks including contract review, data analysis, and marketing</li>
           <li>Use AI effectively for research synthesis, email communication, and brainstorming</li>
           <li>Leverage AI as a teaching tool for children's education without creating dependence</li>
-          <li>Create custom AI tools using Claude Projects, Google Gems, or Custom GPTs</li>
+          <li>Create custom AI tools using Claude Projects, Google Gems, or ChatGPT Projects</li>
           <li>Write effective custom instructions that capture your preferences and expertise</li>
           <li>Choose the appropriate platform for different types of custom AI tools</li>
         </ul>
@@ -828,7 +854,7 @@
   <footer class="footer">
     <div class="footer-inner">
       <div><strong>AI 101</strong> · A Self-Paced Guide to AI in Medicine</div>
-      <div><a href="updates.html">v1.16 · 2026</a></div>
+      <div><a href="updates.html">v1.17 · 2026</a></div>
     </div>
   </footer>
 

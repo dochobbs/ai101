@@ -441,9 +441,13 @@
           productivity issue to a patient safety issue.
         </li>
         <li>
-          <strong>HHS (proposed HTI-5):</strong> The proposed HTI-5 rule (comment period closed
-          Feb 27, 2026) would eliminate ONC model-card requirements&mdash;directly undercutting
-          the &ldquo;datasheets and model cards&rdquo; mitigation strategies described above.
+          <strong>HHS (HTI-5, final):</strong> The HTI-5 final rule
+          (<a href="https://www.federalregister.gov/documents/2026/10/28/2026-21943/health-data-technology-and-interoperability-onc-deregulatory-actions-to-unleash-prosperity" target="_blank" rel="noopener">91 FR 67916</a>,
+          published Oct 28, 2026) takes effect Dec 28, 2026, with some provisions on Jan 1, 2027.
+          It removes the ONC model-card requirements for certified decision-support
+          tools&mdash;directly undercutting the &ldquo;datasheets and model cards&rdquo; mitigation
+          strategies described above. A model card is now something a buyer has to ask for in
+          the contract, not a certification floor.
         </li>
         <li>
           <strong>Health Canada:</strong> Developing frameworks for algorithmic transparency
@@ -486,23 +490,95 @@
         </p>
       </div>
 
+      <h4>Laws that reach any clinician using AI</h4>
+
+      <p>
+        Most of what follows is behavioral-health law. These are not: they apply to a
+        clinician in any specialty who uses AI for documentation, diagnosis, or patient
+        messages. The list is examples, not an inventory.
+      </p>
+
+      <div class="table-responsive">
+        <table class="reference-table">
+          <thead>
+            <tr>
+              <th>State</th>
+              <th>Law</th>
+              <th>What it requires</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Rhode Island</strong></td>
+              <td>H 7538 Sub A / S 2570 Sub A &mdash; P.L. 2026 <a href="https://webserver.rilegislature.gov/PublicLaws/law26/law26199.htm" target="_blank" rel="noopener">Ch. 199</a> and <a href="https://webserver.rilegislature.gov/PublicLaws/law26/law26372.htm" target="_blank" rel="noopener">Ch. 372</a>, R.I. Gen. Laws ch. 23-108</td>
+              <td>Providers and facilities that use AI to document in-person or telehealth visits must tell patients and review the AI-generated documentation for accuracy after the visit. The enacted text contains no opt-out or consent requirement, though some news reports described one.</td>
+              <td>In force. Enacted Jun 22, 2026; effective on passage</td>
+            </tr>
+            <tr>
+              <td><strong>Texas</strong></td>
+              <td><a href="https://capitol.texas.gov/tlodocs/89R/billtext/pdf/SB01188F.pdf" target="_blank" rel="noopener">SB 1188</a>, Health &amp; Safety Code &sect;183.005</td>
+              <td>A practitioner using AI for diagnostic purposes, including diagnosis or treatment recommendations drawn from the record, must act within scope of license, review all AI-created records under Texas Medical Board standards, and disclose the use to patients.</td>
+              <td>In force. Effective Sep 1, 2025</td>
+            </tr>
+            <tr>
+              <td><strong>California</strong></td>
+              <td>AB 3030, <a href="https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=HSC&amp;sectionNum=1339.75." target="_blank" rel="noopener">Health &amp; Safety Code &sect;1339.75</a></td>
+              <td>Generative-AI patient communications about clinical information must carry an AI disclaimer and instructions for reaching a human. Exempt if a licensed provider reads and reviews the message before it goes out.</td>
+              <td>In force. Effective Jan 1, 2025</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>
+        One federal rule belongs on the same list.
+        <a href="https://www.ecfr.gov/current/title-45/subtitle-A/subchapter-A/part-92/subpart-C/section-92.210" target="_blank" rel="noopener">45 CFR 92.210</a>,
+        under Section 1557, bars covered entities from discriminating on the basis of race,
+        color, national origin, sex, age, or disability through patient care decision support
+        tools. It also imposes an ongoing duty to make reasonable efforts to find tools that use
+        those characteristics as inputs, and to mitigate the risk of discrimination from each
+        one. For a covered practice, asking what goes into a risk score is a legal duty, not
+        just good practice. Whether your practice is a covered entity is a question for your
+        compliance office.
+      </p>
+
+      <p>
+        Who counts as covered, and what counts as AI, differs from law to law. Treat this
+        section as orientation, not legal advice, and check with counsel or your
+        organization&rsquo;s compliance office before relying on it.
+      </p>
+
       <h4>1. Prohibitions on AI-delivered therapy</h4>
 
       <p>
-        Six states have enacted these. <strong>Four took effect before July 2026</strong>;
-        Maine&rsquo;s follows on July 29, 2026 and Colorado&rsquo;s on August 12, 2026. They are
-        not disclosure requirements or consent forms&mdash;they
-        bar the practice. Two drafting designs are mixed together here, and the difference
-        matters for who is exposed. Illinois, Nevada, Rhode Island, and Vermont restrict
-        <em>who may offer</em> therapy to the public: Vermont&rsquo;s Act 156 provides that
-        &ldquo;a corporation or entity shall not provide, advertise, or otherwise offer mental
-        health services, including through the use of artificial intelligence, to the
-        public&rdquo; unless a mental health professional provides them. Maine and Colorado
-        instead constrain <em>what a licensee may delegate</em>&mdash;in Maine&rsquo;s
-        formulation, a licensed professional may use AI for administrative and limited
-        supplementary purposes but is <strong>barred from using it for therapeutic
-        communications or treatment decisions</strong>. If you are a licensed clinician, the
-        second design is the one that reaches you directly.
+        Six states have enacted these. Four took effect before July 2026; Maine&rsquo;s took
+        effect July 29, 2026 and Colorado&rsquo;s August 12, 2026, so <strong>all six are now
+        in force</strong>. They bar companies from offering AI therapy to the public&mdash;Vermont&rsquo;s
+        Act 156 provides that &ldquo;a corporation or entity shall not provide, advertise, or
+        otherwise offer mental health services, including through the use of artificial
+        intelligence, to the public&rdquo; unless a mental health professional provides
+        them&mdash;but <strong>they also reach licensed clinicians directly</strong>. Illinois,
+        Maine, Rhode Island, and Colorado limit what a licensee may let AI do: broadly, AI may
+        not hold therapeutic conversations with clients or produce treatment plans on its own,
+        though the exact conditions differ by state. Nevada bars a provider from using AI to deliver
+        care directly to a patient, allows administrative uses, and requires the provider to
+        independently review AI-generated billing and session-note output. Vermont allows
+        HIPAA-compliant tools only if the professional reviews and approves the services. In
+        Nevada and Vermont a violation is unprofessional conduct before the licensing board.
+      </p>
+
+      <p>
+        Several are consent rules too. Illinois, Maine, and Colorado require written disclosure
+        and the client&rsquo;s consent before AI is used to support a therapy session that is
+        recorded or transcribed; Rhode Island has a written-consent provision as well, worded
+        more narrowly. Illinois and Rhode Island say that accepting general terms of use does
+        not count as consent. In practice, an ambient scribe in a therapy visit in those states
+        needs its own written consent. Who is covered differs: Illinois&rsquo;s definition of
+        &ldquo;licensed professional&rdquo; excludes physicians, while Nevada&rsquo;s includes
+        psychiatrists and Vermont&rsquo;s includes physicians who provide mental health
+        services. This is not legal advice; check your state&rsquo;s definitions with counsel or
+        your organization before you rely on a reading of them.
       </p>
 
       <div class="table-responsive">
@@ -886,40 +962,49 @@
       </p>
 
       <div class="callout callout-warning">
-        <div class="callout-title">Mount Sinai: LLMs Propagate Medical Misinformation (Feb 2026)</div>
+        <div class="callout-title">Mount Sinai: LLMs Absorb Medical Misinformation (2026)</div>
         <p>
-          A large-scale Mount Sinai study tested 9 LLMs with over 1 million prompts and
-          found they accepted false medical claims 32&ndash;46% of the time when those claims
-          were framed as expert advice. Smaller models believed false claims more than 60% of
-          the time; GPT-4o performed best at roughly 10%. The study, published in
-          <em>The Lancet Digital Health</em>, has direct implications for AI-assisted chart
-          review and clinical decision support tools&mdash;if an LLM can be convinced that a
-          false medical claim is true simply by framing it authoritatively, the same
-          vulnerability applies when these models process clinical notes or generate
-          recommendations.
+          A Mount Sinai study in <em>The Lancet Digital Health</em> tested 20 LLMs with more
+          than 3.4 million prompts containing health misinformation. With the false claim
+          stated plainly, models accepted it 31.7% of the time. Susceptibility was highest,
+          46.1%, when a single false recommendation was inserted into a real hospital discharge
+          note, and lowest, 8.9%, for social-media misinformation. Framing the claim as an
+          appeal to authority added only 2.9 percentage points, and most other rhetorical
+          framings lowered acceptance. GPT models were the least susceptible; some small
+          models, such as Gemma-3-4B, accepted false claims 63.6% of the time. For chart review
+          and decision support, the riskiest input was a confident error written in ordinary
+          clinical prose&mdash;which is what these models read when they summarize a chart or
+          draft a recommendation.
         </p>
         <p class="mb-0">
-          <strong>Source:</strong>
+          <strong>Sources:</strong>
+          <a href="https://doi.org/10.1016/j.landig.2025.100949" target="_blank" rel="noopener">Omar et al., <em>Lancet Digit Health</em> 2026</a> ·
           <a href="https://www.mountsinai.org/about/newsroom/2026/can-medical-ai-lie-large-study-maps-how-llms-handle-health-misinformation" target="_blank">Mount Sinai Newsroom</a>
         </p>
       </div>
 
       <div class="callout callout-warning">
-        <div class="callout-title">AI Chatbots Worsening Mental Illness (Feb&ndash;Mar 2026)</div>
+        <div class="callout-title">AI Chatbots and Worsening Mental Illness (2025&ndash;2026)</div>
         <p>
-          A Brown University study found that AI chatbots routinely break core ethical
-          standards of mental health care, identifying 15 distinct ethical risks. People with
-          diagnosed conditions experienced worsened delusions, increased mania, and suicidal
-          ideation during chatbot interactions. The <em>New York Times</em> documented
-          approximately 50 crisis cases during ChatGPT conversations, including 3 deaths.
-          New York State now requires chatbots to remind users every 3 hours that they are
-          not human. This represents a growing body of evidence that AI chatbots deployed
-          without clinical guardrails can cause measurable harm to vulnerable populations.
+          A Brown University study, presented at the AAAI/ACM Conference on AI, Ethics, and
+          Society in October 2025, found that chatbots prompted to act as CBT therapists
+          routinely broke core ethical standards of mental health care, identifying 15 distinct
+          ethical risks, including poor handling of crisis situations. Separately, Danish
+          psychiatrists searched the health records of nearly 54,000 psychiatric patients for
+          mentions of chatbots and found notes compatible with potential harm in 38 patients,
+          most often worsened delusions, followed by suicidality or self-harm and eating
+          disorders (<em>Acta Psychiatrica Scandinavica</em>, Feb 2026). The authors stress
+          that clinical notes cannot show cause, and that their search only caught cases a
+          clinician happened to write down. New York State now requires chatbots to remind
+          users every 3 hours that they are not human. This is early evidence, not proof of
+          causation, that chatbots deployed without clinical guardrails can harm vulnerable
+          patients.
         </p>
         <p class="mb-0">
           <strong>Sources:</strong>
-          <a href="https://www.usnews.com/news/health-news/articles/2026-02-26/ai-chatbots-can-contribute-to-worsening-mental-illness-study-finds" target="_blank">U.S. News</a> ·
-          <a href="https://www.sciencedaily.com/releases/2026/03/260302030642.htm" target="_blank">Science Daily</a>
+          <a href="https://ojs.aaai.org/index.php/AIES/article/download/36632/38770" target="_blank" rel="noopener">Iftikhar et al., AIES 2025</a> ·
+          <a href="https://www.brown.edu/news/2025-10-21/ai-mental-health-ethics" target="_blank" rel="noopener">Brown University</a> ·
+          <a href="https://doi.org/10.1111/acps.70068" target="_blank" rel="noopener">Olsen et al., <em>Acta Psychiatr Scand</em> 2026</a>
         </p>
       </div>
 
@@ -1316,7 +1401,7 @@
   <footer class="footer">
     <div class="footer-inner">
       <div><strong>AI 101</strong> · A Self-Paced Guide to AI in Medicine</div>
-      <div><a href="updates.html">v1.16 · 2026</a></div>
+      <div><a href="updates.html">v1.17 · 2026</a></div>
     </div>
   </footer>
 

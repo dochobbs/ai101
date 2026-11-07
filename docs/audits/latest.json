@@ -1,8 +1,8 @@
 {
-  "content_reviewed_at": "2026-11-01",
+  "content_reviewed_at": "2026-11-07",
   "content_published_at": "2026-11-01",
-  "version": "v1.16",
-  "review_scope": "Full technical pass across all 30 root pages, desktop/mobile browser checks, and risk-prioritized primary-source corrections and eight additional news items; not blanket clinical, legal, privacy or accessibility certification.",
+  "version": "v1.17",
+  "review_scope": "November 7 content currency audit (docs/audits/2026-11-07-content-audit.md): five-agent page-by-page primary-source review. v1.17 ships Batch 1 (19 Priority 1 corrections, Tanzania date, honest home-page dates, HTI-5 and Clinicians BAA news items). Priority 2 rewrites and 10 further news items remain open; not blanket clinical, legal, privacy or accessibility certification.",
   "publication_policy": "Prepare future Sunday content updates as a pull request for owner review.",
   "primary_sources": [
     "https://developers.openai.com/api/docs/models",
@@ -19,41 +19,77 @@
   ],
   "resolved_findings": [
     {
-      "id": "current-models",
+      "id": "clinicians-baa",
       "files": [
+        "phi-hipaa.html",
         "big-three.html",
-        "vibe-coding.html"
-      ],
-      "disposition": "Current catalog and plan descriptions refreshed from primary sources; provider/account-dependent defaults no longer asserted."
-    },
-    {
-      "id": "notebook-name",
-      "files": [
-        "start-here.html",
-        "medical-learners.html",
-        "ai-search.html",
-        "index.html",
-        "big-three.html"
-      ],
-      "disposition": "Current explanatory prose uses Gemini Notebook; historical titles, source URLs, and dated records retained."
-    },
-    {
-      "id": "news-backfill",
-      "files": [
         "ai-news.html",
         "ai-news-feed.xml"
       ],
-      "disposition": "Eight selected primary-source items from September 2 through October 29, 2026, added November 1."
+      "disposition": "ChatGPT for Clinicians individual BAA documented with signing-authority, memory and connected-service limits; correction news item added."
     },
     {
-      "id": "expired-comment-deadline",
+      "id": "claude-code-data-and-permissions",
       "files": [
+        "claude-code.html",
+        "openclaw.html"
+      ],
+      "disposition": "Data-flow statement corrected; auto-mode default and Manual mode step added to Day 00; Esc to interrupt."
+    },
+    {
+      "id": "state-law-and-hti5",
+      "files": [
+        "bias-ethics.html",
+        "ambient-ai.html",
+        "phi-hipaa.html",
         "clinical-decision-support.html"
       ],
-      "disposition": "October 19 FDA discussion-paper deadline is described as past; paper is not presented as binding policy."
+      "disposition": "HTI-5 final; RI/TX/CA/92.210 table; therapy-AI laws reach licensees; FDA CDS Criterion 3 corrected. AB 1979 omitted pending operative date."
+    },
+    {
+      "id": "custom-gpt-retirement",
+      "files": [
+        "everyday-ai.html",
+        "whats-next.html",
+        "ai-tools-mcp.html",
+        "glossary.html",
+        "medical-learners.html",
+        "patients-ai.html"
+      ],
+      "disposition": "Personal-account GPT creation removed and Dec 11, 2026 retirement noted; instructions point to Projects."
+    },
+    {
+      "id": "evidence-corrections",
+      "files": [
+        "bias-ethics.html",
+        "ambient-ai.html",
+        "patients-ai.html",
+        "llm-thinking.html",
+        "openclaw.html",
+        "ai-news.html",
+        "clinical-decision-support.html"
+      ],
+      "disposition": "Mount Sinai, scribe coding, KFF, mental-health harms, Doctronic Phase 1, and OpenAI/HF Aug 26 final reports corrected to primary sources; unsourced figures removed."
+    },
+    {
+      "id": "local-and-phi-warnings",
+      "files": [
+        "local-models.html",
+        "everyday-ai.html",
+        "ai-search.html"
+      ],
+      "disposition": "Cloud options in Ollama/LM Studio noted; Ollama commands fixed; PHI warning and de-identified examples; Perplexity PHI suggestion removed."
+    },
+    {
+      "id": "home-card-dates",
+      "files": [
+        "index.html",
+        "glossary.html"
+      ],
+      "disposition": "Card labels reflect last substantive review per page."
     }
   ],
-  "publication_verified": true,
+  "publication_verified": false,
   "deployed_content_commit": "d3f45ac4375897b01d3a6ad2806e6728bece910b",
   "deployment_receipt": "https://github.com/dochobbs/ai101/actions/runs/41375573848",
   "publication_verified_at_utc": "2026-11-02T02:03:29.256306+00:00",
@@ -65,5 +101,12 @@
     "additional_news_items": 8,
     "merged_pr": "https://github.com/dochobbs/ai101/pull/15",
     "deployment_verification": "docs/audits/assets/2026-11-01/deployment-v1.16.json"
+  },
+  "latest_content_audit": {
+    "prepared_at": "2026-11-07",
+    "report": "docs/audits/2026-11-07-content-audit.md",
+    "batch": "1 of 3",
+    "additional_news_items": 2,
+    "publication_verified": false
   }
 }
