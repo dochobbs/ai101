@@ -21,6 +21,7 @@ jobs:
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
         with:
           persist-credentials: false
+          fetch-depth: 0  # card-date check reads each page's git history
       - name: Check freshness, sources, links, deployment, and deliver issue
         env:
           GH_TOKEN: ${{ github.token }}

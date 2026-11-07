@@ -120,9 +120,16 @@
         <div class="callout-title">Key Insight</div>
         <p class="mb-0">
           Early estimates suggested a ChatGPT query used 10x the energy of a Google search.
-          More recent research indicates the gap has narrowed significantly—modern AI queries
-          may use comparable energy to traditional searches. But at massive scale, even
-          small per-query costs compound into substantial infrastructure demands.
+          Newer numbers are much lower for a typical short text question: about 0.3 watt-hours.
+          Google <a href="https://arxiv.org/html/2508.15734" target="_blank">measured</a> a median
+          of 0.24 Wh for a Gemini app text prompt (self-reported, 2025), and a 2026
+          <a href="https://www.cell.com/joule/fulltext/S2542-4351%2826%2900114-5" target="_blank"><em>Joule</em> model</a>
+          by Microsoft researchers estimates a median of 0.31 Wh. The same model estimates that
+          long reasoning queries use about 13 times more (median 3.91 Wh), and that if 10% of
+          queries were long ones, total demand would more than double. So the short question is
+          cheap; deep-research and heavy reasoning modes are where the energy goes. Save those for
+          tasks that need them. And at massive scale, even small per-query costs compound into
+          substantial infrastructure demands.
         </p>
       </div>
 
@@ -286,7 +293,16 @@
             <div class="reading-title">
               <a href="https://www.iea.org/reports/energy-and-ai" target="_blank">IEA Report: Energy and AI</a>
             </div>
-            <div class="reading-meta">International Energy Agency, 2025 · Definitive current analysis of AI's electricity demand</div>
+            <div class="reading-meta">International Energy Agency, 2025 · The baseline analysis of AI's electricity demand</div>
+          </div>
+        </div>
+        <div class="reading-item">
+          <div class="reading-type"><i data-lucide="globe"></i></div>
+          <div class="reading-content">
+            <div class="reading-title">
+              <a href="https://www.iea.org/reports/key-questions-on-energy-and-ai" target="_blank">IEA Report: Key Questions on Energy and AI</a>
+            </div>
+            <div class="reading-meta">International Energy Agency, April 2026 · The follow-up to the 2025 report: where data-center electricity demand is rising and how fast grids can respond</div>
           </div>
         </div>
         <div class="reading-item">
@@ -350,7 +366,7 @@
   <footer class="footer">
     <div class="footer-inner">
       <div><strong>AI 101</strong> · A Self-Paced Guide to AI in Medicine</div>
-      <div><a href="updates.html">v1.17 · 2026</a></div>
+      <div><a href="updates.html">v1.18 · 2026</a></div>
     </div>
   </footer>
 

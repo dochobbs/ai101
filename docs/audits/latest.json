@@ -1,8 +1,8 @@
 {
   "content_reviewed_at": "2026-11-07",
   "content_published_at": "2026-11-07",
-  "version": "v1.17",
-  "review_scope": "November 7 content currency audit (docs/audits/2026-11-07-content-audit.md): five-agent page-by-page primary-source review. v1.17 ships Batch 1 (19 Priority 1 corrections, Tanzania date, honest home-page dates, HTI-5 and Clinicians BAA news items). Priority 2 rewrites and 10 further news items remain open; not blanket clinical, legal, privacy or accessibility certification.",
+  "version": "v1.18",
+  "review_scope": "November 7 content currency audit (docs/audits/2026-11-07-content-audit.md): five-agent page-by-page primary-source review. v1.17 shipped Batch 1 (Priority 1). v1.18 ships Batches 2-3: Priority 2 corrections on all audited pages, 11 news items, and a home-card date check. Items listed as unverified in the audit remain unpublished; not blanket clinical, legal, privacy or accessibility certification.",
   "publication_policy": "Prepare future Sunday content updates as a pull request for owner review.",
   "primary_sources": [
     "https://developers.openai.com/api/docs/models",
@@ -15,7 +15,7 @@
   ],
   "outstanding_operations": [
     "Claude cloud audit's own GitHub issue credential still returned 403 on November 1. Independent GitHub Actions issue delivery replaces that delivery path, but does not repair the Claude credential.",
-    "Claude cloud primary-source egress and use of the new PR/carry-forward instructions require verification in the next research run. The current session could not edit the hosted task briefing because computer control was unavailable."
+    "Claude cloud routine brief was updated and read back on November 7 (reads latest.json, committed reports and prior calendar events; per-source-family connectivity test). Its first run on the new brief is November 8; primary-source egress stays unverified until that run reports each source family."
   ],
   "resolved_findings": [
     {
@@ -87,9 +87,26 @@
         "glossary.html"
       ],
       "disposition": "Card labels reflect last substantive review per page."
+    },
+    {
+      "id": "priority-2-and-news",
+      "files": [
+        "all audited content pages",
+        "ai-news.html",
+        "ai-news-feed.xml"
+      ],
+      "disposition": "Priority 2 findings corrected from primary sources or softened where unverifiable; 11 news items added Nov 7 (Batch 3 plus Gems retirement)."
+    },
+    {
+      "id": "card-date-check",
+      "files": [
+        "scripts/weekly_maintenance.py",
+        ".github/workflows/weekly-maintenance.yml"
+      ],
+      "disposition": "Weekly check fails on future or content-less home-card date labels; full-history checkout."
     }
   ],
-  "publication_verified": true,
+  "publication_verified": false,
   "deployed_content_commit": "6e532d2b6bd43714ea804a705aa58c5b24106b8f",
   "deployment_receipt": "https://github.com/dochobbs/ai101/actions/runs/42420896377",
   "publication_verified_at_utc": "2026-11-07T22:31:13.527391+00:00",
@@ -105,9 +122,8 @@
   "latest_content_audit": {
     "prepared_at": "2026-11-07",
     "report": "docs/audits/2026-11-07-content-audit.md",
-    "batch": "1 of 3",
-    "additional_news_items": 2,
-    "publication_verified": true,
-    "merged_pr": "https://github.com/dochobbs/ai101/pull/16"
+    "batch": "2-3 of 3",
+    "additional_news_items": 13,
+    "publication_verified": false
   }
 }

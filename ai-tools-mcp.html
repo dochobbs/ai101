@@ -229,9 +229,13 @@
       </p>
 
       <ul>
-        <li><strong>Claude</strong> supports custom skills through its coding tools,
-          letting users define reusable workflows that persist across sessions</li>
-        <li><strong>ChatGPT</strong> is moving from Custom GPTs to plugins, which bundle
+        <li><strong>Claude</strong> supports <a href="https://support.claude.com/en/articles/12512176-what-are-skills" target="_blank" rel="noopener">skills</a>
+          in the Claude apps on every plan from Free to Enterprise (code execution must be on),
+          in Claude Code, and in the API. No coding is needed for a simple one: a skill can be
+          written instructions in a text file. The format is published as an open
+          standard, Agent Skills, so other tools can adopt it</li>
+        <li><strong>ChatGPT</strong> has its own <a href="https://help.openai.com/en/articles/20001066-skills-in-chatgpt" target="_blank" rel="noopener">skills</a>
+          for eligible Business, Enterprise, Healthcare, and Edu users, and is moving from Custom GPTs to plugins, which bundle
           instructions (as a skill), reference files, and connected apps; custom GPTs
           <a href="https://help.openai.com/en/articles/20001519-custom-gpt-retirement-and-migration-faq" target="_blank" rel="noopener">retire December 11, 2026</a></li>
         <li><strong>Open-source agents</strong> like OpenClaw have skill marketplaces
@@ -389,9 +393,14 @@
         <li><strong>Authentication is specified, not improvised.</strong> The protocol
           now builds on OAuth 2.1: an MCP server acts as an OAuth resource server,
           clients must use PKCE, and tokens must be issued for one specific server and
-          rejected by any other. In plain terms, the standard now says a tool connection
-          gets its own scoped credential rather than borrowing yours&mdash;and forbids a
-          server from passing your token along to something downstream.</li>
+          rejected by any other. In plain terms, a remote tool connection that uses this
+          scheme gets its own scoped credential rather than borrowing yours&mdash;and a
+          server may not pass your token along to something downstream. Two limits: the
+          <a href="https://modelcontextprotocol.io/specification/2026-07-28/basic/authorization" target="_blank" rel="noopener">spec</a>
+          makes authorization optional, and local servers running on your own machine are
+          told to read credentials from your environment instead. A local server can
+          often see the same keys and files you can, which is the risk the
+          <a href="openclaw.html">next module</a> covers.</li>
         <li><strong>Enterprise deployment is the main use case.</strong> At the MCP Dev
           Summit in April 2026, Uber described 1,500 monthly active agents running
           against more than 10,000 internal services. That is the shape of serious MCP
@@ -437,6 +446,17 @@
         supervised chokepoint that sits between AI assistants and clinical systems,
         handling authentication, scoping, and audit trails in one place. FHIR-backed MCP
         servers exist that let an agent issue standard FHIR queries against an EHR.
+      </p>
+
+      <p>
+        Epic is moving too. At its Open@Epic developer conference in October 2026, it
+        <a href="https://www.oec.epic.com/" target="_blank" rel="noopener">announced</a> that
+        starting in 2027, its Agent Factory platform will let customers connect Epic&rsquo;s
+        AI agents to third-party products &ldquo;through industry standards such as MCP
+        servers,&rdquo; with pre-configured connectors listed on Epic Showroom from March 2027.
+        Epic also published an MCP server for its public developer documentation, which
+        contains no patient data. If you work at an Epic site, this is the time to ask your
+        informatics team which outside connectors are planned and who will approve them.
       </p>
 
       <p>
@@ -506,6 +526,19 @@
         systems&mdash;and the privacy considerations multiply.
       </p>
 
+      <p>
+        A business associate agreement on the AI product does not automatically follow the
+        data through every connection. Anthropic&rsquo;s
+        <a href="https://support.claude.com/en/articles/17318731-use-claude-code-local-mode-and-claude-cowork-local-mode-on-a-hipaa-ready-enterprise-plan" target="_blank" rel="noopener">HIPAA configuration for Claude Code and Cowork</a>
+        tells organizations to keep PHI out of &ldquo;Connectors, MCP servers, plugins, desktop
+        extensions, Claude in Chrome, and skills, including after an Owner turns them on.&rdquo;
+        OpenAI&rsquo;s <a href="https://help.openai.com/en/articles/20001069-hipaa-eligible-products-and-functionality" target="_blank" rel="noopener">HIPAA page</a>
+        lists plugins and skills among covered workspace features, but adds that &ldquo;a
+        feature&rsquo;s availability does not, by itself, determine whether a particular use or
+        connected third-party service is covered by your BAA.&rdquo; The third party on the other
+        end of a connector may need its own agreement. See <a href="phi-hipaa.html">PHI &amp; HIPAA</a>.
+      </p>
+
       <h3>3. The Ecosystem Is Growing Fast</h3>
 
       <p>
@@ -528,6 +561,7 @@
           <li>What tools does this AI have access to? Can I see the list?</li>
           <li>Which tools can <em>read</em> data versus <em>write</em> or <em>act</em>?</li>
           <li>Where does data flow? What leaves my system?</li>
+          <li>Is each connector covered by a BAA, and whose?</li>
           <li>Who built these integrations? How are they vetted?</li>
           <li>Can I disable tools I don't need?</li>
           <li>If a regulator asked which agent accessed which patient&rsquo;s record and
@@ -697,7 +731,7 @@
   <footer class="footer">
     <div class="footer-inner">
       <div><strong>AI 101</strong> · A Self-Paced Guide to AI in Medicine</div>
-      <div><a href="updates.html">v1.17 · 2026</a></div>
+      <div><a href="updates.html">v1.18 · 2026</a></div>
     </div>
   </footer>
 

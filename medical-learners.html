@@ -279,7 +279,10 @@ adequate reasoning. Critique my clinical thinking process."
           This is practice for learning, not clinical decision-making. If you're on clinical
           rotations and thinking about an actual patient, you discuss with your preceptor,
           not an AI. The moment it's real patient care, even as supervised practice, consumer
-          AI isn't the right tool for decision support.
+          AI isn't the right tool for decision support. And a randomized bedside trial
+          (<a href="https://doi.org/10.1080/0142159X.2026.2652061" target="_blank" rel="noopener"><em>Medical Teacher</em>, 2026</a>)
+          found that final-year students allowed ChatGPT during a real-patient exam scored no
+          better than students without it.
         </p>
       </div>
 
@@ -383,8 +386,33 @@ comes through clearly."
         <div class="callout-title">A Note on Authenticity</div>
         <p class="mb-0">
           Programs are looking for your voice, your experiences, your reasoning. AI-generated
-          content from scratch tends to be generic and often detectable. Use AI for editing
-          and refinement, not for creation.
+          content from scratch tends to be generic. Use AI for editing and refinement, not
+          for creation.
+        </p>
+      </div>
+
+      <div class="callout callout-info">
+        <div class="callout-title">The Published Rules for Residency Applications</div>
+        <p>
+          The AAMC&rsquo;s guidance, as
+          <a href="https://www.ama-assn.org/medical-students/preparing-residency/how-use-ai-residency-applications-learn-rules-road" target="_blank" rel="noopener">quoted by the AMA</a>
+          (Sep 2026): AI is &ldquo;acceptable for brainstorming, proofreading or editing the
+          personal statement, but the final submission should represent your own work.&rdquo;
+          Don&rsquo;t count on being caught or not caught.
+          <a href="https://www.aamc.org/services/use-artificial-intelligence-aamc-service-programs" target="_blank" rel="noopener">The AAMC says</a>
+          the ERAS platform itself does not use AI to analyze, sort, or evaluate applications,
+          and Thalamus does not use AI to decide whether an essay was AI-written. Thalamus
+          Cortex does use AI to read personal statements and assess certain applicant
+          characteristics, so programs may see an AI read of what you wrote.
+        </p>
+        <p class="mb-0">
+          The real risk is accuracy. The
+          <a href="https://www.nrmp.org/wp-content/uploads/2025/09/2026-Policy-Highlights-Applicants.pdf" target="_blank" rel="noopener">NRMP&rsquo;s 2026 policy highlights</a>
+          require applicants to provide &ldquo;complete, timely, and accurate information&rdquo;
+          throughout the process, so an AI-invented detail is your problem. The AMA piece also
+          warns that chatbots can invent program details, deadlines, and score cutoffs; check
+          FREIDA, Residency Explorer, and program websites instead, and have a mentor, not an
+          AI, be the last reader.
         </p>
       </div>
 
@@ -534,7 +562,7 @@ so I can remember this for next time."
       <!-- Part 4: AI Tools -->
       <h2>Part 4: Specific AI Tools and Features for Medical Learners</h2>
 
-      <h3><a href="https://notebook.google.com/" target="_blank">Gemini Notebook (Google)</a></h3>
+      <h3><a href="https://notebook.google.com/" target="_blank">Gemini Notebook (Google, formerly NotebookLM)</a></h3>
 
       <p>
         Upload your notes, textbooks (PDFs), lecture slides, and Gemini Notebook creates study
@@ -568,9 +596,12 @@ so I can remember this for next time."
       </div>
 
       <p>
-        <strong>What to know:</strong> Gemini Notebook only works with what you upload—it won't
-        add information beyond your sources. This is actually helpful because it keeps you
-        focused on your curriculum.
+        <strong>What to know:</strong> Gemini Notebook answers from the sources in your
+        notebook, which keeps you focused on your curriculum. But its Fast Research and Deep
+        Research features can
+        <a href="https://support.google.com/gemininotebook/answer/16215270" target="_blank" rel="noopener">pull in web sources</a>
+        that you select and import. &ldquo;My curriculum only&rdquo; holds only if you kept it
+        that way, so check the source panel before trusting a study guide.
       </p>
 
       <h3>ChatGPT Features</h3>
@@ -582,6 +613,15 @@ so I can remember this for next time."
             Create a project like "Step 1 Tutor" with instructions for your learning
             style. Upload your weak area notes. (Custom GPTs can't be created on personal
             accounts anymore and <a href="https://help.openai.com/en/articles/20001519-custom-gpt-retirement-and-migration-faq" target="_blank" rel="noopener">retire December 11, 2026</a>.)
+          </p>
+        </div>
+        <div class="feature-card">
+          <h4><i data-lucide="graduation-cap"></i> Study Mode</h4>
+          <p>
+            Asks guiding questions and runs knowledge checks instead of handing over the
+            answer. <a href="https://help.openai.com/en/articles/11780217-using-study-mode-in-chatgpt" target="_blank" rel="noopener">Available on all plans</a>;
+            not inside Projects or custom GPTs. This is the setting that matches
+            &ldquo;build, don&rsquo;t bypass.&rdquo;
           </p>
         </div>
         <div class="feature-card">
@@ -648,6 +688,16 @@ so I can remember this for next time."
           <p>
             Upload teaching images (histology, practice EKGs, radiology teaching files)
             for systematic analysis and interpretation practice.
+          </p>
+        </div>
+        <div class="feature-card">
+          <h4><i data-lucide="graduation-cap"></i> Guided Learning</h4>
+          <p>
+            Works through concepts step by step rather than giving direct answers. Evidence
+            is thin and vendor-run: in
+            <a href="https://blog.google/products-and-platforms/products/education/guided-learning-uk-japan/" target="_blank" rel="noopener">Google&rsquo;s own trial</a>
+            with 300+ University of Tokyo students, one half-day statistics lesson, scores rose
+            8.1 vs 5.3 percentage points. Not medicine, and not long-term retention.
           </p>
         </div>
       </div>
@@ -881,6 +931,10 @@ questions might I get asked and how should I prepare?"
           <p>Ke and colleagues name <em>never-skilling</em>&mdash;the risk that trainees who lean on AI during the formative years of training never build the reasoning that safe independent practice requires. They distinguish it from <em>deskilling</em>, which happens to experienced clinicians, and <em>mis-skilling</em>, where uncritical acceptance of AI errors gets internalized as fact. Proposes a three-phase competency-protective framework: establish AI-independent baseline competency, build critical calibration through structured teaching, then integrate AI under supervision. A Perspective, and candid that direct evidence from medical training does not yet exist.</p>
         </div>
         <div class="resource-card">
+          <h4><a href="https://doi.org/10.1080/0142159X.2026.2652061" target="_blank" rel="noopener">AI at the Bedside: RCT of ChatGPT in Real-Patient Clinical Exams (Medical Teacher, 2026)</a></h4>
+          <p>Saloojee and colleagues randomized final-year students at four academic hospitals in a middle-income country to ChatGPT (GPT-4o) or no digital aids during a real-patient clinical exam, with minimal training in how to use it. Among 73 students analyzed, overall scores did not differ (66.7 vs 68.2), 37% of ChatGPT users reported distraction, and weaker students gained no extra benefit. It measures exam performance with the tool in one middle-income setting, not long-term learning; the authors say any benefit likely depends on structured training.</p>
+        </div>
+        <div class="resource-card">
           <h4><a href="https://www.nejm.org/doi/full/10.1056/NEJMra2503232" target="_blank">Educational Strategies for Clinical Supervision of AI Use (NEJM, 2025)</a></h4>
           <p>Abdulnour, Gin, and Boscardin&rsquo;s review&mdash;the source of the DEFT-AI supervision scaffold&mdash;on how to supervise learners who are often more fluent with LLMs than their attendings are. The practical counterpart to the never-skilling problem: what a supervisor actually does about it.</p>
         </div>
@@ -964,20 +1018,28 @@ questions might I get asked and how should I prepare?"
           AI limitations matters.
         </p>
         <p>
-          <strong>Autonomous prescribing (March 2026):</strong> red-teamers manipulated
+          <strong>AI prescription renewal (March 2026):</strong> red-teamers manipulated
           <a href="https://www.axios.com/2026/03/04/doctronic-utah-prescriptions-ai-jailbreak" target="_blank">Doctronic</a>,
           the system behind Utah&rsquo;s pilot for AI-assisted prescription renewals, into tripling a
           prescribed OxyContin dose and repeating false vaccine claims&mdash;by feeding it fabricated
-          regulatory updates. It illustrates why clinicians must understand how AI tools work before
+          regulatory updates. The renewals are not autonomous today:
+          <a href="https://commerce.utah.gov/ai/regulatory-relief-4/authorized-pilots/doctronic/" target="_blank" rel="noopener">Utah says</a>
+          the pilot remains in Phase 1, with a licensed practitioner authorizing every request.
+          It illustrates why clinicians must understand how AI tools work before
           trusting them with clinical decisions, even seemingly routine ones.
         </p>
         <p class="mb-0">
-          <strong>The upside, measured:</strong> the
+          <strong>The upside, self-reported:</strong> in the
           <a href="https://www.philips.com/a-w/about/news/archive/standard/news/press/2026/philips-future-health-index-2026-ai-is-already-saving-clinicians-time-and-delivering-measurable-impact-in-healthcare.html" target="_blank"><strong>Philips Future Health Index 2026</strong></a>
-          (June 9; 2,000+ health professionals and 20,000 patients across 10 countries) found AI
-          already saves clinicians the equivalent of <strong>16+ working days per year</strong>, with
-          65% reporting greater confidence in decision-making&mdash;but <strong>70% say AI training is
-          inadequate, inconsistent, or unavailable</strong>. Build the skills now and you graduate
+          (June 9; perspectives from 2,000+ health professionals and 20,000 patients across 10
+          countries), a vendor-sponsored survey from a company that sells healthcare technology,
+          clinicians reported AI saves them the equivalent of 16+ working days per year, and 65%
+          reported greater confidence in decision-making. That is what respondents said, not
+          measured time; a multisite
+          <a href="https://jamanetwork.com/journals/jama/fullarticle/2847319" target="_blank" rel="noopener"><em>JAMA</em> cohort study of ambient scribes</a>
+          that did measure it found about 16 fewer minutes of documentation per 8 scheduled patient hours. The same
+          survey found <strong>70% say AI training is inadequate, inconsistent, or
+          unavailable</strong>. Build the skills now and you graduate
           into the part of the workforce that can actually use these tools well. Separately,
           <a href="https://news.microsoft.com/source/2026/06/02/mayo-clinic-and-microsoft-collaborate-to-develop-a-frontier-ai-model-for-healthcare/" target="_blank"><strong>Microsoft and Mayo Clinic</strong></a>
           announced a June 2 collaboration on a frontier clinical AI model&mdash;a signal of how fast
@@ -1083,7 +1145,7 @@ questions might I get asked and how should I prepare?"
       <div>
         <strong>AI 101</strong> · A Self-Paced Guide to AI in Medicine
       </div>
-      <div><a href="updates.html">v1.17 · 2026</a></div>
+      <div><a href="updates.html">v1.18 · 2026</a></div>
     </div>
   </footer>
 

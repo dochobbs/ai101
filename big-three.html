@@ -222,18 +222,23 @@
       </p>
 
       <h3>The Current Offering</h3>
-      <p>Checked November 1, 2026. ChatGPT subscriptions and model access vary by surface (Chat, Work, or Codex), workspace, and rollout:</p>
+      <p>Checked November 7, 2026. ChatGPT subscriptions and model access vary by surface (Chat, Work, or Codex), workspace, and rollout:</p>
 
       <div class="tier-grid">
         <div class="tier-card">
           <h4>ChatGPT Free</h4>
           <p class="tier-price">$0</p>
-          <p>Access to current models with usage limits. Good for exploration and occasional use.</p>
+          <p>Access to current models with usage limits. Good for exploration and occasional use. In Chat, Free uses OpenAI&rsquo;s smaller Luna model, not GPT-6.</p>
+        </div>
+        <div class="tier-card">
+          <h4>ChatGPT Go</h4>
+          <p class="tier-price">$8/month</p>
+          <p>Low-cost personal plan (<a href="https://learn.chatgpt.com/docs/pricing" target="_blank" rel="noopener">OpenAI pricing</a>). No BAA. Like Free, it uses the smaller Luna model in Chat, not GPT-6.</p>
         </div>
         <div class="tier-card">
           <h4>ChatGPT Plus</h4>
           <p class="tier-price">$20/month</p>
-          <p>Higher usage limits and access to additional models and tools. Check the model picker for the surface you use; a model available in Work or Codex is not necessarily available in Chat.</p>
+          <p>Higher usage limits and access to additional models and tools. GPT-6 is rolling out in Chat on Plus and above (<a href="https://help.openai.com/en/articles/11909943-gpt-5-in-chatgpt" target="_blank" rel="noopener">OpenAI</a>), so paying changes the model family, not just the limits. Check the model picker for the surface you use; a model available in Work or Codex is not necessarily available in Chat.</p>
         </div>
         <div class="tier-card">
           <h4>ChatGPT Pro</h4>
@@ -291,14 +296,15 @@
 
       <h3>What You Get</h3>
       <p>
-        <strong>Ecosystem:</strong> The most mature AI ecosystem. The GPT Store contains customized
-        applications for specific use cases, extensive plugin support, and integrations with tools
-        many people already use. If you want to find a pre-built solution for a specific task,
-        ChatGPT's ecosystem is the most likely place to find it.
+        <strong>Ecosystem:</strong> The most mature AI ecosystem, with extensive plugin support and
+        integrations with tools many people already use. Don't choose ChatGPT for the GPT Store:
+        custom GPTs are
+        <a href="https://help.openai.com/en/articles/20001519-custom-gpt-retirement-and-migration-faq" target="_blank" rel="noopener">scheduled to retire on December 11, 2026</a>,
+        with plugins as the replacement.
       </p>
       <p>
         <strong>Features:</strong> Advanced Voice Mode for natural conversation, image generation
-        through DALL-E, Code Interpreter for data analysis and visualization, and web browsing
+        through ChatGPT Images, Code Interpreter for data analysis and visualization, and web browsing
         for current information.
       </p>
       <p>
@@ -483,14 +489,16 @@
       <p>
         <strong>Features:</strong> Large context windows, varying by model and product, for working
         with enormous documents or entire codebases. Strong multimodal capabilities including video
-        analysis. Image generation through Imagen. Gemini Live for voice interaction.
+        analysis. Image generation through Nano Banana. Gemini Live for voice interaction.
       </p>
       <p>
         <strong>HIPAA pathway:</strong> Google Workspace with Gemini is explicitly HIPAA-eligible.
-        Google's HIPAA Included Functionality list covers Gemini in Workspace. Organizations that
-        sign Google's Business Associate Amendment through the Admin Console can use these services
-        with protected health information. This is currently the most straightforward consumer-tier
-        HIPAA pathway.
+        Google's HIPAA Included Functionality list covers Gemini in Workspace and the Gemini app
+        (excluding Gemini in Chrome). Organizations that sign Google's Business Associate Amendment
+        through the Admin Console can use these services with protected health information. This
+        is the most straightforward pathway for organizations already on Workspace. It does not
+        cover a personal Google account or a Google AI Pro or Ultra subscription.
+        <a href="https://docs.cloud.google.com/docs/security/compliance/hipaa" target="_blank" rel="noopener">[Google]</a>
       </p>
 
       <hr>
@@ -537,7 +545,7 @@
               <td><strong>Native Image Gen</strong></td>
               <td>Yes (GPT Image)</td>
               <td>No</td>
-              <td>Yes (Imagen)</td>
+              <td>Yes (Nano Banana)</td>
             </tr>
             <tr>
               <td><strong>Voice Mode</strong></td>
@@ -547,7 +555,7 @@
             </tr>
             <tr>
               <td><strong>Ecosystem</strong></td>
-              <td>GPT Store, plugins</td>
+              <td>Plugins (custom GPTs retire Dec 11, 2026)</td>
               <td>MCP integrations</td>
               <td>Google Workspace</td>
             </tr>
@@ -618,7 +626,10 @@
       <p>
         <strong>Grok</strong> is the model built by xAI&mdash;folded into SpaceX in February
         2026&mdash;and it lives where its users live: inside X, in a standalone app, and
-        behind an API. The current flagship is <strong>Grok 4.6</strong> (August 12, 2026).
+        behind an API. The current flagship is <strong>Grok 4.7</strong>, which xAI&rsquo;s
+        <a href="https://docs.x.ai/docs/models" target="_blank" rel="noopener">model docs</a> call
+        its most capable model (Grok 4.6 shipped August 12, 2026). The company now operates as
+        SpaceXSI on its legal pages.
         Notably, xAI has no healthcare product and no medical vertical; its named enterprise
         markets are customer support, legal, security, and government. The medical story is
         entirely organic&mdash;and promoted from the very top. Elon Musk has repeatedly told
@@ -710,7 +721,8 @@
         building on one.</li>
         <li><strong>Open does not mean runnable.</strong> K3 is 2.8 trillion parameters of
         multi-node datacenter hardware. The realistic self-host tier is
-        Qwen3.8-27B (plain Apache 2.0) or DeepSeek V4-Flash&mdash;see
+        Qwen3.8-27B (plain Apache 2.0) or Meta&rsquo;s Muse Glimmer (Apache 2.0, built for
+        24-32GB machines). DeepSeek V4-Flash, at 284 billion parameters, is server-scale&mdash;see
         <a href="local-models.html">Running AI Models Locally</a>.</li>
         <li><strong>Open no longer reliably means MIT.</strong> Kimi K3 and Qwen&rsquo;s
         flagship carry bespoke licenses with revenue-triggered terms; GLM-5.2 is genuinely
@@ -894,7 +906,10 @@
       </p>
 
       <p>
-        <strong>Premium tiers ($200-250/month) are for power users.</strong> If you're running into
+        <strong>Premium tiers (from about $100/month) are for power users.</strong> ChatGPT Pro
+        starts at $100 and Claude Max is $100, with higher tiers at $200 and up
+        (<a href="https://learn.chatgpt.com/docs/pricing" target="_blank" rel="noopener">OpenAI</a>,
+        <a href="https://claude.com/pricing" target="_blank" rel="noopener">Anthropic</a>). If you're running into
         limits on the $20 tier, pushing complex coding projects, or need maximum model capabilities
         for professional work, the premium tiers exist. But most users won't need them.
       </p>
@@ -1206,8 +1221,8 @@
         ChatGPT, Claude, and Gemini are all capable foundation models that can meaningfully assist
         clinical work. Each has different ecosystem integrations, pricing structures, and HIPAA pathways.
         ChatGPT has the largest user base and most extensive ecosystem. Gemini integrates deeply with
-        Google Workspace and offers the most straightforward consumer HIPAA pathway. Claude offers
-        the largest context window outside of Gemini and strong developer tools.
+        Google Workspace and offers the most straightforward HIPAA pathway for organizations already
+        on Workspace. Claude offers strong developer tools.
       </p>
 
       <p>
@@ -1271,7 +1286,11 @@
           <li><strong>Meta Llama 4</strong> (February 15) introduced Scout (with a remarkable
           10-million-token context window) and Maverick models, both open-weight. A major development
           for privacy-first and on-premise healthcare deployments where data never leaves the building.
-          <a href="https://ai.meta.com/blog/llama-4-multimodal-intelligence/" target="_blank">[Source]</a></li>
+          <a href="https://ai.meta.com/blog/llama-4-multimodal-intelligence/" target="_blank">[Source]</a>
+          <em>Correction, November 2026: Llama 4 was released in April 2025, not February 2026.
+          Meta&rsquo;s 2026 open-weight release is
+          <a href="https://research.meta.ai/blog/introducing-muse-glimmer-open-agentic-model" target="_blank" rel="noopener">Muse Glimmer</a>
+          (August 10, 2026).</em></li>
           <li><strong>DeepSeek V4</strong> launched amid controversy: a trillion-parameter model
           facing distillation fraud accusations from both Anthropic (reporting ~24K fake accounts)
           and OpenAI. A Texas Attorney General investigation has been opened. Regardless of the
@@ -1535,7 +1554,7 @@
             <p class="footnote-refs">
               <strong>References:</strong><br>
               Forbes. "<a href="https://www.forbes.com/sites/maryroeloffs/2026/02/18/elon-musk-keeps-telling-people-to-use-ai-for-medical-advice-but-grok-says-not-to/">Elon Musk Keeps Telling People To Use AI For Medical Advice&mdash;But Grok Says Not To</a>." February 2026.<br>
-              xAI. "<a href="https://x.ai/legal/privacy-policy">Privacy Policy</a>." Effective April 2026.<br>
+              SpaceXSI (formerly xAI). "<a href="https://x.ai/legal/privacy-policy">Privacy Policy</a>." Last updated October 27, 2026.<br>
               JMIR AI. "<a href="https://ai.jmir.org/2026/1/e76928">Performance of 5 Large Language Models on the NBME Free 120</a>." 2026.<br>
               arXiv. "<a href="https://arxiv.org/abs/2509.25559">RadLE: Radiology Last Exam&mdash;Benchmarking Frontier Multimodal AI Against Human Experts</a>." September 2025 (preprint).<br>
               Axios. "<a href="https://www.axios.com/2024/08/05/elon-musk-grok-2024-election-ballot-misinformation">Musk's AI chatbot spread election misinformation, secretaries of state say</a>." August 2024.
@@ -1569,7 +1588,7 @@
   <footer class="footer">
     <div class="footer-inner">
       <div><strong>AI 101</strong> · A Self-Paced Guide to AI in Medicine</div>
-      <div><a href="updates.html">v1.17 · 2026</a></div>
+      <div><a href="updates.html">v1.18 · 2026</a></div>
     </div>
   </footer>
 

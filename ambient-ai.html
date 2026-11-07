@@ -136,6 +136,15 @@
           is free for NPI holders and now includes a HIPAA-secure Dialer for phone encounters.
           <strong><a href="https://glass.health" target="_blank">Glass Health</a></strong> offers
           ambient CDS that generates differential diagnoses in real-time during the encounter.
+          <strong><a href="https://www.doximity.com/clinicians/scribe" target="_blank" rel="noopener">Doximity Scribe</a></strong>
+          is a documentation-only option, free for US physicians, NPs, PAs, and medical students
+          with a verified Doximity account.
+        </p>
+        <p>
+          Free does not mean free of tradeoffs. OpenEvidence is
+          <a href="clinical-decision-support.html">funded by advertising</a>, and any tool that
+          records patients needs a BAA covering your use. Confirm the terms before your first
+          recorded visit.
         </p>
         <p class="mb-0">
           Both integrate documentation with evidence-based guidance—the scribe becomes a
@@ -159,12 +168,14 @@
           premium add-ons.
         </p>
         <p>
-          <strong>First head-to-head RCT finds Nabla outperforms DAX.</strong>
-          A <a href="https://pubmed.ncbi.nlm.nih.gov/40672471/" target="_blank">randomized trial</a>
-          across 72,000 patient encounters found Nabla reduced documentation time by 9.5% vs control
-          and 7.8% vs DAX Copilot (Feb 2026). DAX showed no statistically significant improvement
-          vs control. This is the first large-scale head-to-head evidence comparing ambient scribe
-          platforms&mdash;and a reminder that not all tools perform equally.
+          <strong>First randomized trial of two scribes against usual care.</strong>
+          The UCLA <a href="https://ai.nejm.org/doi/full/10.1056/AIoa2501000" target="_blank" rel="noopener">randomized trial</a>
+          (<em>NEJM AI</em>, Nov 26, 2025) found Nabla users cut time-in-note by 9.5% vs control,
+          while DAX users showed no significant change. The scribes were used in only about a
+          third of eligible visits. The authors did not conclude one product was better:
+          clinicians &ldquo;reported that performance was similar across the two distinct
+          platforms.&rdquo; (An earlier preprint reported a 7.8% Nabla-vs-DAX difference; the
+          published paper does not.)
         </p>
         <p>
           <strong>Dragon Copilot reaches 100K monthly clinicians.</strong>
@@ -640,7 +651,7 @@
 
       <div class="consent-comparison">
         <div class="consent-box one-party">
-          <h4>One-Party Consent States (38 + DC)</h4>
+          <h4>One-Party Consent States (Most States + DC)</h4>
           <p>
             Only one party to the conversation needs to consent. Since you're a party,
             you can technically record without the patient's explicit permission.
@@ -651,14 +662,18 @@
         </div>
 
         <div class="consent-box two-party">
-          <h4>Two-Party (All-Party) Consent States (11)</h4>
+          <h4>Two-Party (All-Party) Consent States (About a Dozen)</h4>
           <p>
             Everyone being recorded must consent. Recording without patient consent
             may be a criminal offense.
           </p>
           <p class="consent-examples">
+            Per the <a href="https://www.rcfp.org/introduction-to-reporters-recording-guide/" target="_blank" rel="noopener">Reporters Committee&rsquo;s recording guide</a>:
             <strong>California, Delaware, Florida, Illinois, Maryland, Massachusetts,
-            Montana, Nevada, New Hampshire, Pennsylvania, Washington</strong>
+            Michigan, Montana, New Hampshire, Pennsylvania, Washington</strong>. Rules can differ
+            for in-person and phone conversations: Missouri and Oregon require all-party consent
+            for in-person conversations, while Connecticut and Nevada apply it to phone calls.
+            Ambient capture is usually in person, so check your own state.
           </p>
         </div>
       </div>
@@ -699,8 +714,32 @@
         <p>
           "Before we begin, I want to let you know I'm using an AI-powered assistant to help
           with documentation. It will record our conversation and create a draft of your visit
-          notes, which I'll review and edit. The recording is deleted after the notes are
-          generated. This lets me focus more on you instead of typing. Is that okay with you?"
+          notes, which I'll review and edit. [Say what your tool actually does with the
+          recording, for example how long the vendor keeps it.] This lets me focus more on you
+          instead of typing. Is that okay with you?"
+        </p>
+      </div>
+
+      <p>
+        Fill in the bracketed line from your vendor's contract or your organization's policy.
+        Retention varies: some vendors say they don't store recordings, and one health system
+        reportedly told a patient its vendor kept them for 30 days. Don't promise deletion you
+        can't confirm.
+      </p>
+
+      <div class="callout callout-warning">
+        <div class="callout-title">Consent Lawsuits: Don&rsquo;t Let a Template Attest for You</div>
+        <p class="mb-0">
+          Proposed class actions are pending against
+          <a href="https://www.medscape.com/viewarticle/health-system-sued-over-ai-scribe-technology-patient-consent-2026a10001k7" target="_blank" rel="noopener">Sharp HealthCare</a>
+          (San Diego Superior Court, filed November 26, 2025) and against
+          <a href="https://www.medscape.com/viewarticle/patients-sue-two-more-health-systems-over-ai-scribe-use-lack-2026a1000bwq" target="_blank" rel="noopener">Sutter Health and MemorialCare</a>
+          (federal court in Northern California, filed April 8, 2026). Both involve Abridge, which
+          is not a defendant. The Sharp complaint alleges that the patient was never told about
+          the recording, yet his record said he had been advised and had consented, and that the
+          vendor kept the recording for 30 days after he asked for deletion. These are unproven
+          allegations. The practice lesson holds anyway: get consent for real, and delete any
+          auto-inserted consent line that isn't true for that visit.
         </p>
       </div>
 
@@ -753,11 +792,15 @@
           </div>
           <div class="vendor-card">
             <h5>Abridge</h5>
-            <p><strong>Best in KLAS 2025 &amp; 2026 (4.7/5).</strong> 150+ health systems including Mayo Clinic, Emory, UNC Health. $300M Series E (June 2025). Reports 73% less after-hours documentation, 61% reduced cognitive burden.</p>
+            <p><strong>Best in KLAS 2025 &amp; 2026 (4.7/5).</strong> Reports 300+ health systems (June 2026), including Mayo Clinic, Emory, UNC Health. $300M Series E (June 2025). Reports 73% less after-hours documentation, 61% reduced cognitive burden.</p>
           </div>
           <div class="vendor-card">
             <h5>DeepScribe</h5>
             <p>Specialty focus (oncology, cardiology). Embedded billing codes.</p>
+          </div>
+          <div class="vendor-card">
+            <h5>Epic Chart with Art (EHR-native)</h5>
+            <p>Released February 4, 2026 as Epic AI Charting. <a href="https://www.epic.com/epic/post/epic-ai-charting-rolls-out-alongside-an-expanding-set-of-built-in-ai-capabilities/" target="_blank" rel="noopener">Listens during the visit, drafts the note, and queues up orders</a> from the conversation for the clinician to review. If your organization is on Epic, ask whether it is already available before buying a separate scribe.</p>
           </div>
         </div>
 
@@ -765,15 +808,19 @@
           <h4>Practice-Level Solutions</h4>
           <div class="vendor-card">
             <h5>Freed</h5>
-            <p>20,000+ clinician users. $99/month, HIPAA-compliant. Best for primary care, psychiatry, internal medicine. Free tier available (3 notes/week).</p>
+            <p>20,000+ clinician users. HIPAA-compliant; says it doesn&rsquo;t store patient recordings. Best for primary care, psychiatry, internal medicine. <a href="https://www.getfreed.ai/pricing" target="_blank" rel="noopener">Pricing</a> as of November 2026: Starter $39/month (40 notes), Core $79 (unlimited), Premier from $104. 7-day free trial; no free tier listed.</p>
           </div>
           <div class="vendor-card">
             <h5>Heidi Health</h5>
-            <p>2M+ consultations/week globally. $99/month. HIPAA, SOC 2 Type II, ISO 27001 certified. Strong EHR integrations including Epic. Free tier available.</p>
+            <p>2M+ consultations/week globally. HIPAA, SOC 2 Type II, ISO 27001 certified. Strong EHR integrations including Epic. Has a free seat with a weekly usage allowance and paid Clinician and Teams plans; check <a href="https://www.heidihealth.com/en-us/pricing" target="_blank" rel="noopener">Heidi&rsquo;s pricing page</a> and the free plan&rsquo;s terms before relying on it.</p>
           </div>
           <div class="vendor-card">
             <h5>Suki</h5>
             <p>Voice commands for EHR navigation, not just documentation.</p>
+          </div>
+          <div class="vendor-card">
+            <h5>Doximity Scribe</h5>
+            <p><strong>Free</strong> for US physicians, NPs, PAs, and medical students with a verified Doximity account. Doximity describes it as HIPAA compliant; works with Doximity Dialer visits and dictation. <a href="https://www.doximity.com/clinicians/scribe" target="_blank" rel="noopener">[Doximity]</a></p>
           </div>
         </div>
 
@@ -785,7 +832,7 @@
           </div>
           <div class="vendor-card">
             <h5>Glass Health Ambient CDS</h5>
-            <p>Real-time differential diagnosis during encounters. EHR integration for patient context.</p>
+            <p>Real-time differential diagnosis during encounters. <a href="https://glass.health/resources/best-ai-medical-scribe" target="_blank" rel="noopener">Glass lists</a> free use for NPI-verified US clinicians and paid plans from $20 to $200 a month; confirm which plan includes EHR integration before counting on it.</p>
           </div>
         </div>
       </div>
@@ -1234,7 +1281,7 @@
             <div class="reading-title">
               <a href="https://ai.nejm.org/doi/full/10.1056/AIoa2501000" target="_blank">"Ambient AI Scribes in Clinical Practice: A Randomized Trial"</a>
             </div>
-            <div class="reading-meta">NEJM AI, November 2025 · First randomized controlled trial comparing DAX Copilot vs Nabla vs control. Found modest time savings (41 sec/note) and burnout reduction. <strong>Key finding:</strong> "Occasional inaccuracies observed in either scribe require ongoing physician vigilance."</div>
+            <div class="reading-meta">NEJM AI, November 2025 · First randomized controlled trial comparing DAX Copilot vs Nabla vs control. Nabla cut time-in-note 9.5% vs control; DAX showed no significant change. Burnout measures improved with both, a secondary finding the authors say needs confirmation. <strong>Key finding:</strong> "Occasional inaccuracies observed in either scribe require ongoing physician vigilance."</div>
           </div>
         </div>
 
@@ -1412,8 +1459,9 @@
         <div class="key-point-card">
           <h4>Consent Varies by State</h4>
           <p>
-            Eleven states require all-party consent. Best practice is universal consent
-            regardless of legal requirements.
+            About a dozen states require all-party consent, and some apply it only to in-person
+            or only to phone conversations. Best practice is universal consent regardless of
+            legal requirements.
           </p>
         </div>
 
@@ -1462,12 +1510,21 @@
       <div class="callout callout-info">
         <div class="callout-title">April 2026 Update: The Evidence Arrives</div>
         <p>
-          <strong>JAMA multi-center study confirms real time savings.</strong> A study across
-          <em>five academic medical centers</em> found ambient scribes reduced total EHR time by
-          <strong>13.4 minutes</strong> and documentation time by <strong>16.0 minutes</strong>
-          per clinician per day&mdash;the strongest controlled evidence to date that the
-          productivity benefits are not just marketing. The variance across sites was large,
-          however: implementation quality still matters enormously.
+          <strong>JAMA multisite study finds modest time savings.</strong> An observational
+          <a href="https://doi.org/10.1001/jama.2026.2253" target="_blank" rel="noopener">difference-in-differences study</a>
+          of 8,581 clinicians at <em>five academic health systems</em> found scribe adoption was
+          associated with <strong>13.4 fewer minutes</strong> of total EHR time and
+          <strong>16.0 fewer minutes</strong> of documentation time per 8 scheduled patient
+          hours, plus about half a visit more per week. EHR time outside work hours did not
+          change significantly. The authors call the effects modest; gains were largest in
+          primary care, among advanced practice clinicians, and among those using the scribe in
+          at least half their visits. The randomized trials below are the stronger design.
+        </p>
+        <p>
+          <strong>Patients noticed no difference.</strong> A UC Davis
+          <a href="https://doi.org/10.1093/jamia/ocag103" target="_blank" rel="noopener">difference-in-differences analysis</a>
+          (<em>JAMIA</em>, Sept 2026) of 31,917 patient surveys found no evidence that scribes
+          worsened or improved patients&rsquo; ratings of communication or satisfaction.
         </p>
         <p>
           <strong>Epic Art expands to home care</strong>&mdash;Art was already live in outpatient
@@ -1478,11 +1535,12 @@
           <a href="https://www.fiercehealthcare.com/ai-and-machine-learning/epic-rolls-out-ai-charting-and-more-built-automation-clinicians-and" target="_blank">[Source]</a>
         </p>
         <p>
-          <strong>Christ Hospital</strong> is using Epic's AI to extract incidental findings from
-          radiology reports and route them to follow-up&mdash;yielding a <strong>69% early lung
-          cancer detection rate</strong> vs. the 46% national average. Ambient AI's most important
-          clinical contribution may not be the note itself, but the silent work of flagging things
-          clinicians miss during busy days.
+          <strong>Christ Hospital</strong> is using Epic's Art to extract incidental findings from
+          radiology results and drive follow-up. <a href="https://www.epic.com/epic/post/real-results-right-now-how-epic-ai-is-reducing-costs-improving-care-and-helping-patients/" target="_blank" rel="noopener">Epic reports</a>
+          a 69% early-stage lung cancer detection rate there vs. a 46% national average. That is a
+          vendor-reported, single-hospital figure compared with a national average, with no
+          control group, and it comes from reading radiology reports, not from ambient
+          listening. Don't expect a scribe rollout to change stage at detection.
         </p>
         <p>
           <strong>Abridge</strong> was named a Fast Company Most Innovative Company of 2026,
@@ -1538,17 +1596,24 @@
           meaning.
         </p>
         <p>
-          <strong>NEJM AI Lukac RCT (Nov 2025).</strong> The first large head-to-head trial
-          (<a href="https://pubmed.ncbi.nlm.nih.gov/40672471/" target="_blank" rel="noopener">238 outpatient physicians, DAX vs. Nabla vs. control</a>)
-          found <strong>Nabla significantly reduced log writing time</strong> while
-          <strong>DAX showed no statistically significant improvement over control</strong>.
-          Vendor choice matters; assume nothing from marketing material.
+          <strong>NEJM AI Lukac RCT (Nov 2025).</strong> A three-arm trial
+          (<a href="https://ai.nejm.org/doi/full/10.1056/AIoa2501000" target="_blank" rel="noopener">238 outpatient physicians, DAX vs. Nabla vs. control</a>)
+          found <strong>Nabla reduced time-in-note 9.5% vs control</strong> while
+          <strong>DAX showed no statistically significant change</strong>. Each scribe was used in
+          only about 30% of visits, and the authors note clinicians rated the two products
+          similar. For a direct product comparison, a Duke
+          <a href="https://doi.org/10.1093/jamia/ocag018" target="_blank" rel="noopener">randomized crossover trial</a>
+          (<em>JAMIA</em>, May 2026; 160 clinicians, products masked as A and B) found product B
+          saved 3.19 more minutes in notes per day and scored higher on satisfaction, while both
+          reduced burnout similarly. Products can differ, so pilot locally rather than trust a
+          brand ranking or marketing material.
         </p>
         <p>
           <strong>Dragon Copilot / DAX scale.</strong> Microsoft now reports DAX Copilot
           serving <strong>600+ organizations</strong> and processing
-          <strong>3M+ monthly encounters</strong>&mdash;an order-of-magnitude jump from the
-          100K-clinician figure cited at HIMSS 2026 in March.
+          <strong>3M+ monthly encounters</strong>, alongside the 100K monthly clinicians cited
+          at HIMSS 2026 in March. These are vendor-reported figures in different units, so they
+          don't show growth on their own.
         </p>
         <p class="mb-0">
           <strong>Abridge &times; NEJM + JAMA evidence integration (April 15, 2026).</strong>
@@ -1585,11 +1650,23 @@
           when it lands in a note and a prescribing error when it lands in a draft order you
           approve on autopilot. Automation complacency, the fifth reason verification gets skipped
           above, gets more expensive as the output gets more consequential. And with billing codes
-          drafted from the same transcript, the upcoding exposure described in the May update now
+          drafted from the same transcript, the coding-intensity exposure described above now
           rides on the same review click.
         </p>
+        <p>
+          <strong>Correction (November 2026): Epic got there first.</strong> Epic released AI
+          Charting, now called Chart with Art, on
+          <a href="https://www.epic.com/epic/post/epic-ai-charting-rolls-out-alongside-an-expanding-set-of-built-in-ai-capabilities/" target="_blank" rel="noopener">February 4, 2026</a>.
+          It drafts the note and queues up orders from the conversation for clinician review,
+          months before the Abridge keynote above. On September 23, 2026, Ambience
+          <a href="https://www.ambiencehealthcare.com/blog/introducing-ambience-chorus-%E2%80%94-part-2-system-of-action" target="_blank" rel="noopener">described</a>
+          a Care Gap Advisor that pends an order for signature based on a guideline gap in the
+          chart, not on anything said in the visit. Read every pended order as a proposal,
+          including ones you never discussed. We found no vendor announcing orders placed without
+          a clinician&rsquo;s signature as of November 7, 2026.
+        </p>
         <p class="mb-0">
-          <strong>Epic is moving the same direction.</strong> At HIMSS26 in March, Epic previewed
+          <strong>Epic is also opening the chart to custom agents.</strong> At HIMSS26 in March, Epic previewed
           <a href="https://www.fiercehealthcare.com/ai-and-machine-learning/himss26-epic-expands-ai-roadmap-previews-factory-build-and-orchestrate-ai" target="_blank" rel="noopener">Agent Factory</a>,
           a visual builder that lets organizations create, customize, and monitor their own AI
           agents with local policies and knowledge bases, deployed on their own timeline. Combined
@@ -1656,7 +1733,7 @@
   <footer class="footer">
     <div class="footer-inner">
       <div><strong>AI 101</strong> · A Self-Paced Guide to AI in Medicine</div>
-      <div><a href="updates.html">v1.17 · 2026</a></div>
+      <div><a href="updates.html">v1.18 · 2026</a></div>
     </div>
   </footer>
 

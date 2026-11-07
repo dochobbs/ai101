@@ -47,5 +47,25 @@ class MaintenanceTest(unittest.TestCase):
         self.assertFalse(any('Deployment UNVERIFIED' in p for p in report['problems']))
 
 
+    def test_card_labels_cannot_outrun_content_or_the_calendar(self):
+        def card(page, label):
+            return f'<a href="{page}" class="week-card x"><h3>t</h3><span class="week-updated">{label}</span></a>'
+        today = dt.date(2026, 11, 7)
+        ok, _ = audit.check_card_dates(today, card('phi-hipaa.html', 'Updated Nov 2026'))
+        self.assertEqual(ok, [])
+        future, _ = audit.check_card_dates(today, card('phi-hipaa.html', 'Updated Dec 2026'))
+        self.assertTrue(any('in the future' in p for p in future))
+        garbled, _ = audit.check_card_dates(today, card('phi-hipaa.html', 'Recently updated'))
+        self.assertTrue(any('unparseable' in p for p in garbled))
+        with patch.object(audit, 'last_content_change', return_value=dt.date(2026, 5, 20)), \
+             patch.object(audit.subprocess, 'run', wraps=audit.subprocess.run) as run:
+            run.side_effect = lambda *a, **k: audit.subprocess.CompletedProcess(a, 0, stdout='false\n', stderr='')
+            stale, _ = audit.check_card_dates(today, card('vibe-coding.html', 'Updated Nov 2026'))
+        self.assertTrue(any('last content change is 2026-05-20' in p for p in stale))
+
+    def test_footer_only_commits_do_not_count_as_content(self):
+        self.assertTrue(audit.ROUTINE_LINE.search('+  <div><a href="updates.html">v1.17 · 2026</a></div>'))
+        self.assertFalse(audit.ROUTINE_LINE.search('+ <p>HTI-5 is final.</p>'))
+
 if __name__ == '__main__':
     unittest.main()

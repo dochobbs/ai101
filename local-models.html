@@ -106,8 +106,10 @@
 
       <p>
         The 2026 landscape is also bifurcating. Meta's <strong>Muse Spark</strong> (April 2026)
-        is its first proprietary, cloud-only frontier model—but the open-weight Llama 4 line
-        continues to ship and remains the substrate for most new medical fine-tunes. When
+        is its first proprietary, cloud-only frontier model. Meta still publishes open weights:
+        <a href="https://research.meta.ai/blog/introducing-muse-glimmer-open-agentic-model" target="_blank" rel="noopener"><strong>Muse Glimmer</strong></a>
+        (August 10, 2026) is a 30B-parameter, Apache 2.0 model built to run on a single consumer
+        GPU or Mac. The older Llama 4 models date from April 2025. When
         you read announcements about a vendor's "frontier" model, check whether it's a hosted
         product or downloadable weights; that distinction determines whether local deployment
         is even an option.
@@ -239,7 +241,7 @@
         <li><strong>MedGemma 27B:</strong> Requires substantial hardware—64GB+ RAM or professional GPUs with 24GB+ VRAM</li>
       </ul>
 
-      <p><strong>Access:</strong> Available on Hugging Face (<code>google/medgemma-4b-it</code> for the instruction-tuned 4B variant). Requires agreeing to Google's terms of use.</p>
+      <p><strong>Access:</strong> Available on Hugging Face. For MedGemma 1.5, use <a href="https://huggingface.co/google/medgemma-1.5-4b-it" target="_blank" rel="noopener"><code>google/medgemma-1.5-4b-it</code></a> (1.5 comes only as a 4B model); <code>google/medgemma-4b-it</code> is the original 4B release, and the 27B variants remain on MedGemma 1. Requires agreeing to Google's terms of use.</p>
 
       <h3>Meditron</h3>
 
@@ -288,11 +290,19 @@
       <div class="resource-grid">
         <div class="resource-card">
           <h4>Llama 4 Scout / Maverick</h4>
-          <p>Meta's April 2025 open-weight models. Mixture-of-experts architecture (17B active params), with Scout offering a 10M-token context window. The current substrate for most new medical fine-tunes.</p>
+          <p>Meta's April 2025 open-weight models. Mixture-of-experts architecture (17B active params), with Scout offering a 10M-token context window. Scout is a <a href="https://ollama.com/library/llama4/tags" target="_blank" rel="noopener">67GB download</a> even at 4-bit, so it needs a 96GB+ machine.</p>
+        </div>
+        <div class="resource-card">
+          <h4>Muse Glimmer (Meta)</h4>
+          <p>Meta's August 10, 2026 open-weight release: 30B parameters, Apache 2.0. Meta says the 4-bit model is under 20GB and fits a 24-32GB machine with room to run. Built for local agents and tool use; no medical evaluation published. <a href="https://huggingface.co/meta-models/Muse-Glimmer-30B" target="_blank" rel="noopener">[Hugging Face]</a></p>
         </div>
         <div class="resource-card">
           <h4>DeepSeek V4 Pro / V4 Flash</h4>
-          <p>DeepSeek's late-2025/early-2026 line. V4 Pro is the reasoning flagship; <strong>V4 Flash</strong> (MIT-licensed, 1M-token context, ~$1.74/M tokens) is the cost-effective option for medical fine-tuning experimentation when you don't need the full reasoning stack.</p>
+          <p>DeepSeek's April 2026 preview line, MIT-licensed, 1M-token context. Both are server-scale: <a href="https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro" target="_blank" rel="noopener">V4 Pro is 1.6 trillion parameters</a> and V4 Flash is 284 billion (roughly 800GB and 140GB at 4-bit). Open weights, but not a desktop model.</p>
+        </div>
+        <div class="resource-card">
+          <h4>Qwen3.8-27B</h4>
+          <p>Alibaba's August 2026 dense model: 27B parameters, Apache 2.0, with image and video input. At 4-bit it sits in the &ldquo;27B at Q4&rdquo; row of the hardware table below. Successor to Qwen 3.6 27B. <a href="https://huggingface.co/Qwen/Qwen3.8-27B" target="_blank" rel="noopener">[Hugging Face]</a></p>
         </div>
         <div class="resource-card">
           <h4>Qwen 3.6 27B</h4>
@@ -300,7 +310,7 @@
         </div>
         <div class="resource-card">
           <h4>Kimi K3</h4>
-          <p>Moonshot AI's July 16, 2026 flagship; open weights published July 27. Roughly 2.8 trillion parameters (mixture-of-experts, ~104B active per token) with a 1M-token context. Independent indices place it just behind the closed frontier&mdash;but at this scale the weights are datacenter infrastructure, not something you run locally. See the callout below. Its predecessor, <strong>Kimi K2.6</strong> (May 2026), remains the more practical option for coding-adjacent local work.</p>
+          <p>Moonshot AI's July 16, 2026 flagship; open weights published July 27. Roughly 2.8 trillion parameters (mixture-of-experts, ~104B active per token) with a 1M-token context. Independent indices place it just behind the closed frontier&mdash;but at this scale the weights are datacenter infrastructure, not something you run locally. See the callout below. Its predecessor, Kimi K2.6, is not a local option either: it is <a href="https://huggingface.co/moonshotai/Kimi-K2.6" target="_blank" rel="noopener">about 1 trillion parameters</a>. For coding-adjacent local work, look at Qwen3.8-27B above.</p>
         </div>
         <div class="resource-card">
           <h4>GLM-5.2</h4>
@@ -312,7 +322,7 @@
         </div>
         <div class="resource-card">
           <h4>MedAlpaca-7B</h4>
-          <p>Fine-tuned for medical dialogue and question-answering. Good for conversational medical education. Available in Ollama.</p>
+          <p>Fine-tuned for medical dialogue and question-answering. Good for conversational medical education. Not in the Ollama library; download it from Hugging Face.</p>
         </div>
         <div class="resource-card">
           <h4>Meerkat-7B/8B</h4>
@@ -408,6 +418,16 @@
           same PHI posture as Kimi&rsquo;s hosted API&mdash;and <strong>GLM-5.2 was the available full-size release at that August checkpoint</strong>. See the November note above for the separately released GLM-5.3-Flash; the original promise alone does not establish full GLM-5.3 weight availability.
           <a href="https://z.ai/blog/glm-5.3" target="_blank" rel="noopener">[Source]</a>
         </p>
+        <p class="mb-0">
+          <strong>November 2026:</strong> the full GLM-5.3 weights are now
+          <a href="https://huggingface.co/zai-org/GLM-5.3" target="_blank" rel="noopener">published</a>
+          (753B parameters, still server-room hardware). They did not ship under MIT. The
+          <a href="https://huggingface.co/zai-org/GLM-5.3/blob/main/LICENSE" target="_blank" rel="noopener">GLM-5.3 License</a>
+          is permissive but adds a clause: a Model-as-a-Service operator with more than $10 billion
+          in annual revenue must pass Z.AI&rsquo;s security review before commercial use. That
+          won&rsquo;t touch a clinic, but it is exactly the &ldquo;read the license that shipped&rdquo;
+          lesson. GLM-5.3-Flash remains MIT.
+        </p>
       </div>
 
       <h3>Choosing a Model</h3>
@@ -423,7 +443,7 @@
           <tbody>
             <tr>
               <td>Limited (8-16GB RAM)</td>
-              <td>Phi-3, MedAlpaca-7B, or Meditron-7B at Q4</td>
+              <td>Phi-3 or Meditron-7B at Q4 (both in the Ollama library)</td>
             </tr>
             <tr>
               <td>Medical QA focus</td>
@@ -439,7 +459,7 @@
             </tr>
             <tr>
               <td>Maximum capability</td>
-              <td>MedGemma 27B, OpenBioLLM-70B, or DeepSeek V4 Pro (1M-token context, significant hardware required)</td>
+              <td>MedGemma 27B, OpenBioLLM-70B, Qwen3.8-27B, or Muse Glimmer (DeepSeek V4 and Kimi need server hardware)</td>
             </tr>
           </tbody>
         </table>
@@ -594,7 +614,7 @@
             </tr>
             <tr>
               <td>M1/M2/M3/M4 Pro / Max 32–64GB</td>
-              <td>13B at Q5-Q8, 27B at Q4 (Llama 4 Scout at Q4 is a 67GB download and won't fit)</td>
+              <td>13B at Q5-Q8, 27B at Q4 (for example Qwen3.8-27B or Muse Glimmer). Llama 4 Scout at Q4 is a 67GB download and won't fit.</td>
             </tr>
             <tr>
               <td>M-series Ultra / Mac Studio 96GB+</td>
@@ -1067,7 +1087,7 @@ ollama run phi3 "What are the most common causes of pediatric fever?"</code></pr
       <ul>
         <li><a href="https://huggingface.co/models?pipeline_tag=text-generation&sort=trending&search=medical">Hugging Face Medical Models</a></li>
         <li><a href="https://ollama.com/library">Ollama Model Library</a></li>
-        <li><a href="https://huggingface.co/google/medgemma-4b-it">MedGemma on Hugging Face</a></li>
+        <li><a href="https://huggingface.co/google/medgemma-1.5-4b-it">MedGemma 1.5 on Hugging Face</a> (<a href="https://huggingface.co/google/medgemma-4b-it">original MedGemma 4B</a>)</li>
         <li><a href="https://arxiv.org/abs/2507.05201">MedGemma Technical Report</a> (arXiv) &mdash; the primary technical report with benchmark methodology and limitations</li>
         <li><a href="https://github.com/epfLLM/meditron">Meditron GitHub</a></li>
       </ul>
@@ -1119,7 +1139,7 @@ ollama run phi3 "What are the most common causes of pediatric fever?"</code></pr
       <div>
         <strong>AI 101</strong> · A Self-Paced Guide to AI in Medicine
       </div>
-      <div><a href="updates.html">v1.17 · 2026</a></div>
+      <div><a href="updates.html">v1.18 · 2026</a></div>
     </div>
   </footer>
 

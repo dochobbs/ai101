@@ -343,8 +343,8 @@
 
       <p>
         When you're asking an AI to do something complex, asking for everything at once often
-        produces worse results than breaking the task into logical steps. This is sometimes called
-        "chain of thought" prompting, and it mirrors how clinicians actually reason through complex cases.
+        produces worse results than breaking the task into logical steps. Feeding a task in stages like this
+        is sometimes called "prompt chaining," and it mirrors how clinicians actually reason through complex cases.
       </p>
 
       <div class="prompt-box">"A 35-year-old woman presents with fatigue, weight gain, and cold intolerance.
@@ -357,8 +357,31 @@
 
       <p>
         This step-by-step approach produces more thorough reasoning than simply asking "What's wrong
-        with this patient?" It also makes the AI's thinking visible, which helps you evaluate
-        whether its reasoning is sound.
+        with this patient?" It also gives you checkpoints: you can read the differential before the
+        TSH arrives and catch a wrong turn early.
+      </p>
+
+      <p>
+        Two cautions. First, the reasoning an AI writes out is not a reliable record of how it actually
+        reached its answer. In a <a href="https://www.anthropic.com/research/reasoning-models-dont-say-think" target="_blank" rel="noopener">2025 Anthropic study</a>,
+        when reasoning models were slipped a hint that changed their answer, Claude 3.7 Sonnet mentioned the hint
+        in its reasoning only 25% of the time and DeepSeek R1 39% of the time. Those were older models in one
+        test design, not a current rate, but a plausible rationale still doesn't count as checking the answer.
+        Second, today's reasoning models already think before answering, so the old trick of adding "think step by step"
+        matters less. Anthropic's <a href="https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/claude-prompting-best-practices" target="_blank" rel="noopener">prompting guide</a>
+        now calls hand-written chain-of-thought prompting a fallback for when the model's built-in thinking is off.
+        Break a task into steps when <em>you</em> want to check each one.
+      </p>
+
+      <p>
+        One more detail worth adding to any workup question: ask for the most parsimonious safe plan.
+        In an <a href="https://ai.nejm.org/doi/full/10.1056/AIoa2600537" target="_blank" rel="noopener">October 2026 NEJM AI study</a>,
+        20 general-purpose AI systems given 200 public sample notes suggested tests and referrals costing
+        3.2 times what the treating physicians had documented ($314 vs. $97 per visit at Medicare rates),
+        mostly by suggesting testing at visits where the physician had ordered none. A prompt asking for a
+        parsimonious-but-safe plan cut the gap to 1.4 times. No patients were treated and no outcomes were
+        measured, so the study can't say whether the extra testing was waste or thoroughness, but it's a
+        cheap instruction to include.
       </p>
 
       <h2>The Power of Examples: Showing Rather Than Telling</h2>
@@ -595,9 +618,12 @@ Now create similar materials explaining what to expect during a colonoscopy."</d
       <h2>Personalizing Your AI: Custom Instructions</h2>
 
       <p>
-        Every time you start a new conversation with an AI, it knows nothing about you. You're starting
-        from scratch—explaining your role, your preferences, your context. But all three major AI platforms
-        let you set <strong>custom instructions</strong> that apply to every conversation automatically.
+        Without setup, you end up explaining your role, your preferences, and your context over and over.
+        All three major AI platforms let you set <strong>custom instructions</strong> that apply to every
+        conversation automatically. (They also now have <strong>memory</strong>, which carries details from
+        earlier chats into new ones on its own. On Claude's consumer plans
+        <a href="https://support.claude.com/en/articles/11817273" target="_blank" rel="noopener">memory is on by default</a>,
+        so a "new" chat may not start clean. More on that in the privacy reminder below.)
         This is like giving a new colleague an orientation on their first day, so you don't have to
         re-explain the basics every time you work together.
       </p>
@@ -669,21 +695,21 @@ Now create similar materials explaining what to expect during a colonoscopy."</d
           <h3><i data-lucide="sparkles"></i> ChatGPT</h3>
           <p><strong>Where to find it:</strong></p>
           <ul>
-            <li><strong>Desktop/Web:</strong> Click your profile icon → Settings → Personalization → Custom Instructions</li>
-            <li><strong>Mobile:</strong> Tap the menu → Settings → Personalization → Custom Instructions</li>
+            <li><strong>Desktop/Web:</strong> Settings → Personalization → turn on Enable customization → Custom Instructions field</li>
+            <li><strong>Mobile:</strong> Settings → Customize ChatGPT → Custom Instructions field</li>
           </ul>
-          <p><strong>How it works:</strong> Two text boxes—"What would you like ChatGPT to know about you?" and "How would you like ChatGPT to respond?" Each has a 1,500 character limit.</p>
-          <p><strong>Tip:</strong> ChatGPT also has "Memory" that learns from conversations. You can review and edit what it remembers in Settings → Personalization → Memory.</p>
+          <p><strong>How it works:</strong> A Custom Instructions field that applies to all chats. The limit is 1,500 characters on Free and Go and 5,000 on Plus, Pro, Business, Enterprise, and Education. OpenAI says information from custom instructions is used to improve its models unless you opt out of training. (<a href="https://help.openai.com/en/articles/8096356-custom-instructions-for-chatgpt" target="_blank" rel="noopener">OpenAI help</a>)</p>
+          <p><strong>Tip:</strong> ChatGPT's <a href="https://help.openai.com/en/articles/8590148-memory-faq" target="_blank" rel="noopener">Memory</a> draws on past chats, saved memories, and connected apps. Review and delete what it remembers in Settings → Personalization → Memory.</p>
         </div>
 
         <div class="model-strength-card claude">
           <h3><i data-lucide="pen-tool"></i> Claude</h3>
           <p><strong>Where to find it:</strong></p>
           <ul>
-            <li><strong>Desktop/Web:</strong> Click your profile icon → Settings → Profile → "Describe yourself to Claude"</li>
-            <li><strong>Mobile:</strong> Tap menu → Settings → Profile</li>
+            <li><strong>Desktop/Web:</strong> Click your initials (lower left) → Settings → Your Claude → Instructions</li>
+            <li><strong>Older settings layout:</strong> Settings → Account → "Instructions for Claude"</li>
           </ul>
-          <p><strong>How it works:</strong> A single text field where you describe yourself, your work, and how you'd like Claude to respond. Claude uses this context in every new conversation.</p>
+          <p><strong>How it works:</strong> A single field where you describe yourself, your work, and how you'd like Claude to respond. Claude applies it to all your conversations. (<a href="https://support.claude.com/en/articles/10185728-understanding-claude-s-personalization-features" target="_blank" rel="noopener">Claude help</a>)</p>
           <p><strong>Tip:</strong> Claude also supports "Projects" where you can set project-specific instructions and upload reference documents that persist across conversations.</p>
         </div>
 
@@ -691,11 +717,11 @@ Now create similar materials explaining what to expect during a colonoscopy."</d
           <h3><i data-lucide="layers"></i> Gemini</h3>
           <p><strong>Where to find it:</strong></p>
           <ul>
-            <li><strong>Desktop/Web:</strong> Click Settings (gear icon) → Extensions & Data → Response preferences, or use "Saved Info" in Settings</li>
-            <li><strong>Mobile:</strong> Tap your profile → Settings → Saved Info</li>
+            <li><strong>Web (gemini.google.com):</strong> Settings &amp; help → Personal Intelligence → Instructions for Gemini → Add</li>
+            <li><strong>Accounts:</strong> Personal Google Accounts only, not work or school accounts</li>
           </ul>
-          <p><strong>How it works:</strong> Gemini lets you save personal details (location, work, interests) and response preferences (length, tone, complexity). It integrates with your Google account.</p>
-          <p><strong>Tip:</strong> If you use Google Workspace, Gemini can access your Drive, Gmail, and Calendar with permission, making context even richer.</p>
+          <p><strong>How it works:</strong> You add instructions (start with a summary, use bullet points, facts about your work) that Gemini applies to every chat. They don't apply inside Gems. (<a href="https://support.google.com/gemini/answer/16598625" target="_blank" rel="noopener">Gemini help</a>)</p>
+          <p><strong>Tip:</strong> With permission, Gemini can also pull context from your connected Google apps and past Gemini chats. Because instructions need a personal account, a Workspace account at work won't have this setting.</p>
         </div>
       </div>
 
@@ -724,6 +750,10 @@ I typically use AI help for: drafting patient education materials, summarizing c
           Custom instructions are stored by the AI provider and used to personalize your experience.
           <strong>Don't include PHI, specific patient details, or sensitive institutional information</strong>
           in your custom instructions. Keep it to your general role, preferences, and workflow patterns.
+          The same goes for ordinary chats: with memory on, details you type in one conversation can be
+          saved and brought into later ones. If anything sensitive slipped in, check the memory settings
+          and delete it along with the chat. These menus move often; if a path above doesn't match,
+          search the app's settings for "Instructions" or "Memory."
         </p>
       </div>
 
@@ -775,11 +805,11 @@ I typically use AI help for: drafting patient education materials, summarizing c
         </div>
       </a>
 
-      <!-- NotebookLM Reminder -->
+      <!-- Gemini Notebook Reminder -->
       <div class="callout callout-tool">
-        <div class="callout-title">Try This with NotebookLM</div>
+        <div class="callout-title">Try This with Gemini Notebook</div>
         <p>
-          This module's concepts are perfect for hands-on practice with NotebookLM:
+          This module's concepts are perfect for hands-on practice with Gemini Notebook (formerly NotebookLM):
         </p>
         <ul>
           <li>Upload a clinical guideline and practice different prompting approaches</li>
@@ -788,7 +818,7 @@ I typically use AI help for: drafting patient education materials, summarizing c
           <li>Practice iterative refinement to improve initial outputs</li>
         </ul>
         <p class="mb-0">
-          The document-grounded nature of NotebookLM makes it a safe sandbox to build prompting
+          The document-grounded nature of Gemini Notebook makes it a safe sandbox to build prompting
           intuition before applying these skills to general-purpose AI tools.
         </p>
       </div>
@@ -977,7 +1007,7 @@ I typically use AI help for: drafting patient education materials, summarizing c
   <footer class="footer">
     <div class="footer-inner">
       <div><strong>AI 101</strong> · A Self-Paced Guide to AI in Medicine</div>
-      <div><a href="updates.html">v1.17 · 2026</a></div>
+      <div><a href="updates.html">v1.18 · 2026</a></div>
     </div>
   </footer>
 

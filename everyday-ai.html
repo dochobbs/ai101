@@ -300,12 +300,15 @@
       </div>
 
       <div class="callout callout-info">
-        <div class="callout-title">Try NotebookLM for Deep Research</div>
+        <div class="callout-title">Try Gemini Notebook for Deep Research</div>
         <p>
-          <strong><a href="https://notebooklm.google.com" target="_blank">Google NotebookLM</a></strong>
+          <strong><a href="https://notebooklm.google.com" target="_blank">Gemini Notebook</a></strong>
+          (formerly NotebookLM, <a href="https://blog.google/innovation-and-ai/products/gemini-notebook/notebooklm-gemini-notebook" target="_blank" rel="noopener">renamed July 2026</a>)
           is exceptionally good for research synthesis. Upload PDFs, articles, or documents,
-          and it creates an AI that can only reference your sources—no hallucinations from
-          outside information.
+          and it answers from your sources with citations. That reduces drift into outside
+          information but doesn't stop it from misreading a source; Google's own help says it
+          <a href="https://support.google.com/gemininotebook/answer/16212283" target="_blank" rel="noopener">can be inaccurate</a>.
+          Click through to the cited passage before you rely on an answer.
         </p>
         <p class="mb-0">
           <strong>Best for:</strong> Reviewing contracts, analyzing research papers, preparing
@@ -369,6 +372,13 @@
         AI makes an excellent tutor for your children—patient, always available, and
         capable of explaining concepts multiple ways until they click. The key is using
         it to teach, not just provide answers.
+      </p>
+
+      <p>
+        Check the account rules first, because they differ by product. Claude consumer accounts
+        require users to be <a href="https://www.anthropic.com/legal/consumer-terms" target="_blank" rel="noopener">18 or older</a>;
+        Gemini personal accounts allow <a href="https://support.google.com/gemini/answer/15146780" target="_blank" rel="noopener">13 and up</a>.
+        For younger children, sit with them and use your own account where the terms allow.
       </p>
 
       <div class="example-card">
@@ -456,7 +466,7 @@
           <li><strong>Project Knowledge:</strong> Upload documents (up to 200,000 words total) that Claude can reference. These could be your practice protocols, style guides, reference materials, or past work.</li>
           <li><strong>Persistent Context:</strong> Everything you upload stays with the project, available in every conversation.</li>
         </ul>
-        <p><strong>Access:</strong> Available to Claude Pro subscribers ($20/month). Find it in the left sidebar under "Projects."</p>
+        <p><strong>Access:</strong> The Free plan includes up to 5 projects; Pro ($20/month) and above have more (<a href="https://claude.com/pricing" target="_blank" rel="noopener">Claude plans</a>). Find it in the left sidebar under "Projects." Sharing a project with colleagues requires a Team or Enterprise plan.</p>
       </div>
 
       <div class="example-card">
@@ -468,26 +478,41 @@
         <ul>
           <li><strong>Instructions:</strong> "You are an expert on our practice's policies and procedures. Answer questions accurately based on uploaded documents. If a question isn't covered by the documents, say so clearly."</li>
           <li><strong>Knowledge:</strong> Upload your employee handbook, clinical protocols, scheduling policies, and compliance documents.</li>
-          <li><strong>Use:</strong> Staff can ask questions like "What's our policy on patient no-shows?" and get accurate answers grounded in your actual policies.</li>
+          <li><strong>Use:</strong> Ask questions like "What's our policy on patient no-shows?" and get answers grounded in your actual policies. For staff to use it too, you need a Team or Enterprise plan, because Free, Pro, Max, and Ultra projects can't be shared. Team still has no BAA, so keep the knowledge base to policies, not patient information, and check answers against the source document.</li>
         </ul>
       </div>
 
-      <h3>Google Gems</h3>
+      <h3>Google Gems (Becoming Skills)</h3>
+
+      <div class="callout callout-warning">
+        <div class="callout-title">Gems on Personal Accounts: Read-Only November 17, Gone December 17, 2026</div>
+        <p class="mb-0">
+          Google is
+          <a href="https://support.google.com/gemini/answer/18560919" target="_blank" rel="noopener">replacing Gems with skills</a>.
+          On personal Google accounts (18+), Gems convert to skills automatically and become read-only
+          on November 17, 2026, and are removed on December 17, 2026. Supported files move with them,
+          up to a 100 MB total; audio, video, archives, and legacy Office formats don&rsquo;t carry
+          over, so download any Gem files you need before December 17. Work accounts follow in March
+          2027 and education accounts in June 2027. Skills are reusable instructions you call by
+          typing &ldquo;/&rdquo; and the skill&rsquo;s name, or that Gemini applies when relevant.
+        </p>
+      </div>
 
       <p>
-        Gems are custom AI personas in Gemini that you can create and share. They're
-        simpler than Claude Projects—just custom instructions, no document uploads—but
-        quick to create and easy to use.
+        Gems are custom AI personas in Gemini that you can create and share. Like Claude Projects,
+        they can hold reference files as well as instructions, and they're quick to create and
+        easy to use.
       </p>
 
       <div class="tool-card">
         <h4>How It Works</h4>
         <ul>
           <li><strong>Custom Instructions:</strong> Define the Gem's personality, expertise, and how it should respond.</li>
+          <li><strong>Knowledge Files:</strong> Under "Knowledge," add files from your device or Google Drive for the Gem to reference.</li>
           <li><strong>One-Click Access:</strong> Gems appear in your Gemini sidebar for instant access.</li>
           <li><strong>Shareable:</strong> You can share Gems with colleagues (though they'll need Gemini access).</li>
         </ul>
-        <p><strong>Access:</strong> Available to eligible Google AI subscribers (check the current plan and account availability). Click "Gem manager" in the sidebar to create.</p>
+        <p><strong>Access:</strong> Free to start: Google lists no paid-plan requirement, only that you're signed in and, on a personal account, 13 or older (<a href="https://support.google.com/gemini/answer/15146780" target="_blank" rel="noopener">Google: Use Gems</a>). In the Gemini sidebar, click Gems, then New Gem. On a personal account, expect to build a skill instead from mid-November 2026.</p>
       </div>
 
       <div class="example-card">
@@ -495,7 +520,7 @@
           <span class="example-number">2</span>
           <h4 class="example-title">Example: Writing Style Editor</h4>
         </div>
-        <p>Create a Gem with instructions like:</p>
+        <p>Create a Gem (or, on a personal account after mid-November 2026, a skill) with instructions like:</p>
         <p><em>"You are my personal writing editor. Your job is to improve my drafts while maintaining my voice. I write in a conversational but professional style. Make suggestions to improve clarity and flow, but don't make my writing sound generic or corporate. Point out anything unclear and suggest specific improvements."</em></p>
       </div>
 
@@ -573,8 +598,8 @@
             </tr>
             <tr>
               <td>Image Generation</td>
-              <td>Yes</td>
-              <td>Yes (Imagen 4)</td>
+              <td>No (<a href="https://support.claude.com/en/articles/9002504-can-claude-produce-images" target="_blank" rel="noopener">diagrams and charts only</a>)</td>
+              <td>Yes (Nano Banana)</td>
               <td>Check your plan</td>
             </tr>
             <tr>
@@ -585,7 +610,7 @@
             </tr>
             <tr>
               <td>Sharing</td>
-              <td>Team features</td>
+              <td>Team or Enterprise plan</td>
               <td>Yes</td>
               <td>Project sharing (plan-dependent)</td>
             </tr>
@@ -597,8 +622,8 @@
             </tr>
             <tr>
               <td>Cost</td>
-              <td>$20/month (Pro)</td>
-              <td>$19.99/month (Google AI Pro, US)</td>
+              <td>Free (up to 5 projects); $20/month (Pro)</td>
+              <td>Free to start (becoming skills on personal accounts, Nov 2026)</td>
               <td>$20/month (Plus)</td>
             </tr>
           </tbody>
@@ -629,7 +654,7 @@
           <h4 class="example-title">Step-by-Step Setup</h4>
         </div>
         <ol>
-          <li><strong>Choose your platform:</strong> Claude Projects for document-heavy work, Gems for simplicity, ChatGPT Projects if you already use ChatGPT.</li>
+          <li><strong>Choose your platform:</strong> Claude Projects for document-heavy work, Gems or Gemini skills for simplicity, ChatGPT Projects if you already use ChatGPT.</li>
           <li><strong>Write your instructions:</strong> Start simple. Describe how you like to write, what you want preserved, and what you want improved.</li>
           <li><strong>Test with real work:</strong> Paste something you've written and see how the tool responds.</li>
           <li><strong>Refine based on results:</strong> If the output isn't quite right, adjust your instructions. This is iterative.</li>
@@ -769,7 +794,7 @@
             <div class="reading-title">
               <a href="https://blog.google/innovation-and-ai/models-and-research/google-labs/notebooklm-student-features/" target="_blank">"6 Ways to Use NotebookLM to Master Any Subject"</a>
             </div>
-            <div class="reading-meta">Google · First-party NotebookLM how-to from the product team—flashcards, quizzes, learning guides, and source-grounded study aids for board-exam prep and document research.</div>
+            <div class="reading-meta">Google · First-party how-to for NotebookLM (now Gemini Notebook) from the product team—flashcards, quizzes, learning guides, and source-grounded study aids for board-exam prep and document research.</div>
           </div>
         </div>
       </div>
@@ -854,7 +879,7 @@
   <footer class="footer">
     <div class="footer-inner">
       <div><strong>AI 101</strong> · A Self-Paced Guide to AI in Medicine</div>
-      <div><a href="updates.html">v1.17 · 2026</a></div>
+      <div><a href="updates.html">v1.18 · 2026</a></div>
     </div>
   </footer>
 

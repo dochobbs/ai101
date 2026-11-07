@@ -313,7 +313,7 @@
       <ul>
         <li>Is it documentation? Go deep on ambient AI and learn how to optimize it for your specialty.</li>
         <li>Is it patient communication? Build a reusable Project (ChatGPT or Claude) with instructions and reference files for drafting answers to your most common questions.</li>
-        <li>Is it keeping up with literature? Master NotebookLM and AI-powered research workflows.</li>
+        <li>Is it keeping up with literature? Master Gemini Notebook (formerly NotebookLM) and AI-powered research workflows.</li>
         <li>Is it practice management? Explore how AI can handle scheduling, referrals, prior auth.</li>
         <li>Is it education? Look at how AI can enhance teaching, build simulations, create learning materials.</li>
       </ul>
@@ -1080,6 +1080,13 @@ print(message.content)</code></pre>
           model guidance in our <a href="local-models.html"><strong>Running AI Locally</strong></a>
           module, Llama 4 represents a viable path toward institutional AI that keeps patient data
           in-house.
+          <em>Correction, November 2026: Llama 4 dates from April 2025, not March 2026, and Scout is a
+          <a href="https://ollama.com/library/llama4/tags" target="_blank" rel="noopener">67GB download</a>
+          even at 4-bit. Current open-weight options that fit a single workstation include Meta&rsquo;s
+          <a href="https://research.meta.ai/blog/introducing-muse-glimmer-open-agentic-model" target="_blank" rel="noopener">Muse Glimmer</a>
+          (Apache 2.0, built for 24-32GB machines) and
+          <a href="https://huggingface.co/Qwen/Qwen3.8-27B" target="_blank" rel="noopener">Qwen3.8-27B</a>.
+          Neither has been validated for clinical use.</em>
         </p>
         <p>
           <strong><a href="https://techcrunch.com/2026/03/05/aws-amazon-connect-health-ai-agent-platform-health-care-providers/" target="_blank">AWS Health AI Agent Platform</a></strong>
@@ -1126,8 +1133,8 @@ print(message.content)</code></pre>
         <div class="reading-item">
           <div class="reading-type"><i data-lucide="terminal"></i></div>
           <div class="reading-content">
-            <div class="reading-title">Claude Computer Use / OpenAI Operator</div>
-            <div class="reading-meta">AI that can control a computer—clicking buttons, filling forms, navigating websites. Still early but shows where things are heading. Anthropic's computer use is available; OpenAI's Operator is in preview.</div>
+            <div class="reading-title">Claude Computer Use / ChatGPT Work</div>
+            <div class="reading-meta">AI that can control a computer—clicking buttons, filling forms, navigating websites. Still early but shows where things are heading. Anthropic's computer use is available. OpenAI retired Operator and then ChatGPT agent, and now <a href="https://help.openai.com/en/articles/11752874-chatgpt-agent" target="_blank" rel="noopener">points users to ChatGPT Work</a>. Even on a BAA-covered workspace, OpenAI lists browser use for Work in the cloud as <a href="https://help.openai.com/en/articles/20001069-hipaa-eligible-products-and-functionality" target="_blank" rel="noopener">not covered by the BAA</a>.</div>
           </div>
         </div>
 
@@ -1187,16 +1194,13 @@ print(message.content)</code></pre>
           </div>
         </div>
 
-        <div class="reading-item">
-          <div class="reading-type"><i data-lucide="globe"></i></div>
-          <div class="reading-content">
-            <div class="reading-title">
-              <a href="https://chatgpt.com/atlas/" target="_blank">Atlas</a> (OpenAI)
-            </div>
-            <div class="reading-meta">ChatGPT integrated into a browser with "agent mode" that can shop, make reservations, fill forms, and complete multi-step web tasks. Full agent features require Plus/Pro subscription. Currently Mac only.</div>
-          </div>
-        </div>
       </div>
+
+      <p>
+        OpenAI&rsquo;s Atlas browser, listed here earlier in 2026, has been
+        <a href="https://help.openai.com/en/articles/20001371-chatgpt-atlas-retirement" target="_blank" rel="noopener">retired</a>
+        and no longer receives updates.
+      </p>
 
       <p>
         The appeal is obvious: tell the browser "find me the cheapest flight to Chicago next Tuesday"
@@ -1261,7 +1265,7 @@ print(message.content)</code></pre>
       </p>
 
       <ul>
-        <li><strong>Personal Literature Workflow:</strong> Set up NotebookLM with 5-10 papers from your
+        <li><strong>Personal Literature Workflow:</strong> Set up Gemini Notebook with 5-10 papers from your
         specialty. Practice having it synthesize across sources, identify contradictions, and generate
         podcast-style summaries. Document what works and what doesn't.</li>
 
@@ -1273,9 +1277,12 @@ print(message.content)</code></pre>
         club) and run it through Granola or another AI notetaker. Compare the AI summary to your own
         notes. Where does it add value? Where does it fail?</li>
 
-        <li><strong>Personal Productivity Agent:</strong> Use n8n or Zapier to connect your email, calendar,
-        and a language model. Build a simple agent that summarizes your daily emails or suggests time
-        blocks for focused work. Learn agent architecture on low-stakes tasks.</li>
+        <li><strong>Personal Productivity Agent:</strong> Use n8n or Zapier to connect a <em>personal,
+        non-clinical</em> email account, calendar, and a language model. Build a simple agent that
+        summarizes your daily emails or suggests time blocks for focused work. Learn agent architecture
+        on low-stakes tasks. Don't point it at a work inbox: clinical mailboxes routinely contain PHI,
+        every connected service needs its own agreement, and prompt injection (above) means an email
+        can steer the agent.</li>
       </ul>
 
       <h3>Level 2: Professional Context, Personal Use</h3>
@@ -1350,7 +1357,7 @@ print(message.content)</code></pre>
           <li><strong>Identify your niche.</strong> What specific problem in your work would you most like AI to solve? Write it down in one sentence. Start researching how others are approaching it.</li>
           <li><strong>Teach someone else</strong> what you learned here. Give a lunch talk. Write a blog post. Explain it to a colleague. Teaching is the best way to solidify your own understanding.</li>
           <li><strong>Run a simple evaluation.</strong> Take an AI tool you're already using and create 10 challenging test cases from your practice. Document how it performs. Share your findings.</li>
-          <li><strong>Set up your first agent workflow.</strong> Connect your email to a language model using n8n or Zapier. Have it summarize your unread messages each morning. Experience what "AI that takes action" feels like.</li>
+          <li><strong>Set up your first agent workflow.</strong> Connect a personal, non-clinical email account to a language model using n8n or Zapier. Have it summarize your unread messages each morning. Experience what "AI that takes action" feels like.</li>
         </ol>
       </div>
 
@@ -1370,7 +1377,7 @@ print(message.content)</code></pre>
         reaching for AI tools.</li>
 
         <li><strong>Days 8-14:</strong> Pick one tool and go deep. If it's ChatGPT, explore Projects (custom GPTs retire December 11, 2026).
-        If it's Claude, try the Projects feature. If it's NotebookLM, load it with your most-used references.
+        If it's Claude, try the Projects feature. If it's Gemini Notebook, load it with your most-used references.
         Understand what your chosen tool can really do.</li>
 
         <li><strong>Days 15-21:</strong> Build something. A Project with your own instructions. A simple automation. A documentation
@@ -1666,7 +1673,7 @@ print(message.content)</code></pre>
   <footer class="footer">
     <div class="footer-inner">
       <div><strong>AI 101</strong> · A Self-Paced Guide to AI in Medicine</div>
-      <div><a href="updates.html">v1.17 · 2026</a></div>
+      <div><a href="updates.html">v1.18 · 2026</a></div>
     </div>
   </footer>
 

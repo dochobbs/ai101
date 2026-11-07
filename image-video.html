@@ -120,9 +120,11 @@
         <div class="callout-title">Prioritize This!</div>
         <p>
           If you want to start creating AI images today, <strong>Google Gemini</strong>
-          with <strong>Nano Banana 2</strong> is still your best starting point. There is a free
-          tier, and it generates the most accurate text in images—which is the thing that matters
-          most for patient education. Open <a href="https://gemini.google.com" target="_blank">gemini.google.com</a>
+          with <strong>Nano Banana</strong> (now <strong>Nano Banana 2.1</strong>, October 2026) is
+          still a good starting point. There is a free tier, and Google pitches it on text rendering,
+          which is the thing that matters most for patient education. Its own model card admits
+          small text is often blurry at 1K and left/right can get confused, so generate above 1K and
+          proofread every label. Open <a href="https://gemini.google.com" target="_blank">gemini.google.com</a>
           and try: <em>"Create a simple diagram showing how an inhaler delivers medication to the
           lungs, patient education style, with labels pointing to key structures."</em>
         </p>
@@ -275,7 +277,7 @@
           <li><strong>Real-time data:</strong> Can use Google Search to verify facts and generate imagery based on current information.</li>
           <li><strong>Platform integrations:</strong> Now integrated into Adobe, Figma, and Canva.</li>
         </ul>
-        <p><strong>Access:</strong> In Gemini, select "🍌Create images" and "Thinking" from the model menu. Also available in NotebookLM, Vertex AI, and Google Workspace.</p>
+        <p><strong>Access:</strong> In Gemini, select "🍌Create images" and "Thinking" from the model menu. Also available in Gemini Notebook (formerly NotebookLM), Vertex AI, and Google Workspace.</p>
       </div>
 
       <div class="tool-card">
@@ -288,12 +290,28 @@
       </div>
 
       <div class="callout callout-info">
+        <div class="callout-title">November 2026: Nano Banana 2.1 Replaces Nano Banana 2</div>
+        <p class="mb-0">
+          Google made <strong>Nano Banana 2.1</strong> generally available on October 6, 2026, and
+          deprecated the Nano Banana 2 API model (<code>gemini-3.1-flash-image</code>). It is in the
+          Gemini app, AI Studio, the Gemini API, and Search AI Mode. The tier descriptions above were
+          written for Nano Banana 2. The
+          <a href="https://deepmind.google/models/model-cards/nano-banana-2-1/" target="_blank" rel="noopener">2.1 model card</a>
+          lists known limits that matter for handouts: &ldquo;poor text rendering in small text
+          (often blurry in 1k model)&rdquo; and &ldquo;occasional confusion around spatial
+          localisation (e.g. left/right).&rdquo; For anatomy labels and laterality, check every
+          label yourself.
+          <a href="https://aistudio.google.com/docs/changelog" target="_blank" rel="noopener">[Changelog]</a>
+        </p>
+      </div>
+
+      <div class="callout callout-info">
         <div class="callout-title">Why Nano Banana Matters for Healthcare</div>
         <p class="mb-0">
           Most AI image generators struggle with text—producing garbled letters or misspellings.
-          Nano Banana Pro solves this, making it ideal for patient education materials where
-          accurate labels and instructions are essential. All images are watermarked with SynthID
-          for AI detection.
+          Google positions Nano Banana Pro as the family's strongest text renderer, which is what
+          patient education materials need for accurate labels and instructions. It still makes
+          mistakes, so proofread. All images are watermarked with SynthID for AI detection.
         </p>
       </div>
 
@@ -312,7 +330,8 @@
       </figure>
 
       <div class="callout callout-info">
-        <div class="callout-title">November 2026: GPT Image 2.5 Is the Current API Family</div>
+        <div class="callout-title">November 2026: GPT Image 2.6 and ChatGPT Images 2.6</div>
+        <p>On November 4, OpenAI released <strong>GPT Image 2.6 Sunburst and Flare</strong> in the API and <strong>ChatGPT Images 2.6</strong> in ChatGPT, which OpenAI says is faster and better at preserving details across edits. <a href="https://help.openai.com/en/articles/6825453-chatgpt-release-notes" target="_blank" rel="noopener">[ChatGPT release notes]</a> The caveats below for 2.5 carry over.</p>
         <p>OpenAI released <strong>GPT Image 2.5 Sunburst and Flare on September 8</strong>. Sunburst targets more demanding image/editing work; Flare targets faster generation. Both support generation, editing, and transparent backgrounds. The April ChatGPT Images 2.0 discussion below is historical, and API model availability does not establish a consumer plan&rsquo;s limits. Inspect anatomy, labels, and any patient-facing material independently; better image quality is not medical validation. <a href="https://developers.openai.com/api/docs/guides/image-generation" target="_blank" rel="noopener">[Current guide]</a> <a href="https://developers.openai.com/api/docs/changelog" target="_blank" rel="noopener">[Release history]</a></p>
       </div>
 
@@ -373,14 +392,15 @@
           <li><strong>Physical plausibility:</strong> Google claims improved handling of gravity, kinetic energy, and fluid dynamics, and states that "your characters stay consistent, the physics hold up and the scene remembers what came before."</li>
           <li><strong>SynthID on everything:</strong> Every Omni output carries Google's imperceptible watermark, verifiable through the Gemini app, Gemini in Chrome, and Google Search.</li>
         </ul>
-        <p><strong>Access:</strong> Google AI Plus, Pro, and Ultra subscribers via the Gemini app and Google Flow; free on YouTube Shorts and the YouTube Create app. In the API since June 30, 2026 as <code>gemini-omni-flash-preview</code> at $0.10 per second of video output.</p>
+        <p><strong>Access:</strong> Google AI Plus, Pro, and Ultra subscribers via the Gemini app and Google Flow; free on YouTube Shorts and the YouTube Create app. In the API since June 30, 2026; the current version, <code>gemini-omni-1.2-flash</code> (November 5, 2026), costs $0.07 per second of 720p video (<a href="https://blog.google/innovation-and-ai/technology/developers-tools/introducing-gemini-omni-1-2-flash/" target="_blank" rel="noopener">Google</a>).</p>
       </div>
 
       <div class="callout callout-warning">
         <div class="callout-title">Read the Limits Before You Plan Around It</div>
         <p class="mb-0">
-          Omni Flash currently generates <strong>10-second clips</strong>; Google says longer
-          durations are coming but has not said when. Google's own model card also states that
+          Omni Flash launched with <strong>10-second clips</strong>. Gemini Omni 1.2 Flash
+          (November 5, 2026) generates <strong>3 to 15 seconds</strong> and adds multi-turn
+          editing; check what your Gemini app plan offers. Google's own model card also states that
           "maintaining complete consistency throughout edits, generating scenes with complex motion,
           or rendering perfectly accurate text remains a challenge." For a two-minute patient
           education video, Veo 3.1's scene extension is still the tool that does the job.
@@ -398,7 +418,7 @@
       <p>
         Gemini Omni did not replace it. As of July 2026, Veo 3.1 is still the model Google
         DeepMind names as its video generation model, and it remains the better choice when you
-        need length: Omni Flash caps at ten seconds, while Veo's scene extension gets you to two
+        need length: a single Omni Flash generation tops out at 15 seconds, while Veo's scene extension gets you to two
         and a half minutes.
       </p>
 
@@ -802,7 +822,7 @@
 
       <p><strong>Goal:</strong> Create a 15-30 second educational video demonstrating a patient self-care technique.</p>
 
-      <p><strong>Tools:</strong> Veo or Sora</p>
+      <p><strong>Tools:</strong> Veo 3.1 or Gemini Omni Flash</p>
 
       <p><strong>Steps:</strong></p>
       <ol>
@@ -833,12 +853,12 @@
             <tr>
               <td>Best starting point</td>
               <td>Gemini (Nano Banana)</td>
-              <td>Free tier, best text accuracy, powers both images and video</td>
+              <td>Free tier, strong text rendering (proofread small labels), powers both images and video</td>
             </tr>
             <tr>
               <td>Images with text/labels</td>
               <td>Nano Banana Pro</td>
-              <td>Best-in-class text rendering for infographics, diagrams, and patient education</td>
+              <td>Google's strongest text renderer for infographics, diagrams, and patient education</td>
             </tr>
             <tr>
               <td>Aesthetic quality</td>
@@ -862,7 +882,7 @@
             </tr>
             <tr>
               <td>Conversational iteration</td>
-              <td>ChatGPT (GPT-5.6)</td>
+              <td>ChatGPT (ChatGPT Images 2.6)</td>
               <td>Natural conversation to refine when exploring ideas</td>
             </tr>
             <tr>
@@ -1118,7 +1138,7 @@
   <footer class="footer">
     <div class="footer-inner">
       <div><strong>AI 101</strong> · A Self-Paced Guide to AI in Medicine</div>
-      <div><a href="updates.html">v1.17 · 2026</a></div>
+      <div><a href="updates.html">v1.18 · 2026</a></div>
     </div>
   </footer>
 

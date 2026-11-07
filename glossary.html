@@ -149,10 +149,11 @@
           <dt>Reasoning Models</dt>
           <dd>
             A category of AI models designed to "think" through problems step-by-step
-            before responding. Examples include OpenAI's GPT-5.6 Sol (with built-in agentic
-            reasoning), Anthropic's Claude Opus 5 (with adaptive thinking on by default), and
-            Google's Gemini 3.1 Pro Deep Think. They trade speed for accuracy on complex tasks by
-            using more compute at inference time.
+            before responding. As of November 2026, examples include OpenAI's GPT-6 family,
+            Anthropic's Claude Opus 5.5 and Fable 5.1 (adaptive thinking), and Google's
+            Gemini 4 Argon. Names change every few months; see
+            <a href="big-three.html">ChatGPT, Claude &amp; Gemini</a> for the current lineup.
+            They trade speed for accuracy on complex tasks by using more compute at inference time.
           </dd>
         </div>
 
@@ -241,8 +242,9 @@
           <dd>
             The adjustable numerical values within a neural network that the model
             learns during training. More parameters generally mean more capacity to
-            learn patterns, but also more computational cost. GPT-4 reportedly has
-            over a trillion parameters; Claude and other frontier models are similar scale.
+            learn patterns, but also more computational cost. OpenAI, Anthropic, and Google
+            generally don't publish parameter counts for their closed models; open-weight
+            models list theirs, which is one reason the biggest ones can't run on a laptop.
           </dd>
         </div>
 
@@ -287,10 +289,10 @@
           <dd>
             The maximum amount of text an LLM can process at once—both your input
             and its output combined. Measured in tokens (roughly 3/4 of a word).
-            As of July 2026: Claude Opus 5 1M, Claude Sonnet 5 1M, Claude Opus 4.8 1M,
-            GPT-5.6 1M, Gemini 3.6 Flash 1M, Gemini 3.1 Pro 1M+, GLM-5.2 1M (open-weight,
-            June 13), Kimi K3 1M (open-weight, weights published July 27), MiniMax M3 1M
-            (open-weight, June 1), DeepSeek V4 1M, and Llama 4 Scout up to 10M. Larger
+            As of November 2026, most frontier models offer about 1 million tokens, for
+            example <a href="https://platform.claude.com/docs/en/models/overview" target="_blank" rel="noopener">Claude Opus 5.5</a>
+            and <a href="https://aistudio.google.com/docs/models" target="_blank" rel="noopener">Gemini 4 Argon</a>.
+            See <a href="big-three.html">ChatGPT, Claude &amp; Gemini</a> for current models. Larger
             context windows enable working with longer documents and conversations.
           </dd>
         </div>
@@ -339,10 +341,13 @@
         <div class="glossary-item">
           <dt>MCP (Model Context Protocol)</dt>
           <dd>
-            Anthropic's open protocol that standardizes how AI applications connect to
+            An open protocol that standardizes how AI applications connect to
             external data sources and tools. Think of it as a universal adapter—instead
             of building custom integrations for each tool, MCP provides a common interface.
-            Gaining adoption across AI tools in 2025.
+            Created by Anthropic and, since December 2025, stewarded by the Linux Foundation's
+            <a href="https://www.linuxfoundation.org/press/linux-foundation-announces-the-formation-of-the-agentic-ai-foundation" target="_blank" rel="noopener">Agentic AI Foundation</a>,
+            so it's a multi-vendor standard rather than one company's.
+            <a href="ai-tools-mcp.html">See our module on AI tools and MCP.</a>
           </dd>
         </div>
 
@@ -357,11 +362,15 @@
         </div>
 
         <div class="glossary-item">
-          <dt>Extended Thinking</dt>
+          <dt>Adaptive Thinking (formerly Extended Thinking)</dt>
           <dd>
-            Claude's reasoning mode where the model shows its step-by-step thinking process
-            before providing a final answer. Uses more inference-time compute to work through
-            complex problems. Particularly useful for math, logic, and multi-step reasoning tasks.
+            Claude's reasoning mode, where the model thinks before giving a final answer and
+            decides for itself how much thinking a problem needs. Uses more inference-time compute
+            to work through complex problems. Earlier Claude models had a manual "extended thinking"
+            mode instead; Anthropic says it is
+            <a href="https://platform.claude.com/docs/en/models/overview" target="_blank" rel="noopener">not accepted on current models</a>.
+            The thinking you can read is not always a faithful record of how the answer was reached
+            (see Chain-of-Thought below).
           </dd>
         </div>
       </dl>
@@ -394,9 +403,15 @@
           <dt>Chain-of-Thought (CoT) Prompting</dt>
           <dd>
             Asking the model to show its reasoning step-by-step rather than jumping
-            to conclusions. Adding "Let's think through this step by step" can
-            significantly improve performance on complex reasoning tasks. The model's
-            explicit reasoning also makes errors easier to catch.
+            to conclusions. Adding "Let's think through this step by step" improved
+            older models on complex reasoning tasks. Current reasoning models already
+            think before answering, and Anthropic's
+            <a href="https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/claude-prompting-best-practices" target="_blank" rel="noopener">prompting guide</a>
+            now treats manual chain-of-thought as a fallback for when built-in thinking is off.
+            Written-out reasoning can help you spot errors, but it doesn't always reflect how
+            the model actually got its answer: in a
+            <a href="https://www.anthropic.com/research/reasoning-models-dont-say-think" target="_blank" rel="noopener">2025 Anthropic study</a>,
+            models mentioned a hint that changed their answer only 25&ndash;39% of the time.
           </dd>
         </div>
 
@@ -630,8 +645,11 @@
             You define instructions, upload reference documents, and create a specialized
             assistant without coding. OpenAI no longer lets personal accounts create new Custom
             GPTs and is <a href="https://help.openai.com/en/articles/20001519-custom-gpt-retirement-and-migration-faq" target="_blank" rel="noopener">retiring them December 11, 2026</a>;
-            ChatGPT Projects are the closest substitute. Great for creating patient-facing tools or
-            specialty-specific assistants.
+            ChatGPT Projects are the closest substitute. Google is
+            <a href="https://support.google.com/gemini/answer/18560919" target="_blank" rel="noopener">turning Gems into skills</a>,
+            starting November 2026 for personal accounts and in 2027 for work and school accounts.
+            Useful for specialty-specific assistants; keep patient details out unless the plan is
+            covered by a BAA.
           </dd>
         </div>
 
@@ -741,26 +759,25 @@
       <div class="company-grid">
         <div class="company-card">
           <h4>OpenAI</h4>
-          <p>Created ChatGPT, GPT-5.6 (current flagship), DALL-E, ChatGPT Images 2.0.
+          <p>Created ChatGPT, the GPT-6 family (current as of November 2026), DALL-E, ChatGPT Images 2.0.
           The company most associated with the current AI boom. Partnered with Microsoft;
           launched ChatGPT for Healthcare and ChatGPT for Clinicians in 2026.</p>
         </div>
         <div class="company-card">
           <h4>Anthropic</h4>
           <p>Created Claude. Founded by former OpenAI researchers focused on AI safety.
-          Notable for constitutional AI, extended thinking, and computer use capabilities.</p>
+          Notable for constitutional AI, adaptive thinking, and computer use capabilities.</p>
         </div>
         <div class="company-card">
           <h4>Google/DeepMind</h4>
           <p>Created Gemini, PaLM, BERT. Deep research heritage. DeepMind created
-          AlphaFold (protein structure) and AlphaGo. Gemini 3.1 Pro leads in multimodal
-          and long-context (1M+ tokens).</p>
+          AlphaFold (protein structure) and AlphaGo. Gemini 4 Argon is Google's current
+          flagship reasoning model, with a 1M-token context window.</p>
         </div>
         <div class="company-card">
           <h4>Meta</h4>
           <p>Created Llama (open-weight LLMs) and, in April 2026, Muse Spark—its first
-          proprietary frontier model. Now operates a hybrid open/closed strategy. Llama 4
-          Scout and Maverick power most new local and fine-tuned applications.</p>
+          proprietary frontier model. Now operates a hybrid open/closed strategy.</p>
         </div>
         <div class="company-card">
           <h4>xAI</h4>
@@ -936,7 +953,7 @@
           <dt>AI Scribe (Ambient AI)</dt>
           <dd>
             AI systems that listen to patient encounters and automatically generate
-            clinical documentation. Products like DAX Copilot, Abridge, and Freed
+            clinical documentation. Products like Microsoft Dragon Copilot (formerly DAX Copilot), Abridge, and Freed
             transcribe conversations and draft notes in EHR format. Aims to reduce
             documentation burden and restore face-to-face patient time.
             <a href="ambient-ai.html">See our module on ambient AI tools.</a>
@@ -960,8 +977,9 @@
             The regulatory pathway for medical AI devices in the US. <strong>510(k)</strong>
             clearance means the device is "substantially equivalent" to an existing approved
             device. <strong>De Novo</strong> is for novel low-to-moderate risk devices.
-            <strong>PMA</strong> (Premarket Approval) is for high-risk devices. Over 1,000
-            AI/ML medical devices have received FDA clearance as of early 2026.
+            <strong>PMA</strong> (Premarket Approval) is for high-risk devices. The FDA lists
+            <a href="https://www.fda.gov/medical-devices/digital-health-center-excellence/artificial-intelligence-enabled-medical-devices" target="_blank" rel="noopener">over 1,600 AI-enabled medical devices</a>
+            authorized for marketing as of September 2026.
           </dd>
         </div>
 
@@ -1306,7 +1324,7 @@
       </div>
 
       <p class="text-muted text-small">
-        <em>Last updated: July 2026. AI terminology evolves rapidly—new terms
+        <em>Last updated: November 2026. AI terminology evolves rapidly—new terms
         emerge and meanings shift. When in doubt, check primary sources from model providers.</em>
       </p>
 
@@ -1334,7 +1352,7 @@
   <footer class="footer">
     <div class="footer-inner">
       <div><strong>AI 101</strong> · A Self-Paced Guide to AI in Medicine</div>
-      <div><a href="updates.html">v1.17 · 2026</a></div>
+      <div><a href="updates.html">v1.18 · 2026</a></div>
     </div>
   </footer>
 

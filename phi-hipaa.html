@@ -346,7 +346,7 @@
         <li><strong>ChatGPT for Clinicians (free verified-clinician tier, launched 2026):</strong> Individual BAA available. Free for verified US physicians/NPs/PAs/pharmacists; OpenAI lists it as HIPAA-eligible, and an eligible clinician can sign a BAA for their own workspace under Settings &gt; Agreements. OpenAI says not to enter PHI unless that BAA is in place <em>and</em> you are authorized to sign it for your account&mdash;an employed clinician may not be. Improved memory is not covered, and third-party GPTs and connected apps need their own agreements. A BAA covering multiple users requires ChatGPT for Healthcare. (<a href="https://help.openai.com/en/articles/20001202-chatgpt-for-clinicians" target="_blank" rel="noopener">OpenAI</a>; <a href="https://help.openai.com/en/articles/20001069-hipaa-eligible-products-and-functionality" target="_blank" rel="noopener">HIPAA-eligible features</a>)</li>
         <li><strong>ChatGPT for Healthcare (enterprise tier, launched Jan 2026):</strong> BAA available; HIPAA-aligned controls including encryption keys, audit logs, and data residency. Deployed at AdventHealth, Baylor Scott &amp; White, Boston Children's, Cedars-Sinai, HCA, MSK, Stanford Children's, and UCSF.</li>
         <li><strong>ChatGPT Enterprise:</strong> BAA available only with a Regulated Workspace, arranged through OpenAI sales. OpenAI&rsquo;s HIPAA-eligible list does not include Edu or Business plans. (<a href="https://help.openai.com/en/articles/20001069-hipaa-eligible-products-and-functionality" target="_blank" rel="noopener">OpenAI</a>)</li>
-        <li><strong>Anthropic API:</strong> BAA available only for HIPAA-eligible services with zero data retention; does not cover Claude.ai, Workbench, or beta features</li>
+        <li><strong>Anthropic API:</strong> BAA available after the organization&rsquo;s Primary Owner signs and Anthropic enables it. Zero data retention is not a blanket requirement; some covered models instead require 30-day retention. The Messages API is covered, and features such as prompt caching and web search only under BAA versions accepted after April 1, 2026. Not covered: Batch API, Files API, Skills API, Code Execution, Web Fetch, the Claude Console, and data sent to third parties through external MCP servers. Check your BAA version and the implementation guide before sending PHI. (<a href="https://support.claude.com/en/articles/8114513-business-associate-agreements-baa-for-commercial-customers" target="_blank" rel="noopener">Anthropic</a>)</li>
         <li><strong>Claude for Healthcare (launched Jan 11, 2026):</strong> Anthropic&rsquo;s healthcare offering for providers, payers, and health tech companies&mdash;connectors for the CMS Coverage Database, ICD-10, the NPI Registry, and PubMed, plus FHIR and prior-authorization Agent Skills. The name describes a set of tools; the HIPAA coverage comes from running them on a HIPAA-ready Enterprise plan with a BAA, not from the product name. (<a href="https://www.anthropic.com/news/healthcare-life-sciences" target="_blank" rel="noopener">Anthropic</a>)</li>
         <li><strong>Claude Enterprise (HIPAA-ready plan):</strong> BAA available with admin HIPAA opt-in&mdash;Enterprise plans only, click-to-accept, and only the organization&rsquo;s Primary Owner can enable it. Enabling it is a one-way change. BAAs signed <em>before</em> Dec 2, 2025 cover the API only; BAAs signed after that date can cover both API and Enterprise under a single agreement. Note that enabling HIPAA does not automatically bring every feature under the BAA&mdash;Claude Code is covered only with Zero Data Retention on a qualified account, and Cowork and Claude Code local modes can be covered after the Primary Owner applies a separate HIPAA configuration available through an account team. Before that configuration, Cowork is not covered, and Code requires qualifying ZDR coverage. The configured offering excludes the listed cloud/Remote Control features. Check the current implementation guide rather than assuming all Enterprise features are covered. (<a href="https://support.claude.com/en/articles/13296973-hipaa-ready-enterprise-plans" target="_blank" rel="noopener">Anthropic Help Center</a>)</li>
         <li><strong>Claude personal health connectors (consumer Pro/Max):</strong> No BAA. US Pro and Max subscribers can connect lab results and health records through HealthEx, Function, Apple Health, and Android Health Connect. Anthropic says it does not use this health data to train models, and access is opt-in and revocable&mdash;but this is the consumer side of the product, explicitly distinct from the HIPAA-ready offering for providers and payers. The same rule as ChatGPT Health applies: fine for a patient reviewing their own data, not a route for your patients&rsquo; PHI.</li>
@@ -363,8 +363,8 @@
         <a href="https://docs.cloud.google.com/docs/security/compliance/hipaa" target="_blank" rel="noopener">[Google service lists]</a></li>
         <li><strong>AWS Bedrock:</strong> HIPAA-eligible service; BAA available through AWS Business Associate Addendum</li>
         <li><strong>AWS HealthScribe:</strong> HIPAA-eligible service with BAA coverage</li>
-        <li><strong>OpenEvidence:</strong> HIPAA compliant; free BAA available for covered entities</li>
-        <li><strong>Glass Health:</strong> HIPAA-compliant enterprise offering; contact for BAA</li>
+        <li><strong>OpenEvidence:</strong> Says it complies with HIPAA. Its security page says covered entities may send PHI under its standard BAA or a customer-specific agreement, so the protection applies when you, or the organization you work for, are the covered entity; it is not a general promise to every user. (<a href="https://www.openevidence.com/security" target="_blank" rel="noopener">OpenEvidence</a>)</li>
+        <li><strong>Glass Health:</strong> Describes a BAA path for its Developer API for eligible production PHI workflows. For the clinician app, ask which plan, if any, is covered before entering PHI. (<a href="https://glass.health/resources/hipaa-compliant-ai-api" target="_blank" rel="noopener">Glass</a>)</li>
         <li><strong>Purpose-built scribes (Freed, Suki, Abridge, etc.):</strong> Generally offer BAAs; verify before deployment</li>
       </ul>
 
@@ -574,6 +574,24 @@
         points higher than incidents involving sanctioned AI.
       </p>
 
+      <div class="callout callout-warning">
+        <div class="callout-title">November 2026: Named Cases, Not Just Surveys</div>
+        <p class="mb-0">
+          In the fall of 2026 two US academic medical centers notified patients about data
+          entered into unapproved AI tools. Weill Cornell Medicine
+          <a href="https://weill.cornell.edu/data-security-incident-nov-2026" target="_blank" rel="noopener">reported</a>
+          that radiology research data was entered into AI tools without authorization from
+          June 10 to 20; it included medical record numbers, service dates, diagnoses, and
+          medications but no patient names, and the institution treated it as protected health
+          information. Johns Hopkins Bayview is
+          <a href="https://www.healthcareitnews.com/news/johns-hopkins-shadow-ai-use-linked-data-breach" target="_blank" rel="noopener">reported to be notifying 3,182 patients</a>
+          after a staff member uploaded a spreadsheet to a public AI website it had not approved.
+          Neither reported evidence of misuse, and in both the remedy was asking for the data to
+          be deleted after the fact. The lesson: removing names does not make a spreadsheet safe,
+          and the time to check for an approved tool with a BAA is before you paste.
+        </p>
+      </div>
+
       <div class="callout callout-info">
         <div class="callout-title">The Traffic Pattern That Proves It</div>
         <p>
@@ -699,11 +717,12 @@
         </p>
       </div>
 
-      <!-- NotebookLM Reminder -->
+      <!-- Gemini Notebook (formerly NotebookLM) Reminder -->
       <div class="callout callout-tool">
-        <div class="callout-title">Try This with NotebookLM</div>
+        <div class="callout-title">Try This with Gemini Notebook</div>
         <p>
-          Upload this module's readings to a NotebookLM notebook and explore:
+          Upload this module's readings (public documents, not patient data) to a Gemini
+          Notebook (formerly NotebookLM) notebook and explore:
         </p>
         <ul>
           <li>Ask it to summarize the key differences between Safe Harbor and Expert Determination de-identification</li>
@@ -711,7 +730,7 @@
           <li>Create an Audio Overview comparing the Ontario breach to other shadow AI scenarios</li>
         </ul>
         <p class="mb-0">
-          Remember: NotebookLM itself is grounded to your uploaded sources—a practical
+          Remember: Gemini Notebook itself is grounded to your uploaded sources—a practical
           example of how constrained AI tools can be safer for sensitive content.
         </p>
       </div>
@@ -724,15 +743,17 @@
       </p>
 
       <div class="callout callout-warning">
-        <div class="callout-title">ChatGPT Health Opens to Every US User (Jul 2026)</div>
+        <div class="callout-title">ChatGPT Health Rolls Out to US Users (Jul 2026)</div>
         <p>
-          On <strong>July 23, 2026</strong>, OpenAI moved Health out of a waitlist and into
-          <a href="https://openai.com/index/health-in-chatgpt/" target="_blank" rel="noopener">general availability for all logged-in US users 18 and older</a>,
-          on web and iOS, across the Free, Go, Plus, and Pro tiers. Patients can connect Apple
+          On <strong>July 23, 2026</strong>, OpenAI
+          <a href="https://openai.com/index/health-in-chatgpt/" target="_blank" rel="noopener">began rolling out Health to logged-in US users 18 and older</a>,
+          on web and iOS, across the Free, Go, Plus, and Pro tiers. Don&rsquo;t assume every patient has it yet. Patients can connect Apple
           Health, supported US hospital medical records (brokered by b.well), One Medical, and
           Function Health. Pilot data showed more than 70% of health-related conversations
-          happening outside the dedicated Health space, so OpenAI removed the separate space
-          entirely&mdash;health context can now surface anywhere in ChatGPT, permission-gated.
+          happening outside the dedicated Health space, so OpenAI dropped the requirement to
+          start there&mdash;health context can now surface in any conversation, permission-gated.
+          Health in the sidebar remains the place to connect and manage records, so you can ask a
+          patient to open it and show you what is connected.
         </p>
         <p>
           <strong>Get the privacy risk right.</strong> The obvious worry&mdash;&ldquo;OpenAI is
@@ -764,13 +785,19 @@
       <div class="callout callout-warning">
         <div class="callout-title">Doctronic SOAP Note Injection Risk (Mar 2026)</div>
         <p>
-          Utah&rsquo;s first-in-nation AI prescription bot,
-          <a href="https://www.axios.com/2026/03/04/doctronic-utah-prescriptions-ai-jailbreak" target="_blank">Doctronic, was trivially jailbroken</a>
-          via prompt injection. Security researchers tripled OxyContin doses and extracted
-          methamphetamine recommendations. But the PHI angle goes deeper: Doctronic generates
-          SOAP notes that are transmitted to physicians <em>before</em> consultations. A
-          jailbroken session could inject fabricated clinical information into those notes.
-          Physicians reviewing AI-generated summaries are conditioned to treat them as credible.
+          In a red-team test of Doctronic&rsquo;s <em>public</em> chatbot, the system behind
+          Utah&rsquo;s prescription-renewal pilot,
+          <a href="https://mindgard.ai/blog/doctronic-is-now-accepting-new-patients-and-unsafe-instructions" target="_blank">Mindgard</a>
+          extracted its hidden instructions and fed it a fake dosing guideline. The bot then
+          recommended a tripled OxyContin dose, along with methamphetamine and vaccine
+          misinformation. No patient harm has been reported, and
+          <a href="https://www.axios.com/2026/03/04/doctronic-utah-prescriptions-ai-jailbreak" target="_blank">Doctronic told Axios</a>
+          that controlled substances are excluded from all its programs. The PHI angle goes deeper:
+          Doctronic generates SOAP notes that are sent to a physician <em>before</em> a
+          consultation. In Mindgard&rsquo;s test, the tripled dose appeared in that note as
+          the AI&rsquo;s own recommendation, and the stored note carried into later chats as
+          medical history. Physicians reviewing AI-generated summaries are conditioned to treat
+          them as credible.
           Doctronic does not renew prescriptions on its own. Utah&rsquo;s Office of AI Policy says
           the pilot remains in Phase 1, where a licensed practitioner must authorize every
           renewal request before it reaches a pharmacist, and that Phase 2 has not been approved.
@@ -1091,7 +1118,7 @@
   <footer class="footer">
     <div class="footer-inner">
       <div><strong>AI 101</strong> · A Self-Paced Guide to AI in Medicine</div>
-      <div><a href="updates.html">v1.17 · 2026</a></div>
+      <div><a href="updates.html">v1.18 · 2026</a></div>
     </div>
   </footer>
 
