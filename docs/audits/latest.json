@@ -1,6 +1,6 @@
 {
   "content_reviewed_at": "2026-11-07",
-  "content_published_at": "2026-11-01",
+  "content_published_at": "2026-11-07",
   "version": "v1.17",
   "review_scope": "November 7 content currency audit (docs/audits/2026-11-07-content-audit.md): five-agent page-by-page primary-source review. v1.17 ships Batch 1 (19 Priority 1 corrections, Tanzania date, honest home-page dates, HTI-5 and Clinicians BAA news items). Priority 2 rewrites and 10 further news items remain open; not blanket clinical, legal, privacy or accessibility certification.",
   "publication_policy": "Prepare future Sunday content updates as a pull request for owner review.",
@@ -89,10 +89,10 @@
       "disposition": "Card labels reflect last substantive review per page."
     }
   ],
-  "publication_verified": false,
-  "deployed_content_commit": "d3f45ac4375897b01d3a6ad2806e6728bece910b",
-  "deployment_receipt": "https://github.com/dochobbs/ai101/actions/runs/41375573848",
-  "publication_verified_at_utc": "2026-11-02T02:03:29.256306+00:00",
+  "publication_verified": true,
+  "deployed_content_commit": "6e532d2b6bd43714ea804a705aa58c5b24106b8f",
+  "deployment_receipt": "https://github.com/dochobbs/ai101/actions/runs/42420896377",
+  "publication_verified_at_utc": "2026-11-07T22:31:13.527391+00:00",
   "latest_full_site_audit": {
     "version": "v1.16",
     "prepared_at": "2026-11-01",
@@ -107,6 +107,7 @@
     "report": "docs/audits/2026-11-07-content-audit.md",
     "batch": "1 of 3",
     "additional_news_items": 2,
-    "publication_verified": false
+    "publication_verified": true,
+    "merged_pr": "https://github.com/dochobbs/ai101/pull/16"
   }
 }
