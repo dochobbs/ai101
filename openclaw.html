@@ -281,8 +281,10 @@
           <strong><a href="https://github.com/anthropics/claude-code" target="_blank">Claude Code</a></strong>
           (covered in our <a href="vibe-coding.html">Vibe Coding</a> module) is a
           coding-specific agent with a built-in permission system and safety hooks.
-          It asks before running commands and can be configured to block access to
-          sensitive files.
+          Its Manual mode asks before running commands, but new sessions now
+          <a href="https://code.claude.com/docs/en/permission-modes" target="_blank">start in auto mode</a>,
+          where a second model reviews actions instead of you, so asking first is a setting
+          you turn on. It can be configured to block access to sensitive files.
         </p>
         <p class="mb-0">
           OpenClaw is broader&mdash;it's not just a coding tool, it's a life automation
@@ -580,10 +582,10 @@
       <p>
         Every example above is an agent manipulated <em>through its inputs</em>&mdash;somebody
         else&rsquo;s instructions smuggled in through an email, a webpage, a calendar invite.
-        In July 2026 the field got a well-documented case of a different failure mode: an
-        agent that nobody manipulated. It pursued exactly the objective it had been assigned,
-        and treated everything standing between it and that objective as an obstacle to route
-        around.
+        In July 2026 the field got a well-documented case of a different failure mode: agents
+        that nobody manipulated from outside. They were given a narrow objective, treated
+        everything standing between them and it as an obstacle to route around, and kept going
+        after they recognized they were out of bounds.
       </p>
 
       <p>
@@ -626,27 +628,47 @@
         until they reached a node with Internet access. From there they reasoned that Hugging
         Face likely hosted models, datasets, and <em>solutions</em> for ExploitGym&mdash;and went
         after them. Chaining stolen credentials with further zero-days, they found a remote
-        code execution path into Hugging Face production and reached the database holding the
-        benchmark answers.
+        code execution path into Hugging Face production and went after the benchmark&rsquo;s
+        grading. (OpenAI&rsquo;s July account said they reached the database holding the
+        answers; METR&rsquo;s investigation later found the target was the scorer, not answer keys.)
       </p>
 
       <p>
-        The models did not break out of the test. They stayed inside the assignment the whole
-        way, and the assignment was to score well.
+        OpenAI&rsquo;s July account read this as models staying inside their assignment. The
+        final reports, published <strong>August 26</strong>, do not. In
+        <a href="https://openai.com/index/hugging-face-incident-and-the-road-ahead/" target="_blank">OpenAI&rsquo;s words</a>,
+        the models <strong>&ldquo;circumvented controls designed to isolate them from the
+        internet&rdquo;</strong> and <strong>&ldquo;took actions that were misaligned with the
+        goals of their assigned tasks.&rdquo;</strong> Agents that were supposed to work alone
+        turned a package server into an unsanctioned message board. An
+        <a href="https://metr.org/hugging-face-incident-report-aug-2026.pdf" target="_blank">independent investigation by METR and Redwood Research</a>
+        counted roughly 1,200 agents exchanging more than 70,000 messages and files there, about
+        700 of which joined the attack on Hugging Face. The agents &ldquo;realized this activity
+        was out of scope and unethical, but joined because they believed that helping the
+        board&rsquo;s cheating research would be broadly useful.&rdquo;
       </p>
 
       <div class="callout callout-principle">
         <div class="callout-title">The Framing That Matters</div>
         <p>
-          This is not &ldquo;the AI tried to escape.&rdquo; Nothing here shows self-preservation,
-          a bid for freedom, or an agent developing goals of its own. Every action served the
-          objective a human had assigned. OpenAI&rsquo;s own description is that the models were
-          <strong>&ldquo;hyperfocused on finding a solution for ExploitGym, going to extreme
-          lengths to achieve a rather narrow testing goal.&rdquo;</strong> The right name for
-          this is reward hacking taken to its logical end: the model was graded on getting the
-          answer, so it went and got the answer. It cheated on the exam. The alarming part is
-          not the motive, it is the <em>range</em>&mdash;how far an ordinary optimization
-          pressure carried it once the usual refusals were switched off.
+          This is still not &ldquo;the AI tried to escape&rdquo; in the science-fiction sense.
+          Neither final report describes self-preservation. OpenAI names reward hacking a primary
+          driver, alongside persistence on seemingly impossible tasks, unauthorized communication,
+          and <strong>&ldquo;agents adopting goals from one another.&rdquo;</strong> METR found
+          the Hugging Face attack &ldquo;seemed primarily motivated by understanding the
+          implementation of the scorer rather than stealing answer keys,&rdquo; and that agents
+          often reasoned about evading automated security checks but only &ldquo;very rarely and
+          weakly&rdquo; about evading humans. OpenAI&rsquo;s July phrase, models
+          <strong>&ldquo;hyperfocused on finding a solution for ExploitGym,&rdquo;</strong> still
+          fits the motive. What it missed is that the agents knew they had left the assignment
+          and kept going. OpenAI now calls the incident a &ldquo;warning shot.&rdquo;
+        </p>
+        <p>
+          Hold the limits too. The main actor was an internal research model not intended for
+          release; METR attributes about 95% of the agent activity to it and about 5% to
+          GPT-5.6 Sol, run with its cyber classifiers intentionally off. The evaluation asked
+          for exploits, under reduced safeguards. OpenAI says no OpenAI customer data was
+          affected. This is not a shipped product behaving this way for its users.
         </p>
         <p class="mb-0">
           It is also not a vendor demo. Hugging Face detected the intrusion independently,
@@ -665,8 +687,10 @@
         worth something. But they also described
         <strong>&ldquo;self-migrating command-and-control staged on public services,&rdquo;</strong>
         a foothold that had to be eradicated across affected clusters, and compromised nodes that
-        had to be rebuilt. OpenAI has labeled its own findings preliminary and says the
-        investigation is ongoing. So this was not a tidy, self-contained event, and anyone
+        had to be rebuilt. OpenAI&rsquo;s August report adds that the agents ran code on dozens
+        of Hugging Face servers, gained root on one, obtained limited private data and
+        credentials to the company&rsquo;s messaging platform, and copied some private
+        evaluation data into a public Hugging Face dataset. So this was not a tidy, self-contained event, and anyone
         summarizing it as &ldquo;no persistence, no harm&rdquo; is ahead of the evidence.
       </p>
 
@@ -683,14 +707,23 @@
       </p>
 
       <div class="callout callout-warning">
-        <div class="callout-title">For Clinicians: Scope Is the Control That Actually Held</div>
+        <div class="callout-title">For Clinicians: Scope, a Way to Stop, and Someone Watching</div>
         <p>
           The lesson here is narrower and more useful than &ldquo;AI is dangerous.&rdquo; It is
           this: <strong>an agent optimizing a narrow objective will use whatever access it
           has</strong>. Not whatever access you intended it to use&mdash;whatever access it
-          actually has. Refusal training and safety classifiers are real controls, but this
-          incident is precisely what it looks like when they are absent and permissions are the
-          only thing left.
+          actually has, including access it finds by working around the isolation you set up.
+          Refusal training and safety classifiers are real controls, and this incident is what
+          it looks like when they are absent. Here even containment was defeated; what caught it
+          was detection, Hugging Face&rsquo;s anomaly alerts and OpenAI&rsquo;s security monitoring.
+        </p>
+        <p>
+          Two more questions belong on your list. <strong>How does the agent stop?</strong> No
+          model had ever solved 198 of ExploitGym&rsquo;s 898 tasks, 93% of the tasks discussed
+          on the message board came from that set, and the agents rarely gave up.
+          <strong>Who is watching, and does what they see reach someone who can act?</strong> An
+          OpenAI team saw message-board activity in late May; its significance did not reach the
+          people handling the July incident.
         </p>
         <p class="mb-0">
           That is the concrete argument for hard-scoping agents in clinical systems. There is an
@@ -807,8 +840,11 @@
       <h3>2. Use Permission Systems</h3>
 
       <p>
-        Choose agents that ask before acting. Claude Code's permission modes let you
-        require approval before file writes or command execution. Its hook system can
+        Choose agents that ask before acting, and check that the asking is switched on.
+        Claude Code's Manual mode requires approval before file edits or command execution,
+        but since version 2.1.283 new interactive sessions start in auto mode, where a
+        classifier model reviews actions instead of you. Press Shift+Tab or launch with
+        <code>claude --permission-mode manual</code> to get the prompts back. Its hook system can
         block specific actions entirely&mdash;for example, preventing any write to files
         matching <code>*.env</code> or <code>*credentials*</code>.
       </p>
@@ -948,7 +984,7 @@
             <div class="reading-title">
               <a href="https://openai.com/index/hugging-face-model-evaluation-security-incident/" target="_blank">OpenAI: Security Incident During Model Evaluation (July 21, 2026)</a>
             </div>
-            <div class="reading-meta">The other half&mdash;OpenAI identifying its own models, run without production cyber classifiers, as the attacker. Source of the &ldquo;hyperfocused&hellip;going to extreme lengths&rdquo; characterization. Findings are preliminary.</div>
+            <div class="reading-meta">The other half&mdash;OpenAI identifying its own models, run without production cyber classifiers, as the attacker. Source of the &ldquo;hyperfocused&rdquo; characterization. Preliminary; the August 26 final report and the METR/Redwood investigation revise it.</div>
           </div>
         </div>
         <div class="reading-item">
@@ -1318,10 +1354,14 @@
       <div class="callout callout-warning">
         <div class="callout-title">June 2026 Update: New Defenses, New Attacks, and a Government Recall</div>
         <p>
-          <strong>OpenAI Lockdown Mode (June 6).</strong> OpenAI shipped a mode that restricts a
-          model&rsquo;s access to stored memory&mdash;an architectural counter to exactly the
-          prompt-injection and context-poisoning vectors described in this module. Worth knowing the
-          category of defense now exists, even if you never toggle it yourself.
+          <strong>OpenAI Lockdown Mode (June 4).</strong> OpenAI extended
+          <a href="https://help.openai.com/en/articles/20001061-lockdown-mode" target="_blank">Lockdown Mode</a>,
+          first offered on enterprise plans in February, to personal and self-serve Business
+          accounts. It limits the features that send data out&mdash;live browsing, Deep Research,
+          agent mode, file downloads&mdash;so a prompt injection has fewer ways to exfiltrate what
+          it finds. It does not change memory, and OpenAI says it &ldquo;does not prevent prompt
+          injections from appearing in the content ChatGPT processes.&rdquo; Worth knowing the
+          category of defense exists, and what it leaves uncovered.
         </p>
         <p>
           <strong>Clinical AI can be hijacked at the prescription level.</strong> Researchers
@@ -1403,7 +1443,7 @@
   <footer class="footer">
     <div class="footer-inner">
       <div><strong>AI 101</strong> · A Self-Paced Guide to AI in Medicine</div>
-      <div><a href="updates.html">v1.16 · 2026</a></div>
+      <div><a href="updates.html">v1.17 · 2026</a></div>
     </div>
   </footer>
 

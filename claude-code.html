@@ -953,7 +953,7 @@ code.inline { white-space:pre-wrap; overflow-wrap:anywhere; }
     <p>A few promises before we start:</p>
 
     <ul class="promise-list">
-      <li><span>The commands in this guide are safe. The basics — looking around, moving between folders — can’t hurt anything. Later, when Claude is doing more (creating files, moving things), it’ll ask permission first. You’ll see what it’s about to do before it happens.</span></li>
+      <li><span>The commands in this guide are safe. The basics — looking around, moving between folders — can’t hurt anything. Later, when Claude is doing more (creating files, moving things), it’ll ask permission first, once you’ve switched on Manual mode in Day 00. You’ll see what it’s about to do before it happens.</span></li>
       <li><span>Claude will explain anything you don’t understand. When in doubt, ask it: <em>“What does this mean?”</em> or <em>“Is this safe to run?”</em></span></li>
       <li><span>You have a second helper. <strong>Echs</strong>, the chat button on this page, answers questions about the program itself — what a day means, whether you’re ready for the next phase, where something is covered. Claude is the local in the terminal; Echs is the guide for the guide.</span></li>
       <li><span>Going slow is fine. This is a 30-day program, but if a day takes you two days, who cares.</span></li>
@@ -965,7 +965,7 @@ code.inline { white-space:pre-wrap; overflow-wrap:anywhere; }
 
     <ul class="promise-list">
       <li><span>You’re on a Mac (macOS 13 or later). Windows users — Anthropic has a parallel walkthrough at <a href="https://code.claude.com/docs/en/terminal-guide">code.claude.com/docs/en/terminal-guide</a>.</span></li>
-      <li><span>If your work involves patient health information, stick to non-clinical files for this program — your own notes, drafts, downloads. PHI on a personal machine is a separate setup conversation worth having before you point Claude at it.</span></li>
+      <li><span>If your work involves patient health information, stick to non-clinical files for this program — your own notes, drafts, downloads. Anything Claude reads is sent to Anthropic, and personal plans like Pro and Max aren’t covered by a business associate agreement, so no PHI. Anthropic’s <a href="https://support.claude.com/en/articles/8114513-business-associate-agreements-baa-for-commercial-customers">BAA coverage</a> is an Enterprise setup your organization has to turn on, a separate conversation worth having before you point Claude at patient data.</span></li>
     </ul>
 
     <p class="time-note">Time per day: 10 to 20 minutes. Some days are very short.</p>
@@ -979,7 +979,7 @@ code.inline { white-space:pre-wrap; overflow-wrap:anywhere; }
     <h3 class="day-title">Setup — before Day 1</h3>
   </header>
   <div class="day-body">
-    <p><strong>What Claude Code is.</strong> Claude Code is Claude — the same AI you might already use in a browser — running inside your terminal. The difference matters. In a browser tab, Claude can only see what you paste in. Here, with your permission, it can read your files, create new ones, run commands, and help you build small tools. Everything stays on your computer. You’re always the one deciding what it does.</p>
+    <p><strong>What Claude Code is.</strong> Claude Code is Claude — the same AI you might already use in a browser — running inside your terminal. The difference matters. In a browser tab, Claude can only see what you paste in. Here, it can read your files, create new ones, run commands, and help you build small tools. Your files stay on your computer, but what you type, Claude’s replies, and the contents of any file Claude reads are <a href="https://code.claude.com/docs/en/data-usage">sent to Anthropic</a> to generate each answer. How much it does without asking you is a setting, and you’ll set it below.</p>
 
     <p><strong>Open the Terminal.</strong> On your Mac:</p>
     <ol>
@@ -1013,6 +1013,10 @@ code.inline { white-space:pre-wrap; overflow-wrap:anywhere; }
 
     <p><strong>Log in (first run only).</strong> The first time you type <code class="inline">claude</code>, it will ask you to sign in &mdash; it opens a browser page, you approve it, and you’re back in the terminal. It uses your existing Claude account (a paid plan; Pro at $20/month is plenty for this program). You won’t be asked again.</p>
 
+    <p><strong>Make Claude ask first.</strong> New installs usually start in <em>auto mode</em>, where a second AI model reviews each of Claude’s actions instead of you and blocks the ones that look risky. For this program you want <em>Manual mode</em>, where Claude stops and asks you before it edits files or runs commands. Once Claude is open, look at the line under the prompt. If it says <code class="inline">auto mode on</code>, press <code class="inline">Shift + Tab</code> once; it should change to <code class="inline">manual mode on</code>. You can also start Claude in Manual mode directly:</p>
+    <div class="codeblock"><pre>claude --permission-mode manual</pre><button class="copy-btn">Copy</button></div>
+    <p>Glance at that line each time you start a session. (If you’re comfortable editing a settings file, <code class="inline">"defaultMode": "manual"</code> under <code class="inline">"permissions"</code> in <code class="inline">~/.claude/settings.json</code> makes Manual the default. Anthropic’s <a href="https://code.claude.com/docs/en/permission-modes">permission modes guide</a> has the details.)</p>
+
     <p><strong>If anything ever looks off</strong> &mdash; weird errors, claude not found, login loops &mdash; there’s a built-in checkup:</p>
     <div class="codeblock"><pre>claude doctor</pre><button class="copy-btn">Copy</button></div>
     <p>It checks the installation and tells you what to fix, in plain language.</p>
@@ -1029,7 +1033,7 @@ code.inline { white-space:pre-wrap; overflow-wrap:anywhere; }
       Press <strong>Ctrl + C</strong>. That cancels whatever is happening and gives you back the prompt. To close the terminal entirely: Cmd + Q, or just close the window.
     </div>
 
-    <p><strong>You’re the one deciding.</strong> Claude will sometimes suggest commands, and sometimes ask permission to change a file. You are never required to say yes. If anything feels uncertain, you can ask what a command does before running it, ask Claude to explain its plan first, or just close the window and come back tomorrow. Nothing breaks if you pause.</p>
+    <p><strong>You’re the one deciding.</strong> Claude will sometimes suggest commands, and in Manual mode it asks permission before changing a file or running a command. You are never required to say yes. If anything feels uncertain, you can ask what a command does before running it, ask Claude to explain its plan first, or just close the window and come back tomorrow. Nothing breaks if you pause.</p>
 
     <p>OK. You’re ready.</p>
 
@@ -1129,7 +1133,7 @@ code.inline { white-space:pre-wrap; overflow-wrap:anywhere; }
 
     <div class="callout">
       <div class="callout-label">A note on permissions</div>
-      When Claude is about to create or change a file, it’ll usually show you the plan and ask for permission first. Read it. If it looks right, approve. If not, say no, or ask Claude to explain. That confirmation step is how you stay in the loop — it’s a feature, not a hassle.
+      In Manual mode (Day 00), when Claude is about to create or change a file, it’ll usually show you the plan and ask for permission first. If it isn’t asking, check the line under the prompt and press Shift + Tab until it says <code class="inline">manual mode on</code>. Read the plan. If it looks right, approve. If not, say no, or ask Claude to explain. That confirmation step is how you stay in the loop — it’s a feature, not a hassle.
     </div>
 
     <p>Exit Claude with <code class="inline">/exit</code>.</p>
@@ -1822,7 +1826,9 @@ claude</pre><button class="copy-btn">Copy</button></div>
       <dl class="cmd-list">
         <dt>claude</dt><dd>Start Claude</dd>
         <dt>/exit</dt><dd>Quit Claude</dd>
+        <dt>Esc</dt><dd>Stop Claude mid-task</dd>
         <dt>Ctrl + C</dt><dd>Cancel whatever’s happening</dd>
+        <dt>Shift + Tab</dt><dd>Switch permission mode (look for “manual mode on”)</dd>
         <dt>claude --version</dt><dd>Check that Claude’s installed</dd>
       </dl>
     </div>
@@ -1853,7 +1859,7 @@ claude</pre><button class="copy-btn">Copy</button></div>
       </li>
       <li>
         <div class="weird-q">Claude is doing something I didn’t expect.</div>
-        <div class="weird-a">Type “stop” or press Ctrl + C, then ask Claude to explain what it was doing.</div>
+        <div class="weird-a">Press Esc (Ctrl + C works too), then ask Claude to explain what it was doing. Typing “stop” doesn’t interrupt it; Claude reads your message only after it finishes the step it’s on.</div>
       </li>
       <li>
         <div class="weird-q">I deleted something important.</div>
@@ -1993,7 +1999,7 @@ claude</pre><button class="copy-btn">Copy</button></div>
 <footer class="site-footer">
   <div><strong>AI 101</strong> · <a href="index.html">A Self-Paced Guide to AI in Medicine</a></div>
   <div><a href="github.html">14 Days to GitHub</a> · <a href="vibe-coding.html">Vibe Coding module</a> · <a href="https://code.claude.com/docs/en/overview" target="_blank" rel="noopener">Official Claude Code docs</a></div>
-  <div><a href="updates.html">v1.16 · 2026</a></div>
+  <div><a href="updates.html">v1.17 · 2026</a></div>
 </footer>
 <script src="https://studio.pickaxe.co/api/embed/bundle.js" defer></script>
 </body></html>

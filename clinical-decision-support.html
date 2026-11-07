@@ -1180,10 +1180,14 @@
           <a href="https://www.fda.gov/regulatory-information/search-fda-guidance-documents/clinical-decision-support-software" target="_blank">updated guidance</a>
           clarifying how AI and generative AI clinical decision support tools can qualify
           as Non-Device CDS. Key criteria: clinicians must be able to independently review
-          and understand the underlying logic and data inputs, and the tool should provide
-          a single, clinically appropriate recommendation. Tools meeting these criteria fall
-          outside FDA medical device oversight, while AI that drives diagnosis or clinical
-          action without adequate human oversight remains regulated. This is an important
+          the basis for a recommendation, and the tool must support rather than replace or
+          direct their judgment. FDA says a list, or a prioritized list, of options meets that
+          test; software that gives a specific diagnostic or treatment output or directive does
+          not. FDA intends to use enforcement discretion when only one recommendation is
+          clinically appropriate and the software meets the other criteria. Time-critical
+          outputs, such as a sepsis or stroke alarm, remain devices. Tools meeting these
+          criteria fall outside FDA medical device oversight, while AI that drives diagnosis
+          or clinical action without adequate human oversight remains regulated. This is an important
           distinction for the CDS tools discussed in this module&mdash;most reference-style
           tools like UpToDate and OpenEvidence likely qualify as Non-Device CDS, while
           autonomous diagnostic agents would not.
@@ -1212,15 +1216,22 @@
           smaller or less capable models.
         </p>
         <p class="mb-0">
-          <strong>Doctronic: What happens when autonomous AI prescribing meets prompt injection.</strong>
+          <strong>Doctronic: What happens when AI prescription renewal meets prompt injection.</strong>
           Utah-based <a href="https://www.axios.com/2026/03/04/doctronic-utah-prescriptions-ai-jailbreak" target="_blank">Doctronic</a>
-          deployed an AI system that autonomously renews prescriptions (190 medications at
-          $4/renewal) and generates SOAP notes for physician review (Mar 4, 2026). Security
+          runs an AI prescription-renewal pilot under Utah&rsquo;s regulatory sandbox, and its
+          system generates SOAP notes for physician review. In March 2026, security
           researchers from Mindgard trivially jailbroke it via prompt injection&mdash;tripling
           OxyContin doses and obtaining methamphetamine recommendations. Because the system also
           generates clinical notes, jailbroken sessions could inject fabricated information into
-          the medical record. This case illustrates the gap between what AI <em>can</em> do
-          autonomously and what it <em>should</em> do without robust safeguards.
+          the medical record. The renewals are not autonomous today:
+          <a href="https://commerce.utah.gov/ai/regulatory-relief-4/authorized-pilots/doctronic/" target="_blank">Utah&rsquo;s Office of AI Policy</a>
+          says the pilot remains in Phase 1, in which a licensed medical practitioner authorizes
+          every request. Letting the AI send renewals straight to a pharmacist (Phase 2) needs
+          the office&rsquo;s approval. The formulary excludes controlled substances, and the AI
+          does not issue new prescriptions. The pilot&rsquo;s one-year term was listed as
+          running to October 2026, and we could not confirm whether it was renewed. This case
+          illustrates the gap between what AI <em>can</em> do autonomously and what it
+          <em>should</em> do without robust safeguards.
         </p>
       </div>
 
@@ -1724,7 +1735,7 @@
   <footer class="footer">
     <div class="footer-inner">
       <div><strong>AI 101</strong> · A Self-Paced Guide to AI in Medicine</div>
-      <div><a href="updates.html">v1.16 · 2026</a></div>
+      <div><a href="updates.html">v1.17 · 2026</a></div>
     </div>
   </footer>
 

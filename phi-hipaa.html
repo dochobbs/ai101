@@ -341,11 +341,11 @@
         offline/cache-only search exception has additional requirements.
         <a href="https://developers.openai.com/api/docs/guides/your-data" target="_blank" rel="noopener">[Data controls]</a>
         <a href="https://developers.openai.com/api/docs/changelog" target="_blank" rel="noopener">[October 5 setup update]</a></li>
-        <li><strong>ChatGPT (consumer Free/Plus/Pro/Team):</strong> No BAA available. Cannot be used with PHI.</li>
+        <li><strong>ChatGPT (Free/Go/Plus/Pro, and Business, formerly Team):</strong> No BAA available. Cannot be used with PHI.</li>
         <li><strong>ChatGPT Health (consumer; US general rollout July 23, 2026):</strong> No BAA&mdash;it runs inside the consumer Free/Go/Plus/Pro tiers. Patients can connect Apple Health, supported US hospital medical records (brokered by b.well), One Medical, and Function Health. OpenAI states that connected records and the conversations using them are <em>not</em> used to train its foundation models or target ads, regardless of the account&rsquo;s training setting. That commitment is real, but it is a consumer contract, not a business associate relationship.</li>
-        <li><strong>ChatGPT for Clinicians (free verified-clinician tier, launched 2026):</strong> No BAA. Free for verified US physicians/NPs/PAs/pharmacists, but explicitly not for PHI.</li>
+        <li><strong>ChatGPT for Clinicians (free verified-clinician tier, launched 2026):</strong> Individual BAA available. Free for verified US physicians/NPs/PAs/pharmacists; OpenAI lists it as HIPAA-eligible, and an eligible clinician can sign a BAA for their own workspace under Settings &gt; Agreements. OpenAI says not to enter PHI unless that BAA is in place <em>and</em> you are authorized to sign it for your account&mdash;an employed clinician may not be. Improved memory is not covered, and third-party GPTs and connected apps need their own agreements. A BAA covering multiple users requires ChatGPT for Healthcare. (<a href="https://help.openai.com/en/articles/20001202-chatgpt-for-clinicians" target="_blank" rel="noopener">OpenAI</a>; <a href="https://help.openai.com/en/articles/20001069-hipaa-eligible-products-and-functionality" target="_blank" rel="noopener">HIPAA-eligible features</a>)</li>
         <li><strong>ChatGPT for Healthcare (enterprise tier, launched Jan 2026):</strong> BAA available; HIPAA-aligned controls including encryption keys, audit logs, and data residency. Deployed at AdventHealth, Baylor Scott &amp; White, Boston Children's, Cedars-Sinai, HCA, MSK, Stanford Children's, and UCSF.</li>
-        <li><strong>ChatGPT Enterprise/Edu:</strong> BAA available through sales-managed accounts</li>
+        <li><strong>ChatGPT Enterprise:</strong> BAA available only with a Regulated Workspace, arranged through OpenAI sales. OpenAI&rsquo;s HIPAA-eligible list does not include Edu or Business plans. (<a href="https://help.openai.com/en/articles/20001069-hipaa-eligible-products-and-functionality" target="_blank" rel="noopener">OpenAI</a>)</li>
         <li><strong>Anthropic API:</strong> BAA available only for HIPAA-eligible services with zero data retention; does not cover Claude.ai, Workbench, or beta features</li>
         <li><strong>Claude for Healthcare (launched Jan 11, 2026):</strong> Anthropic&rsquo;s healthcare offering for providers, payers, and health tech companies&mdash;connectors for the CMS Coverage Database, ICD-10, the NPI Registry, and PubMed, plus FHIR and prior-authorization Agent Skills. The name describes a set of tools; the HIPAA coverage comes from running them on a HIPAA-ready Enterprise plan with a BAA, not from the product name. (<a href="https://www.anthropic.com/news/healthcare-life-sciences" target="_blank" rel="noopener">Anthropic</a>)</li>
         <li><strong>Claude Enterprise (HIPAA-ready plan):</strong> BAA available with admin HIPAA opt-in&mdash;Enterprise plans only, click-to-accept, and only the organization&rsquo;s Primary Owner can enable it. Enabling it is a one-way change. BAAs signed <em>before</em> Dec 2, 2025 cover the API only; BAAs signed after that date can cover both API and Enterprise under a single agreement. Note that enabling HIPAA does not automatically bring every feature under the BAA&mdash;Claude Code is covered only with Zero Data Retention on a qualified account, and Cowork and Claude Code local modes can be covered after the Primary Owner applies a separate HIPAA configuration available through an account team. Before that configuration, Cowork is not covered, and Code requires qualifying ZDR coverage. The configured offering excludes the listed cloud/Remote Control features. Check the current implementation guide rather than assuming all Enterprise features are covered. (<a href="https://support.claude.com/en/articles/13296973-hipaa-ready-enterprise-plans" target="_blank" rel="noopener">Anthropic Help Center</a>)</li>
@@ -771,31 +771,42 @@
           SOAP notes that are transmitted to physicians <em>before</em> consultations. A
           jailbroken session could inject fabricated clinical information into those notes.
           Physicians reviewing AI-generated summaries are conditioned to treat them as credible.
-          In the Utah pilot&mdash;which allows autonomous prescription renewals&mdash;some cases
-          may have no human review at all. This is not just a safety issue; it&rsquo;s a data
-          integrity issue where compromised AI outputs become part of the medical record.
+          Doctronic does not renew prescriptions on its own. Utah&rsquo;s Office of AI Policy says
+          the pilot remains in Phase 1, where a licensed practitioner must authorize every
+          renewal request before it reaches a pharmacist, and that Phase 2 has not been approved.
+          The listed term ran to October 24, 2026; the state still lists the pilot as active
+          but shows no renewal. If a medication group is approved for Phase 2, the AI can send
+          renewals straight to the pharmacist; that is when a tampered note or request would
+          face the least human review. This is not just a safety issue;
+          it&rsquo;s a data integrity issue where compromised AI outputs become part of the
+          medical record.
         </p>
         <p class="mb-0">
           <strong>Source:</strong>
           <a href="https://www.axios.com/2026/03/04/doctronic-utah-prescriptions-ai-jailbreak" target="_blank">Axios</a> ·
+          <a href="https://commerce.utah.gov/ai/regulatory-relief-4/authorized-pilots/doctronic/" target="_blank" rel="noopener">Utah Office of AI Policy</a> ·
           <a href="https://mindgard.ai/blog/doctronic-is-now-accepting-new-patients-and-unsafe-instructions" target="_blank">Mindgard</a>
         </p>
       </div>
 
       <div class="callout callout-warning">
-        <div class="callout-title">HHS Proposes Gutting AI Transparency Rules (HTI-5)</div>
+        <div class="callout-title">HTI-5 Final Rule Removes AI Model Card Requirements (Oct 2026)</div>
         <p>
-          The Trump administration proposed eliminating 34 of 60 health IT certification
-          requirements, including Biden-era model card requirements that forced AI developers
-          to disclose data sources and attributes. These were among the only federal
-          transparency guardrails for clinical AI&mdash;without them, clinicians and
-          organizations may have no way to evaluate what data an AI tool was trained on,
-          whether it has known biases, or how it handles PHI internally. The comment period
-          closed February 27, 2026.
+          HHS finalized HTI-5 on October 26, 2026 (published at 91 FR 67916 on October 28).
+          It takes effect December 28, 2026, with some provisions effective January 1, 2027.
+          The rule removes the requirement that certified EHRs support &ldquo;source
+          attributes&rdquo; for decision support tools&mdash;the model-card information such as
+          training data, intended use, and performance across patient groups. These were among
+          the only federal transparency guardrails for clinical AI. The rule governs what EHR
+          developers must do for certification; it does not stop a vendor from sharing that
+          information. Ask your vendor directly what data a tool was trained on, whether it
+          has known biases, and how it handles PHI.
         </p>
         <p class="mb-0">
           <strong>Source:</strong>
-          <a href="https://www.healthcaredive.com/news/astp-onc-hti5-ai-model-cards-health-it-certification-proposed-rule/808582/" target="_blank">Healthcare Dive</a>
+          <a href="https://www.federalregister.gov/documents/2026/10/28/2026-21943/health-data-technology-and-interoperability-onc-deregulatory-actions-to-unleash-prosperity" target="_blank" rel="noopener">Federal Register</a> ·
+          <a href="https://www.hhs.gov/press-room/hhs-finalizes-hti-5-deregulatory-rule.html" target="_blank" rel="noopener">HHS</a> ·
+          <a href="https://www.healthcaredive.com/news/astp-onc-hti5-ai-model-cards-health-it-certification-proposed-rule/808582/" target="_blank">Healthcare Dive (proposed rule)</a>
         </p>
       </div>
 
@@ -1080,7 +1091,7 @@
   <footer class="footer">
     <div class="footer-inner">
       <div><strong>AI 101</strong> · A Self-Paced Guide to AI in Medicine</div>
-      <div><a href="updates.html">v1.16 · 2026</a></div>
+      <div><a href="updates.html">v1.17 · 2026</a></div>
     </div>
   </footer>
 

@@ -248,7 +248,7 @@
         <div class="tier-card">
           <h4>ChatGPT for Clinicians</h4>
           <p class="tier-price">Free (verified)</p>
-          <p>Free tier for verified US physicians, NPs, PAs, and pharmacists. Tuned for documentation and medical research. <strong>Not</strong> a BAA tier on its own.</p>
+          <p>Free tier for verified US physicians, NPs, PAs, and pharmacists. Tuned for documentation and medical research. Individual clinicians can sign a BAA in Settings &gt; Agreements, if they are authorized to sign for their account.</p>
         </div>
         <div class="tier-card">
           <h4>ChatGPT for Healthcare</h4>
@@ -262,17 +262,25 @@
         <p>
           OpenAI launched two distinct healthcare offerings in 2026 that are easy to confuse.
           <strong>ChatGPT for Clinicians</strong> is a free, individual product for verified US
-          clinicians—handy for documentation drafts, summarization, and medical research, but
-          it is <em>not</em> covered by a BAA and should not be used with PHI.
-          <strong>ChatGPT for Healthcare</strong> is the enterprise product that <em>does</em>
-          come with a BAA, alongside HIPAA-compliant controls (encryption keys, audit logs,
-          data residency) and a "no training on shared content" guarantee. It's negotiated and
-          deployed at the institution level, not by individual users.
+          clinicians—handy for documentation drafts, summarization, and medical research.
+          It has no BAA by default. Eligible clinicians can review and sign one for their own
+          workspace under Settings &gt; Agreements, but OpenAI says not to enter PHI unless a BAA
+          is in place <em>and</em> you are authorized to sign it for your account. If you are
+          employed, that authority may sit with your organization, not you. The BAA does not
+          cover every feature: improved memory is excluded, and third-party GPTs and connected
+          apps need their own permissions and agreements.
+          <strong>ChatGPT for Healthcare</strong> is the enterprise product, with a BAA that covers
+          multiple users, HIPAA-oriented controls (encryption keys, audit logs, data residency),
+          and a "no training on shared content" guarantee. It's negotiated and deployed at the
+          institution level, not by individual users.
         </p>
         <p class="mb-0">
           Practical implication: don't assume that signing in with your hospital email upgrades
-          your account. Check with your organization whether a BAA-backed deployment is in place
-          before entering anything that could be PHI.
+          your account, or that clicking through a BAA on a personal account makes it your
+          employer's approved tool. Check with your organization before entering anything that
+          could be PHI.
+          <a href="https://help.openai.com/en/articles/20001202-chatgpt-for-clinicians" target="_blank" rel="noopener">[OpenAI: ChatGPT for Clinicians]</a>
+          <a href="https://help.openai.com/en/articles/20001069-hipaa-eligible-products-and-functionality" target="_blank" rel="noopener">[OpenAI: HIPAA-eligible features]</a>
         </p>
       </div>
 
@@ -294,11 +302,12 @@
         for current information.
       </p>
       <p>
-        <strong>HIPAA pathway:</strong> BAAs available for API services, Enterprise/Edu plans,
-        and the new <strong>ChatGPT for Healthcare</strong> tier deployed at major academic
-        medical centers. ChatGPT Free, Plus, Pro, Team, and the free <strong>ChatGPT for
-        Clinicians</strong> tier are explicitly not covered by BAAs and cannot be used with
-        protected health information.</p>
+        <strong>HIPAA pathway:</strong> OpenAI lists ChatGPT for Healthcare, ChatGPT Enterprise
+        with Regulated Workspace, the free <strong>ChatGPT for Clinicians</strong> tier (individual
+        BAA, signed in Settings &gt; Agreements by a clinician authorized to sign for the account),
+        and the API with Modified Retention as HIPAA-eligible with a BAA. ChatGPT Free, Go, Plus,
+        Pro, and Business have no BAA and cannot be used with protected health information.
+        <a href="https://help.openai.com/en/articles/20001069-hipaa-eligible-products-and-functionality" target="_blank" rel="noopener">[OpenAI]</a></p>
 
       <hr>
 
@@ -561,7 +570,7 @@
           <tbody>
             <tr>
               <td><strong>ChatGPT</strong></td>
-              <td>Enterprise/Edu and ChatGPT for Healthcare</td>
+              <td>ChatGPT for Healthcare, Enterprise with Regulated Workspace, or an individual BAA on ChatGPT for Clinicians (if authorized to sign)</td>
               <td>Eligible account + covered endpoints/tools; verify retention configuration</td>
               <td>Azure OpenAI Service or ChatGPT for Healthcare</td>
             </tr>
@@ -1560,7 +1569,7 @@
   <footer class="footer">
     <div class="footer-inner">
       <div><strong>AI 101</strong> · A Self-Paced Guide to AI in Medicine</div>
-      <div><a href="updates.html">v1.16 · 2026</a></div>
+      <div><a href="updates.html">v1.17 · 2026</a></div>
     </div>
   </footer>
 

@@ -97,6 +97,11 @@
         Local models flip this equation. When you run an AI model on your own hardware,
         patient data never leaves your machine. There's no network transmission, no third-party
         storage, no Business Associate Agreement required for internal experimentation.
+        One catch: the same apps now sell cloud models too. Ollama's <code>:cloud</code> models
+        and LM Studio Bionic's Secure Cloud models run on the vendor's servers, so &ldquo;local&rdquo;
+        depends on which model you pick, not which app you opened. Choose a downloaded model, or
+        turn cloud features off (<a href="https://docs.ollama.com/cloud" target="_blank" rel="noopener">Ollama</a>,
+        <a href="https://lmstudio.ai/docs/bionic/models" target="_blank" rel="noopener">LM Studio Bionic</a>).
       </p>
 
       <p>
@@ -133,7 +138,7 @@
         </div>
         <div class="feature-card">
           <h4><i data-lucide="shield"></i> Privacy</h4>
-          <p>Data never leaves your machine.</p>
+          <p>With a downloaded model, data stays on your machine. Cloud-tagged models don't.</p>
         </div>
       </div>
 
@@ -589,11 +594,11 @@
             </tr>
             <tr>
               <td>M1/M2/M3/M4 Pro / Max 32–64GB</td>
-              <td>13B at Q5-Q8, 27B at Q4, Llama 4 Scout at Q4</td>
+              <td>13B at Q5-Q8, 27B at Q4 (Llama 4 Scout at Q4 is a 67GB download and won't fit)</td>
             </tr>
             <tr>
               <td>M-series Ultra / Mac Studio 96GB+</td>
-              <td>27B-70B models, DeepSeek V4 Pro variants</td>
+              <td>27B-70B models; Llama 4 Scout at Q4 is a 67GB download, so it's tight at 96GB. DeepSeek V4 Pro (1.6T parameters) needs server hardware.</td>
             </tr>
           </tbody>
         </table>
@@ -658,7 +663,8 @@
         <p class="mb-0">
           Local deployment addresses data transmission to third parties. When you prompt ChatGPT
           with patient information, that data travels to external servers. Local models eliminate
-          this—data stays on your machine. But local deployment doesn't automatically create a
+          this—data stays on your machine, as long as the model you selected is a downloaded one
+          and not one of the cloud models Ollama and LM Studio Bionic now offer. But local deployment doesn't automatically create a
           HIPAA-compliant system. For any work involving actual patient information, full
           organizational compliance infrastructure is required.
         </p>
@@ -767,8 +773,8 @@ ollama pull phi3
 # Medical-focused model
 ollama pull meditron:7b
 
-# Specific quantization variant
-ollama pull llama4:scout-8b-q4_k_m</code></pre>
+# Specific quantization variant (tag names are listed on each model's Tags page)
+ollama pull meditron:7b-q4_K_M</code></pre>
 
       <h3>Running Models</h3>
 
@@ -782,14 +788,20 @@ ollama run phi3 "What are the most common causes of pediatric fever?"</code></pr
 
       <h3>Model Parameters</h3>
 
-      <pre><code># Set temperature (0.0 = deterministic, 1.0 = creative)
-ollama run phi3 --temperature 0.7
+      <p><code>ollama run</code> has no flags for these. Set them inside an interactive session
+      (or with <code>PARAMETER</code> lines in a <a href="https://docs.ollama.com/modelfile" target="_blank" rel="noopener">Modelfile</a>):</p>
+
+      <pre><code>ollama run phi3
+
+# Then, at the >>> prompt:
+# Set temperature (0.0 = deterministic, 1.0 = creative)
+/set parameter temperature 0.7
 
 # Set context window size
-ollama run phi3 --ctx-size 4096
+/set parameter num_ctx 4096
 
-# Set number of tokens to generate
-ollama run phi3 --num-predict 500</code></pre>
+# Cap the number of tokens to generate
+/set parameter num_predict 500</code></pre>
 
       <h3>Useful Ollama Commands</h3>
 
@@ -1107,7 +1119,7 @@ ollama run phi3 --num-predict 500</code></pre>
       <div>
         <strong>AI 101</strong> · A Self-Paced Guide to AI in Medicine
       </div>
-      <div><a href="updates.html">v1.16 · 2026</a></div>
+      <div><a href="updates.html">v1.17 · 2026</a></div>
     </div>
   </footer>
 
