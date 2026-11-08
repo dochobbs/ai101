@@ -24,8 +24,8 @@ class MaintenanceTest(unittest.TestCase):
         self.assertTrue(any('External source UNVERIFIED' in p for p in report['problems']))
 
     def test_next_sunday_requires_a_new_receipt(self):
-        report = audit.check(dt.date(2026, 11, 8))
-        self.assertTrue(any('Sunday 2026-11-08' in p for p in report['problems']))
+        report = audit.check(dt.date(2026, 11, 15))
+        self.assertTrue(any('Sunday 2026-11-15' in p for p in report['problems']))
 
     def test_owner_backlog_survives_report_replacement(self):
         body = f'{audit.MARKER}\n- [ ] Unresolved calendar finding\n{audit.START}\nold\n{audit.END}\nOwner note'

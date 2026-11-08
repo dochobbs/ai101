@@ -9,7 +9,7 @@ Audited at `bc3d757`. Report only: no site page was changed. Not legal advice; i
 - **Delivery:** this file, plus the five detailed reports in `docs/audits/assets/2026-11-07/`.
 - **Publication:** Batch 1 merged as PR #16 and deployed Nov 7 (Pages run 42420896377); v1.17 verified live on ai101.health. Batches 2-3 merged as PR #17 and deployed Nov 7 (Pages run 42424037304); v1.18 verified live. Follow-ups for items blocked during the audit merged as PR #18 and deployed Nov 8 (Pages run 42486934574); v1.18.1 verified live.
 - **Batch 1 (v1.17):** Priority 1 items 1-19, the Tanzania date, card dates, and the HTI-5 and Clinicians BAA cards were prepared on branch `maintenance/ai101-audit-2026-11-07-batch1`. Agents re-read each primary source before writing. Omitted as unverified: AB 1979 operative date, HTI-5 "14 of 60" count, Epic plugin launch date, Doctronic renewal after Oct 24. Publication is recorded separately after merge.
-- **Routine:** brief updated Nov 7 and read back. First run on it is Nov 8. Web access for the cloud environment is unconfirmed until that run reports it per source family.
+- **Routine:** brief updated Nov 7 and read back. The Nov 8 scheduled run was still blocked (only Anthropic reachable). Cause: the Default cloud environment had no network setting and fell back to the platform default (Anthropic only). The routine moved to its own full-network environment, and a rerun the same day reached all four source families: a clean week with no new findings.
 
 ## Bottom line
 
@@ -124,12 +124,11 @@ The "Today" column is what each card can honestly say now. Any page fixed in a b
 
 **Needs the owner:**
 
-- OpenEvidence `/cme` and `/policies/baa` return 403 to automated fetches. Check the BAA signing step and which boards accept its MOC credit in a browser.
-- The NYT Epic/Mythos MyChart audit-log story was only partly readable. Priority A if confirmed; a subscription copy would clear it.
-- US News article behind the chatbot-harm claims (`bias-ethics.html:921`, `patients-ai.html:886`) could not be read.
 - COUNSEL: state statute coverage, signing authority for employed clinicians, patient-facing GPT advice.
 - Decide whether Sunday runs stay report-only or prepare PRs. `docs/operations/weekly-audit.md` and the routine's brief disagree.
-- Cloud environment network access, if the Nov 8 run still reports blocked families.
+- Grant the cloud routine's GitHub App issues:write, or accept calendar-only delivery.
+
+**Resolved after this report:** OpenEvidence CME credit and BAA route, and the Epic MyChart audit-log story (PR #18, from secondary sources). The US News chatbot-harm claims were replaced with the March 2026 KFF primary source. Cloud network access was fixed Nov 8.
 
 **Not run:**
 

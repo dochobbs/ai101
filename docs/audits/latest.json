@@ -1,8 +1,8 @@
 {
-  "content_reviewed_at": "2026-11-07",
+  "content_reviewed_at": "2026-11-08",
   "content_published_at": "2026-11-08",
   "version": "v1.18.1",
-  "review_scope": "November 7 content currency audit (docs/audits/2026-11-07-content-audit.md): five-agent page-by-page primary-source review. v1.17 shipped Batch 1 (Priority 1). v1.18 ships Batches 2-3: Priority 2 corrections on all audited pages, 11 news items, and a home-card date check. Items listed as unverified in the audit remain unpublished; not blanket clinical, legal, privacy or accessibility certification.",
+  "review_scope": "November 7 content currency audit (docs/audits/2026-11-07-content-audit.md): five-agent page-by-page primary-source review. v1.17 shipped Batch 1 (Priority 1). v1.18 ships Batches 2-3: Priority 2 corrections on all audited pages, 11 news items, and a home-card date check. Items listed as unverified in the audit remain unpublished; not blanket clinical, legal, privacy or accessibility certification. November 8 weekly run (cloud session cse_016kkrTo48v6HZrqJPCiufqS, report delivered by calendar): all four source families reachable, carry-forward confirmed resolved in the repo, no new item passed the relevance gate. Environmental-footprint card moved to Nov 2026 because the Nov 7 energy-per-query rewrite (audit item E1) landed.",
   "publication_policy": "Prepare future Sunday content updates as a pull request for owner review.",
   "primary_sources": [
     "https://developers.openai.com/api/docs/models",
@@ -14,8 +14,7 @@
     "https://www.fda.gov/medical-devices/digital-health-center-excellence/considerations-regulation-generative-ai-enabled-medical-devices-discussion-paper-and-request"
   ],
   "outstanding_operations": [
-    "Claude cloud audit's own GitHub issue credential still returned 403 on November 1. Independent GitHub Actions issue delivery replaces that delivery path, but does not repair the Claude credential.",
-    "Claude cloud routine brief was updated and read back on November 7 (reads latest.json, committed reports and prior calendar events; per-source-family connectivity test). Its first run on the new brief is November 8; primary-source egress stays unverified until that run reports each source family."
+    "Claude cloud audit's own GitHub issue credential still returns 403 (confirmed again November 8). The calendar event and GitHub Actions issue delivery replace that path, but the Claude credential needs issues:write granted by the owner."
   ],
   "resolved_findings": [
     {
