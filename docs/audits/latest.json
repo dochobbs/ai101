@@ -1,7 +1,7 @@
 {
   "content_reviewed_at": "2026-11-07",
   "content_published_at": "2026-11-07",
-  "version": "v1.18",
+  "version": "v1.18.1",
   "review_scope": "November 7 content currency audit (docs/audits/2026-11-07-content-audit.md): five-agent page-by-page primary-source review. v1.17 shipped Batch 1 (Priority 1). v1.18 ships Batches 2-3: Priority 2 corrections on all audited pages, 11 news items, and a home-card date check. Items listed as unverified in the audit remain unpublished; not blanket clinical, legal, privacy or accessibility certification.",
   "publication_policy": "Prepare future Sunday content updates as a pull request for owner review.",
   "primary_sources": [
@@ -104,9 +104,20 @@
         ".github/workflows/weekly-maintenance.yml"
       ],
       "disposition": "Weekly check fails on future or content-less home-card date labels; full-history checkout."
+    },
+    {
+      "id": "blocked-items-followup",
+      "files": [
+        "ai-news.html",
+        "ai-news-feed.xml",
+        "bias-ethics.html",
+        "clinical-decision-support.html",
+        "ai-search.html"
+      ],
+      "disposition": "Previously blocked items resolved by search: OpenEvidence CME credit type and MOC boards (user guide + CME Passport), BAA via Terms/Enterprise, AB 1979/SB 503 effective Jan 1 2027 (CHCF), Epic MyChart audit-log card (TechCrunch from NYT). Doctronic renewal still unpublished; Hopkins notice only via press quoting its release."
     }
   ],
-  "publication_verified": true,
+  "publication_verified": false,
   "deployed_content_commit": "56df0a76416138df42c336ab4256ee59bc5792cf",
   "deployment_receipt": "https://github.com/dochobbs/ai101/actions/runs/42424037304",
   "publication_verified_at_utc": "2026-11-07T23:11:35.865996+00:00",
@@ -124,7 +135,7 @@
     "report": "docs/audits/2026-11-07-content-audit.md",
     "batch": "2-3 of 3",
     "additional_news_items": 13,
-    "publication_verified": true,
+    "publication_verified": false,
     "merged_pr": "https://github.com/dochobbs/ai101/pull/17"
   }
 }

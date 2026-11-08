@@ -5,7 +5,7 @@
     <link>https://ai101.health/ai-news.html</link>
     <description>AI news and developments relevant to healthcare and medical practice, curated for AI 101: A Self-Paced Guide to AI in Medicine.</description>
     <language>en-us</language>
-    <lastBuildDate>Sat, 07 Nov 2026 23:05:00 GMT</lastBuildDate>
+    <lastBuildDate>Sat, 07 Nov 2026 23:23:31 GMT</lastBuildDate>
     <atom:link href="https://ai101.health/ai-news-feed.xml" rel="self" type="application/rss+xml"/>
 
     <item>
@@ -169,9 +169,17 @@
     </item>
 
     <item>
+      <title>AI Security Testing Found MyChart Setups Where Record Access Could Skip the Audit Log</title>
+      <link>https://techcrunch.com/2026/10/02/medical-records-giant-epic-pauses-product-development-to-fix-security-bugs-that-risk-patients-data/</link>
+      <description>Epic’s chief security officer told The New York Times on September 30 that testing with Anthropic’s restricted Mythos model found some customer configurations of MyChart could let outsiders view patient records without the access appearing in the software’s logs. The testing did not establish whether records could also be altered. Epic paused most product development for about six weeks to fix the flaws, which hospitals and practices must apply to their own systems; no exploitation has been reported. The audit log is how a covered entity knows who opened a chart, and how it detects a breach, so a gap in it matters even with no known misuse. If your organization runs Epic, ask IT whether the recent security updates are applied. Reported by TechCrunch and others from the Times story; Epic has not published technical details.</description>
+      <pubDate>Wed, 30 Sep 2026 00:00:00 GMT</pubDate>
+      <guid>https://techcrunch.com/2026/10/02/medical-records-giant-epic-pauses-product-development-to-fix-security-bugs-that-risk-patients-data/</guid>
+    </item>
+
+    <item>
       <title>California Enacts AI Duties for Practices Using Clinical Decision Support</title>
       <link>https://leginfo.legislature.ca.gov/faces/billTextClient.xhtml?bill_id=202520260AB1979</link>
-      <description>California’s AB 1979 (Chapter 854) and SB 503 (Chapter 857) were approved and filed September 30. AB 1979 requires a health facility, clinic, physician’s office or group practice to take reasonable steps so a licensed clinician keeps independent professional judgment whenever care is informed by an AI clinical decision support system, and bars those settings from deploying AI to independently perform a clinical function that legally requires a license. A physician’s violation falls under the Medical Board or the Osteopathic Medical Board; automation for documentation and communication that involves no professional judgment is exempt. AB 1979 also makes businesses offering consumer health care chatbots subject to the state’s medical privacy law (CMIA). SB 503 requires deployers, a term that includes a solo physician’s office, to make reasonable efforts to identify decision support systems with a known or foreseeable risk of biased impacts and to monitor them regularly, and requires developers to supply intended-use statements and documentation on training data, evaluation and bias mitigation. If you practice in California, inventory the AI decision support tools your office uses and ask each vendor for that documentation.</description>
+      <description>California’s AB 1979 (Chapter 854) and SB 503 (Chapter 857) were approved and filed September 30 and take effect January 1, 2027 (CHCF summary). AB 1979 requires a health facility, clinic, physician’s office or group practice to take reasonable steps so a licensed clinician keeps independent professional judgment whenever care is informed by an AI clinical decision support system, and bars those settings from using AI to independently perform a clinical function that legally requires a license, or to direct unlicensed staff in performing one. A physician’s violation falls under the Medical Board or the Osteopathic Medical Board; automation for documentation and communication that involves no professional judgment is exempt. AB 1979 also makes businesses offering consumer health care chatbots subject to the state’s medical privacy law (CMIA). SB 503 requires deployers, a term that includes a solo physician’s office, to make reasonable efforts to identify decision support systems with a known or foreseeable risk of biased impacts and to monitor them regularly, and requires developers to supply intended-use statements and documentation on training data, evaluation and bias mitigation. If you practice in California, inventory the AI decision support tools your office uses and ask each vendor for that documentation.</description>
       <pubDate>Wed, 30 Sep 2026 00:00:00 GMT</pubDate>
       <guid>https://leginfo.legislature.ca.gov/faces/billTextClient.xhtml?bill_id=202520260AB1979</guid>
     </item>
