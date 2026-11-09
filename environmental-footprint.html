@@ -102,15 +102,30 @@
         </p>
       </div>
 
+      <div class="callout callout-info">
+        <div class="callout-title">Global Picture (IEA, April 2026)</div>
+        <p class="mb-0">
+          The International Energy Agency&rsquo;s
+          <a href="https://www.iea.org/reports/key-questions-on-energy-and-ai/executive-summary" target="_blank" rel="noopener">April 2026 update</a>
+          estimates that data-centre electricity use grew 17% in 2025, to about 485 TWh, and that
+          use by AI-focused data centres grew about 50%. It projects data-centre demand roughly
+          doubling to about 950 TWh by 2030, around 3% of global electricity. The same report notes
+          that energy per simple AI query is falling fast, while video, reasoning, and agentic tasks
+          can use hundreds or thousands of times more energy per query.
+        </p>
+      </div>
+
       <h3>Training vs. Inference</h3>
       <p>
         AI energy costs come in two forms:
       </p>
       <ul>
         <li><strong>Training:</strong> The one-time (or periodic) process of building
-        the model. Training large language models like GPT-4 requires massive
-        computational resources—estimates suggest training runs can consume energy
-        equivalent to hundreds of homes' annual usage.</li>
+        the model. The best-documented example is old: Google researchers
+        <a href="https://arxiv.org/abs/2104.10350" target="_blank" rel="noopener">estimated</a>
+        that training GPT-3 (2020) used about 1,287 MWh, roughly a year of electricity for more
+        than 100 average US homes. Today&rsquo;s frontier models are much larger, and their
+        developers generally do not publish training energy.</li>
         <li><strong>Inference:</strong> The ongoing cost of running the model to
         generate outputs. Each query to ChatGPT, each image analyzed by a diagnostic
         AI, consumes energy. At scale, inference often exceeds training costs.</li>
@@ -147,6 +162,12 @@
       <p>
         Major tech companies have seen their carbon emissions rise despite
         renewable energy commitments, largely due to AI infrastructure expansion.
+        Google&rsquo;s <a href="https://sustainability.google/files/google-2026-environmental-report.pdf" target="_blank" rel="noopener">2026 Environmental Report</a>
+        (covering 2025, self-reported) is a clear example: electricity use rose 37% in one year,
+        and total ambition-based emissions rose 18% year over year and 81% above its 2019
+        baseline, driven mainly by the supply chain for AI hardware and construction. Its
+        operational emissions fell 2% over the same year, which shows clean-energy purchasing
+        helps but has not kept up with growth.
       </p>
 
       <h2>Healthcare-Specific Considerations</h2>
@@ -366,7 +387,7 @@
   <footer class="footer">
     <div class="footer-inner">
       <div><strong>AI 101</strong> · A Self-Paced Guide to AI in Medicine</div>
-      <div><a href="updates.html">v1.18.1 · 2026</a></div>
+      <div><a href="updates.html">v1.19 · 2026</a></div>
     </div>
   </footer>
 

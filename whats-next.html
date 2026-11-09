@@ -81,7 +81,7 @@
       <!-- Introduction -->
       <div class="callout callout-info">
         <div class="callout-title">November 2026: Use Current Catalogs for Today&rsquo;s Choice</div>
-        <p>The release timeline below is historical. Current catalogs now include Claude 5.5 models, GPT-6 Astra and GPT-6.1 Sol/Terra, and newer Google models. Availability differs between a consumer app, a coding surface, and an API. Use <a href="big-three.html">the refreshed comparison</a> and the actual model picker before choosing a plan or assuming which model answered you.</p>
+        <p>The release timeline below is historical. As of November 8, 2026, current catalogs include Claude 5.5 models and Fable 5.1, GPT-6 Astra and GPT-6.1 Sol/Terra, and Google&rsquo;s Gemini 4 Argon. Availability differs between a consumer app, a coding surface, and an API. Use <a href="big-three.html">the refreshed comparison</a> and the actual model picker before choosing a plan or assuming which model answered you.</p>
       </div>
 
       <h2>Congratulations—Now the Real Work Begins</h2>
@@ -132,7 +132,7 @@
         <li>Anthropic shipped Claude Opus 4 and Sonnet 4 in May 2025, Sonnet 4.5 in September, Opus 4.5 in November; then in 2026 Opus 4.6 and Sonnet 4.6 (February), <strong>Claude Opus 4.7</strong> (April 16)&mdash;higher-resolution vision and +13% coding gains over 4.6&mdash;and <strong>Claude Opus 4.8</strong> (May 28); <strong>Claude Fable 5</strong> arrived June 9, and <strong>Claude Opus 5</strong> (July 24) and <strong>Claude Sonnet 5</strong> led the July line at a 1M-token context and 128K max output</li>
         <li>Google launched Gemini 2.5 Pro and Flash, then Gemini 3 Pro and Deep Think by November 2025, Gemini 3.1 Pro in February 2026, and at Google I/O 2026 (May 19) <strong>Gemini 3.5 Flash</strong> (rolled out to all users) plus <strong>Gemini Omni Flash</strong> multimodal; on July 21, 2026 it shipped <strong>Gemini 3.6 Flash</strong> and <strong>Gemini 3.5 Flash-Lite</strong>&mdash;but no new Pro model, leaving Gemini 3.1 Pro as the Pro option at that July checkpoint</li>
         <li>DeepSeek released R1 in January 2025 (rivaling GPT-4 at a fraction of the cost), V3.1 and V3.2 through the fall, and <strong>DeepSeek V4 Flash</strong> in 2026 (MIT-license, 1M-token context, ~$1.74/M tokens)</li>
-        <li>AI agents went from demos to production&mdash;computer use, coding assistants, research tools that actually work; by mid-2026, Cursor crossed <strong>$2B ARR</strong> and entered talks at a <strong>$50B valuation</strong></li>
+        <li>AI agents went from demos to production&mdash;computer use, coding assistants, research tools that actually work; by mid-2026, Cursor crossed <strong>$2B ARR</strong> and entered talks at a <strong>$50B valuation</strong>, and in August SpaceX <a href="https://cursor.com/blog/joining-spacex" target="_blank" rel="noopener">acquired it</a></li>
         <li>Every major EHR vendor shipped or expanded AI documentation features; Epic now reports 85% of customers live with generative AI</li>
       </ul>
 
@@ -161,8 +161,11 @@
           Analysis) placing it first among open weights <em>as of June 2026</em>, at roughly
           one-sixth the cost of the closed frontier. <strong>Kimi K3</strong> (Moonshot AI, July 16;
           weights published July 27) has since overtaken it, scoring 57 to GLM-5.2&rsquo;s 51 on the
-          Artificial Analysis Intelligence Index. Open models are no longer a generation
-          behind.</li>
+          Artificial Analysis Intelligence Index. In July, open models looked no longer a
+          generation behind. <em>November 2026 follow-up:</em> the gap has reopened. On Artificial
+          Analysis&rsquo;s rebuilt v5 index, the best open-weight model (Kimi K3.1 Pro) scores 46
+          against 60 for the top closed model.
+          <a href="https://artificialanalysis.ai/models" target="_blank" rel="noopener">[Artificial Analysis]</a></li>
           <li><strong>Google</strong> shipped <strong>Gemini 3.6 Flash</strong> and
           <strong>Gemini 3.5 Flash-Lite</strong> on July 21, with 3.6 Flash cutting output-token use
           about 17% against 3.5 Flash&mdash;but no new Pro model.</li>
@@ -709,7 +712,9 @@
             <div class="reading-meta">
               Go to platform.openai.com → Sign up or log in → API Keys → Create new secret key.
               You'll need to add a payment method. Pricing is pay-as-you-go based on tokens used.
-              GPT-4o is roughly $2.50-10 per million tokens depending on input/output.
+              As of November 2026, OpenAI&rsquo;s current models range from about $0.10/$0.50
+              (GPT-6 Luna) to $10/$50 (GPT-6 Astra) per million input/output tokens; check the
+              <a href="https://developers.openai.com/api/docs/models" target="_blank" rel="noopener">model catalog</a> for today&rsquo;s prices.
             </div>
           </div>
         </div>
@@ -722,7 +727,9 @@
             </div>
             <div class="reading-meta">
               Go to platform.claude.com → Sign up or log in → API Keys → Create Key.
-              Requires payment method. Claude Sonnet is roughly $3-15 per million tokens.
+              Requires payment method. As of November 2026, Claude Sonnet 5.5 is $2/$10 per million
+              input/output tokens; see Anthropic&rsquo;s
+              <a href="https://platform.claude.com/docs/en/about-claude/pricing" target="_blank" rel="noopener">pricing page</a> for other models.
               Anthropic's API is known for generous rate limits and reliable uptime.
             </div>
           </div>
@@ -757,7 +764,7 @@ import anthropic
 client = anthropic.Anthropic(api_key="your-api-key-here")
 
 message = client.messages.create(
-    model="claude-sonnet-4-6",
+    model="claude-sonnet-5-5",  # current as of Nov 2026; check the models page
     max_tokens=1024,
     messages=[
         {"role": "user", "content": "Explain APIs in one paragraph."}
@@ -814,23 +821,37 @@ print(message.content)</code></pre>
             <div class="reading-title">
               <a href="https://cursor.com/" target="_blank">Cursor</a>
             </div>
-            <div class="reading-meta">The AI-native code editor. If you're going to build anything beyond a simple script, start here. It's VS Code with AI superpowers—code completion, chat about your codebase, and the ability to make changes across multiple files. The $20/month Pro tier is worth it.</div>
+            <div class="reading-meta">The AI-native code editor. It's VS Code with AI built in—code completion, chat about your codebase, and the ability to make changes across multiple files. As of November 2026, plans run from free to $200/month; the $8 Plus tier offers only xAI&rsquo;s Grok models, and other vendors&rsquo; models (Claude, GPT) cost extra at API rates on the $30 tier and up (<a href="https://cursor.com/pricing" target="_blank" rel="noopener">pricing</a>).</div>
           </div>
         </div>
       </div>
 
       <p>
-        Cursor is where most people should start. It looks and feels like VS Code (the most popular
+        Cursor is a common starting point. It looks and feels like VS Code (the most popular
         code editor), but with AI deeply integrated. You can highlight code and ask "what does this do?"
         You can describe a feature and watch it write the implementation. You can paste an error message
         and get a fix.
       </p>
 
       <p>
-        The "Composer" feature is particularly powerful—it can make coordinated changes across multiple
+        Its agent mode is particularly powerful—it can make coordinated changes across multiple
         files, understanding how your codebase fits together. For building real applications, this is
         transformative.
       </p>
+
+      <div class="callout callout-warning">
+        <div class="callout-title">Who Owns Cursor Now (August 2026)</div>
+        <p class="mb-0">
+          SpaceX <a href="https://cursor.com/blog/joining-spacex" target="_blank" rel="noopener">acquired Cursor</a>
+          on August 14, 2026. That puts it under the same parent as xAI, the maker of Grok, whose
+          consumer data practices we flag on the <a href="big-three.html#beyond-big-three">Big Three page</a>.
+          Cursor&rsquo;s subscriptions now run under SpaceXSI subscription terms and bundle X and Grok
+          features. Cursor says that with Privacy Mode turned on, your code is not used for training by
+          Cursor or its model providers; turn it on in settings before you open anything sensitive. Keep
+          PHI out of it regardless: Cursor is a coding tool, not a covered service, and nothing on its
+          pricing page offers a BAA.
+        </p>
+      </div>
 
       <div class="callout callout-warning">
         <div class="callout-title">Power Requires Caution</div>
@@ -851,7 +872,7 @@ print(message.content)</code></pre>
             <div class="reading-title">
               <a href="https://code.claude.com/docs" target="_blank">Claude Code</a> (Anthropic)
             </div>
-            <div class="reading-meta">Anthropic's command-line AI assistant. Lives in your terminal, can read your entire codebase, write and edit files, run commands, and handle complex multi-step tasks. Requires a Claude Pro or Max subscription.</div>
+            <div class="reading-meta">Anthropic's command-line AI assistant. Lives in your terminal, can read your entire codebase, write and edit files, run commands, and handle complex multi-step tasks. Requires a paid Claude plan (Pro and up, including Team and Enterprise) or an API Console account; the free plan does not include it (<a href="https://code.claude.com/docs/en/setup" target="_blank" rel="noopener">setup docs</a>).</div>
           </div>
         </div>
 
@@ -861,7 +882,7 @@ print(message.content)</code></pre>
             <div class="reading-title">
               <a href="https://openai.com/codex/" target="_blank">Codex</a> (OpenAI)
             </div>
-            <div class="reading-meta">OpenAI's command-line coding agent. Similar capabilities to Claude Code—reads codebases, writes files, executes commands. Requires a ChatGPT Plus or Pro subscription.</div>
+            <div class="reading-meta">OpenAI's command-line coding agent. Similar capabilities to Claude Code—reads codebases, writes files, executes commands. Works with a ChatGPT sign-in; as of November 2026, Free and Go plans can use the smaller GPT-6 Luna model in Codex where available, while paid plans get stronger models (<a href="https://learn.chatgpt.com/docs/models" target="_blank" rel="noopener">OpenAI</a>).</div>
           </div>
         </div>
       </div>
@@ -1142,7 +1163,7 @@ print(message.content)</code></pre>
           <div class="reading-type"><i data-lucide="plug"></i></div>
           <div class="reading-content">
             <div class="reading-title">MCP (Model Context Protocol)</div>
-            <div class="reading-meta">Anthropic's open protocol for connecting AI to external tools and data sources. Not an agent framework itself, but the plumbing that makes sophisticated agents possible. Watch this space.</div>
+            <div class="reading-meta">An open protocol, created by Anthropic and now stewarded by the Linux Foundation&rsquo;s Agentic AI Foundation, for connecting AI to external tools and data sources. Claude, ChatGPT, Gemini, and most coding tools support it. Not an agent framework itself, but the plumbing that makes sophisticated agents possible (<a href="https://www.linuxfoundation.org/press/linux-foundation-announces-the-formation-of-the-agentic-ai-foundation" target="_blank" rel="noopener">Linux Foundation</a>).</div>
           </div>
         </div>
       </div>
@@ -1673,7 +1694,7 @@ print(message.content)</code></pre>
   <footer class="footer">
     <div class="footer-inner">
       <div><strong>AI 101</strong> · A Self-Paced Guide to AI in Medicine</div>
-      <div><a href="updates.html">v1.18.1 · 2026</a></div>
+      <div><a href="updates.html">v1.19 · 2026</a></div>
     </div>
   </footer>
 

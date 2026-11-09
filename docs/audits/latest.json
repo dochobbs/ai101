@@ -1,8 +1,8 @@
 {
   "content_reviewed_at": "2026-11-08",
   "content_published_at": "2026-11-08",
-  "version": "v1.18.1",
-  "review_scope": "November 7 content currency audit (docs/audits/2026-11-07-content-audit.md): five-agent page-by-page primary-source review. v1.17 shipped Batch 1 (Priority 1). v1.18 ships Batches 2-3: Priority 2 corrections on all audited pages, 11 news items, and a home-card date check. Items listed as unverified in the audit remain unpublished; not blanket clinical, legal, privacy or accessibility certification. November 8 weekly run (cloud session cse_016kkrTo48v6HZrqJPCiufqS, report delivered by calendar): all four source families reachable, carry-forward confirmed resolved in the repo, no new item passed the relevance gate. Environmental-footprint card moved to Nov 2026 because the Nov 7 energy-per-query rewrite (audit item E1) landed.",
+  "version": "v1.19",
+  "review_scope": "November 8 currency pass: four research agents read every content page for statements that were true when written but are no longer current, then four agents fixed them from primary sources they re-read (vendor docs and pricing, regulator pages, court dockets, papers). Unconfirmed items were left off. Builds on the November 7 correctness audit (docs/audits/2026-11-07-content-audit.md). Not blanket clinical, legal, privacy or accessibility certification.",
   "publication_policy": "Prepare future Sunday content updates as a pull request for owner review.",
   "primary_sources": [
     "https://developers.openai.com/api/docs/models",
@@ -114,9 +114,38 @@
         "ai-search.html"
       ],
       "disposition": "Previously blocked items resolved by search: OpenEvidence CME credit type and MOC boards (user guide + CME Passport), BAA via Terms/Enterprise, AB 1979/SB 503 effective Jan 1 2027 (CHCF), Epic MyChart audit-log card (TechCrunch from NYT). Doctronic renewal still unpublished; Hopkins notice only via press quoting its release."
+    },
+    {
+      "id": "currency-pass-2026-11-08",
+      "files": [
+        "index.html",
+        "ai-news.html",
+        "ai-news-feed.xml",
+        "phi-hipaa.html",
+        "patients-ai.html",
+        "bias-ethics.html",
+        "environmental-footprint.html",
+        "prompting.html",
+        "big-three.html",
+        "whats-next.html",
+        "llm-thinking.html",
+        "glossary.html",
+        "resources.html",
+        "start-here.html",
+        "vibe-coding.html",
+        "openclaw.html",
+        "local-models.html",
+        "claude-code.html",
+        "clinical-decision-support.html",
+        "ai-search.html",
+        "ambient-ai.html",
+        "image-video.html",
+        "medical-learners.html"
+      ],
+      "disposition": "Stale present-tense claims updated: ChatGPT Health default (Sep 14), athenaPatient connector, AMA liability framework, MAI-DxO (Science), Gemini 4 Argon, current API prices, Cursor/SpaceX and plans, Replit/Lovable plans, OpenEvidence/Perplexity/Microsoft/Abridge figures, Gemini Notebook, Veo API, 2027 Match, IEA/Google footprint data; home cards made model-agnostic. Left off as unconfirmed: Abridge Apr 2026 extension, Hermes Cloud, Muse Voice, Google AI Plus price, FDA draft guidance timing beyond the CDRH A-list."
     }
   ],
-  "publication_verified": true,
+  "publication_verified": false,
   "deployed_content_commit": "9a87ee1d9a30776ebf3a23afcd3724898fb919b4",
   "deployment_receipt": "https://github.com/dochobbs/ai101/actions/runs/42486934574",
   "publication_verified_at_utc": "2026-11-08T13:52:20+00:00",
