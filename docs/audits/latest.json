@@ -1,6 +1,6 @@
 {
   "content_reviewed_at": "2026-11-08",
-  "content_published_at": "2026-11-08",
+  "content_published_at": "2026-11-09",
   "version": "v1.19",
   "review_scope": "November 8 currency pass: four research agents read every content page for statements that were true when written but are no longer current, then four agents fixed them from primary sources they re-read (vendor docs and pricing, regulator pages, court dockets, papers). Unconfirmed items were left off. Builds on the November 7 correctness audit (docs/audits/2026-11-07-content-audit.md). Not blanket clinical, legal, privacy or accessibility certification.",
   "publication_policy": "Prepare future Sunday content updates as a pull request for owner review.",
@@ -145,10 +145,10 @@
       "disposition": "Stale present-tense claims updated: ChatGPT Health default (Sep 14), athenaPatient connector, AMA liability framework, MAI-DxO (Science), Gemini 4 Argon, current API prices, Cursor/SpaceX and plans, Replit/Lovable plans, OpenEvidence/Perplexity/Microsoft/Abridge figures, Gemini Notebook, Veo API, 2027 Match, IEA/Google footprint data; home cards made model-agnostic. Left off as unconfirmed: Abridge Apr 2026 extension, Hermes Cloud, Muse Voice, Google AI Plus price, FDA draft guidance timing beyond the CDRH A-list."
     }
   ],
-  "publication_verified": false,
-  "deployed_content_commit": "9a87ee1d9a30776ebf3a23afcd3724898fb919b4",
-  "deployment_receipt": "https://github.com/dochobbs/ai101/actions/runs/42486934574",
-  "publication_verified_at_utc": "2026-11-08T13:52:20+00:00",
+  "publication_verified": true,
+  "deployed_content_commit": "2dbc32e0e0da784b27768896999eddfe70f70ba4",
+  "deployment_receipt": "https://github.com/dochobbs/ai101/actions/runs/42619432967",
+  "publication_verified_at_utc": "2026-11-09T12:44:27+00:00",
   "latest_full_site_audit": {
     "version": "v1.16",
     "prepared_at": "2026-11-01",
@@ -159,11 +159,11 @@
     "deployment_verification": "docs/audits/assets/2026-11-01/deployment-v1.16.json"
   },
   "latest_content_audit": {
-    "prepared_at": "2026-11-07",
+    "prepared_at": "2026-11-08",
     "report": "docs/audits/2026-11-07-content-audit.md",
-    "batch": "2-3 of 3",
-    "additional_news_items": 13,
+    "batch": "currency pass (v1.19)",
+    "additional_news_items": 4,
     "publication_verified": true,
-    "merged_pr": "https://github.com/dochobbs/ai101/pull/18"
+    "merged_pr": "https://github.com/dochobbs/ai101/pull/20"
   }
 }

@@ -19,7 +19,7 @@ class MaintenanceTest(unittest.TestCase):
 
     def test_network_denial_is_visible_not_a_clean_check(self):
         with patch.object(audit, 'fetch', side_effect=lambda url: {'url': url, 'error': '403 policy denied', 'status': None}):
-            report = audit.check(dt.date(2026, 11, 8), check_external=True)
+            report = audit.check(dt.date(2026, 11, 9), check_external=True)
         self.assertEqual(report['status'], 'NEEDS ATTENTION')
         self.assertTrue(any('External source UNVERIFIED' in p for p in report['problems']))
 
@@ -37,13 +37,13 @@ class MaintenanceTest(unittest.TestCase):
     def test_historical_changelog_version_cannot_clear_a_different_release(self):
         version = json.loads((audit.ROOT / "docs/audits/latest.json").read_text())["version"]
         with patch.object(audit, 'fetch', return_value={'status': 200, 'body': f'<h2>{version}</h2><footer>v99.0 · 2026</footer>'}):
-            report = audit.check(dt.date(2026, 11, 8), check_live=True)
+            report = audit.check(dt.date(2026, 11, 9), check_live=True)
         self.assertTrue(any('live footer release is v99.0' in p for p in report['problems']))
 
     def test_footer_release_matches_publication_receipt(self):
         version = json.loads((audit.ROOT / "docs/audits/latest.json").read_text())["version"]
         with patch.object(audit, 'fetch', return_value={'status': 200, 'body': f'<h2>v0.0</h2><footer>{version} · 2026</footer>'}):
-            report = audit.check(dt.date(2026, 11, 8), check_live=True)
+            report = audit.check(dt.date(2026, 11, 9), check_live=True)
         self.assertFalse(any('Deployment UNVERIFIED' in p for p in report['problems']))
 
 
