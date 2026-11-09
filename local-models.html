@@ -147,9 +147,9 @@
       <div class="callout callout-principle">
         <div class="callout-title">The Tradeoff</div>
         <p class="mb-0">
-          Local models running on consumer hardware are smaller and less capable than frontier
-          models like GPT-4 or Claude. A 7B parameter model on your laptop won't match a 1.8
-          trillion parameter model running on a data center. But for many tasks—answering
+          Local models running on consumer hardware are smaller and less capable than the
+          frontier models behind ChatGPT, Claude, and Gemini. A 7B parameter model on your laptop
+          won't match a model many times its size running in a data center. But for many tasks—answering
           medical questions, summarizing notes, generating draft content—smaller models can
           be surprisingly effective.
         </p>
@@ -443,7 +443,7 @@
           <tbody>
             <tr>
               <td>Limited (8-16GB RAM)</td>
-              <td>Phi-3 or Meditron-7B at Q4 (both in the Ollama library)</td>
+              <td>Phi-4-mini or Meditron-7B at Q4 (both in the Ollama library)</td>
             </tr>
             <tr>
               <td>Medical QA focus</td>
@@ -564,7 +564,7 @@
         <div class="pipeline-stage">
           <div class="pipeline-number">8</div>
           <h4>8GB RAM (Minimum)</h4>
-          <p>3B-4B parameter models at Q4. Slow inference, limited context. Examples: Phi-3 mini, TinyLlama.</p>
+          <p>3B-4B parameter models at Q4. Slow inference, limited context. Examples: Phi-4-mini (3.8B, about a 2.5GB download), TinyLlama.</p>
         </div>
         <div class="pipeline-stage">
           <div class="pipeline-number">16</div>
@@ -749,13 +749,17 @@
       <p><strong>Option 1: Direct download (recommended)</strong></p>
       <ol>
         <li>Visit <a href="https://ollama.com/download">ollama.com/download</a></li>
-        <li>Download the macOS installer (.dmg file, ~50MB)</li>
+        <li>Download the macOS installer (.dmg file, roughly 230MB as of November 2026)</li>
         <li>Open the .dmg and drag Ollama to Applications</li>
         <li>Launch Ollama from Applications folder</li>
         <li>A llama icon appears in your menu bar when running</li>
       </ol>
 
-      <p><strong>Option 2: Homebrew</strong></p>
+      <p><strong>Option 2: Install script</strong> (the same one Linux uses; it is the command
+      shown on <a href="https://ollama.com/download/mac" target="_blank" rel="noopener">ollama.com/download/mac</a>)</p>
+      <pre><code>curl -fsSL https://ollama.com/install.sh | sh</code></pre>
+
+      <p><strong>Option 3: Homebrew</strong></p>
       <pre><code>brew install ollama
 brew services start ollama</code></pre>
 
@@ -788,7 +792,7 @@ ollama list</code></pre>
       <p>Browse available models at <a href="https://ollama.com/library">ollama.com/library</a>.</p>
 
       <pre><code># Small, fast model for testing setup
-ollama pull phi3
+ollama pull phi4-mini
 
 # Medical-focused model
 ollama pull meditron:7b
@@ -799,10 +803,10 @@ ollama pull meditron:7b-q4_K_M</code></pre>
       <h3>Running Models</h3>
 
       <pre><code># Interactive chat
-ollama run phi3
+ollama run phi4-mini
 
 # Single prompt (no interactive session)
-ollama run phi3 "What are the most common causes of pediatric fever?"</code></pre>
+ollama run phi4-mini "What are the most common causes of pediatric fever?"</code></pre>
 
       <p>Type <code>/bye</code> to exit interactive mode.</p>
 
@@ -811,7 +815,7 @@ ollama run phi3 "What are the most common causes of pediatric fever?"</code></pr
       <p><code>ollama run</code> has no flags for these. Set them inside an interactive session
       (or with <code>PARAMETER</code> lines in a <a href="https://docs.ollama.com/modelfile" target="_blank" rel="noopener">Modelfile</a>):</p>
 
-      <pre><code>ollama run phi3
+      <pre><code>ollama run phi4-mini
 
 # Then, at the >>> prompt:
 # Set temperature (0.0 = deterministic, 1.0 = creative)
@@ -843,11 +847,11 @@ ollama run phi3 "What are the most common causes of pediatric fever?"</code></pr
               <td>Show model details</td>
             </tr>
             <tr>
-              <td><code>ollama rm phi3</code></td>
+              <td><code>ollama rm phi4-mini</code></td>
               <td>Remove a model</td>
             </tr>
             <tr>
-              <td><code>ollama pull phi3</code></td>
+              <td><code>ollama pull phi4-mini</code></td>
               <td>Pull latest version of a model</td>
             </tr>
             <tr>
@@ -860,12 +864,19 @@ ollama run phi3 "What are the most common causes of pediatric fever?"</code></pr
 
       <h3>Local API</h3>
 
-      <p>Ollama automatically serves an OpenAI-compatible API at <code>http://localhost:11434</code>:</p>
+      <p>Ollama automatically serves a local API at <code>http://localhost:11434</code>. This
+      example uses Ollama&rsquo;s own native endpoint:</p>
 
       <pre><code>curl http://localhost:11434/api/generate -d '{
-  "model": "phi3",
+  "model": "phi4-mini",
   "prompt": "What are common causes of pediatric fever?"
 }'</code></pre>
+
+      <p>Apps written for OpenAI&rsquo;s API can point at the
+      <a href="https://docs.ollama.com/api/openai-compatibility" target="_blank" rel="noopener">OpenAI-compatible endpoints</a>
+      under <code>http://localhost:11434/v1/</code> instead (for example,
+      <code>/v1/chat/completions</code>). Either way, the request stays on your machine as long as
+      you use a local model; Ollama&rsquo;s <code>:cloud</code> models run on Ollama&rsquo;s servers.</p>
 
       <hr>
 
@@ -892,7 +903,7 @@ ollama run phi3 "What are the most common causes of pediatric fever?"</code></pr
       <ol>
         <li>Launch LM Studio</li>
         <li>Click "Discover" in the left navigation</li>
-        <li>Search for a model (try "phi3" or "meditron")</li>
+        <li>Search for a model (try "phi-4-mini" or "meditron")</li>
         <li>Click Download on your chosen variant</li>
       </ol>
 
@@ -1101,7 +1112,7 @@ ollama run phi3 "What are the most common causes of pediatric fever?"</code></pr
 
       <h3>Medical AI Evaluation</h3>
       <ul>
-        <li><a href="https://huggingface.co/spaces/openlifescienceai/open_medical_llm_leaderboard">Open Medical-LLM Leaderboard</a> (Hugging Face Spaces) &mdash; <em>note: intermittently offline through late 2025/early 2026; if the Space is down, try the <a href="https://pricepertoken.com/leaderboards/benchmark/medqa">pricepertoken.com MedQA leaderboard</a> as a current-data fallback</em></li>
+        <li><a href="https://huggingface.co/spaces/openlifescienceai/open_medical_llm_leaderboard">Open Medical-LLM Leaderboard</a> (Hugging Face Spaces) &mdash; <em>note: the Space showed a runtime error when checked November 8, 2026, and was last updated in September 2025; if it is down, try the <a href="https://pricepertoken.com/leaderboards/benchmark/medqa">pricepertoken.com MedQA leaderboard</a> as a current-data fallback</em></li>
         <li><a href="https://pricepertoken.com/leaderboards/benchmark/medqa">pricepertoken.com MedQA Leaderboard</a> &mdash; refreshed snapshot of frontier and open-source model MedQA scores</li>
         <li><a href="https://github.com/AI-in-Health/MedLLMsPracticalGuide">MedLLMs Practical Guide</a></li>
       </ul>
@@ -1139,7 +1150,7 @@ ollama run phi3 "What are the most common causes of pediatric fever?"</code></pr
       <div>
         <strong>AI 101</strong> · A Self-Paced Guide to AI in Medicine
       </div>
-      <div><a href="updates.html">v1.18.1 · 2026</a></div>
+      <div><a href="updates.html">v1.19 · 2026</a></div>
     </div>
   </footer>
 

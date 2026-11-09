@@ -145,10 +145,13 @@
       </p>
 
       <p>
-        The growth has been remarkable: Perplexity now handles 780 million monthly queries,
-        up from 230 million just a year ago. With a $14 billion valuation and 15-30 million
-        active monthly users, it's become a serious alternative to traditional search—particularly
-        for research-oriented tasks.
+        The growth has been fast. Perplexity&rsquo;s CEO said it
+        <a href="https://techcrunch.com/2025/06/05/perplexity-received-780-million-queries-last-month-ceo-says/" target="_blank" rel="noopener">handled about 780 million queries in May 2025</a>
+        (a company figure). Its last completed round was reported at about $20 billion in
+        September 2025, and in August 2026
+        <a href="https://www.reuters.com/technology/nvidia-discusses-perplexity-investment-30-billion-plus-valuation-information-2026-08-24/" target="_blank" rel="noopener">Reuters reported</a>
+        talks at more than $30 billion. It has become a serious alternative to traditional
+        search, particularly for research-oriented tasks.
       </p>
 
       <h3>How It Works</h3>
@@ -159,7 +162,7 @@
       </p>
 
       <ol>
-        <li>It searches the web for relevant sources (often 5-15 for quick search, many more for Pro)</li>
+        <li>It searches the web for relevant sources (a handful for a basic answer, many more for Pro Search or Deep Research)</li>
         <li>It reads and processes those sources, extracting relevant information</li>
         <li>It synthesizes an answer, citing each claim with numbered references</li>
         <li>It suggests follow-up questions based on related topics</li>
@@ -179,45 +182,48 @@
         literacy required is different—not necessarily easier, but different.
       </p>
 
-      <h3>Quick Search vs. Pro Search</h3>
+      <h3>Search Depth: Standard, Pro, and Deep Research</h3>
 
       <p>
-        Perplexity offers two modes:
+        Perplexity used to make you flip a Pro Search toggle. As of November 2026 it
+        doesn&rsquo;t:
+        <a href="https://www.perplexity.ai/help-center/en/articles/10352903-what-is-pro-search" target="_blank" rel="noopener">Perplexity says</a>
+        Pro Search is &ldquo;no longer a separate toggle&rdquo; and Search applies it
+        automatically when your plan includes it, up to your plan&rsquo;s limit. How deep a
+        given answer goes therefore depends on your plan, not a switch you set.
       </p>
 
       <div class="comparison-table">
         <table>
           <thead>
             <tr>
-              <th>Quick Search</th>
-              <th>Pro Search</th>
+              <th>Standard search</th>
+              <th>Pro Search (automatic on eligible plans)</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td>Fast (~1-2 seconds)</td>
-              <td>Thorough (~30-60 seconds)</td>
+              <td>Fast, basic answers</td>
+              <td>Slower, more thorough answers</td>
             </tr>
             <tr>
-              <td>Searches a few sources</td>
-              <td>Searches dozens of sources</td>
+              <td>A few sources</td>
+              <td>Dozens of sources</td>
             </tr>
             <tr>
-              <td>Best for simple questions</td>
-              <td>Best for complex research</td>
-            </tr>
-            <tr>
-              <td>Unlimited (free tier)</td>
-              <td>5/day free, 300/month with Pro ($20/mo)</td>
+              <td>Fine for simple questions</td>
+              <td>Better for complex research</td>
             </tr>
           </tbody>
         </table>
       </div>
 
       <p>
-        For quick factual questions, Quick Search is fine. For anything requiring
-        synthesis across multiple sources—literature review, differential diagnosis
-        research, guideline comparisons—Pro Search is worth the wait.
+        Plan limits change often, so check Perplexity&rsquo;s help center rather than relying
+        on a number here. For a long, report-style answer, choose Deep Research from the Search
+        menu (see Part 3). For anything requiring synthesis across multiple
+        sources&mdash;literature review, differential diagnosis research, guideline
+        comparisons&mdash;the deeper modes are worth the wait.
       </p>
 
       <div class="callout callout-info">
@@ -225,9 +231,12 @@
         <p class="mb-0">
           Perplexity launched
           <a href="https://www.perplexity.ai/hub/blog/introducing-model-council" target="_blank">Model Council</a>
-          in February 2026 for Max subscribers. It runs your query across Claude Opus 4.7,
-          GPT-5.5, and Gemini 3 Flash simultaneously, then synthesizes a unified answer showing
-          where models agree or differ. Think of it as getting a second opinion&mdash;if
+          in February 2026 for Max subscribers. It runs your query across three frontier models
+          at once (by default, one each from Anthropic, OpenAI, and Google), then synthesizes a
+          unified answer showing where models agree or differ. As of November 2026,
+          <a href="https://www.perplexity.ai/help-center/en/articles/13641704-what-is-model-council" target="_blank" rel="noopener">Perplexity&rsquo;s help center</a>
+          says you can swap which three models sit on the council, and it remains a Max and
+          Enterprise Max feature on web and iOS. Think of it as getting a second opinion&mdash;if
           all three models converge on the same answer, you can have higher confidence.
           Where they diverge, you know to dig deeper. A particularly useful approach for
           clinical questions where accuracy matters more than speed.
@@ -242,15 +251,21 @@
           on February 27, 2026&mdash;a system that orchestrates 19 AI models to plan, delegate,
           and execute complex multi-step workflows. Available on the $200/mo Max tier, Computer
           goes beyond search: it can reason about a task, break it into subtasks, and route each
-          to the most appropriate model. Deep Research now runs on Claude Opus 4.6. Perplexity
+          to the most appropriate model. Deep Research moved to Claude Opus 4.6 at the time. Perplexity
           also added Voice Mode for hands-free interaction and premium content integrations from
           Wiley (health data), Statista, and PitchBook.
         </p>
-        <p class="mb-0">
+        <p>
           <strong>Why it matters for clinicians:</strong> The premium content partnerships mean
           Perplexity Max users may get access to health data sources that were previously paywalled.
           The multi-model orchestration approach is worth watching&mdash;it's an early example of
           "agentic" AI that doesn't just answer questions but executes multi-step research workflows.
+        </p>
+        <p class="mb-0">
+          <strong>November 2026 follow-up:</strong> Perplexity now
+          <a href="https://www.perplexity.ai/help-center/en/articles/10354919-what-advanced-ai-models-are-included-in-my-subscription" target="_blank" rel="noopener">selects Deep Research models automatically</a>
+          rather than naming a fixed one, and says Computer requires an active subscription and
+          available credits.
         </p>
       </div>
 
@@ -411,8 +426,12 @@
       <p>
         Google hasn't ceded search to Perplexity. Instead, it's added AI Overviews—AI-generated
         summaries that appear at the top of search results for many queries. These use
-        Google's Gemini model to synthesize information from multiple sources, and they're
-        now rolling out to over a billion users globally.
+        Google's Gemini model to synthesize information from multiple sources. At I/O in May
+        2026, <a href="https://blog.google/innovation-and-ai/sundar-pichai-io-2026/" target="_blank" rel="noopener">Google said</a>
+        AI Overviews had over 2.5 billion monthly users and AI Mode over 1 billion (company
+        figures). In July, Google said it had
+        <a href="https://blog.google/company-news/inside-google/message-ceo/alphabet-earnings-q2-2026/" target="_blank" rel="noopener">brought AI Overviews and AI Mode together</a>
+        into one Search experience.
       </p>
 
       <p>
@@ -645,7 +664,7 @@
 
       <div class="callout callout-info">
         <div class="callout-title">February 2026 Update: Gemini 3.1 Pro Powers NotebookLM</div>
-        <p class="mb-0">
+        <p>
           Google upgraded
           <a href="https://9to5google.com/2026/02/20/notebooklm-slide-prompts/" target="_blank">NotebookLM</a>
           to run on Gemini 3.1 Pro with the full 1 million token context window available in chat.
@@ -656,6 +675,15 @@
           expanded context window means you can now load substantially more source material into
           a single notebook&mdash;multiple guidelines, a full textbook chapter, or an entire
           conference worth of abstracts&mdash;and chat across all of it at once.
+        </p>
+        <p class="mb-0">
+          <strong>Since then:</strong> on June 8, 2026, Google began
+          <a href="https://blog.google/innovation-and-ai/products/notebooklm/better-research-notebooklm/" target="_blank" rel="noopener">upgrading NotebookLM to Gemini 3.5 and Antigravity</a>,
+          giving each notebook a secure cloud computer that can write and run code on your
+          sources, starting with AI Ultra users and some Workspace business customers. When Google
+          <a href="https://blog.google/innovation-and-ai/products/gemini-notebook/notebooklm-gemini-notebook/" target="_blank" rel="noopener">renamed the product Gemini Notebook on July 16</a>,
+          it said the upgrade would reach AI Pro users on the web in the following weeks.
+          Features still vary by plan; check yours.
         </p>
       </div>
 
@@ -813,7 +841,7 @@
       <div class="scenario-list">
         <div class="scenario">
           <strong>Scenario:</strong> Patient asks about a supplement they saw on TikTok<br>
-          <strong>Best tool:</strong> Perplexity Quick Search<br>
+          <strong>Best tool:</strong> Perplexity Search<br>
           <strong>Why:</strong> Fast synthesis with citations you can share. Ask: "What is the
           evidence for [supplement] for [claimed benefit]? Include any safety concerns or
           drug interactions."
@@ -840,7 +868,7 @@
         </div>
         <div class="scenario">
           <strong>Scenario:</strong> Quick refresher on a condition before seeing a patient<br>
-          <strong>Best tool:</strong> Perplexity Pro Search or <a href="clinical-decision-support.html">CDS tools</a><br>
+          <strong>Best tool:</strong> Perplexity Search or <a href="clinical-decision-support.html">CDS tools</a><br>
           <strong>Why:</strong> Authoritative summary with citations in under a minute.
           For established conditions, UpToDate or DynaMed may still be faster and more reliable.
         </div>
@@ -1077,7 +1105,7 @@
         <div class="concept-card">
           <div class="concept-icon"><i data-lucide="stethoscope"></i></div>
           <div class="concept-name">OpenEvidence</div>
-          <div class="concept-desc"><a href="https://www.openevidence.com/" target="_blank">openevidence.com</a> — Clinician answer engine, free for verified US HCPs; reports 20M+ clinical consults/month (mid-2026)</div>
+          <div class="concept-desc"><a href="https://www.openevidence.com/" target="_blank">openevidence.com</a> — Clinician answer engine, free for verified US HCPs; company-reported 18M clinical consultations in December 2025</div>
         </div>
         <div class="concept-card">
           <div class="concept-icon"><i data-lucide="search"></i></div>
@@ -1160,7 +1188,7 @@
   <footer class="footer">
     <div class="footer-inner">
       <div><strong>AI 101</strong> · A Self-Paced Guide to AI in Medicine</div>
-      <div><a href="updates.html">v1.18.1 · 2026</a></div>
+      <div><a href="updates.html">v1.19 · 2026</a></div>
     </div>
   </footer>
 

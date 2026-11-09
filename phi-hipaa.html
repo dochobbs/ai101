@@ -349,9 +349,9 @@
         <li><strong>Anthropic API:</strong> BAA available after the organization&rsquo;s Primary Owner signs and Anthropic enables it. Zero data retention is not a blanket requirement; some covered models instead require 30-day retention. The Messages API is covered, and features such as prompt caching and web search only under BAA versions accepted after April 1, 2026. Not covered: Batch API, Files API, Skills API, Code Execution, Web Fetch, the Claude Console, and data sent to third parties through external MCP servers. Check your BAA version and the implementation guide before sending PHI. (<a href="https://support.claude.com/en/articles/8114513-business-associate-agreements-baa-for-commercial-customers" target="_blank" rel="noopener">Anthropic</a>)</li>
         <li><strong>Claude for Healthcare (launched Jan 11, 2026):</strong> Anthropic&rsquo;s healthcare offering for providers, payers, and health tech companies&mdash;connectors for the CMS Coverage Database, ICD-10, the NPI Registry, and PubMed, plus FHIR and prior-authorization Agent Skills. The name describes a set of tools; the HIPAA coverage comes from running them on a HIPAA-ready Enterprise plan with a BAA, not from the product name. (<a href="https://www.anthropic.com/news/healthcare-life-sciences" target="_blank" rel="noopener">Anthropic</a>)</li>
         <li><strong>Claude Enterprise (HIPAA-ready plan):</strong> BAA available with admin HIPAA opt-in&mdash;Enterprise plans only, click-to-accept, and only the organization&rsquo;s Primary Owner can enable it. Enabling it is a one-way change. BAAs signed <em>before</em> Dec 2, 2025 cover the API only; BAAs signed after that date can cover both API and Enterprise under a single agreement. Note that enabling HIPAA does not automatically bring every feature under the BAA&mdash;Claude Code is covered only with Zero Data Retention on a qualified account, and Cowork and Claude Code local modes can be covered after the Primary Owner applies a separate HIPAA configuration available through an account team. Before that configuration, Cowork is not covered, and Code requires qualifying ZDR coverage. The configured offering excludes the listed cloud/Remote Control features. Check the current implementation guide rather than assuming all Enterprise features are covered. (<a href="https://support.claude.com/en/articles/13296973-hipaa-ready-enterprise-plans" target="_blank" rel="noopener">Anthropic Help Center</a>)</li>
-        <li><strong>Claude personal health connectors (consumer Pro/Max):</strong> No BAA. US Pro and Max subscribers can connect lab results and health records through HealthEx, Function, Apple Health, and Android Health Connect. Anthropic says it does not use this health data to train models, and access is opt-in and revocable&mdash;but this is the consumer side of the product, explicitly distinct from the HIPAA-ready offering for providers and payers. The same rule as ChatGPT Health applies: fine for a patient reviewing their own data, not a route for your patients&rsquo; PHI.</li>
+        <li><strong>Claude personal health connectors (consumer Pro/Max):</strong> No BAA. US Pro and Max subscribers can connect lab results and health records through HealthEx, Function, Apple Health, and Android Health Connect. Since November 2, 2026 they can also add athenahealth&rsquo;s athenaPatient connector (beta), which signs in with the patient&rsquo;s athenahealth portal credentials and can expose labs, medications, vitals, diagnostic reports, encounter notes, and care plans. If your practice runs on athenaOne, your patients can now bring their chart, including your notes, into Claude. (<a href="https://www.athenahealth.com/about/press-releases/patients-connect-health-records" target="_blank" rel="noopener">athenahealth</a>; <a href="https://claude.com/marketplace/connectors/athenahealth" target="_blank" rel="noopener">connector listing</a>) Anthropic says it does not use this health data to train models, and access is opt-in and revocable&mdash;but this is the consumer side of the product, explicitly distinct from the HIPAA-ready offering for providers and payers. The same rule as ChatGPT Health applies: fine for a patient reviewing their own data, not a route for your patients&rsquo; PHI.</li>
         <li><strong>Claude Code (CLI):</strong> Coverage depends on the applicable Enterprise local-mode HIPAA configuration or qualifying ZDR arrangement. Cloud sessions and Remote Control are separate features; confirm coverage before use. <a href="https://support.claude.com/en/articles/13296973-hipaa-ready-enterprise-plans" target="_blank" rel="noopener">[Current Enterprise feature scope]</a></li>
-        <li><strong>Claude (consumer Free/Pro/Max/Team):</strong> No BAA available. Cannot be used with PHI.</li>
+        <li><strong>Claude (Free, Pro, Max, Ultra, and Team plans):</strong> No BAA available; Anthropic states these plans can&rsquo;t enable HIPAA. Cannot be used with PHI. (<a href="https://support.claude.com/en/articles/13296973-hipaa-ready-enterprise-plans" target="_blank" rel="noopener">Anthropic Help Center</a>)</li>
         <li><strong>Azure OpenAI:</strong> BAA included in Microsoft Product Terms by default</li>
         <li><strong>Google Vertex AI:</strong> BAA available for healthcare customers</li>
         <li><strong>Google Workspace and Gemini Notebook:</strong> Workspace requires an accepted BAA
@@ -751,9 +751,20 @@
           Health, supported US hospital medical records (brokered by b.well), One Medical, and
           Function Health. Pilot data showed more than 70% of health-related conversations
           happening outside the dedicated Health space, so OpenAI dropped the requirement to
-          start there&mdash;health context can now surface in any conversation, permission-gated.
+          start there&mdash;health context can now surface in any conversation.
           Health in the sidebar remains the place to connect and manage records, so you can ask a
           patient to open it and show you what is connected.
+        </p>
+        <p>
+          <strong>Update (September 14, 2026):</strong> the permission default changed. New Health
+          connections now follow the account&rsquo;s global plugin setting, which defaults to
+          &ldquo;Allow low-risk actions.&rdquo; In OpenAI&rsquo;s words, ChatGPT &ldquo;can use it
+          when relevant without asking for permission each time,&rdquo; and only sensitive
+          actions, such as sending health-based content to another person through a connected
+          app, still prompt for confirmation. So assume a patient&rsquo;s connected records may be
+          in play in any chat unless they changed Settings &gt; Plugins &gt; Health.
+          (<a href="https://help.openai.com/en/articles/6825453-chatgpt-release-notes" target="_blank" rel="noopener">OpenAI release notes</a>;
+          <a href="https://help.openai.com/en/articles/20001036-health-in-chatgpt" target="_blank" rel="noopener">Health in ChatGPT</a>)
         </p>
         <p>
           <strong>Get the privacy risk right.</strong> The obvious worry&mdash;&ldquo;OpenAI is
@@ -1118,7 +1129,7 @@
   <footer class="footer">
     <div class="footer-inner">
       <div><strong>AI 101</strong> · A Self-Paced Guide to AI in Medicine</div>
-      <div><a href="updates.html">v1.18.1 · 2026</a></div>
+      <div><a href="updates.html">v1.19 · 2026</a></div>
     </div>
   </footer>
 

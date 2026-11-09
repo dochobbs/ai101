@@ -98,38 +98,35 @@
       </div>
 
       <div class="callout callout-info">
-        <div class="callout-title">What changed in May 2026</div>
+        <div class="callout-title">Where things stand (checked November 2026)</div>
         <p>
-          Three updates worth knowing about before you read the rest of this module
-          (full details in the <a href="#may-2026-update">May 2026 update section</a>
-          near the bottom):
+          The coding agents in this module change month to month. As checked November 8, 2026:
         </p>
         <ul style="margin-bottom: 0.75rem;">
           <li>
-            <strong>The Claude Code Pro saga</strong> (Apr 22&ndash;23) &mdash;
-            Anthropic briefly pulled Claude Code from the $20 Pro plan, then reversed
-            within 24 hours. If you&rsquo;re a heavy Claude Code user, the Max plan is
-            now the safer bet.
+            <strong>Claude Code</strong> runs in the terminal, VS Code, JetBrains, a desktop
+            app, and the browser at <a href="https://claude.ai/code" target="_blank" rel="noopener">claude.ai/code</a>
+            (including from the Claude mobile app).
+            <a href="https://code.claude.com/docs/en/routines" target="_blank" rel="noopener">Cloud scheduled tasks</a>
+            (formerly called routines) run saved jobs on a schedule while your laptop is closed;
+            they are still labeled a research preview.
           </li>
           <li>
-            <strong>Codex Mobile Preview</strong> (May 2026) &mdash; OpenAI&rsquo;s
-            Codex agent now runs inside the ChatGPT mobile app, letting you steer
-            long-running coding tasks from your phone.
+            <strong>OpenAI Codex</strong> now lives inside the ChatGPT desktop app and is also
+            available as a CLI, an IDE extension, and on the web. With
+            <a href="https://help.openai.com/en/articles/20001275-chatgpt-work-and-codex" target="_blank" rel="noopener">Codex Cloud</a>,
+            you can start and continue coding tasks from desktop, web, or mobile.
           </li>
           <li>
-            <strong>Claude Code on the web</strong> &mdash; a no-install agentic
-            coding workspace at <a href="https://claude.ai/code" target="_blank" rel="noopener">claude.ai/code</a>,
-            paired with new <strong>Claude Code routines</strong> (scheduled cloud
-            agents for weekly audits, dependency upgrades, etc.).
+            <strong>Cursor</strong> is now owned by SpaceX; the
+            <a href="https://cursor.com/blog/joining-spacex" target="_blank" rel="noopener">acquisition closed August 14, 2026</a>.
           </li>
         </ul>
         <p class="mb-0">
-          The bigger story: by May 2026 the agentic-coding ecosystem has converged
-          on three workhorses&mdash;<strong>Cursor, Claude Code, and OpenAI
-          Codex</strong>&mdash;all available across desktop, web, and mobile. The
-          question for most clinicians experimenting here has shifted from
-          &ldquo;should I use it?&rdquo; to &ldquo;which of the three for this
-          task?&rdquo;
+          The question for most clinicians experimenting here has shifted from
+          &ldquo;should I use it?&rdquo; to &ldquo;which tool for this task?&rdquo;
+          The <a href="#may-2026-update">May 2026 update section</a> near the bottom keeps the
+          spring history, including the brief April removal of Claude Code from the Pro plan.
         </p>
       </div>
 
@@ -395,14 +392,14 @@
         </p>
         <p class="mb-0">
           <strong>Since this was written:</strong> GPT-5.3-Codex and Opus 4.6 have
-          both been superseded&mdash;<strong>GPT-5.5 Instant</strong> became the
-          ChatGPT default on May 5, 2026, and <strong>Claude Opus 4.7</strong>
-          shipped April 16 with +13% coding gains, higher-resolution vision,
-          <code>/ultrareview</code> multi-agent review, and a new
-          <code>xhigh</code> reasoning level built specifically for complex
-          vibe-coding work. Cursor crossed <strong>$2B ARR</strong> in March and
-          entered talks at a <strong>$50B valuation</strong> in April (a16z,
-          Thrive, Nvidia).
+          both been superseded several times over. New coding models now ship every
+          few weeks, so check the tool itself rather than trusting a model name on a
+          web page: in Claude Code, run <code>/model</code> (as of November 2026 its
+          <a href="https://code.claude.com/docs/en/model-config" target="_blank" rel="noopener">default Opus alias</a>
+          resolves to Opus 5.5 on Anthropic&rsquo;s API). Cursor was
+          <a href="https://cursor.com/blog/joining-spacex" target="_blank" rel="noopener">acquired by SpaceX</a>
+          in August 2026 at an implied $60 billion value, per
+          <a href="https://www.sec.gov/Archives/edgar/data/1181412/000162828026056945/spcx-20260814.htm" target="_blank" rel="noopener">SpaceX&rsquo;s SEC filing</a>.
         </p>
       </div>
 
@@ -507,10 +504,13 @@
       <h3>Pricing Reality</h3>
 
       <p>
-        The free Starter plan lets you explore with limited AI usage (a trial of the
-        Agent) and public projects only. For serious building, you'll want Replit Core
-        at $20-25/month, which includes $25 in monthly credits for AI usage, private
-        projects, and deployment capabilities.
+        As checked November 2026, the free
+        <a href="https://docs.replit.com/billing/plans/starter-plan" target="_blank" rel="noopener">Starter plan</a>
+        gives you daily Agent credits up to a monthly cap, the lighter &ldquo;Lite build&rdquo;
+        mode only, and one free published app whose link goes down after 30 days. For serious
+        building, you'll want <a href="https://replit.com/pricing" target="_blank" rel="noopener">Replit Core</a>
+        at $20/month ($18/month billed annually), which includes $20 of monthly usage credit,
+        full autonomous Agent builds, more published apps, and third-party connectors.
       </p>
 
       <p>
@@ -599,7 +599,7 @@
           <h4><i data-lucide="user-plus"></i> Step 1: Create Account</h4>
           <p>
             Go to <a href="https://lovable.dev" target="_blank">lovable.dev</a> and
-            create an account. The free tier gives you 5 credits per day—enough to
+            create an account. The free tier gives you 5 credits per day (up to 30 a month)—enough to
             experiment but not enough for sustained building.
           </p>
         </div>
@@ -656,15 +656,20 @@
       <h3>Pricing Reality</h3>
 
       <p>
-        The free tier gives you 5 credits per day (resetting at midnight UTC), public
-        projects only, and a Lovable badge on your apps. This is sufficient for
-        exploration but not for building anything serious.
+        As checked November 2026, the
+        <a href="https://docs.lovable.dev/introduction/subscription-plans" target="_blank" rel="noopener">free tier</a>
+        gives you 5 build credits per day (resetting at midnight UTC, capped at 30 a month)
+        and a Lovable badge on your apps. This is sufficient for exploration but not for
+        building anything serious.
       </p>
 
       <p>
-        The Pro plan at $25/month gives you 100 monthly credits (plus extra daily
-        credits), private projects, custom domains, and the ability to remove Lovable
-        branding. Credits roll over if unused.
+        The Pro plan starts at $25/month for 100 monthly credits (plus 5 daily credits),
+        code editing and download, custom domains, and the ability to remove Lovable
+        branding. Unused monthly credits
+        <a href="https://lovable.dev/pricing" target="_blank" rel="noopener">expire two months after they're issued</a>;
+        daily credits don't carry over. The same credits also pay for hosting your app once
+        it's live, so a busy app leaves less for building.
       </p>
 
       <h3>When Lovable Works Well</h3>
@@ -734,14 +739,18 @@
         your provider, account, settings, and Claude Code version. Run <code>/model</code> to
         inspect or change it; do not assume the model from your subscription name.
         <a href="https://code.claude.com/docs/en/model-config" target="_blank" rel="noopener">[Model configuration]</a>
-        Claude Code runs across three
-        environments: the web at <a href="https://claude.ai/code" target="_blank" rel="noopener">claude.ai/code</a>, the
-        <a href="https://claude.com/download" target="_blank">Claude Desktop app</a>,
-        and a powerful <a href="https://github.com/anthropics/claude-code" target="_blank">command-line interface (CLI)</a>
-        for your terminal. Current Sonnet and Opus models offer a one-million-token context
+        Claude Code runs in
+        <a href="https://code.claude.com/docs/en/platforms" target="_blank" rel="noopener">several places</a>:
+        a <a href="https://github.com/anthropics/claude-code" target="_blank">command-line interface (CLI)</a>
+        for your terminal, extensions for VS Code and JetBrains editors, the
+        <a href="https://claude.com/download" target="_blank">Claude Desktop app</a>, the web at
+        <a href="https://claude.ai/code" target="_blank" rel="noopener">claude.ai/code</a> (also reachable
+        from the Claude mobile app), and Slack. Current Sonnet and Opus models offer a one-million-token context
         window, which can accommodate substantial code context but does not guarantee that every file is read or understood, plus multi-agent
-        orchestration&mdash;from "agent teams" (4.6) to <strong>Dynamic Workflows</strong>
-        (May 2026), which can coordinate up to 1,000 Claude instances on one project.
+        orchestration&mdash;from "agent teams" (4.6) to
+        <a href="https://code.claude.com/docs/en/workflows" target="_blank" rel="noopener"><strong>dynamic workflows</strong></a>
+        (May 2026, paid plans), where a script can run up to 1,000 subagents in total per run,
+        16 at a time by default.
       </p>
 
       <p>
@@ -750,7 +759,7 @@
         entirely through conversation, or peek under the hood when you're curious.
       </p>
 
-      <h3>Three Ways to Use Claude Code</h3>
+      <h3>Three Common Ways to Use Claude Code</h3>
 
       <div class="workflow-phases">
         <div class="workflow-phase">
@@ -1177,7 +1186,7 @@
       <!-- Part 9 -->
       <h2>Part 9: When to Vibe Code (And When Not To)</h2>
 
-      <p>Based on the landscape in early 2026, here are reasonable guidelines:</p>
+      <p>Based on the landscape as of late 2026, here are reasonable guidelines:</p>
 
       <h3>Vibe Coding Is Well-Suited For:</h3>
 
@@ -1599,7 +1608,7 @@
       </p>
 
       <ul>
-        <li><strong>Twitter/X:</strong> Follow @karpathy, @swyx, @simonw, and tool accounts like @Replit and @lovaboreau</li>
+        <li><strong>Twitter/X:</strong> Follow @karpathy, @swyx, @simonw, and the official accounts of the tools you use (Replit, Lovable, and others)</li>
         <li><strong>Hacker News:</strong> Regular discussions of AI coding tools and their implications</li>
         <li><strong>Dev.to:</strong> Community posts about vibe coding experiences, both positive and negative</li>
         <li><strong>Product Hunt:</strong> Where new tools launch first</li>
@@ -1844,6 +1853,15 @@
         from the phone without sitting back down at the desk.
       </p>
 
+      <p>
+        <em>November 2026 follow-up:</em> Codex is no longer described as a mobile preview.
+        Coding tasks can now run in <a href="https://help.openai.com/en/articles/20001275-chatgpt-work-and-codex" target="_blank" rel="noopener">Codex Cloud</a>
+        on OpenAI-managed computers, so they keep going while your own computer sleeps, and you
+        can start or continue them from desktop, web, or the ChatGPT mobile app. Tasks running on
+        your own computer can still be reached from the phone through the app&rsquo;s Remote tab,
+        but those depend on that computer staying on.
+      </p>
+
       <h3>Claude Code on the Web</h3>
 
       <p>
@@ -1866,15 +1884,25 @@
         only think about it during active coding sessions. And with
         <strong><a href="https://claude.com/blog/introducing-dynamic-workflows-in-claude-code" target="_blank" rel="noopener">Dynamic Workflows</a></strong>
         (May 28, research preview), a single task can orchestrate up to 1,000 subagents from
-        a small JavaScript script&mdash;routines have grown into a full multi-agent platform.
+        a small JavaScript script. Workflows are a separate feature from routines: routines
+        schedule a job, workflows fan one job out across many agents.
+        <em>(November 2026: routines are now called
+        <a href="https://code.claude.com/docs/en/routines" target="_blank" rel="noopener">cloud scheduled tasks</a>,
+        still in research preview. Dynamic workflows are available on paid plans, capped at
+        1,000 agents per run and 16 running at once by default, per the
+        <a href="https://code.claude.com/docs/en/workflows" target="_blank" rel="noopener">workflow docs</a>.)</em>
       </p>
 
       <p>
         On the Google side, <strong>Antigravity CLI</strong> replaced Gemini CLI as Google&rsquo;s
         terminal coding agent
         (<a href="https://developers.googleblog.com/en/an-important-update-transitioning-gemini-cli-to-antigravity-cli/" target="_blank" rel="noopener">announced May 19</a>;
-        Gemini CLI sunsets June 18 for free users), defaulting to Gemini 3.5 Flash. That rounds
-        out the vibe-coding landscape: every major lab now ships a terminal-native agent.
+        Gemini CLI stopped serving individual users, including free users and Google AI Pro and Ultra
+        subscribers, on June 18, 2026; enterprise licenses were not affected). You pick its model with
+        <code>/model</code>; as of November 2026 Google&rsquo;s
+        <a href="https://antigravity.google/docs/models/" target="_blank" rel="noopener">model list</a>
+        includes Gemini models plus some Claude and open-weight options, depending on your plan. That
+        rounds out the vibe-coding landscape: every major lab now ships a terminal-native agent.
       </p>
 
       <h3>What This Means</h3>
@@ -1883,7 +1911,7 @@
         The three tools are converging on the same shape: a model, an agent loop, a way to scope
         the work to a project, and an interface that works wherever you are. The 2026 YC class is
         the obvious tell on adoption&mdash;the &ldquo;95% AI-generated codebase&rdquo; figure from
-        Winter 2025 (now 15 months stale) has been overtaken by a quieter pattern: across the
+        Winter 2025 (reported March 2025) has been overtaken by a quieter pattern: across the
         industry, vibe-coding workflows are now the default for new projects, and the question
         has shifted from &ldquo;should I use it?&rdquo; to &ldquo;which of the three should I pick
         for this task?&rdquo;
@@ -1926,7 +1954,7 @@
   <footer class="footer">
     <div class="footer-inner">
       <div><strong>AI 101</strong> · A Self-Paced Guide to AI in Medicine</div>
-      <div><a href="updates.html">v1.18.1 · 2026</a></div>
+      <div><a href="updates.html">v1.19 · 2026</a></div>
     </div>
   </footer>
 

@@ -110,8 +110,9 @@
 
       <p>
         The names describe different approaches. <a href="https://about.fb.com/news/2026/09/introducing-muse-personal-ai-agent/" target="_blank" rel="noopener noreferrer"><strong>Muse</strong></a>
-        is Meta's personal agent, designed to use a dedicated cloud computer and connected
-        apps to work on a person's behalf. <a href="https://instinct.com/" target="_blank" rel="noopener noreferrer"><strong>Instinct</strong></a>
+        is Meta's personal agent, which <a href="https://apnews.com/article/meta-muse-ai-agent-3a4572eb4cf4e95d8a0dfdad6e6ca065" target="_blank" rel="noopener noreferrer">launched in the US on September 8, 2026</a>.
+        It runs on a dedicated cloud computer and can use connected apps, including email,
+        calendars, and payments, to work on a person's behalf. <a href="https://instinct.com/" target="_blank" rel="noopener noreferrer"><strong>Instinct</strong></a>
         describes an assistant that can use context from email, messages, a screen, audio,
         and location. <a href="https://hermes-agent.nousresearch.com/docs/user-guide/features/overview" target="_blank" rel="noopener noreferrer"><strong>Hermes</strong></a>
         is an open-source agent with memory, skills, browser tools, and scheduled tasks.
@@ -208,6 +209,24 @@
         </p>
       </div>
 
+      <div class="callout callout-info">
+        <div class="callout-title">November 2026 Status</div>
+        <p class="mb-0">
+          The March box above is kept as history. As checked November 8, 2026: the
+          <a href="https://github.com/openclaw/openclaw" target="_blank" rel="noopener noreferrer">OpenClaw repository</a>
+          shows about 394,000 GitHub stars and still ships new releases every few days. On July 8,
+          2026, the project moved under the
+          <a href="https://openclaw.ai/blog/introducing-openclaw-foundation" target="_blank" rel="noopener noreferrer">OpenClaw Foundation</a>,
+          a US nonprofit; the announcement says Steinberger still makes the technical calls. The project has
+          published <a href="https://github.com/openclaw/openclaw/security/advisories" target="_blank" rel="noopener noreferrer">more than 700 security advisories</a>,
+          about 260 of them rated high or critical. ClawHub now runs each skill release through
+          <a href="https://docs.openclaw.ai/clawhub/security-audits" target="_blank" rel="noopener noreferrer">ClawScan</a>,
+          an automated audit that combines several scanners. The project itself says these
+          audits are &ldquo;not a guarantee that a release is risk-free.&rdquo; A clean scan
+          does not make OpenClaw appropriate for patient data.
+        </p>
+      </div>
+
       <!-- The OpenClaw Story -->
       <h2>The OpenClaw Story</h2>
 
@@ -265,8 +284,8 @@
       <p>
         OpenClaw isn't a coding tool in the way that
         <a href="vibe-coding.html">Replit or Claude Code</a> are coding tools.
-        It's a <strong>full personal automation platform</strong>. At over
-        <strong>430,000 lines of code</strong>, it does everything:
+        It's a <strong>full personal automation platform</strong>. Already over
+        <strong>430,000 lines of code</strong> by March 2026, it tries to do everything:
       </p>
 
       <ul>
@@ -279,7 +298,10 @@
 
       <p>
         It's model-agnostic&mdash;it can run on Anthropic's Claude, OpenAI's models, or
-        open-source alternatives like Kimi 2.5. This flexibility means OpenClaw inherits
+        open-weight models such as the Kimi, DeepSeek, GLM, and Qwen families, either through
+        hosted APIs or on a local server like Ollama
+        (<a href="https://docs.openclaw.ai/concepts/model-providers/official-provider-plugins" target="_blank" rel="noopener noreferrer">provider list</a>).
+        This flexibility means OpenClaw inherits
         whatever safety guardrails (or lack thereof) the underlying model provides.
       </p>
 
@@ -782,6 +804,15 @@
         and used in a particular installation. On the conventional-vulnerability side, the project
         has also had reported security disclosures, including a symlink-following flaw in its file
         tools (CVE-2026-7397). Review the current version and advisories before deployment.
+      </p>
+
+      <p>
+        <em>As of November 2026:</em> Hermes is moving fast, with releases days apart. Version
+        <a href="https://github.com/NousResearch/hermes-agent/releases/tag/v0.23.0" target="_blank" rel="noopener noreferrer">0.23.0</a>
+        (November 5, 2026) has a desktop app, can serve that workspace to a browser tab (off by
+        default), and adds a <code>hermes curator lock</code> command that stops the agent from
+        rewriting a skill you curated by hand. A lock like that limits one kind of memory drift;
+        it does not make a learning agent appropriate for patient data.
       </p>
 
       <div class="callout callout-warning">
@@ -1496,7 +1527,7 @@
   <footer class="footer">
     <div class="footer-inner">
       <div><strong>AI 101</strong> · A Self-Paced Guide to AI in Medicine</div>
-      <div><a href="updates.html">v1.18.1 · 2026</a></div>
+      <div><a href="updates.html">v1.19 · 2026</a></div>
     </div>
   </footer>
 

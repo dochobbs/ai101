@@ -439,16 +439,20 @@
         2025, Google announced Gemini 3, positioned as "our most intelligent model" with significant
         improvements in reasoning, multimodal understanding, and agent capabilities. In February
         2026, Gemini 3.1 Pro doubled the reasoning performance of its predecessor and dominated
-        13 of 16 major AI benchmarks. By November 1, 2026, Google&rsquo;s public API catalog
-        lists <strong>Gemini 3.8 Flash</strong>, <strong>Gemini 3.8 Live</strong>, and
-        <strong>Gemini 3.1 Pro (preview)</strong> among its models. Google&rsquo;s public model
-        page also advertises <strong>Gemini 4 Argon</strong> for AI Pro and Ultra subscribers;
-        its September launch had a restricted rollout. Do not use that launch-stage restriction
-        as a statement of current access, or assume an API model is the one running in your app.
-        Check the model picker and your administrator&rsquo;s controls. We found no Gemini 3.5 Pro
-        entry in the current API catalog; speculation about its release is not useful buying advice.
-        <a href="https://ai.google.dev/gemini-api/docs/models" target="_blank" rel="noopener">[API catalog]</a>
-        <a href="https://deepmind.google/models/gemini/" target="_blank" rel="noopener">[Google model page]</a>
+        13 of 16 major AI benchmarks. On October 13, 2026, after a restricted initial
+        launch, Google rolled out <strong>Gemini 4 Argon</strong> broadly: in the API, and in
+        the Gemini app for AI Pro and Ultra subscribers. As of November 8, 2026, Google&rsquo;s API
+        catalog lists Argon as its flagship reasoning model, alongside <strong>Gemini 3.8
+        Flash</strong> and <strong>Gemini 3.8 Live</strong>; Gemini 2.5 Pro and 2.5 Flash are
+        deprecated, and requests to them are rerouted to newer models from December 1, 2026.
+        On October 28 Google announced <strong>Gemini 4 Carbon</strong>, which it calls its
+        strongest model, but released it only to a small group of cybersecurity defenders while
+        it tests safeguards; it is not yet in the API catalog or the Gemini app. Do not assume an
+        API model is the one running in your app. Check the model picker and your
+        administrator&rsquo;s controls.
+        <a href="https://aistudio.google.com/docs/models" target="_blank" rel="noopener">[API catalog]</a>
+        <a href="https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-argon/" target="_blank" rel="noopener">[Google: Argon]</a>
+        <a href="https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-carbon/" target="_blank" rel="noopener">[Google: Carbon]</a>
       </p>
 
       <h3>The Current Offering</h3>
@@ -467,16 +471,16 @@
         <div class="tier-card">
           <h4>Google AI Pro</h4>
           <p class="tier-price">$19.99/month</p>
-          <p>Higher limits, Deep Research, Workspace features, and 5 TB storage in the US plan. Google advertises Gemini 4 Argon access for Pro; confirm the rollout in your account.</p>
+          <p>Gemini 4 Argon, higher limits, Deep Research, Workspace features, and 5 TB storage in the US plan.</p>
         </div>
         <div class="tier-card">
           <h4>Google AI Ultra</h4>
-          <p class="tier-price">See current plans</p>
-          <p>Higher access limits and advanced features across Google&rsquo;s AI products, including advertised Gemini 4 Argon access. Check the current plan and account rollout before purchasing.</p>
+          <p class="tier-price">From $99.99/month (US)</p>
+          <p>Highest Gemini 4 Argon limits and advanced features across Google&rsquo;s AI products. Billed monthly; a higher-usage tier costs more.</p>
         </div>
       </div>
 
-      <p>US plan details checked November 1. <a href="https://one.google.com/intl/en_us/about/google-ai-plans/" target="_blank" rel="noopener">Google&rsquo;s current plans</a> list access, storage, country restrictions, and pricing at purchase.</p>
+      <p>US plan details checked November 8, 2026. <a href="https://one.google.com/intl/en_us/about/google-ai-plans/" target="_blank" rel="noopener">Google&rsquo;s current plans</a> list access, storage, country restrictions, and pricing at purchase.</p>
 
       <h3>What You Get</h3>
       <p>
@@ -533,7 +537,7 @@
               <td><strong>Premium Tier</strong></td>
               <td>From $100/month (Pro)</td>
               <td>$200/month (Ultra)</td>
-              <td>Ultra: check current country-specific price</td>
+              <td>From $99.99/month (Ultra, US)</td>
             </tr>
             <tr>
               <td><strong>Context Window</strong></td>
@@ -686,12 +690,15 @@
         K3</strong> release knocked roughly a percent off the Nasdaq in a day and had
         commentators declaring a second DeepSeek moment.
         <a href="https://fortune.com/2026/07/17/china-moonshot-kimi-k3-markets-china-ai/" target="_blank" rel="noopener">[Fortune]</a>
-        The convergence is real: on Artificial Analysis&rsquo;s
-        <a href="https://artificialanalysis.ai/models" target="_blank" rel="noopener">independent index</a>,
-        K3 scores 60 against Claude Opus 5&rsquo;s 63, Fable 5&rsquo;s 62, and GPT-5.6
-        Sol&rsquo;s 61&mdash;the closest an open-weight model has ever sat to the closed
-        frontier&mdash;and in nearly every month of 2026 the best open-weight model in the
-        world has been Chinese.
+        In July the convergence looked real: on that month&rsquo;s version of Artificial
+        Analysis&rsquo;s independent index, K3 scored 60 against Claude Opus 5&rsquo;s 63,
+        Fable 5&rsquo;s 62, and GPT-5.6 Sol&rsquo;s 61&mdash;the closest an open-weight model
+        had sat to the closed frontier. The gap has since reopened. On the rebuilt v5 index
+        (its scores are not comparable with the July ones), the top closed models score 57&ndash;60
+        as of November 8, 2026, and the best open-weight model, Moonshot&rsquo;s
+        <strong>Kimi K3.1 Pro</strong>, scores 46.
+        <a href="https://artificialanalysis.ai/models" target="_blank" rel="noopener">[Artificial Analysis]</a>
+        Through most of 2026 the best open-weight model in the world has been Chinese.
         <a href="https://huggingface.co/blog/state-of-open-models-summer-2026" target="_blank" rel="noopener">[Hugging Face]</a>
         &ldquo;China has taken the lead&rdquo; overstates it for the closed frontier; for
         open weights it is simply true. Look at who is actually paying, though, and the
@@ -724,9 +731,12 @@
         Qwen3.8-27B (plain Apache 2.0) or Meta&rsquo;s Muse Glimmer (Apache 2.0, built for
         24-32GB machines). DeepSeek V4-Flash, at 284 billion parameters, is server-scale&mdash;see
         <a href="local-models.html">Running AI Models Locally</a>.</li>
-        <li><strong>Open no longer reliably means MIT.</strong> Kimi K3 and Qwen&rsquo;s
-        flagship carry bespoke licenses with revenue-triggered terms; GLM-5.2 is genuinely
-        MIT. Read the license that shipped.</li>
+        <li><strong>Open no longer reliably means MIT.</strong> Kimi K3, Kimi K3.1 Pro, and
+        Qwen&rsquo;s flagship carry bespoke licenses with revenue-triggered terms. Zhipu&rsquo;s
+        GLM-5.2 is genuinely MIT, but its successor, GLM-5.3 (August 2026), shipped under a
+        custom license with a revenue-triggered clause. Read the license that shipped.
+        <a href="https://huggingface.co/zai-org/GLM-5.3/blob/main/LICENSE" target="_blank" rel="noopener">[GLM-5.3 license]</a>
+        <a href="https://huggingface.co/moonshotai/Kimi-K3.1-Pro/blob/main/LICENSE" target="_blank" rel="noopener">[Kimi K3.1 Pro license]</a></li>
         <li><strong>The medical evidence is China-centric and a generation old.</strong>
         DeepSeek-R1 scored 96% on the Chinese National Medical Licensing Exam&mdash;in
         Chinese, against GPT-4o&rsquo;s 75%&mdash;a language-and-training asymmetry that
@@ -907,9 +917,11 @@
 
       <p>
         <strong>Premium tiers (from about $100/month) are for power users.</strong> ChatGPT Pro
-        starts at $100 and Claude Max is $100, with higher tiers at $200 and up
+        starts at $100, Claude Max is $100, and Google AI Ultra starts at $99.99, with higher tiers
+        at $200 and up
         (<a href="https://learn.chatgpt.com/docs/pricing" target="_blank" rel="noopener">OpenAI</a>,
-        <a href="https://claude.com/pricing" target="_blank" rel="noopener">Anthropic</a>). If you're running into
+        <a href="https://claude.com/pricing" target="_blank" rel="noopener">Anthropic</a>,
+        <a href="https://one.google.com/intl/en_us/about/google-ai-plans/" target="_blank" rel="noopener">Google</a>). If you're running into
         limits on the $20 tier, pushing complex coding projects, or need maximum model capabilities
         for professional work, the premium tiers exist. But most users won't need them.
       </p>
@@ -1588,7 +1600,7 @@
   <footer class="footer">
     <div class="footer-inner">
       <div><strong>AI 101</strong> · A Self-Paced Guide to AI in Medicine</div>
-      <div><a href="updates.html">v1.18.1 · 2026</a></div>
+      <div><a href="updates.html">v1.19 · 2026</a></div>
     </div>
   </footer>
 

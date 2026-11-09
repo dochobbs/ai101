@@ -130,8 +130,10 @@
         </p>
         <p>
           For finished materials (flyers, social posts, handouts), pair Gemini with
-          <strong><a href="https://canva.com" target="_blank">Canva</a></strong>—Canva now integrates
-          Nano Banana Pro directly, so you can generate and design in one place.
+          <strong><a href="https://canva.com" target="_blank">Canva</a></strong>. Canva&rsquo;s
+          <a href="https://www.canva.com/newsroom/news/google-gemini/" target="_blank" rel="noopener">connected app in Gemini</a>
+          can turn a Gemini-generated image into an editable, layered Canva design, so you can fix
+          a wrong label instead of regenerating the whole image.
         </p>
         <p>
           <strong>Video changed in May 2026.</strong> Google announced <strong>Gemini Omni</strong>
@@ -271,7 +273,7 @@
       <div class="tool-card">
         <h4>Nano Banana Pro (Thinking Mode)</h4>
         <ul>
-          <li><strong>Strongest text rendering in the family:</strong> The Nano Banana model to reach for when the image contains words that have to be correct—from short taglines to long paragraphs. Essential for infographics, menus, diagrams, and educational materials.</li>
+          <li><strong>Built for text-heavy images:</strong> Google launched Pro as its model for images whose words have to be correct, such as infographics, diagrams, and educational materials. It is no longer clearly the strongest: Google&rsquo;s own October 2026 evaluations rank Nano Banana 2.1 above it (see the note below).</li>
           <li><strong>High resolution:</strong> Built-in generation at 1K, 2K, and 4K resolution.</li>
           <li><strong>Multi-person consistency:</strong> Upload up to 14 reference images and maintain resemblance of up to 5 people.</li>
           <li><strong>Real-time data:</strong> Can use Google Search to verify facts and generate imagery based on current information.</li>
@@ -300,7 +302,10 @@
           lists known limits that matter for handouts: &ldquo;poor text rendering in small text
           (often blurry in 1k model)&rdquo; and &ldquo;occasional confusion around spatial
           localisation (e.g. left/right).&rdquo; For anatomy labels and laterality, check every
-          label yourself.
+          label yourself. The same card&rsquo;s Google-run evaluations score 2.1 (in Thinking mode)
+          above Nano Banana Pro on infographic design and infographic factuality. Those are
+          vendor benchmarks, not independent tests, but they mean Pro is no longer the default
+          pick for labeled diagrams.
           <a href="https://aistudio.google.com/docs/changelog" target="_blank" rel="noopener">[Changelog]</a>
         </p>
       </div>
@@ -309,8 +314,9 @@
         <div class="callout-title">Why Nano Banana Matters for Healthcare</div>
         <p class="mb-0">
           Most AI image generators struggle with text—producing garbled letters or misspellings.
-          Google positions Nano Banana Pro as the family's strongest text renderer, which is what
-          patient education materials need for accurate labels and instructions. It still makes
+          Google pitches the Nano Banana family on text rendering, which is what patient education
+          materials need for accurate labels and instructions. As of November 2026, Google&rsquo;s
+          own evaluations put Nano Banana 2.1 ahead of Nano Banana Pro on infographics. It still makes
           mistakes, so proofread. All images are watermarked with SynthID for AI detection.
         </p>
       </div>
@@ -416,8 +422,13 @@
       </p>
 
       <p>
-        Gemini Omni did not replace it. As of July 2026, Veo 3.1 is still the model Google
-        DeepMind names as its video generation model, and it remains the better choice when you
+        Gemini Omni has not fully replaced it. As of November 2026, Google DeepMind&rsquo;s
+        <a href="https://deepmind.google/models/veo/" target="_blank" rel="noopener">Veo page</a>
+        still calls Veo 3.1 its leading video generation model. But the Veo 3.1 preview models in
+        the developer Gemini API were
+        <a href="https://aistudio.google.com/docs/veo" target="_blank" rel="noopener">shut down on October 22, 2026</a>,
+        with Google pointing developers to Gemini Omni Flash or to the generally available Veo
+        models on the Gemini Enterprise Agent Platform. Veo remains the better choice when you
         need length: a single Omni Flash generation tops out at 15 seconds, while Veo's scene extension gets you to two
         and a half minutes.
       </p>
@@ -432,7 +443,7 @@
           <li><strong>Frames to Video:</strong> Provide starting and ending images; Veo generates seamless transitions between them.</li>
           <li><strong>Insert & Remove:</strong> Add objects to scenes or delete elements/characters with natural physics.</li>
         </ul>
-        <p><strong>Access:</strong> Available through Google Flow, Gemini API, and Vertex AI. Pricing: $0.15/second (Fast) to $0.40/second (Standard).</p>
+        <p><strong>Access:</strong> For developers, the generally available Veo models are on Google&rsquo;s Gemini Enterprise Agent Platform; the Gemini API previews shut down October 22, 2026. Consumer access through Flow and the Gemini app varies by plan, so check what yours offers. Per-second prices have changed repeatedly; check Google&rsquo;s current pricing before budgeting.</p>
       </div>
 
       <div class="callout callout-info">
@@ -484,9 +495,9 @@
         thoughtfully—making it ideal for everyday practice needs.
       </p>
 
-      <h3>Magic Studio: Canva's AI Suite</h3>
+      <h3>Canva AI: Canva's AI Tools</h3>
 
-      <p>Canva's "Magic Studio" bundles multiple AI capabilities into their familiar drag-and-drop interface:</p>
+      <p>Canva once marketed its AI features as &ldquo;Magic Studio.&rdquo; As of November 2026 it presents them under the <a href="https://www.canva.com/canva-ai/" target="_blank" rel="noopener">Canva AI</a> name, including a conversational assistant you can ask to draft or edit a design. Individual feature names change often; the core capabilities inside the familiar drag-and-drop interface include:</p>
 
       <div class="feature-grid">
         <div class="feature-card">
@@ -528,9 +539,9 @@
       <div class="callout callout-info">
         <div class="callout-title">Access and Pricing</div>
         <ul class="mb-0">
-          <li><strong>Free tier:</strong> Basic design tools, 2+ million templates, limited AI features, 5 GB storage.</li>
-          <li><strong>Canva Pro:</strong> $14.99/month or $120/year. Full Magic Studio access, premium templates, Brand Kit for maintaining consistent visual identity.</li>
-          <li><strong>Canva for Teams:</strong> $29.99/month for the first 5 users. Collaboration features, shared brand assets, role-based permissions.</li>
+          <li><strong>Plans:</strong> As of November 2026 Canva lists Free, Pro, Business, and Enterprise plans. Free includes limited AI features; paid plans add more AI use, premium templates, and Brand Kit. Business and Enterprise add team collaboration and organization-level admin controls for AI features.</li>
+          <li><strong>Prices:</strong> Canva changes prices and seat rules often, so check the <a href="https://www.canva.com/pricing/" target="_blank" rel="noopener">current pricing page</a> before buying.</li>
+          <li><strong>Free for some organizations:</strong> Canva says K-12 schools and eligible nonprofits can get most premium features at no cost.</li>
         </ul>
       </div>
 
@@ -857,8 +868,8 @@
             </tr>
             <tr>
               <td>Images with text/labels</td>
-              <td>Nano Banana Pro</td>
-              <td>Google's strongest text renderer for infographics, diagrams, and patient education</td>
+              <td>Nano Banana 2.1 (Thinking) or Nano Banana Pro</td>
+              <td>Google's October 2026 model card scores 2.1 above Pro on infographic design and factuality; proofread every label either way</td>
             </tr>
             <tr>
               <td>Aesthetic quality</td>
@@ -867,8 +878,8 @@
             </tr>
             <tr>
               <td>Complete design projects</td>
-              <td>Canva (with Nano Banana)</td>
-              <td>Nano Banana Pro integrated directly into Canva's design platform</td>
+              <td>Canva (with Gemini)</td>
+              <td>Generate in Gemini, then open the image in Canva as an editable, layered design</td>
             </tr>
             <tr>
               <td>Video with audio</td>
@@ -953,7 +964,7 @@
             <div class="reading-title">
               <a href="https://openai.com/index/introducing-chatgpt-images-2-0/" target="_blank">OpenAI: Introducing ChatGPT Images 2.0</a>
             </div>
-            <div class="reading-meta">OpenAI &middot; April 2026 &middot; Official announcement of the current ChatGPT Images model</div>
+            <div class="reading-meta">OpenAI &middot; April 2026 &middot; Announcement of ChatGPT Images 2.0, now historical. As of November 2026 the current model is Images 2.6 (<a href="https://openai.com/index/introducing-images-2-6/" target="_blank" rel="noopener">announcement</a>)</div>
           </div>
         </div>
         <div class="reading-item">
@@ -980,7 +991,7 @@
             <div class="reading-title">
               <a href="https://www.canva.com/canva-ai/" target="_blank">Canva AI (formerly Magic Studio)</a>
             </div>
-            <div class="reading-meta">AI features overview including Nano Banana Pro integration</div>
+            <div class="reading-meta">Canva&rsquo;s overview of its AI design, writing, and editing tools</div>
           </div>
         </div>
       </div>
@@ -1138,7 +1149,7 @@
   <footer class="footer">
     <div class="footer-inner">
       <div><strong>AI 101</strong> · A Self-Paced Guide to AI in Medicine</div>
-      <div><a href="updates.html">v1.18.1 · 2026</a></div>
+      <div><a href="updates.html">v1.19 · 2026</a></div>
     </div>
   </footer>
 

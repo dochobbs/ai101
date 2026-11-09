@@ -5,8 +5,40 @@
     <link>https://ai101.health/ai-news.html</link>
     <description>AI news and developments relevant to healthcare and medical practice, curated for AI 101: A Self-Paced Guide to AI in Medicine.</description>
     <language>en-us</language>
-    <lastBuildDate>Sat, 07 Nov 2026 23:23:31 GMT</lastBuildDate>
+    <lastBuildDate>Mon, 09 Nov 2026 00:20:16 GMT</lastBuildDate>
     <atom:link href="https://ai101.health/ai-news-feed.xml" rel="self" type="application/rss+xml"/>
+
+    <item>
+      <title>athenahealth Lets Patients Connect Their Chart, Including Visit Notes, to Claude</title>
+      <link>https://www.athenahealth.com/about/press-releases/patients-connect-health-records</link>
+      <description>athenahealth launched an athenaPatient connector for Claude, listed as a beta in Anthropic’s connector directory and available to US Claude Pro and Max subscribers. A patient signs in with their athenahealth portal credentials and chooses what to share. The connector can read allergies, conditions, medications, lab results, diagnostic reports, vitals, vaccinations, procedures, care plans, encounters, and encounter notes. Claude is the first assistant athenahealth has connected, and the company says it will limit access to assistants that don’t train on patient information. This is the patient’s own consumer account, not a covered-entity tool with a BAA. If your practice runs athenaOne, expect patients to arrive having had an AI read your notes and labs. Write notes you would be comfortable having explained back to the patient, and decide how your team will handle the follow-up messages.</description>
+      <pubDate>Mon, 02 Nov 2026 00:00:00 GMT</pubDate>
+      <guid>https://www.athenahealth.com/about/press-releases/patients-connect-health-records</guid>
+    </item>
+
+    <item>
+      <title>AMA Proposes How Liability Should Be Shared When Clinical AI Goes Wrong</title>
+      <link>https://www.ama-assn.org/press-center/ama-press-releases/ama-advances-framework-clinical-ai-liability</link>
+      <description>The AMA released a framework on liability for clinical AI. It says “multiple parties may bear liability” when something goes wrong: developers should demonstrate and maintain their products’ safety and effectiveness, health systems should be accountable for how AI is selected, implemented, governed and monitored, and physicians should answer for “the clinical judgment they can meaningfully exercise.” It also says “physician oversight cannot substitute for adequate evidence.” This is an AMA advocacy framework, not law, and it does not change your liability today. It is still useful language when your organization asks you to sign off on AI output you had no realistic way to check. This is not legal advice; ask your organization’s counsel or your malpractice carrier how they treat AI-assisted care.</description>
+      <pubDate>Thu, 29 Oct 2026 00:00:00 GMT</pubDate>
+      <guid>https://www.ama-assn.org/press-center/ama-press-releases/ama-advances-framework-clinical-ai-liability</guid>
+    </item>
+
+    <item>
+      <title>Microsoft’s Diagnostic AI Outscores Physicians on a Step-by-Step Benchmark (Science)</title>
+      <link>https://www.science.org/doi/10.1126/science.aeh7930</link>
+      <description>In Science, Microsoft researchers describe a benchmark in which a case starts from a brief presentation and the solver must choose which questions and tests to order, with each test priced. Their system, MAI-DxO, runs several language-model “virtual physicians” that debate the differential. It reached 83.2% accuracy on New England Journal of Medicine case records and 80.3% on MIMIC-IV-ED emergency admissions, against 36.1% and 46.8% for generalist physicians. Microsoft says physicians scored 22% on the NEJM cases without reference resources. The authors call it a controlled benchmark. The cases were text, the comparison physicians were generalists rather than specialists, the study was built and run by the company that makes the system, and no patient was treated. Microsoft has announced a prospective study with Beth Israel Deaconess. Treat this as evidence that AI can be a useful second reader of a hard differential, not that it is ready to make the diagnosis.</description>
+      <pubDate>Thu, 22 Oct 2026 00:00:00 GMT</pubDate>
+      <guid>https://www.science.org/doi/10.1126/science.aeh7930</guid>
+    </item>
+
+    <item>
+      <title>Update: ChatGPT Health Now Uses Connected Records Without Asking Each Time</title>
+      <link>https://help.openai.com/en/articles/6825453-chatgpt-release-notes</link>
+      <description>This guide said earlier that ChatGPT asks before it uses health data a patient has connected. That changed on September 14. New Health connections now follow the account’s general plugin setting, which defaults to “Allow low-risk actions,” so ChatGPT uses connected records when it judges them relevant without asking each time; only sensitive actions, such as sending health data to someone else, prompt for confirmation. OpenAI says more than 70% of Health users had already chosen to allow this. Health can also send proactive updates when new records sync. Patients can change the setting under Settings &gt; Plugins &gt; Health. Health is a consumer feature with no BAA; OpenAI says it is not for covered-entity use. A patient who connected their portal may now get answers shaped by their whole record without having asked for that.</description>
+      <pubDate>Mon, 14 Sep 2026 00:00:00 GMT</pubDate>
+      <guid isPermaLink="false">urn:ai101:news:c8daea561b17cfb3fef1</guid>
+    </item>
 
     <item>
       <title>Correction: ChatGPT for Clinicians Does Offer an Individual BAA</title>
